@@ -38,6 +38,11 @@ create() {
         -o lowerdir="${lowerdir}",upperdir="${upperdir}",workdir="${workdir}" \
         "${TARGETDIR}"
 
+    # Some libraries have links to /etc/alternatives, which will then link back to /usr; this wouldn't work
+    # because /etc/ is not accessible from the flatpak, so we remove one layer of indirection and mangle the
+    # links so they have one less layer of indirection
+    fix_links_to_alternatives
+
     # Flatpak expects the .ref file to exist
     install --mode=0644 /dev/null "${TARGETDIR}/.ref"
 }
@@ -56,6 +61,19 @@ destroy() {
 
     # Remove the run directory
     rm -rf "${RUNDIR}"
+}
+
+fix_links_to_alternatives() {
+    while read -r link; do
+        dest=$(readlink "$link")
+        if [[ "$dest" = /etc/alternatives/* ]]; then
+            echo "NEED TO FIX: $link -> $dest"
+            newDest="$(readlink -f "$dest")"
+            rm "$link"
+            ln -sf "$newDest" "$link"
+        fi
+        true
+    done < <(find "${TARGETDIR}" -type l -name '*.so*')
 }
 
 if [ $# -eq 1 ]; then
