@@ -1,0 +1,9 @@
+id: org.boum.tails.Celluloid
+runtime: org.boum.tails.Platform
+runtime-version: 'stable'
+sdk: org.boum.tails.Platform
+branch: stable
+separate-locales: false
+metadata: metadata
+build-options:
+  no-debuginfo: true
