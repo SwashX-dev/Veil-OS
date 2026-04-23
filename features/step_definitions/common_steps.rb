@@ -1913,8 +1913,15 @@ When(/^I click "([^"]+)" in the "([^"]+)" zenity dialog$/) do |button_label, tit
   zenity_dialog_click_button(title, button_label)
 end
 
-When(/^I open "(.*[.].*)" in Files$/) do |filename|
+When(/^I open "(.*[.].*)" in Files$/) do |filepath|
   nautilus = Dogtail::Application.new('org.gnome.Nautilus')
+  dir = File.dirname(filepath)
+  filename = File.basename(filepath)
+  if dir != '.' && dir != '/home/amnesia'
+    @screen.press('ctrl', 'l')
+    @screen.type(dir)
+    @screen.press('Return')
+  end
   nautilus.child(filename, roleName: 'table cell').click
   @screen.press('Return')
 end
