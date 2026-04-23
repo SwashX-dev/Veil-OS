@@ -1,7 +1,8 @@
 @product
-Feature: Using Totem
+Feature: Using Celluloid
   As a Tails user
-  I want to watch local and remote videos in Totem
+  I want to watch local and remote videos in Celluloid
+  And Flatpak portals should make it possible to open files in any location despite Flatpak's confinement
   And all Internet traffic should flow only through Tor
 
   Background:
@@ -12,7 +13,8 @@ Feature: Using Totem
     And I plug and mount a USB drive containing sample videos
     And I copy the sample videos to "/home/amnesia" as user "amnesia"
     And the file "/home/amnesia/video.mp4" exists
-    When I open "/home/amnesia/video.mp4" with Totem
+    When I start "Files" via GNOME Activities Overview
+    And I open "/home/amnesia/video.mp4" in Files
     Then I see "SampleLocalMp4VideoFrame.png" after at most 40 seconds
 
   @check_tor_leaks
@@ -24,5 +26,6 @@ Feature: Using Totem
     Given I have started Tails without network from a USB drive with a persistent partition enabled and logged in
     And I plug and mount a USB drive containing sample videos
     And I copy the sample videos to "/home/amnesia/Persistent" as user "amnesia"
-    When I open "/home/amnesia/Persistent/video.mp4" with Totem
+    When I start "Files" via GNOME Activities Overview
+    And I open "/home/amnesia/Persistent/video.mp4" in Files
     Then I see "SampleLocalMp4VideoFrame.png" after at most 40 seconds

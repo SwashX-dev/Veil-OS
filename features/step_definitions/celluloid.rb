@@ -27,14 +27,6 @@ Given /^I copy the sample videos to "([^"]+)" as user "([^"]+)"$/ do |destinatio
   end
 end
 
-When /^I open "([^"]+)" with Totem$/ do |filename|
-  step "I run \"totem #{filename}\" in Console"
-end
-
-When /^I close Totem$/ do
-  ensure_process_is_terminated('totem')
-end
-
 Then /^I can watch a WebM video over HTTPs$/ do
   test_url = WEBM_VIDEO_URL
 
