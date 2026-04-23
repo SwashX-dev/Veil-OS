@@ -5,7 +5,7 @@ sdk=org.boum.tails.Platform/x86_64/stable
 command=/usr/bin/celluloid
 
 [Context]
-shared=network;ipc;
+shared=ipc;
 sockets=wayland;pulseaudio
 devices=all;
 filesystems=xdg-run/pipewire-0:ro;xdg-pictures;xdg-run/gvfsd;xdg-run/gvfs;
