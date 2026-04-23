@@ -27,21 +27,16 @@ Given /^I copy the sample videos to "([^"]+)" as user "([^"]+)"$/ do |destinatio
   end
 end
 
-Then /^I can watch a WebM video over HTTPs$/ do
-  test_url = WEBM_VIDEO_URL
-
-  # These tricks are needed because on Jenkins, tails.net
-  # resolves to a RFC 1918 address (#10442), which tor would not allow
-  # connecting to, and the firewall leak checker would make a fuss
-  # out of it.
-  host = URI(test_url).host
-  allow_connecting_to_possibly_rfc1918_host(host)
-
-  recovery_on_failure = proc do
-    step 'I close Totem'
+When(/^I open "(.*[.].*)" in Celluloid$/) do |filepath|
+  dir = File.dirname(filepath)
+  filename = File.basename(filepath)
+  nautilus = Dogtail::Application.new('org.gnome.Nautilus')
+  if dir != '.' && dir != '/home/amnesia'
+    @screen.press('ctrl', 'l')
+    @screen.type(dir)
+    @screen.press('Return')
   end
-  retry_tor(recovery_on_failure) do
-    step "I open \"#{test_url}\" with Totem"
-    @screen.wait('SampleRemoteWebMVideoFrame.png', 120)
-  end
+  dialog = nautilus.child('Open File', roleName: 'frame')
+  dialog.child(filename, roleName: 'table cell').click
+  @screen.press('Return')
 end

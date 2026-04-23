@@ -22,10 +22,15 @@ Feature: Using Celluloid
     Given I have started Tails from DVD and logged in and the network is connected
     Then I can watch a WebM video over HTTPs
 
+  # The next scenario is similar to the previous one, except it opens the file in another way.
+  # Since we're dealing with desktop portals, it's not entirely obvious that
+  # clicking on "Open" from within Celluloid follows the same code path than
+  # double-clicking on a file in Files. Now we have two tests follow those
+  # two paths.
   Scenario: Watching MP4 videos stored in the Persistent Storage
     Given I have started Tails without network from a USB drive with a persistent partition enabled and logged in
     And I plug and mount a USB drive containing sample videos
     And I copy the sample videos to "/home/amnesia/Persistent" as user "amnesia"
-    When I start "Files" via GNOME Activities Overview
-    And I open "/home/amnesia/Persistent/video.mp4" in Files
+    When I start "Celluloid" via GNOME Activities Overview
+    And I open "/home/amnesia/Persistent/video.mp4" in Celluloid
     Then I see "SampleLocalMp4VideoFrame.png" after at most 40 seconds
