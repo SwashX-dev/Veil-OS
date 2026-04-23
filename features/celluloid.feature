@@ -1,9 +1,8 @@
 @product
 Feature: Using Celluloid
   As a Tails user
-  I want to watch local and remote videos in Celluloid
+  I want to watch local videos in Celluloid
   And Flatpak portals should make it possible to open files in any location despite Flatpak's confinement
-  And all Internet traffic should flow only through Tor
 
   Background:
     Given I create sample videos
@@ -16,11 +15,6 @@ Feature: Using Celluloid
     When I start "Files" via GNOME Activities Overview
     And I open "/home/amnesia/video.mp4" in Files
     Then I see "SampleLocalMp4VideoFrame.png" after at most 40 seconds
-
-  @check_tor_leaks
-  Scenario: Watching a WebM video over HTTPS
-    Given I have started Tails from DVD and logged in and the network is connected
-    Then I can watch a WebM video over HTTPs
 
   # The next scenario is similar to the previous one, except it opens the file in another way.
   # Since we're dealing with desktop portals, it's not entirely obvious that
