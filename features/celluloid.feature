@@ -14,7 +14,7 @@ Feature: Using Celluloid
     And the file "/home/amnesia/video.mp4" exists
     When I start "Files" via GNOME Activities Overview
     And I open "/home/amnesia/video.mp4" in Files
-    Then I see "SampleLocalMp4VideoFrame.png" after at most 40 seconds
+    Then I see the 30s-long video loaded after at most 10 seconds
 
   # The next scenario is similar to the previous one, except it opens the file in another way.
   # Since we're dealing with desktop portals, it's not entirely obvious that
@@ -27,4 +27,4 @@ Feature: Using Celluloid
     And I copy the sample videos to "/home/amnesia/Persistent" as user "amnesia"
     When I start "Celluloid" via GNOME Activities Overview
     And I open "/home/amnesia/Persistent/video.mp4" in Celluloid
-    Then I see "SampleLocalMp4VideoFrame.png" after at most 40 seconds
+    Then I see the 30s-long video loaded after at most 10 seconds

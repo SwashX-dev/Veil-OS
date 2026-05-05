@@ -40,3 +40,28 @@ When(/^I open "(.*[.].*)" in Celluloid$/) do |filepath|
   dialog.child(filename, roleName: 'table cell').click
   @screen.press('Return')
 end
+
+def celluloid
+  Dogtail::Application.new('io.github.celluloid_player.Celluloid')
+end
+
+Then(/^I see the (\d+)s-long video loaded after at most (\d+) seconds$/) do |duration, timeout|
+  window = celluloid.child(roleName: 'frame', recursive: false)
+  # Maximize the window, otherwise the duration will be hidden
+  window.doActionNamed('window.toggle-maximized')
+
+  progress_node = nil
+  try_for(timeout.to_i) do
+    progress_re = %r{\d+:\d+/\d+:\d+}
+    progress_node = window.children(roleName: 'label', recursive: true).select do |n|
+      n.name && progress_re.match(n.name)
+    end
+    progress_node = progress_node.first
+    !progress_node.nil?
+  end
+  progress = progress_node.name
+  reported_duration_human = progress.split('/').last.split(':').map(&:to_i)
+  reported_duration_human[0] *= 60
+  reported_duration_seconds = reported_duration_human.sum
+  assert_equal(reported_duration_seconds, duration.to_i)
+end
