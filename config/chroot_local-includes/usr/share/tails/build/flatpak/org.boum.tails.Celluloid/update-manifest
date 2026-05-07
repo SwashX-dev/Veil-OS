@@ -5,6 +5,8 @@ set -x
 
 # This refreshes the org.boum.tails.Celluloid flatpak manifest
 
+desktopFileChange=config/chroot_local-includes/usr/local/lib/desktop-file-change
+
 usage() {
     cat <<EOF
 Usage: $0 [--no-download] [--help]
@@ -49,6 +51,14 @@ flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flath
 # Extract the [Application] section of the old metadata file
 sed -n '/^\[Application\]/,/^\[/p' "${METADATA_FILE}" >>"${METADATA_FILE}.new"
 mv "${METADATA_FILE}.new" "${METADATA_FILE}"
+
+set_session_bus_policy() {
+    "${desktopFileChange}" --file "${METADATA_FILE}" set --section 'Session Bus Policy' "$@"
+}
+set_session_bus_policy 'org.gtk.vfs.*' talk
+set_session_bus_policy 'io.github.celluloid_player.Celluloid' own
+set_session_bus_policy 'io.github.celluloid_player.Celluloid.*' own
+set_session_bus_policy 'org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid' own
 
 # Install the io.github.celluloid_player.Celluloid flatpak app to
 # get the updated metadata file
