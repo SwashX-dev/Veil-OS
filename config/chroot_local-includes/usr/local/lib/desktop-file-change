@@ -17,7 +17,7 @@ class DesktopChanger:
 
     def get_parser(self):
         p = argparse.ArgumentParser()
-        p.set_defaults(func=None)
+        p.set_defaults(func=None, type_=None)
         p.add_argument("--file")
         p.add_argument(
             "--dry-run",
@@ -27,21 +27,28 @@ class DesktopChanger:
         )
         sub = p.add_subparsers()
 
+        get = sub.add_parser(
+            "get"
+        )
+        get.set_defaults(func=self.main_get)
+        get.add_argument("--section", default=DEFAULT_SECTION)
+        get.add_argument("key")
+
         set_ = sub.add_parser("set")
-        set_.set_defaults(func=self.main_set)
+        set_.set_defaults(func=self.main_set, type_='filter')
         set_.add_argument("--section", default=DEFAULT_SECTION)
         set_.add_argument("key")
         set_.add_argument("value")
 
         del_section = sub.add_parser("delete-section")
-        del_section.set_defaults(func=self.main_del_section)
+        del_section.set_defaults(func=self.main_del_section, type_='filter')
         del_section.add_argument("section")
 
         import_section = sub.add_parser(
             "import-section",
             help="Import a section from another file",
         )
-        import_section.set_defaults(func=self.main_import_section)
+        import_section.set_defaults(func=self.main_import_section, type_='filter')
         import_section.add_argument("section")
         import_section.add_argument("otherfile")
 
@@ -56,11 +63,22 @@ class DesktopChanger:
         self.data = self.load(self.args.file)
         self.args.func()
 
-        if self.args.dry_run:
-            self.data.write(sys.stdout, space_around_delimiters=False)
-        else:
-            with open(self.args.file, "w") as buf:
-                self.data.write(buf, space_around_delimiters=False)
+        if self.args.type_ == 'filter':
+            # Those subcommands are filters, so they share lot of functionalities
+            if self.args.dry_run:
+                self.data.write(sys.stdout, space_around_delimiters=False)
+            else:
+                with open(self.args.file, "w") as buf:
+                    self.data.write(buf, space_around_delimiters=False)
+
+
+    def main_get(self):
+        if self.args.section not in self.data.sections():
+            print("Section not found", file=sys.stderr)
+            sys.exit(1)
+            return
+        value = self.data[self.args.section][self.args.key]
+        print(value)
 
     def main_set(self):
         if self.args.section not in self.data.sections():

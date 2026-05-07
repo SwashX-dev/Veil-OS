@@ -66,10 +66,24 @@ mv "${METADATA_FILE}.new" "${METADATA_FILE}"
 set_session_bus_policy() {
     "${desktopFileChange}" --file "${METADATA_FILE}" set --section 'Session Bus Policy' "$@"
 }
+remove_element() {
+	section="$1"
+	key="$2"
+	element="$3"
+    value=$("${desktopFileChange}" --file "${METADATA_FILE}" get --section "$1" "$2")
+	newValue=$(tr ';' '\n' <<<"$value" | grep -vFx -e "$element" -e "" | tr '\n' ';')
+    "${desktopFileChange}" --file "${METADATA_FILE}" set --section "$section" "$key" "$newValue"
+}
 set_session_bus_policy 'org.gtk.vfs.*' talk
 set_session_bus_policy 'io.github.celluloid_player.Celluloid' own
 set_session_bus_policy 'io.github.celluloid_player.Celluloid.*' own
 set_session_bus_policy 'org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid' own
+
+# We intentionally break the "Open Location" feature in order to make Celluloid more confined
+remove_element Context shared network
+# Remove access to unneeded locations
+remove_element Context sockets x11
+remove_element Context sockets fallback-x11
 
 # Commit the changes to the git repo
 git add "${METADATA_FILE}"
