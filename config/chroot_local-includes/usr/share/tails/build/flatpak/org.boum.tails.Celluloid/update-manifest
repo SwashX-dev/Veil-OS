@@ -4,6 +4,9 @@ set -eu
 set -x
 
 # This refreshes the org.boum.tails.Celluloid flatpak manifest
+ORIG_APP_NAME=io.github.celluloid_player.Celluloid
+TAILS_APP_NAME=org.boum.tails.Celluloid
+DISPLAY_NAME='Celluloid'
 
 desktopFileChange=config/chroot_local-includes/usr/local/lib/desktop-file-change
 
@@ -11,10 +14,10 @@ usage() {
     cat <<EOF
 Usage: $0 [--no-download] [--help]
 
-Rebuild the org.boum.tails.Celluloid flatpak app.
+Rebuild the $TAILS_APP_NAME flatpak app.
 
 Options:
-  --no-download  Don't download the latest Celluloid flatpak.
+  --no-download  Don't download the latest $DISPLAY_NAME flatpak.
   --help         Show this help message.
 EOF
 }
@@ -48,9 +51,17 @@ METADATA_FILE="${DIR}/metadata"
 # Setup flatpak
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Extract the [Application] section of the old metadata file
-sed -n '/^\[Application\]/,/^\[/p' "${METADATA_FILE}" >>"${METADATA_FILE}.new"
+# Install the flatpak app to
+# get the updated metadata file
+if [ -z "${NO_DOWNLOAD:-}" ]; then
+    flatpak install --user --assumeyes --reinstall flathub "$ORIG_APP_NAME"
+fi
+flatpak info --show-metadata "$ORIG_APP_NAME" >"${METADATA_FILE}.new"
+
+# Merge our [Application] section into the upstream one
+"${desktopFileChange}" --file "${METADATA_FILE}.new" import-section "Application" "${METADATA_FILE}"
 mv "${METADATA_FILE}.new" "${METADATA_FILE}"
+
 
 set_session_bus_policy() {
     "${desktopFileChange}" --file "${METADATA_FILE}" set --section 'Session Bus Policy' "$@"
@@ -60,18 +71,7 @@ set_session_bus_policy 'io.github.celluloid_player.Celluloid' own
 set_session_bus_policy 'io.github.celluloid_player.Celluloid.*' own
 set_session_bus_policy 'org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid' own
 
-# Install the io.github.celluloid_player.Celluloid flatpak app to
-# get the updated metadata file
-if [ -z "${NO_DOWNLOAD:-}" ]; then
-    flatpak install --user --assumeyes --reinstall flathub io.github.celluloid_player.Celluloid
-fi
-METADATA=$(flatpak info --show-metadata io.github.celluloid_player.Celluloid)
-
-# Extract everything except for the [Application] section of the new
-# metadata
-echo "${METADATA}" | sed '/^\[Application\]/,/^\[/d' >>"${METADATA_FILE}"
-
 # Commit the changes to the git repo
 git add "${METADATA_FILE}"
-git commit -m "Refresh org.boum.tails.Celluloid flatpak manifest" || exit 0
+git commit -m "Refresh $TAILS_APP_NAME flatpak manifest" || exit 0
 git show
