@@ -4,15 +4,18 @@ set -eu
 set -x
 
 # This refreshes the org.boum.tails.TorBrowser flatpak manifest
+ORIG_APP_NAME=org.torproject.torbrowser-launcher
+TAILS_APP_NAME=org.boum.tails.TorBrowser 
+DISPLAY_NAME='Tor Browser Launcher'
 
 usage() {
     cat <<EOF
 Usage: $0 [--no-download] [--help]
 
-Rebuild the org.boum.tails.TorBrowser flatpak app.
+Rebuild the $TAILS_APP_NAME flatpak app.
 
 Options:
-  --no-download  Don't download the latest Tor Browser Launcher flatpak.
+  --no-download  Don't download the latest $DISPLAY_NAME flatpak.
   --help         Show this help message.
 EOF
 }
@@ -50,12 +53,12 @@ flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flath
 sed -n '/^\[Application\]/,/^\[/p' "${METADATA_FILE}" >>"${METADATA_FILE}.new"
 mv "${METADATA_FILE}.new" "${METADATA_FILE}"
 
-# Install the org.torproject.torbrowser-launcher flatpak app to
+# Install the flatpak app to
 # get the updated metadata file
 if [ -z "${NO_DOWNLOAD:-}" ]; then
-    flatpak install --user --assumeyes --reinstall flathub org.torproject.torbrowser-launcher
+    flatpak install --user --assumeyes --reinstall flathub "$ORIG_APP_NAME"
 fi
-METADATA=$(flatpak info --show-metadata org.torproject.torbrowser-launcher)
+METADATA=$(flatpak info --show-metadata "$ORIG_APP_NAME")
 
 # Extract everything except for the [Application] section of the new
 # metadata
@@ -63,5 +66,5 @@ echo "${METADATA}" | sed '/^\[Application\]/,/^\[/d' >>"${METADATA_FILE}"
 
 # Commit the changes to the git repo
 git add "${METADATA_FILE}"
-git commit -m "Refresh org.boum.tails.TorBrowser flatpak manifest" || exit 0
+git commit -m "Refresh $TAILS_APP_NAME flatpak manifest" || exit 0
 git show
