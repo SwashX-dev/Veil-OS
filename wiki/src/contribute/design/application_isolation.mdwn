@@ -85,7 +85,6 @@ Second, few more targeted adjustments are also applied:
 * [[!tails_gitweb config/chroot_local-patches/apparmor-adjust-pidgin-profile.diff]]
 * [[!tails_gitweb config/chroot_local-patches/apparmor-adjust-tor-abstraction.diff]]
 * [[!tails_gitweb config/chroot_local-patches/apparmor-adjust-tor-profile.diff]]
-* [[!tails_gitweb config/chroot_local-patches/apparmor-adjust-totem-profile.diff]]
 
 Below, we discuss various leads that might avoid the need for coming
 up with such adjustments, and maintaining it.
