@@ -90,7 +90,9 @@ class Desktop:
 
     def __setitem__(self, key, value):
         self.values[DESKTOP_SECTION][key] = value
-        key_translations = [k for k in self.values[DESKTOP_SECTION] if k.startswith(f"{key}[")]
+        key_translations = [
+            k for k in self.values[DESKTOP_SECTION] if k.startswith(f"{key}[")
+        ]
         for k in key_translations:
             del self.values[DESKTOP_SECTION][k]
 
