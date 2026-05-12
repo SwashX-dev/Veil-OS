@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3 -I
 
 """
 This script is meant to do simple operations with desktop files
