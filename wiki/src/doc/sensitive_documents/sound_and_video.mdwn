@@ -14,7 +14,7 @@ Tails includes several sound and video applications:
 
   - [*Sound Recorder*](https://wiki.gnome.org/Apps/SoundRecorder), a sound recorder.
 
-  - [*Videos*](https://apps.gnome.org/Totem/), an audio and video player.
+  - [*Celluloid*](https://celluloid-player.github.io/), an audio and video player.
 
 These applications are available in the **Apps&nbsp;▸ Sound & Video** submenu.
 
