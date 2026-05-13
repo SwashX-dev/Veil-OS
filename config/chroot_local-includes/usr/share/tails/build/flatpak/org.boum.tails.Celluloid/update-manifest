@@ -80,9 +80,10 @@ set_session_bus_policy 'org.mpris.MediaPlayer2.io.github.celluloid_player.Cellul
 
 # We intentionally break the "Open Location" feature in order to make Celluloid more confined
 remove_element Context shared network
-# Remove access to unneeded locations
+# Defense in depth: remove access to x11: Tails runs on Wayland
 remove_element Context sockets x11
 remove_element Context sockets fallback-x11
+# We allow access to xdg-pictures: it's used for saving screenshots, and it's amnesic, so probably innocuous.
 
 # Commit the changes to the git repo
 git add "${METADATA_FILE}"
