@@ -1913,17 +1913,21 @@ When(/^I click "([^"]+)" in the "([^"]+)" zenity dialog$/) do |button_label, tit
   zenity_dialog_click_button(title, button_label)
 end
 
-When(/^I open "(.*[.].*)" in Files$/) do |filepath|
-  nautilus = Dogtail::Application.new('org.gnome.Nautilus')
+def nautilus_open_file(filepath)
   dir = File.dirname(filepath)
   filename = File.basename(filepath)
+  nautilus = Dogtail::Application.new('org.gnome.Nautilus')
   if dir != '.' && dir != '/home/amnesia'
     @screen.press('ctrl', 'l')
-    @screen.type(dir)
+    nautilus.child(roleName: 'text').text = dir
     @screen.press('Return')
   end
   nautilus.child(filename, roleName: 'table cell').click
   @screen.press('Return')
+end
+
+When(/^I open "(.*[.].*)" in Files$/) do |filepath|
+  nautilus_open_file(filepath)
 end
 
 When(/^I wait until (?:(\w+)'s )(.*[.]service) has completed$/) do |user, unit|
