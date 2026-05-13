@@ -33,10 +33,6 @@ REPLACEMENTS = [
             "/usr/share/applications/io.github.celluloid_player.Celluloid.desktop",
         ),
         x_flatpak="org.boum.tails.Celluloid",
-        # The pair of "@@" arguments is required for `flatpak run`'s
-        # --file-forwarding option (see the flatpak-run(1) man page for
-        # details).
-        exec_="/usr/local/bin/celluloid @@ %U @@",
     ),
 ]
 

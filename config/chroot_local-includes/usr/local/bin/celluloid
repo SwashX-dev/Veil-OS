@@ -23,4 +23,4 @@ exec \
     --installation=tails \
     run \
     --file-forwarding \
-    --command=celluloid org.boum.tails.Celluloid "$@"
+    --command=celluloid org.boum.tails.Celluloid @@ "${@}" @@
