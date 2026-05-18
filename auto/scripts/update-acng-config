@@ -13,7 +13,7 @@ print_tagged_snapshots_pool_url() {
     origin="$1"
     version="$2"
     printf \
-        'http://tagged.snapshots.deb.tails.boum.org/%s/%s/pool/\n' \
+        'http://tagged.snapshots.deb.tails.net/%s/%s/pool/\n' \
         "$version" "$origin"
 }
 
@@ -36,7 +36,7 @@ for origin in $(list_origins); do
             # lines, so to simplify we do as if each month had 31 days.
             for day in $(seq 1 31); do
                 for n in $(seq 1 4); do
-                    printf 'http://time-based.snapshots.deb.tails.boum.org/%s/%04u%02u%02u%02u/pool/\n' \
+                    printf 'http://time-based.snapshots.deb.tails.net/%s/%04u%02u%02u%02u/pool/\n' \
                         "$origin" "$year" "$month" "$day" "$n"
                 done
             done

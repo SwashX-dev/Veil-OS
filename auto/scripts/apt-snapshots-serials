@@ -4,7 +4,7 @@ set -u
 
 set -o pipefail
 
-BASE_URL=http://time-based.snapshots.deb.tails.boum.org/
+BASE_URL=http://time-based.snapshots.deb.tails.net/
 CONFIG=config/APT_snapshots.d
 SERIAL_ONLY=
 APT_SNAPSHOTS_SERIALS=

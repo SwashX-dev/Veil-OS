@@ -16,10 +16,10 @@ SUITE_TO_RESET="$1"
 DESIRED_NEW_STATE="$2"
 
 ### Empty $SUITE_TO_RESET
-ssh reprepro@incoming.deb.tails.boum.org \
+ssh reprepro@incoming.deb.tails.net \
     reprepro removematched "$SUITE_TO_RESET" '\*'
 
 ### Merge $DESIRED_NEW_STATE into $SUITE_TO_RESET
 # shellcheck disable=SC2029
-ssh reprepro@incoming.deb.tails.boum.org \
+ssh reprepro@incoming.deb.tails.net \
     tails-merge-suite "$DESIRED_NEW_STATE" "$SUITE_TO_RESET"

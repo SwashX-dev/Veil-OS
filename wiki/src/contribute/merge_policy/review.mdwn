@@ -42,7 +42,7 @@ In particular, see
   - If you have upload rights to our [[custom APT
     repository|contribute/APT_repository/custom]]:
 
-        ssh reprepro@incoming.deb.tails.boum.org \
+        ssh reprepro@incoming.deb.tails.net \
             reprepro list ${APT_overlay}`
 
   - Else:

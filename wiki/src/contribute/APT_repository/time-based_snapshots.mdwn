@@ -64,7 +64,7 @@ SSH access
 
 One must configure their SSH client to connect to the APT server:
 
-	Host incoming.deb.tails.boum.org
+	Host incoming.deb.tails.net
 		Port 3003
 
 Workflow
@@ -113,7 +113,7 @@ To bump `Valid-Until`, for a given snapshot (`$SERIAL`) of a given
 archive (`$ARCHIVE`), so that they are valid for `$DAYS_FROM_NOW` days
 from now:
 
-    ssh reprepro-time-based-snapshots@incoming.deb.tails.boum.org \
+    ssh reprepro-time-based-snapshots@incoming.deb.tails.net \
        tails-bump-apt-snapshot-valid-until \
            "${ARCHIVE:?}" "${SERIAL:?}" "${DAYS_FROM_NOW:?}"
 

@@ -33,7 +33,7 @@ GIT_TOPLEVEL_DIR=$(git rev-parse --show-toplevel)
 . "$GIT_TOPLEVEL_DIR"/auto/scripts/utils.sh
 PBUILDER_OPTIONS="${PBUILDER_OPTIONS:-}"
 TARGET_DIST="${TARGET_DIST:-$(branch_name_to_suite "$(git_current_branch)")}"
-REMOTE_USER_AT_HOST='reprepro@incoming.deb.tails.boum.org'
+REMOTE_USER_AT_HOST='reprepro@incoming.deb.tails.net'
 
 umask 0022
 WORKDIR=$(mktemp -d)
