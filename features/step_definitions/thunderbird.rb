@@ -240,7 +240,7 @@ def thunderbird_non_suspicious_connections
     'live.thunderbird.net',
     # Used to install Thunderbird in the first place
     'cloudfront.debian.net',
-    'deb.tails.boum.org',
+    'deb.tails.net',
     'deb.torproject.org',
   ]
 end

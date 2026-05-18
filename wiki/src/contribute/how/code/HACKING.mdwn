@@ -75,12 +75,12 @@ using them in releases. In fact, in releases we can only use:
 
 * Debian's APT repository
 * `deb.torproject.org`
-* `deb.tails.boum.org`
+* `deb.tails.net`
 
 So, if you need a package from some other repository, feel free to add
 through this mechanism it when developing your branch. When it's time
 to merge we will figure out the best way to get the packages available
-to us, usually by importing them to `deb.tails.boum.org`. The
+to us, usually by importing them to `deb.tails.net`. The
 preferred solution is always to have the packages available in
 Debian.
 
@@ -115,7 +115,7 @@ useful for testing purposes only!
 
 This encodes which base branch (see above) the current branch is based
 on (the base branches themselves are "based" on themselves). In
-practice this determines which APT suite from `deb.tails.boum.org` to
+practice this determines which APT suite from `deb.tails.net` to
 use (so if `config/base_branch` contains `devel`, then the `devel` APT
 suite will be used). These APT suites are the place where we upload
 all our custom Debian packages.
@@ -123,7 +123,7 @@ all our custom Debian packages.
 
 ## config/APT_overlays.d/
 
-Each file here corresponds to an APT suite on `deb.tails.boum.org` to
+Each file here corresponds to an APT suite on `deb.tails.net` to
 be used. E.g. if we have `config/APT_overlays.d/feature-1234-example`
 then the `feature-1234-example` APT suite will be used. Each branch
 that is pushed to Tails' main Git repo will automatically have such a
@@ -146,7 +146,7 @@ the release candidate for the last Tails major release). This way only
 `devel` is a bit crazy, and the build result depends on what happens
 e.g. in Debian's APT repository from day to day. Other branches remain
 pretty much the same until these snapshots are bumped, or something
-changes in `deb.tails.boum.org` (but then you should just merge your
+changes in `deb.tails.net` (but then you should just merge your
 base branch, and all should be good again).
 
 For detailed information see our

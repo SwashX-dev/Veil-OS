@@ -5,7 +5,7 @@ set -u
 
 . "$(dirname "$0")/utils.sh"
 
-APT_MIRROR_URL="http://deb.tails.boum.org/"
+APT_MIRROR_URL="http://deb.tails.net/"
 DEFAULT_COMPONENTS="main contrib non-free"
 
 output_apt_binary_source() {

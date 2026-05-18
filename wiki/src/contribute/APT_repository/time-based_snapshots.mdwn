@@ -205,7 +205,7 @@ Freeze exception
 
         Explanation: freeze exception
         Package: XYZ
-        Pin: origin deb.tails.boum.org
+        Pin: origin deb.tails.net
         Pin-Priority: 999
 
 4. Commit:
@@ -417,7 +417,7 @@ numbers):
  * if the imported package comes from another Debian distribution,
    that has a pinning value strictly lower than 990, such as Debian
    unstable: if we did nothing more, the package would be installed
-   because its pinning (`origin deb.tails.boum.org`) is higher than
+   because its pinning (`origin deb.tails.net`) is higher than
    the one from the Debian distribution we're importing it from;
    *however*, in this case we need to track this package, and to
    remove it from our custom repository after we have thawed the

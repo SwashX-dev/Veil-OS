@@ -23,7 +23,7 @@ Options:
 }
 
 wait_suite_ready() {
-    url="https://deb.tails.boum.org/dists/${OVERLAY}"
+    url="https://deb.tails.net/dists/${OVERLAY}"
     while ! curl -s --fail "$url" > /dev/null
     do
         sleep 5

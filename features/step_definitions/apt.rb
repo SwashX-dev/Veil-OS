@@ -32,7 +32,7 @@ Then /^if releasing, the tagged Tails APT source is enabled$/ do
     puts 'Not on a tag ⇒ skipping this step'
     next
   end
-  custom_apt_repo = 'deb.tails.boum.org'
+  custom_apt_repo = 'deb.tails.net'
   assert_match(
     %r{#{Regexp.quote(custom_apt_repo)}/?\s+#{Regexp.quote(git_current_tag)}\s},
     apt_sources
@@ -44,7 +44,7 @@ Then /^if releasing, no unversioned Tails APT source is enabled$/ do
     puts 'Not on a tag ⇒ skipping this step'
     next
   end
-  custom_apt_repo = 'deb.tails.boum.org'
+  custom_apt_repo = 'deb.tails.net'
   assert_no_match(
     %r{#{Regexp.quote(custom_apt_repo)}/?\s+(stable|testing|devel)\s},
     apt_sources
@@ -104,7 +104,7 @@ Then /^I uninstall "(.+)" using apt$/ do |package|
 end
 
 When /^I configure APT to prefer an old version of cowsay$/ do
-  apt_source = 'deb tor+http://deb.tails.boum.org/ asp-test-upgrade-cowsay main'
+  apt_source = 'deb tor+http://deb.tails.net/ asp-test-upgrade-cowsay main'
   $vm.file_overwrite('/etc/apt/sources.list.d/asp-test-upgrade-cowsay.list',
                      apt_source)
 end

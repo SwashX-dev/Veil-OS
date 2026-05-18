@@ -103,7 +103,7 @@ Configure your SSH client to connect to the APT server:
 HTTP access
 ===========
 
-The custom APT repository can be browsed at <https://deb.tails.boum.org/>.
+The custom APT repository can be browsed at <https://deb.tails.net/>.
 
 Workflow
 ========
@@ -128,7 +128,7 @@ to upload to later on.
 
 For details, see the *Build system* section above.
 
-Wait a few minutes for the new APT suite to appear on <https://deb.tails.boum.org/dists/>:
+Wait a few minutes for the new APT suite to appear on <https://deb.tails.net/dists/>:
 
     ./bin/add-APT-overlay --wait
 
