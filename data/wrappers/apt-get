@@ -33,7 +33,7 @@ fi
 
 building_with_tagged_APT_snapshots() {
   grep --recursive --quiet --silent --fixed-strings \
-	tagged.snapshots.deb.tails.boum.org \
+	tagged.snapshots.deb.tails.net \
 	/etc/apt/sources.list.d/
 }
 

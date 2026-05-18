@@ -54,7 +54,7 @@ s{
 s{
    ^
    (deb(?:-src)?\s+)
-   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]boum[.]org
+   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]net
    /[0-9a-z.-]+ # tag
    /debian
    /?
@@ -64,7 +64,7 @@ s{
 s{
    ^
    (deb(?:-src)?\s+)
-   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]boum[.]org
+   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]net
    /[0-9a-z.-]+ # tag
    /debian-security
    /?
@@ -74,7 +74,7 @@ s{
 s{
    ^
    (deb(?:-src)?\s+)
-   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]boum[.]org
+   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]net
    /[0-9a-z.-]+ # tag
    /torproject
    /?

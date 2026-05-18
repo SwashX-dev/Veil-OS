@@ -100,8 +100,8 @@ end
 
 RSpec::Matchers.define :have_tagged_snapshot do |tag|
   match do |string|
-    # e.g.: `http://tagged.snapshots.deb.tails.boum.org/0.10`
-    base_uri = 'http://tagged.snapshots.deb.tails.boum.org'
+    # e.g.: `http://tagged.snapshots.deb.tails.net/0.10`
+    base_uri = 'http://tagged.snapshots.deb.tails.net'
     %r{^#{Regexp.escape(base_uri)}/#{Regexp.escape(tag)}/[a-z-]+$}
       .match(string)
   end

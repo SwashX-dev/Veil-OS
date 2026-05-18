@@ -5,7 +5,7 @@
 # Overview
 
 Our tagged snapshots of upstream APT repositories are published on
-<http://tagged.snapshots.deb.tails.boum.org/>.
+<http://tagged.snapshots.deb.tails.net/>.
 
 These are _partial_, tagged snapshots of upstream APT repositories we
 need, so that one can rebuild a released ISO in the future, and we
