@@ -268,7 +268,7 @@ It could be that the [[time-based APT snapshots|contribute/APT_repository/time-b
 for the `debian-security` archive have a problem. To investigate, you can:
 
 - Check
-   [when the last successful update happened](https://time-based.snapshots.deb.tails.boum.org/debian-security/project/trace/debian-security).
+   [when the last successful update happened](https://time-based.snapshots.deb.tails.net/debian-security/project/trace/debian-security).
 - `ssh reprepro-time-based-snapshots@incoming.deb.tails.boum.org` and there:
    - check the logs in `repositories/debian-security/logs/`
    - check the services: `systemctl status tails-update-time-based-apt-snapshots-debian-security-*.timer tails-update-time-based-apt-snapshots-debian-security-*.service`
