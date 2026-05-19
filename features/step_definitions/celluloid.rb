@@ -33,7 +33,7 @@ When(/^I open "(.*[.].*)" in Celluloid$/) do |filepath|
   # I can't find a way to click on "Open File..." from Dogtail, so let's use a shortcut
   @screen.press('ctrl', 'o')
 
-  nautilus_open_file(filepath)
+  nautilus_open_file(filepath, button_label: 'Select')
 end
 
 def celluloid
