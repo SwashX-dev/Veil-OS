@@ -18,7 +18,7 @@ Feature: Using Celluloid
 
   # The next scenario is similar to the previous one, except it opens the file in another way.
   # Since we're dealing with desktop portals, it's not entirely obvious that
-  # clicking on "Open" from within Celluloid follows the same code path than
+  # clicking on "Open" from within Celluloid follows the same code path as
   # double-clicking on a file in Files. Now we have two tests follow those
   # two paths.
   Scenario: Watching MP4 videos stored in the Persistent Storage
