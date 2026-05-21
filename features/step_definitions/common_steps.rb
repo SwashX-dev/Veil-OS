@@ -1913,6 +1913,8 @@ def select_path_in_file_chooser(file_chooser, path, button_label: 'Open')
   try_for(10) { !file_chooser.showing? }
 end
 
+# Nautilus is used as the file chooser by xdg-desktop-portal-gnome;
+# for saving files, see desktop_portal_save_as.
 def nautilus_open_file(filepath, button_label: nil)
   dir = File.dirname(filepath)
   filename = File.basename(filepath)
