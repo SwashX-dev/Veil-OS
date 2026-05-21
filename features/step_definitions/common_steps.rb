@@ -1737,18 +1737,6 @@ Given /^I create a symlink "(\S+)" to "(\S+)"$/ do |link, target|
   )
 end
 
-def select_path_in_file_chooser(file_chooser, path, button_label: 'Open')
-  assert_equal('file chooser', file_chooser.roleName)
-  try_for(10) do
-    @screen.press('ctrl', 'l')
-    file_chooser.focused_child.roleName == 'text'
-  end
-  file_chooser.focused_child.text = path
-  try_for(10) { file_chooser.button(button_label).sensitive? }
-  file_chooser.button(button_label).click
-  try_for(10) { !file_chooser.showing? }
-end
-
 def save_qrcode(str)
   # Generate a QR code similar enough to BridgeDB's:
   # https://gitlab.torproject.org/tpo/anti-censorship/bridgedb/-/blob/main/bridgedb/qrcodes.py
@@ -1911,6 +1899,18 @@ end
 
 When(/^I click "([^"]+)" in the "([^"]+)" zenity dialog$/) do |button_label, title|
   zenity_dialog_click_button(title, button_label)
+end
+
+def select_path_in_file_chooser(file_chooser, path, button_label: 'Open')
+  assert_equal('file chooser', file_chooser.roleName)
+  try_for(10) do
+    @screen.press('ctrl', 'l')
+    file_chooser.focused_child.roleName == 'text'
+  end
+  file_chooser.focused_child.text = path
+  try_for(10) { file_chooser.button(button_label).sensitive? }
+  file_chooser.button(button_label).click
+  try_for(10) { !file_chooser.showing? }
 end
 
 def nautilus_open_file(filepath, button_label: nil)
