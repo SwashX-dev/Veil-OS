@@ -1935,7 +1935,7 @@ def nautilus_open_file(filepath, button_label: nil)
     @screen.press('Return')
   else
     try_for(10) { nautilus.button(button_label).sensitive? }
-    nautilus.child(button_label).click
+    nautilus.button(button_label).click
   end
 end
 
