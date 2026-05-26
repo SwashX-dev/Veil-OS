@@ -1,12 +1,6 @@
-[Application]
-name=org.boum.tails.Celluloid
-runtime=org.boum.tails.Platform/x86_64/stable
-sdk=org.boum.tails.Platform/x86_64/stable
-command=/usr/bin/celluloid
-
 [Context]
 shared=ipc;
-sockets=wayland;pulseaudio
+sockets=wayland;pulseaudio;
 devices=all;
 filesystems=xdg-run/pipewire-0:ro;xdg-pictures;xdg-run/gvfsd;xdg-run/gvfs;
 
@@ -32,3 +26,10 @@ no-autodownload=true
 
 [Build]
 built-extensions=io.github.celluloid_player.Celluloid.Locale;io.github.celluloid_player.Celluloid.Debug;io.github.celluloid_player.Celluloid.Sources;
+
+[Application]
+name=org.boum.tails.Celluloid
+runtime=org.boum.tails.Platform/x86_64/stable
+sdk=org.boum.tails.Platform/x86_64/stable
+command=/usr/bin/celluloid
+
