@@ -241,10 +241,15 @@ class Window(Gtk.ApplicationWindow):
 
     @Gtk.Template.Callback()
     def on_restart_button_clicked(self, button: Gtk.Button):
-        subprocess.run(
-            ["/usr/bin/sudo", "-n", "/sbin/reboot"],  # noqa: S603
-            check=True,
+        sessionmanager = Gio.DBusProxy.new_for_bus_sync(
+            Gio.BusType.SESSION,
+            Gio.DBusProxyFlags.NONE,
+            None,
+            "org.gnome.SessionManager",
+            "/org/gnome/SessionManager",
+            "org.gnome.SessionManager",
         )
+        sessionmanager.Reboot()
 
     def on_create_call_finished(self, proxy: GObject.Object, res: Gio.AsyncResult):
         try:
