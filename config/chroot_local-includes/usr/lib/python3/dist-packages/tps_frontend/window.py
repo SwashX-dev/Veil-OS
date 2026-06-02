@@ -250,7 +250,10 @@ class Window(Gtk.ApplicationWindow):
             "/org/gnome/SessionManager",
             "org.gnome.SessionManager",
         )
-        sessionmanager.Reboot()
+        try:
+            sessionmanager.Reboot()
+        except GLib.Error:
+            logger.info("Reboot cancelled")
 
     def on_create_call_finished(self, proxy: GObject.Object, res: Gio.AsyncResult):
         try:
