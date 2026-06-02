@@ -3,13 +3,13 @@ import subprocess
 from logging import getLogger
 
 # Only required for type hints
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING
 
 import gi
 from gi.repository import Gio, GLib, GObject, Gtk
+
 from tps import IN_PROGRESS_STATES, InvalidBootDeviceErrorType, State
 from tps.dbus.errors import DBusError, NotEnoughMemoryError, TargetIsBusyError
-
 from tps_frontend import WINDOW_UI_FILE, _
 from tps_frontend.change_passphrase_dialog import ChangePassphraseDialog
 from tps_frontend.error_dialog import ErrorDetails, ErrorDialog
@@ -84,10 +84,10 @@ class Window(Gtk.ApplicationWindow):
         self.refresh_view()
 
         if os.path.isfile(
-            "/var/lib/live/config/tails.disk-partitioning-errors"
+            "/var/lib/live/config/tails.disk-partitioning-errors",
         ) and not self.service_proxy.get_cached_property("IsCreated"):
             subprocess.check_call(
-                ["/usr/local/lib/tails-report-disk-partitioning-errors"]
+                ["/usr/local/lib/tails-report-disk-partitioning-errors"],
             )
             exit(1)
 
@@ -329,7 +329,10 @@ class Window(Gtk.ApplicationWindow):
         dialog.run()
 
     def display_command_failed_error(
-        self, title: str, cmd: list[str], e: subprocess.CalledProcessError
+        self,
+        title: str,
+        cmd: list[str],
+        e: subprocess.CalledProcessError,
     ):
         path = GLib.markup_escape_text(cmd[0])
         msg = f"Command <tt>{path}</tt> failed with exit code {e.returncode}."
