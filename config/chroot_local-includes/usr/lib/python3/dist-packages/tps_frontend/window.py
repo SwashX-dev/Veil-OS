@@ -1,4 +1,5 @@
 import os
+import sys
 import subprocess
 from logging import getLogger
 
@@ -89,7 +90,7 @@ class Window(Gtk.ApplicationWindow):
             subprocess.check_call(
                 ["/usr/local/lib/tails-report-disk-partitioning-errors"],
             )
-            exit(1)
+            sys.exit(1)
 
     def refresh_view(self):
         # Choose which view to show
