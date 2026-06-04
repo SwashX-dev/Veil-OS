@@ -470,13 +470,13 @@ Note that we document why we skip some of the settings in
 ### Import changes from the official Mozilla Firefox Flatpak
 
 It is at least as important to check for changes in the
-`org.mozilla.firefox` flatpak, given that upstream Firefox
+`org.mozilla.firefox` Flatpak, given that upstream Firefox
 improvements land there first and might not trickle down to the Tor
-Browser flatpak. Since Tor Browser is based on the ESR releases some
+Browser Flatpak. Since Tor Browser is based on the ESR releases some
 changes might need to wait until Tor Browser is rebased on a more
 recent version of Firefox.
 
-To see what has changed, either install the flatpak and have a look
+To see what has changed, either install the Flatpak and have a look
 in:
 
     /var/lib/flatpak/app/org.mozilla.firefox/current/active/metadata
