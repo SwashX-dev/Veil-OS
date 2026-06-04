@@ -26,9 +26,12 @@ fi
 
 cd "${TOR_BROWSER_GIT_DIR}"
 
-git diff "${TOR_BROWSER_BASE_REF}".. -- '*' ':!toolkit/locales/' |
-    sed 's@^\(---\|+++\) \([^/]\+\)/browser/components/abouttor/content/@\1 \2/chrome/browser/content/browser/abouttor/@' |
-    sed 's@^\(---\|+++\) \([^/]\+\)/browser/components/abouttor/@\1 \2/actors/@' \
+git diff "${TOR_BROWSER_BASE_REF}".. -- '*' ':!browser/components/abouttor/content/' ':!toolkit/locales/' |
+    sed 's@^\(---\|+++\) \([^/]\+\)/\(browser/components/abouttor\)/@\1 \2/moz-src/\3/@' \
+        >"${TAILS_GIT_REPO}"/config/chroot_local-includes/usr/share/tails/build/custom-about-tor/omni.patch
+
+git diff "${TOR_BROWSER_BASE_REF}".. -- 'browser/components/abouttor/content/' |
+    sed 's@^\(---\|+++\) \([^/]\+\)/browser/components/abouttor/content/@\1 \2/chrome/browser/content/browser/abouttor/@' \
         >"${TAILS_GIT_REPO}"/config/chroot_local-includes/usr/share/tails/build/custom-about-tor/browser-omni.patch
 
 tmp="$(mktemp -d)"
@@ -43,7 +46,7 @@ tmp="$(mktemp -d)"
         git --git-dir="${TOR_BROWSER_GIT_DIR}" show HEAD:"${f}" | sed '/^#/d' \
             >b/"${dirname}/${filename}"
     done
-    diff -Naur a b >"${TAILS_GIT_REPO}"/config/chroot_local-includes/usr/share/tails/build/custom-about-tor/omni.patch || :
+    diff -Naur a b >>"${TAILS_GIT_REPO}"/config/chroot_local-includes/usr/share/tails/build/custom-about-tor/omni.patch || :
 )
 rm -r "${tmp}"
 
