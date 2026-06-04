@@ -12,7 +12,7 @@ for i in $(seq --equal-width 1 20); do
         tbbUrls+=("https://${buildserver}/~"{boklm,ma1,morgan,pierov}'/builds/torbrowser/release/unsigned/')
     fi
 done
-echo "Scanning ${tbbUrls[@]}"
+echo "Scanning " "${tbbUrls[@]}"
 while true; do
     if (
         for u in "${tbbUrls[@]}"; do
