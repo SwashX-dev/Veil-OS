@@ -10,7 +10,7 @@ Feature: Browsing the web using the Tor Browser
     And I capture all network traffic
     When I start the Tor Browser
     And I open a page on the LAN web server in the Tor Browser
-    Then the Tor Browser shows the "Unable to connect" error
+    Then the Tor Browser shows the "Looks like there’s a problem with this site" error
     And no traffic was sent to the web server on the LAN
 
   @check_tor_leaks

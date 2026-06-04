@@ -41,24 +41,21 @@ def browser_save_page_as(*args, **opts)
     roleName:    'button'
   ).press
   browser.child(
-    name:     'Save page as\u2026',
+    name:     'Save Page As\u2026',
     roleName: 'button'
   ).press
   desktop_portal_save_as(*args, **opts)
 end
 
 def browser_url_entry
-  # Unfortunately the Dogtail nodes' names are also translated, so for
-  # non-English we have to use a less efficient and (potentially) less
-  # future-proof way to find the URL entry.
-  if $language.empty? # English
-    browser.child('Navigation', roleName: 'tool bar')
-           .child(roleName: 'entry')
-  else
-    browser.children(roleName: 'tool bar')
-           .find { |n| n.child?(roleName: 'entry', retry: false) }
-           .child(roleName: 'entry')
-  end
+  # Unfortunately the Dogtail nodes' names are also translated, so we
+  # can't filter the tool bar widgets based on the expected name
+  # ("Navigation" in English). Thankfully we have other heuristics.
+  browser.children(roleName: 'tool bar')
+         .find { |tool_bar| tool_bar.child?(roleName: 'panel', retry: false) }
+         .child(roleName: 'panel')
+         .children(roleName: 'combo box')
+         .find { |c| c.children.empty? }
 end
 
 # Get the URL that is currently opened in Tor Browser. If
