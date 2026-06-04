@@ -625,7 +625,8 @@ end
 
 Given /^the Tor Browser has a bookmark to eff.org$/ do
   @screen.press('alt', 'b')
-  @screen.wait('TorBrowserEFFBookmark.png', 10)
+  browser.child('Bookmarks', roleName: 'menu')
+         .child('https://www.eff.org/', roleName: 'menu item')
 end
 
 When /^I can print the current page as "([^"]+[.]pdf)" to the (.*) directory$/ do |output_file, target_dir|
