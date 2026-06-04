@@ -21,7 +21,7 @@ while true; do
         done
     ) | grep -F -e "${TBB_VERSION?}" -e "$(date +%F)" -e "$(date +%F -d yesterday)" --color=always; then
         echo FOUND
-        notify-send "Release dir" 'found'
+        notify-send "Found Tor Browser tarball"
     fi
     sleep 10m
 done
