@@ -79,13 +79,6 @@ end
 
 def set_browser_url(url)
   browser_url_entry.grabFocus
-  try_for(10) do
-    focused = browser.focused_child
-    # Just matching against any entry could be racy if some other
-    # entry had focus when calling this step, but address bar is
-    # probably the only entry inside a tool bar.
-    focused.roleName == 'entry' && focused.parent.parent.parent.roleName == 'tool bar'
-  end
   # We're retrying to workaround #19237.
   #
   # Dogtail's .text= would be a simpler and more robust workaround,
