@@ -1,25 +1,5 @@
-diff --git a/browser/components/abouttor/AboutTorParent.sys.mjs b/browser/components/abouttor/AboutTorParent.sys.mjs
-index 6bf7149917510..f8d50364d0f50 100644
---- a/actors/AboutTorParent.sys.mjs
-+++ b/actors/AboutTorParent.sys.mjs
-@@ -10,6 +10,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
- const initializedActors = new Set();
- const onionizePref = "torbrowser.homepage.search.onionize";
- const surveyDismissVersionPref = "torbrowser.homepage.survey.dismiss_version";
-+const tailsPref = "torbrowser.running_in_tails";
- 
- /**
-  * Actor parent class for the about:tor page.
-@@ -111,6 +112,7 @@ export class AboutTorParent extends JSWindowActorParent {
-       dismissYEC: AboutTorParent.#dismissYEC,
-       toolNum1,
-       toolNum2,
-+      isTails: Services.prefs.getBoolPref(tailsPref, false),
-     };
-   }
- 
 diff --git a/browser/components/abouttor/content/aboutTor.css b/browser/components/abouttor/content/aboutTor.css
-index 28e3a260b7b4b..08b3ba8fc588a 100644
+index 28e3a260b7b4..08b3ba8fc588 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.css
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.css
 @@ -12,6 +12,7 @@ body {
@@ -61,7 +41,7 @@ index 28e3a260b7b4b..08b3ba8fc588a 100644
 +  padding-inline-start: 0;
 +}
 diff --git a/browser/components/abouttor/content/aboutTor.html b/browser/components/abouttor/content/aboutTor.html
-index f79fa9f1b3ea5..1eacf4b27dbf1 100644
+index f79fa9f1b3ea..9ad8a9b25911 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.html
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.html
 @@ -109,7 +109,7 @@
@@ -124,7 +104,7 @@ index f79fa9f1b3ea5..1eacf4b27dbf1 100644
 +        <span data-l10n-id="tails-release-notes">
 +          <a
 +            data-l10n-name="tails-release-notes-link"
-+            href="https://tails.net/news/version_7.9"
++            href="https://tails.net/news/version_7.8.1"
 +            target="_blank"
 +          ></a>
 +        </span>
@@ -134,7 +114,7 @@ index f79fa9f1b3ea5..1eacf4b27dbf1 100644
      <article id="survey" class="tor-home-box" aria-labelledby="survey-heading">
        <img
 diff --git a/browser/components/abouttor/content/aboutTor.js b/browser/components/abouttor/content/aboutTor.js
-index 80c2866584d76..6943c8b4b3d21 100644
+index 80c2866584d7..6943c8b4b3d2 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.js
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.js
 @@ -85,6 +85,7 @@ const MessageArea = {

@@ -1,3 +1,23 @@
+diff --git a/browser/components/abouttor/AboutTorParent.sys.mjs b/browser/components/abouttor/AboutTorParent.sys.mjs
+index 6bf714991751..f8d50364d0f5 100644
+--- a/moz-src/browser/components/abouttor/AboutTorParent.sys.mjs
++++ b/moz-src/browser/components/abouttor/AboutTorParent.sys.mjs
+@@ -10,6 +10,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
+ const initializedActors = new Set();
+ const onionizePref = "torbrowser.homepage.search.onionize";
+ const surveyDismissVersionPref = "torbrowser.homepage.survey.dismiss_version";
++const tailsPref = "torbrowser.running_in_tails";
+ 
+ /**
+  * Actor parent class for the about:tor page.
+@@ -111,6 +112,7 @@ export class AboutTorParent extends JSWindowActorParent {
+       dismissYEC: AboutTorParent.#dismissYEC,
+       toolNum1,
+       toolNum2,
++      isTails: Services.prefs.getBoolPref(tailsPref, false),
+     };
+   }
+ 
 diff -Naur a/localization/en-US/toolkit/global/tor-browser.ftl b/localization/en-US/toolkit/global/tor-browser.ftl
 --- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-06-11 12:09:16.550438776 +0200
 +++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-06-11 12:09:16.558438562 +0200
