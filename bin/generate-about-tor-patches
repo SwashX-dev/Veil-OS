@@ -17,7 +17,7 @@ TOR_BROWSER_GIT_DIR="${1}"/.git
 TOR_BROWSER_BASE_REF="${2}"
 
 if ! git --git-dir="${TOR_BROWSER_GIT_DIR}" status >/dev/null; then
-    error "error: ${1} is no a Git directory"
+    error "error: ${1} is not a Git directory"
 fi
 
 if [ -z "${TAILS_GIT_REPO:-}" ]; then
