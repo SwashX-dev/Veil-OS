@@ -21,6 +21,7 @@ def main():
         "-c",
         f". /usr/local/lib/tails-shell-library/tor-browser.sh && \
         export TOR_TRANSPROXY=1 && \
+        export TOR_PROVIDER=none && \
         export MOZ_ENABLE_WAYLAND=1 && \
         exec_firefox_helper firefox.unsafe-browser \
            --name '{args.wm_class}' \
