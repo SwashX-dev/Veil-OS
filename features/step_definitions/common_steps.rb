@@ -919,15 +919,21 @@ end
 When /^I request a (shutdown|reboot) using the system menu$/ do |action|
   gnome_shell = Dogtail::Application.new('gnome-shell')
   toggle_gnome_system_menu
+
+  # Open the relevant submenu
+  gnome_shell.child('Power Off Menu').click
+
   menu_item_name = if action == 'shutdown'
                      'Power Off'
                    else
                      'Restart'
                    end
-  # If we .click() using Dogtail we risk losing the connection with
-  # the remote shell before it sends the response, leading to a
-  # time-consuming RemoteShell::Timeout.
-  @screen.click(*gnome_shell.child(menu_item_name, roleName: 'label').position)
+  gnome_shell.child("#{menu_item_name}…", roleName: 'label').click
+
+  gnome_shell.child(menu_item_name, roleName: 'button')
+  @screen.press('tab')
+  sleep 1
+  @screen.press('return')
 end
 
 When /^I warm reboot the computer$/ do
