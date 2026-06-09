@@ -154,14 +154,14 @@ end
 
 Given /^I (connect|disconnect) the network through GNOME$/ do |action|
   toggle_gnome_system_menu
-  Dogtail::Application.new('gnome-shell')
-                      .child('Wired', roleName: 'label')
-                      .parent.parent.parent.parent
-                      .child('Open menu', roleName: 'button')
-                      .click
-  Dogtail::Application.new('gnome-shell')
-                      .child(action.capitalize, roleName: 'label')
-                      .click
+  gnome_shell
+    .child('Wired', roleName: 'label')
+    .parent.parent.parent.parent
+    .child('Open menu', roleName: 'button')
+    .click
+  gnome_shell
+    .child(action.capitalize, roleName: 'label')
+    .click
   toggle_gnome_system_menu
 end
 
@@ -810,20 +810,20 @@ Given /^I enter the sudo password in the GNOME authentication prompt$/ do
 end
 
 def gnome_shell_unlock_dialog(title = 'Authentication Required')
-  d = Dogtail::Application.new('gnome-shell')
-                          .child(title, roleName: 'label')
-                          .parent.parent.parent.parent.parent.parent.parent
+  d = gnome_shell
+      .child(title, roleName: 'label')
+      .parent.parent.parent.parent.parent.parent.parent
   assert_equal('dialog', d.roleName)
   d
 end
 
 def gnome_shell_unlock_dialog?(title = 'Authentication Required')
-  Dogtail::Application.new('gnome-shell')
-                      .child?(
-                        title,
-                        roleName: 'label',
-                        retry:    false
-                      )
+  gnome_shell
+    .child?(
+      title,
+      roleName: 'label',
+      retry:    false
+    )
 end
 
 def deal_with_polkit_prompt(password, **opts)
@@ -909,9 +909,9 @@ Given /^I shutdown Tails and wait for the computer to power off$/ do
 end
 
 def open_gnome_menu(name)
-  Dogtail::Application.new('gnome-shell')
-                      .child(name, roleName: 'menu')
-                      .click
+  gnome_shell
+    .child(name, roleName: 'menu')
+    .click
 end
 
 def toggle_gnome_system_menu

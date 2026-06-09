@@ -96,10 +96,10 @@ Then /^the system clock is less than (\d+) minutes incorrect$/ do |max_diff_mins
 end
 
 def displayed_time_str
-  Dogtail::Application.new('gnome-shell')
-                      .child('\w+\s+\w+\s+\d+\s+\d+:\d+.*',
-                             roleName: 'label')
-                      .name
+  gnome_shell
+    .child('\w+\s+\w+\s+\d+\s+\d+:\d+.*',
+           roleName: 'label')
+    .name
 end
 
 Then /^the displayed clock is less than (\d+) minutes incorrect in "([^"]*)"/ do |max_diff_mins, timezone_offset|
