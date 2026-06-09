@@ -267,9 +267,6 @@ Per-app caveats
 
 - Tor Browser: see [[application_isolation#tor-browser]].
 
-- Totem: the AppArmor sandbox is ineffective due to D-Bus session and dconf access;
-  we have plans to fix that ([[!tails_ticket 7929]]).
-
 - Unsafe Browser: see [[design/Unsafe_Browser]].
 
 - Everything else: other apps generally run unconfined, which is a problem as well.
