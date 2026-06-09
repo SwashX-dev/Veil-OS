@@ -636,9 +636,12 @@ When /^I (don't )?see the "(.+)" notification(?: after at most (\d+) seconds)?$/
   end
 end
 
+def gnome_shell
+  Dogtail::Application.new('gnome-shell')
+end
+
 def wait_notification(title, timeout)
   timeout = timeout&.to_i
-  gnome_shell = Dogtail::Application.new('gnome-shell')
   notification_list = gnome_shell.child(
     'No Notifications', roleName: 'label', showingOnly: false
   ).parent.parent
@@ -760,7 +763,6 @@ Given /^available upgrades have been checked$/ do
 end
 
 Given /^all notifications have disappeared$/ do
-  gnome_shell = Dogtail::Application.new('gnome-shell')
   retry_action(10, recovery_proc: proc { @screen.press('Escape') }) do
     @screen.press('super', 'v') # Show the notification list
     gnome_shell.child('Do Not Disturb',
@@ -916,10 +918,11 @@ def toggle_gnome_system_menu
   open_gnome_menu('System')
 end
 
-When /^I request a (shutdown|reboot) using the system menu$/ do |action|
-  gnome_shell = Dogtail::Application.new('gnome-shell')
+When /^I (?:open|close) the system menu$/ do
   toggle_gnome_system_menu
+end
 
+When /^I request a (shutdown|reboot) using the system menu$/ do |action|
   # Open the relevant submenu
   gnome_shell.child('Power Off Menu').click
 
@@ -934,6 +937,16 @@ When /^I request a (shutdown|reboot) using the system menu$/ do |action|
   @screen.press('tab')
   sleep 1
   @screen.press('return')
+end
+
+Then(/^the logout button is not visible$/) do
+  gnome_shell.child('Power Off Menu').click
+  # It's tempting to use gnome_shell.child("Log Out…"), but since we don't have an
+  # anti-test which could make us aware if the string provided by gnome-shell ever
+  # changes, let's make the matching a bit more fuzzy.
+  labels = gnome_shell.children(roleName: 'label')
+  matching = labels.select { |n| n.name&.start_with?('Log') }.map(&:name)
+  assert_empty(matching, "The #{matching.join(', ')} labels are visible")
 end
 
 When /^I warm reboot the computer$/ do
