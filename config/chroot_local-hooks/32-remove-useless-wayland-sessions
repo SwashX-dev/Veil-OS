@@ -2,11 +2,11 @@
 
 set -eu
 
-echo "Remove wayland sessions we don't use"
+echo "Remove Wayland sessions we don't use"
 
 # This script will remove every other session that is not used by Tails.  That's not only because they are
 # irrelevant: they actually create a bug.  In fact, when there are multiple sessions, GNOME will propose the
-# user to logout(see _updateLogout() in gnome-shell). This doesn't make sense in Tails, so we want to hide
+# user to logout (see _updateLogout() in gnome-shell). This doesn't make sense in Tails, so we want to hide
 # this button.
 # This script, combined with the logic in _updateLogout, will make sure this is the case.
 
