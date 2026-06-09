@@ -933,9 +933,18 @@ When /^I request a (shutdown|reboot) using the system menu$/ do |action|
                    end
   gnome_shell.child("#{menu_item_name}…", roleName: 'label').click
 
-  gnome_shell.child(menu_item_name, roleName: 'button')
-  @screen.press('tab')
-  sleep 1
+  confirm_button = gnome_shell.child(menu_item_name, roleName: 'button')
+
+  # Using grabFocus doesn't seem to work, so let's press tab instead
+  retry_action(10, recovery_proc: proc { @screen.press('tab') }) do
+    unless confirm_button.focused?
+      throw 'Not focused'
+    end
+  end
+
+  # If we confirm_button.click() using Dogtail we risk losing the connection with
+  # the remote shell before it sends the response, leading to a
+  # time-consuming RemoteShell::Timeout.
   @screen.press('return')
 end
 
