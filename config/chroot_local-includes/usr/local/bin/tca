@@ -8,7 +8,6 @@ set -eu
 export TEXTDOMAIN='tails'
 
 if ! tails_network_enabled; then
-    local dialog_title dialog_text
     dialog_title=$(gettext "Tor Connection")
     dialog_text=$(gettext "You turned on Offline Mode in the Welcome Screen.
 It is impossible to connect to Tor in Offline Mode.
