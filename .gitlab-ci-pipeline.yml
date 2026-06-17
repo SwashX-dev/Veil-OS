@@ -24,8 +24,11 @@ workflow:
   image-sid: &image-sid "containers.torproject.org/tpo/tpa/base-images/debian:sid"
 
   # Some tests specifically need to use the same Debian suite as a Tails built
-  # from this branch.  To ensure this, those jobs must set `image: *current-suite-image`.
-  current-suite-image: &current-suite-image "containers.torproject.org/tpo/tpa/base-images/debian:trixie"
+  # from this branch.  To ensure this, those jobs must set `image:` to one of
+  # these *current-suite-*-image:
+  current-suite-debian-image: &current-suite-debian-image "containers.torproject.org/tpo/tpa/base-images/debian:trixie"
+  current-suite-golang-image: &current-suite-golang-image "containers.torproject.org/tpo/tpa/base-images/golang:trixie"
+  current-suite-python-image: &current-suite-python-image "containers.torproject.org/tpo/tpa/base-images/python:trixie"
 
 image: *image-trixie
 
@@ -103,7 +106,6 @@ deploy-website:
       - SSH_SERVER: www2.chameleon
         SSH_PORT: 22
   script:
-    - apt-get install -y openssh-client rsync
     - test -e .ssh || mkdir .ssh
     - cp "$WEBSITE_DEPLOY_SSH_PRIVATE_KEY" .ssh/private_key
     - cp "$WEBSITE_DEPLOY_SSH_KNOWN_HOSTS" .ssh/known_hosts
@@ -116,7 +118,7 @@ deploy-website:
     - rsync --rsh="ssh -p ${SSH_PORT} -o UserKnownHostsFile=.ssh/known_hosts -i .ssh/private_key" --checksum --archive --no-times --verbose --mkpath --delete "config/chroot_local-includes/usr/share/doc/tails/website/" www-data@${SSH_SERVER}:/
 
 lint-po:
-  image: *image-trixie
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -129,6 +131,7 @@ lint-po:
     - /tmp/jenkins-tools/slaves/lint_po
 
 avoid-gtk-launch:
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   script:
     - apt-get -qy install --no-install-recommends python3 git
     - ./bin/test-utils/gtk-launch
@@ -144,9 +147,8 @@ git-history:
     - ./bin/test-utils/check-git-history "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
 
 codespell:
-  image: *image-trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/codespell:trixie
   script:
-    - apt-get -qy install codespell
     - codespell --version
     - codespell
 
@@ -158,10 +160,9 @@ ruff-lint-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: *image-sid
+  image: registry.gitlab.tails.boum.org/tails/container-images/ruff:sid
 
   script:
-    - apt-get -qy install ruff findutils git python3
     - ruff --version
     - git fetch origin "${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
     - ./bin/test-utils/ruff "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}" check --output-format=junit --output-file=ruff.xml
@@ -178,21 +179,21 @@ ruff-format-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: *image-sid
+  image: registry.gitlab.tails.boum.org/tails/container-images/ruff:sid
 
   script:
-    - apt-get -qy install ruff findutils git python3
     - ruff --version
     - git fetch origin "${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
     - ./bin/test-utils/ruff "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}" format --check
 
 check-isolated-python:
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   script:
     - apt-get -qy install git python3-sh
     - ./bin/test-utils/check-isolated-python
 
 check-udfs-signatures:
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
     - apt-get -qy install python3 python3-debian sqopv
     - export VERSION=$(python3 -c 'from debian.changelog import Changelog; print(Changelog(open("debian/changelog"))[0].version)')
@@ -205,6 +206,7 @@ check-website-core-pages:
     - ./bin/check-core-pages
 
 check-po-msgfmt:
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -216,6 +218,7 @@ check-po-msgfmt:
     - ./bin/check-po-msgfmt
 
 check-po-meta-date:
+  image: registry.gitlab.tails.boum.org/tails/container-images/ruby:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -227,18 +230,20 @@ check-po-meta-date:
     - ./bin/sanity-check-website
 
 check-translatable-live-website-urls:
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   script:
     - apt-get -qy install python3-polib
     - ./bin/check-translatable-live-website-urls po/tails.pot
 
 check-locale-descriptions:
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   script:
     - apt-get -qy install python3 python3-requests python3-toml python3-bs4
     - echo 'If this fails, look at https://tails.net/contribute/release_process/update_locale_descriptions/'
     - ./bin/locale-descriptions suggest
 
 rubocop:
-  image: *image-trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/ruby:trixie
   script:
   - apt-get -qy install rubocop
   - rubocop --version
@@ -251,14 +256,14 @@ rubocop:
 test-iuk:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-debian-image
   script:
   - './bin/test-utils/test-iuk'
 
 test-perl5lib:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-debian-image
   script:
   - 'cat config/chroot_local-packageslists/tails-perl5lib.list
        | grep -E -v "^#"
@@ -278,7 +283,7 @@ test-perl5lib:
   - dzil test --all
 
 shellcheck:
-  image: *image-trixie
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   script:
   - apt-get -qy install python3 shellcheck xmlstarlet git
   - shellcheck --version
@@ -298,7 +303,7 @@ shfmt-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: *image-sid
+  image: containers.torproject.org/tpo/tpa/base-images/python:sid
 
   script:
     - apt-get -qy install shfmt findutils git python3
@@ -307,13 +312,13 @@ shfmt-changed-files:
     - ./bin/test-utils/shfmt -s "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
 
 test-persistent-storage-config-file:
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
     - apt-get -qy install python3 python3-gi acl e2fsprogs
     - python3 config/chroot_local-includes/usr/lib/python3/dist-packages/tps/configuration/config_file_test.py
 
 test-python-doctest:
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
     - apt-get -qy install python3 python3-sh python3-toml python3-requests python3-bs4
     - config/chroot_local-includes/usr/local/lib/tails-gdm-error-message doctest --verbose
@@ -325,7 +330,7 @@ test-python-doctest:
 test-tca:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
     - 'cat config/chroot_local-packageslists/tor-connection-assistant.list
        | grep -E -v "^#"
@@ -335,7 +340,7 @@ test-tca:
 test-tca-portal:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
     - 'cat config/chroot_local-packageslists/tor-connection-assistant.list
        | grep -E -v "^#"
@@ -346,7 +351,7 @@ test-tca-portal:
 test-tailslib:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
     - apt-get -qy install python3 python3-atomicwrites python3-setuptools python3-sh python3-gi git
     - |
@@ -359,7 +364,7 @@ test-tailslib:
 test-whisperback:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
     - 'cat config/chroot_local-packageslists/whisperback.list | grep -E -v "^#"
          | xargs apt-get -qy install'
@@ -373,6 +378,7 @@ test-whisperback:
       junit: report.xml
 
 test-ci-configuration:
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   variables:
     GIT_STRATEGY: clone
     # GIT_DEPTH=0 disables shallow cloning, see
@@ -442,7 +448,7 @@ check-target-branch-for-rm-config-change:
     - exit 1
 
 https-get-expired:
-  image: *current-suite-image
+  image: *current-suite-golang-image
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^stable|testing|devel$/'
     - changes:
