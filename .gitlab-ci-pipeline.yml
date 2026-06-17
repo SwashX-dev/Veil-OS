@@ -137,13 +137,13 @@ avoid-gtk-launch:
     - ./bin/test-utils/gtk-launch
 
 git-history:
+  image: containers.torproject.org/tpo/tpa/base-images/git:trixie
   only:
     - merge_requests
   variables:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
   script:
-    - apt-get -qy install --no-install-recommends git
     - ./bin/test-utils/check-git-history "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
 
 codespell:
@@ -201,8 +201,8 @@ check-udfs-signatures:
     - ./bin/check-udfs-signature
 
 check-website-core-pages:
+  image: containers.torproject.org/tpo/tpa/base-images/git:trixie
   script:
-    - apt-get -qy install --no-install-recommends git
     - ./bin/check-core-pages
 
 check-po-msgfmt:
@@ -396,8 +396,8 @@ test-ci-configuration:
       junit: report.xml
 
 apt-snapshots-expiry:
+  image: containers.torproject.org/tpo/tpa/base-images/git:trixie
   script:
-    - apt-get -qy install --no-install-recommends curl git
     - ./bin/apt-snapshots-expiry
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^stable|testing|devel$/'
