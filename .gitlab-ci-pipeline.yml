@@ -405,27 +405,6 @@ apt-snapshots-expiry:
         - config/APT_snapshots.d/*/serial
         - vagrant/definitions/tails-builder/config/APT_snapshots.d/*/serial
 
-.install-https-get-expired-build-deps: &install-https-get-expired-build-deps
-  - apt-get -qy install --no-install-recommends golang-go golang-src ca-certificates binutils
-
-.build-https-get-expired: &build-https-get-expired
-  - env PREFIX=config/chroot_local-includes ./config/chroot_local-includes/usr/local/lib/build-https-accept-expired
-
-.test-https-get-expired: &test-https-get-expired
-  - echo "Basic check:"
-  - ./https-get-expired -reject-expired https://tails.net/
-  - echo "Let's pretend we are in the past. Then, this certificate is still good."
-  - ./https-get-expired -current-time 2000-01-01 -reject-expired https://tails.net/
-  - echo "Let's pretend we are in the future. Then, this certificate is expired"
-  - "! ./https-get-expired -current-time 2090-01-01 -reject-expired https://tails.net/"
-  - "! ./https-get-expired -reject-expired https://wrong.host.badssl.com/"
-  - "! ./https-get-expired -reject-expired https://self-signed.badssl.com/"
-  - "! ./https-get-expired -reject-expired https://untrusted-root.badssl.com/"
-  - "! ./https-get-expired -reject-expired https://expired.badssl.com/"
-  - echo "Invalid host"
-  - "! ./https-get-expired -reject-expired https://nxdomain.tails.net/"
-  - "./bin/test-utils/https-get-expired-test-all"
-
 check-target-branch-for-rm-config-change:
   rules:
     - if: $CI_PIPELINE_SOURCE != "merge_request_event"
@@ -456,9 +435,21 @@ https-get-expired:
         - config/chroot_local-includes/etc/default/htpdate.pools
         - config/chroot_local-includes/usr/local/lib/build-https-accept-expired
   script:
-    - *install-https-get-expired-build-deps
-    - *build-https-get-expired
-    - *test-https-get-expired
+    - apt-get -qy install --no-install-recommends golang-go golang-src ca-certificates binutils
+    - env PREFIX=config/chroot_local-includes ./config/chroot_local-includes/usr/local/lib/build-https-accept-expired
+    - echo "Basic check:"
+    - ./https-get-expired -reject-expired https://tails.net/
+    - echo "Let's pretend we are in the past. Then, this certificate is still good."
+    - ./https-get-expired -current-time 2000-01-01 -reject-expired https://tails.net/
+    - echo "Let's pretend we are in the future. Then, this certificate is expired"
+    - "! ./https-get-expired -current-time 2090-01-01 -reject-expired https://tails.net/"
+    - "! ./https-get-expired -reject-expired https://wrong.host.badssl.com/"
+    - "! ./https-get-expired -reject-expired https://self-signed.badssl.com/"
+    - "! ./https-get-expired -reject-expired https://untrusted-root.badssl.com/"
+    - "! ./https-get-expired -reject-expired https://expired.badssl.com/"
+    - echo "Invalid host"
+    - "! ./https-get-expired -reject-expired https://nxdomain.tails.net/"
+    - "./bin/test-utils/https-get-expired-test-all"
 
 Ensure MR from stable into devel:
   rules:
