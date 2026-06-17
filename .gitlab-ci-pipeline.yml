@@ -302,10 +302,9 @@ shfmt-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: containers.torproject.org/tpo/tpa/base-images/python:sid
+  image: registry.gitlab.tails.boum.org/tails/container-images/shfmt:sid
 
   script:
-    - apt-get -qy install --no-install-recommends shfmt findutils git ca-certificates python3
     - shfmt --version
     - git fetch origin "${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
     - ./bin/test-utils/shfmt -s "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
