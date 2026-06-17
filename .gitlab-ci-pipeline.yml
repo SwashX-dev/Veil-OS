@@ -28,6 +28,7 @@ workflow:
   # these *current-suite-*-image:
   current-suite-debian-image: &current-suite-debian-image "containers.torproject.org/tpo/tpa/base-images/debian:trixie"
   current-suite-golang-image: &current-suite-golang-image "containers.torproject.org/tpo/tpa/base-images/golang:trixie"
+  current-suite-perl-image: &current-suite-perl-image "registry.gitlab.tails.boum.org/tails/container-images/perl:trixie"
   current-suite-python-image: &current-suite-python-image "containers.torproject.org/tpo/tpa/base-images/python:trixie"
   current-suite-python-git-image: &current-suite-python-git-image "registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie"
 
@@ -255,14 +256,14 @@ rubocop:
 test-iuk:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-debian-image
+  image: *current-suite-perl-image
   script:
   - './bin/test-utils/test-iuk'
 
 test-perl5lib:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-debian-image
+  image: *current-suite-perl-image
   script:
   - 'cat config/chroot_local-packageslists/tails-perl5lib.list
        | grep -E -v "^#"
