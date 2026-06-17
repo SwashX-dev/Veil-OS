@@ -29,6 +29,7 @@ workflow:
   current-suite-debian-image: &current-suite-debian-image "containers.torproject.org/tpo/tpa/base-images/debian:trixie"
   current-suite-golang-image: &current-suite-golang-image "containers.torproject.org/tpo/tpa/base-images/golang:trixie"
   current-suite-python-image: &current-suite-python-image "containers.torproject.org/tpo/tpa/base-images/python:trixie"
+  current-suite-python-git-image: &current-suite-python-git-image "registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie"
 
 image: *image-trixie
 
@@ -349,9 +350,9 @@ test-tca-portal:
 test-tailslib:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-python-image
+  image: *current-suite-python-git-image
   script:
-    - apt-get -qy install --no-install-recommends python3 python3-atomicwrites python3-setuptools python3-sh python3-gi git
+    - apt-get -qy install --no-install-recommends python3-atomicwrites python3-setuptools python3-sh python3-gi
     - |
       cd config/chroot_local-includes/usr/lib/python3/dist-packages
       find tailslib -name "*.py" -print0 |
