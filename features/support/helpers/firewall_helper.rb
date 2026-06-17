@@ -79,7 +79,10 @@ def pcap_connections_helper(pcap_file,
   p = IO.popen(cmd)
   output = p.read
   p.close
-  assert_equal(0, $CHILD_STATUS.exitstatus, 'tshark exited with and error')
+  assert(
+    $CHILD_STATUS.success?,
+    "tshark exited with error code #{$CHILD_STATUS.exitstatus}"
+  )
   connections = JSON.parse(output).map do |entry|
     connection_info(entry['_source']['layers'])
   end
