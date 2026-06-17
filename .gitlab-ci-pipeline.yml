@@ -435,7 +435,7 @@ https-get-expired:
         - config/chroot_local-includes/etc/default/htpdate.pools
         - config/chroot_local-includes/usr/local/lib/build-https-accept-expired
   script:
-    - apt-get -qy install --no-install-recommends golang-go golang-src ca-certificates binutils
+    - apt-get -qy install --no-install-recommends binutils
     - env PREFIX=config/chroot_local-includes ./config/chroot_local-includes/usr/local/lib/build-https-accept-expired
     - echo "Basic check:"
     - ./https-get-expired -reject-expired https://tails.net/
