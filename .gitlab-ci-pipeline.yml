@@ -39,6 +39,8 @@ variables:
 
 before_script:
   - export DEBIAN_FRONTEND=noninteractive
+
+.apt-update: &apt-update
   - apt-get update -qq
 
 build-website:
@@ -128,6 +130,7 @@ lint-po:
         - .gitlab-ci-pipeline.yml
         - ./**.po
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends i18nspector
     - git clone https://gitlab.tails.boum.org/tails/jenkins-tools.git /tmp/jenkins-tools
     - /tmp/jenkins-tools/slaves/lint_po
@@ -190,12 +193,14 @@ ruff-format-changed-files:
 check-isolated-python:
   image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends python3-sh
     - ./bin/test-utils/check-isolated-python
 
 check-udfs-signatures:
   image: *current-suite-python-image
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends python3 python3-debian sqopv
     - export VERSION=$(python3 -c 'from debian.changelog import Changelog; print(Changelog(open("debian/changelog"))[0].version)')
     - echo "${VERSION:?}"
@@ -215,6 +220,7 @@ check-po-msgfmt:
         - .gitlab-ci-pipeline.yml
         - ./**.po
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends gettext
     - ./bin/check-po-msgfmt
 
@@ -232,12 +238,14 @@ check-po-meta-date:
 check-translatable-live-website-urls:
   image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends python3-polib
     - ./bin/check-translatable-live-website-urls po/tails.pot
 
 check-locale-descriptions:
   image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends python3-requests python3-toml python3-bs4
     - echo 'If this fails, look at https://tails.net/contribute/release_process/update_locale_descriptions/'
     - ./bin/locale-descriptions suggest
@@ -245,6 +253,7 @@ check-locale-descriptions:
 rubocop:
   image: registry.gitlab.tails.boum.org/tails/container-images/ruby:trixie
   script:
+  - *apt-update
   - apt-get -qy install --no-install-recommends rubocop
   - rubocop --version
   - rubocop --format junit --out rubocop.xml --format markdown
@@ -258,6 +267,7 @@ test-iuk:
     - if: '$CI_COMMIT_BRANCH != "master"'
   image: *current-suite-perl-image
   script:
+  - *apt-update
   - './bin/test-utils/test-iuk'
 
 test-perl5lib:
@@ -265,6 +275,7 @@ test-perl5lib:
     - if: '$CI_COMMIT_BRANCH != "master"'
   image: *current-suite-perl-image
   script:
+  - *apt-update
   - 'cat config/chroot_local-packageslists/tails-perl5lib.list
        | grep -E -v "^#"
        | xargs apt-get -qy install --no-install-recommends'
@@ -285,6 +296,7 @@ test-perl5lib:
 shellcheck:
   image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   script:
+  - *apt-update
   - apt-get -qy install --no-install-recommends shellcheck xmlstarlet
   - shellcheck --version
   - 'git ls-files -z | ./bin/test-utils/is-file-type filter --zero shell | xargs --verbose --no-run-if-empty -0 shellcheck --format=checkstyle
@@ -313,12 +325,14 @@ shfmt-changed-files:
 test-persistent-storage-config-file:
   image: *current-suite-python-image
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends python3-gi acl e2fsprogs
     - python3 config/chroot_local-includes/usr/lib/python3/dist-packages/tps/configuration/config_file_test.py
 
 test-python-doctest:
   image: *current-suite-python-image
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends python3-sh python3-toml python3-requests python3-bs4
     - config/chroot_local-includes/usr/local/lib/tails-gdm-error-message doctest --verbose
     - env PYTHONPATH=config/chroot_local-includes/usr/lib/python3/dist-packages python3 config/chroot_local-includes/usr/local/bin/tails-documentation --doctest
@@ -331,6 +345,7 @@ test-tca:
     - if: '$CI_COMMIT_BRANCH != "master"'
   image: *current-suite-python-image
   script:
+    - *apt-update
     - 'cat config/chroot_local-packageslists/tor-connection-assistant.list
        | grep -E -v "^#"
        | xargs apt-get -qy install --no-install-recommends'
@@ -341,6 +356,7 @@ test-tca-portal:
     - if: '$CI_COMMIT_BRANCH != "master"'
   image: *current-suite-python-image
   script:
+    - *apt-update
     - 'cat config/chroot_local-packageslists/tor-connection-assistant.list
        | grep -E -v "^#"
        | xargs apt-get -qy install --no-install-recommends'
@@ -352,6 +368,7 @@ test-tailslib:
     - if: '$CI_COMMIT_BRANCH != "master"'
   image: *current-suite-python-git-image
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends python3-atomicwrites python3-setuptools python3-sh python3-gi
     - |
       cd config/chroot_local-includes/usr/lib/python3/dist-packages
@@ -365,6 +382,7 @@ test-whisperback:
     - if: '$CI_COMMIT_BRANCH != "master"'
   image: *current-suite-python-image
   script:
+    - *apt-update
     - 'cat config/chroot_local-packageslists/whisperback.list | grep -E -v "^#"
          | xargs apt-get -qy install --no-install-recommends'
     - apt-get -qy install --no-install-recommends python3-pytest
@@ -384,6 +402,7 @@ test-ci-configuration:
     # https://docs.gitlab.com/ci/pipelines/settings/#limit-the-number-of-changes-fetched-during-clone
     GIT_DEPTH: 0
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends python3-pydantic python3-pytest
     # pytest can't test files whose extension is not ".py", let's give it what it wants
     - cp bin/ci-configuration bin/ci-configuration.py
@@ -436,6 +455,7 @@ https-get-expired:
         - config/chroot_local-includes/etc/default/htpdate.pools
         - config/chroot_local-includes/usr/local/lib/build-https-accept-expired
   script:
+    - *apt-update
     - apt-get -qy install --no-install-recommends binutils
     - env PREFIX=config/chroot_local-includes ./config/chroot_local-includes/usr/local/lib/build-https-accept-expired
     - echo "Basic check:"
