@@ -17,6 +17,16 @@ def connection_info(packet)
     fields.each do |field|
       next unless packet[field]
 
+      # tshark always puts values in an array, even for fields that
+      # only can have one value. So far all fields we use should only
+      # have a single value, so let's sanity-check that. Note that
+      # dns.qry.name could have more than one value because DNS
+      # queries support multiple questions according to the spec, but
+      # it's agreed on that that was a mistake so in practice DNS
+      # servers (like bind9) reject requests with multiple questions,
+      # and resolvers are similarly restricted to issuing one question
+      # per request.
+      assert_equal(1, packet[field].size)
       val = packet[field].first
       val = convert_proc.call(val) if convert_proc
       connection[key] = val
