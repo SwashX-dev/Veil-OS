@@ -40,7 +40,10 @@ def pcap_connections_helper(pcap_file,
                'eth.dst == ff:ff:ff:ff:ff:ff and ' \
                'ip.dst == 255.255.255.255)'
   end
-  # Also ignores Neighbor Discovery Protocol
+  # Router solicitation has type 133, Neighbor solicitation has type
+  # 135, Neighbor advertisement has type 136. We don't ignore Router
+  # Advertisement (type 134) since the system under testing is not a
+  # router, so these would be unexpected and we want to know about it.
   filters << '!(icmpv6.type in {133, 135, 136})' if ignore_slaac
   ignore_sources.each do |source|
     filters << "!(eth.src == #{source})"
