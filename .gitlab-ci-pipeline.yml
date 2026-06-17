@@ -118,7 +118,7 @@ deploy-website:
     - rsync --rsh="ssh -p ${SSH_PORT} -o UserKnownHostsFile=.ssh/known_hosts -i .ssh/private_key" --checksum --archive --no-times --verbose --mkpath --delete "config/chroot_local-includes/usr/share/doc/tails/website/" www-data@${SSH_SERVER}:/
 
 lint-po:
-  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -126,14 +126,13 @@ lint-po:
         - .gitlab-ci-pipeline.yml
         - ./**.po
   script:
-    - apt-get -qy install --no-install-recommends git ca-certificates i18nspector
+    - apt-get -qy install --no-install-recommends i18nspector
     - git clone https://gitlab.tails.boum.org/tails/jenkins-tools.git /tmp/jenkins-tools
     - /tmp/jenkins-tools/slaves/lint_po
 
 avoid-gtk-launch:
-  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   script:
-    - apt-get -qy install --no-install-recommends git
     - ./bin/test-utils/gtk-launch
 
 git-history:
@@ -187,9 +186,9 @@ ruff-format-changed-files:
     - ./bin/test-utils/ruff "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}" format --check
 
 check-isolated-python:
-  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   script:
-    - apt-get -qy install --no-install-recommends git python3-sh
+    - apt-get -qy install --no-install-recommends python3-sh
     - ./bin/test-utils/check-isolated-python
 
 check-udfs-signatures:
@@ -226,7 +225,6 @@ check-po-meta-date:
         - .gitlab-ci-pipeline.yml
         - ./**.po
   script:
-    - apt-get -qy install --no-install-recommends git
     - ./bin/sanity-check-website
 
 check-translatable-live-website-urls:
@@ -283,9 +281,9 @@ test-perl5lib:
   - dzil test --all
 
 shellcheck:
-  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   script:
-  - apt-get -qy install --no-install-recommends shellcheck xmlstarlet git
+  - apt-get -qy install --no-install-recommends shellcheck xmlstarlet
   - shellcheck --version
   - 'git ls-files -z | ./bin/test-utils/is-file-type filter --zero shell | xargs --verbose --no-run-if-empty -0 shellcheck --format=checkstyle
        | xmlstarlet tr config/ci/shellcheck/checkstyle2junit.xslt
@@ -378,14 +376,14 @@ test-whisperback:
       junit: report.xml
 
 test-ci-configuration:
-  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   variables:
     GIT_STRATEGY: clone
     # GIT_DEPTH=0 disables shallow cloning, see
     # https://docs.gitlab.com/ci/pipelines/settings/#limit-the-number-of-changes-fetched-during-clone
     GIT_DEPTH: 0
   script:
-    - apt-get -qy install --no-install-recommends python3-pydantic python3-pytest git
+    - apt-get -qy install --no-install-recommends python3-pydantic python3-pytest
     # pytest can't test files whose extension is not ".py", let's give it what it wants
     - cp bin/ci-configuration bin/ci-configuration.py
     - 'pytest-3 --verbose --junit-xml=report.xml
