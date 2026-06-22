@@ -5,9 +5,12 @@ import json
 import logging
 import re
 import sys
+import time
 from pathlib import Path
 
 import requests
+
+HTTP_TOO_MANY_REQUESTS = 429
 
 
 class CveFetcher:
@@ -110,10 +113,15 @@ class CveFetcher:
         if not self.args.overwrite and fpath.exists():
             self.log.debug("%s already downloaded, skipping", cve)
             return
-        resp = session.get(self.baseurl, params={"cveId": cve}, timeout=30)
+        resp = session.get(self.baseurl, params={"cveId": cve}, timeout=(3, 10))
         if not resp.ok:
-            self.log.warning("Could not fetch %s", cve)
-            return
+            if resp.status_code == HTTP_TOO_MANY_REQUESTS:
+                self.log.warning("Could not fetch %s, rate limited", cve)
+                time.sleep(4)
+                return
+            else:
+                self.log.warning("Could not fetch %s", cve)
+                return
         content = resp.json()  # check if json is valid
         try:
             cve_content = content["vulnerabilities"][0]["cve"]
