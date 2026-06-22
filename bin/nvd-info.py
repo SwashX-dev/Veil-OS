@@ -163,10 +163,9 @@ class CveFetcher:
             english_descriptions = [
                 d["value"] for d in all_descriptions if d["lang"] == "en"
             ]
-            if english_descriptions:
-                description = "\n".join(english_descriptions)
-            else:
-                description = "\n".join(all_descriptions)
+            description = "\n".join(
+                english_descriptions if english_descriptions else all_descriptions,
+            )
             if self.args.description.search(description) is None:
                 return False
 
