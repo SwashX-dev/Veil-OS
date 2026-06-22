@@ -119,7 +119,19 @@ class CveFetcher:
         if not self.args.overwrite and fpath.exists():
             self.log.debug("%s already downloaded, skipping", cve)
             return
-        resp = session.get(self.baseurl, params={"cveId": cve}, timeout=(3, 10))
+        try:
+            # The whole reason to do a prepared request is being able to print the
+            # actual url we're using. In fact, if an apiKey is set, there will be
+            # additional parameters to the request
+            request = requests.Request('GET', self.baseurl, params={"cveId": cve})
+            prepped = session.prepare_request(request)
+            logging.debug("GET %s", prepped.url)
+            resp = session.send(prepped, timeout=(3, 10))
+        except requests.Timeout:
+            self.log.warning("Could not fetch %s, timeout", cve)
+            time.sleep(4)
+            return
+
         if not resp.ok:
             if resp.status_code == HTTP_TOO_MANY_REQUESTS:
                 self.log.warning("Could not fetch %s, rate limited", cve)
