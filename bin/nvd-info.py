@@ -149,6 +149,7 @@ class CveFetcher:
         session.headers.update({"user-agent": "Nvd Info Fetcher"})
         for cve in self.args.cveid:
             self.fetch(session, cve)
+            time.sleep(0.1)  # let's not flood it with too many requests
 
     def vuln_match(self, vuln: dict) -> bool:
         impact_to_number = {
