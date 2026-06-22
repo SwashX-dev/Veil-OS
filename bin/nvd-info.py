@@ -158,6 +158,10 @@ class CveFetcher:
         (self.args.data_dir / "nvd").mkdir(exist_ok=True)
         session = requests.Session()
         session.headers.update({"user-agent": "Nvd Info Fetcher"})
+        if self.config.get("apiKey"):
+            # with an apiKey you're able to perform a larger number of queries
+            # see https://nvd.nist.gov/developers/start-here
+            session.params["apiKey"] = self.config["apiKey"]
         for cve in self.args.cveid:
             self.fetch(session, cve)
             time.sleep(0.1)  # let's not flood it with too many requests
