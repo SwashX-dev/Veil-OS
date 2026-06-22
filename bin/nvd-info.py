@@ -126,7 +126,7 @@ class CveFetcher:
                 time.sleep(4)
                 return
             else:
-                self.log.warning("Could not fetch %s", cve)
+                self.log.warning("Could not fetch %s, error %d", cve, resp.status_code)
                 return
         content = resp.json()  # check if json is valid
         try:
