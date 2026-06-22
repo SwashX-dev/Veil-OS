@@ -146,6 +146,7 @@ class CveFetcher:
         self.args.config_dir.mkdir(exist_ok=True)
         (self.args.config_dir / "nvd").mkdir(exist_ok=True)
         session = requests.Session()
+        session.headers.update({"user-agent": "Nvd Info Fetcher"})
         for cve in self.args.cveid:
             self.fetch(session, cve)
 
