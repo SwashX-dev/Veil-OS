@@ -5,6 +5,7 @@ import json
 import logging
 import re
 import sys
+import tomllib
 import time
 from pathlib import Path
 
@@ -24,7 +25,12 @@ class CveFetcher:
             formatter_class=argparse.ArgumentDefaultsHelpFormatter,
         )
         p.add_argument(
-            "--config-dir",
+                "--config-file",
+                type=Path,
+                default=str(Path("~/.config/cve-scraper/config.toml").expanduser()),
+                )
+        p.add_argument(
+            "--data-dir",
             type=Path,
             default=str(Path("~/.local/share/cve-scraper/").expanduser()),
         )
@@ -106,7 +112,7 @@ class CveFetcher:
         return p
 
     def get_path_for_cve(self, cve: str):
-        return self.args.config_dir / "nvd" / f"{cve}.json"
+        return self.args.data_dir / "nvd" / f"{cve}.json"
 
     def fetch(self, session, cve: str):
         fpath = self.get_path_for_cve(cve)
@@ -136,6 +142,11 @@ class CveFetcher:
         self.args = p.parse_args()
         logging.basicConfig(level=self.args.log_level)
 
+        self.config = {}
+        if self.args.config_file.exists():
+            with self.args.config_file.open('rb') as buf:
+                self.config = tomllib.load(buf)
+
         if self.args.func is None:
             print("No subcommand specified")
             p.print_usage()
@@ -143,8 +154,8 @@ class CveFetcher:
         self.args.func()
 
     def main_fetch(self):
-        self.args.config_dir.mkdir(exist_ok=True)
-        (self.args.config_dir / "nvd").mkdir(exist_ok=True)
+        self.args.data_dir.mkdir(exist_ok=True)
+        (self.args.data_dir / "nvd").mkdir(exist_ok=True)
         session = requests.Session()
         session.headers.update({"user-agent": "Nvd Info Fetcher"})
         for cve in self.args.cveid:
