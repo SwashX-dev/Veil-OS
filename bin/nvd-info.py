@@ -25,10 +25,10 @@ class CveFetcher:
             formatter_class=argparse.ArgumentDefaultsHelpFormatter,
         )
         p.add_argument(
-                "--config-file",
-                type=Path,
-                default=str(Path("~/.config/cve-scraper/config.toml").expanduser()),
-                )
+            "--config-file",
+            type=Path,
+            default=str(Path("~/.config/cve-scraper/config.toml").expanduser()),
+        )
         p.add_argument(
             "--data-dir",
             type=Path,
@@ -123,7 +123,7 @@ class CveFetcher:
             # The whole reason to do a prepared request is being able to print the
             # actual url we're using. In fact, if an apiKey is set, there will be
             # additional parameters to the request
-            request = requests.Request('GET', self.baseurl, params={"cveId": cve})
+            request = requests.Request("GET", self.baseurl, params={"cveId": cve})
             prepped = session.prepare_request(request)
             logging.debug("GET %s", prepped.url)
             resp = session.send(prepped, timeout=(3, 10))
@@ -156,7 +156,7 @@ class CveFetcher:
 
         self.config = {}
         if self.args.config_file.exists():
-            with self.args.config_file.open('rb') as buf:
+            with self.args.config_file.open("rb") as buf:
                 self.config = tomllib.load(buf)
 
         if self.args.func is None:
