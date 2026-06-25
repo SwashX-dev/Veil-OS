@@ -8,7 +8,7 @@ Known tasks
 ===========
 
 The issues with the
-[[!tails_gitlab groups/tails/-/work_items?state=opened&label_name%5B%5D=T%3AGraphics desc="`T:Graphics` label"]]
+[[!tails_gitlab_label T%3AGraphics desc="`T:Graphics` label"]]
 in GitLab correspond to things that would benefit from the work of graphic
 designers.
 

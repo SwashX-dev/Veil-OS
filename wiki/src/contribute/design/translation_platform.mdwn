@@ -7,8 +7,7 @@ Git or the command line.
 
 This is the technical design documentation of our new setup.
 It is by no means perfect. We track known issues via
-[[!tails_gitlab groups/tails/-/work_items?state=opened&label_name%5B%5D=C%3ATranslation+Platform
-desc="issues on GitLab"]].
+[[!tails_gitlab_label C%3ATranslation+Platform desc="issues on GitLab"]].
 
 [[!toc levels=2]]
 

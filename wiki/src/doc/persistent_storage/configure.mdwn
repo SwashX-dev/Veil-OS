@@ -12,8 +12,7 @@ persistent.</p>
 
 <p>We are often asked to implement new features of the Persistent Storage: Tor
 Browser preferences, Tor configuration, desktop background, mouse and touchpad
-settings, and so on. See the [[!tails_gitlab
-groups/tails/-/work_items?state=opened&label_name%5B%5D=C%3APersistence
+settings, and so on. See the [[!tails_gitlab_label C%3APersistence
 desc="list of issues about the Persistent Storage in our GitLab"]].<p>
 
 </div>

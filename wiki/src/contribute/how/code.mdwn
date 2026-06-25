@@ -65,7 +65,7 @@ safely skip to the next section.
 
 So you want to contribute code to Tails but do not know where to
 start? Our coding
-[[!tails_gitlab groups/tails/-/work_items?state=opened&label_name%5B%5D=T%3ACode desc="TODO list"]]
+[[!tails_gitlab_label T%3ACode desc="TODO list"]]
 is huge and frightening, but...
 
 *Do not panic!*
@@ -90,15 +90,15 @@ Let's see how we can help you picking up a task. A few tips:
    - Ruby:
       - Test suite
 
-* Have a look to the [[!tails_gitlab_starter]]: there is
+* Have a look to the [[!tails_gitlab_label Starter desc="list of *Starter* tasks"]]: there is
   something, in each of these tasks, that one can do right away since
   it does not require deep knowledge of the Tails internals.
 
 On the one hand, you may want to **start doing practical stuff
 immediately**. In this case, see the
-[[!tails_gitlab groups/tails/-/work_items?state=opened&label_name%5B%5D=T%3ACode desc="list of tasks that have the `T:Code` label"]].
+[[!tails_gitlab_label T%3ACode desc="list of tasks that have the `T:Code` label"]].
 You probably want to start looking
-at the few ones that are also in the [[!tails_gitlab_starter]]
+at the few ones that are also in the [[!tails_gitlab_label Starter desc="list of *Starter* tasks"]]
 first so that you can gain confidence and we can smoothly learn to
 work together.
 
