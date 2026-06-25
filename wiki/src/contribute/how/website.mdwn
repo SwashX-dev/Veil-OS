@@ -12,7 +12,7 @@
 
 We have identified some things that we would like to see improved on
 our website: see the [[!tails_gitlab
-groups/tails/-/issues?label_name%5B%5D=T%3AWebsite
+groups/tails/-/work_items?state=opened&label_name%5B%5D=T%3AWebsite
 desc="website-related issues"]]
 on GitLab.
 

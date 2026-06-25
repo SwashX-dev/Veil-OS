@@ -57,7 +57,7 @@ upstream... which sometimes implies to write a patch ourselves.
 
 ## Pick up a task
 
-We use [[!tails_gitlab groups/tails/-/issues desc="GitLab"]] to track
+We use [[!tails_gitlab groups/tails/-/work_items desc="GitLab"]] to track
 our lists of tasks and bugs, as well as our roadmap.
 If you already know which one of the listed tasks you want to tackle
 and it has the *T:Code* label, then you can probably
@@ -65,7 +65,7 @@ safely skip to the next section.
 
 So you want to contribute code to Tails but do not know where to
 start? Our coding
-[[!tails_gitlab groups/tails/-/issues?label_name%5B%5D=T%3ACode desc="TODO list"]]
+[[!tails_gitlab groups/tails/-/work_items?state=opened&label_name%5B%5D=T%3ACode desc="TODO list"]]
 is huge and frightening, but...
 
 *Do not panic!*
@@ -96,7 +96,7 @@ Let's see how we can help you picking up a task. A few tips:
 
 On the one hand, you may want to **start doing practical stuff
 immediately**. In this case, see the
-[[!tails_gitlab groups/tails/-/issues?label_name%5B%5D=T%3ACode desc="list of tasks that have the `T:Code` label"]].
+[[!tails_gitlab groups/tails/-/work_items?state=opened&label_name%5B%5D=T%3ACode desc="list of tasks that have the `T:Code` label"]].
 You probably want to start looking
 at the few ones that are also in the [[!tails_gitlab_starter]]
 first so that you can gain confidence and we can smoothly learn to
@@ -114,7 +114,7 @@ implement. At this point, we advise you to:
 
 1. **Gather results of previous research and discussions** on the
    topic you are interested in. Search this website, [[!tails_gitlab
-   groups/tails/-/issues desc="issues on GitLab"]] and the [tails-dev@boum.org mailing list
+   groups/tails/-/work_items desc="issues on GitLab"]] and the [tails-dev@boum.org mailing list
    archive](https://lists.autistici.org/list/tails-dev.html).
 
 2. **[[Tell us on tails-dev@boum.org|doc/about/contact#tails-dev]] about your plans** to make sure your

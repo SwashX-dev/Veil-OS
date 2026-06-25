@@ -87,10 +87,8 @@ ikiwiki will include your shortcut in the standard underlay.
 * [[!shortcut name=tails_website url="https://tails.net/%S"]]
 * [[!shortcut name=tails_blueprint url="https://gitlab.tails.boum.org/tails/blueprints/-/wikis/%S"]]
 * [[!shortcut name=tails_gitlab url="https://gitlab.tails.boum.org/%S"]]
-* [[!shortcut name=tails_gitlab_starter
-  url="https://gitlab.tails.boum.org/groups/tails/-/issues?scope=all&utf8=✓&state=opened&label_name[]=Starter"
-  desc="list of *Starter* tasks"]]
-* [[!shortcut name=tails_ticket url="https://gitlab.tails.boum.org/tails/tails/-/issues/%S" desc="#%s"]]
+* [[!shortcut name=tails_gitlab_starter url="https://gitlab.tails.boum.org/groups/tails/-/work_items?state=opened&label_name%5B%5D=Starter" desc="list of *Starter* tasks"]]
+* [[!shortcut name=tails_ticket url="https://gitlab.tails.boum.org/tails/tails/-/work_items/%S" desc="#%s"]]
 * [[!shortcut name=tails_mr url="https://gitlab.tails.boum.org/tails/tails/-/merge_requests/%S" desc="!%s"]]
 * [[!shortcut name=tails_gitweb url="https://gitlab.tails.boum.org/tails/tails/-/blob/master/%S"]]
 * [[!shortcut name=tails_gitweb_dir url="https://gitlab.tails.boum.org/tails/tails/-/tree/master/%S"]]
