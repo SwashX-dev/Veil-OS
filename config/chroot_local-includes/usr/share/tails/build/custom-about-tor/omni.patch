@@ -1,6 +1,6 @@
 diff -Naur a/localization/en-US/toolkit/global/tor-browser.ftl b/localization/en-US/toolkit/global/tor-browser.ftl
---- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-06-29 17:12:22.735407572 +0200
-+++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-06-29 17:12:22.739407593 +0200
+--- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-06-29 17:13:37.251789604 +0200
++++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-06-29 17:13:37.255789625 +0200
 @@ -28,6 +28,11 @@
  tor-browser-home-message-testing = This is an unstable version of Tor Browser for testing new features. <a data-l10n-name="learn-more-link">Learn more</a>
  
