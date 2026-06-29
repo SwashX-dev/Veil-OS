@@ -27,8 +27,6 @@ if [ "$DIST" = stable ]; then # preparing a final release
             >wiki/src/inc/stable_amd64_${type:?}_gpg_verify.html
         echo "https://download.tails.net/tails/stable/${basename:?}/${filename:?}" \
             >wiki/src/inc/stable_amd64_${type:?}_url.html
-        echo "https://mirrors.wikimedia.org/tails/stable/${basename:?}/${filename:?}" \
-            >wiki/src/inc/stable_amd64_${type:?}_url_https.html
         echo "https://tails.net/torrents/files/${filename:?}.sig" \
             >wiki/src/inc/stable_amd64_${type:?}_sig_url.html
     done
