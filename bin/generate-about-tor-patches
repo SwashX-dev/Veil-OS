@@ -26,7 +26,7 @@ fi
 
 cd "${TOR_BROWSER_GIT_DIR}"
 
-git diff "${TOR_BROWSER_BASE_REF}".. -- '*' ':!toolkit/locales/' |
+git diff --full-index "${TOR_BROWSER_BASE_REF}".. -- '*' ':!toolkit/locales/' |
     sed 's@^\(---\|+++\) \([^/]\+\)/browser/components/abouttor/content/@\1 \2/chrome/browser/content/browser/abouttor/@' |
     sed 's@^\(---\|+++\) \([^/]\+\)/browser/components/abouttor/@\1 \2/actors/@' \
         >"${TAILS_GIT_REPO}"/config/chroot_local-includes/usr/share/tails/build/custom-about-tor/browser-omni.patch
