@@ -1,8 +1,56 @@
-tails (7.10) UNRELEASED; urgency=medium
+tails (7.9.1) UNRELEASED; urgency=medium
 
-  * Dummy entry for next release.
+  * Upgrade Linux to 6.12.94, which fixes CVE-2026-46331
 
- -- boyska <boyska@riseup.net>  Thu, 18 Jun 2026 13:36:12 +0200
+  * Upgrade tor to 0.4.9.11
+
+  * Mitigate recent kernel CVEs (tails/tails!3094)
+
+    Closes issues:
+      - Resolve CVE-2026-46331 aka PACKET_EDIT_MEME (tails/tails#21666)
+      - CVE-2026-43503 aka dirtyclone (tails/tails#21664)
+
+    Commits:
+      - clarify the importance of blocking esp
+      - block more Linux modules, based on recent CVEs
+
+  * Stop using a different mirror when JS is disabled (tails/tails!3095)
+
+    Commits:
+      - stop using a single hardcoded mirror when there's no JS
+
+  * Upgrade TorBrowser to 15.0.17 (tails/tails!3093)
+
+    Closes issues:
+      - Upgrade to Tor Browser 15.0.17 based on Firefox ESR 140.12 (tails/tails#21665)
+
+    Commits:
+      - Refresh org.boum.tails.TorBrowser flatpak manifest
+      - Use TBB tarball as hosted by archive.torproject.org
+      - patches have the full commit
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.12.0esr-15.0-1-build2
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.12.0esr-15.0-1-build2
+      - Upgrade Tor Browser to 15.0.17-build1 (refs: tails#)
+      - CI: run all tests for tor-browser-15.0.17
+
+  * Test suite: use tshark instead of PacketFu when looking for leaks
+    (tails/tails!3077)
+
+    Commits:
+      - Test suite: use higher-level check and explicitly report exit status
+      - Test suite: assert only one value per field in tshark's output and explain why
+      - Explain magic numbers
+      - Test suite: use tshark instead of PacketFu when looking for leaks
+
+  * TCA: fix Offline Mode error dialog (tails/tails!3063)
+
+    Commits:
+      - TCA: don't try to use local outside of a shell function
+      - TCA: make translations in wrapper actually work
+
+ -- Tails developers <foundations@tails.net>  Tue, 30 Jun 2026 11:15:01 +0000
 
 tails (7.9) unstable; urgency=medium
 
