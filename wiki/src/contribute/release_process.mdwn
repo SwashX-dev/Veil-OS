@@ -1010,7 +1010,7 @@ Verify that Jenkins reproduced your images:
      set -eu
      cd "${ARTIFACTS:?}"
      url="https://nightly.tails.boum.org/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
-     curl "$url" > SHA512SUMS-jenkins.txt
+     curl --fail "$url" > SHA512SUMS-jenkins.txt
      grep --perl-regexp '[.]img|iso' SHA512SUMS-jenkins.txt | sha512sum -c -
     )
 
