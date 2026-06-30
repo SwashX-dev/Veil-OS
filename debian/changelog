@@ -1,4 +1,4 @@
-tails (7.9.1) UNRELEASED; urgency=medium
+tails (7.9.1) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.94, which fixes CVE-2026-46331
 
@@ -50,7 +50,7 @@ tails (7.9.1) UNRELEASED; urgency=medium
       - TCA: don't try to use local outside of a shell function
       - TCA: make translations in wrapper actually work
 
- -- Tails developers <foundations@tails.net>  Tue, 30 Jun 2026 11:15:01 +0000
+ -- Tails developers <foundations@tails.net>  Tue, 30 Jun 2026 13:58:20 +0200
 
 tails (7.9) unstable; urgency=medium
 
