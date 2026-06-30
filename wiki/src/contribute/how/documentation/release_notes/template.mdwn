@@ -29,7 +29,7 @@ vulnerability in $APPLICATION.
 <!--
 
 - Update *Tor Browser* to [1.2.3](https://blog.torproject.org/new-release-tor-browser-123),
-  which fixes [[$CODE|$LINK]], a (major|minor) $TYPE vulnerability. Using this
+  which fixes [[$CODE|$LINK]] (*$NAME*), a (major|minor) $TYPE vulnerability. Using this
   vulnerability, (an attacked could $IMPACT|an application in Tails could gain administration privileges).
 
   For example, if an attacker was able to exploit other unknown security
@@ -65,7 +65,7 @@ vulnerability in $APPLICATION.
 
 <!--
 
-- Update the *Linux* kernel to a.bc, which fixes [[$CODE|$LINK]],
+- Update the *Linux* kernel to a.bc, which fixes [[$CODE|$LINK]] (*$NAME*),
   (a vulnerability|multiple vulnerabilities) that could allow an application in
   Tails to gain administration privileges.
 
