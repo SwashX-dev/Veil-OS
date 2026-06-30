@@ -1550,6 +1550,7 @@ If preparing a RC, skip this part:
 
 Update the image description file (IDF) used by the verification JavaScript:
 
+    (
     cd "${RELEASE_CHECKOUT:?}" && \
     ./bin/idf-content \
        --version "${VERSION:?}" \
@@ -1559,6 +1560,7 @@ Update the image description file (IDF) used by the verification JavaScript:
     git add wiki/src/install/v2/Tails/amd64/stable/latest.json && \
     git commit -m "Update image description file for download verification" && \
     git push origin "${WEBSITE_RELEASE_BRANCH:?}"
+    )
 
 Delete "⚠ Wait until the Release Manager […]" in the "Image description file" section on the pad.
 
@@ -1673,12 +1675,14 @@ move them in place with proper ownership and permissions and update
 the time in `project/trace` file on our rsync server and on the live
 website (even for a release candidate):
 
+    (
     cd "${RELEASE_CHECKOUT:?}" && \
     ./bin/copy-images-to-rsync-server-and-verify \
         --version "${VERSION:?}" \
         --dist "${DIST:?}" \
         --release-branch "${RELEASE_BRANCH:?}" \
         --matching-jenkins-images-build-id "${MATCHING_JENKINS_IMAGES_BUILD_ID:?}"
+    )
 
 At this stage, either IUKs were reproduced by Jenkins and left on the
 rsync server in a temporary location, or you must wait until the
@@ -1827,16 +1831,20 @@ What follows in this section happens on the `$WEBSITE_RELEASE_BRANCH`
 branch in `${RELEASE_CHECKOUT:?}`, making sure we catch up with the
 technical writers who have likely prepared release notes:
 
+    (
 	cd "${RELEASE_CHECKOUT:?}" && \
 	   git checkout "${WEBSITE_RELEASE_BRANCH:?}" && \
 	   git fetch && \
 	   git merge "origin/${WEBSITE_RELEASE_BRANCH:?}"
+    )
 
 If no release notes where prepared, create one with placeholders:
 
+    (
     cp wiki/src/news/version_${PREVIOUS_STABLE_VERSION:?}.mdwn \
        wiki/src/news/version_${VERSION:?}.mdwn &&
     ${EDITOR:?} wiki/src/news/version_${VERSION:?}.mdwn
+    )
 
 Make sure to:
 
@@ -1864,6 +1872,7 @@ Rename, copy, garbage collect and update various files:
 
 Then, build the website and commit this last set of changes:
 
+    (
 	if [ "$(./bin/po4a-version)" = 0.73 ]; then
 	    ./build-website && \
 	    git add wiki/src/{inc,torrents} && \
@@ -1871,6 +1880,7 @@ Then, build the website and commit this last set of changes:
 	else
 	    echo "Wrong po4a version"
 	fi
+    )
 
 Ensure our [[contribute/working_together/roles/technical_writer]] has
 [[written|contribute/how/documentation/release_notes]] the
@@ -1942,6 +1952,7 @@ In any case
 Generate PO files for the pages added or updated earlier in this
 section, and publish them on the `$WEBSITE_RELEASE_BRANCH` branch:
 
+    (
 	if [ "$(./bin/po4a-version)" = 0.73 ]; then
 	    ./build-website && \
 	    git add wiki/src && \
@@ -1950,6 +1961,7 @@ section, and publish them on the `$WEBSITE_RELEASE_BRANCH` branch:
 	else
         echo "Wrong po4a version"
 	fi
+    )
 
 ## If you are publishing a final release: draft the Tor blog post
 
@@ -2060,18 +2072,22 @@ Skip this part if preparing a release candidate:
 
 1. Ensure you have an up-to-date `tails:gitlab-triage-stable` container image:
 
+    (
         cd "${MASTER_CHECKOUT:?}" && \
         git checkout master && \
         ./config/gitlab-triage/bin/ensure-up-to-date-container-image
+    )
 
 2. Postpone to the next scheduled release any remaining open issue and merge
    request whose milestone is the version you've just released:
 
+    (
         cd "${MASTER_CHECKOUT:?}" && \
         git checkout master && \
         ./bin/gitlab-triage-post-release \
             --host-url "$(bin/gitlab-url TailsRM)" \
             --token "$(bin/gitlab-api-token TailsRM)"
+    )
 
 3. Finally, submit a MR against [[!tails_gitlab tails/gitlab-config]] to
    close the just-released [[!tails_gitlab groups/tails/-/milestones
@@ -2228,26 +2244,32 @@ Check that you are indeed preparing a final release:
 
 1. Update your local `$MASTER_CHECKOUT`
 
+    (
         cd "${MASTER_CHECKOUT:?}" && \
         git checkout master && \
         git fetch && \
         git merge origin/master && \
         git submodule update --init
+    )
 
 1. Remove UDFs for versions that were never released:
 
+    (
         cd "${MASTER_CHECKOUT:?}" && \
         git checkout master && \
         ./bin/remove-unused-udfs --before-version "${VERSION:?}" && \
         git push origin master
+    )
 
 1. Pull `master` back and merge it into `stable`:
 
+    (
         cd "${RELEASE_CHECKOUT:?}" && \
         git fetch origin && \
         git checkout stable && \
         git merge origin/stable && \
         git merge origin/master
+    )
 
    Note: After a final *major* release is published, it's normal to
    leave the `testing` branch alone: it will only become relevant
@@ -2255,6 +2277,7 @@ Check that you are indeed preparing a final release:
 
 1. Delete Git branches that were merged:
 
+    (
         cd "${RELEASE_CHECKOUT:?}" && \
         git checkout stable && \
         bare_repo=$(mktemp -d) && \
@@ -2264,10 +2287,12 @@ Check that you are indeed preparing a final release:
         PYTHONPATH=lib/python3 ./bin/delete-merged-git-branches \
            --repo "${bare_repo:?}" && \
         rm -rf "${bare_repo:?}"
+    )
 
 1. Put the `stable` Git branch and the corresponding APT suite
    in the desired shape:
 
+    (
         if [ "${MAJOR_RELEASE:?}" -eq 1 ]; then
            ./bin/reset-custom-APT-suite stable testing && \
            git checkout stable && \
@@ -2277,17 +2302,20 @@ Check that you are indeed preparing a final release:
                  -m "Empty the list of APT overlays: they were merged"
            fi
         fi
+    )
 
 1. Increment the version number in stable's `debian/changelog`, so that
    next builds from the `stable` branch do not use the APT suite meant
    for the last release:
 
+    (
         cd "${RELEASE_CHECKOUT}" && \
         git checkout stable && \
         dch --newversion "${NEXT_STABLE_CHANGELOG_VERSION:?}" \
            "Dummy entry for next release." && \
         git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_STABLE_CHANGELOG_VERSION:?}."
+    )
 
 1. Merge the `stable` branch and its APT suite into `devel`:
 
@@ -2306,12 +2334,14 @@ Check that you are indeed preparing a final release:
 
    If this is not the case yet, run:
 
+    (
         cd "${RELEASE_CHECKOUT}" && \
         git checkout devel && \
         dch --newversion "${NEXT_PLANNED_MAJOR_VERSION:?}" \
            "Dummy entry for next release." && \
         git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_PLANNED_MAJOR_VERSION:?}."
+    )
 
 1. If this command outputs anything:
 
@@ -2326,9 +2356,11 @@ Check that you are indeed preparing a final release:
    appropriately (they should expire after the next planned major release date).
    Look carefully at the output of this command:
 
+    (
         cd "${RELEASE_CHECKOUT:?}" && \
         git checkout stable && \
         ./bin/apt-snapshots-expiry
+    )
 
 1. Push the resulting branches:
 
@@ -2441,11 +2473,13 @@ Check that you are indeed preparing a RC:
    [[thaw|APT_repository/time-based_snapshots#thaw]] the time-based
    APT repository snapshots:
 
+    (
         git checkout devel && \
         ./auto/scripts/apt-snapshots-serials thaw && \
         git commit \
             -m "Thaw APT snapshots." \
             config/APT_snapshots.d/*/serial || :
+    )
 
    This should generally be a no-op but if there was some hiccup earlier it
    could be needed.
@@ -2454,31 +2488,37 @@ Check that you are indeed preparing a RC:
    used for the release, to match the upcoming non-RC release, so that
    the next builds from it do not use the APT suite meant for the RC:
 
+    (
         cd "${RELEASE_CHECKOUT}" && \
         git checkout "${RELEASE_BRANCH:?}" && \
         dch --newversion "${NEXT_PLANNED_MAJOR_VERSION:?}" \
            "Dummy entry for next release." && \
         git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_PLANNED_MAJOR_VERSION:?}."
+    )
 
 1. Increment the version number in `devel`'s `debian/changelog` to
    match the second next major release, so that images built from there
    have the right version number:
 
+    (
         cd "${RELEASE_CHECKOUT}" && \
         git checkout devel && \
         dch --newversion "${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}" \
            "Dummy entry for next release." && \
         git commit debian/changelog \
            -m "Add dummy changelog entry for ${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}." || :
+    )
 
 1. Merge testing into devel (keeping a single changelog entry, for the
    second next major release), and push them:
 
+    (
         cd "${RELEASE_CHECKOUT:?}" && \
         git checkout devel && \
         git merge testing && \
         git push origin testing devel
+    )
 
 1. Follow the "Verify that the snapshots used in the release branch
    are OK" step for final releases, above.
@@ -2487,9 +2527,11 @@ Check that you are indeed preparing a RC:
 
 1. Put aside the configuration file used for this release:
 
+    (
         mkdir -p ~/.config/tails/release_management/old && \
         mv ~/.config/tails/release_management/current.yml \
            ~/.config/tails/release_management/old/${VERSION:?}.yml.disabled
+    )
 
 1. Delete your local copy of the IUKs
 
