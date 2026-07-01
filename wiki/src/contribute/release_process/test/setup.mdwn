@@ -81,7 +81,6 @@ To install the dependencies on our test suite:
            ruby-json \
            ruby-libvirt \
            ruby-packetfu \
-           ruby-net-dns \
            ruby-rb-inotify \
            ruby-rspec \
            ruby-test-unit \
@@ -90,6 +89,7 @@ To install the dependencies on our test suite:
            tcplay \
            tesseract-ocr \
            tor \
+           tshark \
            unclutter \
            virt-viewer \
            x11vnc \
