@@ -1,3 +1,9 @@
+tails (7.10) UNRELEASED; urgency=medium
+
+  * Dummy entry for next release.
+
+ -- boyska <boyska@riseup.net>  Wed, 01 Jul 2026 13:11:54 +0200
+
 tails (7.9.1) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.94, which fixes CVE-2026-46331
