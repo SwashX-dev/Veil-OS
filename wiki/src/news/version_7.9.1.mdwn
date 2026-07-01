@@ -21,7 +21,7 @@ vulnerability in $APPLICATION.
   Tails to gain administration privileges.
 
   For example, if an attacker was able to exploit other unknown security
-  vulnerabilities in an application included in Tails, they might then use CVE-2026-43503 or CVE-2026-46331
+  vulnerabilities in an application included in Tails, they might then use CVE-2026-46331
   to take full control of your Tails and deanonymize you.
 
   <div class="attack">
