@@ -40,6 +40,15 @@ Tails includes several sound and video applications:
 
     </div>
 
+    <div class="bug">
+
+    <p><i>Celluloid</i> doesn't work on some computer from 2011 or earlier.</p>
+
+    <p>You can use <i>VLC</i> instead, installed as [[additional
+    software|persistent_storage/additional_software]].</p>
+
+    </div>
+
 These applications are available in the **Apps&nbsp;▸ Sound & Video** submenu.
 
 You can also install using the [[Additional Software|persistent_storage/additional_software]] feature:
