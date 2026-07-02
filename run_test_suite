@@ -37,7 +37,6 @@ ruby-binding-of-caller
 ruby-guestfs
 ruby-json
 ruby-libvirt
-ruby-net-dns
 ruby-packetfu
 ruby-rb-inotify
 ruby-rspec
@@ -48,6 +47,7 @@ tcplay
 tesseract-ocr
 tesseract-ocr-eng
 tor
+tshark
 unclutter
 virt-viewer
 xdotool

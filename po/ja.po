@@ -39,7 +39,7 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-17 11:02+0200\n"
-"PO-Revision-Date: 2026-06-13 04:01+0000\n"
+"PO-Revision-Date: 2026-06-27 08:01+0000\n"
 "Last-Translator: Himmel <himmel@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/tor/tails-gui/"
 "ja/>\n"
@@ -723,11 +723,11 @@ msgstr "アップグレードのインストール中にエラーが発生しま
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr ""
+msgstr "GNOME ソフトウェア"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
-msgstr ""
+msgstr "GNOME ソフトウェアは、Tor が起動してからでないと立ち上げられません。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -3334,9 +3334,8 @@ msgid "Flatpak"
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "SSH クライアントを有効化"
+msgstr "Flatpak を有効化"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
