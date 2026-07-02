@@ -8,8 +8,7 @@ With both techniques, all the data stored in [[!wikipedia Random-access_memory
 desc="RAM"]] is securely erased to protect you from [[cold boot
 attacks|doc/advanced_topics/cold_boot_attacks]].
 
-Standard shutdown from the system menu
---------------------------------------
+<h2 id="standard">Standard shutdown from the system menu</h2>
 
 The standard shutdown procedure is slower, but prevents damage to your
 Persistent Storage and data loss.
@@ -36,8 +35,7 @@ Persistent Storage and data loss.
    Even without confirming or saving the open documents, Tails will shut down
    after 60 seconds.
 
-Emergency shutdown
-------------------
+<h2 id="emergency">Emergency shutdown</h2>
 
 To trigger an emergency shutdown, unplug the USB stick or eject the DVD from
 which Tails is running. Doing so might be faster than shutting down from the
