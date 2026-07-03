@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2026-04-01 00:15+0000\n"
 "PO-Revision-Date: 2026-07-03 05:45+0000\n"
-"Last-Translator: tomas <chacotasprod@tuta.io>\n"
+"Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -213,6 +213,10 @@ msgid ""
 "   people. Their name and email address appear in the list of\n"
 "   certification if you have their key in your keyring.\n"
 msgstr ""
+"   También es posible verificar las certificaciones realizadas por otras\n"
+"   personas. Su nombre y dirección de correo electrónico aparecen en la "
+"lista de\n"
+"   certificaciones si tienes su llave en tu llavero.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -347,6 +351,8 @@ msgstr "<div class=\"step-image\">[[!img inc/infography/install-tails.png link=\
 msgid ""
 "Make sure that the USB stick on which you want to install Tails is unplugged."
 msgstr ""
+"Asegúrate de que la memoria USB en la que quieres instalar Tails está "
+"desconectada."
 
 #
 #. type: Bullet: '1. '
@@ -371,7 +377,7 @@ msgstr "       dev/sda\n"
 #
 #. type: Bullet: '1. '
 msgid "Plug in the USB stick on which you want to install Tails."
-msgstr ""
+msgstr "Conecta la memoria USB en la que quieras instalar Tails."
 
 #. type: Plain text
 #, no-wrap
@@ -402,7 +408,7 @@ msgstr "Ejecuta otra vez el mismo comando:"
 #. type: Plain text
 #, no-wrap
 msgid "   Your USB stick appears as a new device in the list.\n"
-msgstr ""
+msgstr "   Tu memoria USB aparece como un nuevo dispositivo en la lista.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -416,7 +422,7 @@ msgstr ""
 #
 #. type: Bullet: '1. '
 msgid "Take note of the *device name* of your USB stick."
-msgstr ""
+msgstr "Toma nota del *nombre del dispositivo* de tu memoria USB."
 
 #. type: Plain text
 #, no-wrap
