@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2025-09-17 11:40+0200\n"
 "PO-Revision-Date: 2026-07-04 02:45+0000\n"
-"Last-Translator: cacu <cacukin@cryptolab.net>\n"
+"Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: Spanish <http://translate.tails.net/projects/tails/"
 "welcome_screen/es/>\n"
 "Language: es\n"
@@ -243,6 +243,9 @@ msgid ""
 "You can save some of your files and configuration in an encrypted "
 "[[Persistent Storage|persistent_storage]] on your Tails USB stick."
 msgstr ""
+"Puedes guardar algunos de tus archivos y configuración en un "
+"[[Almacenamiento Persistente|persistent_storage]] encriptado en tu memoria "
+"USB Tails."
 
 #. type: Bullet: '- '
 msgid ""
@@ -250,6 +253,10 @@ msgid ""
 "**Create Persistent Storage** button to automatically start the Persistent "
 "Storage settings after you start Tails and the desktop appears."
 msgstr ""
+"Si no se detecta ningún Almacenamiento Persistente en la memoria USB, puedes "
+"hacer clic en el botón **Crear Almacenamiento Persistente** para iniciar "
+"automáticamente la configuración del Almacenamiento Persistente después de "
+"iniciar Tails."
 
 #. type: Plain text
 #, no-wrap
@@ -262,6 +269,9 @@ msgid ""
 "and click **Unlock Encryption** to unlock and activate your Persistent "
 "Storage."
 msgstr ""
+"Si se detecta un Almacenamiento Persistente en la memoria USB, introduce tu "
+"contraseña y haz clic en **Desbloquear Cifrado** para desbloquear y activar "
+"tu almacenamiento persistente."
 
 #. type: Plain text
 #, no-wrap
@@ -269,12 +279,11 @@ msgid "  [[!img unlock_persistent_storage.png class=\"screenshot\" alt=\"\"]]\n"
 msgstr "  [[!img unlock_persistent_storage.png class=\"screenshot\" alt=\"\"]]\n"
 
 #. type: Plain text
-#, fuzzy
 msgid ""
 "See also our [[documentation on the Persistent Storage|persistent_storage]]."
 msgstr ""
-"Para aprender más sobre el Almacenamiento Persistente y crear uno, mira "
-"nuestra [[documentación sobre el Almacenamiento Persistente|persistence]]."
+"Consulta también nuestra [[documentación sobre el Almacenamiento "
+"Persistente|persistent_storage]]."
 
 #. type: Plain text
 #, no-wrap
@@ -363,7 +372,7 @@ msgstr "Navegador No Seguro"
 
 #. type: Plain text
 msgid "Disable the ** *Unsafe Browser* **."
-msgstr ""
+msgstr "Desactiva el ** *Navegador No Seguro* **."
 
 #. type: Plain text
 msgid ""
