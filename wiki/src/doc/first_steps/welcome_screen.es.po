@@ -61,10 +61,8 @@ msgid ""
 "turn on the [[Welcome Screen|persistent_storage/configure#welcome_screen]]\n"
 "feature of the Persistent Storage.</p>\n"
 msgstr ""
-"<p>Para mantener la configuración de la Pantalla de Bienvenida en las "
-"próximas sesiones de Tails,\n"
-"activa la "
-"[[Pantalla de Bienvenida|persistent_storage/configure#welcome_screen]]\n"
+"<p>Para mantener la configuración de la Pantalla de Bienvenida en las próximas sesiones de Tails,\n"
+"activa la [[Pantalla de Bienvenida|persistent_storage/configure#welcome_screen]]\n"
 "en el Almacenamiento Persistente.</p>\n"
 
 #. type: Plain text
@@ -107,9 +105,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "[[!img lib/accessibility.png alt=\"accessibility menu\" class=\"symbolic\" link=\"no\"]]\n"
-msgstr ""
-"[[!img lib/accessibility.png alt=\"menú de accesibilidad\" class=\"symbolic\""
-" link=\"no\"]]\n"
+msgstr "[[!img lib/accessibility.png alt=\"menú de accesibilidad\" class=\"symbolic\" link=\"no\"]]\n"
 
 #. type: Plain text
 msgid "icon that looks like a person."
@@ -282,8 +278,8 @@ msgstr "  [[!img unlock_persistent_storage.png class=\"screenshot\" alt=\"\"]]\n
 msgid ""
 "See also our [[documentation on the Persistent Storage|persistent_storage]]."
 msgstr ""
-"Consulta también nuestra [[documentación sobre el Almacenamiento "
-"Persistente|persistent_storage]]."
+"Consulta también nuestra [[documentación sobre el Almacenamiento Persistente|"
+"persistent_storage]]."
 
 #. type: Plain text
 #, no-wrap
