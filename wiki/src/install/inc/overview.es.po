@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2026-04-10 19:22+0000\n"
 "PO-Revision-Date: 2026-07-04 02:45+0000\n"
-"Last-Translator: cacu <cacukin@cryptolab.net>\n"
+"Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: Spanish <http://translate.tails.net/projects/tails/install-"
 "inc-overview/es/>\n"
 "Language: es\n"
@@ -515,10 +515,8 @@ msgstr ""
 "infography/clone-tails.png link=\"no\" alt=\"\"]]"
 
 #. type: Content of: <div><a><p>
-#, fuzzy
-#| msgid "Install"
 msgid "Install Tails by cloning"
-msgstr "Instalar"
+msgstr "Instalar Tails por clonación"
 
 #. type: Content of: <div><a>
 msgid ""
@@ -554,7 +552,7 @@ msgstr ""
 
 #. type: Content of: <div><a><p>
 msgid "Welcome to Tails!"
-msgstr ""
+msgstr "Te damos la bienvenida a Tails!"
 
 #. type: Content of: <div>
 msgid "</a>"
