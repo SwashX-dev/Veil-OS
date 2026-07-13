@@ -7,6 +7,7 @@
 Install build and test dependencies
 ===================================
 
+    (
     cat $(git rev-parse --show-toplevel)/config/chroot_local-packageslists/tails-perl5lib.list \
        | grep -E -v '^#' \
        | xargs sudo apt --yes install && \
@@ -18,6 +19,7 @@ Install build and test dependencies
     sudo apt update && \
     cd "$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/perl5lib" && \
     dzil authordebs --install
+    )
 
 Run the test suite
 ==================
