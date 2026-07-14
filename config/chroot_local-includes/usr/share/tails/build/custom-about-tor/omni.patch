@@ -1,5 +1,5 @@
 diff --git a/browser/components/abouttor/AboutTorParent.sys.mjs b/browser/components/abouttor/AboutTorParent.sys.mjs
-index 6bf714991751..f8d50364d0f5 100644
+index 6bf7149917510807004667a8ee4cb58b04997c4f..f8d50364d0f508ec6c006d85307c3e720c003781 100644
 --- a/moz-src/browser/components/abouttor/AboutTorParent.sys.mjs
 +++ b/moz-src/browser/components/abouttor/AboutTorParent.sys.mjs
 @@ -10,6 +10,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
@@ -19,8 +19,8 @@ index 6bf714991751..f8d50364d0f5 100644
    }
  
 diff -Naur a/localization/en-US/toolkit/global/tor-browser.ftl b/localization/en-US/toolkit/global/tor-browser.ftl
---- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-06-29 17:13:37.251789604 +0200
-+++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-06-29 17:13:37.255789625 +0200
+--- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-07-14 12:10:06.172841742 +0200
++++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-07-14 12:10:06.176841650 +0200
 @@ -28,6 +28,11 @@
  tor-browser-home-message-testing = This is an unstable version of Tor Browser for testing new features. <a data-l10n-name="learn-more-link">Learn more</a>
  
