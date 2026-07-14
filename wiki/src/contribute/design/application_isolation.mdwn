@@ -85,7 +85,6 @@ Second, few more targeted adjustments are also applied:
 * [[!tails_gitweb config/chroot_local-patches/apparmor-adjust-pidgin-profile.diff]]
 * [[!tails_gitweb config/chroot_local-patches/apparmor-adjust-tor-abstraction.diff]]
 * [[!tails_gitweb config/chroot_local-patches/apparmor-adjust-tor-profile.diff]]
-* [[!tails_gitweb config/chroot_local-patches/apparmor-adjust-totem-profile.diff]]
 
 Below, we discuss various leads that might avoid the need for coming
 up with such adjustments, and maintaining it.
@@ -267,9 +266,6 @@ Per-app caveats
 - tor: runs as the `debian-tor` user, which has no D-Bus daemon.
 
 - Tor Browser: see [[application_isolation#tor-browser]].
-
-- Totem: the AppArmor sandbox is ineffective due to D-Bus session and dconf access;
-  we have plans to fix that ([[!tails_ticket 7929]]).
 
 - Unsafe Browser: see [[design/Unsafe_Browser]].
 

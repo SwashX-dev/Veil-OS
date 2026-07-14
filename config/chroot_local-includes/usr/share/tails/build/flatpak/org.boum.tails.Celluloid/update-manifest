@@ -1,0 +1,91 @@
+#!/bin/bash
+
+set -eu
+set -x
+
+# This refreshes the org.boum.tails.Celluloid flatpak manifest
+ORIG_APP_NAME=io.github.celluloid_player.Celluloid
+TAILS_APP_NAME=org.boum.tails.Celluloid
+DISPLAY_NAME='Celluloid'
+
+desktopFileChange=config/chroot_local-includes/usr/local/lib/desktop-file-change
+
+usage() {
+    cat <<EOF
+Usage: $0 [--no-download] [--help]
+
+Rebuild the $TAILS_APP_NAME flatpak app.
+
+Options:
+  --no-download  Don't download the latest $DISPLAY_NAME flatpak.
+  --help         Show this help message.
+EOF
+}
+
+# Support the --no-download and --help options
+NAME=$(basename "${0}")
+LONGOPTS="no-download,help"
+if ! getopt -Qq -o "" --longoptions $LONGOPTS -n "${NAME}" -- "$@"; then
+    usage >&2
+    exit 2
+fi
+OPTS=$(getopt -o "" --longoptions $LONGOPTS -n "${NAME}" -- "$@")
+eval set -- "$OPTS"
+while [ $# -gt 0 ]; do
+    case $1 in
+    --no-download)
+        NO_DOWNLOAD=1
+        shift
+        ;;
+    --help)
+        usage
+        exit 0
+        ;;
+    esac
+    shift
+done
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+METADATA_FILE="${DIR}/metadata"
+
+# Setup flatpak
+flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Install the flatpak app to
+# get the updated metadata file
+if [ -z "${NO_DOWNLOAD:-}" ]; then
+    flatpak install --user --assumeyes --reinstall flathub "$ORIG_APP_NAME"
+fi
+flatpak info --show-metadata "$ORIG_APP_NAME" >"${METADATA_FILE}.new"
+
+# Merge our [Application] section into the upstream one
+"${desktopFileChange}" --file "${METADATA_FILE}.new" import-section "Application" "${METADATA_FILE}"
+mv "${METADATA_FILE}.new" "${METADATA_FILE}"
+
+set_session_bus_policy() {
+    "${desktopFileChange}" --file "${METADATA_FILE}" set --section 'Session Bus Policy' "$@"
+}
+remove_element() {
+    section="$1"
+    key="$2"
+    element="$3"
+    value=$("${desktopFileChange}" --file "${METADATA_FILE}" get --section "$1" "$2")
+    newValue=$(tr ';' '\n' <<<"$value" | grep -vFx -e "$element" -e "" | tr '\n' ';')
+    "${desktopFileChange}" --file "${METADATA_FILE}" set --section "$section" "$key" "$newValue"
+}
+set_session_bus_policy 'org.gtk.vfs.*' talk
+set_session_bus_policy 'io.github.celluloid_player.Celluloid' own
+set_session_bus_policy 'io.github.celluloid_player.Celluloid.*' own
+set_session_bus_policy 'org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid' own
+
+# We intentionally break the "Open Location" feature in order to make Celluloid more confined
+remove_element Context shared network
+# Defense in depth: remove access to x11: Tails runs on Wayland
+remove_element Context sockets x11
+remove_element Context sockets fallback-x11
+# We allow access to xdg-pictures: it's used for saving screenshots, and it's amnesic, so probably innocuous.
+
+# Commit the changes to the git repo
+git add "${METADATA_FILE}"
+git commit -m "Refresh $TAILS_APP_NAME flatpak manifest" || exit 0
+git show

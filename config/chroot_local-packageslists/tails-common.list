@@ -73,6 +73,7 @@ apt-transport-tor
 audacity
 bilibop-udev
 bind9-host
+celluloid
 console-data
 cups
 cups-pk-helper
@@ -123,9 +124,6 @@ grub-efi-amd64-signed
 grub-efi-ia32
 shim-signed
 #endif
-gstreamer1.0-libav
-gstreamer1.0-plugins-bad
-gstreamer1.0-plugins-ugly
 gtk2-engines-pixbuf
 gvfs-backends
 gvfs-fuse
@@ -204,12 +202,10 @@ syslinux-common
 system-config-printer-common
 synaptic
 torsocks
-totem-plugins
 tcpflow
 tor
 tor-geoipdb
 sound-juicer
-totem
 usbutils
 user-setup
 vim-tiny

@@ -1760,18 +1760,6 @@ Given /^I create a symlink "(\S+)" to "(\S+)"$/ do |link, target|
   )
 end
 
-def select_path_in_file_chooser(file_chooser, path, button_label: 'Open')
-  assert_equal('file chooser', file_chooser.roleName)
-  try_for(10) do
-    @screen.press('ctrl', 'l')
-    file_chooser.focused_child.roleName == 'text'
-  end
-  file_chooser.focused_child.text = path
-  try_for(10) { file_chooser.button(button_label).sensitive? }
-  file_chooser.button(button_label).click
-  try_for(10) { !file_chooser.showing? }
-end
-
 def save_qrcode(str)
   # Generate a QR code similar enough to BridgeDB's:
   # https://gitlab.torproject.org/tpo/anti-censorship/bridgedb/-/blob/main/bridgedb/qrcodes.py
@@ -1936,10 +1924,46 @@ When(/^I click "([^"]+)" in the "([^"]+)" zenity dialog$/) do |button_label, tit
   zenity_dialog_click_button(title, button_label)
 end
 
-When(/^I open "(.*[.].*)" in Files$/) do |filename|
+def select_path_in_file_chooser(file_chooser, path, button_label: 'Open')
+  assert_equal('file chooser', file_chooser.roleName)
+  try_for(10) do
+    @screen.press('ctrl', 'l')
+    file_chooser.focused_child.roleName == 'text'
+  end
+  file_chooser.focused_child.text = path
+  try_for(10) { file_chooser.button(button_label).sensitive? }
+  file_chooser.button(button_label).click
+  try_for(10) { !file_chooser.showing? }
+end
+
+# Nautilus is used as the file chooser by xdg-desktop-portal-gnome;
+# for saving files, see desktop_portal_save_as.
+def nautilus_open_file(filepath, button_label: nil)
+  dir = File.dirname(filepath)
+  filename = File.basename(filepath)
   nautilus = Dogtail::Application.new('org.gnome.Nautilus')
-  nautilus.child(filename, roleName: 'table cell').click
-  @screen.press('Return')
+  if dir != '.' && dir != '/home/amnesia'
+    try_for(10) do
+      @screen.press('ctrl', 'l')
+      nautilus.focused_child.roleName == 'text'
+    end
+    nautilus.child(roleName: 'text').text = dir
+    @screen.press('Return')
+  end
+  try_for(10) do
+    nautilus.child(filename, roleName: 'table cell').click
+    nautilus.focused_child.name == filename
+  end
+  if button_label.nil?
+    @screen.press('Return')
+  else
+    try_for(10) { nautilus.button(button_label).sensitive? }
+    nautilus.button(button_label).click
+  end
+end
+
+When(/^I open "(.*[.].*)" in Files$/) do |filepath|
+  nautilus_open_file(filepath)
 end
 
 When(/^I wait until (?:(\w+)'s )(.*[.]service) has completed$/) do |user, unit|

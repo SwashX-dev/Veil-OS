@@ -2,6 +2,7 @@ def browser
   Dogtail::Application.new('Firefox')
 end
 
+# For opening files via xdg-desktop-portal-gnome, see nautilus_open_file.
 def desktop_portal_save_as(filename: nil, directory: nil, bookmark: false)
   dialog = nil
   try_for(30) do
