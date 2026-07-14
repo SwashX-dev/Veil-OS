@@ -629,7 +629,7 @@ Update the Changelog entry for the release you're preparing:
    section of the Changelog.
 
    If you're tempted to skip this step, see the [last discussion on this
-   topic](https://gitlab.tails.boum.org/tails/tails/-/issues/21151#note_266794).
+   topic](https://gitlab.tails.boum.org/tails/tails/-/work_items/21151#note_266794).
 
 ### In any case
 
@@ -675,7 +675,7 @@ version's `.packages` file and the one from the to-be-released images:
 
 4. Let Technical Writers know that the changelog is ready
 
-   - Open the [GitLab issue about the release notes](https://gitlab.tails.boum.org/groups/tails/-/issues?scope=all&search=release+notes&sort=milestone&state=opened)
+   - Open the [GitLab issue about the release notes](https://gitlab.tails.boum.org/groups/tails/-/work_items?scope=all&search=release+notes&sort=milestone&state=opened)
 
    - Notify `@technical-writers` that the changelog is ready,
      and provide them a link to latest relevant Jenkins built image, so they can use that to make screenshots or write
