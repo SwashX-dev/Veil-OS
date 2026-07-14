@@ -189,7 +189,6 @@ powermgmt-base
 ppp
 pppoe
 pipewire-audio
-rng-tools-debian
 rfkill
 rtkit
 sane-airscan
