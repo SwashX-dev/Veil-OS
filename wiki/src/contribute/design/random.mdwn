@@ -61,16 +61,16 @@ The scripts do basically the same `systemd-random-seed.service` does
 
 During boot:
 
-* Read the seed from the location it was stored at.
-* Write the seed to /dev/urandom, which causes it to be mixed in with
-  the existing bytes in the entropy pool.
-* Update the seed with random bytes from /dev/urandom to ensure that
-  some entropy is saved for the next boot, even if the system is not
-  shutting down properly.
+1. Read the seed from the location it was stored at.
+2. Write the seed to `/dev/urandom`, which causes it to be mixed in with
+   the existing bytes in the entropy pool.
+3. Update the seed with random bytes from `/dev/urandom` to ensure that
+   some entropy is saved for the next boot, even if the system is not
+   shutting down properly.
 
 During shutdown:
 
-* Update the seed with random bytes from /dev/urandom to save the
+* Update the seed with random bytes from `/dev/urandom` to save the
   entropy gathered during the session.
 
 Sources to learn more about the Linux kernel's RNG and its recent
