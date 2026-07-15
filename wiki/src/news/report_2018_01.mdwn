@@ -135,8 +135,8 @@ Past events
 Upcoming events
 ---------------
 
-- Tails will be presented at the [Festival des Libertés
-  Numériques](https://fdln.insa-rennes.fr) in different cities of
+- Tails will be presented at the Festival des Libertés
+  Numériques in different cities of
   Brittany, France, from February 10 to 25.
 
 - emmapeel and sajolida will be at the [Internet Freedom
