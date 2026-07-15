@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2026-04-01 00:15+0000\n"
-"PO-Revision-Date: 2025-09-18 17:21+0000\n"
-"Last-Translator: xin <xin@riseup.net>\n"
+"PO-Revision-Date: 2026-07-03 05:45+0000\n"
+"Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -202,6 +202,8 @@ msgid ""
 "   Here, `sig!2` means that Chris\n"
 "   Lamb verified and certified the Tails signing key with his key and a level 2 check.\n"
 msgstr ""
+"   Aquí, `sig!2` significa que Chris\n"
+"Lam verificó y certificó la clave de firma de Tails con su llave y una verificación de nivel 2.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -210,6 +212,9 @@ msgid ""
 "   people. Their name and email address appear in the list of\n"
 "   certification if you have their key in your keyring.\n"
 msgstr ""
+"   También es posible verificar las certificaciones realizadas por otras\n"
+"   personas. Su nombre y dirección de correo electrónico aparecen en la lista de\n"
+"   certificaciones si tienes su llave en tu llavero.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -325,10 +330,11 @@ msgid ""
 "The signature is marked as `Good signature` since you certified the Tails "
 "signing key with your own key."
 msgstr ""
+"La firma está marcada como `Good signature` ya que tu certificaste la clave "
+"de firma de Tails con tu propia llave."
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<h1 id=\"download\" class=\"step\">Download Tails</h1>\n"
 msgid "<h1 id=\"install\" class=\"step\">Install Tails using <code>dd</code></h1>\n"
 msgstr "<h1 id=\"download\" class=\"step\">Descargar Tails</h1>\n"
 
@@ -342,6 +348,8 @@ msgstr "<div class=\"step-image\">[[!img inc/infography/install-tails.png link=\
 msgid ""
 "Make sure that the USB stick on which you want to install Tails is unplugged."
 msgstr ""
+"Asegúrate de que la memoria USB en la que quieres instalar Tails está "
+"desconectada."
 
 #
 #. type: Bullet: '1. '
@@ -366,7 +374,7 @@ msgstr "       dev/sda\n"
 #
 #. type: Bullet: '1. '
 msgid "Plug in the USB stick on which you want to install Tails."
-msgstr ""
+msgstr "Conecta la memoria USB en la que quieras instalar Tails."
 
 #. type: Plain text
 #, no-wrap
@@ -375,7 +383,6 @@ msgstr "   <div class=\"caution\">\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "   <div class=\"caution\"><p>All the data on this USB stick will be lost.</p></div>\n"
 msgid "   <p>All the data on this USB stick will be lost.</p>\n"
 msgstr "   <div class=\"caution\"><p>Se perderá toda la información en esta memoria USB.</p></div>\n"
 
@@ -397,7 +404,7 @@ msgstr "Ejecuta otra vez el mismo comando:"
 #. type: Plain text
 #, no-wrap
 msgid "   Your USB stick appears as a new device in the list.\n"
-msgstr ""
+msgstr "   Tu memoria USB aparece como un nuevo dispositivo en la lista.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -411,7 +418,7 @@ msgstr ""
 #
 #. type: Bullet: '1. '
 msgid "Take note of the *device name* of your USB stick."
-msgstr ""
+msgstr "Toma nota del *nombre del dispositivo* de tu memoria USB."
 
 #. type: Plain text
 #, no-wrap
@@ -433,9 +440,6 @@ msgstr ""
 #
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "Execute the following commands to copy the USB image that you downloaded "
-#| "earlier to the USB stick."
 msgid ""
 "Execute the following commands to copy the USB image that you downloaded "
 "earlier to the USB stick. Replace:"
@@ -497,7 +501,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "   <p class=\"command-template\">dd if=/home/user/tails-amd64-3.12.img of=/dev/sdb bs=16M oflag=direct status=progress</p>\n"
 msgid "   <p class=\"command-template\">sudo dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">device</span> bs=16M oflag=direct status=progress</p>\n"
 msgstr "   <p class=\"command-template\">dd if=/home/user/tails-amd64-3.12.img of=/dev/sdb bs=16M oflag=direct status=progress</p>\n"
 

@@ -35,13 +35,14 @@
 # Zynox <zynoxyer@proton.me>, 2025.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 # Oğuz Ersen <oguz@ersen.moe>, 2026.
+# axolot <berkantgzr@protonmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-22 08:04+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-06-17 11:02+0200\n"
+"PO-Revision-Date: 2026-05-19 18:11+0000\n"
+"Last-Translator: Kaya Zeren <kayazeren@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/tor/tails-gui/tr/"
 ">\n"
 "Language: tr\n"
@@ -49,7 +50,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -77,18 +78,16 @@ msgid "Configure"
 msgstr "Yapılandır"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
-#, fuzzy
 msgid "Password Manager"
-msgstr "Parola"
+msgstr "Parola yöneticisi"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
-#, fuzzy
 msgid "password"
-msgstr "Parola"
+msgstr "parola"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
 msgid "password-manager"
-msgstr ""
+msgstr "parola-yoneticisi"
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:57
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:95
@@ -169,7 +168,7 @@ msgstr "Kaldır"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:945
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:744
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:128
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:376
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:378
 msgid "Cancel"
 msgstr "İptal"
 
@@ -184,12 +183,12 @@ msgstr "{beginning} ile {last}"
 msgid ", "
 msgstr ", "
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:46
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:45
 msgid "The check for upgrades of your additional software failed"
 msgstr "Ek uygulamalarınızın güncellemeleri denetlenemedi"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:48
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:60
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:47
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:59
 msgid ""
 "Please check your network connection, restart Tails, or read the system log "
 "to understand the problem."
@@ -197,23 +196,23 @@ msgstr ""
 "Lütfen ağ bağlantınızı denetleyin, Tails sistemini yeniden başlatın ya da "
 "sorunu anlamak için sistem günlüğüne bakın."
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:58
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:57
 msgid "The upgrade of your additional software failed"
 msgstr "Ek uygulama güncellenemedi"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:128
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:127
 msgid "Installing your additional software from persistent storage..."
 msgstr "Ek uygulamalarınız kalıcı depolama biriminden kuruluyor..."
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:129
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:128
 msgid "This can take several minutes."
 msgstr "Bu işlem bir kaç dakika sürebilir."
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:147
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:146
 msgid "The installation of your additional software failed"
 msgstr "Ek uygulama kurulamadı"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:162
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:161
 msgid "Additional software installed successfully"
 msgstr "Ek uygulama kuruldu"
 
@@ -732,6 +731,14 @@ msgstr ""
 msgid "Error while installing the upgrade"
 msgstr "Güncelleme kurulurken sorun çıktı"
 
+#: config/chroot_local-includes/usr/local/bin/gnome-software:13
+msgid "GNOME Software"
+msgstr ""
+
+#: config/chroot_local-includes/usr/local/bin/gnome-software:14
+msgid "GNOME Software can only start once Tor has bootstrapped."
+msgstr ""
+
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
 msgstr "Ek ayarlar"
@@ -940,9 +947,9 @@ msgid ""
 "If you don't have a backup, we recommend that you create a partition image "
 "of your Persistent Storage first."
 msgstr ""
-"Kalıcı depolama biriminizin dosya sisteminde hatalar bulundu.\n"
+"Kalıcı depolama biriminizin dosya sisteminde sorunlar bulundu.\n"
 "\n"
-"Tails bu hataları düzeltmeye çalışabilir, ancak verilerinizin bir bölümü "
+"Tails bu sorunları düzeltmeye çalışabilir, ancak verilerinizin bir bölümü "
 "silinebilir ve işlem oldukça uzun sürebilir.\n"
 "\n"
 "Güncel bir kalıcı depolama birimi yedeğiniz varsa, onarmayı denemenizi "
@@ -1483,7 +1490,7 @@ msgid "Could not open device for writing."
 msgstr "Aygıt yazılmak üzere açılamadı."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:19
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "You have a <i>KeePassXC</i> or <i>Secrets</i> database in your "
 "<i>Persistent</i> folder:\n"
@@ -1493,15 +1500,13 @@ msgid ""
 "Renaming your database to <i>${default_filename}</i> allows <i>Secrets</i> "
 "to open it automatically in the future."
 msgstr ""
-"<b><big><i>KeePassXC</i> veri tabanınızı yeniden adlandırmak ister misiniz?</"
-"big></b>\n"
-"\n"
-"<i>Kalıcı depolama</i> klasörünüzde bir <i>KeePassXC</i> veri tabanı var:\n"
+"<i>Persistent</i> klasörünüzde bir <i>KeePassXC</i> veya <i>Secrets</i> veri "
+"tabanı bulunuyor:\n"
 "\n"
 "<i>${filename}</i>\n"
 "\n"
-"Veri tabanınızı <i>${default_filename}</i> olarak yeniden adlandırarak "
-"gelecekte <i>KeePassXC</i> ile otomatik olarak açılmasını sağlayabilirsiniz."
+"Veri tabanınızı <i>${default_filename}</i> olarak yeniden adlandırırsanız, "
+"<i>Secrets</i> ileride bu veri tabanını otomatik olarak açabilir."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:25
 msgid "Rename"
@@ -1513,7 +1518,7 @@ msgstr "Geçerli ad korunsun"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:29
 msgid "Rename Password Database?"
-msgstr ""
+msgstr "Parola veri tabanının adı değiştirilsin mi?"
 
 #: config/chroot_local-includes/usr/local/bin/replace-su-with-sudo:19
 msgid "su is disabled. Please use sudo instead."
@@ -1869,7 +1874,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:28
 msgid "Secure Boot Update Needed"
-msgstr ""
+msgstr "Güvenli önyükleme güncellemesi gerekli"
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:30
 msgid ""
@@ -1877,6 +1882,9 @@ msgid ""
 "Apply all available updates from your regular operating system to update to "
 "the latest Secure Boot certificates of Microsoft."
 msgstr ""
+"Tails OS, gelecekte bu bilgisayarda açılmayacak. Güncel Microsoft güvenli "
+"önyükleme sertifikalarını kullanmak için normal işletim sisteminizdeki tüm "
+"güncellemeleri yapın."
 
 #: config/chroot_local-includes/usr/local/bin/tails-upgrade-frontend-wrapper:37
 #, python-brace-format
@@ -1939,11 +1947,11 @@ msgstr "Otomatik"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:284
 msgid "Frequently selected regions"
-msgstr ""
+msgstr "Sık seçilen bölgeler"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:291
 msgid "Other regions"
-msgstr ""
+msgstr "Diğer bölgeler"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:369
 msgid "_Use a bridge that you already know"
@@ -2002,9 +2010,8 @@ msgid "Synchronizing the system's clock…"
 msgstr "Sistem saati eşitleniyor…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:726
-#, fuzzy
 msgid "Asking for a Tor bridge based on your region…"
-msgstr "_E-posta ile Tor köprüsü isteyin"
+msgstr "Bulunduğunuz bölgeye göre bir Tor köprüsü istemek…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:774
 msgid "Connecting to Tor without bridges…"
@@ -2016,9 +2023,8 @@ msgid "Connecting to Tor with default bridges…"
 msgstr "Varsayılan köprüler kullanılarak Tor bağlantısı kuruluyor…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:789
-#, fuzzy
 msgid "Connecting to Tor with a bridge based on your region…"
-msgstr "Varsayılan köprüler kullanılarak Tor bağlantısı kuruluyor…"
+msgstr "Bulunduğunuz bölgedeki bir köprü ile Tor bağlantısı kurmak…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:796
 msgid "Connecting to Tor with a custom bridge…"
@@ -2045,21 +2051,21 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:985
 #, python-brace-format
 msgid "Bridge: <b>{bridge}</b>"
-msgstr ""
+msgstr "Köprü: <b>{bridge}</b>"
 
 #. Translators: only translate "Error code:" and adjust
 #. text-direction
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:997
 #, python-brace-format
 msgid "Error code: {code}"
-msgstr ""
+msgstr "Hata kodu: {code}"
 
 #. Translators: only translate "Proxy:" and adjust
 #. text-direction
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1024
 #, python-brace-format
 msgid "Proxy: <b>{proxy}</b>"
-msgstr ""
+msgstr "Vekil sunucu: <b>{proxy}</b>"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1323
 #, python-brace-format
@@ -2208,61 +2214,61 @@ msgstr "Kalıcı depolama birimi hizmeti başlatılamadı"
 msgid "Could not find the WhisperBack application"
 msgstr "WhisperBack uygulaması bulunamadı"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:94
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:96
 msgid "Delete Data…"
 msgstr "Verileri sil…"
 
 #. Translators: Don't translate {feature}, it's a placeholder
 #. and will be replaced.
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:100
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:102
 #, python-brace-format
 msgid "Delete {feature} data"
 msgstr "{feature} verilerini sil"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:122
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:124
 msgid "Activation failed"
 msgstr "Etkinleştirilemedi"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:178
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:180
 msgid "Activation failed. Try again or delete data."
 msgstr "Etkinleştirilemedi. Yeniden deneyin ya da verileri silin."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:180
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:182
 msgid "Activation failed. Try again."
 msgstr "Etkinleştirilemedi. Yeniden deneyin."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:182
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:184
 msgid "The data of this feature is still saved."
 msgstr "Bu özelliğin verileri hala kayıtlı."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
 msgid "Error activating feature {}"
 msgstr "{} özelliği etkinleştirilirken sorun çıktı"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:299
 msgid "An error occurred while activating the feature."
 msgstr "Özellik etkinleştirilirken bir sorun çıktı."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:411
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:300
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
 msgid "Details"
 msgstr "Ayrıntılar"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:338
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:345
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
 msgid "Error deactivating feature {}"
 msgstr "{} özelliği etkisizleştirilirken sorun çıktı"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:346
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:348
 msgid "An error occurred while deactivating the feature."
 msgstr "Özellik etkisizleştirilirken bir sorun çıktı."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:366
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2274,38 +2280,38 @@ msgstr ""
 "\n"
 "İptal ederseniz, bu özelliği yeniden açtığınızda veriler geri yüklenir."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:377
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:379
 msgid "_Delete Data"
 msgstr "_Verileri sil"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:407
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
 msgid "Error deleting data of feature {}"
 msgstr "{} özelliğinin verileri silinirken sorun çıktı"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:408
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "{} özelliğinin verileri silinirken bir sorun çıktı."
 
 #. Translators: Don't translate {applications}, it's a placeholder
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:515
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:517
 #, python-brace-format
 msgid "Close {applications} to continue"
 msgstr "İlerlemek için {applications} kapatın"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:516
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:518
 msgid " and "
 msgstr " ve "
 
 #. Translators: Don't translate {app} and {pid}, they
 #. are placeholders.
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:527
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:529
 #, python-brace-format
 msgid "{app} (PID: {pid})"
 msgstr "{app} (PID: {pid})"
 
 #. Translators: Don't translate {app} and {pids}, they
 #. are placeholders.
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:532
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:534
 #, python-brace-format
 msgid "{app} (PIDs: {pids})"
 msgstr "{app} (PIDs: {pids})"
@@ -3353,24 +3359,33 @@ msgid "Activate Additional Software"
 msgstr "Ek yazılım kullanımı"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
+msgid "Flatpak"
+msgstr ""
+
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
+#, fuzzy
+msgid "Activate Flatpak"
+msgstr "SSH istemcisi kullanılsın"
+
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
 msgstr "Nokta dosyaları"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:701
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:730
 msgid "Symlink every file in the Dotfiles folder into the Home folder."
 msgstr ""
 "Dotfiles klasöründeki her dosyaya giriş klasöründe sembolik bağlantılar "
 "sağlar."
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:734
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:763
 msgid "Activate Dotfiles"
 msgstr "Dotfiles kullanılsın"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:766
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:795
 msgid "Custom"
 msgstr "Özel"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:785
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:814
 msgid ""
 "To add or remove custom features, modify /live/persistence/"
 "TailsData_unlocked/persistence.conf."
@@ -3378,7 +3393,7 @@ msgstr ""
 "Özelleştirilmiş özellikler eklemek ya da kaldırmak için /live/persistence/"
 "TailsData_unlocked/persistence.conf dosyasını değiştirin."
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:827
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:856
 msgid ""
 "<a href=\"doc/persistent_storage\">Learn more about the Persistent Storage.</"
 "a>"
@@ -3653,9 +3668,8 @@ msgid "TrueCrypt/VeraCrypt container"
 msgstr "TrueCrypt/VeraCrypt kapsayıcısı"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:82
-#, fuzzy
 msgid "Configure a Tor bridge"
-msgstr "Bir Tor köprüsü _yapılandır"
+msgstr "Bir Tor köprüsü yapılandır"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
 msgid ""
@@ -3693,14 +3707,12 @@ msgid "None"
 msgstr "Hiçbiri"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:242
-#, fuzzy
 msgid "Ask for a bridge based on your _region"
-msgstr "_E-posta ile Tor köprüsü isteyin"
+msgstr "Bulunduğunuz _bölgeye göre bir köprü isteyin"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
-#, fuzzy
 msgid "_Ask for a bridge by email"
-msgstr "_E-posta ile Tor köprüsü isteyin"
+msgstr "_E-posta ile bir köprü isteyin"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
 msgid ""
@@ -3751,69 +3763,65 @@ msgid "This local network seems to be blocking access to Tor."
 msgstr "Bu yerel ağ Tor bağlantısı kurulmasını engelliyor gibi görünüyor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:811
-#, fuzzy
 msgid "Error connecting to Tor with this bridge"
-msgstr "Köprü kullanmadan Tor bağlantısı kuruluyor…"
+msgstr "Bu köprü ile Tor ağına bağlanırken bir sorun çıktı"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:827
 msgid ""
 "Either this Tor bridge is not working or your network is blocking access to "
 "it."
 msgstr ""
+"Bu Tor köprüsü çalışmıyor ya da ağınız bu Tor köprüsüne bağlanmanızı "
+"engelliyor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:856
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:930
-#, fuzzy
 msgid "Try configuring another bridge."
-msgstr "Bir Tor köprüsü yapılandırın"
+msgstr "Başka bir köprü yapılandırmayı deneyin."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:884
-#, fuzzy
 msgid "Error connecting to Tor with default bridges"
-msgstr "Varsayılan köprüler kullanılarak Tor bağlantısı kuruluyor…"
+msgstr "Varsayılan köprüler ile Tor ağına bağlanırken bir sorun çıktı"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:900
-#, fuzzy
 msgid "Your network is blocking access to Tor and the default bridges."
-msgstr "Bu yerel ağ Tor bağlantısı kurulmasını engelliyor."
+msgstr "Ağınız Tor ağına ve varsayılan köprülere bağlanmanızı engelliyor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:916
-#, fuzzy
 msgid "Bridge: <b>default bridges</b>"
-msgstr "_Varsayılan köprülerden biri kullanılsın"
+msgstr "Köprü: <b>Varsayılan köprüler</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:958
-#, fuzzy
 msgid "Error connecting to Tor with bridges"
-msgstr "Köprü kullanmadan Tor bağlantısı kuruluyor…"
+msgstr "Tor köprüleri ile Tor ağına bağlanırken bir sorun çıktı"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:974
 msgid "None of the bridges recommended for this region worked."
-msgstr ""
+msgstr "Bu bölge için önerilen Tor köprülerinin hiçbiri işe yaramadı."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:990
 msgid "Try another region or getting a bridge by mail."
-msgstr ""
+msgstr "Başka bir bölge deneyin ya da e-posta ile bir köprü edinin."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1018
-#, fuzzy
 msgid "Error asking for a bridge"
-msgstr "Güncellemeler denetlenirken sorun çıktı"
+msgstr "Köprü istenirken sorun çıktı"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1034
 msgid "Tails failed to ask for a bridge based on your region."
-msgstr ""
+msgstr "Tails OS, bulunduğunuz bölgeden bir köprü isteğinde bulunamadı."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1050
 msgid ""
 "Please, <a href=\"support/talk\">report this error</a> and try asking for a "
 "bridge by email."
 msgstr ""
+"Lütfen <a href=\"support/talk\">bu sorunu bildirin</a> ve e-posta ile bir "
+"köprü istemeyi deneyin."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1087
-#, fuzzy
 msgid "Open _details"
-msgstr "Tails Cloner aç"
+msgstr "_Ayrıntıları aç"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1142
 msgid "• Wrong clock"
@@ -3862,9 +3870,8 @@ msgid "Configure a Local _Proxy"
 msgstr "Bir yerel _vekil sunucu yapılandır"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1374
-#, fuzzy
 msgid "• Tor bridge"
-msgstr "• E-posta ile Tor köprüsü"
+msgstr "• Tor köprüsü"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1394
 msgid ""
@@ -3877,9 +3884,8 @@ msgstr ""
 "kurulması engellenmişse, ilk Tor aktarıcısı olarak bir köprü kullanın."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1410
-#, fuzzy
 msgid "Configure a Tor _Bridge"
-msgstr "Bir Tor köprüsü yapılandırın"
+msgstr "Bir Tor _köprüsü yapılandır"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1449
 msgid ""

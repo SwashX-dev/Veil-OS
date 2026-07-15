@@ -24,9 +24,7 @@ for advice or review of your material.
 
 # Specific tasks
 
-See the [[!tails_gitlab
-groups/tails/-/issues?label_name%5B%5D=T%3APromote
-desc="tasks about promoting Tails"]]
+See the [[!tails_gitlab_label T%3APromote desc="tasks about promoting Tails"]]
 on GitLab.
 
 # Talk to us

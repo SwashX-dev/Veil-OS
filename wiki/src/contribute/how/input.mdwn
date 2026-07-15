@@ -12,7 +12,7 @@ Tasks that are currently stalled by the need for input have the
 the `T:Research`, `T:Discuss`, or `T:Test` label on our
 [[!tails_gitlab groups/tails/-/issues desc="TODO"]] list.
 You probably want to start looking at the ones that are also in the
-[[!tails_gitlab_starter]] first so that you can gain confidence...
+[[!tails_gitlab_label Starter desc="list of *Starter* tasks"]] first so that you can gain confidence...
 and we can smoothly learn to work together.
 
 You may also want to [[test experimental ISO images|contribute/how/testing]].

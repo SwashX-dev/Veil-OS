@@ -5,8 +5,8 @@ sdk=org.boum.tails.Platform/x86_64/stable
 command=/usr/bin/tor-browser
 
 [Context]
-shared=network;ipc;
-sockets=x11;wayland;pulseaudio;fallback-x11;
+shared=ipc;network;
+sockets=fallback-x11;pulseaudio;wayland;
 devices=dri;
 filesystems=xdg-config/kdeglobals:ro;
 

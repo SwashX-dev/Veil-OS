@@ -7,15 +7,16 @@
 # Marija Grinevičiūtė <marijagrineviciute@outlook.com>, 2020
 # Moo, 2015-2022
 # Tautvydas Ž., 2019
-# Weblate <noreply-mt-weblate@weblate.org>, 2025.
+# Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
 # emma peel <emma.peel@riseup.net>, 2025.
+# diskomb <diskomb@proton.me>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-22 08:04+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-06-17 11:02+0200\n"
+"PO-Revision-Date: 2026-06-28 08:01+0000\n"
+"Last-Translator: diskomb <diskomb@proton.me>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "lt/>\n"
 "Language: lt\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -53,12 +54,10 @@ msgid "Configure"
 msgstr "Konfigūruoti"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
-#, fuzzy
 msgid "Password Manager"
-msgstr "Slaptažodis"
+msgstr "Slaptažodžių tvarkyklė"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
-#, fuzzy
 msgid "password"
 msgstr "Slaptažodis"
 
@@ -149,7 +148,7 @@ msgstr "Šalinti"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:945
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:744
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:128
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:376
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:378
 msgid "Cancel"
 msgstr "Atsisakyti"
 
@@ -164,13 +163,13 @@ msgstr "{beginning} ir {last}"
 msgid ", "
 msgstr ", "
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:46
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:45
 msgid "The check for upgrades of your additional software failed"
 msgstr ""
 "Nepavyko patikrinti jūsų papildomai programinei įrangai skirtų naujinimų"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:48
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:60
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:47
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:59
 msgid ""
 "Please check your network connection, restart Tails, or read the system log "
 "to understand the problem."
@@ -178,23 +177,23 @@ msgstr ""
 "Norėdami išsiaiškinti problemą, patikrinkite savo tinklo ryšį, paleiskite "
 "Tails iš naujo arba skaitykite sistemos žurnalą."
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:58
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:57
 msgid "The upgrade of your additional software failed"
 msgstr "Jūsų papildomos programinės įrangos naujinimas patyrė nesėkmę"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:128
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:127
 msgid "Installing your additional software from persistent storage..."
 msgstr "Įdiegiama papildoma programinė įranga iš jūsų ilgalaikio kaupiklio..."
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:129
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:128
 msgid "This can take several minutes."
 msgstr "Tai gali užimti kelias minutes."
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:147
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:146
 msgid "The installation of your additional software failed"
 msgstr "Jūsų papildomos programinės įrangos diegimas patyrė nesėkmę"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:162
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:161
 msgid "Additional software installed successfully"
 msgstr "Papildoma programinė įranga sėkmingai įdiegta"
 
@@ -242,6 +241,10 @@ msgid ""
 "Every bit helps in our fight against surveillance and censorship!\n"
 "\n"
 msgstr ""
+"Tails yra laisva ir nemokama remėjų dėka!\n"
+"\n"
+"Tapk mūsų remėju! Kiekviena auka labai padeda!\n"
+"\n"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:72
 msgid ""
@@ -261,11 +264,11 @@ msgstr "Vėliau"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:156
 msgid "Opening Electrum with our donation address..."
-msgstr ""
+msgstr "Atidarome Electrum su mūsų aukojimo adresu..."
 
 #: config/chroot_local-includes/usr/local/bin/electrum:157
 msgid "Thank you for making the Internet a safer place!"
-msgstr ""
+msgstr "Ačiū! Jūsų dėka internetas tmpa saugesnis!"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:191
 msgid "Persistence is disabled for Electrum"
@@ -386,7 +389,6 @@ msgid "bytes"
 msgstr "baitų"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:295
-#, fuzzy
 msgid ""
 "<b>An error occurred while updating the signing key.</b>\\n\\n<b>This "
 "prevents determining whether an upgrade is available from our website.</"
@@ -396,8 +398,8 @@ msgstr ""
 "<b>Atnaujinant pasirašymo raktą, įvyko klaida.</b>\\n\\n<b>Tai neleidžia "
 "nustatyti ar iš mūsų svetainės yra prieinamas atnaujinimas.</"
 "b>\\n\\nPatikrinkite savo tinklo ryšį ir paleiskite Tails iš naujo, kad "
-"pabandytumėte naujinti dar kartą.\\n\\nJei problema išlieka, pereikite į "
-"file:///usr/share/doc/tails/website/doc/upgrade/error/check.en.html"
+"pabandytumėte naujinti dar kartą.\\n\\nJei problema išlieka, pamėginkite "
+"atlikti rankinį atnaujinimą."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:309
 msgid "Error while downloading the signing key"
@@ -408,7 +410,6 @@ msgid "Error while checking for upgrades"
 msgstr "Klaida, tikrinant ar yra naujinimų"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:344
-#, fuzzy
 msgid ""
 "<b>Could not determine whether an upgrade is available from our website.</"
 "b>\n"
@@ -422,8 +423,7 @@ msgstr ""
 "Patikrinkite savo tinklo ryšį ir iš naujo paleiskite Tails, kad "
 "pabandytumėte naujinti dar kartą.\n"
 "\n"
-"Jei problema išlieka, pereikite į file:///usr/share/doc/tails/website/doc/"
-"upgrade/error/check.en.html"
+"Jei problema išlieka, pamėginkite atlikti rankinį atnaujinimą."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:359
 msgid "no automatic upgrade is available from our website for this version"
@@ -462,7 +462,7 @@ msgstr "Jūsų sistema yra atnaujinta"
 msgid ""
 "You are currently running the latest version. There is no upgrade "
 "available.\n"
-msgstr ""
+msgstr "Jūs naudojate vėliausią versiją. Nėra prieinamų atnaujinimų.\n"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:414
 #, fuzzy
@@ -511,8 +511,8 @@ msgid ""
 "An incremental upgrade is available, but no full upgrade is.\n"
 "This should not happen. Please report a bug."
 msgstr ""
-"Yra prieinamas prieauginis naujinimas, tačiau nėra neprieinamas joks pilnas "
-"naujinimas.\n"
+"Yra prieinamas prieauginis naujinimas, tačiau joks pilnas naujinimas nėra "
+"prieinamas.\n"
 "Taip neturėtų nutikti. Prašome pranešti apie klaidą."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:504
@@ -532,15 +532,14 @@ msgid ""
 msgstr ""
 "<b>Turėtumėte atsinaujinti į {name} {version}.</b>\n"
 "\n"
-"Išsamesnei informacijai apie šią naują versiją, pereikite į {details_url}\n"
+"Išsamesnės informacijos apie šią naują versiją rasite čia: {details_url}\n"
 "\n"
-"Naujinimo metu, rekomenduojame užverti visas kitas programas.\n"
-"Naujinimo atsiuntimas gali ilgai užtrukti, nuo kelių minučių iki kelių "
-"valandų.\n"
+"Rekomenduojame prieš naujinimą užverti visas kitas programas.\n"
+"Naujinimo atsiuntimas gali užtrukti nuo kelių minučių iki kelių valandų.\n"
 "\n"
 "Atsiuntimo dydis: {size}\n"
 "\n"
-"Ar norite naujinti dabar?"
+"Ar norite atnaujinti dabar?"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:517
 msgid "Upgrade available"
@@ -566,6 +565,14 @@ msgid ""
 "\n"
 "To learn how to do a manual upgrade, go to {manual_upgrade_url}"
 msgstr ""
+"<b>Tau reikėtų atlikti rankinį atnaujinimą į vėliausią versiją {name}.<b>\n"
+"\n"
+"Daugiau informacijos apie naujausią versiją rasi čia: {details_url}\n"
+"\n"
+"Tavo Tails neįmanoma automatiškai atnaujinti į šitą naują versiją nes: "
+"{explanation}\n"
+"\n"
+"Instrukcijas kaip atlikti rankinį atnaujinimą rasi čia: {manual_upgrade_url}"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:537
 msgid "New version available"
@@ -719,6 +726,14 @@ msgstr ""
 msgid "Error while installing the upgrade"
 msgstr "Klaida, įdiegiant naujinimą"
 
+#: config/chroot_local-includes/usr/local/bin/gnome-software:13
+msgid "GNOME Software"
+msgstr "GNOME Programinė įranga"
+
+#: config/chroot_local-includes/usr/local/bin/gnome-software:14
+msgid "GNOME Software can only start once Tor has bootstrapped."
+msgstr ""
+
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
 msgstr "Papildomi nustatymai"
@@ -737,7 +752,7 @@ msgstr "_Administravimo slaptažodis"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:196
 msgid "_MAC Address Anonymization"
-msgstr ""
+msgstr "_MAC Adreso anonimizvimas"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:267
 msgid "_Offline Mode"
@@ -2117,66 +2132,66 @@ msgstr "Nepavyko paleisti sistemos iš naujo"
 msgid "Could not find the WhisperBack application"
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:94
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:96
 msgid "Delete Data…"
 msgstr "Ištrinti duomenis…"
 
 #. Translators: Don't translate {feature}, it's a placeholder
 #. and will be replaced.
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:100
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:102
 #, python-brace-format
 msgid "Delete {feature} data"
 msgstr "Ištrinti {feature} duomenis"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:122
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:124
 #, fuzzy
 msgid "Activation failed"
 msgstr "Paslėpti failai"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:178
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:180
 msgid "Activation failed. Try again or delete data."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:180
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:182
 msgid "Activation failed. Try again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:182
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:184
 msgid "The data of this feature is still saved."
 msgstr "Šios ypatybės duomenys yra vis dar įrašyti."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
 #, fuzzy
 msgid "Error activating feature {}"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:299
 #, fuzzy
 msgid "An error occurred while activating the feature."
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:411
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:300
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
 msgid "Details"
 msgstr "Išsamiau"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:338
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:345
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
 #, fuzzy
 msgid "Error deactivating feature {}"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:346
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:348
 #, fuzzy
 msgid "An error occurred while deactivating the feature."
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:366
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2184,38 +2199,38 @@ msgid ""
 "If you cancel, the data will be restored when you turn this feature on again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:377
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:379
 msgid "_Delete Data"
 msgstr "Iš_trinti duomenis"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:407
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
 msgid "Error deleting data of feature {}"
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:408
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 
 #. Translators: Don't translate {applications}, it's a placeholder
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:515
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:517
 #, python-brace-format
 msgid "Close {applications} to continue"
 msgstr "Užverkite {applications} norėdami tęsti"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:516
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:518
 msgid " and "
 msgstr " ir "
 
 #. Translators: Don't translate {app} and {pid}, they
 #. are placeholders.
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:527
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:529
 #, python-brace-format
 msgid "{app} (PID: {pid})"
 msgstr "{app} (PID: {pid})"
 
 #. Translators: Don't translate {app} and {pids}, they
 #. are placeholders.
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:532
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:534
 #, python-brace-format
 msgid "{app} (PIDs: {pids})"
 msgstr ""
@@ -3230,29 +3245,38 @@ msgid "Activate Additional Software"
 msgstr "Aktyvinti papildomą programinę įrangą"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
+msgid "Flatpak"
+msgstr ""
+
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
+#, fuzzy
+msgid "Activate Flatpak"
+msgstr "Aktyvinti SSH klientą"
+
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
 msgstr "Paslėpti failai"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:701
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:730
 msgid "Symlink every file in the Dotfiles folder into the Home folder."
 msgstr ""
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:734
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:763
 #, fuzzy
 msgid "Activate Dotfiles"
 msgstr "Paslėpti failai"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:766
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:795
 msgid "Custom"
 msgstr "Tinkintas"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:785
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:814
 msgid ""
 "To add or remove custom features, modify /live/persistence/"
 "TailsData_unlocked/persistence.conf."
 msgstr ""
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:827
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:856
 msgid ""
 "<a href=\"doc/persistent_storage\">Learn more about the Persistent Storage.</"
 "a>"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2026-03-09 12:03+0000\n"
-"PO-Revision-Date: 2026-04-17 05:18+0000\n"
+"PO-Revision-Date: 2026-07-03 05:45+0000\n"
 "Last-Translator: cacu <cacukin@cryptolab.net>\n"
 "Language-Team: Spanish <http://translate.tails.net/projects/tails/install/es/"
 ">\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Content of: <div>
 msgid "[[!meta title=\"Install Tails\"]]"
@@ -130,15 +130,10 @@ msgstr ""
 "Linux como Tails."
 
 #. type: Content of: outside any tag (error?)
-#, fuzzy
-#| msgid ""
-#| "[[Detailed system requirements and recommended hardware.|doc/about/"
-#| "requirements]]"
 msgid ""
 "[[System requirements and recommended USB sticks|doc/about/requirements]]"
 msgstr ""
-"[[Requisitos detallados del sistema y hardware recomendado.|doc/about/"
-"requirements]]"
+"[[Requisitos del sistema y memorias USB recomendadas|doc/about/requirements]]"
 
 #. type: Content of: <h1>
 msgid "Other options"

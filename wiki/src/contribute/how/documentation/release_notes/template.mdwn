@@ -29,12 +29,27 @@ vulnerability in $APPLICATION.
 <!--
 
 - Update *Tor Browser* to [1.2.3](https://blog.torproject.org/new-release-tor-browser-123),
-  which fixes [[$CODE|$LINK]], a (major|minor) $TYPE vulnerability. Using this
-  vulnerability, an attacked could $IMPACT.
+  which fixes [[$CODE|$LINK]] (*$NAME*), a (major|minor) $TYPE vulnerability. Using this
+  vulnerability, (an attacked could $IMPACT|an application in Tails could gain administration privileges).
+
+  For example, if an attacker was able to exploit other unknown security
+  vulnerabilities in an application included in Tails, they might then use $CODE
+  to take full control of your Tails and deanonymize you.
 
   <div class="attack">
 
-  <p>We are (not) aware of this (attack|vulnerability) being (used|exploited) in practice until now.</p>
+  <p>
+
+  This attack is very unlikely, but could be performed by a powerful attacker,
+  such as a government or a hacking firm.
+
+  This vulnerability can only be exploited by a powerful attacker who has
+  already exploited another vulnerability to take control of $APPLICATION.
+
+  We are (not) aware of this (attack|vulnerability) being (used|exploited) in
+  practice until now.
+
+  </p>
 
   </div>
 
@@ -45,14 +60,12 @@ vulnerability in $APPLICATION.
 
 - Update the *Tor* client to 0.1.2.3.
 
-- Update *Thunderbird* to [1.2.3](https://www.thunderbird.net/en-US/thunderbird/1.2.3esr/releasenotes/).
-
 - Update (the *Linux* kernel to a.b.c|(some|most) firmware packages). <!-- Only if 'a.b' increased --> This improves support for newer
   hardware: graphics, Wi-Fi, and so on.
 
 <!--
 
-- Update the *Linux* kernel to a.bc, which fixes [[$CODE|$LINK]],
+- Update the *Linux* kernel to a.bc, which fixes [[$CODE|$LINK]] (*$NAME*),
   (a vulnerability|multiple vulnerabilities) that could allow an application in
   Tails to gain administration privileges.
 

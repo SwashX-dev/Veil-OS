@@ -1,3 +1,5 @@
+require 'packetfu'
+
 class DhcpLeakError < StandardError
 end
 

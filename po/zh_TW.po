@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-22 08:04+0200\n"
-"PO-Revision-Date: 2026-04-27 09:11+0000\n"
+"POT-Creation-Date: 2026-06-17 11:02+0200\n"
+"PO-Revision-Date: 2026-06-23 20:01+0000\n"
 "Last-Translator: Toomore Chiang <toomore0929@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/tor/tails-gui/zh_Hant/>\n"
@@ -42,24 +42,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
 msgid ""
 "{details} Please check your list of additional software or read the system "
 "log to understand the problem."
-msgstr "{details} 請檢閱您的附加軟體清單或系統紀錄，來了解問題狀況。"
+msgstr "{details} 請檢閱您的附加軟體清單或系統記錄，來了解問題狀況。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:249
 msgid ""
 "Please check your list of additional software or read the system log to "
 "understand the problem."
-msgstr "請檢閱您的附加軟體清單或系統紀錄，來了解問題狀況。"
+msgstr "請檢閱您的附加軟體清單或系統記錄，來了解問題狀況。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:255
 msgid "Show Log"
-msgstr "顯示日誌"
+msgstr "顯示記錄"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:255
 msgid "Configure"
@@ -155,7 +155,7 @@ msgstr "移除"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:945
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:744
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:128
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:376
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:378
 msgid "Cancel"
 msgstr "取消"
 
@@ -170,35 +170,35 @@ msgstr "{beginning} 和 {last}"
 msgid ", "
 msgstr ", "
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:46
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:45
 msgid "The check for upgrades of your additional software failed"
 msgstr "檢查其他軟體的升級失敗"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:48
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:60
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:47
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:59
 msgid ""
 "Please check your network connection, restart Tails, or read the system log "
 "to understand the problem."
 msgstr ""
 "請檢查您的網路連線，重新啟動 Tails，或閱讀系統記錄來了解問題的詳細資訊。"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:58
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:57
 msgid "The upgrade of your additional software failed"
 msgstr "升級您的其他軟體失敗"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:128
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:127
 msgid "Installing your additional software from persistent storage..."
 msgstr "從永久性儲存安裝您的其他軟體..."
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:129
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:128
 msgid "This can take several minutes."
 msgstr "這可能會花幾分鐘。"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:147
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:146
 msgid "The installation of your additional software failed"
 msgstr "安裝您的其他軟體失敗"
 
-#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:162
+#: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:161
 msgid "Additional software installed successfully"
 msgstr "其他軟體安裝成功"
 
@@ -695,6 +695,14 @@ msgstr ""
 msgid "Error while installing the upgrade"
 msgstr "安裝升級時發生錯誤"
 
+#: config/chroot_local-includes/usr/local/bin/gnome-software:13
+msgid "GNOME Software"
+msgstr ""
+
+#: config/chroot_local-includes/usr/local/bin/gnome-software:14
+msgid "GNOME Software can only start once Tor has bootstrapped."
+msgstr "GNOME Software 必須等 Tor 完成引導後才能啟動。"
+
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
 msgstr "額外的設定"
@@ -918,7 +926,7 @@ msgstr "由於檔案系統錯誤，無法解鎖持久性儲存。"
 msgid ""
 "Failed to upgrade the Persistent Storage. Please start Tails and send an "
 "error report."
-msgstr "無法激活永久性儲存，請重開 Tails 與回報錯誤。"
+msgstr "無法啟用永久性儲存，請重開 Tails 與回報錯誤。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:983
 msgid ""
@@ -930,7 +938,7 @@ msgstr "無法解鎖永久性儲存，請重開 Tails 與回報錯誤。"
 msgid ""
 "Failed to activate the Persistent Storage. Please start Tails and send an "
 "error report."
-msgstr "無法激活永久性儲存，請重開 Tails 與回報錯誤。"
+msgstr "無法啟用永久性儲存，請重開 Tails 與回報錯誤。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:1002
 msgid "Upgrading the Persistent Storage. This might take a while…"
@@ -990,7 +998,7 @@ msgid ""
 "A more detailed error log has been written to \"%(filename)s\"."
 msgstr ""
 "執行以下指令發生錯誤: `%(command)s`.\n"
-"更詳細的錯誤日誌已寫入 \"%(filename)s\"."
+"更詳細的錯誤記錄已寫入 \"%(filename)s\"."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:497
 #, python-format
@@ -1067,7 +1075,7 @@ msgstr "目標設備已開啟文件"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:834
 #, python-format
 msgid "Mount %s exists after unmounting"
-msgstr "卸載後 %s 掛載仍存在"
+msgstr "解除安裝後 %s 掛載仍存在"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:865
 #, python-format
@@ -2051,8 +2059,8 @@ msgid ""
 "doesn't work, restart Tails and try deleting the Persistent Storage without "
 "unlocking it."
 msgstr ""
-"無法卸載持久性存儲，某些進程仍在使用它。 請關閉所有可能訪問它的應用程序，然後"
-"重試。 如果這不起作用，請重新啟動 Tails 並嘗試刪除持久性儲存而不解鎖它。"
+"無法解除安裝持久性存儲，某些進程仍在使用它。 請關閉所有可能訪問它的應用程序，"
+"然後重試。 如果這不起作用，請重新啟動 Tails 並嘗試刪除持久性儲存而不解鎖它。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps/device.py:737
 msgid ""
@@ -2068,8 +2076,8 @@ msgid ""
 "Can't unmount target {target}, some process is still using it. Please close "
 "all applications that could be accessing the target and try again."
 msgstr ""
-"無法卸載目標 {target}，某些進程仍在使用它。 請關閉所有可能存取目標的應用程"
-"序，然後重試。"
+"無法解除安裝目標 {target}，某些進程仍在使用它。 請關閉所有可能存取目標的應用"
+"程序，然後重試。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:49
@@ -2086,61 +2094,61 @@ msgstr "無法調置您的永久儲存"
 msgid "Could not find the WhisperBack application"
 msgstr "找不到 WhisperBack 應用程式"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:94
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:96
 msgid "Delete Data…"
 msgstr "刪除資料…"
 
 #. Translators: Don't translate {feature}, it's a placeholder
 #. and will be replaced.
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:100
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:102
 #, python-brace-format
 msgid "Delete {feature} data"
-msgstr "刪除{feature}數據"
+msgstr "刪除{feature}資料"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:122
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:124
 msgid "Activation failed"
 msgstr "啟動失敗"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:178
-msgid "Activation failed. Try again or delete data."
-msgstr "激活失敗。 再試一次或刪除資料。"
-
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:180
-msgid "Activation failed. Try again."
-msgstr "激活失敗。 再試一次。"
+msgid "Activation failed. Try again or delete data."
+msgstr "啟用失敗。 再試一次或刪除資料。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:182
+msgid "Activation failed. Try again."
+msgstr "啟用失敗。 再試一次。"
+
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:184
 msgid "The data of this feature is still saved."
 msgstr "該功能的資料仍然保存。"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
 msgid "Error activating feature {}"
 msgstr "啟用永久性儲存時出錯: {}"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:299
 msgid "An error occurred while activating the feature."
 msgstr "啟用該功能時發生錯誤。"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:411
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:300
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
 msgid "Details"
 msgstr "詳細說明"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:338
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:345
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
 msgid "Error deactivating feature {}"
 msgstr "停用永久性儲存時出錯: {}"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:346
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:348
 msgid "An error occurred while deactivating the feature."
 msgstr "停用該功能時發生錯誤。"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:366
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2151,38 +2159,38 @@ msgstr ""
 "\n"
 "如果您取消，當您再次開啟此功能時，資料將會恢復。"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:377
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:379
 msgid "_Delete Data"
-msgstr "_刪除數據"
+msgstr "_刪除資料"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:407
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
 msgid "Error deleting data of feature {}"
 msgstr "在刪除功能的資料時發生錯誤：{}"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:408
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "刪除功能 {} 的資料時發生錯誤。"
 
 #. Translators: Don't translate {applications}, it's a placeholder
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:515
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:517
 #, python-brace-format
 msgid "Close {applications} to continue"
 msgstr "關閉{applications}以繼續"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:516
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:518
 msgid " and "
 msgstr " 和 "
 
 #. Translators: Don't translate {app} and {pid}, they
 #. are placeholders.
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:527
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:529
 #, python-brace-format
 msgid "{app} (PID: {pid})"
 msgstr "{app} (PID: {pid})"
 
 #. Translators: Don't translate {app} and {pids}, they
 #. are placeholders.
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:532
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:534
 #, python-brace-format
 msgid "{app} (PIDs: {pids})"
 msgstr "{app} (PIDs: {pids})"
@@ -2240,7 +2248,7 @@ msgstr ""
 "在永久性儲存被解鎖的情況下，無法刪除永久性儲存。\n"
 "\n"
 "要刪除永久性儲存，請在未解鎖永久性儲存的情況下重啟 Tails，然後再次打開永久性"
-"儲存設置。"
+"儲存設定。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:167
 msgid ""
@@ -2328,7 +2336,7 @@ msgstr "詳細資料（指令輸出）"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:349
 msgid "Failed to open the documentation"
-msgstr "開啟文檔失敗"
+msgstr "開啟文件失敗"
 
 #. Translators: Don't translate {volume_label} or {volume_size},
 #. they are placeholders and will be replaced. They need
@@ -2531,7 +2539,7 @@ msgstr "重啟系統失敗。"
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:71
 msgid "Shutting down the Unsafe Browser..."
-msgstr "正在關閉不安全的瀏覽器..."
+msgstr "正在關閉不安全瀏覽器..."
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:72
 msgid ""
@@ -2549,7 +2557,7 @@ msgstr "不安全瀏覽器"
 msgid ""
 "Another Unsafe Browser is currently running, or being cleaned up. Please "
 "retry in a while."
-msgstr "目前正在執行另一個不安全的瀏覽器，或被清理。請在一段時間後重試。"
+msgstr "目前正在執行另一個不安全瀏覽器，或被清理。請在一段時間後重試。"
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:116
 msgid ""
@@ -2569,7 +2577,7 @@ msgstr "無法執行瀏覽器。"
 msgid ""
 "The %s variable was not found in the configuration file: /etc/whisperback/"
 "config.py"
-msgstr "在設置檔中找不到 %s 變數: /etc/whisperback/config.py"
+msgstr "在設定檔中找不到 %s 變數: /etc/whisperback/config.py"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/whisperBack/gui.py:136
 msgid "Unable to load a valid configuration."
@@ -2719,7 +2727,7 @@ msgstr "安裝、複製、升級、手動"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2
 msgid "Connect Tails to the Tor network"
-msgstr "連線 Tails 到 Tor 網絡"
+msgstr "連線 Tails 到 Tor 網路"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:3
 msgid "connect;tor;network"
@@ -2913,7 +2921,7 @@ msgid ""
 "Storage on your Tails USB stick: your documents, browser bookmarks, Wi-Fi "
 "passwords, and so on."
 msgstr ""
-"可利用 Tails 隨身碟的加密永久儲存來保存某些檔案或設置，如：文件、Wi-Fi 密碼、"
+"可利用 Tails 隨身碟的加密永久儲存來保存某些檔案或設定，如：文件、Wi-Fi 密碼、"
 "瀏覽器書籤等等。"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:314
@@ -3067,11 +3075,11 @@ msgstr "您可以儲存文件的資料夾。"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:162
 msgid "Open Persistent Folder"
-msgstr "打開永久性文件夾"
+msgstr "打開永久性資料夾"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:175
 msgid "Activate Persistent Folder"
-msgstr "激活永久性資料夾"
+msgstr "啟用永久性資料夾"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:202
 msgid "System Settings"
@@ -3091,7 +3099,7 @@ msgstr "印表機"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:275
 msgid "Activate Printers"
-msgstr "激活印表機"
+msgstr "啟用印表機"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:302
 msgid "Network"
@@ -3103,11 +3111,11 @@ msgstr "網路連線"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:331
 msgid "Save Wi-Fi passwords and mobile broadband configuration."
-msgstr "儲存 Wi-Fi 密碼與行動寛頻之設置。"
+msgstr "儲存 Wi-Fi 密碼與行動寛頻之設定。"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:347
 msgid "Activate Network Connections"
-msgstr "激活網路連線"
+msgstr "啟用網路連線"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:360
 msgid "Tor Bridge"
@@ -3115,7 +3123,7 @@ msgstr "Tor 橋接器"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:376
 msgid "Activate Tor Bridge"
-msgstr "激活 Tor 橋接器"
+msgstr "啟用 Tor 橋接器"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:403
 msgid "Applications"
@@ -3127,7 +3135,7 @@ msgstr "Tor 瀏覽器書籤"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:447
 msgid "Activate Tor Browser Bookmarks"
-msgstr "激活瀏覽器書籤"
+msgstr "啟用瀏覽器書籤"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:460
 msgid "Electrum Bitcoin Wallet"
@@ -3135,7 +3143,7 @@ msgstr "Electrum 比特幣錢包"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:476
 msgid "Activate Electrum Bitcoin Wallet"
-msgstr "激活 Electrum 比特幣錢包"
+msgstr "啟用 Electrum 比特幣錢包"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:489
 msgid "Thunderbird Email Client"
@@ -3143,7 +3151,7 @@ msgstr "Thunderbird 電子郵件軟體"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:505
 msgid "Activate Thunderbird Email Client"
-msgstr "激活 Thunderbird 電子郵件軟體"
+msgstr "啟用 Thunderbird 電子郵件軟體"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:518
 msgid "GnuPG"
@@ -3155,7 +3163,7 @@ msgstr "Thunderbird 以外的 OpenPGP 金鑰，包括 Kleopatra 中的金鑰。"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:535
 msgid "Activate GnuPG"
-msgstr "激活 GnuPG"
+msgstr "啟用 GnuPG"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:548
 msgid "Pidgin Internet Messenger"
@@ -3187,25 +3195,33 @@ msgstr "設定其他軟體"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:687
 msgid "Activate Additional Software"
-msgstr "激活其他軟體"
+msgstr "啟用其他軟體"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
+msgid "Flatpak"
+msgstr ""
+
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
+msgid "Activate Flatpak"
+msgstr "啟用 Flatpak"
+
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
 msgstr "隱藏檔案"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:701
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:730
 msgid "Symlink every file in the Dotfiles folder into the Home folder."
-msgstr "將 Dotfiles 資料夾中的全部檔案鏈接到 Home 資料夾。"
+msgstr "將 Dotfiles 資料夾中的全部檔案連結到 Home 資料夾。"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:734
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:763
 msgid "Activate Dotfiles"
-msgstr "激活 Dotfiles"
+msgstr "啟用 Dotfiles"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:766
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:795
 msgid "Custom"
 msgstr "自定義"
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:785
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:814
 msgid ""
 "To add or remove custom features, modify /live/persistence/"
 "TailsData_unlocked/persistence.conf."
@@ -3213,7 +3229,7 @@ msgstr ""
 "增添或移除自定功能，請修改 /live/persistence/TailsData_unlocked/"
 "persistence.conf."
 
-#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:827
+#: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:856
 msgid ""
 "<a href=\"doc/persistent_storage\">Learn more about the Persistent Storage.</"
 "a>"
@@ -3657,11 +3673,11 @@ msgstr "• 本地代理"
 msgid ""
 "If you are on a corporate or university network, you might need to configure "
 "a local proxy."
-msgstr "如果使用的是公司或大學網路，可能需要設置本地代理。"
+msgstr "如果使用的是公司或大學網路，可能需要設定本地代理。"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1335
 msgid "Configure a Local _Proxy"
-msgstr "設置本地_代理"
+msgstr "設定本地_代理"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1374
 msgid "• Tor bridge"
@@ -3728,7 +3744,7 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1646
 msgid "Configure a Tor _bridge"
-msgstr "設置 Tor _橋接"
+msgstr "設定 Tor _橋接"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1692
 msgid ""
@@ -3805,10 +3821,10 @@ msgstr ""
 "Tails 在您的電腦上找不到任何 Wi-Fi 介面。如果您的電腦有 Wi-Fi 介面，它可能無"
 "法在 Tails 上使用。\n"
 "\n"
-"要連接到互聯網，您可以嘗試：\n"
+"要連接到網際網路，您可以嘗試：\n"
 "\n"
 " • 使用乙太網路線取代 Wi-Fi。在 Tails 中，有線介面比 Wi-Fi 更可靠。\n"
-" • 使用 USB 網路分享功能，透過電線分享您手機的 Wi-Fi 或行動數據連線。\n"
+" • 使用 USB 網路分享功能，透過電線分享您手機的 Wi-Fi 或行動資料連線。\n"
 " • 購買可在 Tails 中使用的 USB Wi-Fi 轉接器。\n"
 "                "
 
@@ -3876,7 +3892,7 @@ msgstr "啟動 Tor 瀏覽器"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2446
 msgid "Configure a Local Proxy"
-msgstr "設置本地代理"
+msgstr "設定本地代理"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2472
 msgid "Proxy Type"

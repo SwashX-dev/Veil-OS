@@ -1,8 +1,509 @@
-tails (7.8) UNRELEASED; urgency=medium
+tails (7.10) UNRELEASED; urgency=medium
 
   * Dummy entry for next release.
 
- -- intrigeri <intrigeri@debian.org>  Mon, 11 May 2026 15:21:23 +0000
+ -- boyska <boyska@riseup.net>  Wed, 01 Jul 2026 13:11:54 +0200
+
+tails (7.9.1) unstable; urgency=medium
+
+  * Upgrade Linux to 6.12.94, which fixes CVE-2026-46331
+
+  * Upgrade tor to 0.4.9.11
+
+  * Mitigate recent kernel CVEs (tails/tails!3094)
+
+    Closes issues:
+      - Resolve CVE-2026-46331 aka PACKET_EDIT_MEME (tails/tails#21666)
+      - CVE-2026-43503 aka dirtyclone (tails/tails#21664)
+
+    Commits:
+      - clarify the importance of blocking esp
+      - block more Linux modules, based on recent CVEs
+
+  * Stop using a different mirror when JS is disabled (tails/tails!3095)
+
+    Commits:
+      - stop using a single hardcoded mirror when there's no JS
+
+  * Upgrade TorBrowser to 15.0.17 (tails/tails!3093)
+
+    Closes issues:
+      - Upgrade to Tor Browser 15.0.17 based on Firefox ESR 140.12 (tails/tails#21665)
+
+    Commits:
+      - Refresh org.boum.tails.TorBrowser flatpak manifest
+      - Use TBB tarball as hosted by archive.torproject.org
+      - patches have the full commit
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.12.0esr-15.0-1-build2
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.12.0esr-15.0-1-build2
+      - Upgrade Tor Browser to 15.0.17-build1 (refs: tails#)
+      - CI: run all tests for tor-browser-15.0.17
+
+  * Test suite: use tshark instead of PacketFu when looking for leaks
+    (tails/tails!3077)
+
+    Commits:
+      - Test suite: use higher-level check and explicitly report exit status
+      - Test suite: assert only one value per field in tshark's output and explain why
+      - Explain magic numbers
+      - Test suite: use tshark instead of PacketFu when looking for leaks
+
+  * TCA: fix Offline Mode error dialog (tails/tails!3063)
+
+    Commits:
+      - TCA: don't try to use local outside of a shell function
+      - TCA: make translations in wrapper actually work
+
+ -- Tails developers <foundations@tails.net>  Tue, 30 Jun 2026 13:58:20 +0200
+
+tails (7.9) unstable; urgency=medium
+
+  * Upgrade to Tor Browser 15.0.16 based on Firefox ESR  140.12 (tails/tails!3070)
+
+    Closes issues:
+      - Upgrade to Tor Browser 15.0.16 based on Firefox ESR  140.12 (tails/tails#21619)
+      - Refresh `about:tor` patches for Tails 7.9 (tails/tails#21620)
+
+    Commits:
+      - Fetch Tor Browser from our own archive
+      - Drop obsolete case
+      - Upgrade Tor Browser to 15.0.16-build1 (refs: tails#21619)
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.12.0esr-15.0-1-build1
+      - CI: run all tests for 21619-tor-browser-15.0.16
+
+  * tails-uefi-ca-detect relies on DB, not KEK (tails/tails!3062)
+
+    Closes issues:
+      - Check for old UEFI CA encourages some users to disable Secure Boot for no
+        reason (tails/tails#21643)
+
+    Commits:
+      - tails-uefi-ca-detect relies on DB, not KEK
+
+  * Test suite: remove DVD when setting a disk boot device (tails/tails!3074)
+
+    Closes issues:
+      - Test suite: step 'Tails is running from USB drive "temp"' is fragile
+        (tails/tails#21578)
+
+    Commits:
+      - Test suite: don't raise when attempting to empty an already empty DVD drive
+      - Test suite: remove DVD when setting a disk boot device
+
+  * Test suite: wait until "Installed" tab is ready before interacting
+    (tails/tails!3073)
+
+    Closes issues:
+      - Test suite: GNOME Software interactions are fragile due to timing of loading
+        screens vs. test suite actions (tails/tails#21653)
+
+    Commits:
+      - Test suite: wait until "Installed" tab is ready before interacting
+
+  * Update "debian" APT snapshot to 2026061501 (tails/tails!3071)
+
+    Closes issues:
+      - needed-package-updates: firmware-nonfree 20260410-1 → 20260519-1~bpo13+1
+        (tails/tails#21655)
+
+    Commits:
+      - Update "debian" APT snapshot to 2026061501
+
+  * Restart GNOME Software whenever the Flatpak persistence storage feature is
+    enabled from amnesia's GNOME session (tails/tails!3068)
+
+    Commits:
+      - GNOME Softare: fix issue that made "Install" button turn to "Uninstall" instead
+        of "Open"
+
+  * GitLab CI: use tpo/tpa/base-images/debian:* instead of sysadmin-team/container-
+    images/debian:* (tails/tails!3064)
+
+    Commits:
+      - Point to container images policy
+      - GitLab CI: use tpo/tpa/base-images/debian:* instead of sysadmin-team/container-
+        images/debian:*
+      - Update comment to match current policy
+
+  * post-RM doc update (tails/tails!3056)
+
+    Commits:
+      - Revert "Avoid the need for rsync.lizard to slowly download IUKs from Jenkins"
+      - Don't rely on implementation details and ensure we don't skip a step
+      - Be clearer
+      - Avoid the need for rsync.lizard to slowly download IUKs from Jenkins
+      - Bring back Thunderbird testing frequency
+      - Fix typo
+      - disable CI for this branch
+      - copying images has progress info
+      - doc how to copyy images fast despite network slowness
+      - optimized IUK verification
+      - clarify when Thunderbird should be tested
+      - make the progress bar more handy
+      - update expected time
+      - leave less space to doubt
+      - I have seen instances taking 5 minutes
+
+  * Remove obsolete transitional APT pinning (tails/tails!3050)
+
+    Commits:
+      - Remove obsolete transitional APT pinning
+
+  * Support installing Flatpak apps (guarded by feature flag) (tails/tails!3009)
+
+    Closes issues:
+      - Implement support for Flatpak apps installation over Tor in Tails (P202 1.1)
+        (tails/tails#21548)
+      - Develop automated integration tests for managing Flatpak apps (P202 1.4)
+        (tails/tails#21551)
+      - Tor TransPort has no isolation flags (tails/tails#6378)
+
+    Commits:
+      - Flatpak design doc: explain why GNOME Software must start after Tor has
+        bootstrapped
+      - Move the real flatpak and gnome-software out of $PATH
+      - flatpak wrapper: do Tor stream isolation
+      - Test suite: make step work when no alert is showing
+      - Test suite: refactor
+      - Build system: make apt-cacher-ng treat .flatpakrepo files as volatile
+      - Test suite: verify that killed Flatpaks are killed
+      - Don't convert Type of gnome-software.service
+      - Add shell guardrail
+      - GNOME Software wrapper: set textdomain to make translations work
+      - Test suite: improve scenario name
+      - Test suite: do proper inclusion check instead of using a regex
+      - Test suite: double timeout when waiting for Flatpak apps to install
+      - Persistence design doc: document feature states
+      - Test suite: start Flatpaks apps with launch_app()
+      - Test suite: start GNOME Software without D-Bus ping
+      - gtk-abspath-launch: add option to not send D-Bus ping
+      - Test suite: test the GNOME Software only starts when we want it to
+      - Prevent some ways GNOME Software can be started before Tor has bootstrapped
+      - Test suite: ensure that there's no Tor leaks when installing Flatpak apps
+      - Test suite: reliably start Flatpaks
+      - flatpak: don't treat flatpak processes as conflicting with the Flatpak
+        persistence feature
+      - Test suite: temporarily (?) drop GNOME Software as conflicting app for Flatpak
+        persistence feature
+      - Rubocop: ignore Layout/LineLength for snapshots' parent_checkpoint
+      - flatpak: unconditionally enable Flathub for the live user
+      - Test suite: work around GNOME Software not fetching updates in Tails
+      - Appease rubocop
+      - shfmt
+      - Flatpak design doc: document a few more conclusions
+      - Design doc: update transparent proxying setup
+      - Flatpak design doc: add skeleton
+      - Test suite: add scenario for installing, running and uninstalling a Flatpak
+      - Test suite: adapt permission/ownership check for Flatpak persistence feature
+      - Test suite: ensure that gnome-software-plugin-deb is not installed
+      - Test suite: improve code handling kernel cmdline
+      - Test suite: adjust for reintroduction of transparent proxying
+      - Hide the GNOME Software .desktop entry unless the flatpak feature flag is
+        enabled
+      - Appease ruff: UP007
+      - flatpak: enable the Flathub repo for the live user when the Flatpak persistence
+        feature is activated
+      - Build system: refactor code for cached apt-cacher-ng https fetch
+      - tor: use same stream isolation options for TransPort as the default SocksPort
+      - flatpak: mask flatpak persistence feature unless feature flag is set
+      - tps: add machinery for masking persistence features
+      - tps: add Flatpak persistence feature (refs: tails#21566)
+      - Enable transparent proxying through tor for the live user
+      - Disable the GNOME Software search provider for GNOME Shell
+      - flatpak: proxy through tor
+      - Install GNOME Software but only with the Flatpak plugin
+
+ -- Tails developers <foundations@tails.net>  Wed, 17 Jun 2026 12:44:09 +0200
+
+tails (7.8.1) unstable; urgency=medium
+
+  * Upgrade tor to 0.4.9.9 (tails/tails!3046)
+
+    Closes issues:
+      - Upgrade tor to 0.4.9.9 (tails/tails#21631)
+
+    Commits:
+      - Upgrade tor to 0.4.9.9
+      - Set this branch to run all tests
+
+  * Unsafe Browser: reset TTL to the default Linux value (tails/tails-private!8)
+
+    Commits:
+      - Unsafe Browser: reset TTL to the default Linux value
+
+  * Let Debian security update supersede our temporary yelp custom package
+    (tails/tails!3047)
+
+    Closes issues:
+      - Let Debian security update supersede our temporary yelp custom packages
+        (tails/tails#21636)
+
+    Commits:
+      - Let Debian security update supersede our temporary yelp custom package
+
+  * CI: ignore irrelevant carl9170fw 1.9.9-690-gc6e7ab0-0.2 update
+    (tails/tails!3042)
+
+    Closes issues:
+      - needed-package-updates: carl9170fw 1.9.9-690-gc6e7ab0-0.1 →
+        1.9.9-690-gc6e7ab0-0.2 (tails/tails#21634)
+
+    Commits:
+      - CI: ignore irrelevant carl9170fw 1.9.9-690-gc6e7ab0-0.2 update
+
+  * Design doc: add tooling to review links to closed issues and do the first pass
+    (tails/tails!3041)
+
+    Closes issues:
+      - Regularly review links to closed issues in design doc (tails/tails#21630)
+
+    Commits:
+      - Set default target directory for better ergonomics
+      - Use code pattern that's easier to reason about
+      - Fix typos
+      - shfmt
+      - Design doc: update or remove references to fixed problems
+      - Design doc: update broken links
+      - Design doc: remove obsolete plans for future work
+      - closed-issues-linked-from-website: ignore legit links
+      - Design doc: remove obsolete "XXX"
+      - closed-issues-linked-from-website: support ignoring a list of issues
+      - closed-issues-linked-from-website: also support checking the design doc
+
+  * Ensure we eventually disclose security vulnerabilities as per our policy
+    (tails/tails!3036)
+
+    Commits:
+      - Give the RM an escape route
+      - Remove now-duplicate work that we haven't been doing consistently
+      - Ensure we eventually disclose security vulnerabilities as per our policy
+
+  * Stop installing tcpdump (tails/tails!3034)
+
+    Closes issues:
+      - Stop installing tcpdump (tails/tails#21618)
+
+    Commits:
+      - Manual QA: install tcpdump when needed
+      - Stop installing tcpdump
+
+  * Let Debian security updates supersede our temporary evince, haveged, and
+    libgcrypt20 custom packages (tails/tails!3032)
+
+    Closes issues:
+      - Let Debian security updates supersede our temporary evince, haveged, and
+        libgcrypt20 custom packages (tails/tails#21615)
+
+    Commits:
+      - Let Debian security updates supersede our temporary evince, haveged, and
+        libgcrypt20 custom packages
+
+  * Test suite: drop warning from Net::DNS monkeypatch (tails/tails!3030)
+
+    Commits:
+      - Test suite: drop warning from Net::DNS monkeypatch
+
+  * Add issue template for team sprint (tails/tails!3026)
+
+    Commits:
+      - Add issue template for team sprint
+
+  * Release process: post-7.8 improvements (tails/tails!3025)
+
+    Commits:
+      - Remove busywork
+      - Release process: deduplicate and add missing steps
+      - Fix spelling
+      - Remove superfluous "set -x"
+      - Fix typos
+      - Release process: assume unprivileged user namespaces are enabled
+
+ -- Tails developers <foundations@tails.net>  Wed, 03 Jun 2026 12:58:13 +0200
+
+tails (7.8) unstable; urgency=medium
+
+  * Upgrade to Tor Browser 15.0.14 (tails/tails!3017)
+
+    Closes issues:
+      - Upgrade to Tor Browser based on Firefox ESR 140.11 (tails/tails#21537)
+
+    Commits:
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.11.0esr-15.0-1-build3
+      - Update instructions for importing changes from the official Mozilla Firefox
+        Flatpak
+      - Upgrade Tor Browser to 15.0.14-build1 (refs: tails#21537)
+      - CI: run all tests for 21537-tor-browser-15.0.14
+
+  * Mitigate the Fragnesia Linux kernel LPE (tails/tails!3000)
+
+    Closes issues:
+      - Fragnesia (Linux LPE) (tails/tails#21601)
+
+    Commits:
+      - Generalize blocklisting of esp4, esp6, and rxrpc
+      - Mitigate the Drity Frag Linux kernel LPE
+
+  * Mitigate Flatpak Sandbox Escape via Yelp (tails/tails!3015)
+
+    Closes issues:
+      - Flatpak Sandbox Escape via Yelp (tails/tails#21584)
+
+    Commits:
+      - Upgrade yelp to 42.2-4tails1 (refs: tails#21584)
+
+  * Fix CVE-2026-46529 (evince), CVE-2026-41989 (libgcrypt20),
+    and CVE-2026-41054 (haveged) (tails/tails!3020)
+
+  * Only ask users to update the Secure Boot CA if Secure Boot is enabled
+    (tails/tails!2972)
+
+    Closes issues:
+      - Confusing notifications about updating the Secure Boot CA while Secure Boot is
+        disabled (tails/tails#21539)
+
+    Commits:
+      - ruff format
+      - detects booting from MBR as SECURE_BOOT_DISABLED
+      - tests for SECURE_BOOT_DISABLED
+      - Stop interpreting mokutil failure as SECURE_BOOT_DISABLED
+      - be more explicit about cases which need no user action
+      - actually check if secure boot is disabled
+
+  * Upgrade to Trixie 13.5 (tails/tails!3014)
+
+    Closes issues:
+      - Upgrade to Trixie 13.5 (tails/tails#21170)
+
+    Commits:
+      - CI: run all tests
+      - Upgrade to Trixie 13.5
+
+  * WhisperBack reports installed Flatpak apps and runtimes (tails/tails!3006)
+
+    Closes issues:
+      - Add Flatpak support to WhisperBack (P202 1.3) (tails/tails#21550)
+
+    Commits:
+      - add empty lines to improve readability
+      - also report locales
+      - ruff E741: avoid ambiguous variable name
+      - ruff format
+      - whisperback-search supports tails-flatpak-info
+      - whisperback include details about flatpak
+
+  * Post-7.7.3 release process improvements (tails/tails!3005)
+
+    Closes issues:
+      - Release process: drop the "Build the almost-final images" step
+        (tails/tails#19015)
+
+    Commits:
+      - Add boyska's compare-directories-sizes
+      - Remove useless cat
+      - Ensure variable is set
+      - Fix incompatible types
+      - Remove UDFs for versions we'll never release
+      - Remove UDFs for versions we'll never release
+      - Remove obsolete type issue suppression
+      - ruff format
+      - shfmt
+      - Release process: drop the need to build the almost-final images locally
+      - Release process: move CI checks to "Pre-freeze"
+      - Release process: maximize the chances we have an almost-final image built on
+        Jenkins by the time we need it
+      - Release process: be explicit about the destination of the merge
+      - Release process: make heading more specific
+      - Release process: check earlier for Tor Browser update
+      - Add pipefail guard rail
+      - Update type annotation
+      - Verify that needed variables are set
+      - Add pipefail guard rail
+      - Release process: improve phrasing
+      - Give link its text
+      - Release process: use consistent spelling
+      - Release process: add missing heading
+      - copy-images-to-rsync-server-and-verify: allow skipping the download
+      - Don't use confusing variable name
+      - Don't reuse variable name for something else
+      - Clean up after ourselves
+      - Use a helpful exit code
+      - shfmt
+      - Lint
+      - Move code from manual QA doc to script
+      - Release process: fix formatting
+      - Release process: make link clickable and simplify phrasing
+      - Release process: fix typo
+      - Release process: drop obsolete "isotester" terminology and simply phrasing
+      - Release process: increase expected IUK size
+      - Release process: fix typo
+      - Release process: add missing word
+      - Fix doc structure
+      - Add pipefail safety net
+      - prepare-included-website-for-release: don't abort if there are no changes to
+        commit
+
+  * Test suite: switch to boot loader that contains the new 2023 Secure Boot keys
+    (tails/tails!2969)
+
+    Closes issues:
+      - Test suite: system under testing lacks 2023 UEFI CA keys when configured to use
+        Secure Boot (tails/tails#21529)
+
+    Commits:
+      - Test suite: make sure NVRAM is reset at startup
+      - Test suite: drop obsolete workaround
+      - Test suite: switch to boot loader that contains the new 2023 Secure Boot keys
+
+  * Stop installing Thunderbird packages in the images (tails/tails!2835)
+
+    Closes issues:
+      - Install & update Thunderbird from Debian repositories instead of shipping a
+        perpetually outdated version (tails/tails#21375)
+
+    Commits:
+      - Polish UX and doc
+      - Adjust test suite to updated dialog UI
+      - Update doc to Thunderbird no longer being included
+      - Fix heading levels
+      - Adjust wrapper to Thunderbird no longer being included
+      - Don't display a Thunderbird launcher while the package is still not installed
+      - Partially revert "Better support the user when they try to start Thunderbird
+        before it's installed"
+      - Git, please ignore Flycheck temporary files, thanks
+      - shfmt
+      - Remove unused import
+      - Remove overly noisy set -x
+      - Better support the user when they try to start Thunderbird before it's
+        installed
+      - Test suite: adjust to updated Thunderbird migration dialog
+      - Test suite: avoid having to deal with Thunderbird when we don't need it
+      - RuboCop: ignore Ruby LSP dynamically generated files
+      - Test suite: fix Style/HashEachMethods offenses
+      - rubocop --autocorrect
+      - Test suite: fix waiting for package installation
+      - Test suite: ensure Thunderbird is installed for the tests that use it
+      - Test suite: improve step name
+      - run_test_suite: improve phrasing of help text
+      - run_test_suite: remove obsolete details
+      - Test suite: have "XXX" comments reference the corresponding issue
+      - Test suite: remove duplicate word
+      - Test suite: improve phrasing of step
+      - Consistently use the "add-on" spelling in code comments
+      - Test suite: give step a clearer name
+      - Include the Thunderbird icon in our image
+      - Add some shell guardrails
+      - shfmt
+      - Add thunderbird.desktop that explains how to install Thunderbird
+      - Add some shell guardrails
+      - Thunderbird AppArmor profile: don't enable anymore, drop customization
+      - Thunderbird: update doc and UI strings that announced the migration
+      - Stop installing Thunderbird packages in the images
+
+ -- Tails developers <foundations@tails.net>  Wed, 20 May 2026 10:54:27 +0000
 
 tails (7.7.3) unstable; urgency=medium
 

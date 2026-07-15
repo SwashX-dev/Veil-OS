@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-10-02 09:34+0000\n"
+"POT-Creation-Date: 2026-07-13 09:38+0000\n"
 "PO-Revision-Date: 2026-03-15 09:41+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: Persian <http://weblate.451f.org:8889/projects/tails/"
@@ -52,8 +52,7 @@ msgstr ""
 msgid ""
 "<p>We are often asked to implement new features of the Persistent Storage: Tor\n"
 "Browser preferences, Tor configuration, desktop background, mouse and touchpad\n"
-"settings, and so on. See the [[!tails_gitlab\n"
-"groups/tails/-/issues?scope=all&utf8=✓&state=opened&label_name%5B%5D=C%3APersistence\n"
+"settings, and so on. See the [[!tails_gitlab_label C%3APersistence\n"
 "desc=\"list of issues about the Persistent Storage in our GitLab\"]].<p>\n"
 msgstr ""
 
@@ -333,11 +332,26 @@ msgstr ""
 "</div>\n"
 
 #. type: Plain text
+msgid "When the Thunderbird Email Client feature is turned on:"
+msgstr ""
+
+#. type: Bullet: '- '
 #, fuzzy
 msgid ""
-"When the Thunderbird Email Client feature is turned on, the email, feeds, "
-"and OpenPGP keys in the [[*Thunderbird* email client|doc/anonymous_internet/"
-"thunderbird]] are saved in the Persistent Storage."
+"Tails automatically adds the [[*Thunderbird* email client|doc/"
+"anonymous_internet/thunderbird]] to your list of [[additional software|"
+"persistent_storage/additional_software]]."
+msgstr ""
+"وقتی این ویژگی فعال باشد، تنظیمات و رایانامه‌هایی \n"
+"که توسط \n"
+"[[*Claws Mail*کارخواه رایانامهٔ |doc/anonymous_internet/claws_mail]]\n"
+"ذخیره می‌شوند، روی درایو مانا ذخیره خواهند شد.\n"
+
+#. type: Bullet: '- '
+#, fuzzy
+msgid ""
+"The email, feeds, and OpenPGP keys in the [[*Thunderbird* email client|doc/"
+"anonymous_internet/thunderbird]] are saved in the Persistent Storage."
 msgstr ""
 "وقتی این ویژگی فعال باشد، تنظیمات و رایانامه‌هایی \n"
 "که توسط \n"

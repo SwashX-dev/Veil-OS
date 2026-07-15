@@ -105,6 +105,9 @@ Given /^the computer is set to boot from the Tails DVD$/ do
 end
 
 Given /^the computer is set to boot from (.+?) drive "(.+?)"$/ do |type, name|
+  # Let's not risk issues with picking boot device by keeping the
+  # Tails DVD present.
+  $vm.remove_cdrom_image
   $vm.set_disk_boot(name, type.downcase)
 end
 
@@ -402,12 +405,11 @@ end
 Given /^the computer (?:re)?boots Tails$/ do
   enter_boot_menu_cmdline
   boot_key = @os_loader == 'UEFI' ? 'F10' : 'Return'
-  early_patch = config_bool('EARLY_PATCH') ? ' early_patch=umount' : ''
-  extra_boot_options = $config['EXTRA_BOOT_OPTIONS'] || ''
-  @screen.type(' autotest_never_use_this_option ' \
-               ' blacklist=psmouse' \
-               " #{early_patch} #{@boot_options} #{extra_boot_options}",
-               [boot_key])
+  cmdline = ' autotest_never_use_this_option blacklist=psmouse'
+  cmdline += ' early_patch=umount' if config_bool('EARLY_PATCH')
+  cmdline += " #{@boot_options}" if @boot_options
+  cmdline += " #{$config['EXTRA_BOOT_OPTIONS']}" if $config['EXTRA_BOOT_OPTIONS']
+  @screen.type(cmdline, [boot_key])
   $vm.wait_until_remote_shell_is_up(5 * 60)
 
   post_vm_start_hook
@@ -1070,14 +1072,16 @@ def switch_input_source
 end
 
 def launch_app(desktop_file_name, app_name, user: LIVE_USER, timeout: 30,
-               check_started: true)
+               check_started: true, launch_args: [],
+               applications_dir: '/usr/share/applications')
   # We use systemd-run to launch the app, because we want the app to run
   # in the active systemd login session, so that polkit rules for active
   # sessions apply to it.
   cmd = ['systemd-run', '--user',
          '--remain-after-exit',
          '/usr/local/bin/gtk-abspath-launch',
-         "/usr/share/applications/#{desktop_file_name}",].join(' ')
+         *launch_args,
+         "#{applications_dir}/#{desktop_file_name}",].join(' ')
   $vm.execute(cmd, user:)
   return unless check_started
 
@@ -1088,10 +1092,29 @@ def launch_app(desktop_file_name, app_name, user: LIVE_USER, timeout: 30,
   app
 end
 
+def launch_user_flatpak_app(app_id, **opts)
+  opts[:user] ||= LIVE_USER
+  launch_app(
+    "#{app_id}.desktop", app_id,
+    applications_dir: "/home/#{opts[:user]}/.local/share/flatpak/" \
+                      'exports/share/applications',
+    **opts
+  )
+end
+
 def launch_gnome_disks(**opts)
   launch_app(
     'org.gnome.DiskUtility.desktop',
     'gnome-disks',
+    **opts
+  )
+end
+
+def launch_gnome_software(**opts)
+  opts[:launch_args] ||= '--no-dbus-ping'
+  launch_app(
+    'org.gnome.Software.desktop',
+    'gnome-software',
     **opts
   )
 end
@@ -1737,18 +1760,6 @@ Given /^I create a symlink "(\S+)" to "(\S+)"$/ do |link, target|
   )
 end
 
-def select_path_in_file_chooser(file_chooser, path, button_label: 'Open')
-  assert_equal('file chooser', file_chooser.roleName)
-  try_for(10) do
-    @screen.press('ctrl', 'l')
-    file_chooser.focused_child.roleName == 'text'
-  end
-  file_chooser.focused_child.text = path
-  try_for(10) { file_chooser.button(button_label).sensitive? }
-  file_chooser.button(button_label).click
-  try_for(10) { !file_chooser.showing? }
-end
-
 def save_qrcode(str)
   # Generate a QR code similar enough to BridgeDB's:
   # https://gitlab.torproject.org/tpo/anti-censorship/bridgedb/-/blob/main/bridgedb/qrcodes.py
@@ -1913,10 +1924,46 @@ When(/^I click "([^"]+)" in the "([^"]+)" zenity dialog$/) do |button_label, tit
   zenity_dialog_click_button(title, button_label)
 end
 
-When(/^I open "(.*[.].*)" in Files$/) do |filename|
+def select_path_in_file_chooser(file_chooser, path, button_label: 'Open')
+  assert_equal('file chooser', file_chooser.roleName)
+  try_for(10) do
+    @screen.press('ctrl', 'l')
+    file_chooser.focused_child.roleName == 'text'
+  end
+  file_chooser.focused_child.text = path
+  try_for(10) { file_chooser.button(button_label).sensitive? }
+  file_chooser.button(button_label).click
+  try_for(10) { !file_chooser.showing? }
+end
+
+# Nautilus is used as the file chooser by xdg-desktop-portal-gnome;
+# for saving files, see desktop_portal_save_as.
+def nautilus_open_file(filepath, button_label: nil)
+  dir = File.dirname(filepath)
+  filename = File.basename(filepath)
   nautilus = Dogtail::Application.new('org.gnome.Nautilus')
-  nautilus.child(filename, roleName: 'table cell').click
-  @screen.press('Return')
+  if dir != '.' && dir != '/home/amnesia'
+    try_for(10) do
+      @screen.press('ctrl', 'l')
+      nautilus.focused_child.roleName == 'text'
+    end
+    nautilus.child(roleName: 'text').text = dir
+    @screen.press('Return')
+  end
+  try_for(10) do
+    nautilus.child(filename, roleName: 'table cell').click
+    nautilus.focused_child.name == filename
+  end
+  if button_label.nil?
+    @screen.press('Return')
+  else
+    try_for(10) { nautilus.button(button_label).sensitive? }
+    nautilus.button(button_label).click
+  end
+end
+
+When(/^I open "(.*[.].*)" in Files$/) do |filepath|
+  nautilus_open_file(filepath)
 end
 
 When(/^I wait until (?:(\w+)'s )(.*[.]service) has completed$/) do |user, unit|

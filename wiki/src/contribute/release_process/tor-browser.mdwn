@@ -293,7 +293,7 @@ and/or
 `config/chroot_local-includes/usr/local/lib/tails-shell-library/tor-browser.sh`
 for recent changes made in the Tor Browser build Git repo
 (`git clone https://gitlab.torproject.org/tpo/applications/tor-browser-build.git`),
-on the `maint-X.Y-desktop` branch (if it does not exist, fall back to `maint-X.Y`):
+on the `maint-X.Y` branch:
 
     git log -p \
         projects/firefox/abicheck.cc \
@@ -505,7 +505,7 @@ in:
     /var/lib/flatpak/app/org.mozilla.firefox/current/active/metadata
 
 or look at the [revision
-history](https://hg.mozilla.org/mozilla-central/log/tip/taskcluster/docker/firefox-flatpak/runme.sh)
+history](https://github.com/mozilla-firefox/firefox/commits/main/python/mozbuild/mozbuild/repackaging/flatpak.py)
 (see the arguments passed to `flatpak build-finish build`).
 
 For changes that also makes sense for the

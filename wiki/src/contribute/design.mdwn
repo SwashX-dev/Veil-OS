@@ -756,6 +756,13 @@ to push usage of such hardening features in Debian.
 
 See [[doc/about/features]].
 
+### 3.2.3 Software installed by the user
+
+Tails supports 2 ways for the user to persistently install additional software:
+
+ - [[Debian packages|design/additional_software_packages]]
+ - [[Flatpak apps|design/Flatpak]]
+
 ## 3.3 Localization
 
 ### 3.3.1 Best supported (Tier-1) languages
@@ -854,8 +861,8 @@ those are mainly for usability issues and similar.
 The Tor software is currently configured as a client only (onion
 proxy). The client listens for control connections on port 9052 (using
 cookie authentication) which is non-standard (see about the "control
-port filter" below), as a transparent proxy on port 9040 (only used
-for remapped onion services) and as a DNS server on port 8853.
+port filter" below), as a transparent proxy on port 9040,
+and as a DNS server on port 8853.
 
 The client listens on a few SOCKS address/ports. For details,
 see the [[Tor stream isolation design
@@ -1070,6 +1077,8 @@ Browser in Tails:
 
 - [Environment variables and related preferences](https://gitlab.torproject.org/tpo/applications/wiki/-/wikis/Environment-variables-and-related-preferences)
 
+<a id="tor-browser-flatpak"></a>
+
 #### Tor Browser Flatpak
 
 Tails runs the Tor Browser as a [Flatpak](https://flatpak.org/) that
@@ -1107,6 +1116,9 @@ disables the Flatpak seccomp filter to work around this. While this
 significantly degrades the Flatpak sandbox it allows Tor Browser's
 sandbox to run fully, which includes its own seccomp filter that is
 tailored to Tor Browser's specific needs.
+
+For an initial analysis of how these various sandboxes interact with each other, see
+[[!tails_ticket 21577#note_283734]].
 
 By running inside the Flatpak sandbox the filesystem exposed to Tor
 Browser is separated from the "host" one; it's an empty mount
@@ -1335,14 +1347,6 @@ drivers are included, as well as the guest utilities.
 Security concerns for all VMs are numerous. Tails therefore tries to
 detect whether it is run inside a VM and [[warns the
 user|design/virtualization_support]] if it is.
-
-### 3.7.3 Running Tails inside a Windows session
-
-[[!tails_ticket 6083 desc="Potential work"]] may make it easier to
-run the DVD/USB in a virtual machine inside a Windows session whenever
-native boot is impossible or not desirable. This probably will be
-implemented by shipping a [QEMU](http://www.qemu.org/) or
-[VirtualBox](http://www.virtualbox.org/) binary for Microsoft Windows.
 
 ## 3.8 Build process and maintenance
 

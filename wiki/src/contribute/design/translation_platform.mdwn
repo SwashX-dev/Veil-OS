@@ -7,8 +7,7 @@ Git or the command line.
 
 This is the technical design documentation of our new setup.
 It is by no means perfect. We track known issues via
-[[!tails_gitlab groups/tails/-/issues?label_name%5B%5D=C%3ATranslation+Platform
-desc="issues on GitLab"]].
+[[!tails_gitlab_label C%3ATranslation+Platform desc="issues on GitLab"]].
 
 [[!toc levels=2]]
 
@@ -494,10 +493,6 @@ Currently implemented proposal
 
 Maintenance
 ===========
-
-A plan for the future maintenance of our Weblate instance will be
-worked on in November 2019 and laid out before the end of the year
-([[!tails_ticket 17050]]):
 
  - [[maintainers's role definition|contribute/working_together/roles/translation_platform]]
  - [[operations documentation|contribute/working_together/roles/translation_platform/operations]]
