@@ -1254,8 +1254,8 @@ releases). See [[contribute/design/upgrades]] for details.
 Tails ships a few custom GNOME panel applets and GNOME Shell
 extensions.
 
-The status-menu-helper GNOME Shell extension provides two-clicks shutdown and
-restart actions, as well as screen locking.
+The status-menu-helper GNOME Shell extension makes sure Log out button is
+hidden, and integrates our custom screen locker.
 
 - [[!tails_gitweb_dir config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org]]
 

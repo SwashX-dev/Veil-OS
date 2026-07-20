@@ -157,14 +157,14 @@ end
 
 Given /^I (connect|disconnect) the network through GNOME$/ do |action|
   toggle_gnome_system_menu
-  Dogtail::Application.new('gnome-shell')
-                      .child('Wired', roleName: 'label')
-                      .parent.parent.parent.parent
-                      .child('Open menu', roleName: 'button')
-                      .click
-  Dogtail::Application.new('gnome-shell')
-                      .child(action.capitalize, roleName: 'label')
-                      .click
+  gnome_shell
+    .child('Wired', roleName: 'label')
+    .parent.parent.parent.parent
+    .child('Open menu', roleName: 'button')
+    .click
+  gnome_shell
+    .child(action.capitalize, roleName: 'label')
+    .click
   toggle_gnome_system_menu
 end
 
@@ -638,9 +638,12 @@ When /^I (don't )?see the "(.+)" notification(?: after at most (\d+) seconds)?$/
   end
 end
 
+def gnome_shell
+  Dogtail::Application.new('gnome-shell')
+end
+
 def wait_notification(title, timeout)
   timeout = timeout&.to_i
-  gnome_shell = Dogtail::Application.new('gnome-shell')
   notification_list = gnome_shell.child(
     'No Notifications', roleName: 'label', showingOnly: false
   ).parent.parent
@@ -762,7 +765,6 @@ Given /^available upgrades have been checked$/ do
 end
 
 Given /^all notifications have disappeared$/ do
-  gnome_shell = Dogtail::Application.new('gnome-shell')
   retry_action(10, recovery_proc: proc { @screen.press('Escape') }) do
     @screen.press('super', 'v') # Show the notification list
     gnome_shell.child('Do Not Disturb',
@@ -810,20 +812,20 @@ Given /^I enter the sudo password in the GNOME authentication prompt$/ do
 end
 
 def gnome_shell_unlock_dialog(title = 'Authentication Required')
-  d = Dogtail::Application.new('gnome-shell')
-                          .child(title, roleName: 'label')
-                          .parent.parent.parent.parent.parent.parent.parent
+  d = gnome_shell
+      .child(title, roleName: 'label')
+      .parent.parent.parent.parent.parent.parent.parent
   assert_equal('dialog', d.roleName)
   d
 end
 
 def gnome_shell_unlock_dialog?(title = 'Authentication Required')
-  Dogtail::Application.new('gnome-shell')
-                      .child?(
-                        title,
-                        roleName: 'label',
-                        retry:    false
-                      )
+  gnome_shell
+    .child?(
+      title,
+      roleName: 'label',
+      retry:    false
+    )
 end
 
 def deal_with_polkit_prompt(password, **opts)
@@ -909,27 +911,53 @@ Given /^I shutdown Tails and wait for the computer to power off$/ do
 end
 
 def open_gnome_menu(name)
-  Dogtail::Application.new('gnome-shell')
-                      .child(name, roleName: 'menu')
-                      .click
+  gnome_shell
+    .child(name, roleName: 'menu')
+    .click
 end
 
 def toggle_gnome_system_menu
   open_gnome_menu('System')
 end
 
-When /^I request a (shutdown|reboot) using the system menu$/ do |action|
-  gnome_shell = Dogtail::Application.new('gnome-shell')
+When /^I (?:open|close) the system menu$/ do
   toggle_gnome_system_menu
+end
+
+When /^I request a (shutdown|reboot) using the system menu$/ do |action|
+  # Open the relevant submenu
+  gnome_shell.child('Power Off Menu').click
+
   menu_item_name = if action == 'shutdown'
                      'Power Off'
                    else
                      'Restart'
                    end
-  # If we .click() using Dogtail we risk losing the connection with
+  gnome_shell.child("#{menu_item_name}…", roleName: 'label').click
+
+  confirm_button = gnome_shell.child(menu_item_name, roleName: 'button')
+
+  # Using grabFocus doesn't seem to work, so let's press tab instead
+  retry_action(10, recovery_proc: proc { @screen.press('tab') }) do
+    unless confirm_button.focused?
+      throw 'Not focused'
+    end
+  end
+
+  # If we confirm_button.click() using Dogtail we risk losing the connection with
   # the remote shell before it sends the response, leading to a
   # time-consuming RemoteShell::Timeout.
-  @screen.click(*gnome_shell.child(menu_item_name, roleName: 'label').position)
+  @screen.press('return')
+end
+
+Then(/^the logout button is not visible$/) do
+  gnome_shell.child('Power Off Menu').click
+  # It's tempting to use gnome_shell.child("Log Out…"), but since we don't have an
+  # anti-test which could make us aware if the string provided by gnome-shell ever
+  # changes, let's make the matching a bit more fuzzy.
+  labels = gnome_shell.children(roleName: 'label')
+  matching = labels.select { |n| n.name&.start_with?('Log') }.map(&:name)
+  assert_empty(matching, "The #{matching.join(', ')} labels are visible")
 end
 
 When /^I warm reboot the computer$/ do
