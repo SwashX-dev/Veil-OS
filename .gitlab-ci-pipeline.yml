@@ -52,7 +52,7 @@ build-website:
     - changes:
         - .gitlab-ci.yml
         - .gitlab-ci-pipeline.yml
-  image: registry.gitlab.tails.boum.org/tails/container-images/ikiwiki:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/website:trixie
   cache:
     key: website-$CI_COMMIT_REF_SLUG
     paths:
@@ -98,7 +98,7 @@ deploy-website:
   needs: [build-website, lint-po, check-website-core-pages, check-po-msgfmt, check-po-meta-date, check-translatable-live-website-urls]
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
-  image: registry.gitlab.tails.boum.org/tails/container-images/rsync:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/website:trixie
   dependencies:
     - build-website
   environment: production
