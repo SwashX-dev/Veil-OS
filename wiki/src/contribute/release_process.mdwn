@@ -256,8 +256,8 @@ It could be that the [[time-based APT snapshots|contribute/APT_repository/time-b
 for the `debian-security` archive have a problem. To investigate, you can:
 
 - Check
-   [when the last successful update happened](https://time-based.snapshots.deb.tails.boum.org/debian-security/project/trace/debian-security).
-- `ssh reprepro-time-based-snapshots@incoming.deb.tails.boum.org` and there:
+   [when the last successful update happened](https://time-based.snapshots.deb.tails.net/debian-security/project/trace/debian-security).
+- `ssh reprepro-time-based-snapshots@incoming.deb.tails.net` and there:
    - check the logs in `repositories/debian-security/logs/`
    - check the services: `systemctl status tails-update-time-based-apt-snapshots-debian-security-*.timer tails-update-time-based-apt-snapshots-debian-security-*.service`
 
@@ -930,10 +930,10 @@ Wait for this APT suite to be created and initialize it with the packages
 currently found in the APT suite corresponding to the branch used to prepare
 the release:
 
-      while ! ssh reprepro@incoming.deb.tails.boum.org reprepro list "${TAG:?}" >/dev/null 2>&1; do
+      while ! ssh reprepro@incoming.deb.tails.net reprepro list "${TAG:?}" >/dev/null 2>&1; do
          sleep 5
       done && \
-      ssh reprepro@incoming.deb.tails.boum.org \
+      ssh reprepro@incoming.deb.tails.net \
          tails-merge-suite "${RELEASE_BRANCH:?}" "${TAG:?}"
 
 ### Tagged snapshots of upstream APT repositories

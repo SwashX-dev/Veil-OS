@@ -33,7 +33,7 @@ GIT_TOPLEVEL_DIR=$(git rev-parse --show-toplevel)
 . "$GIT_TOPLEVEL_DIR"/auto/scripts/utils.sh
 PBUILDER_OPTIONS="${PBUILDER_OPTIONS:-}"
 TARGET_DIST="${TARGET_DIST:-$(branch_name_to_suite "$(git_current_branch)")}"
-REMOTE_USER_AT_HOST='reprepro@incoming.deb.tails.boum.org'
+REMOTE_USER_AT_HOST='reprepro@incoming.deb.tails.net'
 
 umask 0022
 WORKDIR=$(mktemp -d)
@@ -42,10 +42,10 @@ WORKDIR=$(mktemp -d)
 trap "rm -r '$WORKDIR'" EXIT HUP INT QUIT TERM
 
 (
-   cd "$WORKDIR"
+    cd "$WORKDIR"
 
-   # download source and binary packages
-   cat > script <<EOF
+    # download source and binary packages
+    cat >script <<EOF
 #!/bin/sh
 set -x
 set -e
@@ -72,16 +72,16 @@ apt-get download \
         \$(grep-aptavail -S '$SRC_PKG' --exact-match -s Package --no-field-names)
 chown "\$ORIG_OWNER" '$WORKDIR'
 EOF
-   chmod 755 script
-   # shellcheck disable=SC2086
-   sudo pbuilder execute --bindmounts "$WORKDIR" $PBUILDER_OPTIONS -- script
-   rm script
+    chmod 755 script
+    # shellcheck disable=SC2086
+    sudo pbuilder execute --bindmounts "$WORKDIR" $PBUILDER_OPTIONS -- script
+    rm script
 
-   REMOTE_WORKDIR=$(ssh "$REMOTE_USER_AT_HOST" mktemp -d)
-   scp ./* "$REMOTE_USER_AT_HOST":"$REMOTE_WORKDIR"/
-   # shellcheck disable=SC2029
-   ssh "$REMOTE_USER_AT_HOST" \
-       "reprepro includedsc '$TARGET_DIST' '$REMOTE_WORKDIR'/*.dsc && \
+    REMOTE_WORKDIR=$(ssh "$REMOTE_USER_AT_HOST" mktemp -d)
+    scp ./* "$REMOTE_USER_AT_HOST":"$REMOTE_WORKDIR"/
+    # shellcheck disable=SC2029
+    ssh "$REMOTE_USER_AT_HOST" \
+        "reprepro includedsc '$TARGET_DIST' '$REMOTE_WORKDIR'/*.dsc && \
         reprepro includedeb '$TARGET_DIST' '$REMOTE_WORKDIR'/*.deb && \
         rm -r '$REMOTE_WORKDIR'"
 )

@@ -42,13 +42,13 @@ In particular, see
   - If you have upload rights to our [[custom APT
     repository|contribute/APT_repository/custom]]:
 
-        ssh reprepro@incoming.deb.tails.boum.org \
+        ssh reprepro@incoming.deb.tails.net \
             reprepro list ${APT_overlay}`
 
   - Else:
 
-    - `https://deb.tails.boum.org/dists/${APT_overlay}/main/source/Sources`
-    - `https://deb.tails.boum.org/dists/${APT_overlay}/main/binary-amd64/Packages`
+    - `https://deb.tails.net/dists/${APT_overlay}/main/source/Sources`
+    - `https://deb.tails.net/dists/${APT_overlay}/main/binary-amd64/Packages`
 
 - Check the user and design documentation.
 
