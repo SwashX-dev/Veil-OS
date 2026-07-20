@@ -234,9 +234,6 @@ Per-app caveats
 
   Upstream bug: [[!debbug 1137638]]
 
-- `haveged`: can probably run arbitrary code as root via root's D-Bus
-  session bus. We plan to [[!tails_ticket 20352 desc="remove it"]].
-
 - OnionCircuits:
   - Initially confined with AppArmor primarily for onion-grater, not needed
     anymore as long as we use network namespaces for that.

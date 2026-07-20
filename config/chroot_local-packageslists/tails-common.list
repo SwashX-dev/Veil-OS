@@ -127,7 +127,6 @@ shim-signed
 gtk2-engines-pixbuf
 gvfs-backends
 gvfs-fuse
-haveged
 # needed by laptop-mode-tools to spin-down hard drives
 hdparm
 inkscape
@@ -189,7 +188,6 @@ powermgmt-base
 ppp
 pppoe
 pipewire-audio
-rng-tools-debian
 rfkill
 rtkit
 sane-airscan
