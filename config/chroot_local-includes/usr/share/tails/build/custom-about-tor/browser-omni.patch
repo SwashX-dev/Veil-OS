@@ -1,5 +1,5 @@
 diff --git a/browser/components/abouttor/AboutTorParent.sys.mjs b/browser/components/abouttor/AboutTorParent.sys.mjs
-index 6bf7149917510807004667a8ee4cb58b04997c4f..f8d50364d0f508ec6c006d85307c3e720c003781 100644
+index 8449722c3b0308139f23fc6c4d598e2510db6cc8..9d6a97e61b460b4b8ee4971901e589dc75107bdf 100644
 --- a/actors/AboutTorParent.sys.mjs
 +++ b/actors/AboutTorParent.sys.mjs
 @@ -10,6 +10,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
@@ -10,10 +10,10 @@ index 6bf7149917510807004667a8ee4cb58b04997c4f..f8d50364d0f508ec6c006d85307c3e72
  
  /**
   * Actor parent class for the about:tor page.
-@@ -111,6 +112,7 @@ export class AboutTorParent extends JSWindowActorParent {
+@@ -69,6 +70,7 @@ export class AboutTorParent extends JSWindowActorParent {
+       ),
+       appLocale,
        dismissYEC: AboutTorParent.#dismissYEC,
-       toolNum1,
-       toolNum2,
 +      isTails: Services.prefs.getBoolPref(tailsPref, false),
      };
    }
@@ -61,10 +61,10 @@ index 28e3a260b7b4b074c41259ba54c28663d80ab0f8..08b3ba8fc588a4dfc4d7080ddf43b78d
 +  padding-inline-start: 0;
 +}
 diff --git a/browser/components/abouttor/content/aboutTor.html b/browser/components/abouttor/content/aboutTor.html
-index f79fa9f1b3ea53fe78d7c6a4dbd863eaf3a3bb61..f802e53c858def922ab165108a7945bb0a3e2b5a 100644
+index 23e8a54defa863560d19b39fa9f82238d556dad7..8e2874c016ca9b00399ab29797f4c8974a01a634 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.html
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.html
-@@ -109,7 +109,7 @@
+@@ -105,7 +105,7 @@
          data-l10n-attrs="label"
        ></moz-toggle>
      </form>
@@ -73,7 +73,7 @@ index f79fa9f1b3ea53fe78d7c6a4dbd863eaf3a3bb61..f802e53c858def922ab165108a7945bb
        <img
          class="message-emoji"
          alt=""
-@@ -136,7 +136,7 @@
+@@ -132,7 +132,7 @@
          ></a>
        </span>
      </p>
@@ -82,7 +82,7 @@ index f79fa9f1b3ea53fe78d7c6a4dbd863eaf3a3bb61..f802e53c858def922ab165108a7945bb
        <img
          class="message-emoji"
          alt=""
-@@ -150,7 +150,7 @@
+@@ -146,7 +146,7 @@
          ></a>
        </span>
      </p>
@@ -91,7 +91,7 @@ index f79fa9f1b3ea53fe78d7c6a4dbd863eaf3a3bb61..f802e53c858def922ab165108a7945bb
        <img
          class="message-emoji"
          alt=""
-@@ -164,6 +164,41 @@
+@@ -160,6 +160,41 @@
          ></a>
        </span>
      </p>
@@ -124,7 +124,7 @@ index f79fa9f1b3ea53fe78d7c6a4dbd863eaf3a3bb61..f802e53c858def922ab165108a7945bb
 +        <span data-l10n-id="tails-release-notes">
 +          <a
 +            data-l10n-name="tails-release-notes-link"
-+            href="https://tails.net/news/version_7.9.1"
++            href="https://tails.net/news/version_7.10"
 +            target="_blank"
 +          ></a>
 +        </span>
@@ -134,7 +134,7 @@ index f79fa9f1b3ea53fe78d7c6a4dbd863eaf3a3bb61..f802e53c858def922ab165108a7945bb
      <article id="survey" class="tor-home-box" aria-labelledby="survey-heading">
        <img
 diff --git a/browser/components/abouttor/content/aboutTor.js b/browser/components/abouttor/content/aboutTor.js
-index 80c2866584d76ef18f83969a6e3007b62e97fd57..6943c8b4b3d21175396b0b913abb11b23afcb9c6 100644
+index 8b718027d0b4219037ae3b5f6551dba40c150dd6..7d7ee8f4bebf7410c5104d66293948af3b1c6ddf 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.js
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.js
 @@ -85,6 +85,7 @@ const MessageArea = {
@@ -206,10 +206,10 @@ index 80c2866584d76ef18f83969a6e3007b62e97fd57..6943c8b4b3d21175396b0b913abb11b2
          "shown-message"
        );
      }
-@@ -665,11 +683,20 @@ window.addEventListener("InitialData", event => {
+@@ -574,11 +592,20 @@ window.addEventListener("InitialData", event => {
+     surveyDismissVersion,
+     appLocale,
      dismissYEC,
-     toolNum1,
-     toolNum2,
 +    isTails,
    } = event.detail;
    SearchWidget.setOnionizeState(!!searchOnionize);
@@ -221,7 +221,7 @@ index 80c2866584d76ef18f83969a6e3007b62e97fd57..6943c8b4b3d21175396b0b913abb11b2
 +    !!isTails
 +  );
    SurveyArea.potentiallyShow(surveyDismissVersion, isStable, appLocale);
-   YecArea.potentiallyShow(dismissYEC, isStable, appLocale, toolNum1, toolNum2);
+   YecArea.potentiallyShow(dismissYEC, isStable, appLocale);
 +  // MessageArea must be updated after SurveyArea does its job, because it relies on
 +  // body.show-survey being set.
 +  MessageArea._update()
