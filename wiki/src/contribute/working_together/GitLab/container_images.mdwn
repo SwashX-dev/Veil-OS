@@ -71,7 +71,7 @@ A trusted container image is a container image that is:
 - stored in the Tails or Tor GitLab registry, and
 - peer-reviewed
 
-The sysadmin team maintains sets of container images which are trusted and
+TPA maintains sets of container images which are trusted and
 meant to either be used directly or serve as the basis for other trusted
 container images: [[!tor_gitlab tpo/tpa/base-images]]
 
@@ -140,7 +140,7 @@ Protect [sensitive credentials](#sensitive-credentials):
 
 Use [trusted container images](#trusted-container-images) for [sensitive jobs](#sensitive-jobs):
 
-- Request the activation of your project's container registry to Sysadmins
+- Request the activation of your project's container registry to TPA
 - Start with [[!tor_gitlab tpo/tpa/base-images/container_registry desc="one of the base images"]]
 - Use the Podman image to build and push images ([[!tor_gitlab tpo/tpa/base-images/-/blob/main/.gitlab-ci.yml desc="see examples"]])
 - Build and push container images to your project's container registry [using the CI/CD](https://docs.gitlab.com/ee/user/packages/container_registry/build_and_push_images.html)
@@ -150,7 +150,7 @@ Use [trusted runners](#trusted-runners) for [sensitive jobs](#sensitive-jobs):
 
 - Do not add new runners to projects with sensitive jobs (eg. [[!tails_gitlab
   tails/tails]] and [[!tails_gitlab tails/gitlab-config]])
-- If you need more runner capacity, please ask Sysadmins
+- If you need more runner capacity, please ask TPA
 - Note: this is *not* [administratively
   enforced](https://docs.gitlab.com/ee/administration/settings/continuous_integration.html#restrict-runner-registration-by-all-users-in-an-instance)
   for now
