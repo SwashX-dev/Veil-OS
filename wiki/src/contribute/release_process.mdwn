@@ -1112,11 +1112,8 @@ the release will be done in a new, dedicated branch.
 Generate the OpenPGP signatures
 ===============================
 
-Run the following command
-to create a directory with a suitable name, go there, move the built
-images to this brand new directory, generate detached OpenPGP
-signatures for the images to be published (in the same directory as the
-images and with a `.sig` extension):
+Run the following command to move the built images to the correct directory and
+generate detached OpenPGP signatures:
 
     ./bin/generate-images-signatures
 
