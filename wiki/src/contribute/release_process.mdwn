@@ -1357,7 +1357,7 @@ in which IUKs have been built exactly once.
     -exec sha256sum {} \;
     EOF
     sed -i 's@/.*/Tails_@Tails_@'  "jenkins_${VERSION}.sha256sum"
-    diff <(sort jenkins_${VERSION}.sha256sum) <(sort "${IUKS_HASHES:?}")
+    diff <(sort "jenkins_${VERSION}.sha256sum") <(sort "${IUKS_HASHES:?}")
     rm "jenkins_${VERSION}.sha256sum"
 
 If this script is not working fine for you, please refer to the next section.
