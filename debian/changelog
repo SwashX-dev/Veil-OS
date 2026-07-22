@@ -1,4 +1,4 @@
-tails (7.10) UNRELEASED; urgency=medium
+tails (7.10) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.96-1
 
@@ -191,7 +191,7 @@ tails (7.10) UNRELEASED; urgency=medium
       - Create org.boum.tails.Celluloid fake flatpak
       - Switch from GNOME Videos (aka. Totem) to Celluloid
 
- -- Tails developers <foundations@tails.net>  Wed, 22 Jul 2026 07:25:12 +0000
+ -- Tails developers <foundations@tails.net>  Wed, 22 Jul 2026 08:12:38 +0000
 
 tails (7.9.1) unstable; urgency=medium
 
