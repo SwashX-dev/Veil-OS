@@ -10,7 +10,7 @@
 Tails now uses the standard shutdown procedure from GNOME.
 
 The [[standard shutdown|doc/first_steps/shutdown]] procedure is a bit slower,
-but better prevents from data loss.
+but better prevents data loss.
 
 For example, the **Power Off** confirmation dialog informs you if an
 application needs to be closed or an open document needs to be saved before
