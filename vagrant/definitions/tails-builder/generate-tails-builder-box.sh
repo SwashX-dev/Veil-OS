@@ -73,7 +73,7 @@ steps:
   - mount: rootfs
 
   - debootstrap: ${DISTRIBUTION}
-    mirror: http://time-based.snapshots.deb.tails.boum.org/debian/${DEBIAN_SERIAL}
+    mirror: http://time-based.snapshots.deb.tails.net/debian/${DEBIAN_SERIAL}
     keyring: ${DEBOOTSTRAP_KEYRING}
     target: rootfs
 
@@ -132,7 +132,7 @@ steps:
 
   - create-file: /etc/apt/sources.list.d/${DISTRIBUTION}-security.list
     contents: |
-      deb [signed-by=/usr/share/keyrings/tails-archive-keyring.gpg] http://time-based.snapshots.deb.tails.boum.org/debian-security/${DEBIAN_SECURITY_SERIAL}/ ${DISTRIBUTION}-security main
+      deb [signed-by=/usr/share/keyrings/tails-archive-keyring.gpg] http://time-based.snapshots.deb.tails.net/debian-security/${DEBIAN_SECURITY_SERIAL}/ ${DISTRIBUTION}-security main
 
   - create-file: /etc/apt/preferences.d/${DISTRIBUTION}-backports
     contents: |

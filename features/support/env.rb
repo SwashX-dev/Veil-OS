@@ -83,8 +83,8 @@ end
 
 RSpec::Matchers.define :have_suite do |suite|
   match do |string|
-    # e.g.: `deb http://deb.tails.boum.org/ 0.10 main contrib non-free`
-    %r{^deb +http://deb\.tails\.boum\.org/ +#{Regexp.escape(suite)} main}
+    # e.g.: `deb http://deb.tails.net/ 0.10 main contrib non-free`
+    %r{^deb +http://deb\.tails\.net/ +#{Regexp.escape(suite)} main}
       .match(string)
   end
   failure_message_for_should do |string|
@@ -100,8 +100,8 @@ end
 
 RSpec::Matchers.define :have_tagged_snapshot do |tag|
   match do |string|
-    # e.g.: `http://tagged.snapshots.deb.tails.boum.org/0.10`
-    base_uri = 'http://tagged.snapshots.deb.tails.boum.org'
+    # e.g.: `http://tagged.snapshots.deb.tails.net/0.10`
+    base_uri = 'http://tagged.snapshots.deb.tails.net'
     %r{^#{Regexp.escape(base_uri)}/#{Regexp.escape(tag)}/[a-z-]+$}
       .match(string)
   end
@@ -118,8 +118,8 @@ end
 
 RSpec::Matchers.define :have_time_based_snapshot do
   match do |string|
-    # e.g.: `http://time-based.snapshots.deb.tails.boum.org/debian/2016060602`
-    %r{^http://time-based\.snapshots\.deb\.tails\.boum\.org/[^/]+/\d+}
+    # e.g.: `http://time-based.snapshots.deb.tails.net/debian/2016060602`
+    %r{^http://time-based\.snapshots\.deb\.tails\.net/[^/]+/\d+}
       .match(string)
   end
   failure_message_for_should do |string|

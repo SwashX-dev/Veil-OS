@@ -1,1 +1,1 @@
-https://archive.torproject.org/tor-package-archive/torbrowser/15.0.17/
+https://torbrowser-archive.tails.net/15.0.19-build1/

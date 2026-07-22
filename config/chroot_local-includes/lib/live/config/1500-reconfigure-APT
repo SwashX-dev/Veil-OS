@@ -22,7 +22,7 @@ echo '
 s{
    ^
    (deb(?:-src)?\s+)
-   tor[+]https?://time-based[.]snapshots[.]deb[.]tails[.]boum[.]org
+   tor[+]https?://time-based[.]snapshots[.]deb[.]tails[.]net
    /debian
    /[0-9]{10} # serial
    /?
@@ -32,7 +32,7 @@ s{
 s{
    ^
    (deb(?:-src)?\s+)
-   tor[+]https?://time-based[.]snapshots[.]deb[.]tails[.]boum[.]org
+   tor[+]https?://time-based[.]snapshots[.]deb[.]tails[.]net
    /debian-security
    /[0-9]{10} # serial
    /?
@@ -42,7 +42,7 @@ s{
 s{
    ^
    (deb(?:-src)?\s+)
-   tor[+]https?://time-based[.]snapshots[.]deb[.]tails[.]boum[.]org
+   tor[+]https?://time-based[.]snapshots[.]deb[.]tails[.]net
    /torproject
    /[0-9]{10} # serial
    /?
@@ -54,7 +54,7 @@ s{
 s{
    ^
    (deb(?:-src)?\s+)
-   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]boum[.]org
+   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]net
    /[0-9a-z.-]+ # tag
    /debian
    /?
@@ -64,7 +64,7 @@ s{
 s{
    ^
    (deb(?:-src)?\s+)
-   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]boum[.]org
+   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]net
    /[0-9a-z.-]+ # tag
    /debian-security
    /?
@@ -74,7 +74,7 @@ s{
 s{
    ^
    (deb(?:-src)?\s+)
-   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]boum[.]org
+   tor[+]https?://tagged[.]snapshots[.]deb[.]tails[.]net
    /[0-9a-z.-]+ # tag
    /torproject
    /?

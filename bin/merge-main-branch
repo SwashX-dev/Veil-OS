@@ -20,7 +20,7 @@ WORKDIR=$(mktemp -d)
 packages_in_suite() {
     local suite="$1"
     [ -n "$suite" ] || return 1
-    ssh reprepro@incoming.deb.tails.boum.org reprepro list "$suite" |
+    ssh reprepro@incoming.deb.tails.net reprepro list "$suite" |
         sed -r 's,^([^|]+\|){2},,' |
         sort --stable --key=1,1 --key=2,2
 }
@@ -35,7 +35,7 @@ packages_in_suite "$DST" >"$WORKDIR/$DST.orig.list"
 
 echo "I: Diff between the $SRC and $DST custom APT suites:"
 
-ssh reprepro@incoming.deb.tails.boum.org \
+ssh reprepro@incoming.deb.tails.net \
     tails-diff-suites "$SRC" "$DST"
 
 echo "Check if the above diff makes sense!" \
@@ -57,7 +57,7 @@ git merge "origin/$DST"
 git merge "$SRC"
 
 echo "I: merging the $SRC APT suite into $DST"
-ssh reprepro@incoming.deb.tails.boum.org \
+ssh reprepro@incoming.deb.tails.net \
     tails-merge-suite "$SRC" "$DST"
 
 echo "I: Restoring config/base_branch on $DST if needed"

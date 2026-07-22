@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -eu
+
+# Check that no argument begins with a '-', so that filenames can be passed
+# but options cannot. See #19595.
+for arg in "$@"; do
+    case "$arg" in
+    -*)
+        echo "Error: option '$arg' not supported" >&2
+        exit 1
+        ;;
+    esac
+done
+
+# Avoid that Flatpak prints a warning about its exports directories not
+# being set in the XDG_DATA_DIRS environment variable.
+# Comment this out for more verbose output from Flatpak.
+export FLATPAK_FANCY_OUTPUT=0
+
+exec \
+    flatpak \
+    --installation=tails \
+    run \
+    --file-forwarding \
+    --command=celluloid org.boum.tails.Celluloid @@ "${@}" @@

@@ -60,7 +60,7 @@ the upgrade:
 4. Bump the expiration date for the snapshot of the `torproject` archive that
    the branch is using:
 
-        ssh reprepro-time-based-snapshots@incoming.deb.tails.boum.org \
+        ssh reprepro-time-based-snapshots@incoming.deb.tails.net \
         tails-bump-apt-snapshot-valid-until \
            torproject \
            "$(cat config/APT_snapshots.d/torproject/serial)" \

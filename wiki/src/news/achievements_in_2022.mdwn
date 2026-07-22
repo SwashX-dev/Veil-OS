@@ -81,7 +81,7 @@ We conducted usability tests of the *Tor Connection* assistant in France and
 Brazil with people who were new to Tails to identify issues in complicated
 cases: when connecting to Tor is blocked by censorship or a captive portal.
 
-We fixed [28 usability issues](https://gitlab.tails.boum.org/tails/tails/-/issues/?sort=closed_desc&state=closed&label_name%5B%5D=C%3ATor%20Connection&first_page_size=20)
+We fixed 28 usability issues
 identified during these tests. For example:
 
 - The *Tor Connection* assistant now automatically fixes the computer clock if
@@ -157,7 +157,8 @@ We added animations and more exciting visuals.
   <source src="https://tails.net/install/inc/success/install.mp4" type="video/mp4" />
 </video>
 
-Finally, we fixed no less than [30 other smaller usability issues](https://gitlab.tails.boum.org/tails/tails/-/issues/?sort=closed_desc&state=closed&label_name%5B%5D=C%3AInstallation&first_page_size=20) in the instructions!
+Finally, we fixed no less than 30 other smaller usability issues
+in the instructions!
 
 ## Tails.net and more reliable downloads
 

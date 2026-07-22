@@ -24,7 +24,7 @@ Pin-Priority: 999
 
 Explanation: #15477
 Package: src:live-boot
-Pin: origin deb.tails.boum.org
+Pin: origin deb.tails.net
 Pin-Priority: 999
 
 Package: webext-ublock-origin-firefox
@@ -48,7 +48,7 @@ Pin-Priority: 1010
 
 Explanation: Prevent upgrade of our forked packages to unpatched versions from Debian (tails/tails#21517)
 Package: *
-Pin: origin deb.tails.boum.org
+Pin: origin deb.tails.net
 Pin-Priority: 1000
 
 Package: *

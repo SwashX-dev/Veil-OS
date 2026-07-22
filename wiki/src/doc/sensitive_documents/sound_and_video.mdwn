@@ -14,7 +14,40 @@ Tails includes several sound and video applications:
 
   - [*Sound Recorder*](https://wiki.gnome.org/Apps/SoundRecorder), a sound recorder.
 
-  - [*Videos*](https://apps.gnome.org/Totem/), an audio and video player.
+  - [*Celluloid*](https://celluloid-player.github.io/), an audio and video player.
+
+    <div class="bug">
+
+    <p>For added security, <i>Celluloid</i> cannot access the network. You can
+    either:</p>
+
+    <ul>
+
+      <li>Open online videos, like MP4 and AVI files, in <i>Tor Browser</i>.
+
+      <li>Open online streaming addresses, like IPTV and HLS addresses, in
+      <i>VLC</i>, installed as [[additional
+      software|persistent_storage/additional_software]].</li>
+
+      <!-- Test URLs:
+
+      - https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+      - https://tails.net/install/inc/videos/mac.mp4
+
+      -->
+
+    </ul>
+
+    </div>
+
+    <div class="bug">
+
+    <p><i>Celluloid</i> doesn't work on some computers from 2011 or earlier.</p>
+
+    <p>You can use <i>VLC</i> instead, installed as [[additional
+    software|persistent_storage/additional_software]].</p>
+
+    </div>
 
 These applications are available in the **Apps&nbsp;▸ Sound & Video** submenu.
 
@@ -22,12 +55,6 @@ You can also install using the [[Additional Software|persistent_storage/addition
 
 - [*VLC*](https://www.videolan.org/vlc/), a multimedia player with advanced
   features.
-
-  <div class="bug">
-
-  <p>Watching [[!wikipedia IPTV]] channels from <i>VLC</i> in Tails doesn't work.</p>
-
-  </div>
 
 - [*Pitivi*](https://www.pitivi.org/), a video editor.
 
