@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -eu -o pipefail
+
+# Import tps_feature_is_active()
+. /usr/local/lib/tails-shell-library/libtps.sh
+
+if ! tps_feature_is_active Flatpak; then
+    exit 0
+fi
+
+DCONF_FILE="/live/persistence/TailsData_unlocked/flatpak/org.gnome.software.dconf-dump"
+
+case "${1:-}" in
+save)
+    dconf dump /org/gnome/software/ >"${DCONF_FILE}"
+    ;;
+load)
+    if [ -f "${DCONF_FILE}" ]; then
+        dconf load /org/gnome/software/ <"${DCONF_FILE}"
+    fi
+    ;;
+*)
+    echo "error: please provide exactly one argument out of 'save' and 'load'" >&2
+    exit 1
+    ;;
+esac
