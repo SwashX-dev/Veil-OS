@@ -1352,7 +1352,7 @@ The "normal" command we had in place is really slow nowadays. The snippet that
 follows is much faster. However, it's not as smart, so it can only handle cases
 in which IUKs have been built exactly once.
 
-    ssh jenkins.lizard <<EOF | grep -E '[.]iuk$' > "jenkins_${VERSION}.sha256sum"
+    ssh jenkins.fsn-libvirt-01 <<EOF | grep -E '[.]iuk$' > "jenkins_${VERSION}.sha256sum"
     find /var/lib/jenkins/jobs/ -name '*.iuk' -mtime -1 \
     -exec sha256sum {} \;
     EOF
