@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-09-17 11:40+0200\n"
+"POT-Creation-Date: 2026-07-22 09:36+0200\n"
 "PO-Revision-Date: 2026-01-23 15:29+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,8 +28,9 @@ msgid "There are 2 ways of shutting down Tails."
 msgstr "Hi ha dues maneres d'apagar Tails."
 
 #. type: Plain text
-#, no-wrap
-msgid "[[!toc levels=1]]\n"
+#, fuzzy, no-wrap
+#| msgid "[[!toc levels=1]]\n"
+msgid "[[!toc startlevel=2]]\n"
 msgstr "[[!toc levels=1]]\n"
 
 #. type: Plain text
@@ -49,52 +50,88 @@ msgstr ""
 "per protegir-vos d'[[atacs d'arrencada\n"
 "en fred|doc/advanced_topics/cold_boot_attacks]].\n"
 
-#. type: Title =
-#, no-wrap
-msgid "Shutdown from the system menu"
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "Shutdown from the system menu"
+msgid "<h2 id=\"standard\">Standard shutdown from the system menu</h2>\n"
 msgstr "Apagar des del menú del sistema"
 
 #. type: Plain text
+msgid ""
+"The standard shutdown procedure is slower, but prevents damage to your "
+"Persistent Storage and data loss."
+msgstr ""
+
+#. type: Bullet: '1. '
 #, fuzzy
 #| msgid ""
 #| "By clicking on the system menu located in the upper right corner of the "
 #| "screen and choosing either:"
-msgid "Click on the system menu in the upper right corner of the screen."
+msgid "Open the system menu in the upper-right corner of the screen."
 msgstr ""
 "Fent clic al menú del sistema situat a la cantonada superior dreta de la "
 "pantalla i escollint:"
 
-#. type: Bullet: '* '
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "[[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
+msgid "   [[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
+msgstr "[[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
+
+#. type: Bullet: '1. '
+#, fuzzy
+#| msgid ""
+#| "Choose [[!img lib/system-shutdown.png link=\"no\" class=\"symbolic\" "
+#| "alt=\"Power Off\"]] to shutdown the computer."
 msgid ""
-"Choose [[!img lib/system-shutdown.png link=\"no\" class=\"symbolic\" "
-"alt=\"Power Off\"]] to shutdown the computer."
+"Select [[!img lib/system-shutdown.png link=\"no\" class=\"symbolic\" "
+"alt=\"Power Off\"]]."
 msgstr ""
 "Seleccioneu [[!img lib/system-shutdown.png link=\"no\" class=\"symbolic\" "
 "alt=\"icona d'apagar\"]] per apagar l'ordinador."
 
-#. type: Bullet: '* '
-#, fuzzy
-#| msgid ""
-#| "[[!img lib/view-refresh.png link=\"no\" class=\"symbolic\" alt=\"Restart "
-#| "icon\"]] to restart the computer."
-msgid ""
-"Choose [[!img lib/view-refresh.png link=\"no\" class=\"symbolic\" "
-"alt=\"Restart\"]] to restart the computer on Tails or on your regular "
-"operating system."
+#. type: Bullet: '1. '
+msgid "Select **Power Off**."
 msgstr ""
-"[[!img lib/view-refresh.png link=\"no\" class=\"symbolic\" alt=\"icona de "
-"reiniciar\"]] per reiniciar l'ordinador."
+
+#. type: Bullet: '1. '
+msgid "A **Power Off** confirmation dialog appears."
+msgstr ""
+
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "[[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
+msgid "   [[!img power_off_without_inhibitor.png class=\"screenshot\" alt=\"\"]]\n"
+msgstr "[[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
 
 #. type: Plain text
 #, no-wrap
-msgid "[[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
+msgid ""
+"   If an application needs to be closed or an open document needs to be saved\n"
+"   before shutting down, the dialog includes some details.\n"
 msgstr ""
-"[[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
 
-#. type: Title =
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "[[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
+msgid "   [[!img power_off_with_inhibitor.png class=\"screenshot\" alt=\"\"]]\n"
+msgstr "[[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
+
+#. type: Bullet: '1. '
+msgid "Select the **Power Off** button to confirm."
+msgstr ""
+
+#. type: Plain text
 #, no-wrap
-msgid "Emergency shutdown"
-msgstr "Apagada d’emergència"
+msgid ""
+"   Even without confirming or saving the open documents, Tails will shut down\n"
+"   after 60 seconds.\n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "<h2 id=\"emergency\">Emergency shutdown</h2>\n"
+msgstr ""
 
 #. type: Plain text
 msgid ""
@@ -126,6 +163,22 @@ msgstr ""
 #, no-wrap
 msgid "</div>\n"
 msgstr "</div>\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "[[!img lib/view-refresh.png link=\"no\" class=\"symbolic\" alt=\"Restart "
+#~| "icon\"]] to restart the computer."
+#~ msgid ""
+#~ "Choose [[!img lib/view-refresh.png link=\"no\" class=\"symbolic\" "
+#~ "alt=\"Restart\"]] to restart the computer on Tails or on your regular "
+#~ "operating system."
+#~ msgstr ""
+#~ "[[!img lib/view-refresh.png link=\"no\" class=\"symbolic\" alt=\"icona de "
+#~ "reiniciar\"]] per reiniciar l'ordinador."
+
+#, no-wrap
+#~ msgid "Emergency shutdown"
+#~ msgstr "Apagada d’emergència"
 
 #~ msgid ""
 #~ "- By physically removing the USB stick or DVD that Tails is running from."

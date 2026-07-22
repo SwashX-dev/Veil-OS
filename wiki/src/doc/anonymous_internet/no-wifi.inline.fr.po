@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-04-01 02:00+0000\n"
+"POT-Creation-Date: 2026-07-22 09:36+0200\n"
 "PO-Revision-Date: 2026-04-01 22:22+0000\n"
 "Last-Translator: Chre <tor@renaudineau.org>\n"
 "Language-Team: \n"
@@ -34,8 +34,9 @@ msgid "There is no **Wi-Fi** menu in the system menu:"
 msgstr "Il n'y a pas de menu **Wi-Fi** dans le menu système :"
 
 #. type: Plain text
-#, no-wrap
-msgid "  [[!img no-wifi/system_without_wifi.png class=\"screenshot\" alt=\"\"]]\n"
+#, fuzzy, no-wrap
+#| msgid "  [[!img no-wifi/system_without_wifi.png class=\"screenshot\" alt=\"\"]]\n"
+msgid "  [[!img first_steps/desktop/system_without_wifi.png class=\"screenshot\" alt=\"\"]]\n"
 msgstr "  [[!img no-wifi/system_without_wifi.png class=\"screenshot\" alt=\"\"]]\n"
 
 #. type: Bullet: '* '
@@ -96,8 +97,8 @@ msgid ""
 "Sharing a connection this way is called *USB tethering*."
 msgstr ""
 "Partager la connexion Wi-Fi ou données mobiles de votre téléphone en "
-"utilisant un câble USB. Le partage de connexion par ce moyen est appelé *"
-"attachement USB*."
+"utilisant un câble USB. Le partage de connexion par ce moyen est appelé "
+"*attachement USB*."
 
 #. type: Plain text
 #, no-wrap
@@ -178,9 +179,7 @@ msgstr "ThinkPenguin TPE-N150USB (64$)"
 #. type: Plain text
 #, no-wrap
 msgid "    [[Buy on ThinkPenguin|https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb]]\n"
-msgstr ""
-"    [[Acheter sur ThinkPenguin|https://www.thinkpenguin.com/gnu-linux/"
-"penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb]]\n"
+msgstr "    [[Acheter sur ThinkPenguin|https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb]]\n"
 
 #. type: Plain text
 #, no-wrap
@@ -197,16 +196,9 @@ msgid ""
 "  </table>\n"
 msgstr ""
 "  <table>\n"
-"  "
-"<tr><th>Fabricant</th><th>Modèle</th><th>Taille</th><th>Vitesse</th><th>Prix</"
-"th><th>Achat hors ligne</th><th>Achat en ligne</th></tr>\n"
-"  <tr><td>Panda Wireless</td><td>Ultra</td><td>Nano</td><td>150 Mbit/"
-"s</td><td>25$</td><td>Non</td><td><a href="
-"\"https://www.amazon.com/d/B00762YNMG\">Amazon</a></td></tr> 148f:5370\n"
-"  <tr><td>ThinkPenguin</td><td>TPE-N150USB</td><td>Nano</td><td>150 Mbit/"
-"s</td><td>64$</td><td>Non</td><td><a href=\"https://www.thinkpenguin.com/"
-"gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb\""
-">ThinkPenguin</a></td></tr> ????:???? \n"
+"  <tr><th>Fabricant</th><th>Modèle</th><th>Taille</th><th>Vitesse</th><th>Prix</th><th>Achat hors ligne</th><th>Achat en ligne</th></tr>\n"
+"  <tr><td>Panda Wireless</td><td>Ultra</td><td>Nano</td><td>150 Mbit/s</td><td>25$</td><td>Non</td><td><a href=\"https://www.amazon.com/d/B00762YNMG\">Amazon</a></td></tr> 148f:5370\n"
+"  <tr><td>ThinkPenguin</td><td>TPE-N150USB</td><td>Nano</td><td>150 Mbit/s</td><td>64$</td><td>Non</td><td><a href=\"https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb\">ThinkPenguin</a></td></tr> ????:???? \n"
 "  </table>\n"
 
 #. type: Plain text
@@ -219,9 +211,9 @@ msgid ""
 "Check in our list of [[known Wi-Fi issues|support/known_issues#problematic-"
 "wifi]] if there is a workaround to get your Wi-Fi interface to work in Tails."
 msgstr ""
-"Vérifier dans notre liste des "
-"[[problèmes Wi-FI connus|support/known_issues#problematic-wifi]] s'il existe "
-"un contournement pour avoir une interface Wi-Fi qui fonctionne dans Tails."
+"Vérifier dans notre liste des [[problèmes Wi-FI connus|support/"
+"known_issues#problematic-wifi]] s'il existe un contournement pour avoir une "
+"interface Wi-Fi qui fonctionne dans Tails."
 
 #, no-wrap
 #~ msgid "  <!--  <tr><td>D-Link</td><td>DWA-121</td><td>Nano</td><td>150 Mbit/s</td><td>$6</td><td>No</td><td><a href=\"https://www.amazon.com/d/B004X8R7HY\">Amazon</a></td></tr>-->\n"
