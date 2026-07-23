@@ -428,7 +428,7 @@ Bootstrap internal manual testing coordination:
 
 1. To give the pad a clear title, add this section on top:
 
-        printf -- "---\ntitle: Testing ${VERSION:?}\n---\n"
+        printf -- "---\ntitle: Testing ${VERSION:?}\n---\n" | wl-copy
 
 2. Set the `PAD` environment variable to the URL of this pad.
 
@@ -1012,6 +1012,7 @@ Verify that Jenkins reproduced your images:
      url="https://nightly.tails.boum.org/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
      curl --fail "$url" > SHA512SUMS-jenkins.txt
      grep --perl-regexp '[.]img|iso' SHA512SUMS-jenkins.txt | sha512sum -c -
+     rm SHA512SUMS-jenkins.txt
     )
 
 ### If the ISO and USB images hashes match
@@ -1111,11 +1112,8 @@ the release will be done in a new, dedicated branch.
 Generate the OpenPGP signatures
 ===============================
 
-Run the following command
-to create a directory with a suitable name, go there, move the built
-images to this brand new directory, generate detached OpenPGP
-signatures for the images to be published (in the same directory as the
-images and with a `.sig` extension):
+Run the following command to move the built images to the correct directory and
+generate detached OpenPGP signatures:
 
     ./bin/generate-images-signatures
 
@@ -1205,7 +1203,7 @@ To build the IUKS, run this command:
     (
        set -eu
        set -o pipefail
-       PUPPET_TAILS_REMOTE='git@gitlab.torproject.org:tpo/tpa/puppet-control.git'
+       PUPPET_TAILS_REMOTE="${PUPPET_TAILS_REMOTE:-git@gitlab.torproject.org:tpo/tpa/puppet-control.git}"
        cd "${WORK_DIR:?}"
        git clone "$PUPPET_TAILS_REMOTE"
        TMPFILES_CONF=/etc/tmpfiles.d/tails-create-iuks.conf
@@ -1354,12 +1352,12 @@ The "normal" command we had in place is really slow nowadays. The snippet that
 follows is much faster. However, it's not as smart, so it can only handle cases
 in which IUKs have been built exactly once.
 
-    ssh jenkins.lizard <<EOF | grep -E '[.]iuk$' > "jenkins_${VERSION}.sha256sum"
-    find /var/lib/jenkins/jobs/ -name '*.iuk' -mtime -1 \
-    -exec sha256sum {} \;
+    ssh jenkins.fsn-libvirt-01 <<EOF | grep -E '[.]iuk$' > "jenkins_${VERSION}.sha256sum"
+    find /var/lib/jenkins/jobs/ -name '*.iuk' -mtime -1 -exec sha256sum {} \;
     EOF
     sed -i 's@/.*/Tails_@Tails_@'  "jenkins_${VERSION}.sha256sum"
-    diff <(sort jenkins_${VERSION}.sha256sum) <(sort "${IUKS_HASHES:?}")
+    diff <(sort "jenkins_${VERSION}.sha256sum") <(sort "${IUKS_HASHES:?}")
+    rm "jenkins_${VERSION}.sha256sum"
 
 If this script is not working fine for you, please refer to the next section.
 
@@ -2064,6 +2062,8 @@ Mark the merge request for `$WEBSITE_RELEASE_BRANCH` as ready.
 Close the "Write release notes" ticket manually since
 `Closes:` statements are not sufficient when updating `master`.
 
+Wait for the merge request for `$WEBSITE_RELEASE_BRANCH` to be merged automatically.
+
 ## If you're preparing a final release: Bug tracker
 
 Skip this part if preparing a release candidate:
@@ -2121,7 +2121,7 @@ Wait for the website update
 Wait for the release to be fully published, that is for the website to have been
 fully refreshed. To do so, first wait for the
 [[!tails_gitlab tails/tails/-/pipelines/?ref=master desc="GitLab CI pipeline"]]
-triggered by your last push to build and deploy the website. And then:
+triggered by the automatic merge of `$WEBSITE_RELEASE_BRANCH` to build and deploy the website. And then:
 
 ### If you are publishing a final release
 
@@ -2429,7 +2429,7 @@ Check that you are indeed preparing a final release:
 
    Open the list of potentially relevant issues:
 
-        echo "https://gitlab.tails.boum.org/groups/tails/-/work_items?sort=updated_asc&state=closed&milestone_title=Tails_${VERSION:?}&confidential=yes"
+        echo "https://gitlab.tails.boum.org/groups/tails/-/work_items?sort=updated_asc&state=closed&milestone_title=Tails_${VERSION:?}&confidential=yes" | wl-copy
 
    In that list, look for issues about security vulnerabilities, that have our
    *Disclosure agreement* in the description. Those are the ones in scope for
@@ -2541,10 +2541,10 @@ Check that you are indeed preparing a RC:
 
         rm -f /var/tmp/wrap_tails_create_iuks*.log
 
-1. You're done for today! Suggestion: enjoy some time AFK :)
+1. If you've prepared a branch with release process improvements:
+   turn it into a MR.
 
-1. Tomorrow, make sure Jenkins manages to build all updated major branches:
-   <https://jenkins.tails.boum.org/view/RM/>.
+1. You're done for this release!
 
 Related pages
 =============
