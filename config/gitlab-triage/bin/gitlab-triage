@@ -13,7 +13,7 @@ PODMAN_IMAGE='registry.gitlab.tails.boum.org/tails/container-images/gitlab-triag
 # shellcheck disable=SC2086
 podman run \
     --name tails-gitlab-triage \
-     --oom-score-adj=200 \
+    --oom-score-adj=200 \
     --rm \
     --volume "${GITLAB_TRIAGE_POLICIES_DIR}":/etc/gitlab-triage-policies \
     --pull=always \
