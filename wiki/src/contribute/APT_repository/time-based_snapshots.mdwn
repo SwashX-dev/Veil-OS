@@ -6,7 +6,7 @@ Overview
 ========
 
 Our time-based snapshots of upstream APT repositories are published on
-<http://time-based.snapshots.deb.tails.boum.org/>.
+<http://time-based.snapshots.deb.tails.net/>.
 
 These are _full_ snapshots of the upstream APT repositories we use for
 building Tails ISO images. They contain exactly the same set of
@@ -37,7 +37,7 @@ A time-based snapshot's name contains:
 The APT repository mirroring infrastructure publishes the name of the
 latest snapshot for each mirrored repository over HTTP, in the
 `project/trace/$archive` file
-([example](http://time-based.snapshots.deb.tails.boum.org/debian-security/project/trace/debian-security)).
+([example](http://time-based.snapshots.deb.tails.net/debian-security/project/trace/debian-security)).
 Similarly, every ISO
 build exports the names of the APT repository snapshots it uses
 ([example](http://nightly.tails.boum.org/build_Tails_ISO_devel/lastSuccessful/archive/latest.apt-sources)).
@@ -64,7 +64,7 @@ SSH access
 
 One must configure their SSH client to connect to the APT server:
 
-	Host incoming.deb.tails.boum.org
+	Host incoming.deb.tails.net
 		Port 3003
 
 Workflow
@@ -113,7 +113,7 @@ To bump `Valid-Until`, for a given snapshot (`$SERIAL`) of a given
 archive (`$ARCHIVE`), so that they are valid for `$DAYS_FROM_NOW` days
 from now:
 
-    ssh reprepro-time-based-snapshots@incoming.deb.tails.boum.org \
+    ssh reprepro-time-based-snapshots@incoming.deb.tails.net \
        tails-bump-apt-snapshot-valid-until \
            "${ARCHIVE:?}" "${SERIAL:?}" "${DAYS_FROM_NOW:?}"
 
@@ -205,7 +205,7 @@ Freeze exception
 
         Explanation: freeze exception
         Package: XYZ
-        Pin: origin deb.tails.boum.org
+        Pin: origin deb.tails.net
         Pin-Priority: 999
 
 4. Commit:
@@ -312,23 +312,23 @@ Let's assume:
 
     lb config --distribution jessie
     lb config --mirror-chroot \
-       http://time-based.snapshots.deb.tails.boum.org/debian/2016031101/
+       http://time-based.snapshots.deb.tails.net/debian/2016031101/
     lb config --mirror-chroot-security \
-       http://time-based.snapshots.deb.tails.boum.org/debian-security/2016031102/
+       http://time-based.snapshots.deb.tails.net/debian-security/2016031102/
     [...]
 
 Which generates this APT `sources.list`:
 
-    deb http://time-based.snapshots.deb.tails.boum.org/debian/2016031101/ jessie main
-    deb http://time-based.snapshots.deb.tails.boum.org/debian-security/2016031102/ jessie/updates main
+    deb http://time-based.snapshots.deb.tails.net/debian/2016031101/ jessie main
+    deb http://time-based.snapshots.deb.tails.net/debian-security/2016031102/ jessie/updates main
     [...]
 
 As a result APT sends HTTP requests with URLs such as:
 
- * <http://time-based.snapshots.deb.tails.boum.org/debian/2016032401/dists/jessie/Release>
- * <http://time-based.snapshots.deb.tails.boum.org/debian/2016032401/pool/XYZ>
- * <http://time-based.snapshots.deb.tails.boum.org/debian-security/2016032402/dists/jessie/updates/Release>
- * <http://time-based.snapshots.deb.tails.boum.org/debian-security/2016032402/pool/XYZ>
+ * <http://time-based.snapshots.deb.tails.net/debian/2016032401/dists/jessie/Release>
+ * <http://time-based.snapshots.deb.tails.net/debian/2016032401/pool/XYZ>
+ * <http://time-based.snapshots.deb.tails.net/debian-security/2016032402/dists/jessie/updates/Release>
+ * <http://time-based.snapshots.deb.tails.net/debian-security/2016032402/pool/XYZ>
 
 The corresponding files in reprepro's filesystem (given that we have
 one reprepro instance per mirrored archive) are:
@@ -417,7 +417,7 @@ numbers):
  * if the imported package comes from another Debian distribution,
    that has a pinning value strictly lower than 990, such as Debian
    unstable: if we did nothing more, the package would be installed
-   because its pinning (`origin deb.tails.boum.org`) is higher than
+   because its pinning (`origin deb.tails.net`) is higher than
    the one from the Debian distribution we're importing it from;
    *however*, in this case we need to track this package, and to
    remove it from our custom repository after we have thawed the

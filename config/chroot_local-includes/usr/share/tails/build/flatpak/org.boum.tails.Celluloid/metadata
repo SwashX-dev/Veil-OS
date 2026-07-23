@@ -1,0 +1,35 @@
+[Context]
+shared=ipc;
+sockets=wayland;pulseaudio;
+devices=all;
+filesystems=xdg-run/pipewire-0:ro;xdg-pictures;xdg-run/gvfsd;xdg-run/gvfs;
+
+[Session Bus Policy]
+org.gtk.vfs.*=talk
+io.github.celluloid_player.Celluloid=own
+io.github.celluloid_player.Celluloid.*=own
+org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid=own
+
+[Environment]
+YT_DLP_JS_RUNTIME=deno
+LC_NUMERIC=C
+
+[Extension io.github.celluloid_player.Celluloid.Locale]
+directory=share/runtime/locale
+autodelete=true
+locale-subset=true
+
+[Extension io.github.celluloid_player.Celluloid.Debug]
+directory=lib/debug
+autodelete=true
+no-autodownload=true
+
+[Build]
+built-extensions=io.github.celluloid_player.Celluloid.Locale;io.github.celluloid_player.Celluloid.Debug;io.github.celluloid_player.Celluloid.Sources;
+
+[Application]
+name=org.boum.tails.Celluloid
+runtime=org.boum.tails.Platform/x86_64/stable
+sdk=org.boum.tails.Platform/x86_64/stable
+command=/usr/bin/celluloid
+

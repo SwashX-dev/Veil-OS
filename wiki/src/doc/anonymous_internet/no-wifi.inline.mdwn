@@ -4,7 +4,7 @@ If your Wi-Fi interface is not working, you might experience the following:
 
 * There is no **Wi-Fi** menu in the system menu:
 
-  [[!img no-wifi/system_without_wifi.png class="screenshot" alt=""]]
+  [[!img first_steps/desktop/system_without_wifi.png class="screenshot" alt=""]]
 
 * There is a **Wi-Fi** menu in the system menu, but connecting to a Wi-Fi
   network fails.

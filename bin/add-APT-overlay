@@ -23,17 +23,15 @@ Options:
 }
 
 wait_suite_ready() {
-    url="https://deb.tails.boum.org/dists/${OVERLAY}"
-    while ! curl -s --fail "$url" > /dev/null
-    do
+    url="https://deb.tails.net/dists/${OVERLAY}"
+    while ! curl -s --fail "$url" >/dev/null; do
         sleep 5
     done
 }
 
 NAME=$(basename "${0}")
 LONGOPTS="wait,print,enable,help"
-if ! getopt -Qq -o "" --longoptions $LONGOPTS -n "${NAME}" -- "$@"
-then
+if ! getopt -Qq -o "" --longoptions $LONGOPTS -n "${NAME}" -- "$@"; then
     echo "Use --help for usage information" >&2
     exit 2
 fi
@@ -41,20 +39,19 @@ OPTS=$(getopt -o "" --longoptions $LONGOPTS -n "${NAME}" -- "$@")
 eval set -- "$OPTS"
 while [ $# -gt 0 ]; do
     case $1 in
-        --print)
-            echo "$OVERLAY"
-            exit 0
-            ;;
-        --wait)
-            wait_suite_ready
-            exit
-            ;;
-        --enable)
-            ;;
-        --help)
-            usage
-            exit 0
-            ;;
+    --print)
+        echo "$OVERLAY"
+        exit 0
+        ;;
+    --wait)
+        wait_suite_ready
+        exit
+        ;;
+    --enable) ;;
+    --help)
+        usage
+        exit 0
+        ;;
     esac
     shift
 done

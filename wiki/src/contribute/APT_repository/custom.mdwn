@@ -97,13 +97,13 @@ SSH access
 
 Configure your SSH client to connect to the APT server:
 
-	Host incoming.deb.tails.boum.org
+	Host incoming.deb.tails.net
 		Port 3003
 
 HTTP access
 ===========
 
-The custom APT repository can be browsed at <https://deb.tails.boum.org/>.
+The custom APT repository can be browsed at <https://deb.tails.net/>.
 
 Workflow
 ========
@@ -128,7 +128,7 @@ to upload to later on.
 
 For details, see the *Build system* section above.
 
-Wait a few minutes for the new APT suite to appear on <https://deb.tails.boum.org/dists/>:
+Wait a few minutes for the new APT suite to appear on <https://deb.tails.net/dists/>:
 
     ./bin/add-APT-overlay --wait
 
@@ -155,7 +155,7 @@ repository; this can be done by passing `-sa` to pdebuild's
 Add this configuration snippet to your `dupload` configuration:
 
 	$config::cfg{'tails'} = {
-	        fqdn => "incoming.deb.tails.boum.org",
+	        fqdn => "incoming.deb.tails.net",
 	        method => "scp",
 	        login => "reprepro",
 	        incoming => "/srv/reprepro/incoming/",
@@ -167,7 +167,7 @@ Add this configuration snippet to your `dupload` configuration:
 Add this to `.dput.cf`:
 
     [tails]
-    fqdn            = incoming.deb.tails.boum.org
+    fqdn            = incoming.deb.tails.net
     method          = scp
     login           = reprepro
     incoming        = /srv/reprepro/incoming/
@@ -216,7 +216,7 @@ the suite specified in your `.changes` file.
 
 Check the result:
 
-	$ ssh reprepro@incoming.deb.tails.boum.org reprepro list $SUITE $PACKAGENAME
+	$ ssh reprepro@incoming.deb.tails.net reprepro list $SUITE $PACKAGENAME
 
 <a id="workflow-merge-main-branch"></a>
 

@@ -2,27 +2,40 @@
 
 There are 2 ways of shutting down Tails.
 
-[[!toc levels=1]]
+[[!toc startlevel=2]]
 
 With both techniques, all the data stored in [[!wikipedia Random-access_memory
 desc="RAM"]] is securely erased to protect you from [[cold boot
 attacks|doc/advanced_topics/cold_boot_attacks]].
 
-Shutdown from the system menu
-=============================
+<h2 id="standard">Standard shutdown from the system menu</h2>
 
-Click on the system menu in the upper right corner of the screen.
+The standard shutdown procedure is slower, but prevents damage to your
+Persistent Storage and data loss.
 
-* Choose [[!img lib/system-shutdown.png link="no" class="symbolic" alt="Power Off"]] to
-  shutdown the computer.
+1. Open the system menu in the upper-right corner of the screen.
 
-* Choose [[!img lib/view-refresh.png link="no" class="symbolic" alt="Restart"]] to restart
-  the computer on Tails or on your regular operating system.
+   [[!img desktop/system-with-wifi-only.png class="screenshot" alt=""]]
 
-[[!img desktop/system-with-wifi-only.png class="screenshot" alt=""]]
+1. Select [[!img lib/system-shutdown.png link="no" class="symbolic" alt="Power Off"]].
 
-Emergency shutdown
-==================
+1. Select **Power Off**.
+
+1. A **Power Off** confirmation dialog appears.
+
+   [[!img power_off_without_inhibitor.png class="screenshot" alt=""]]
+
+   If an application needs to be closed or an open document needs to be saved
+   before shutting down, the dialog includes some details.
+
+   [[!img power_off_with_inhibitor.png class="screenshot" alt=""]]
+
+1. Select the **Power Off** button to confirm.
+
+   Even without confirming or saving the open documents, Tails will shut down
+   after 60 seconds.
+
+<h2 id="emergency">Emergency shutdown</h2>
 
 To trigger an emergency shutdown, unplug the USB stick or eject the DVD from
 which Tails is running. Doing so might be faster than shutting down from the

@@ -328,7 +328,7 @@ your screen locker password or setting up a [[cold boot
 attack|doc/advanced_topics/cold_boot_attacks]] can compromise your Tails while
 suspended.</p>
 
-<p>For more security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>
+<p>For added security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>
 
 </div>
 
