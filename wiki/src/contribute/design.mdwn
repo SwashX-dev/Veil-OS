@@ -595,8 +595,8 @@ a PRNG is tricky in a Live system context as the system state after
 boot, if not fully deterministic, is parameterized by far fewer
 variables than in the case of a non-Live system.
 
-Using an auxiliary entropy source such as
-[haveged](https://issihosts.com/haveged/) is thus
+Using a good entropy source such as
+the Linux kernel Jitter RNG is thus
 REQUIRED.
 
 ### 2.6.4 Usability
@@ -1254,8 +1254,8 @@ releases). See [[contribute/design/upgrades]] for details.
 Tails ships a few custom GNOME panel applets and GNOME Shell
 extensions.
 
-The status-menu-helper GNOME Shell extension provides two-clicks shutdown and
-restart actions, as well as screen locking.
+The status-menu-helper GNOME Shell extension makes sure Log out button is
+hidden, and integrates our custom screen locker.
 
 - [[!tails_gitweb_dir config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org]]
 

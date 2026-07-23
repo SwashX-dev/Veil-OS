@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2026-04-10 19:22+0000\n"
-"PO-Revision-Date: 2025-04-04 18:56+0000\n"
-"Last-Translator: xin <xin@riseup.net>\n"
+"PO-Revision-Date: 2026-07-04 02:45+0000\n"
+"Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: Spanish <http://translate.tails.net/projects/tails/install-"
 "inc-overview/es/>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.3\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Content of: outside any tag (error?)
 msgid "[[!meta robots=\"noindex\"]]"
@@ -44,7 +44,6 @@ msgstr "8 GB mínimo"
 
 #. type: Content of: <div><div><p>
 #, fuzzy
-#| msgid "Your Tails"
 msgid "Your primary Tails"
 msgstr "Tu Tails"
 
@@ -88,7 +87,6 @@ msgstr "[[!img install/inc/icons/windows.png link=\"no\" alt=\"\"]]"
 
 #. type: Content of: <div><div><p>
 #, fuzzy
-#| msgid "Windows 7"
 msgid "Windows 8"
 msgstr "Windows 7"
 
@@ -138,7 +136,6 @@ msgstr "u otra distribución derivada"
 
 #. type: Content of: <div><div><p>
 #, fuzzy
-#| msgid "another Tails"
 msgid "Another Tails"
 msgstr "otro Tails"
 
@@ -169,7 +166,6 @@ msgstr "Procesador Intel"
 
 #. type: Content of: <div><div><p>
 #, fuzzy
-#| msgid "Intel processor"
 msgid "not Apple processor"
 msgstr "Procesador Intel"
 
@@ -187,13 +183,11 @@ msgstr "[[!img install/inc/icons/phone.png link=\"no\" alt=\"\"]]"
 
 #. type: Content of: <div><div><p>
 #, fuzzy
-#| msgid "a smartphone"
 msgid "Smartphone"
 msgstr "un smartphone"
 
 #. type: Content of: <div><div><p>
 #, fuzzy
-#| msgid "or a printer"
 msgid "or printer"
 msgstr "o una impresora"
 
@@ -241,12 +235,14 @@ msgstr ""
 
 #. type: Content of: <div><p>
 msgid "If your Mac has an Apple chip, Tails won't work."
-msgstr ""
+msgstr "Si tu Mac tiene un chip de Apple, Tails no funcionará."
 
 #. type: Content of: <div><p>
 msgid ""
 "Making Tails work on Apple chips represents a massive engineering challenge."
 msgstr ""
+"Lograr que Tails funcione en los chips de Apple representa un enorme desafío "
+"de ingeniería."
 
 #. type: Content of: <div><p>
 msgid ""
@@ -262,9 +258,6 @@ msgstr ""
 
 #. type: Content of: <p>
 #, fuzzy
-#| msgid ""
-#| "[[!toggle id=\"requirements\" text=\"Detailed system requirements and "
-#| "recommended hardware.\"]]"
 msgid ""
 "[[!toggle id=\"requirements\" text=\"System requirements and recommended USB "
 "sticks\"]]"
@@ -368,7 +361,6 @@ msgstr ""
 
 #. type: Content of: <div><a><p>
 #, fuzzy
-#| msgid "Download <i>balenaEtcher</i>"
 msgid "Download <i>Rufus</i>"
 msgstr "Descargar <i>balenaEtcher</i>"
 
@@ -410,7 +402,6 @@ msgstr ""
 
 #. type: Content of: <div><a><p>
 #, fuzzy
-#| msgid "Install Tails using <i>GNOME Disks</i>"
 msgid "Install Tails using <i>Rufus</i>"
 msgstr "Instalar Tails usando <i>Discos de GNOME</i>"
 
@@ -436,7 +427,6 @@ msgstr ""
 
 #. type: Content of: <div><a><p>
 #, fuzzy
-#| msgid "Install intermediary using <i>GNOME Disks</i>"
 msgid "Install intermediary using <i>Rufus</i>"
 msgstr "Instalar intermedio usando <i>Discos de GNOME</i>"
 
@@ -513,10 +503,8 @@ msgstr ""
 "infography/clone-tails.png link=\"no\" alt=\"\"]]"
 
 #. type: Content of: <div><a><p>
-#, fuzzy
-#| msgid "Install"
 msgid "Install Tails by cloning"
-msgstr "Instalar"
+msgstr "Instalar Tails por clonación"
 
 #. type: Content of: <div><a>
 msgid ""
@@ -552,7 +540,7 @@ msgstr ""
 
 #. type: Content of: <div><a><p>
 msgid "Welcome to Tails!"
-msgstr ""
+msgstr "Te damos la bienvenida a Tails!"
 
 #. type: Content of: <div>
 msgid "</a>"
@@ -588,10 +576,6 @@ msgstr "</a>"
 #~ msgstr "otra computadora,"
 
 #, fuzzy
-#~| msgid ""
-#~| "<span class=\"windows linux mac expert upgrade-tails upgrade-os\">1½ "
-#~| "hours in total</span> <span class=\"install-clone mac-clone\">½ hour</"
-#~| "span> <span class=\"upgrade-clone\">¼ hour</span>"
 #~ msgid ""
 #~ "<span class=\"windows linux mac expert upgrade-tails upgrade-os\">1 hour "
 #~ "in total</span> <span class=\"install-clone mac-clone\">½ hour</span> "
@@ -624,9 +608,6 @@ msgstr "</a>"
 #~ "descargada\"]]"
 
 #, fuzzy
-#~| msgid ""
-#~| "[[!img install/inc/infography/download-and-verify.png link=\"no\" "
-#~| "alt=\"USB image downloaded and verified\"]]"
 #~ msgid ""
 #~ "[[!img install/inc/infography/verify.png link=\"no\" alt=\"USB image "
 #~ "verified\"]]"
@@ -645,7 +626,6 @@ msgstr "</a>"
 #~ msgstr "Reiniciar"
 
 #, fuzzy
-#~| msgid "[[!img install/inc/infography/restart.png link=\"no\" alt=\"\"]]"
 #~ msgid ""
 #~ "[[!img install/inc/infography/install-etcher.png link=\"no\" "
 #~ "alt=\"balenaEtcher downloaded\"]]"
@@ -676,9 +656,6 @@ msgstr "</a>"
 #~ "instalado en el USB stick a la derecha\"]]"
 
 #, fuzzy
-#~| msgid ""
-#~| "<span class=\"install-clone mac-clone\">Install</span> <span "
-#~| "class=\"upgrade\">Upgrade</span>"
 #~ msgid ""
 #~ "<span class=\"install-clone mac-clone\">Install Tails</span> <span "
 #~ "class=\"upgrade\">Upgrade Tails</span>"
@@ -687,7 +664,6 @@ msgstr "</a>"
 #~ "class=\"upgrade\">Actualizar</span>"
 
 #, fuzzy
-#~| msgid "Your Tails"
 #~ msgid "Tails"
 #~ msgstr "Tu Tails"
 

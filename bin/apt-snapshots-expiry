@@ -25,7 +25,7 @@ for dir in config/APT_snapshots.d vagrant/definitions/tails-builder/config/APT_s
                 DIST='stable'
                 ;;
             esac
-            EXPIRY="$(curl --silent "https://time-based.snapshots.deb.tails.boum.org/${ARCHIVE:?}/dists/${DIST:?}/snapshots/${SERIAL:?}/Release" | sed -n 's/^Valid-Until:\s\+\(.*\)$/\1/p')"
+            EXPIRY="$(curl --silent "https://time-based.snapshots.deb.tails.net/${ARCHIVE:?}/dists/${DIST:?}/snapshots/${SERIAL:?}/Release" | sed -n 's/^Valid-Until:\s\+\(.*\)$/\1/p')"
             if [ -z "${EXPIRY:-}" ]; then
                 FAILURE=yes
                 echo "FAIL: archive '${ARCHIVE:?}' has no snapshot '${SERIAL}'!"

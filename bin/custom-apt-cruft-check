@@ -21,7 +21,7 @@ class AptSources
   def initialize(suite)
     @apt_sources = []
     apt_repo_hostnames = [
-      'deb.tails.boum.org',
+      'deb.tails.net',
       'umjqavufhoix3smyq6az2sx4istmuvsgmz4bq5u5x56rnayejoo6l2qd.onion',
     ]
     ['main', 'contrib', 'non-free'].each do |repo|
@@ -39,7 +39,7 @@ class AptSources
 
     raise "could not find Tails custom APT repo's sources, " \
           "please add this to your APT sources:\n" \
-          'deb-src [arch=amd64] http://deb.tails.boum.org/ ' \
+          'deb-src [arch=amd64] http://deb.tails.net/ ' \
           "#{suite} main contrib non-free"
   end
 
@@ -121,7 +121,7 @@ used_source_packages = []
 binary_cruft_candidates = []
 no_source_packages = []
 
-custom_packages = `ssh reprepro@incoming.deb.tails.boum.org \
+custom_packages = `ssh reprepro@incoming.deb.tails.net \
                        reprepro list #{options.suite}`
 custom_packages.each_line(chomp: true) do |line|
   type, name, version = line.split
@@ -162,7 +162,7 @@ unless binary_cruft.empty?
   puts_list(binary_cruft)
   puts
   puts "### Clean up command\n\n" \
-       '    ssh reprepro@incoming.deb.tails.boum.org ' \
+       '    ssh reprepro@incoming.deb.tails.net ' \
        "reprepro remove #{options.suite} #{binary_cruft.join(' ')}"
   puts
 end
@@ -174,7 +174,7 @@ unless no_source_packages.empty?
   puts '**Please investigate!** Most likely you want to just upload the ' \
        'missing source packages, or these binary packages are installed ' \
        "by mistake and should be considered as cruft and removed with:\n\n" \
-       '    ssh reprepro@incoming.deb.tails.boum.org ' \
+       '    ssh reprepro@incoming.deb.tails.net ' \
        "reprepro remove #{options.suite} #{no_source_packages.join(' ')}"
   puts
 end
@@ -184,7 +184,7 @@ unless source_cruft.empty?
   puts_list(source_cruft)
   puts
   puts "### Clean up command\n\n" \
-       '    ssh reprepro@incoming.deb.tails.boum.org ' \
+       '    ssh reprepro@incoming.deb.tails.net ' \
        "reprepro removesrcs #{options.suite} #{source_cruft.join(' ')}"
   puts
 end

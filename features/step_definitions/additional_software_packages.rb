@@ -29,10 +29,10 @@ end
 
 # Only works for the notification that is currently showing
 def click_gnome_shell_notification_button(title)
-  Dogtail::Application.new('gnome-shell')
-                      .child(roleName: 'notification')
-                      .child(title, roleName: 'button')
-                      .click
+  gnome_shell
+    .child(roleName: 'notification')
+    .child(title, roleName: 'button')
+    .click
 end
 
 Then /^I create a persistent storage and activate the Additional Software feature$/ do
@@ -172,9 +172,9 @@ Then /^I can open the Additional Software log file from the notification$/ do
   # Open GNOME Shell's notification list
   @screen.click(@screen.w / 2, 8)
   title = 'The installation of your additional software failed'
-  notification = Dogtail::Application.new('gnome-shell')
-                                     .children(roleName: 'notification')
-                                     .find do |node|
+  notification = gnome_shell
+                 .children(roleName: 'notification')
+                 .find do |node|
     node.child?(title, roleName: 'label', retry: false)
   end
   # The first button of the notification is the one that expands it so

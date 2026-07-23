@@ -1,15 +1,16 @@
 import os
+import sys
 import subprocess
 from logging import getLogger
 
 # Only required for type hints
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING
 
 import gi
 from gi.repository import Gio, GLib, GObject, Gtk
+
 from tps import IN_PROGRESS_STATES, InvalidBootDeviceErrorType, State
 from tps.dbus.errors import DBusError, NotEnoughMemoryError, TargetIsBusyError
-
 from tps_frontend import WINDOW_UI_FILE, _
 from tps_frontend.change_passphrase_dialog import ChangePassphraseDialog
 from tps_frontend.error_dialog import ErrorDetails, ErrorDialog
@@ -84,12 +85,12 @@ class Window(Gtk.ApplicationWindow):
         self.refresh_view()
 
         if os.path.isfile(
-            "/var/lib/live/config/tails.disk-partitioning-errors"
+            "/var/lib/live/config/tails.disk-partitioning-errors",
         ) and not self.service_proxy.get_cached_property("IsCreated"):
             subprocess.check_call(
-                ["/usr/local/lib/tails-report-disk-partitioning-errors"]
+                ["/usr/local/lib/tails-report-disk-partitioning-errors"],
             )
-            exit(1)
+            sys.exit(1)
 
     def refresh_view(self):
         # Choose which view to show
@@ -241,10 +242,18 @@ class Window(Gtk.ApplicationWindow):
 
     @Gtk.Template.Callback()
     def on_restart_button_clicked(self, button: Gtk.Button):
-        subprocess.run(
-            ["/usr/bin/sudo", "-n", "/sbin/reboot"],  # noqa: S603
-            check=True,
+        sessionmanager = Gio.DBusProxy.new_for_bus_sync(
+            Gio.BusType.SESSION,
+            Gio.DBusProxyFlags.NONE,
+            None,
+            "org.gnome.SessionManager",
+            "/org/gnome/SessionManager",
+            "org.gnome.SessionManager",
         )
+        try:
+            sessionmanager.Reboot()
+        except GLib.Error:
+            logger.info("Reboot cancelled")
 
     def on_create_call_finished(self, proxy: GObject.Object, res: Gio.AsyncResult):
         try:
@@ -324,7 +333,10 @@ class Window(Gtk.ApplicationWindow):
         dialog.run()
 
     def display_command_failed_error(
-        self, title: str, cmd: list[str], e: subprocess.CalledProcessError
+        self,
+        title: str,
+        cmd: list[str],
+        e: subprocess.CalledProcessError,
     ):
         path = GLib.markup_escape_text(cmd[0])
         msg = f"Command <tt>{path}</tt> failed with exit code {e.returncode}."

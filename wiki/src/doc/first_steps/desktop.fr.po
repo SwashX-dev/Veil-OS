@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-03-27 10:22+0000\n"
+"POT-Creation-Date: 2026-07-22 09:36+0200\n"
 "PO-Revision-Date: 2026-04-03 19:05+0000\n"
 "Last-Translator: Chre <tor@renaudineau.org>\n"
 "Language-Team: Tails translators <tails@boum.org>\n"
@@ -103,9 +103,8 @@ msgid ""
 "Press the [[!img lib/start.png class=\"symbolic\" link=\"no\" "
 "alt=\"Super\"]] key on your keyboard."
 msgstr ""
-"Appuyer sur la touche "
-"[[!img lib/start.png class=\"symbolic\" link=\"no\" alt=\"Super\"]] de votre "
-"clavier."
+"Appuyer sur la touche [[!img lib/start.png class=\"symbolic\" link=\"no\" "
+"alt=\"Super\"]] de votre clavier."
 
 #. type: Plain text
 msgid ""
@@ -126,8 +125,8 @@ msgid ""
 "The **Apps** menu provides launchers for the [[included software|about/"
 "features]] and GNOME utilities."
 msgstr ""
-"Le menu **Applications** rassemble des raccourcis vers les "
-"[[logiciels inclus dans Tails|about/features]] et vers les utilitaires GNOME."
+"Le menu **Applications** rassemble des raccourcis vers les [[logiciels "
+"inclus dans Tails|about/features]] et vers les utilitaires GNOME."
 
 #. type: Plain text
 #, no-wrap
@@ -420,8 +419,7 @@ msgid ""
 "  <p>The <b><i>Secrets</i></b> password manager allows you to store and manage secure\n"
 "  passwords.</p>\n"
 msgstr ""
-"  <p>Le gestionnaire de mots de passe <b><i>Secrets</i></b> vous permet de "
-"stocker et de gérer des mots de passe\n"
+"  <p>Le gestionnaire de mots de passe <b><i>Secrets</i></b> vous permet de stocker et de gérer des mots de passe\n"
 "  sûrs.</p>\n"
 
 #. type: Plain text
@@ -431,8 +429,7 @@ msgid ""
 "  <i>Secrets</i>|encryption_and_privacy/manage_passwords]] password manager.</p>\n"
 msgstr ""
 "  <p>Voir [[gérer des mots de passe avec le\n"
-"  gestionnaire de mots de passe <i>Secrets</i>|encryption_and_privacy/"
-"manage_passwords]].</p>\n"
+"  gestionnaire de mots de passe <i>Secrets</i>|encryption_and_privacy/manage_passwords]].</p>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -446,8 +443,7 @@ msgid ""
 "  files, create folders, and [[connect to SSH or SFTP\n"
 "  servers|desktop#files]].</p>\n"
 msgstr ""
-"  <p>Le navigateur de <b><i>Fichiers</i></b> vous permet de parcourir et "
-"d'organiser vos\n"
+"  <p>Le navigateur de <b><i>Fichiers</i></b> vous permet de parcourir et d'organiser vos\n"
 "  fichiers, de créer des dossiers et de vous [[connecter à des serveurs\n"
 "  SSH ou SFTP|desktop#files]].</p>\n"
 
@@ -595,10 +591,8 @@ msgid ""
 "  administration password. To disable this behavior, execute the following\n"
 "  command in a console.</p>\n"
 msgstr ""
-"  <p>Votre écran devrait se verrouiller automatiquement après un certain "
-"temps si vous avez défini un\n"
-"  mot de passe d'administration. Pour désactiver ce comportement, exécutez "
-"la commande\n"
+"  <p>Votre écran devrait se verrouiller automatiquement après un certain temps si vous avez défini un\n"
+"  mot de passe d'administration. Pour désactiver ce comportement, exécutez la commande\n"
 "  suivante dans une console.</p>\n"
 
 #. type: Plain text
@@ -673,8 +667,9 @@ msgstr ""
 "en veille</p>\n"
 
 #. type: Plain text
-#, no-wrap
-msgid "<p>For more security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>\n"
+#, fuzzy, no-wrap
+#| msgid "<p>For more security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>\n"
+msgid "<p>For added security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>\n"
 msgstr "<p>Pour plus de sécurité, [[éteignez Tails|doc/first_steps/shutdown]] complètement.</p>\n"
 
 #. type: Plain text
@@ -735,8 +730,7 @@ msgid ""
 "<p>Night Light is unavailable when running Tails in a [[virtual\n"
 "machine|doc/advanced_topics/virtualization]].</p>\n"
 msgstr ""
-"<p>Le Mode nuit n'est pas disponible lorsque Tails fonctionne dans une [["
-"machine\n"
+"<p>Le Mode nuit n'est pas disponible lorsque Tails fonctionne dans une [[machine\n"
 "virtuelle|doc/advanced_topics/virtualization]].</p>\n"
 
 #. type: Plain text

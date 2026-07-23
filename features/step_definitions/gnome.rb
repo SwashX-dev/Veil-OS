@@ -1,6 +1,6 @@
 When /^GNOME offers me various screenshot options$/ do
   assert_not_nil(
-    Dogtail::Application.new('gnome-shell').child('Screen')
+    gnome_shell.child('Screen')
   )
 end
 
@@ -28,5 +28,5 @@ When /^the "(.+)" notification is sent$/ do |title|
 end
 
 Then /^the "(.+)" notification is shown to the user$/ do |title|
-  Dogtail::Application.new('gnome-shell').child(title)
+  gnome_shell.child(title)
 end

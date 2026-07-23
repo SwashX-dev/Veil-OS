@@ -1,31 +1,11 @@
-diff --git a/browser/components/abouttor/AboutTorParent.sys.mjs b/browser/components/abouttor/AboutTorParent.sys.mjs
-index 6bf7149917510807004667a8ee4cb58b04997c4f..f8d50364d0f508ec6c006d85307c3e720c003781 100644
---- a/moz-src/browser/components/abouttor/AboutTorParent.sys.mjs
-+++ b/moz-src/browser/components/abouttor/AboutTorParent.sys.mjs
-@@ -10,6 +10,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
- const initializedActors = new Set();
- const onionizePref = "torbrowser.homepage.search.onionize";
- const surveyDismissVersionPref = "torbrowser.homepage.survey.dismiss_version";
-+const tailsPref = "torbrowser.running_in_tails";
- 
- /**
-  * Actor parent class for the about:tor page.
-@@ -111,6 +112,7 @@ export class AboutTorParent extends JSWindowActorParent {
-       dismissYEC: AboutTorParent.#dismissYEC,
-       toolNum1,
-       toolNum2,
-+      isTails: Services.prefs.getBoolPref(tailsPref, false),
-     };
-   }
- 
 diff -Naur a/localization/en-US/toolkit/global/tor-browser.ftl b/localization/en-US/toolkit/global/tor-browser.ftl
---- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-07-14 12:10:06.172841742 +0200
-+++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-07-14 12:10:06.176841650 +0200
+--- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-07-20 11:00:16.529545523 +0100
++++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-07-20 11:00:16.533545580 +0100
 @@ -28,6 +28,11 @@
  tor-browser-home-message-testing = This is an unstable version of Tor Browser for testing new features. <a data-l10n-name="learn-more-link">Learn more</a>
  
  
-+tails-release-notes = You are running Tails 7.9.1. <a data-l10n-name="tails-release-notes-link">See what’s new</a>
++tails-release-notes = You are running Tails 7.10. <a data-l10n-name="tails-release-notes-link">See what’s new</a>
 +
 +tails-newsletter = Get the latest <a data-l10n-name="tails-newsletter-link">Tails news</a> or <a data-l10n-name="news-link">Tor news</a> straight to your inbox.
 +

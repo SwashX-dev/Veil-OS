@@ -33,8 +33,8 @@ Other changes in Tails 4.0~beta1 include:
   *Settings* utility to authorize your
   Thunderbolt devices, if needed.
 
-  See also the design document on [Thunderbolt 3 in Fedora
-  28](https://christian.kellner.me/2018/04/23/the-state-of-thunderbolt-3-in-fedora-28/)
+  See also the design document on Thunderbolt 3 in Fedora
+  28
   to see how Thunderbolt is integrated in GNOME.
 
 - Remove *Scribus*. ([[!tails_ticket 16290]])

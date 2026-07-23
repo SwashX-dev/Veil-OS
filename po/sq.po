@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-17 11:02+0200\n"
+"POT-Creation-Date: 2026-07-22 09:20+0200\n"
 "PO-Revision-Date: 2026-06-24 10:01+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <https://hosted.weblate.org/projects/tor/tails-gui/"
@@ -50,15 +50,15 @@ msgstr "Shfaq Regjistrin"
 msgid "Configure"
 msgstr "Formësoni"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
 msgid "Password Manager"
 msgstr "Përgjegjës Fjalëkalimesh"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password"
 msgstr "fjalëkalim"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
 msgstr "përgjegjës-fjalëkalimesh"
 
@@ -984,10 +984,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Po përditësohet Depozitë e Qëndrueshme. Kjo mund zgjasë ca…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
+#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Gabim në shkyçje Depozite të Qëndrueshme: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
+#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Gabim në përmirësim Depozite të Qëndrueshme: {}"
 
@@ -999,10 +1001,12 @@ msgstr ""
 "{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
+#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Gabim në aktivizim Depozite të Qëndrueshme: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
+#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "S’u arrit të ndërpritej, teksa riparohej sistemi i kartelave të Depozitës së "
@@ -1600,22 +1604,10 @@ msgstr ""
 "Disku prej të cilit po xhirohet Tails s’gjendet dot. Mos vallë përdorët "
 "mundësinë `toram'?"
 
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:103
+#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:106
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:120
 msgid "Lock Screen"
 msgstr "Kyçe Ekranin"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:107
-msgid "Suspend"
-msgstr "Pezulloje"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:111
-msgid "Restart"
-msgstr "Rinise"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:115
-msgid "Power Off"
-msgstr "Fike"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
@@ -1920,7 +1912,7 @@ msgstr ""
 "software-in e virtualizimit."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/config.py:9
-#: config/chroot_local-includes/usr/local/bin/tca:10
+#: config/chroot_local-includes/usr/local/bin/tca:11
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:1
 msgid "Tor Connection"
 msgstr "Lidhjet Tor"
@@ -2185,7 +2177,7 @@ msgstr ""
 "përdorur dhe riprovoni."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:49
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
 msgid "Persistent Storage"
@@ -2228,6 +2220,7 @@ msgstr "Të dhënat e kësaj veçorie janë ende të ruajtura."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
+#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Gabim gjatë aktivizimit të veçorisë {}"
 
@@ -2239,13 +2232,14 @@ msgstr "Ndodhi një gabim gjatë aktivizimit të veçorisë."
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:279
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:307
 msgid "Details"
 msgstr "Hollësi"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
+#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Gabim gjatë çaktivizimit të veçorisë {}"
 
@@ -2254,6 +2248,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Ndodhi një gabim gjatë çaktivizimit të veçorisë."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2271,10 +2266,12 @@ msgid "_Delete Data"
 msgstr "_Fshini të Dhëna"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Gabim në fshirje të dhënash veçorie {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Ndodhi një gabim në fshirjen e të dhënave veçorie {}."
 
@@ -2346,7 +2343,7 @@ msgstr ""
 msgid "_Send Error Report"
 msgstr "_Dërgoni Njoftim Gabimi"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:153
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:154
 msgid ""
 "Impossible to delete the Persistent Storage while it is unlocked.\n"
 "\n"
@@ -2358,7 +2355,7 @@ msgstr ""
 "Që të fshihet Depozita e Qëndrueshme, rinisni Tails pa shkyçur Depozitën e "
 "Qëndrueshme dhe hapni sërish rregullimet për Depozitë të Qëndrueshme."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:167
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:168
 msgid ""
 "Impossible to delete the Persistent Storage because the USB stick is read-"
 "only.\n"
@@ -2374,17 +2371,17 @@ msgstr ""
 "diskthit USB, rinisni Tails pa shkyçur Depozitën e Qëndrueshme dhe hapni "
 "sërish rregullimet për Depozitë të Qëndrueshme."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:175
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:176
 msgid "Impossible to delete the Persistent Storage"
 msgstr "S’mundet të fshihet Depozita e Qëndrueshme"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:183
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:218
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:184
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:219
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:35
 msgid "Delete Persistent Storage"
 msgstr "Fshije Depozitën e Qëndrueshme"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:187
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:188
 msgid ""
 "Are you sure that you want to delete your Persistent Storage? This action "
 "cannot be undone."
@@ -2392,7 +2389,7 @@ msgstr ""
 "Jeni i sigurt se doni të fshihet Depozita juaj e Qëndrueshme? Ky veprim "
 "s’mund të zhbëhet."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:191
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:56
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/change_passphrase_dialog.ui.in:301
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:124
@@ -2400,55 +2397,55 @@ msgstr ""
 msgid "_Cancel"
 msgstr "_Anuloje"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:193
 msgid "_Delete Persistent Storage"
 msgstr "_Fshi Depozitën e Qëndrueshme"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:202
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:203
 msgid "Deleting your Persistent Storage..."
 msgstr "Po fshihet Depozita juaj e Qëmdrueshme…"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:221
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:222
 msgid "_OK"
 msgstr "_OK"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:230
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:231
 msgid ""
 "Sorry, you can't close this app until the ongoing operation has completed."
 msgstr ""
 "Na ndjeni, s’mund të mbyllni këtë aplikacion, para se të jetë plotësuar "
 "veprimi që po kryhet."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:233
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:234
 msgid "Please wait"
 msgstr "Ju lutemi, pritni"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:261
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 msgid "Not enough memory to create Persistent Storage"
 msgstr "S’ka kujtesë të mjaftueshme për krijim Depozite të Qëndrueshme"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:268
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:277
 msgid "Failed to create Persistent Storage"
 msgstr "S’u arrit të krijohej Depozitë e Qëndrueshme"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:269
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:278
 msgid "An error occurred while creating the Persistent Storage."
 msgstr "Ndodhi një gabim teksa krijohej Depozita e Qëndrueshme."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:305
 msgid "Error deleting Persistent Storage"
 msgstr "Gabim në fshirje Depozite të Qëndrueshme"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:306
 msgid "An error occurred while deleting the Persistent Storage."
 msgstr "Ndodhi një gabim teksa fshihej Depozita e Qëndrueshme."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:334
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:346
 msgid "Details (command output)"
 msgstr "Hollësi (ç’jepet nga urdhri)"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:361
 msgid "Failed to open the documentation"
 msgstr "S’u arrit të hapet dokumentimi"
 
@@ -2775,7 +2772,7 @@ msgstr "Kyç OpenPGP i pavlefshëm kontakti: %s"
 msgid "Invalid contact OpenPGP public key block"
 msgstr "Bllok i pavlefshëm kontakti kyçi publik OpenPGP"
 
-#: config/chroot_local-includes/usr/local/bin/tca:11
+#: config/chroot_local-includes/usr/local/bin/tca:12
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -4208,6 +4205,15 @@ msgstr "Dhjetor"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Sahat"
+
+#~ msgid "Suspend"
+#~ msgstr "Pezulloje"
+
+#~ msgid "Restart"
+#~ msgstr "Rinise"
+
+#~ msgid "Power Off"
+#~ msgstr "Fike"
 
 #~ msgid "Bridge address malformed"
 #~ msgstr "Adresë ure e keqformuar"
