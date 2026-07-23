@@ -12,13 +12,13 @@ output_tagged_snapshot() {
     local tag="$2"
     local snapshot
     snapshot=$(branch_name_to_suite "$tag")
-    echo "http://tagged.snapshots.deb.tails.boum.org/$snapshot/$archive"
+    echo "http://tagged.snapshots.deb.tails.net/$snapshot/$archive"
 }
 
 output_time_based_snapshot() {
     local archive="$1"
     local serial="$2"
-    echo "http://time-based.snapshots.deb.tails.boum.org/$archive/$serial"
+    echo "http://time-based.snapshots.deb.tails.net/$archive/$serial"
 }
 
 ### Sanity checks

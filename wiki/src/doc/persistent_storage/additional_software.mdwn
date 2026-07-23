@@ -192,7 +192,7 @@ Network access
 
 Tails only allows connections to the Tor network. Additional software that uses
 the Internet must be configured to go through the Tor network otherwise, their
-connections are blocked by default for security.
+connections are blocked by default for added security.
 
 To make an application use the Tor network, you can either:
 

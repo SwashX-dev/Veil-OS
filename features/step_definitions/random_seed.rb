@@ -53,7 +53,7 @@ Then /^there is (a|no) random seed on USB drive "([^"]+)"$/ do |randomness, name
   # Print the random seed for debugging, formatted as a hex string
   debug_log("Random seed: #{bin_to_hex(@random_seed)}")
 
-  # Check if the random seed is random
+  # Check if the random seed looks random
   looks_random = looks_random?(@random_seed)
   if should_be_random
     assert(looks_random, 'Randomness check failed')

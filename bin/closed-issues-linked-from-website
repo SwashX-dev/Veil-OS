@@ -18,6 +18,7 @@ IGNORED_ISSUES="
 17900
 18074
 19275
+21554
 "
 
 NAME=$(basename "${0}")

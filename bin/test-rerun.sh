@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -v tmpdir ] || exit 2
+set -u
 
 if [ "$(id -u)" -ne 0 ]; then
     exec sudo \

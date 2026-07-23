@@ -1,3 +1,198 @@
+tails (7.10) unstable; urgency=medium
+
+  * Upgrade Linux to 6.12.96-1
+
+  * Upgrade firmware-nonfree to 20260622-1
+
+  * Upgrade to Tor Browser 15.0.19 based on Firefox ESR 140.13 (tails/tails!3122)
+
+    Closes issues:
+      - Upgrade to Tor Browser 15.0.19 based on Firefox ESR 140.13 (tails/tails#21676)
+      - Refresh about:tor patches for Tails 7.10 (tails/tails#21677)
+
+    Commits:
+      - Upgrade Tor Browser to 15.0.19-build1 (refs: tails#21676)
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.13.0esr-15.0-1-build1
+      - CI: run all tests for 21676-tor-browser-15.0.19
+
+  * Upgrade python3.13 to 3.13.5-2+deb13u4 (SUA 285-1) (tails/tails!3123)
+
+    Closes issues:
+      - Upgrade python3.13 to 3.13.5-2+deb13u4 (SUA 285-1) (tails/tails#21684)
+      - needed-package-updates: firmware-nonfree 20260519-1 → 20260622-1
+        (tails/tails#21687)
+
+    Commits:
+      - Update snapshot of the "debian" archive to 2026072002
+
+  * Create ~/.local/share/applications/, not ~/~/.local/share/applications/
+    (tails/tails!3117)
+
+    Closes issues:
+      - tails-possibly-hide-gnome-software-launcher creates ~/~ directory
+        (tails/tails#21681)
+
+    Commits:
+      - Create ~/.local/share/applications/, not ~/~/.local/share/applications/
+
+  * Test suite: fix the "Tor Browser uses all expected TBB shared libraries" test
+    (tails/tails!3112)
+
+    Closes issues:
+      - "Tor Browser uses all expected TBB shared libraries" step fails since July 6
+        (tails/tails#21674)
+
+    Commits:
+      - Test suite: fix the "Tor Browser uses all expected TBB shared libraries" test
+
+  * Update snapshot of the 'debian' archive to 2026071301 (tails/tails!3111)
+
+    Closes issues:
+      - Upgrade to Trixie 13.6 (tails/tails#21171)
+
+    Commits:
+      - Configure CI to run all tests on this branch
+      - Update snapshot of the 'debian' archive to 2026071301
+
+  * closed-issues-linked-from-website: allow pointing to research done in #21554
+    (tails/tails!3127)
+
+    Commits:
+      - closed-issues-linked-from-website: allow pointing to research done in #21554
+
+  * Remove haveged and rngd (tails/tails!3118)
+
+    Closes issues:
+      - Improve entropy gathering (tails/tails#17154)
+      - Evaluate how safe haveged is in a virtualized environment (tails/tails#7102)
+      - Audit random seed (tails/tails#6116)
+      - Remove haveged (tails/tails#20352)
+
+    Commits:
+      - Design doc: fix layout and improve formatting
+      - Design doc: remove obsolete bits
+      - Test suite: fix comment
+      - Remove haveged
+      - Remove rngd
+
+  * Post-RM (7.9.1) doc updates (tails/tails!3105)
+
+    Commits:
+      - skip CI on this branch
+      - run long command lines in a subshell
+      - make test-rerun actually work + use set -u
+      - print clearer error when the Jenkins build is not available
+
+  * fix comments in modprobe.d (tails/tails!3104)
+
+    Commits:
+      - fix comments in modprobe.d
+
+  * Various improvements to nvd-info to avoid being banned (tails/tails!3091)
+
+    Commits:
+      - ruff format
+      - skip CI on this branch
+      - URL get logged (if --log-level=DEBUG) and timeout is handled
+      - clarify error
+      - config file can include an apiKey
+      - add support for a config file
+      - rate-limit requests to NVD even on success
+      - slightly simplify nvd-info
+      - provide a specific user agent
+      - simple rate-limiter (deal with 429 responses)
+
+  * Stop overriding Power Off, Restart, and Suspend buttons in the GNOME system
+    menu (tails/tails!3039)
+
+    Closes issues:
+      - Text Editor and APT prevent power off (tails/tails#21373)
+      - There is a "log out" menu item in jessie-based tails (tails/tails#8364)
+
+    Commits:
+      - Add anchors
+      - Update shutdown procedure
+      - Update screenshots
+      - Move all screenshots of the System menu in the same folder
+      - Fix TOC
+      - improve spelling and orthography
+      - more code uses the new gnome_shell method
+      - more reliable shutdown, and clarify why we use this method
+      - test that status-menu-helper is actually hiding the logout button
+      - fix the test suite for the GNOME default power off buttons
+      - don't crash when the user cancels the Reboot
+      - Fix PLR1722
+      - ruff format
+      - tps reboots through SessionManager
+      - remove sudo -n poweroff: not needed anymore
+      - status-menu-helper doesn't handle poweroff actions anymore
+      - make sure "Log Out" is never proposed to the user
+      - Revert "Disable "Log out" button in the GNOME Shell menu (Closes: #8364)."
+
+  * Move deb.tails.boum.org and its subdomains to deb.tails.net (tails/tails!3016)
+
+    Closes issues:
+      - Move deb.tails.boum.org to deb.tails.net (tails/tails#21609)
+
+    Commits:
+      - shfmt
+      - Access repository as incoming.deb.tails.net
+      - migrate tagged.snapshots to deb.tails.net
+      - migrate time-based.snapshots to deb.tails.net
+      - use deb.tails.net as our custom APT repository
+
+  * Switch from GNOME Videos (aka. Totem) to Celluloid (tails/tails!2731)
+
+    Closes issues:
+      - Replace GNOME Videos with a more reliable player (tails/tails#7929)
+
+    Commits:
+      - Computer is countable
+      - Use consistent phrasing
+      - Document that Celluloid doesn't work on very old computers
+      - Document that Celluloid has no network access
+      - Drop obsolete reference to Totem
+      - Be more explicit
+      - Add issue template for updating the Celluloid Flatpak manifest
+      - Refresh org.boum.tails.Celluloid flatpak manifest
+      - Fix language
+      - Test suite: lower risk of selecting the wrong widget
+      - Test suite: ensure we don't try clicking before the button becomes sensitive
+      - Explain why this is Nautilus and cross-link related methods
+      - Move method closer to its sibling
+      - test suite: avoid racy mixing of Dogtail and keypresses
+      - Running celluloid from command line works
+      - test suite: factorize and use best practices
+      - clarify why we're removing access to x11 and xdg-pictures
+      - Update list of installed apps: Totem → Celluloid
+      - run python in isolated mode
+      - shfmt
+      - ruff format
+      - drop reference to obsolete patch
+      - drop totem wrapper
+      - Actually open the "Open File" dialog in Celluloid
+      - More changes to desktop is handled as code
+      - refactor code for Celluloid's update-manifest
+      - TorBrowser's update-manifest code has variables
+      - Changes to [Session Bus Policy] are handled as code
+      - rename change-apps-menu-name to reflect reality
+      - Celluloid desktop file customized through change-apps-menu-name
+      - test celluloid without matching an image
+      - disable network access for Celluloid
+      - remove contrieved usecase
+      - test opening files in two different ways
+      - Remove x11 compatibility for Celluloid
+      - opening files from Files supports custom paths
+      - test suite: Totem → Celluloid
+      - shfmt
+      - Celluloid: allow our custom Flatpak to own the D-Bus busses it needs
+      - fix links to /etc/alternatives
+      - Create org.boum.tails.Celluloid fake flatpak
+      - Switch from GNOME Videos (aka. Totem) to Celluloid
+
+ -- Tails developers <foundations@tails.net>  Wed, 22 Jul 2026 08:12:38 +0000
+
 tails (7.9.1) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.94, which fixes CVE-2026-46331

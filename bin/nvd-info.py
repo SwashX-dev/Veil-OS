@@ -5,9 +5,13 @@ import json
 import logging
 import re
 import sys
+import tomllib
+import time
 from pathlib import Path
 
 import requests
+
+HTTP_TOO_MANY_REQUESTS = 429
 
 
 class CveFetcher:
@@ -21,7 +25,12 @@ class CveFetcher:
             formatter_class=argparse.ArgumentDefaultsHelpFormatter,
         )
         p.add_argument(
-            "--config-dir",
+            "--config-file",
+            type=Path,
+            default=str(Path("~/.config/cve-scraper/config.toml").expanduser()),
+        )
+        p.add_argument(
+            "--data-dir",
             type=Path,
             default=str(Path("~/.local/share/cve-scraper/").expanduser()),
         )
@@ -103,17 +112,34 @@ class CveFetcher:
         return p
 
     def get_path_for_cve(self, cve: str):
-        return self.args.config_dir / "nvd" / f"{cve}.json"
+        return self.args.data_dir / "nvd" / f"{cve}.json"
 
     def fetch(self, session, cve: str):
         fpath = self.get_path_for_cve(cve)
         if not self.args.overwrite and fpath.exists():
             self.log.debug("%s already downloaded, skipping", cve)
             return
-        resp = session.get(self.baseurl, params={"cveId": cve}, timeout=30)
-        if not resp.ok:
-            self.log.warning("Could not fetch %s", cve)
+        try:
+            # The whole reason to do a prepared request is being able to print the
+            # actual url we're using. In fact, if an apiKey is set, there will be
+            # additional parameters to the request
+            request = requests.Request("GET", self.baseurl, params={"cveId": cve})
+            prepped = session.prepare_request(request)
+            logging.debug("GET %s", prepped.url)
+            resp = session.send(prepped, timeout=(3, 10))
+        except requests.Timeout:
+            self.log.warning("Could not fetch %s, timeout", cve)
+            time.sleep(4)
             return
+
+        if not resp.ok:
+            if resp.status_code == HTTP_TOO_MANY_REQUESTS:
+                self.log.warning("Could not fetch %s, rate limited", cve)
+                time.sleep(4)
+                return
+            else:
+                self.log.warning("Could not fetch %s, error %d", cve, resp.status_code)
+                return
         content = resp.json()  # check if json is valid
         try:
             cve_content = content["vulnerabilities"][0]["cve"]
@@ -128,6 +154,11 @@ class CveFetcher:
         self.args = p.parse_args()
         logging.basicConfig(level=self.args.log_level)
 
+        self.config = {}
+        if self.args.config_file.exists():
+            with self.args.config_file.open("rb") as buf:
+                self.config = tomllib.load(buf)
+
         if self.args.func is None:
             print("No subcommand specified")
             p.print_usage()
@@ -135,11 +166,17 @@ class CveFetcher:
         self.args.func()
 
     def main_fetch(self):
-        self.args.config_dir.mkdir(exist_ok=True)
-        (self.args.config_dir / "nvd").mkdir(exist_ok=True)
+        self.args.data_dir.mkdir(exist_ok=True)
+        (self.args.data_dir / "nvd").mkdir(exist_ok=True)
         session = requests.Session()
+        session.headers.update({"user-agent": "Nvd Info Fetcher"})
+        if self.config.get("apiKey"):
+            # with an apiKey you're able to perform a larger number of queries
+            # see https://nvd.nist.gov/developers/start-here
+            session.params["apiKey"] = self.config["apiKey"]
         for cve in self.args.cveid:
             self.fetch(session, cve)
+            time.sleep(0.1)  # let's not flood it with too many requests
 
     def vuln_match(self, vuln: dict) -> bool:
         impact_to_number = {
@@ -154,10 +191,9 @@ class CveFetcher:
             english_descriptions = [
                 d["value"] for d in all_descriptions if d["lang"] == "en"
             ]
-            if english_descriptions:
-                description = "\n".join(english_descriptions)
-            else:
-                description = "\n".join(all_descriptions)
+            description = "\n".join(
+                english_descriptions if english_descriptions else all_descriptions,
+            )
             if self.args.description.search(description) is None:
                 return False
 
