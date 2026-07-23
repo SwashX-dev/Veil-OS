@@ -1,23 +1,3 @@
-diff --git a/browser/components/abouttor/AboutTorParent.sys.mjs b/browser/components/abouttor/AboutTorParent.sys.mjs
-index 8449722c3b0308139f23fc6c4d598e2510db6cc8..9d6a97e61b460b4b8ee4971901e589dc75107bdf 100644
---- a/actors/AboutTorParent.sys.mjs
-+++ b/actors/AboutTorParent.sys.mjs
-@@ -10,6 +10,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
- const initializedActors = new Set();
- const onionizePref = "torbrowser.homepage.search.onionize";
- const surveyDismissVersionPref = "torbrowser.homepage.survey.dismiss_version";
-+const tailsPref = "torbrowser.running_in_tails";
- 
- /**
-  * Actor parent class for the about:tor page.
-@@ -69,6 +70,7 @@ export class AboutTorParent extends JSWindowActorParent {
-       ),
-       appLocale,
-       dismissYEC: AboutTorParent.#dismissYEC,
-+      isTails: Services.prefs.getBoolPref(tailsPref, false),
-     };
-   }
- 
 diff --git a/browser/components/abouttor/content/aboutTor.css b/browser/components/abouttor/content/aboutTor.css
 index 28e3a260b7b4b074c41259ba54c28663d80ab0f8..08b3ba8fc588a4dfc4d7080ddf43b78d58673cb4 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.css
