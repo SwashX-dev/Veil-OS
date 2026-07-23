@@ -8,6 +8,7 @@ set -u
 set -x
 
 GITLAB_TRIAGE_POLICIES_DIR="$(readlink -f "$(dirname "$0")"/../policies)"
+PODMAN_IMAGE='registry.gitlab.tails.boum.org/tails/container-images/gitlab-triage:trixie'
 
 # shellcheck disable=SC2086
 podman run \
@@ -15,6 +16,7 @@ podman run \
      --oom-score-adj=200 \
     --rm \
     --volume "${GITLAB_TRIAGE_POLICIES_DIR}":/etc/gitlab-triage-policies \
+    --pull=always \
     ${PODMAN_ARGS:-} \
-    tails:gitlab-triage-stable \
+    "${PODMAN_IMAGE}" \
     /usr/local/bin/gitlab-triage "${@}"

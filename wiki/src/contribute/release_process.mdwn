@@ -2070,15 +2070,7 @@ Skip this part if preparing a release candidate:
 
     [ "${DIST:?}" = stable ]
 
-1. Ensure you have an up-to-date `tails:gitlab-triage-stable` container image:
-
-    (
-        cd "${MASTER_CHECKOUT:?}" && \
-        git checkout master && \
-        ./config/gitlab-triage/bin/ensure-up-to-date-container-image
-    )
-
-2. Postpone to the next scheduled release any remaining open issue and merge
+1. Postpone to the next scheduled release any remaining open issue and merge
    request whose milestone is the version you've just released:
 
     (
