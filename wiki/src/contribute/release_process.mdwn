@@ -2541,10 +2541,7 @@ Check that you are indeed preparing a RC:
 
         rm -f /var/tmp/wrap_tails_create_iuks*.log
 
-1. You're done for today! Suggestion: enjoy some time AFK :)
-
-1. Tomorrow, make sure Jenkins manages to build all updated major branches:
-   <https://jenkins.tails.boum.org/view/RM/>.
+1. You're done for this release!
 
 Related pages
 =============
