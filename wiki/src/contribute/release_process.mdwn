@@ -2541,6 +2541,9 @@ Check that you are indeed preparing a RC:
 
         rm -f /var/tmp/wrap_tails_create_iuks*.log
 
+1. If you've prepared a branch with release process improvements:
+   turn it into a MR.
+
 1. You're done for this release!
 
 Related pages
