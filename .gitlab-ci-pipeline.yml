@@ -151,7 +151,7 @@ git-history:
     - ./bin/test-utils/check-git-history "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
 
 codespell:
-  image: registry.gitlab.tails.boum.org/tails/container-images/codespell:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
   script:
     - codespell --version
     - codespell
@@ -225,7 +225,7 @@ check-po-msgfmt:
     - ./bin/check-po-msgfmt
 
 check-po-meta-date:
-  image: registry.gitlab.tails.boum.org/tails/container-images/ruby:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -251,10 +251,8 @@ check-locale-descriptions:
     - ./bin/locale-descriptions suggest
 
 rubocop:
-  image: registry.gitlab.tails.boum.org/tails/container-images/ruby:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
   script:
-  - *apt-update
-  - apt-get -qy install --no-install-recommends rubocop
   - rubocop --version
   - rubocop --format junit --out rubocop.xml --format markdown
   artifacts:
@@ -315,7 +313,7 @@ shfmt-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: registry.gitlab.tails.boum.org/tails/container-images/shfmt:sid
+  image: registry.gitlab.tails.boum.org/tails/container-images/linters:sid
 
   script:
     - shfmt --version
