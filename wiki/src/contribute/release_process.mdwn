@@ -2429,7 +2429,7 @@ Check that you are indeed preparing a final release:
 
    Open the list of potentially relevant issues:
 
-        echo "https://gitlab.tails.boum.org/groups/tails/-/work_items?sort=updated_asc&state=closed&milestone_title=Tails_${VERSION:?}&confidential=yes"
+        echo "https://gitlab.tails.boum.org/groups/tails/-/work_items?sort=updated_asc&state=closed&milestone_title=Tails_${VERSION:?}&confidential=yes" | wl-copy
 
    In that list, look for issues about security vulnerabilities, that have our
    *Disclosure agreement* in the description. Those are the ones in scope for
