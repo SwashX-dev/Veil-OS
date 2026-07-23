@@ -24,8 +24,13 @@ workflow:
   image-sid: &image-sid "containers.torproject.org/tpo/tpa/base-images/debian:sid"
 
   # Some tests specifically need to use the same Debian suite as a Tails built
-  # from this branch.  To ensure this, those jobs must set `image: *current-suite-image`.
-  current-suite-image: &current-suite-image "containers.torproject.org/tpo/tpa/base-images/debian:trixie"
+  # from this branch.  To ensure this, those jobs must set `image:` to one of
+  # these *current-suite-*-image:
+  current-suite-debian-image: &current-suite-debian-image "containers.torproject.org/tpo/tpa/base-images/debian:trixie"
+  current-suite-golang-image: &current-suite-golang-image "containers.torproject.org/tpo/tpa/base-images/golang:trixie"
+  current-suite-perl-image: &current-suite-perl-image "registry.gitlab.tails.boum.org/tails/container-images/perl:trixie"
+  current-suite-python-image: &current-suite-python-image "containers.torproject.org/tpo/tpa/base-images/python:trixie"
+  current-suite-python-git-image: &current-suite-python-git-image "registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie"
 
 image: *image-trixie
 
@@ -34,11 +39,9 @@ variables:
 
 before_script:
   - export DEBIAN_FRONTEND=noninteractive
-  - apt-get update -qq
 
-.prepare-lint-po: &prepare-lint-po
-  - apt-get -qy install git i18nspector
-  - git clone https://gitlab.tails.boum.org/tails/jenkins-tools.git /tmp/jenkins-tools
+.apt-update: &apt-update
+  - apt-get update -qq
 
 build-website:
   rules:
@@ -49,7 +52,7 @@ build-website:
     - changes:
         - .gitlab-ci.yml
         - .gitlab-ci-pipeline.yml
-  image: registry.gitlab.tails.boum.org/sysadmin-team/container-images/ikiwiki:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/website:trixie
   cache:
     key: website-$CI_COMMIT_REF_SLUG
     paths:
@@ -95,7 +98,7 @@ deploy-website:
   needs: [build-website, lint-po, check-website-core-pages, check-po-msgfmt, check-po-meta-date, check-translatable-live-website-urls]
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
-  image: registry.gitlab.tails.boum.org/sysadmin-team/container-images/rsync:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/website:trixie
   dependencies:
     - build-website
   environment: production
@@ -107,7 +110,6 @@ deploy-website:
       - SSH_SERVER: www2.chameleon
         SSH_PORT: 22
   script:
-    - apt-get install -y openssh-client rsync
     - test -e .ssh || mkdir .ssh
     - cp "$WEBSITE_DEPLOY_SSH_PRIVATE_KEY" .ssh/private_key
     - cp "$WEBSITE_DEPLOY_SSH_KNOWN_HOSTS" .ssh/known_hosts
@@ -120,7 +122,7 @@ deploy-website:
     - rsync --rsh="ssh -p ${SSH_PORT} -o UserKnownHostsFile=.ssh/known_hosts -i .ssh/private_key" --checksum --archive --no-times --verbose --mkpath --delete "config/chroot_local-includes/usr/share/doc/tails/website/" www-data@${SSH_SERVER}:/
 
 lint-po:
-  image: *image-trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -128,28 +130,29 @@ lint-po:
         - .gitlab-ci-pipeline.yml
         - ./**.po
   script:
-    - *prepare-lint-po
+    - *apt-update
+    - apt-get -qy install --no-install-recommends i18nspector
+    - git clone https://gitlab.tails.boum.org/tails/jenkins-tools.git /tmp/jenkins-tools
     - /tmp/jenkins-tools/slaves/lint_po
 
 avoid-gtk-launch:
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   script:
-    - apt-get -qy install --no-install-recommends python3 git
     - ./bin/test-utils/gtk-launch
 
 git-history:
+  image: containers.torproject.org/tpo/tpa/base-images/git:trixie
   only:
     - merge_requests
   variables:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
   script:
-    - apt-get -qy install git
     - ./bin/test-utils/check-git-history "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
 
 codespell:
-  image: *image-trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
   script:
-    - apt-get -qy install codespell
     - codespell --version
     - codespell
 
@@ -161,10 +164,9 @@ ruff-lint-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: *image-sid
+  image: registry.gitlab.tails.boum.org/tails/container-images/ruff:sid
 
   script:
-    - apt-get -qy install ruff findutils git python3
     - ruff --version
     - git fetch origin "${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
     - ./bin/test-utils/ruff "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}" check --output-format=junit --output-file=ruff.xml
@@ -181,33 +183,36 @@ ruff-format-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: *image-sid
+  image: registry.gitlab.tails.boum.org/tails/container-images/ruff:sid
 
   script:
-    - apt-get -qy install ruff findutils git python3
     - ruff --version
     - git fetch origin "${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
     - ./bin/test-utils/ruff "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}" format --check
 
 check-isolated-python:
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   script:
-    - apt-get -qy install git python3-sh
+    - *apt-update
+    - apt-get -qy install --no-install-recommends python3-sh
     - ./bin/test-utils/check-isolated-python
 
 check-udfs-signatures:
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
-    - apt-get -qy install python3 python3-debian sqopv
+    - *apt-update
+    - apt-get -qy install --no-install-recommends python3 python3-debian sqopv
     - export VERSION=$(python3 -c 'from debian.changelog import Changelog; print(Changelog(open("debian/changelog"))[0].version)')
     - echo "${VERSION:?}"
     - ./bin/check-udfs-signature
 
 check-website-core-pages:
+  image: containers.torproject.org/tpo/tpa/base-images/git:trixie
   script:
-    - apt-get -qy install git
     - ./bin/check-core-pages
 
 check-po-msgfmt:
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -215,10 +220,12 @@ check-po-msgfmt:
         - .gitlab-ci-pipeline.yml
         - ./**.po
   script:
-    - apt-get -qy install python3 gettext
+    - *apt-update
+    - apt-get -qy install --no-install-recommends gettext
     - ./bin/check-po-msgfmt
 
 check-po-meta-date:
+  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -226,24 +233,26 @@ check-po-meta-date:
         - .gitlab-ci-pipeline.yml
         - ./**.po
   script:
-    - apt-get -qy install git ruby
     - ./bin/sanity-check-website
 
 check-translatable-live-website-urls:
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   script:
-    - apt-get -qy install python3-polib
+    - *apt-update
+    - apt-get -qy install --no-install-recommends python3-polib
     - ./bin/check-translatable-live-website-urls po/tails.pot
 
 check-locale-descriptions:
+  image: containers.torproject.org/tpo/tpa/base-images/python:trixie
   script:
-    - apt-get -qy install python3 python3-requests python3-toml python3-bs4
+    - *apt-update
+    - apt-get -qy install --no-install-recommends python3-requests python3-toml python3-bs4
     - echo 'If this fails, look at https://tails.net/contribute/release_process/update_locale_descriptions/'
     - ./bin/locale-descriptions suggest
 
 rubocop:
-  image: *image-trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
   script:
-  - apt-get -qy install rubocop
   - rubocop --version
   - rubocop --format junit --out rubocop.xml --format markdown
   artifacts:
@@ -254,18 +263,20 @@ rubocop:
 test-iuk:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-perl-image
   script:
+  - *apt-update
   - './bin/test-utils/test-iuk'
 
 test-perl5lib:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-perl-image
   script:
+  - *apt-update
   - 'cat config/chroot_local-packageslists/tails-perl5lib.list
        | grep -E -v "^#"
-       | xargs apt-get -qy install'
+       | xargs apt-get -qy install --no-install-recommends'
   - 'apt-get -qy install
        apt-file
        libdist-zilla-plugin-test-notabs-perl
@@ -281,9 +292,10 @@ test-perl5lib:
   - dzil test --all
 
 shellcheck:
-  image: *image-trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   script:
-  - apt-get -qy install python3 shellcheck xmlstarlet git
+  - *apt-update
+  - apt-get -qy install --no-install-recommends shellcheck xmlstarlet
   - shellcheck --version
   - 'git ls-files -z | ./bin/test-utils/is-file-type filter --zero shell | xargs --verbose --no-run-if-empty -0 shellcheck --format=checkstyle
        | xmlstarlet tr config/ci/shellcheck/checkstyle2junit.xslt
@@ -301,24 +313,25 @@ shfmt-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: *image-sid
+  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
 
   script:
-    - apt-get -qy install shfmt findutils git python3
     - shfmt --version
     - git fetch origin "${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
     - ./bin/test-utils/shfmt -s "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
 
 test-persistent-storage-config-file:
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
-    - apt-get -qy install python3 python3-gi acl e2fsprogs
+    - *apt-update
+    - apt-get -qy install --no-install-recommends python3-gi acl e2fsprogs
     - python3 config/chroot_local-includes/usr/lib/python3/dist-packages/tps/configuration/config_file_test.py
 
 test-python-doctest:
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
-    - apt-get -qy install python3 python3-sh python3-toml python3-requests python3-bs4
+    - *apt-update
+    - apt-get -qy install --no-install-recommends python3-sh python3-toml python3-requests python3-bs4
     - config/chroot_local-includes/usr/local/lib/tails-gdm-error-message doctest --verbose
     - env PYTHONPATH=config/chroot_local-includes/usr/lib/python3/dist-packages python3 config/chroot_local-includes/usr/local/bin/tails-documentation --doctest
     - env PYTHONPATH=config/chroot_local-includes/usr/lib/python3/dist-packages python3 config/chroot_local-includes/usr/local/lib/tails-uefi-ca-detect --doctest
@@ -328,30 +341,33 @@ test-python-doctest:
 test-tca:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
+    - *apt-update
     - 'cat config/chroot_local-packageslists/tor-connection-assistant.list
        | grep -E -v "^#"
-       | xargs apt-get -qy install'
+       | xargs apt-get -qy install --no-install-recommends'
     - 'cd config/chroot_local-includes/usr/lib/python3/dist-packages ; find tca -name "*.py" -print0 | xargs -0 -L1 env PYTHONPATH=. python3 -m doctest'
 
 test-tca-portal:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
+    - *apt-update
     - 'cat config/chroot_local-packageslists/tor-connection-assistant.list
        | grep -E -v "^#"
-       | xargs apt-get -qy install'
+       | xargs apt-get -qy install --no-install-recommends'
     - 'PYTHONPATH=config/chroot_local-includes/usr/lib/python3/dist-packages env python3 ./config/chroot_local-includes/usr/local/lib/tca-portal --doctest-only --log-level DEBUG'
 
 
 test-tailslib:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-python-git-image
   script:
-    - apt-get -qy install python3 python3-atomicwrites python3-setuptools python3-sh python3-gi git
+    - *apt-update
+    - apt-get -qy install --no-install-recommends python3-atomicwrites python3-setuptools python3-sh python3-gi
     - |
       cd config/chroot_local-includes/usr/lib/python3/dist-packages
       find tailslib -name "*.py" -print0 |
@@ -362,11 +378,12 @@ test-tailslib:
 test-whisperback:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-  image: *current-suite-image
+  image: *current-suite-python-image
   script:
+    - *apt-update
     - 'cat config/chroot_local-packageslists/whisperback.list | grep -E -v "^#"
-         | xargs apt-get -qy install'
-    - apt-get -qy install python3-pytest
+         | xargs apt-get -qy install --no-install-recommends'
+    - apt-get -qy install --no-install-recommends python3-pytest
     - 'PYTHONPATH=config/chroot_local-includes/usr/lib/python3/dist-packages
          pytest-3 --verbose --junit-xml=report.xml
          config/chroot_local-includes/usr/lib/python3/dist-packages/whisperBack/test.py'
@@ -376,13 +393,15 @@ test-whisperback:
       junit: report.xml
 
 test-ci-configuration:
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
   variables:
     GIT_STRATEGY: clone
     # GIT_DEPTH=0 disables shallow cloning, see
     # https://docs.gitlab.com/ci/pipelines/settings/#limit-the-number-of-changes-fetched-during-clone
     GIT_DEPTH: 0
   script:
-    - apt-get -qy install python3-pydantic python3-pytest git
+    - *apt-update
+    - apt-get -qy install --no-install-recommends python3-pydantic python3-pytest
     # pytest can't test files whose extension is not ".py", let's give it what it wants
     - cp bin/ci-configuration bin/ci-configuration.py
     - 'pytest-3 --verbose --junit-xml=report.xml
@@ -393,8 +412,8 @@ test-ci-configuration:
       junit: report.xml
 
 apt-snapshots-expiry:
+  image: containers.torproject.org/tpo/tpa/base-images/git:trixie
   script:
-    - apt-get -qy install curl git
     - ./bin/apt-snapshots-expiry
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^stable|testing|devel$/'
@@ -403,27 +422,6 @@ apt-snapshots-expiry:
         - .gitlab-ci-pipeline.yml
         - config/APT_snapshots.d/*/serial
         - vagrant/definitions/tails-builder/config/APT_snapshots.d/*/serial
-
-.install-https-get-expired-build-deps: &install-https-get-expired-build-deps
-  - apt-get -qy install --no-install-recommends golang-go golang-src ca-certificates binutils
-
-.build-https-get-expired: &build-https-get-expired
-  - env PREFIX=config/chroot_local-includes ./config/chroot_local-includes/usr/local/lib/build-https-accept-expired
-
-.test-https-get-expired: &test-https-get-expired
-  - echo "Basic check:"
-  - ./https-get-expired -reject-expired https://tails.net/
-  - echo "Let's pretend we are in the past. Then, this certificate is still good."
-  - ./https-get-expired -current-time 2000-01-01 -reject-expired https://tails.net/
-  - echo "Let's pretend we are in the future. Then, this certificate is expired"
-  - "! ./https-get-expired -current-time 2090-01-01 -reject-expired https://tails.net/"
-  - "! ./https-get-expired -reject-expired https://wrong.host.badssl.com/"
-  - "! ./https-get-expired -reject-expired https://self-signed.badssl.com/"
-  - "! ./https-get-expired -reject-expired https://untrusted-root.badssl.com/"
-  - "! ./https-get-expired -reject-expired https://expired.badssl.com/"
-  - echo "Invalid host"
-  - "! ./https-get-expired -reject-expired https://nxdomain.tails.net/"
-  - "./bin/test-utils/https-get-expired-test-all"
 
 check-target-branch-for-rm-config-change:
   rules:
@@ -445,7 +443,7 @@ check-target-branch-for-rm-config-change:
     - exit 1
 
 https-get-expired:
-  image: *current-suite-image
+  image: *current-suite-golang-image
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^stable|testing|devel$/'
     - changes:
@@ -455,14 +453,27 @@ https-get-expired:
         - config/chroot_local-includes/etc/default/htpdate.pools
         - config/chroot_local-includes/usr/local/lib/build-https-accept-expired
   script:
-    - *install-https-get-expired-build-deps
-    - *build-https-get-expired
-    - *test-https-get-expired
+    - *apt-update
+    - apt-get -qy install --no-install-recommends binutils
+    - env PREFIX=config/chroot_local-includes ./config/chroot_local-includes/usr/local/lib/build-https-accept-expired
+    - echo "Basic check:"
+    - ./https-get-expired -reject-expired https://tails.net/
+    - echo "Let's pretend we are in the past. Then, this certificate is still good."
+    - ./https-get-expired -current-time 2000-01-01 -reject-expired https://tails.net/
+    - echo "Let's pretend we are in the future. Then, this certificate is expired"
+    - "! ./https-get-expired -current-time 2090-01-01 -reject-expired https://tails.net/"
+    - "! ./https-get-expired -reject-expired https://wrong.host.badssl.com/"
+    - "! ./https-get-expired -reject-expired https://self-signed.badssl.com/"
+    - "! ./https-get-expired -reject-expired https://untrusted-root.badssl.com/"
+    - "! ./https-get-expired -reject-expired https://expired.badssl.com/"
+    - echo "Invalid host"
+    - "! ./https-get-expired -reject-expired https://nxdomain.tails.net/"
+    - "./bin/test-utils/https-get-expired-test-all"
 
 Ensure MR from stable into devel:
   rules:
     - if: '$CI_COMMIT_BRANCH == "stable"'
-  image: registry.gitlab.tails.boum.org/sysadmin-team/container-images/python3-gitlab:trixie
+  image: registry.gitlab.tails.boum.org/tails/container-images/python-gitlab:trixie
   script:
     - |
       ./bin/ensure-merge-request \
