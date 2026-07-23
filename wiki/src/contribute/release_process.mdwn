@@ -2062,6 +2062,8 @@ Mark the merge request for `$WEBSITE_RELEASE_BRANCH` as ready.
 Close the "Write release notes" ticket manually since
 `Closes:` statements are not sufficient when updating `master`.
 
+Wait for the merge request for `$WEBSITE_RELEASE_BRANCH` to be merged automatically.
+
 ## If you're preparing a final release: Bug tracker
 
 Skip this part if preparing a release candidate:
