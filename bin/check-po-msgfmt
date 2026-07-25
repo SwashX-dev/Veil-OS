@@ -42,7 +42,7 @@ def find_context_end(msgstr_line, content):
     Find the line number corresponding to the end of the given `msgstr`.
     """
     end = msgstr_line
-    while not end == len(content) and content[end] != "\n":
+    while end != len(content) and content[end] != "\n":
         end += 1
     return end
 
