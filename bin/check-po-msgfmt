@@ -99,7 +99,7 @@ def check_po_msgfmt(sanitize=False):
             line = stderr_line.strip().decode("utf-8")
 
             # filter out warnings
-            if any(map(lambda m: m.match(line), WARNINGS)):
+            if any(warning.match(line) for warning in WARNINGS):
                 continue
 
             # filter out non-error messages
