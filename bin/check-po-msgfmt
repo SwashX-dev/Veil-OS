@@ -93,7 +93,7 @@ def check_po_msgfmt(sanitize=False):
             continue
 
         proc = subprocess.Popen(
-            ["/bin/msgfmt", "-c", "-o", "/dev/null", f], stderr=subprocess.PIPE
+            ["/bin/msgfmt", "-c", "-o", "/dev/null", f], stderr=subprocess.PIPE,
         )
         for stderr_line in proc.stderr:
             line = stderr_line.strip().decode("utf-8")
