@@ -23,6 +23,9 @@ WARNINGS = [
 
 ERRORS = re.compile(r'^([^\s]+\.po):([0-9]+): ')
 
+# PO files whose path match this regexp are ignored.
+IGNORED_PATH_RE = re.compile(r"^(?:[.]git|tmp)/")
+
 
 def find_context_start(msgstr_line, content):
     """
@@ -86,6 +89,9 @@ def check_po_msgfmt(sanitize=False):
     errors = False
 
     for f in glob.glob('**/*.po', recursive=True):
+        if IGNORED_PATH_RE.match(str(f)):
+            continue
+
         proc = subprocess.Popen(['msgfmt', '-c', '-o', '/dev/null', f],
                                 stderr=subprocess.PIPE)
         for line in proc.stderr:
