@@ -94,8 +94,8 @@ def check_po_msgfmt(sanitize=False):
 
         proc = subprocess.Popen(['/bin/msgfmt', '-c', '-o', '/dev/null', f],
                                 stderr=subprocess.PIPE)
-        for line in proc.stderr:
-            line = line.strip().decode('utf-8')
+        for stderr_line in proc.stderr:
+            line = stderr_line.strip().decode('utf-8')
 
             # filter out warnings
             if any(map(lambda m: m.match(line), WARNINGS)):
