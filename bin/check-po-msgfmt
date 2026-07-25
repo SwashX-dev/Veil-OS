@@ -92,7 +92,7 @@ def check_po_msgfmt(sanitize=False):
         if IGNORED_PATH_RE.match(str(f)):
             continue
 
-        proc = subprocess.Popen(['msgfmt', '-c', '-o', '/dev/null', f],
+        proc = subprocess.Popen(['/bin/msgfmt', '-c', '-o', '/dev/null', f],
                                 stderr=subprocess.PIPE)
         for line in proc.stderr:
             line = line.strip().decode('utf-8')
