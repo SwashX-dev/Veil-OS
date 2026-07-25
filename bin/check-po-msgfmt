@@ -16,12 +16,12 @@ import sys
 
 
 WARNINGS = [
-    re.compile(r'^[^\s]+\.po:[0-9]: warning:'),
-    re.compile(r'^msgfmt: [^\s]+\.po: warning:'),
-    re.compile(r'^\s*warning:'),
+    re.compile(r"^[^\s]+\.po:[0-9]: warning:"),
+    re.compile(r"^msgfmt: [^\s]+\.po: warning:"),
+    re.compile(r"^\s*warning:"),
 ]
 
-ERRORS = re.compile(r'^([^\s]+\.po):([0-9]+): ')
+ERRORS = re.compile(r"^([^\s]+\.po):([0-9]+): ")
 
 # PO files whose path match this regexp are ignored.
 IGNORED_PATH_RE = re.compile(r"^(?:[.]git|tmp)/")
@@ -32,7 +32,7 @@ def find_context_start(msgstr_line, content):
     Find the line number of the `msgid` corresponding to the given `msgstr`.
     """
     start = msgstr_line - 1
-    while not content[start].startswith('msgid '):
+    while not content[start].startswith("msgid "):
         start -= 1
     return start
 
@@ -42,7 +42,7 @@ def find_context_end(msgstr_line, content):
     Find the line number corresponding to the end of the given `msgstr`.
     """
     end = msgstr_line
-    while not end == len(content) and content[end] != '\n':
+    while not end == len(content) and content[end] != "\n":
         end += 1
     return end
 
@@ -72,10 +72,10 @@ def delete_msgstr(file, msgstr_line):
 
     end = find_context_end(msgstr_line, content)
 
-    content[msgstr_line-1] = 'msgstr ""\n'
+    content[msgstr_line - 1] = 'msgstr ""\n'
     content = content[:msgstr_line] + content[end:]
 
-    with open(file, 'w') as f:
+    with open(file, "w") as f:
         f.writelines(content)
 
 
@@ -88,14 +88,15 @@ def check_po_msgfmt(sanitize=False):
 
     errors = False
 
-    for f in glob.glob('**/*.po', recursive=True):
+    for f in glob.glob("**/*.po", recursive=True):
         if IGNORED_PATH_RE.match(str(f)):
             continue
 
-        proc = subprocess.Popen(['/bin/msgfmt', '-c', '-o', '/dev/null', f],
-                                stderr=subprocess.PIPE)
+        proc = subprocess.Popen(
+            ["/bin/msgfmt", "-c", "-o", "/dev/null", f], stderr=subprocess.PIPE
+        )
         for stderr_line in proc.stderr:
-            line = stderr_line.strip().decode('utf-8')
+            line = stderr_line.strip().decode("utf-8")
 
             # filter out warnings
             if any(map(lambda m: m.match(line), WARNINGS)):
@@ -112,7 +113,7 @@ def check_po_msgfmt(sanitize=False):
             file, n = match.groups()
             msgstr_line = int(n)
             print_error_context(file, msgstr_line)
-            print('')
+            print("")
 
             if sanitize:
                 delete_msgstr(file, msgstr_line)
@@ -123,11 +124,14 @@ def check_po_msgfmt(sanitize=False):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--sanitize', action='store_true',
-                        help='Replace problematic translations with an empty string.')
+    parser.add_argument(
+        "--sanitize",
+        action="store_true",
+        help="Replace problematic translations with an empty string.",
+    )
     return parser.parse_args()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     args = parse_args()
     check_po_msgfmt(sanitize=args.sanitize)
