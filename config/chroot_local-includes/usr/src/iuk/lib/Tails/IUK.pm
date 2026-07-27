@@ -399,7 +399,7 @@ method create_squashfs_diff () {
         $self->list_gensquashfs_prefix_cmd,
         qw{gensquashfs},
         $self->list_gensquashfs_options,
-        '--comp-extra', 'level=22',
+        '--comp-extra', 'level=18',
         '--block-size', '1048576',
         '--pack-dir', $union_upperdir,
         $self->overlay_dir->child('live', $self->squashfs_diff_name),
