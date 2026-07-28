@@ -190,9 +190,11 @@ apply_prefs_hacks() {
     (
         cd "${tmp}"
         7z x -tzip "${tbb_install}/browser/omni.ja"
+        temp000torbrowser=$(mktemp)
         # Remove TBB's Tor Launcher settings since we don't enable it in
-        # our Tor Browser.
-        sed -i '/extensions\.torlauncher\./d' defaults/preferences/000-tor-browser.js
+        # our Tor Browser, except extensions.torlauncher.bridgedb_targets, which indeed we use
+        grep --perl-regexp --invert-match 'extensions[.]torlauncher[.](?!bridgedb_targets)' <defaults/preferences/000-tor-browser.js >"$temp000torbrowser"
+        mv "$temp000torbrowser" defaults/preferences/000-tor-browser.js
         # Display the Stop/Reload button: our test suite currently depends on it
         perl -pi -E \
             's/^(pref\("browser\.uiCustomization\.state",.*\\"loop-button\\")/$1,\\"stop-reload-button\\"/' \
