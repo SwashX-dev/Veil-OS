@@ -74,7 +74,15 @@ Software's other settings) persistent as part of the Flatpak feature:
   config/chroot_local-includes/usr/local/lib/tails-persist-gnome-software-dconf-state]]
 
 A wrapper for GNOME Software prevents it from starting if Tor isn't
-bootstrapped, informing users of this requirement:
+bootstrapped, informing users of this requirement. The reason for this
+is that GNOME Software updates the timestamp mentioned above even if
+started before Tor has bootstrapped so fetching upgrades will fail,
+and as a result all update checks fail for the rest of the day, so
+updates would only be fetched if the session extend far into the next
+day when the update check can succeed again. GNOME Software has a
+network availability check that will prevent the timestamp from being
+updated if there's no network, which prevents this issue in most
+normal cases, but not ours.
 
 - [[!tails_gitweb
   config/chroot_local-includes/usr/local/bin/gnome-software]]
