@@ -104,6 +104,7 @@ To install the dependencies on our test suite:
            python3-pil \
            python3-pydantic \
            python3-typeguard \
+           python3-rpyc \
            && \
        sudo service libvirtd restart
 
