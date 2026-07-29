@@ -64,15 +64,14 @@ if met proceeds to fetch updates. The main condition is that it will
 only fetch updates if the last attempt for that was done another
 calendar day. It implements that by comparing the current time with a
 timestamp (`org.gnome.software.check-timestamp` GSetting) that was set
-last time it fetched updates (if not set it will also proceed).
+last time it fetched updates (if not set it will also proceed). To
+benefit from this scheduling we make this timestamp (and GNOME
+Software's other settings) persistent as part of the Flatpak feature:
 
-An issue in Tails is that this timestamp is updated even when the
-update fetch fails, so if GNOME Software starts before Tor has
-bootstrapped it will set the timestamp even though no updates were
-fetched. Combined with the condition mentioned above that means that
-GNOME Software only will fetch updates in Tails sessions that run from
-one calendar day to the next. For this reason we take great care in
-preventing GNOME Software from starting before Tor has bootstrapped.
+- [[!tails_gitweb
+  config/chroot_local-includes/usr/lib/systemd/user/gnome-software.service.d/persist-dconf-state.conf]]
+- [[!tails_git_web
+  config/chroot_local-includes/usr/local/lib/tails-persist-gnome-software-dconf-state]]
 
 A wrapper for GNOME Software prevents it from starting if Tor isn't
 bootstrapped, informing users of this requirement:
