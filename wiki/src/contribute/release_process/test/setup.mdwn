@@ -105,6 +105,8 @@ To install the dependencies on our test suite:
            python3-pydantic \
            python3-typeguard \
            python3-rpyc \
+           python3-slixmpp \
+           python3-tomli-w \
            && \
        sudo service libvirtd restart
 
