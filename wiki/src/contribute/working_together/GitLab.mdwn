@@ -617,5 +617,32 @@ desc="Protected branch flow"]]:
 
 # Operations
 
+## Administrator accounts
+
+To protect ourselves against human error and to decrease our attack surface,
+individual GitLab accounts with administrator privileges MUST be used according
+to these requirements:
+
+ - 2FA is enabled, ideally using a separate device.
+
+ - You use your administrator account in a web browser environment that is
+   separate from, and cannot be easily confused with, the one where use you your
+   regular GitLab account: for example, in a dedicated web browser profile, or
+   in a short-lived "incognito" window.
+
+ - If you use your administrator account via the API, use a setup separate from
+   the one you use for operations that don't need administrator privileges.
+
+   More specifically, in your `~/.python-gitlab.cfg`, create a new dedicated
+   `TailsRoot` section for your administrator account, separate from your other
+   existing sections (`Tails`, `TailsRM`, etc.). Other documentation may rely on
+   this configuration existing and being called like that.
+
+ - You manually log out from the administrator account as soon as you don't need
+   the corresponding elevated privileges anymore. Closing the window is not
+   sufficient to achieve this in the general case.
+
+## Other operations documentation
+
 See our documentation about [[GitLab for Tails
 sysadmins|https://gitlab.torproject.org/tpo/tpa/team/-/wikis/tails/services/gitlab]].
