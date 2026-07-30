@@ -797,18 +797,6 @@ directly or indirectly:
   to prevent the Translation Platform from messing with more things than it
   should.
 
-- Ikiwiki is notified whenever there's a change in the `master` branch of the
-  [main Tails repository](https://gitlab.tails.boum.org/tails/tails) and
-  creates/updates `.po` files when new content was added to the Tails website.
-  For this, GitLab was manually configured to mirror the main Tails repository to
-  a local repository in the Tails infrastructure, and the local mirror
-  [pings](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/gitolite/hooks/www_website_ping-post-update.hook)
-  Ikiwiki when its master branch was modified. Some other ["underlay"
-  repositories](https://gitlab.tails.boum.org/tails/puppet-tails/tree/master/manifests/website.pp#n19)
-  are also configured to [cause Ikiwiki to
-  refresh](https://gitlab.tails.boum.org/tails/puppet-tails/tree/master/files/gitolite/hooks/www_website_underlays-post-update.hook)
-  the main website.
-
 - Our [Jenkins](tails/services/jenkins) master [is also
   notified](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/templates/gitolite/hooks/tails-post-receive.erb)
   when there are relevant changes to the main Tails repository, and its Jenkins
