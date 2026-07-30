@@ -9,7 +9,7 @@ if ! tps_feature_is_active Flatpak; then
     exit 0
 fi
 
-DCONF_FILE="/live/persistence/TailsData_unlocked/flatpak/org.gnome.software.dconf-dump"
+DCONF_FILE="/live/persistence/TailsData_unlocked/flatpak/gnome-software/org.gnome.software.dconf-dump"
 
 case "${1:-}" in
 save)
