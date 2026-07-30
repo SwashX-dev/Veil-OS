@@ -536,19 +536,6 @@ Please check these views once in a while and talk to us! :)
 We use [GitLab CI](https://docs.gitlab.com/ee/ci/) for some quality assurance checks that
 don't require building or booting Tails images.
 
-## Feedback and patches are welcome
-
-Please [[give feedback and
-input|https://gitlab.torproject.org/tpo/tpa/team/-/wikis/tails/role-description#contact]] about this
-topic to Tails sysadmins.
-
-For example, you can propose new tests that we could run on GitLab CI.
-Please explain what the expected benefit would be for your work or for Tails
-users: this will help us prioritize our work.
-
-Finally, you can send merge requests that improve the existing jobs
-or add new ones: [[!tails_gitweb .gitlab-ci-pipeline.yml]].
-
 ## Container images policy
 
 Because we use give a lot of power to some jobs in the CI, we have a
