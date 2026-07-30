@@ -646,8 +646,7 @@ to these requirements:
 
 Our friends at <https://www.immerda.ch/> host [the Tails' GitLab
 instance](https://gitlab.tails.boum.org). We usually contact them through
-e-mail or their Jabber channel (see their [contact
-info](https://www.immerda.ch/contact.html)).
+e-mail (see their [contact info](https://www.immerda.ch/contact.html)).
 
 The Tails [system administrators](tails/role-description) administrate this GitLab
 instance. They don't have shell access to the VM hosting the service so, among
