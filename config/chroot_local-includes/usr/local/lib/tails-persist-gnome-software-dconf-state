@@ -2,10 +2,13 @@
 
 set -eu -o pipefail
 
-# Import tps_feature_is_active()
-. /usr/local/lib/tails-shell-library/libtps.sh
-
-if ! tps_feature_is_active Flatpak; then
+# We only want this script to do anything if the Flatpak persistence
+# feature is enabled. However, asking tpsd (e.g. with
+# tps_feature_is_active) isn't reliable at shutdown time due to it
+# relying on D-Bus, so instead we check for the existence of one of
+# the mountpoints expected when the Flatpak persistence feature is
+# enabled.
+if ! mountpoint -q "${HOME}/.cache/gnome-software"; then
     exit 0
 fi
 
