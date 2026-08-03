@@ -188,9 +188,9 @@ most notably:
 * 2014-04-29: [This is the most secure computer you’ll ever
   own](http://www.theverge.com/2014/4/29/5664884/this-is-the-most-secure-computer-you-ll-ever-own)
   by Russell Brandom, in The Verge.
-* 2014-04-23: Amaelle Guiton mentions Tails in the article [Chiffrer le Net pour
+* 2014-04-23: Amaelle Guiton mentions Tails in the article Chiffrer le Net pour
   retrouver notre vie privée en ligne: une bonne solution qui pose des
-  problèmes](http://www.slate.fr/monde/86275/cyberespace-cypherspace-crypter-chiffrement-internet)
+  problèmes
   in Slate (in French).
 * 2014-04-17: Bruce Schneier writes "Nice article on the Tails
   stateless operating system. I use it." [in a blog
