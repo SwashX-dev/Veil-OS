@@ -134,7 +134,7 @@ Tails Team members can:
 
  - SSH into Jenkins worker VMs as their own user and use password-less sudo there
 
- - SSH into the Jenkins orchestrator as the `jenkins` user: `ssh jenkins@jenkins.fsn-libvirt-01`
+ - SSH into the Jenkins orchestrator as the `jenkins` user: `ssh jenkins@jenkins.mtl-libvirt-02`
 
 ### Known usability issues
 
