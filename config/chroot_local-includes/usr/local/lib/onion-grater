@@ -552,9 +552,9 @@ class FilteredControlPortProxySession:
     def get_client_request(self):
         while b"\n" not in self.client_request_acc:
             try:
-                # Since some client (eg Tor Browser) sends us one byte at a time, this
+                # Since some clients (e.g. Tor Browser) send us one byte at a time,
                 # we'll loop through this many times. Peeking would solve this, but
-                # then we'll have tails/tails#21663
+                # then we would reintroduce tails/tails#21663
                 received_data = self.request.recv(
                     self.MAX_LINESIZE - len(self.client_request_acc),
                 )
