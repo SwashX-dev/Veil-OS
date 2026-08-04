@@ -41,13 +41,14 @@
 # Alberto Giuliani <albertogiuliani2008@gmail.com>, 2025.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 # Pier Angelo Vendrame <vogliadifarniente@gmail.com>, 2026.
+# Dom <domdom@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-07-29 20:01+0000\n"
+"Last-Translator: Dom <domdom@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/tor/tails-gui/it/"
 ">\n"
 "Language: it\n"
@@ -56,7 +57,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -84,9 +85,8 @@ msgid "Configure"
 msgstr "Configura"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
-#, fuzzy
 msgid "Password Manager"
-msgstr "Password"
+msgstr "Gestore Password"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 #, fuzzy
@@ -95,7 +95,7 @@ msgstr "Password"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
-msgstr ""
+msgstr "gestore-password"
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:57
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:95
@@ -525,7 +525,6 @@ msgstr ""
 "libera, ma sono disponibili solo {free_memory}."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:473
-#, fuzzy
 msgid ""
 "An error occurred while detecting available upgrades.\n"
 "This should not happen. Please report a bug."
@@ -759,7 +758,7 @@ msgstr "Errore durante l'installazione dell'aggiornamento"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr ""
+msgstr "GNOME Software"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
