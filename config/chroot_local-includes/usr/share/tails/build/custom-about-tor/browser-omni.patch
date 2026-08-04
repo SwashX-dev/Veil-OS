@@ -124,7 +124,7 @@ index 23e8a54defa863560d19b39fa9f82238d556dad7..8e2874c016ca9b00399ab29797f4c897
 +        <span data-l10n-id="tails-release-notes">
 +          <a
 +            data-l10n-name="tails-release-notes-link"
-+            href="https://tails.net/news/version_7.10"
++            href="https://tails.net/news/version_7.10.1"
 +            target="_blank"
 +          ></a>
 +        </span>
