@@ -1,4 +1,4 @@
-tails (7.10.1) UNRELEASED; urgency=medium
+tails (7.10.1) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.100-1 (DSA 6405-1)
 
@@ -90,7 +90,7 @@ tails (7.10.1) UNRELEASED; urgency=medium
       - GitLab CI: migrate away from soon-to-be-deprecated sysadmin-team/container-
         images
 
- -- Tails developers <foundations@tails.net>  Tue, 04 Aug 2026 09:43:01 +0000
+ -- Tails developers <foundations@tails.net>  Tue, 04 Aug 2026 12:15:28 +0200
 
 tails (7.10) unstable; urgency=medium
 
