@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-09-17 11:40+0200\n"
+"POT-Creation-Date: 2026-07-22 09:36+0200\n"
 "PO-Revision-Date: 2022-12-21 11:06+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: Persian <http://weblate.451f.org:8889/projects/tails/shutdown/"
@@ -31,7 +31,7 @@ msgstr "برای خاموش کردن تیلز راه‌های مختلفی وج�
 
 #. type: Plain text
 #, no-wrap
-msgid "[[!toc levels=1]]\n"
+msgid "[[!toc startlevel=2]]\n"
 msgstr ""
 
 #. type: Plain text
@@ -45,36 +45,71 @@ msgstr ""
 "Random-access_memory desc=\"حافظهٔ تصادفی\"]]</span> پاک می‌شوند\n"
 "تا شما از [[حملهٔ راه‌اندازی سرد|doc/advanced_topics/cold_boot_attacks]] در امان بمانید.\n"
 
-#. type: Title =
+#. type: Plain text
 #, no-wrap
-msgid "Shutdown from the system menu"
+msgid "<h2 id=\"standard\">Standard shutdown from the system menu</h2>\n"
 msgstr ""
 
 #. type: Plain text
-msgid "Click on the system menu in the upper right corner of the screen."
+msgid ""
+"The standard shutdown procedure is slower, but prevents damage to your "
+"Persistent Storage and data loss."
 msgstr ""
 
-#. type: Bullet: '* '
-msgid ""
-"Choose [[!img lib/system-shutdown.png link=\"no\" class=\"symbolic\" "
-"alt=\"Power Off\"]] to shutdown the computer."
-msgstr ""
-
-#. type: Bullet: '* '
-msgid ""
-"Choose [[!img lib/view-refresh.png link=\"no\" class=\"symbolic\" "
-"alt=\"Restart\"]] to restart the computer on Tails or on your regular "
-"operating system."
+#. type: Bullet: '1. '
+msgid "Open the system menu in the upper-right corner of the screen."
 msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-msgid "[[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
+msgid "   [[!img desktop/system-with-wifi-only.png class=\"screenshot\" alt=\"\"]]\n"
 msgstr "  [[!img desktop/system.png link=\"no\"]]\n"
 
-#. type: Title =
+#. type: Bullet: '1. '
+msgid ""
+"Select [[!img lib/system-shutdown.png link=\"no\" class=\"symbolic\" "
+"alt=\"Power Off\"]]."
+msgstr ""
+
+#. type: Bullet: '1. '
+msgid "Select **Power Off**."
+msgstr ""
+
+#. type: Bullet: '1. '
+msgid "A **Power Off** confirmation dialog appears."
+msgstr ""
+
+#. type: Plain text
+#, fuzzy, no-wrap
+msgid "   [[!img power_off_without_inhibitor.png class=\"screenshot\" alt=\"\"]]\n"
+msgstr "  [[!img desktop/system.png link=\"no\"]]\n"
+
+#. type: Plain text
 #, no-wrap
-msgid "Emergency shutdown"
+msgid ""
+"   If an application needs to be closed or an open document needs to be saved\n"
+"   before shutting down, the dialog includes some details.\n"
+msgstr ""
+
+#. type: Plain text
+#, fuzzy, no-wrap
+msgid "   [[!img power_off_with_inhibitor.png class=\"screenshot\" alt=\"\"]]\n"
+msgstr "  [[!img desktop/system.png link=\"no\"]]\n"
+
+#. type: Bullet: '1. '
+msgid "Select the **Power Off** button to confirm."
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"   Even without confirming or saving the open documents, Tails will shut down\n"
+"   after 60 seconds.\n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "<h2 id=\"emergency\">Emergency shutdown</h2>\n"
 msgstr ""
 
 #. type: Plain text

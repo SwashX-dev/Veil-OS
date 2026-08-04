@@ -202,7 +202,7 @@ After going through the steps listed in the "In the beginning of your shift" sec
 
     - Announce the code freeze.
 
-3. Announce to manual testers: when you expect the tests to happen
+    - Say when you expect the tests to happen.
 
 ### Irrelevant steps
 

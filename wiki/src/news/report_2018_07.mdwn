@@ -79,7 +79,7 @@ Hot topics on our help desk
 Infrastructure
 ==============
 
-We asked [Wikimedia](https://mirrors.wikimedia.org/) to become our
+We asked Wikimedia to become our
 primary fallback download mirror, and they accepted. We'll implement
 this change in the coming months.  Thank you Wikimedia!
 

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2026-03-27 10:22+0000\n"
-"PO-Revision-Date: 2026-01-01 15:29+0000\n"
+"PO-Revision-Date: 2026-07-23 11:56+0000\n"
 "Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Content of: <div>
 msgid "[[!meta title=\"How Tails works\"]]"
@@ -254,10 +254,8 @@ msgid "<i>Thunderbird</i>, for encrypted emails"
 msgstr "<i>Thunderbird</i>, per a correus electrònics encriptats"
 
 #. type: Content of: <section><div><ul><li>
-#, fuzzy
-#| msgid "<i>KeePassXC</i>, to create and store strong passwords"
 msgid "<i>GNOME Secrets</i>, to create and store strong passwords"
-msgstr "<i>KeePassXC</i>, per crear i emmagatzemar contrasenyes segures"
+msgstr "<i>Secrets del GNOME</i>, per crear i emmagatzemar contrasenyes segures"
 
 #. type: Content of: <section><div><ul><li>
 msgid "<i>LibreOffice</i>, an office suite"
@@ -456,13 +454,6 @@ msgstr ""
 "a un altre."
 
 #. type: Content of: <section><div><p>
-#, fuzzy
-#| msgid ""
-#| "You can publish a blog or manage an email account entirely from Tails. If "
-#| "you only access it from Tails, it cannot be related to you. You can store "
-#| "documents and images related to this different identity in your "
-#| "Persistent Storage, keep your passwords in <i>KeePassXC</i>, have a "
-#| "dedicated email account in <i>Thunderbird</i>, etc."
 msgid ""
 "You can publish a blog or manage an email account entirely from Tails. If "
 "you only access it from Tails, it cannot be related to you. You can store "
@@ -474,8 +465,8 @@ msgstr ""
 "des de Tails. Si només hi accediu des de Tails, no es podrà relacionar amb "
 "vós. Podeu emmagatzemar documents i imatges relacionades amb aquesta "
 "identitat diferent del vostre Emmagatzematge Persistent, mantenir les "
-"vostres contrasenyes a <i>KeePassXC</i>, tenir un compte de correu "
-"electrònic dedicat a <i>Thunderbird</i>, etc."
+"vostres contrasenyes al gestor de contrasenyes <i>Secrets</i>, tenir un "
+"compte de correu electrònic dedicat a <i>Thunderbird</i>, etc."
 
 #. type: Content of: <h1>
 msgid "Software for freedom"
