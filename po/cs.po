@@ -30,13 +30,15 @@
 # xin <xin@riseup.net>, 2026.
 # emma peel <emma.peel@riseup.net>, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
+# mslr8 <hosted.weblate.org.poncho089@passmail.net>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-06-28 10:01+0000\n"
-"Last-Translator: slrslr <adm@prnet.info>\n"
+"PO-Revision-Date: 2026-07-27 18:02+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/tor/tails-gui/cs/"
 ">\n"
 "Language: cs\n"
@@ -45,7 +47,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
 "<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1498,7 +1500,7 @@ msgid ""
 "Renaming your database to <i>${default_filename}</i> allows <i>Secrets</i> "
 "to open it automatically in the future."
 msgstr ""
-"Máte <i>KeePassXC</i> nebo  <i>Secrets</i> databázi ve své složce "
+"Máte <i>KeePassXC</i> nebo <i>Secrets</i> databázi ve své složce "
 "<i>Persistent</i>:\n"
 "\n"
 "<i>${filename}</i>\n"
@@ -3334,7 +3336,7 @@ msgstr "Aktivovat dodatečný software"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
 msgid "Flatpak"
-msgstr "Flatpak."
+msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
 msgid "Activate Flatpak"

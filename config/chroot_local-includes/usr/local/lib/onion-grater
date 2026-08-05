@@ -259,7 +259,7 @@ def get_ip_address(ifname):
             s.fileno(),
             0x8915,  # SIOCGIFADDR
             struct.pack("256s", bytes(ifname[:15], "utf-8")),
-        )[20:24]
+        )[20:24],
     )
 
 
@@ -290,6 +290,8 @@ class FilteredControlPortProxySession:
         self.wfile = handler.wfile
         self.client_streams = set()
         self.subscribed_event_listeners = []
+        # Accumulator for data sent us by the client
+        self.client_request_acc = b""
 
     def debug_log_send(self, line):
         if GLOBAL_ARGS.print_responses:
@@ -313,7 +315,8 @@ class FilteredControlPortProxySession:
             old = textwrap.indent(old.strip(), " " * 4)
             new = textwrap.indent(new.strip(), " " * 4)
             self.debug_log(
-                f"rewrote {kind}:\n{old}\nto:\n{new}", format_multiline=False
+                f"rewrote {kind}:\n{old}\nto:\n{new}",
+                format_multiline=False,
             )
 
     def respond(self, line, raw=False):
@@ -388,7 +391,7 @@ class FilteredControlPortProxySession:
         split_lines = lines.strip().split("\r\n")
         return (
             "\r\n".join(
-                [self.rewrite_matched_line(replacers, line) for line in split_lines]
+                [self.rewrite_matched_line(replacers, line) for line in split_lines],
             )
             + "\r\n"
         )
@@ -442,7 +445,7 @@ class FilteredControlPortProxySession:
                         if GLOBAL_ARGS.debug:
                             self.debug_log(
                                 "dropped restricted stream event: "
-                                + event.raw_content()
+                                + event.raw_content(),
                             )
                         return
                 elif event.status in [
@@ -461,12 +464,14 @@ class FilteredControlPortProxySession:
                         f"650 CIRC {event.id} {stem.CircStatus.CLOSED}\r\n",
                     )
                     self.debug_log_rewrite(
-                        "received event", old_event_raw_content, event.raw_content()
+                        "received event",
+                        old_event_raw_content,
+                        event.raw_content(),
                     )
                 else:
                     if GLOBAL_ARGS.debug:
                         self.debug_log(
-                            "dropped restricted circuit event: " + event.raw_content()
+                            "dropped restricted circuit event: " + event.raw_content(),
                         )
                     return
 
@@ -545,23 +550,26 @@ class FilteredControlPortProxySession:
         self.update_event_subscriptions(event_subs)
 
     def get_client_request(self):
-        while True:
+        while b"\n" not in self.client_request_acc:
             try:
-                # Some clients (e.g. Tor Browser) write their requests
-                # byte-by-byte, so we peek ahead and make sure we only
-                # read a single, full request.
-                peek_ahead = self.request.recv(self.MAX_LINESIZE, socket.MSG_PEEK)
-                if peek_ahead == b"":
+                # Since some client (eg Tor Browser) sends us one byte at a time, this
+                # we'll loop through this many times. Peeking would solve this, but
+                # then we'll have tails/tails#21663
+                received_data = self.request.recv(
+                    self.MAX_LINESIZE - len(self.client_request_acc),
+                )
+                if received_data == b"":
                     # The client disconnected
-                    return peek_ahead
-                request_length = peek_ahead.find(b"\n")
-                if request_length == -1:
-                    continue
-                return self.request.recv(request_length + 1)
+                    self.client_request_acc = b""
+                    return b""
+                self.client_request_acc += received_data
             except socket.timeout:
                 if not self.controller.is_alive():
                     self.recover_controller()
                 continue
+
+        request, self.client_request_acc = self.client_request_acc.split(b"\n", 1)
+        return request + b"\n"
 
     def handle(self):
         while True:
@@ -579,7 +587,7 @@ class FilteredControlPortProxySession:
             )
             if not match:
                 self.debug_log(
-                    "received bad line (escapes made explicit): " + repr(line)
+                    "received bad line (escapes made explicit): " + repr(line),
                 )
                 # Hopefully the next line is ok...
                 continue
@@ -639,7 +647,10 @@ class FilteredControlPortProxySession:
                     if "replacement" in rule:
 
                         def _args_rewriter(
-                            line, cmd=cmd, rule=rule, cmd_arg_sep=cmd_arg_sep
+                            line,
+                            cmd=cmd,
+                            rule=rule,
+                            cmd_arg_sep=cmd_arg_sep,
                         ):
                             # We also want to match the command in `line`
                             # and add it back to the replacement string.
@@ -663,7 +674,8 @@ class FilteredControlPortProxySession:
                         old_response_rewriter = response_rewriter
 
                         def _response_rewriter(
-                            ignored, old_response_rewriter=old_response_rewriter
+                            ignored,
+                            old_response_rewriter=old_response_rewriter,
                         ):
                             new_lines = ""
                             circuits = self.my_circuits()
@@ -768,7 +780,7 @@ class FilteredControlPortProxyHandler(socketserver.StreamRequestHandler):
         combined_getconf_rule = {
             "pattern": "("
             + "|".join([self.case_insensitive_regex(key) for key in confs])
-            + ")"
+            + ")",
         }
         setconf_reset_part = r"\s*|\s*".join(
             [
@@ -785,7 +797,7 @@ class FilteredControlPortProxyHandler(socketserver.StreamRequestHandler):
                 )
                 for key in confs
                 if isinstance(confs[key], list) and len(confs[key]) > 0
-            ]
+            ],
         )
         setconf_parts = []
         for part in [setconf_reset_part, setconf_assignment_part]:
@@ -825,7 +837,7 @@ class FilteredControlPortProxyHandler(socketserver.StreamRequestHandler):
             return
         elif len(matched_filters) > 1:
             raise RuntimeError(
-                "multiple filters matched: " + ", ".join(matched_filters)
+                "multiple filters matched: " + ", ".join(matched_filters),
             )
         matched_filter = matched_filters[0]
         self.filter_name = matched_filter["name"]
@@ -839,7 +851,7 @@ class FilteredControlPortProxyHandler(socketserver.StreamRequestHandler):
             matched_filter.get(
                 "tor-browser-mode",
                 False,
-            )
+            ),
         )
 
     def connect_to_real_control_port(self):
@@ -875,7 +887,8 @@ class FilteredControlPortProxyHandler(socketserver.StreamRequestHandler):
             )
             tries += 1
         stem.connection.authenticate_cookie(
-            controller, cookie_path=GLOBAL_ARGS.control_cookie_path
+            controller,
+            cookie_path=GLOBAL_ARGS.control_cookie_path,
         )
         return controller
 
@@ -939,8 +952,8 @@ class FilteredControlPortProxyHandler(socketserver.StreamRequestHandler):
                         "commands": self.allowed_commands,
                         "events": self.allowed_events,
                         "tor-browser-mode": self.tor_browser_mode,
-                    }
-                )
+                    },
+                ),
             )
         disconnect_reason = "client quit"
         try:
@@ -1033,7 +1046,7 @@ def main():
         if GLOBAL_ARGS.debug:
             log(
                 f"IP address for interface {GLOBAL_ARGS.listen_interface} : "
-                + ip_address
+                + ip_address,
             )
     else:
         ip_address = GLOBAL_ARGS.listen_address

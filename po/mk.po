@@ -10,13 +10,15 @@
 # Zarko Gjurov <zarkogjurov@gmail.com>, 2019-2022
 # emma peel <emma.peel@riseup.net>, 2025, 2026.
 # Dimitar Poposki <dimitar.a.poposki@gmail.com>, 2026.
+# Automatic translation add-on <noreply-addon-autotranslate@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-04-20 12:09+0000\n"
-"Last-Translator: Dimitar Poposki <dimitar.a.poposki@gmail.com>\n"
+"PO-Revision-Date: 2026-07-22 14:01+0000\n"
+"Last-Translator: Automatic translation add-on <noreply-addon-"
+"autotranslate@weblate.org>\n"
 "Language-Team: Macedonian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "mk/>\n"
 "Language: mk\n"
@@ -24,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1231,9 +1233,8 @@ msgstr "Инсталацијата на Tails не успеа!"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:341
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:1
-#, fuzzy
 msgid "Tails Cloner"
-msgstr "Tails Installer"
+msgstr "Tails Клонер"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:393
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:164
@@ -2163,9 +2164,8 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
-#, fuzzy
 msgid "Persistent Storage"
-msgstr "Создај Постојан склад"
+msgstr "Трајно складирање"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:56
 #, fuzzy

@@ -45,13 +45,14 @@
 # emma peel <emma.peel@riseup.net>, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # Voxel <voxel@users.noreply.hosted.weblate.org>, 2026.
+# Masowick <Demian@gmx.co.uk>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-07-03 01:51+0000\n"
-"Last-Translator: Voxel <voxel@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-08-03 16:01+0000\n"
+"Last-Translator: Masowick <Demian@gmx.co.uk>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/tor/tails-gui/de/"
 ">\n"
 "Language: de\n"
@@ -59,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -979,16 +980,16 @@ msgid ""
 "If you don't have a backup, we recommend that you create a partition image "
 "of your Persistent Storage first."
 msgstr ""
-"Im Dateisystem deines beständigen Datenspeichers wurden Fehler entdeckt.\n"
+"Im Dateisystem des beständigen Datenspeichers wurden Fehler entdeckt.\n"
 "\n"
-"Tails kann versuchen, diese Fehler zu beheben, aber das könnte einige deiner "
+"Tails kann versuchen, diese Fehler zu beheben; das könnte jedoch einige "
 "Daten löschen und viel Zeit in Anspruch nehmen.\n"
 "\n"
-"Wenn du bereits eine aktuelle Datensicherung deines beständigen "
-"Datenspeichers hast, empfehlen wir dir, eine Reparatur zu versuchen.\n"
+"Wenn bereits eine aktuelle Datensicherung des beständigen Datenspeichers "
+"vorhanden ist, empfehlen wir, eine Reparatur zu versuchen.\n"
 "\n"
-"Wenn du noch keine Datensicherung hast, empfehlen wir dir, zuerst ein "
-"Partitionsabbild deines beständigen Datenspeichers zu erstellen."
+"Sollte noch keine Datensicherung vorhanden sein, empfehlen wir, zuerst ein "
+"Partitionsabbild des beständigen Datenspeichers zu erstellen."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:946
 msgid "Repair File System"
@@ -3892,7 +3893,7 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1087
 msgid "Open _details"
-msgstr "Öffne _Details"
+msgstr "_Details öffnen"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1142
 msgid "• Wrong clock"

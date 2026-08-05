@@ -1,3 +1,97 @@
+tails (7.10.1) unstable; urgency=medium
+
+  * Upgrade Linux to 6.12.100-1 (DSA 6405-1)
+
+  * Upgrade expat to 2.8.2-1~deb13u1 (DSA 6404-1)
+
+  * check-po-msgfmt: ignore files in .git/ and tmp/ (tails/tails!3144)
+
+    Closes issues:
+      - check-po-msgfmt reports errors from ./tmp (tails/tails#20036)
+
+    Commits:
+      - ruff format
+      - Fix Ruff COM812
+      - Fix Ruff SIM201
+      - Fix Ruff C417 (unnecessary map)
+      - ruff format
+      - Fix Ruff PLW2901 (`for` loop variable `line` overwritten by assignment target)
+      - Fix Ruff S607 (Starting a process with a partial executable path)
+      - check-po-msgfmt: ignore files in .git/ and tmp/
+
+  * Don't include unused firmware in the rootfs (tails/tails!3141)
+
+    Closes issues:
+      - Reduce images and IUKs size by removing firmware which is not used by the
+        kernel (tails/tails#21195)
+
+    Commits:
+      - Clarify assumptions
+      - Make code more readable
+      - Don't include unused firmware in the rootfs
+      - Add script to delete unused firmware
+
+  * Release process: use gitlab-triage image from our registry (tails/tails!3140)
+
+    Closes issues:
+      - Use gitlab-triage pre-built image in release process (tails/tails#21691)
+
+    Commits:
+      - shfmt
+      - Release process: use gitlab-triage image from our registry
+
+  * Use a strict 0007 umask (tails/tails!3138)
+
+    Closes issues:
+      - The strict umask we configure is not honored (tails/tails#21688)
+
+    Commits:
+      - Drop custom ~/.profile
+      - Use a strict 0007 umask
+
+  * Switch IUKs SquashFS compression to zstd (tails/tails!3136)
+
+    Closes issues:
+      - Consider switching IUKs SquashFS compression to zstd (tails/tails#21153)
+
+    Commits:
+      - IUKs: use compression level 18
+      - IUKs: use the maximum zstd compression level (22) as we do for our SquashFS
+      - Compress IUKs with zstd
+
+  * GitLab CI: migrate to container images maintained & optimized by the Tails Team
+    (tails/tails!3085)
+
+    Closes issues:
+      - Improve performance of GitLab CI tests: install dependencies in a Docker image
+        (tails/tails#18169)
+
+    Commits:
+      - GitLab CI: use shfmt from Trixie
+      - GitLab CI: use new unified "linters" image
+      - Update terminology: sysadmins → TPA
+      - GitLab CI: use the combined "website" image rather than the ikiwiki and rsync
+        ones
+      - Avoid 1-element bullet list
+      - GitLab CI: skip APT update when we don't need it
+      - GitLab CI: use dedicated image for Perl jobs
+      - GitLab CI: use dedicated image for shmft
+      - GitLab CI: use the python-git:trixie image in another place where it makes
+        sense
+      - GitLab CI: don't (try to) install packages already included in the image we use
+      - GitLab CI: simply (remove obsolete abstraction layers)
+      - GitLab CI: use the python-git:trixie image when it makes sense
+      - Adjust to renamed image
+      - GitLab CI: use the git:trixie image when it makes sense
+      - GitLab CI: don't install Recommends
+      - GitLab CI: use images with more of our test dependencies already installed
+      - Simplify
+      - Stop allowing images from sysadmin-team/container-images
+      - GitLab CI: migrate away from soon-to-be-deprecated sysadmin-team/container-
+        images
+
+ -- Tails developers <foundations@tails.net>  Tue, 04 Aug 2026 12:15:28 +0200
+
 tails (7.10) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.96-1

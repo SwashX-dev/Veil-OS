@@ -99,7 +99,7 @@ Packages
 
 To release Tails you'll need some packages installed:
 
-* `oathtool gitlab-cli j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
+* `oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
 
   Note: if the Debian version you are running does not include all required
   Go packages, such as [[!debpts podman]], you should be able to install
@@ -1218,9 +1218,7 @@ To build the IUKS, run this command:
           echo "ERROR! Not enough free space in ${OUR_TMPDIR:?} (${MIN_DISK_SPACE}M needed)"
           exit 2
        fi
-       CPU_CORES=$(grep '^core id' /proc/cpuinfo | sort -u | wc -l)
-       MAX_JOBS=4
-       JOBS=$(( CPU_CORES > MAX_JOBS ? MAX_JOBS : CPU_CORES ))
+       JOBS=$(guess_concurrency --require-mem 3G)
        time                                                                   \
        sudo                                                                   \
        nice                                                                   \
@@ -2070,15 +2068,7 @@ Skip this part if preparing a release candidate:
 
     [ "${DIST:?}" = stable ]
 
-1. Ensure you have an up-to-date `tails:gitlab-triage-stable` container image:
-
-    (
-        cd "${MASTER_CHECKOUT:?}" && \
-        git checkout master && \
-        ./config/gitlab-triage/bin/ensure-up-to-date-container-image
-    )
-
-2. Postpone to the next scheduled release any remaining open issue and merge
+1. Postpone to the next scheduled release any remaining open issue and merge
    request whose milestone is the version you've just released:
 
     (
