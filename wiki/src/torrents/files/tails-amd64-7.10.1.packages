@@ -26,9 +26,9 @@ bash-completion	1:2.16.0-7
 bc	1.07.1-4
 bilibop-common	0.6.5
 bilibop-udev	0.6.5
-bind9-dnsutils	1:9.20.23-1~deb13u1
-bind9-host	1:9.20.23-1~deb13u1
-bind9-libs:amd64	1:9.20.23-1~deb13u1
+bind9-dnsutils	1:9.20.26-1~deb13u1
+bind9-host	1:9.20.26-1~deb13u1
+bind9-libs:amd64	1:9.20.26-1~deb13u1
 bindfs	1.14.7-1.1+b1
 bolt	0.9.8-1
 bookletimposer	0.3.1-5
@@ -213,7 +213,7 @@ gir1.2-gweather-4.0:amd64	4.4.4-1
 gir1.2-handy-1:amd64	1.8.3-2
 gir1.2-harfbuzz-0.0:amd64	10.2.0-1+deb13u1
 gir1.2-ibus-1.0:amd64	1.5.32-2
-gir1.2-javascriptcoregtk-4.1:amd64	2.52.3-2~deb13u1
+gir1.2-javascriptcoregtk-4.1:amd64	2.52.5-1~deb13u1
 gir1.2-mutter-16:amd64	48.7-0+deb13u1
 gir1.2-nm-1.0:amd64	1.52.1-1
 gir1.2-nma4-1.0:amd64	1.10.6-5
@@ -225,7 +225,7 @@ gir1.2-rsvg-2.0:amd64	2.60.0+dfsg-1
 gir1.2-soup-3.0:amd64	3.6.5-3
 gir1.2-udisks-2.0:amd64	2.10.1-12.1+deb13u1
 gir1.2-upowerglib-1.0:amd64	1.90.9-1
-gir1.2-webkit2-4.1:amd64	2.52.3-2~deb13u1
+gir1.2-webkit2-4.1:amd64	2.52.5-1~deb13u1
 gir1.2-wnck-3.0:amd64	43.2-1
 git	1:2.47.3-0+deb13u1
 git-man	1:2.47.3-0+deb13u1
@@ -305,8 +305,8 @@ heif-gdk-pixbuf:amd64	1.19.8-1
 heif-thumbnailer	1.19.8-1
 hicolor-icon-theme	0.18-2
 hostname	3.25
-hplip	3.22.10+dfsg0-8.1
-hplip-data	3.22.10+dfsg0-8.1
+hplip	3.22.10+dfsg0-8.1+deb13u1
+hplip-data	3.22.10+dfsg0-8.1+deb13u1
 hunspell-ar	3.5.2014-11-08-5
 hunspell-de-de	20161207-15
 hunspell-en-us	1:2020.12.07-4
@@ -587,7 +587,7 @@ libexempi8:amd64	2.6.6-2
 libexif12:amd64	0.6.25-1+deb13u1
 libexiv2-28:amd64	0.28.5+dfsg-1
 libexiv2-data	0.28.5+dfsg-1
-libexpat1:amd64	2.7.1-2
+libexpat1:amd64	2.8.2-1~deb13u1
 libexporter-tiny-perl	1.006002-1
 libext2fs2t64:amd64	1.47.2-3+b11
 libexttextcat-2.0-0:amd64	3.4.7-1+b1
@@ -632,7 +632,7 @@ libgcr-4-4:amd64	4.4.0.1-3
 libgcr-base-3-1:amd64	3.41.2-3
 libgcr-ui-3-1:amd64	3.41.2-3
 libgcrypt20:amd64	1.11.0-7+deb13u1
-libgd3:amd64	2.3.3-13
+libgd3:amd64	2.3.3-14~deb13u1
 libgdata-common	0.18.1-9
 libgdata22:amd64	0.18.1-9
 libgdbm-compat4t64:amd64	1.24-2
@@ -748,7 +748,7 @@ libheif-plugin-libde265:amd64	1.19.8-1
 libheif1:amd64	1.19.8-1
 libhidapi-hidraw0:amd64	0.14.0-1+b2
 libhogweed6t64:amd64	3.10.1-1
-libhpmud0:amd64	3.22.10+dfsg0-8.1
+libhpmud0:amd64	3.22.10+dfsg0-8.1+deb13u1
 libhtml-parser-perl:amd64	3.83-2~deb13u1
 libhtml-tagset-perl	3.24-1
 libhtml-tree-perl	5.07-3
@@ -798,7 +798,7 @@ libisofs6t64:amd64	1.5.6.pl01-1.1+b1
 libiw30t64:amd64	30~pre9-18+b1
 libjack-jackd2-0:amd64	1.9.22~dfsg-4
 libjansson4:amd64	2.14-2+b3
-libjavascriptcoregtk-4.1-0:amd64	2.52.3-2~deb13u1
+libjavascriptcoregtk-4.1-0:amd64	2.52.5-1~deb13u1
 libjbig0:amd64	2.1-6.1+b2
 libjbig2dec0:amd64	0.20-1+b3
 libjemalloc2:amd64	5.3.0-3
@@ -902,7 +902,7 @@ liblcms2-utils	2.16-2+deb13u2
 libldacbt-abr2:amd64	2.0.2.3+git20200429+ed310a0-5
 libldacbt-enc2:amd64	2.0.2.3+git20200429+ed310a0-5
 libldap2:amd64	2.6.10+dfsg-1
-libldb2:amd64	2:2.11.0+samba4.22.10+dfsg-0+deb13u1
+libldb2:amd64	2:2.11.0+samba4.22.10+dfsg-0+deb13u2
 libleptonica6:amd64	1.84.1-4
 liblerc4:amd64	4.0.0+ds-5
 liblilv-0-0:amd64	0.24.26-1
@@ -1011,7 +1011,7 @@ libnotify4:amd64	0.8.6-1
 libnpth0t64:amd64	1.8-3
 libnspr4:amd64	2:4.36-1
 libnss-systemd:amd64	257.13-1~deb13u1
-libnss3:amd64	2:3.110-1+deb13u3
+libnss3:amd64	2:3.110-1+deb13u4
 libntfs-3g89t64:amd64	1:2022.10.3-5+deb13u2
 libnuma1:amd64	2.0.19-1
 libnumber-format-perl	1.76-1
@@ -1198,7 +1198,7 @@ librtmp1:amd64	2.4+20151223.gitfa8646d.1-2+b5
 librubberband2:amd64	3.3.0+dfsg-2+b3
 libsamplerate0:amd64	0.2.2-4+b2
 libsane-common	1.3.1-3
-libsane-hpaio:amd64	3.22.10+dfsg0-8.1
+libsane-hpaio:amd64	3.22.10+dfsg0-8.1+deb13u1
 libsane1:amd64	1.3.1-3+b1
 libsasl2-2:amd64	2.1.28+dfsg1-9
 libsasl2-modules:amd64	2.1.28+dfsg1-9
@@ -1228,7 +1228,7 @@ libsixel1:amd64	1.10.5-1
 libslang2:amd64	2.3.3-5+b2
 libsm6:amd64	2:1.2.6-1
 libsmartcols1:amd64	2.41-5
-libsmbclient0:amd64	2:4.22.10+dfsg-0+deb13u1
+libsmbclient0:amd64	2:4.22.10+dfsg-0+deb13u2
 libsnappy1v5:amd64	1.2.2-1
 libsndfile1:amd64	1.2.2-2+deb13u1
 libsndio7.0:amd64	1.10.0-0.1
@@ -1259,7 +1259,7 @@ libsqlite3-0:amd64	3.46.1-7+deb13u1
 libsratom-0-0:amd64	0.6.18-1
 libsrt1.5-gnutls:amd64	1.5.4-1
 libss2:amd64	1.47.2-3+b11
-libssh-4:amd64	0.11.2-1+deb13u1
+libssh-4:amd64	0.11.5-0+deb13u1
 libssh2-1t64:amd64	1.11.1-1+deb13u1
 libssl3t64:amd64	3.5.6-1~deb13u2
 libstaroffice-0.0-0:amd64	0.0.7-1+b2
@@ -1287,14 +1287,14 @@ libsys-statistics-linux-perl	0.66-5
 libsystemd-shared:amd64	257.13-1~deb13u1
 libsystemd0:amd64	257.13-1~deb13u1
 libtag2:amd64	2.0.2-2
-libtalloc2:amd64	2:2.4.3+samba4.22.10+dfsg-0+deb13u1
+libtalloc2:amd64	2:2.4.3+samba4.22.10+dfsg-0+deb13u2
 libtasn1-6:amd64	4.20.0-2+deb13u1
 libtatsu0:amd64	1.0.3-1+b1
-libtdb1:amd64	2:1.4.13+samba4.22.10+dfsg-0+deb13u1
+libtdb1:amd64	2:1.4.13+samba4.22.10+dfsg-0+deb13u2
 libteamdctl0:amd64	1.31-1+b2
 libtesseract5:amd64	5.5.0-1+b1
 libtest-exception-perl	0.43-3
-libtevent0t64:amd64	2:0.16.2+samba4.22.10+dfsg-0+deb13u1
+libtevent0t64:amd64	2:0.16.2+samba4.22.10+dfsg-0+deb13u2
 libtext-charwidth-perl:amd64	0.04-11+b4
 libtext-iconv-perl:amd64	1.7-8+b4
 libtext-wrapi18n-perl	0.06-10
@@ -1375,8 +1375,8 @@ libwayland-client0:amd64	1.23.1-3
 libwayland-cursor0:amd64	1.23.1-3
 libwayland-egl1:amd64	1.23.1-3
 libwayland-server0:amd64	1.23.1-3
-libwbclient0:amd64	2:4.22.10+dfsg-0+deb13u1
-libwebkit2gtk-4.1-0:amd64	2.52.3-2~deb13u1
+libwbclient0:amd64	2:4.22.10+dfsg-0+deb13u2
+libwebkit2gtk-4.1-0:amd64	2.52.5-1~deb13u1
 libwebp7:amd64	1.5.0-0.1
 libwebpdemux2:amd64	1.5.0-0.1
 libwebpmux3:amd64	1.5.0-0.1
@@ -1490,8 +1490,8 @@ libzvbi0t64:amd64	0.2.44-1
 libzxcvbn0:amd64	2.5+dfsg-2+b2
 libzxing3:amd64	2.3.0-4
 linux-base	4.12.1
-linux-image-6.12.96+deb13-amd64	6.12.96-1
-linux-image-amd64	6.12.96-1
+linux-image-6.12.100+deb13-amd64	6.12.100-1
+linux-image-amd64	6.12.100-1
 linux-sysctl-defaults	4.12.1
 live-boot	1:20170112
 live-boot-initramfs-tools	1:20170112
@@ -1599,13 +1599,13 @@ printer-driver-foo2zjs	20200505dfsg0-3
 printer-driver-foo2zjs-common	20200505dfsg0-3
 printer-driver-fujixerox	1.1.0+ds-4+b2
 printer-driver-gutenprint	5.3.4.20220624T01008808d602-4
-printer-driver-hpcups	3.22.10+dfsg0-8.1
+printer-driver-hpcups	3.22.10+dfsg0-8.1+deb13u1
 printer-driver-indexbraille	1.2.3-5
 printer-driver-m2300w	0.51-15
 printer-driver-min12xxw	0.0.9-11
 printer-driver-oki	1.0.2-1
 printer-driver-pnm2ppa	1.13-13+b1
-printer-driver-postscript-hp	3.22.10+dfsg0-8.1
+printer-driver-postscript-hp	3.22.10+dfsg0-8.1+deb13u1
 printer-driver-ptouch	1.7.1-1
 printer-driver-pxljr	1.4+repack0-6
 printer-driver-sag-gdi	0.1-8
@@ -1764,7 +1764,7 @@ rfkill	2.41-5
 rsync	3.4.1+ds1-5+deb13u4
 rtkit	0.13-5.1
 runit-helper	2.16.4
-samba-libs:amd64	2:4.22.10+dfsg-0+deb13u1
+samba-libs:amd64	2:4.22.10+dfsg-0+deb13u2
 sane-airscan	0.99.35-1
 sane-utils	1.3.1-3+b1
 scdaemon	2.4.7-21+deb13u1+b4
