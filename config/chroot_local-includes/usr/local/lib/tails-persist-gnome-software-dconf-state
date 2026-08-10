@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -eu -o pipefail
+
+# We only want this script to do anything if the Flatpak persistence
+# feature is enabled. However, asking tpsd (e.g. with
+# tps_feature_is_active) isn't reliable at shutdown time due to it
+# relying on D-Bus, so instead we check for the existence of one of
+# the mountpoints expected when the Flatpak persistence feature is
+# enabled.
+if ! mountpoint -q "${HOME}/.cache/gnome-software"; then
+    exit 0
+fi
+
+DCONF_FILE="/live/persistence/TailsData_unlocked/flatpak/gnome-software/org.gnome.software.dconf-dump"
+
+case "${1:-}" in
+save)
+    dconf dump /org/gnome/software/ >"${DCONF_FILE}"
+    ;;
+load)
+    if [ -f "${DCONF_FILE}" ]; then
+        dconf load /org/gnome/software/ <"${DCONF_FILE}"
+    fi
+    ;;
+*)
+    echo "error: please provide exactly one argument out of 'save' and 'load'" >&2
+    exit 1
+    ;;
+esac
