@@ -30,9 +30,9 @@ vulnerability in $APPLICATION.
 
 - Update *Tor Browser* to [1.2.3](https://blog.torproject.org/new-release-tor-browser-123),
   which fixes [[$CODE|$LINK]] (*$NAME*), a (major|minor) $TYPE vulnerability. Using this
-  vulnerability, (an attacked could $IMPACT|an application in Tails could gain administration privileges).
+  vulnerability, (an attacked could $IMPACT|an application in Tails could gain administrator privileges).
 
-  For example, if an attacker was able to exploit other unknown security
+  For example, if an attacker is able to exploit other unknown security
   vulnerabilities in an application included in Tails, they might then use $CODE
   to take full control of your Tails and deanonymize you.
 
@@ -40,7 +40,7 @@ vulnerability in $APPLICATION.
 
   <p>
 
-  This attack is very unlikely, but could be performed by a powerful attacker,
+  This attack is very unlikely but could be performed by a powerful attacker,
   such as a government or a hacking firm.
 
   This vulnerability can only be exploited by a powerful attacker who has
@@ -65,17 +65,17 @@ vulnerability in $APPLICATION.
 
 <!--
 
-- Update the *Linux* kernel to a.bc, which fixes [[$CODE|$LINK]] (*$NAME*),
+- Update the *Linux* kernel to a.b.c, which fixes [[$CODE|$LINK]] (*$NAME*),
   (a vulnerability|multiple vulnerabilities) that could allow an application in
-  Tails to gain administration privileges.
+  Tails to gain administrator privileges.
 
-  For example, if an attacker was able to exploit other unknown security
+  For example, if an attacker is able to exploit other unknown security
   vulnerabilities in an application included in Tails, they might then use $CODE
   to take full control of your Tails and deanonymize you.
 
   <div class="attack">
 
-  <p>This attack is very unlikely, but could be performed by a strong attacker,
+  <p>This attack is very unlikely but could be performed by a strong attacker,
   such as a government or a hacking firm. We are not aware of this (attack|vulnerability) being
   used in practice until now.</p>
 
