@@ -299,8 +299,7 @@ class Service(DBusObject, ServiceUsingJobs):
 
         logger.info("Activating Persistent Storage...")
 
-        # Wait for all udev and UDisks events to finish
-        executil.check_call(["udevadm", "settle"])
+        # Wait for all UDisks events to finish
         udisks().settle()
 
         # Check if we can activate the Persistent Storage
