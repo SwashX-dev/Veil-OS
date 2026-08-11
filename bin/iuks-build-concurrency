@@ -33,12 +33,10 @@ def parse_cpu_range_count(sysfs_path):
 def get_guess_concurrency(mem_val):
     """Executes guess_concurrency and returns integer output."""
     return int(
-        subprocess.run(
+        subprocess.check_output(
             ["/bin/guess_concurrency", "--require-mem", mem_val],
-            capture_output=True,
             text=True,
-            check=True,
-        ).stdout.strip()
+        ).strip()
     )
 
 
