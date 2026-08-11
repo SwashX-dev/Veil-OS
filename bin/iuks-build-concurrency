@@ -1,0 +1,74 @@
+#!/usr/bin/python3
+
+import argparse
+import os
+import subprocess
+import sys
+
+
+def parse_cpu_range_count(sysfs_path):
+    """Parses Linux CPU list format (e.g., '0-3,5,7-9') and returns total count."""
+    if not os.path.exists(sysfs_path):
+        sys.stderr.write(f"Warning: {sysfs_path} does not exist\n")
+        return None
+
+    try:
+        with open(sysfs_path) as f:
+            content = f.read().strip()
+        if not content:
+            sys.stderr.write(f"Warning: Could not read {sysfs_path}\n")
+            return None
+
+        count = 0
+        for _part in content.split(","):
+            part = _part.strip()
+            if "-" in part:
+                start, end = map(int, part.split("-"))
+                count += end - start + 1
+            elif part.isdigit():
+                count += 1
+    except Exception as e:
+        sys.stderr.write(f"Warning: Could not parse {sysfs_path}: {e}\n")
+        return None
+    else:
+        return count
+
+
+def get_guess_concurrency(mem_val):
+    """Executes guess_concurrency and returns integer output."""
+    return int(
+        subprocess.run(
+            ["/bin/guess_concurrency", "--require-mem", mem_val],
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout.strip()
+    )
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Determine maximum concurrency based on memory constraints and available performance cores."
+    )
+    parser.add_argument(
+        "--require-mem",
+        required=True,
+        help="Memory specification (e.g., '3G')",
+    )
+    args = parser.parse_args()
+
+    # 1. Get constraint from guess_concurrency output
+    guess_val = get_guess_concurrency(args.require_mem)
+    candidates = [guess_val]
+
+    # 2. Get constraint from "performance cores" count
+    p_cores = parse_cpu_range_count("/sys/devices/cpu_core/cpus")
+    if p_cores is not None:
+        candidates.append(p_cores)
+
+    # Output the minimum value, so we never exceed any of our constraints
+    print(min(candidates))
+
+
+if __name__ == "__main__":
+    main()

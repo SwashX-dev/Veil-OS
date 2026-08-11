@@ -1222,7 +1222,7 @@ To build the IUKS, run this command:
        echo "ERROR! Not enough free space in ${OUR_TMPDIR:?} (${MIN_DISK_SPACE}M needed)"
        exit 2
     fi
-    JOBS=$(guess_concurrency --require-mem 3G)
+    JOBS=$("${RELEASE_CHECKOUT:?}"/bin/iuks-build-concurrency --require-mem 3G)
     time                                                                   \
     sudo                                                                   \
     nice                                                                   \
