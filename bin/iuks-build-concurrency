@@ -6,28 +6,30 @@ import subprocess
 import sys
 
 
+class ParsingError(Exception):
+    """Raised when failing to read or parse sysfs CPU range data."""
+
+    pass
+
+
 def parse_cpu_range_count(sysfs_path):
     """Parses Linux CPU list format (e.g., '0-3,5,7-9') read from sysfs_path and returns total count."""
-    try:
-        with open(sysfs_path) as f:
-            content = f.read().strip()
-        if not content:
-            sys.stderr.write(f"Warning: Could not read {sysfs_path}\n")
-            return None
+    with open(sysfs_path) as f:
+        content = f.read().strip()
+    if not content:
+        raise ParsingError(f"File {sysfs_path} is empty")
 
-        count = 0
-        for _part in content.split(","):
-            part = _part.strip()
-            if "-" in part:
-                start, end = [int(p) for p in part.split("-")]
-                count += end - start + 1
-            elif part.isdigit():
-                count += 1
-    except Exception as e:
-        sys.stderr.write(f"Warning: Could not parse {sysfs_path}: {e}\n")
-        return None
-    else:
-        return count
+    count = 0
+    for _part in content.split(","):
+        part = _part.strip()
+        if "-" in part:
+            start, end = [int(p) for p in part.split("-")]
+            count += end - start + 1
+        elif part.isdigit():
+            count += 1
+        else:
+            raise ParsingError(f"Invalid segment: '{part}'")
+    return count
 
 
 def get_guess_concurrency(mem_val):
@@ -55,9 +57,10 @@ def main():
     guess_val = get_guess_concurrency(args.require_mem)
     candidates = [guess_val]
 
-    # 2. Get constraint from "performance cores" count
-    p_cores = parse_cpu_range_count("/sys/devices/cpu_core/cpus")
-    if p_cores is not None:
+    # 2. Get constraint from "performance cores" count if sysfs path exists
+    sysfs_path = "/sys/devices/cpu_core/cpus"
+    if os.path.exists(sysfs_path):
+        p_cores = parse_cpu_range_count(sysfs_path)
         candidates.append(p_cores)
 
     # Output the minimum value, so we never exceed any of our constraints
