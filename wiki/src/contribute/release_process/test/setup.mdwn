@@ -80,8 +80,8 @@ To install the dependencies on our test suite:
            python3-typeguard \
            python3-yaml \
            qemu-system-common \
-           qemu-system-x86 \
            qemu-system-modules-spice \
+           qemu-system-x86 \
            qemu-utils \
            qrencode \
            ruby-guestfs \
@@ -100,8 +100,8 @@ To install the dependencies on our test suite:
            tshark \
            unclutter \
            virt-viewer \
-           x11vnc \
            x11-utils \
+           x11vnc \
            x264 \
            xdotool \
            xfwm4 \
