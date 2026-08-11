@@ -23,7 +23,7 @@ def parse_cpu_range_count(sysfs_path):
         for _part in content.split(","):
             part = _part.strip()
             if "-" in part:
-                start, end = map(int, part.split("-"))
+                start, end = [int(p) for p in part.split("-")]
                 count += end - start + 1
             elif part.isdigit():
                 count += 1
