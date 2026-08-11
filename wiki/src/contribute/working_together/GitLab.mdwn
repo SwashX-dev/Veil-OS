@@ -653,6 +653,10 @@ instance:
 
  - They're responsible for creating new accounts when someone requests them.
 
+ - They're responsible for handling [abuse
+   reports](https://gitlab.tails.boum.org/admin/abuse_reports?status=open) in
+   a timely manner.
+
  - They don't have shell access to the VM hosting the service so, among many
    other things, using [Server
    Hooks](https://docs.gitlab.com/ce/administration/server_hooks.html) is not
