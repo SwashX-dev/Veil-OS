@@ -8,10 +8,6 @@ import sys
 
 def parse_cpu_range_count(sysfs_path):
     """Parses Linux CPU list format (e.g., '0-3,5,7-9') read from sysfs_path and returns total count."""
-    if not os.path.exists(sysfs_path):
-        sys.stderr.write(f"Warning: {sysfs_path} does not exist\n")
-        return None
-
     try:
         with open(sysfs_path) as f:
             content = f.read().strip()
