@@ -18,7 +18,7 @@ For general GitLab usage information, see the
 If you were using Redmine previously, read [[how to transition to
 GitLab|GitLab/transition]]. If you have an account at [0xacab](https://0xacab.org/), you can
 go to the Tails Gitlab [[!tails_gitlab users/sign_in desc="login page"]] and use your 0xacab
-account to sign in. Else, to request a GitLab account, please e-mail sysadmins@tails.net.
+account to sign in. Else, to request a GitLab account, please e-mail foundations@tails.net.
 If you want, you can
 [[!tails_gitlab help/user/profile/index.md#add-your-gender-pronouns desc="add your pronouns"]]
 to your GitLab account so that your pronouns appear next to your name in your profile.
@@ -554,10 +554,7 @@ our GitLab.
 If you need to do something in GitLab and you appear to lack the
 needed credentials, please ask the [Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home).
 
-They will triage your request and potentially vouch for you,
-asking the Tails
-[[system administrators|https://gitlab.torproject.org/tpo/tpa/team/-/wikis/tails/role-description#contact]]
-to grant you more power.
+They will triage your request and potentially grant you more power.
 
 For example, you will need "Reporter" access on the [[!tails_gitlab
 tails/tails]] project in order to add labels or assign issues.
@@ -575,8 +572,8 @@ Do not grant access via the web interface:
    requirements.
 
 Instead, after following the relevant process (if any),
-request the access modification from the Tails
-[[system administrators|https://gitlab.torproject.org/tpo/tpa/team/-/wikis/tails/role-description#contact]].
+request the access modification from the
+[Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home).
 
 ## Relevant GitLab doc
 
@@ -648,14 +645,10 @@ Our friends at <https://www.immerda.ch/> host [the Tails' GitLab
 instance](https://gitlab.tails.boum.org). We usually contact them through
 e-mail (see their [contact info](https://www.immerda.ch/contact.html)).
 
-The Tails [system administrators](tails/role-description) administrate this GitLab
-instance:
+The Tails Team administrates this GitLab instance:
 
- - They're responsible for creating new accounts when someone requests them.
-
- - They're responsible for handling [abuse
-   reports](https://gitlab.tails.boum.org/admin/abuse_reports?status=open) in
-   a timely manner.
+ - See responsibilities on
+   https://gitlab.tails.boum.org/tails/team/-/wikis/roles/frontdesk
 
  - They don't have shell access to the VM hosting the service so, among many
    other things, using [Server
