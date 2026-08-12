@@ -47,7 +47,7 @@ vulnerability in $APPLICATION.
   already exploited another vulnerability to take control of $APPLICATION.
 
   We are (not) aware of this (attack|vulnerability) being (used|exploited) in
-  practice until now.
+  practice so far.
 
   </p>
 
@@ -77,7 +77,7 @@ vulnerability in $APPLICATION.
 
   <p>This attack is very unlikely but could be performed by a strong attacker,
   such as a government or a hacking firm. We are not aware of this (attack|vulnerability) being
-  used in practice until now.</p>
+  used in practice so far.</p>
 
   </div>
 

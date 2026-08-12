@@ -20,7 +20,7 @@ in the *Linux* kernel and the *expat* XML library.
 
   <p>This attack is very unlikely but could be performed by a strong attacker,
   such as a government or a hacking firm. We are not aware of this attack being
-  used in practice until now.</p>
+  used in practice so far.</p>
 
   </div>
 
@@ -38,7 +38,7 @@ in the *Linux* kernel and the *expat* XML library.
 
   <p>This attack is very unlikely but could be performed by a strong attacker,
   such as a government or a hacking firm. We are not aware of this attack being
-  used in practice until now.</p>
+  used in practice so far.</p>
 
   </p>
 
