@@ -58,7 +58,15 @@ def main():
     sysfs_path = "/sys/devices/cpu_core/cpus"
     if os.path.exists(sysfs_path):
         p_cores = parse_cpu_range_count(sysfs_path)
-        candidates.append(p_cores)
+        # On the systems RMs use to build IUKs as of August 2026,
+        # "performance cores" all have hyper-threading with 2 threads
+        # per core, so we'll divide by 2 to get the number of physical
+        # cores. However, if parse_cpu_range_count ever returns an odd
+        # number on a future relevant system, we want to be made aware
+        # of it, so we can figure out what to do in that case.
+        if p_cores % 2 != 0:
+            raise ValueError(f"{p_cores} is not even")
+        candidates.append(int(p_cores / 2))
 
     # Output the minimum value, so we never exceed any of our constraints
     print(min(candidates))
