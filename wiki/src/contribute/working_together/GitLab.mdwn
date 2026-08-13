@@ -721,7 +721,7 @@ shouldn't be used for communicating with other users.
     in other situations, better follow due process to request
     such status or permissions :)
 
-  - MUST comply with our "Level 3" security policy
+  - MUST comply with our "Level B" security policy
 
 - A _committer_:
 
@@ -743,7 +743,7 @@ shouldn't be used for communicating with other users.
 
   - can edit other users' comments
 
-  - MUST comply with our "Level 3" security policy
+  - MUST comply with our "Level B" security policy
 
 - A _regular, particularly trusted contributor_:
 
