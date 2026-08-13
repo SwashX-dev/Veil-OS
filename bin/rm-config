@@ -283,7 +283,9 @@ def generate_boilerplate(stage: str):
         Path(xdg_config_home) / "tails/release_management/current.yml",
         "a",
     ) as dst:
+        dst.write(f"# Stage {stage}:\n")
         dst.write(src.read())
+        dst.write("\n")
 
 
 def generate_environment(stage: str):
