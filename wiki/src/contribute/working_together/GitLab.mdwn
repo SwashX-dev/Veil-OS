@@ -695,7 +695,7 @@ shouldn't be used for communicating with other users.
   the tag name is a version number, with '~' replaced by '-'.
 
 - _Particularly sensitive data_: confidential data that specific teams
-  like Fundraising and Accounting need to handle, but that other
+  need to handle, but that other
   contributors generally don't need direct access to. This definitely
   include issues; this might include Git repositories at some point.
 
