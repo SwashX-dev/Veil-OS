@@ -598,6 +598,40 @@ Update other base branches
            "${RELEASE_BRANCH:?}:${RELEASE_BRANCH:?}" \
            devel:devel
 
+# Set the milestone on issues and merge requests
+
+If you are preparing a release whose milestone we did *not* use for planning
+purposes, i.e. we used the next release's milestone for planning, then move to
+the milestone for the version you're preparing every:
+
+  - issue that was resolved
+  - merge request that was merged
+
+… and that currently have the milestone of the next planned release.
+
+In other words, since every change that is on the `stable` branch, but not
+released yet, will be released for the first time in the release you're
+preparing, it must have the milestone of that release.
+
+This ensures the generated changelog will include these changes, and ensures we
+have a correct record of which release presumably fixed which bug (that's useful
+for example when triaging bug reports).
+
+To do so, on each of these 2 pages:
+
+  - [[!tails_gitlab tails/tails/-/work_items?state=closed desc="issues"]]
+  - [[!tails_gitlab tails/tails/-/merge_requests?state=merged desc="merge requests"]]
+
+Do this:
+
+1. Filter by milestone = the next planned release after the one you're preparing
+
+2. Click *Bulk edit*
+
+3. Select all items
+
+4. Set the milestone of the release you're preparing
+
 Update more included files
 ==========================
 
