@@ -6,7 +6,7 @@ ignore:
       version: "1.9.9-690-gc6e7ab0-0.3"
       reason: "Irrelevant changes, see #21732"
     open-ath9k-htc-firmware:
-      version: "1.4.0-110-ge888634+dfsg1-0.3"
+      version: "1.4.0-110-ge888634+dfsg1-0.4"
       reason: "Irrelevant changes, see #21409"
     python-electrum-ecc:
       version: "0.0.7+ds-1~bpo13+1"
