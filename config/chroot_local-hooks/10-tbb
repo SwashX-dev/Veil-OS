@@ -247,6 +247,25 @@ extract_default_bridges() {
     rm -r "${tmp}"
 }
 
+extract_moat_targets() {
+    local tbb_install tmp
+    tbb_install="${1}"
+
+    tmp="$(mktemp -d)"
+    (
+        cd "${tmp}"
+        7z e -tzip "${tbb_install}/browser/omni.ja" defaults/preferences/000-tor-browser.js
+
+        sed <000-tor-browser.js \
+            --regexp-extended \
+            --silent \
+            -e 's/pref[(]"extensions[.]torlauncher[.]bridgedb_targets", "(.*)"[)];/\1/p' \
+            >/usr/share/tails/tca/moat_targets.txt
+        rm 000-tor-browser.js
+    )
+    rm -r "${tmp}"
+}
+
 extract_moat_countries() {
     local tbb_install tmp moat_countries_path
     tbb_install="${1}"
@@ -395,6 +414,7 @@ rm -f /usr/local/lib/tor-browser/start-tor-browser.orig
 apply_prefs_hacks "${TBB_INSTALL}" "${TBB_TIMESTAMP}"
 hide_tor_donation_campaign "${TBB_INSTALL}" "${TBB_TIMESTAMP}"
 extract_default_bridges "${TBB_INSTALL}"
+extract_moat_targets "${TBB_INSTALL}"
 extract_moat_countries "${TBB_INSTALL}"
 install_debian_extensions "${TBB_INSTALL}" "${TBB_TIMESTAMP}"
 disable_update_checks "${TBB_INSTALL}"
