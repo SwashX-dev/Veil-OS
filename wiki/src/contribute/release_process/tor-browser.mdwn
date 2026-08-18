@@ -411,6 +411,7 @@ Wait for the tarballs to appear on
 clean up:
 
     (
+    set -eu -o pipefail
     url="$(cat config/chroot_local-includes/usr/share/tails/tbb-dist-url.txt)"
     while [ -z "$(elinks -dump -no-references -no-numbering "$url"   | grep 'tor-browser-linux-x86_64.*MiB')" ]
     do
