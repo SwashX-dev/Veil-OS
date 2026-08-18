@@ -39,7 +39,7 @@ def meek_credentials():
     # [2] https://github.com/urllib3/urllib3/issues/2206
     if len(targets) > 254:
         # If you are seeing this error, it probably means that the latest
-        # TorBrowser build is shipping more (or just longer-named) moat
+        # Tor Browser build is shipping more (or just longer-named) Moat
         # targets.
         raise ValueError("the meek credentials don't fit into the SOCKS credentials")
     middle = len(targets) // 2
