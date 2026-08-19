@@ -1,4 +1,4 @@
-tails (7.11) UNRELEASED; urgency=medium
+tails (7.11) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.101-1 (DSA 6415-1)
 
@@ -128,7 +128,7 @@ tails (7.11) UNRELEASED; urgency=medium
       - Also restart GNOME Software when deactivating the Flatpak persistence feature
       - Persist GNOME Software's dconf state as part of the Flatpak feature
 
- -- Tails developers <foundations@tails.net>  Wed, 19 Aug 2026 07:59:28 +0000
+ -- Tails developers <foundations@tails.net>  Wed, 19 Aug 2026 10:55:44 +0200
 
 tails (7.10.1) unstable; urgency=medium
 
