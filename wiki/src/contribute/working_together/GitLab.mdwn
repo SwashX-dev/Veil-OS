@@ -632,7 +632,7 @@ to these requirements:
 
    More specifically, in your `~/.python-gitlab.cfg`, create a new dedicated
    `TailsRoot` section for your administrator account, separate from your other
-   existing sections (`Tails`, `TailsRM`, etc.). Other documentation may rely on
+   existing sections (`Tails`, `TailsRM`, etc.). Other documentation relies on
    this configuration existing and being called like that.
 
  - You manually log out from the administrator account as soon as you don't need
