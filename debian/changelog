@@ -1,3 +1,9 @@
+tails (7.12) UNRELEASED; urgency=medium
+
+  * Dummy entry for next release.
+
+ -- anonym <anonym@torproject.org>  Wed, 19 Aug 2026 17:41:43 +0200
+
 tails (7.11) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.101-1 (DSA 6415-1)
