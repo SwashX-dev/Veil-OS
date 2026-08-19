@@ -83,6 +83,68 @@ In a directory with many Tails ISO and USB images
            -type f -ls | sort -n -k 7
     )
 
+GitLab CI
+=========
+
+Verify that the latest [[!tails_gitlab desc="pipeline" tails/tails/-/pipelines]]
+for the branch this release is built from succeeded.
+
+Else, if it failed:
+
+1. report failures to the QA pad
+2. optionally: triage the failure (otherwise the RM will do that)
+
+Real (non-VM) hardware
+======================
+
+UEFI boot
+---------
+
+Note that for emergency releases, we do not always optimize the ordering
+of files in the SquashFS, which might make them boot somewhat slower.
+
+On a 64-bit computer that has Secure Boot enabled and that is configured to
+prefer UEFI:
+
+1. Freshly install the previous Tails version to a USB stick.
+
+2. Boot this USB stick on bare-metal a first time to trigger re-partitioning.
+
+   - You should see the "GNU GRUB" title, as opposed to a syslinux menu.
+
+   - Wait until you see the Welcome Screen.
+
+3. Shutdown Tails
+
+4. Boot this USB stick a second time, add the `login` option to GRUB, and measure the boot time (from the
+   GRUB menu until the GNOME desktop is ready). Take note of the boot time you measured.
+
+5. Go through steps 1-4 again, but this time using the version of Tails being tested.
+   Use the same computer and the same USB stick.
+
+6. Compare the boot times you measured at steps 4 and 5.
+   Expected result: the new Tails should not be significantly slower to start
+   than the old one.
+
+BIOS boot
+---------
+
+On a computer configured to prefer legacy BIOS boot:
+
+1. Freshly install the version of Tails being tested to a USB stick.
+
+2. Boot this USB stick on bare-metal a first time to trigger re-partitioning.
+
+   - You should see the "SYSLINUX" title in the bootloader, as opposed to GRUB.
+
+   - Wait until you see the Welcome Screen.
+
+3. Shutdown Tails
+
+4. Boot this USB stick a second time.
+
+5. You should see the Welcome Screen appear.
+
 Automated test suite
 ====================
 
@@ -105,17 +167,6 @@ See:
  - [[automated test suite documentation|test/automated_tests]]
  - [[test/setup]]
  - [[test/usage]]
-
-GitLab CI
-=========
-
-Verify that the latest [[!tails_gitlab desc="pipeline" tails/tails/-/pipelines]]
-for the branch this release is built from succeeded.
-
-Else, if it failed:
-
-1. report failures to the QA pad
-2. optionally: triage the failure (otherwise the RM will do that)
 
 Image description file
 ======================
@@ -296,53 +347,3 @@ USB drive.
 
    * the Unsafe Browser starts
 
-Real (non-VM) hardware
-======================
-
-UEFI boot
----------
-
-Note that for emergency releases, we do not always optimize the ordering
-of files in the SquashFS, which might make them boot somewhat slower.
-
-On a 64-bit computer that has Secure Boot enabled and that is configured to
-prefer UEFI:
-
-1. Freshly install the previous Tails version to a USB stick.
-
-2. Boot this USB stick on bare-metal a first time to trigger re-partitioning.
-
-   - You should see the "GNU GRUB" title, as opposed to a syslinux menu.
-
-   - Wait until you see the Welcome Screen.
-
-3. Shutdown Tails
-
-4. Boot this USB stick a second time, add the `login` option to GRUB, and measure the boot time (from the
-   GRUB menu until the GNOME desktop is ready). Take note of the boot time you measured.
-
-5. Go through steps 1-4 again, but this time using the version of Tails being tested.
-   Use the same computer and the same USB stick.
-
-6. Compare the boot times you measured at steps 4 and 5.
-   Expected result: the new Tails should not be significantly slower to start
-   than the old one.
-
-BIOS boot
----------
-
-On a computer configured to prefer legacy BIOS boot:
-
-1. Freshly install the version of Tails being tested to a USB stick.
-
-2. Boot this USB stick on bare-metal a first time to trigger re-partitioning.
-
-   - You should see the "SYSLINUX" title in the bootloader, as opposed to GRUB.
-
-   - Wait until you see the Welcome Screen.
-
-3. Shutdown Tails
-
-4. Boot this USB stick a second time.
-
-5. You should see the Welcome Screen appear.
