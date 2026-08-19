@@ -23,13 +23,6 @@ tails (7.11) unstable; urgency=medium
     Commits:
       - Enable the flatpak-dsa-20260812 APT overlay
 
-  * Stop peeking at the onion-grater socket: this can result in DoS (tails/tails-
-    private!9)
-
-    Commits:
-      - Stop peeking at the socket: this can result in DoS
-      - ruff format
-
   * CI: ignore irrelevant (to us) firmware updates (tails/tails!3181)
 
     Closes issues:
@@ -135,6 +128,13 @@ tails (7.10.1) unstable; urgency=medium
   * Upgrade Linux to 6.12.100-1 (DSA 6405-1)
 
   * Upgrade expat to 2.8.2-1~deb13u1 (DSA 6404-1)
+
+  * Stop peeking at the onion-grater socket: this can result in DoS (tails/tails-
+    private!9)
+
+    Commits:
+      - Stop peeking at the socket: this can result in DoS
+      - ruff format
 
   * check-po-msgfmt: ignore files in .git/ and tmp/ (tails/tails!3144)
 
