@@ -308,7 +308,7 @@ of files in the SquashFS, which might make them boot somewhat slower.
 On a 64-bit computer that has Secure Boot enabled and that is configured to
 prefer UEFI:
 
-1. Freshly install the version of Tails being tested to a USB stick.
+1. Freshly install the previous Tails version to a USB stick.
 
 2. Boot this USB stick on bare-metal a first time to trigger re-partitioning.
 
@@ -321,7 +321,7 @@ prefer UEFI:
 4. Boot this USB stick a second time, add the `login` option to GRUB, and measure the boot time (from the
    GRUB menu until the GNOME desktop is ready). Take note of the boot time you measured.
 
-5. Go through steps 1-4 again, but this time using the previous Tails version.
+5. Go through steps 1-4 again, but this time using the version of Tails being tested.
    Use the same computer and the same USB stick.
 
 6. Compare the boot times you measured at steps 4 and 5.
