@@ -7,9 +7,9 @@
                 {
                     "target-files": [
                         {
-                            "sha256": "b0a5f45e79221abe2c34f6e03f0cbf6b15af5e1df7c2e60cbf5c9af7586beb6f",
+                            "sha256": "e5e3ca98c9bb7ea3533c009702b116acf79be11a09cc82d308071f944b57473b",
                             "size": 1872756736,
-                            "url": "https://download.tails.net/tails/stable/tails-amd64-7.10.1/tails-amd64-7.10.1.img"
+                            "url": "https://download.tails.net/tails/stable/tails-amd64-7.11/tails-amd64-7.11.img"
                         }
                     ],
                     "type": "img"
@@ -17,15 +17,15 @@
                 {
                     "target-files": [
                         {
-                            "sha256": "0a6bc953f870bab062d738c2a29ec8c9c0143e3b211c2d182afcf9b288053c71",
-                            "size": 1862719488,
-                            "url": "https://download.tails.net/tails/stable/tails-amd64-7.10.1/tails-amd64-7.10.1.iso"
+                            "sha256": "d4bee978cef07fd4b9a82b625b3e3bdafc441d909f794534605d0b0b7ea33f4a",
+                            "size": 1862961152,
+                            "url": "https://download.tails.net/tails/stable/tails-amd64-7.11/tails-amd64-7.11.iso"
                         }
                     ],
                     "type": "iso"
                 }
             ],
-            "version": "7.10.1"
+            "version": "7.11"
         }
     ],
     "product-name": "Tails"
