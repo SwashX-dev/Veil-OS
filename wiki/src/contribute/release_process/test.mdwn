@@ -2,10 +2,6 @@
 
 [[!toc levels=1]]
 
-<div class="caution">
-Read this document from the branch used to prepare the release.
-</div>
-
 Changes
 =======
 
