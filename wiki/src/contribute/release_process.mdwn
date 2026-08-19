@@ -525,39 +525,16 @@ Commit the changes (if any):
 Merge APT overlays
 ==================
 
-## If you are preparing a final release
+Only follow this section if you are preparing a final release:
 
-If we're about to prepare the images for a final (non-RC) release, then
-follow these instructions:
+    [ "${DIST:?}" = stable ]
 
-### If you are preparing a major final release
+Merge each APT overlay suite listed in the release branch's
+`config/APT_overlays.d/` into its custom APT suite (in some cases this
+has already been done and the following does nothing):
 
-Check that you are indeed preparing a major release:
-
-    [ "${DIST:?}" = stable ] && [ "${MAJOR_RELEASE:?}" -eq 1 ]
-
-Merge each APT overlay suite listed in the `testing` branch's
-`config/APT_overlays.d/` into the `testing` custom APT suite:
-
-        ./bin/merge-APT-overlays testing
-
-### If you are preparing a bugfix release
-
-Check that you are indeed preparing a bugfix release:
-
-    [ "${DIST:?}" = stable ] && [ "${MAJOR_RELEASE:?}" -eq 0 ]
-
-<div class="note">
-For bugfix releases, we do not put any RC out, so freeze time
-is the same as preparing the actual release. Hence, the following
-steps have already been done above, and this section is a noop in the
-general case.
-</div>
-
-Merge each APT overlay suite listed in the `stable` branch's
-`config/APT_overlays.d/` into the `stable` custom APT suite:
-
-        ./bin/merge-APT-overlays stable
+    git checkout "${RELEASE_BRANCH:?}" && \
+    ./bin/merge-APT-overlays "${RELEASE_BRANCH:?}"
 
 Update other base branches
 ==========================
