@@ -626,6 +626,7 @@ To do so, on each of these 2 pages:
 
   - [[!tails_gitlab tails/tails/-/work_items?state=closed desc="issues"]]
   - [[!tails_gitlab tails/tails/-/merge_requests?state=merged desc="merge requests"]]
+  - [[!tails_gitlab tails/tails-private/-/merge_requests?state=merged desc="merge requests"]]
 
 Do this:
 
