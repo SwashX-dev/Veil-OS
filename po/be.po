@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-06-01 12:01+0000\n"
-"Last-Translator: CarManBelarus <car_man@tut.by>\n"
+"PO-Revision-Date: 2026-08-14 11:37+0000\n"
+"Last-Translator: emma peel <emma.peel@riseup.net>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "be/>\n"
 "Language: be\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1195,7 +1195,7 @@ msgstr "Не ўдалося прачытаць выняты MBR з %(path)s"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1309
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1310
-#, python-format
+#, fuzzy, python-format
 msgid "Resetting Master Boot Record of %s"
 msgstr "Скід галоўнага загрузнага запісу (MBR) на %s"
 
@@ -3903,6 +3903,7 @@ msgstr ""
 "па ўсім свеце."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1544
+#, fuzzy
 msgid "<b>Connect to Tor _automatically</b>"
 msgstr "<b>_Аўтаматычна падключацца да Tor</b>"
 

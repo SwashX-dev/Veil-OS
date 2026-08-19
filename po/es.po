@@ -33,7 +33,7 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-07-09 13:01+0000\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Libre <6n0n1m0s@proton.me>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/tor/tails-gui/es/"
 ">\n"
@@ -43,7 +43,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n != 0 && n % 1000000 == "
 "0) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1885,8 +1885,9 @@ msgstr ""
 "deshabilitadas."
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:28
+#, fuzzy
 msgid "Secure Boot Update Needed"
-msgstr ""
+msgstr "Necesario Secure Boot Update"
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:30
 msgid ""
@@ -3620,6 +3621,7 @@ msgid "What were you trying to achieve?"
 msgstr "¿Qué estás tratando de lograr?"
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:340
+#, fuzzy
 msgid ""
 "<b>What happened instead?</b>\n"
 "Describe the error with as many details as possible."
@@ -3628,6 +3630,7 @@ msgstr ""
 "Describe el error con el mayor número de detalles posible."
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:385
+#, fuzzy
 msgid ""
 "<b>What did you do that triggered this error?</b>\n"
 "Describe the exact steps that caused the error, so we can try to make it "
@@ -3985,6 +3988,7 @@ msgstr ""
 "red local."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1734
+#, fuzzy
 msgid "<b>_Hide to my local network that I'm connecting to Tor</b>"
 msgstr "<b>_Ocultar a mi red local que estoy conectando a Tor </b>"
 

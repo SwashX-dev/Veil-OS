@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -eu -o pipefail
+
+# Get LIVE_USERNAME
+. /etc/live/config.d/username.conf
+
+# The live user must be able to write to this directory (see
+# /usr/local/lib/tails-persist-gnome-software-dconf-state).
+/bin/mkdir -p /live/persistence/TailsData_unlocked/flatpak/gnome-software
+/bin/chown "${LIVE_USERNAME}:${LIVE_USERNAME}" /live/persistence/TailsData_unlocked/flatpak/gnome-software
+
+# The above ownership/permissions are useless unless we can traverse
+# through the parent directory.
+/bin/setfacl --modify "user:${LIVE_USERNAME}:x" /live/persistence/TailsData_unlocked/flatpak

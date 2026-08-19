@@ -1,1 +1,1 @@
-2eb4ab431f4921ca63b123b6f9f445a073fbf7b65f188f45a577d576eb2be2cf  tor-browser-linux-x86_64-15.0.19.tar.xz
+d4302633d6059d2dad94e2c883b31141dc7b3daa2bfa5aabb0fd29dda18d22e9  tor-browser-linux-x86_64-15.0.20.tar.xz

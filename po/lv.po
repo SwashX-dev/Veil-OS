@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-07-15 18:01+0000\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Hosted Weblate user 152808 "
 "<anonymous0474@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Latvian <https://hosted.weblate.org/projects/tor/tails-gui/lv/"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -124,7 +124,7 @@ msgstr "Noņemt {packages} no papildu programmatūras saraksta?"
 #. Translators: Don't translate {packages}, it's a placeholder
 #. and will be replaced.
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:195
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid "This will stop installing {packages} automatically."
 msgstr "Tas beigs automātiski instalēt {packages}."
 
@@ -1134,7 +1134,7 @@ msgstr "Neidzevās nolasīt no %(path)s izgūto MBR"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1309
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1310
-#, python-format
+#, fuzzy, python-format
 msgid "Resetting Master Boot Record of %s"
 msgstr "Atiestata %s pamatsāknēšanas ierakstu jeb MBR"
 
@@ -3663,6 +3663,7 @@ msgid ""
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1544
+#, fuzzy
 msgid "<b>Connect to Tor _automatically</b>"
 msgstr "<b>_Automātiski pieslēgties Tor</b>"
 

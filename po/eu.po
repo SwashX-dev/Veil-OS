@@ -11,13 +11,14 @@
 # Osoitz <oelkoro@gmail.com>, 2019
 # Radiation Gamma, 2019
 # emma peel <emma.peel@riseup.net>, 2026.
+# BereneFoundation <Berenefoundation@proton.me>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-08-07 16:51+0000\n"
+"Last-Translator: BereneFoundation <Berenefoundation@proton.me>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/tor/tails-gui/eu/"
 ">\n"
 "Language: eu\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -64,7 +65,7 @@ msgstr "Sarhitza"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
-msgstr ""
+msgstr "Pasahitz kudeatzailea"
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:57
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:95
@@ -237,6 +238,10 @@ msgid ""
 "Every bit helps in our fight against surveillance and censorship!\n"
 "\n"
 msgstr ""
+"Tails donazioak behar ditu guztioi doaki interneten babesteko.\n"
+"\n"
+"Gutxi ere gure zaintze eta zentsuraren aurkako borrokan lagunduko du!\n"
+"\n"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:72
 msgid ""
@@ -245,6 +250,10 @@ msgid ""
 "Help us keep your bitcoins safe!\n"
 "\n"
 msgstr ""
+"Tails zure diru zorroa babesten du.\n"
+"\n"
+"Lagundu iezaguzu zure bitcoins-ak seguru mantentzen!\n"
+"\n"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:140
 msgid "Donate Now"
@@ -447,6 +456,7 @@ msgid ""
 "You are currently running the latest version. There is no upgrade "
 "available.\n"
 msgstr ""
+"Azken bertsioa exekutatzen ari zara. Ez dago eguneraketarik eskuragarri.\n"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:414
 #, fuzzy
@@ -499,7 +509,7 @@ msgstr ""
 "Hau ez litzateke gertatu behar. Mesedez, eman ezazu akats honen berri."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:504
-#, perl-brace-format
+#, fuzzy, perl-brace-format
 msgid ""
 "<b>You should upgrade to {name} {version}.</b>\n"
 "\n"
@@ -714,7 +724,7 @@ msgstr "Errore bat gertatu da bertsio berria instalatzean"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr ""
+msgstr "GNOME Softwarea"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
@@ -810,10 +820,15 @@ msgid ""
 "Someone who finds your Tails USB stick can see your language and keyboard "
 "layout."
 msgstr ""
+"Zure hizkuntza eta teklatuaren distribuzioa enkriptatu gabe gordeko da zure "
+"Tails USB stick-ean eta automatikoki aplikatua izango da etorkizunean.\n"
+"\n"
+"Zure Tails USB stick-a aurkitzen duena zure hizkuntza eta tecklatuaren "
+"distribuzioa ikusi ahalko du."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:200
 msgid "Save Unencrypted"
-msgstr ""
+msgstr "Gorde enkriptatu gabe"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:288
 msgid ""
@@ -1186,16 +1201,16 @@ msgstr "%(device)s FAT32 bezala formateatzen"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1290
 #, python-format
 msgid "Reading extracted MBR from %s"
-msgstr ""
+msgstr "Ateratako MBR irakurtzen ari da %s-tik"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1295
 #, python-format
 msgid "Could not read the extracted MBR from %(path)s"
-msgstr ""
+msgstr "Ezin da izan da irakurri %(path)s-etik ateratako MBR-a"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1309
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1310
-#, python-format
+#, fuzzy, python-format
 msgid "Resetting Master Boot Record of %s"
 msgstr "%s ren abio-erregistro nagusia (MBR) berrezartzen"
 
@@ -1236,7 +1251,7 @@ msgstr "Instalazioa burutu da! (%s)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:239
 msgid "Tails installation failed!"
-msgstr ""
+msgstr "Tails-en instalazioa huts egin du!"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:341
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:1
@@ -1247,12 +1262,12 @@ msgstr "Tails instalatzailea"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:393
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:164
 msgid "Clone the current Tails"
-msgstr ""
+msgstr "Tails hau klonatu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:401
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:200
 msgid "Use a downloaded Tails ISO image"
-msgstr ""
+msgstr "Deskargatutako Tails ISO image bat erabili"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:453
 msgid "Upgrade"
@@ -1260,7 +1275,7 @@ msgstr "Eguneratu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:454
 msgid "Manual Upgrade Instructions"
-msgstr ""
+msgstr "Eskuzko eguneratzeko instrukzioak"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:465
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:730
@@ -1281,7 +1296,7 @@ msgstr "Instalazio Argibideak"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:482
 #, python-format
 msgid "%(size)s %(vendor)s %(model)s device (%(device)s)"
-msgstr ""
+msgstr "%(size)s %(vendor)s %(model)s gailu (%(device)s)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:495
 msgid "No ISO image selected"
@@ -1289,13 +1304,15 @@ msgstr "Ez da ISO irudirik aukeratu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:495
 msgid "Please select a Tails ISO image."
-msgstr ""
+msgstr "Mesedez, Tails ISO image bat aukeratu."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:546
 msgid ""
 "Clone the current Persistent Storage\n"
 "Impossible to clone the Persistent Storage because it is locked."
 msgstr ""
+"Oraingo Euskarri Iraunkorra klonatu.\n"
+"Ezin izan da Euskarri Iraunkorra klonatu, blokeatua baitago."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:550
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:180
@@ -1308,6 +1325,8 @@ msgid ""
 "Clone the current Persistent Storage\n"
 "You can only choose to reinstall when cloning the Persistent Storage."
 msgstr ""
+"Oraingo Euskarri Iraunkorra klonatu.\n"
+"Bakarrik berrinstalatu dezakezu Euskarri Iraunkorra klonatzen ari bazara."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:591
 #, python-format
@@ -1320,7 +1339,7 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:600
 #, python-format
 msgid "The device \"%(pretty_name)s\" is read-only."
-msgstr ""
+msgstr "\"%(pretty_name)s\" gailua bakarrik irakurketa onartzen du."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:608
 #, python-format
@@ -1348,7 +1367,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:660
 msgid "An error happened while installing Tails"
-msgstr ""
+msgstr "Errorre bat egon da Tails instalatzen ari zela"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:717
 msgid "Installation complete!"
@@ -1369,7 +1388,7 @@ msgstr "Zure datu iraunkorrak ezabatuko dira."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:788
 msgid "Delete Persistent Storage and Reinstall"
-msgstr ""
+msgstr "Euskarri Iraunkorra ezabatu eta berrinstalatu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:790
 msgid ""
@@ -1377,10 +1396,13 @@ msgid ""
 "\n"
 "All data on this USB stick will be lost."
 msgstr ""
+"\n"
+"\n"
+"Datu guztiak USB stick honetan ezabatuak izango dira."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:791
 msgid "Delete All Data and Install"
-msgstr ""
+msgstr "Datu guztiak ezabatu eta instalatu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:792
 #, python-format
@@ -1389,7 +1411,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:797
 msgid "Confirm the target USB stick"
-msgstr ""
+msgstr "Konfirmatu USB stick-a ondo aukeratu duzula"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:827
 msgid "Unable to mount device"
@@ -1418,7 +1440,7 @@ msgstr "%(filename)s hautatua"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:37
 msgid "Unable to find Tails on ISO"
-msgstr ""
+msgstr "Ezin izan da Tails aurkitu ISO fitxategian"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:44
 #, python-format
@@ -1436,12 +1458,12 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:70
 #, python-format
 msgid "\"%s\" does not exist"
-msgstr ""
+msgstr "\"%s\" ez da aurkitu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:72
 #, python-format
 msgid "\"%s\" is not a directory"
-msgstr ""
+msgstr "\"%s\" ez da direktorio bat"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:84
 #, python-format
@@ -1457,7 +1479,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/utils.py:144
 msgid "Could not open device for writing."
-msgstr ""
+msgstr "Ezin izan da gailua ezagutu."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:19
 #, fuzzy, sh-format
@@ -1485,7 +1507,7 @@ msgstr "Berrizendatu"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:27
 msgid "Keep current name"
-msgstr ""
+msgstr "Oraingo izena mantendu"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:29
 msgid "Rename Password Database?"
@@ -1493,19 +1515,19 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/local/bin/replace-su-with-sudo:19
 msgid "su is disabled. Please use sudo instead."
-msgstr ""
+msgstr "su desaktibatuta dago. Mesedez, sudo erabili."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:3
 msgid "Error Reading Data from Tails USB Stick"
-msgstr ""
+msgstr "Arazo bat egon da zure Tails USB stick-a irakurtzean"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:4
 msgid "The hardware of your USB stick is probably failing."
-msgstr ""
+msgstr "Zure USB stick-aren hardwarea seguruenik arazoak izan ari ditu."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:5
 msgid "We recommend that you reinstall Tails on a different USB stick."
-msgstr ""
+msgstr "Gomendatzen dizugu Tails beste USB stick batean berrinstalatzea."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:7
 msgid ""
@@ -1527,7 +1549,7 @@ msgstr "Ikasi gehiago"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:18
 msgid "Partitioning Error"
-msgstr ""
+msgstr "Partizioekin arazoa egon da"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:19
 msgid "Errors were detected in the partitioning of your Tails USB stick."
@@ -1608,7 +1630,7 @@ msgstr ""
 #: config/chroot_local-includes/usr/local/bin/tails-about:64
 #, python-format
 msgid "Built from %s"
-msgstr ""
+msgstr "%s-tik eraikita"
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:114
 #, python-brace-format

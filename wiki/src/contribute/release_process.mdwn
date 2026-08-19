@@ -268,6 +268,11 @@ found in the Debian [security tracker][web]'s [Git repository][git]. Looking at 
 commits in [the Git history][DSA needed history] can reveal DSAs that
 just have been assigned but that haven't been published yet.
 
+Also look at the Git history of the relevant branch of the `Vcs-Git` for
+`src:linux`. Recent commits usually indicate an upcoming Linux DSA. For Trixie,
+this is:
+https://salsa.debian.org/kernel-team/linux/-/commits/debian/6.12/trixie-security
+
 [web]: https://security-tracker.debian.org/tracker/
 [git]: https://salsa.debian.org/security-tracker-team/security-tracker
 [DSA needed]: https://salsa.debian.org/security-tracker-team/security-tracker/blob/master/data/dsa-needed.txt
@@ -621,6 +626,7 @@ To do so, on each of these 2 pages:
 
   - [[!tails_gitlab tails/tails/-/work_items?state=closed desc="issues"]]
   - [[!tails_gitlab tails/tails/-/merge_requests?state=merged desc="merge requests"]]
+  - [[!tails_gitlab tails/tails-private/-/merge_requests?state=merged desc="merge requests"]]
 
 Do this:
 
@@ -1232,46 +1238,44 @@ Verify there's enough free disk space in `$IUKS_DIR`:
 To build the IUKS, run this command:
 
     (
+    set -eu
+    set -o pipefail
     WORK_DIR=$(mktemp -d /tmp/tmp.iuks.XXXXXXX)
     IUK_CREATION_LOG=$(mktemp --tmpdir=/var/tmp wrap_tails_create_iuks.XXXXXXXX.log)
-    (
-       set -eu
-       set -o pipefail
-       PUPPET_TAILS_REMOTE="${PUPPET_TAILS_REMOTE:-git@gitlab.torproject.org:tpo/tpa/puppet-control.git}"
-       cd "${WORK_DIR:?}"
-       git clone "$PUPPET_TAILS_REMOTE"
-       TMPFILES_CONF=/etc/tmpfiles.d/tails-create-iuks.conf
-       OUR_TMPDIR=/var/tmp/tails-create-iuks
-       echo "D ${OUR_TMPDIR} 0755 root root -" | sudo tee "$TMPFILES_CONF"
-       sudo systemd-tmpfiles --remove --create "$TMPFILES_CONF"
-       N_IUKS="$(echo ${IUK_SOURCE_VERSIONS:?} | wc -w)"
-       MIN_DISK_SPACE=$((N_IUKS * 3000))
-       FREE_DISK_SPACE=$(/bin/df --block-size=M --output=avail "${OUR_TMPDIR:?}" \
-          | tail -n1 | sed --regexp-extended 's,M$,,')
-       if [ "$FREE_DISK_SPACE" -lt "$MIN_DISK_SPACE" ]; then
-          echo "ERROR! Not enough free space in ${OUR_TMPDIR:?} (${MIN_DISK_SPACE}M needed)"
-          exit 2
-       fi
-       JOBS=$(guess_concurrency --require-mem 3G)
-       time                                                                   \
-       sudo                                                                   \
-       nice                                                                   \
-       ./puppet-control/site/profile/files/tails/jenkins/slaves/isobuilders/wrap_tails_create_iuks.py \
-           --tails-git-remote "file://${RELEASE_CHECKOUT:?}/.git"             \
-           --tails-git-commit "${TAG:?}"                                      \
-           --source-date-epoch "${SOURCE_DATE_EPOCH:?}"                       \
-           --local-isos-dir "${ISOS:?}"                                       \
-           --local-isos-dir "${ISOS_GIT:?}"                                       \
-           --tmp-dir "${TMPDIR:-${OUR_TMPDIR}}"                                        \
-           --output-dir "${IUKS_DIR:?}"                                       \
-           --source-versions "${IUK_SOURCE_VERSIONS:?}"                       \
-           --new-version "${VERSION:?}"                                       \
-           --verbose                                                          \
-           --jobs "${JOBS:?}"                                                 \
-           2>&1 | tee "$IUK_CREATION_LOG"
-    ) && \
-    cd "${IUKS_DIR:?}" && \
-    sha256sum Tails_amd64_*_to_${VERSION:?}.iuk > "${IUKS_HASHES:?}" && \
+    PUPPET_TAILS_REMOTE="${PUPPET_TAILS_REMOTE:-git@gitlab.torproject.org:tpo/tpa/puppet-control.git}"
+    cd "${WORK_DIR:?}"
+    git clone "$PUPPET_TAILS_REMOTE"
+    TMPFILES_CONF=/etc/tmpfiles.d/tails-create-iuks.conf
+    OUR_TMPDIR=/var/tmp/tails-create-iuks
+    echo "D ${OUR_TMPDIR} 0755 root root -" | sudo tee "$TMPFILES_CONF"
+    sudo systemd-tmpfiles --remove --create "$TMPFILES_CONF"
+    N_IUKS="$(echo ${IUK_SOURCE_VERSIONS:?} | wc -w)"
+    MIN_DISK_SPACE=$((N_IUKS * 3000))
+    FREE_DISK_SPACE=$(/bin/df --block-size=M --output=avail "${OUR_TMPDIR:?}" \
+       | tail -n1 | sed --regexp-extended 's,M$,,')
+    if [ "$FREE_DISK_SPACE" -lt "$MIN_DISK_SPACE" ]; then
+       echo "ERROR! Not enough free space in ${OUR_TMPDIR:?} (${MIN_DISK_SPACE}M needed)"
+       exit 2
+    fi
+    JOBS=$("${RELEASE_CHECKOUT:?}"/bin/iuks-build-concurrency --require-mem 3G)
+    time                                                                   \
+    sudo                                                                   \
+    nice                                                                   \
+    ./puppet-control/site/profile/files/tails/jenkins/slaves/isobuilders/wrap_tails_create_iuks.py \
+        --tails-git-remote "file://${RELEASE_CHECKOUT:?}/.git"             \
+        --tails-git-commit "${TAG:?}"                                      \
+        --source-date-epoch "${SOURCE_DATE_EPOCH:?}"                       \
+        --local-isos-dir "${ISOS:?}"                                       \
+        --local-isos-dir "${ISOS_GIT:?}"                                       \
+        --tmp-dir "${TMPDIR:-${OUR_TMPDIR}}"                                        \
+        --output-dir "${IUKS_DIR:?}"                                       \
+        --source-versions "${IUK_SOURCE_VERSIONS:?}"                       \
+        --new-version "${VERSION:?}"                                       \
+        --verbose                                                          \
+        --jobs "${JOBS:?}"                                                 \
+        2>&1 | tee "$IUK_CREATION_LOG"
+    cd "${IUKS_DIR:?}"
+    sha256sum Tails_amd64_*_to_${VERSION:?}.iuk > "${IUKS_HASHES:?}"
     sudo rm -rf "${WORK_DIR:?}"
     )
 

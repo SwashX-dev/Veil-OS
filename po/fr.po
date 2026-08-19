@@ -50,13 +50,14 @@
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # Ætheri0us <aetheri0us@users.noreply.hosted.weblate.org>, 2026.
 # niiitnek <bouisquentin@gmail.com>, 2026.
+# OrthoScrapper <orthoscrapper.fantasize442@passinbox.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-07-28 15:01+0000\n"
-"Last-Translator: niiitnek <bouisquentin@gmail.com>\n"
+"PO-Revision-Date: 2026-08-09 19:52+0000\n"
+"Last-Translator: OrthoScrapper <orthoscrapper.fantasize442@passinbox.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/tor/tails-gui/fr/"
 ">\n"
 "Language: fr\n"
@@ -65,7 +66,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
 "1000000 == 0 ? 1 : 2;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -775,8 +776,10 @@ msgid "GNOME Software"
 msgstr "Logiciel GNOME"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
+#, fuzzy
 msgid "GNOME Software can only start once Tor has bootstrapped."
 msgstr ""
+"GNOME Software ne peut démarrer qu'une fois que Tor a terminé son amorçage."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -1922,8 +1925,9 @@ msgstr ""
 "sont donc désactivées."
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:28
+#, fuzzy
 msgid "Secure Boot Update Needed"
-msgstr ""
+msgstr "Mise à jour du Démarrage Sécurisé requise"
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:30
 msgid ""
@@ -2065,9 +2069,8 @@ msgid "Synchronizing the system's clock…"
 msgstr "Synchronisation de l’horloge système…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:726
-#, fuzzy
 msgid "Asking for a Tor bridge based on your region…"
-msgstr "_Demandez un pont Tor par courriel"
+msgstr "Demander un pont Tor selon votre région…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:774
 msgid "Connecting to Tor without bridges…"
@@ -2079,9 +2082,8 @@ msgid "Connecting to Tor with default bridges…"
 msgstr "Connexion à Tor avec les ponts par défaut…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:789
-#, fuzzy
 msgid "Connecting to Tor with a bridge based on your region…"
-msgstr "Connexion à Tor avec les ponts par défaut…"
+msgstr "Se connecter à Tor avec un pont selon votre région…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:796
 msgid "Connecting to Tor with a custom bridge…"
@@ -3431,12 +3433,11 @@ msgstr "Activation de logiciels supplémentaires"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
 msgid "Flatpak"
-msgstr ""
+msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "Activer le client SSH"
+msgstr "Activer Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
@@ -3850,29 +3851,24 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:856
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:930
-#, fuzzy
 msgid "Try configuring another bridge."
-msgstr "Configurer un pont Tor"
+msgstr "Essayez de configurer un autre pont."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:884
-#, fuzzy
 msgid "Error connecting to Tor with default bridges"
-msgstr "Connexion à Tor avec les ponts par défaut…"
+msgstr "Erreur de connexion à Tor avec les ponts par défaut"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:900
-#, fuzzy
 msgid "Your network is blocking access to Tor and the default bridges."
-msgstr "Ce réseau local bloque l'accès à Tor."
+msgstr "Votre réseau bloque l'accès à Tor et aux ponts par défaut."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:916
-#, fuzzy
 msgid "Bridge: <b>default bridges</b>"
-msgstr "Utiliser un pont par _défaut"
+msgstr "Pont : <b>ponts par défaut</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:958
-#, fuzzy
 msgid "Error connecting to Tor with bridges"
-msgstr "Connexion à Tor sans ponts…"
+msgstr "Erreur lors de la connexion à Tor avec des ponts"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:974
 msgid "None of the bridges recommended for this region worked."
@@ -3883,9 +3879,8 @@ msgid "Try another region or getting a bridge by mail."
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1018
-#, fuzzy
 msgid "Error asking for a bridge"
-msgstr "Erreur de vérification de la présence de mises à jour"
+msgstr "Erreur lors de la demande d'un pont"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1034
 msgid "Tails failed to ask for a bridge based on your region."
@@ -3950,9 +3945,8 @@ msgid "Configure a Local _Proxy"
 msgstr "Configurer un _mandataire local"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1374
-#, fuzzy
 msgid "• Tor bridge"
-msgstr "• Pont Tor par courriel"
+msgstr "• Pont Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1394
 msgid ""
