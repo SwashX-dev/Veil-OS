@@ -25,7 +25,7 @@ Both a bugfix release and a major release are called "final". A release candidat
 Sections that only apply to some of those types of release, we'll have it written clearly in the title.
 
 If you want to know whether the release you are doing is a major or not, you need to check
-our [[release calendar|contribute/calendar]], and use these criteria:
+our [release calendar](https://tails.net/contribute/calendar/), and use these criteria:
 
  - if nothing is specified about being a major, then it's most probably a bugfix release
 
@@ -105,9 +105,9 @@ To release Tails you'll need some packages installed:
   Go packages, such as [[!debpts podman]], you should be able to install
   them from a more recent Debian release with APT pinning.
 
-* `perl5lib` [[dependencies|contribute/release_process/perl5lib#build-deps]]
+* `perl5lib` [dependencies](https://tails.net/contribute/release_process/perl5lib/#build-deps)
 
-* `iuk` [[dependencies|contribute/release_process/tails-iuk#build-deps]]
+* `iuk` [dependencies](https://tails.net/contribute/release_process/tails-iuk/#build-deps)
 
 * `squashfs-tools-ng` and `libsquashfs1` from Trixie
 
@@ -121,7 +121,7 @@ To release Tails you'll need some packages installed:
    - Different versions emit different sets of message flags, some of which
      are not supported by _i18nspector_ yet.
 
-* packages to [[build a local version of the website|contribute/build/website/]]
+* packages to [build a local version of the website](https://tails.net/contribute/build/website/)
 
 Configuration files
 -------------------
@@ -228,10 +228,10 @@ Pre-freeze
 Check the Release Manager role
 ------------------------------
 
-Make sure all the shift preparation steps, in the
-[[contribute/working_together/roles/release_manager]] role documentation, have
-been done. Fill the gaps if needed, otherwise the release process will be
-blocked later.
+Make sure all the shift preparation steps, in the [Release
+Manager](https://tails.net/contribute/working_together/roles/release_manager/)
+role documentation, have been done. Fill the gaps if needed, otherwise
+the release process will be blocked later.
 
 <a id="dsa-check"></a>
 
@@ -326,8 +326,9 @@ and check that the jobs for the release branch have good enough results:
 
 ### GitLab CI
 
-Verify that the latest [[!tails_gitlab desc="pipeline" tails/tails/-/pipelines]]
-for the branch this release will be built from succeeded.
+Verify that the latest
+[pipeline](https://gitlab.tails.boum.org/tails/tails/-/pipelines) for
+the branch this release will be built from succeeded.
 
 Freeze
 ======
@@ -398,7 +399,7 @@ Follow this part ONLY if you are preparing a bugfix release.
 
 ## In any case
 
-Look at [[!tails_gitlab tails/tails-private]]:
+Look at [tails/tails-private](https://gitlab.tails.boum.org/tails/tails-private):
 
     git fetch tails-private && \
     git log origin/"${RELEASE_BRANCH:?}"..tails-private/"${RELEASE_BRANCH:?}"
@@ -631,9 +632,9 @@ for example when triaging bug reports).
 
 To do so, on each of these 2 pages:
 
-  - [[!tails_gitlab tails/tails/-/work_items?state=closed desc="issues"]]
-  - [[!tails_gitlab tails/tails/-/merge_requests?state=merged desc="merge requests"]]
-  - [[!tails_gitlab tails/tails-private/-/merge_requests?state=merged desc="merge requests"]]
+  - [issues](https://gitlab.tails.boum.org/tails/tails/-/work_items?state=closed)
+  - [merge requests](https://gitlab.tails.boum.org/tails/tails/-/merge_requests?state=merged)
+  - [merge requests](https://gitlab.tails.boum.org/tails/tails-private/-/merge_requests?state=merged)
 
 Do this:
 
@@ -700,7 +701,8 @@ version's `.packages` file and the one from the to-be-released images:
 
    - If you are preparing an emergency release: package updates that are part of
      the reason for doing this emergency release.
-   - new upstream releases of applications mentioned in [[doc/about/features]]
+   - new upstream releases of applications mentioned in [Features and
+     included software](https://tails.net/doc/about/features/)
      - You can ignore new Debian releases for such packages, but you should not
        ignore minor releases or patch releases.
    - new upstream releases of other important components such as the
@@ -2091,10 +2093,12 @@ Skip this part if preparing a release candidate:
             --token "$(bin/gitlab-api-token TailsRM)"
     )
 
-3. Finally, submit a MR against [[!tails_gitlab tails/gitlab-config]] to
-   close the just-released [[!tails_gitlab groups/tails/-/milestones
-   desc="milestone"]]. See this as an example:
-   [[!tails_gitlab tails/gitlab-config/-/merge_requests/18/diffs desc="tails/gitlab-config!18"]]
+3. Finally, submit a MR against
+   [tails/gitlab-config](https://gitlab.tails.boum.org/tails/gitlab-config)
+   to close the just-released
+   [milestone](https://gitlab.tails.boum.org/groups/tails/-/milestones). See
+   this as an example:
+   [tails/gitlab-config!18](https://gitlab.tails.boum.org/tails/gitlab-config/-/merge_requests/18/diffs)
    
    A cheap way to do this, could be to use [Gitlab web interface to create the
 MR](https://gitlab.tails.boum.org/tails/gitlab-config/-/edit/master/main.yml)
@@ -2121,7 +2125,7 @@ Wait for the website update
 
 Wait for the release to be fully published, that is for the website to have been
 fully refreshed. To do so, first wait for the
-[[!tails_gitlab tails/tails/-/pipelines/?ref=master desc="GitLab CI pipeline"]]
+[GitLab CI pipeline](https://gitlab.tails.boum.org/tails/tails/-/pipelines/?ref=master)
 triggered by the automatic merge of `$WEBSITE_RELEASE_BRANCH` to build and deploy the website. And then:
 
 ### If you are publishing a final release
@@ -2349,8 +2353,9 @@ Check that you are indeed preparing a final release:
          git show devel:config/chroot_apt/preferences \
             | grep -E '^Explanation: freeze exception'
 
-   Then checkout the `devel` branch, and there
-   [[thaw the packages that were granted freeze exceptions|APT_repository/time-based_snapshots#freeze-exceptions-post-release]].
+   Then checkout the `devel` branch, and there [thaw the packages that
+   were granted freeze
+   exceptions](https://tails.net/contribute/APT_repository/time-based_snapshots/#freeze-exceptions-post-release).
 
 1. Verify that the snapshots used for this release are OK,
    e.g. they use the correct snapshots, and they were bumped
@@ -2430,9 +2435,10 @@ Check that you are indeed preparing a final release:
    *Disclosure agreement* in the description. Those are the ones in scope for
    this task and that should be disclosed eventually.
 
-   For these issues, follow the guidance from our [[security issue response
-   policy|contribute/security_policy]]. Unless specified otherwise there, we
-   follow [Tor's
+   For these issues, follow the guidance from our [security issue
+   response
+   policy](https://tails.net/contribute/security_policy/). Unless
+   specified otherwise there, we follow [Tor's
    policy](https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/SecurityPolicy#how-will-the-developers-handle-security-issues)
    for this, which as of 2026-05-27 was:
 
@@ -2461,7 +2467,7 @@ Check that you are indeed preparing a RC:
            | grep -E '^Explanation: freeze exception'
 
    Then checkout the `devel` branch, and there
-   [[thaw|APT_repository/time-based_snapshots#freeze-exceptions-post-release]]
+   [thaw](https://tails.net/contribute/APT_repository/time-based_snapshots/#freeze-exceptions-post-release)
    all packages (if any) that were granted freeze exceptions.
 
 1. On the devel branch,
