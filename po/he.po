@@ -22,8 +22,8 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-05-02 20:09+0000\n"
-"Last-Translator: zeev shilor <zshilor@pm.me>\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/tor/tails-gui/he/"
 ">\n"
 "Language: he\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -223,6 +223,7 @@ msgstr "התוכנה הבאה מותקנת באופן אוטומטי מהאחס�
 
 #: config/chroot_local-includes/usr/share/tails/additional-software/configuration-window.ui:135
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:205
+#, fuzzy
 msgid ""
 "To add more, install some software using <a "
 "href=\"synaptic.desktop\">Synaptic Package Manager</a> or <a "
@@ -1607,6 +1608,7 @@ msgid "Stop installing {package} automatically"
 msgstr "הפסק להתקין את {package} באופן אוטומטי"
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:215
+#, fuzzy
 msgid ""
 "To do so, install some software using <a href=\"synaptic.desktop\">Synaptic "
 "Package Manager</a> or <a href=\"org.gnome.Terminal.desktop\">APT on the "
@@ -1617,6 +1619,7 @@ msgstr ""
 "הפקודה</a>."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:227
+#, fuzzy
 msgid ""
 "To do so, unlock your Persistent Storage when starting Tails and install "
 "some software using <a href=\"synaptic.desktop\">Synaptic Package Manager</"

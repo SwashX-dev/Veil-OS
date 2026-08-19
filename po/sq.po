@@ -9,13 +9,14 @@
 # Vili S, 2019
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # emma peel <emma.peel@riseup.net>, 2026.
+# Sergio Granadoz <granadozsergio42@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-06-24 10:01+0000\n"
-"Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
+"PO-Revision-Date: 2026-08-14 15:51+0000\n"
+"Last-Translator: emma peel <emma.peel@riseup.net>\n"
 "Language-Team: Albanian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "sq/>\n"
 "Language: sq\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1476,7 +1477,7 @@ msgid "Could not open device for writing."
 msgstr "S’u hap dot pajisje për shkrim."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:19
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
 "You have a <i>KeePassXC</i> or <i>Secrets</i> database in your "
 "<i>Persistent</i> folder:\n"
@@ -3441,6 +3442,7 @@ msgid "_Create Persistent Storage"
 msgstr "_Krijo Depozitë të Qëndrueshme"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:56
+#, fuzzy
 msgid ""
 "Everything you do disappears automatically when you shut down Tails.\n"
 "\n"
@@ -3650,9 +3652,8 @@ msgid "TrueCrypt/VeraCrypt container"
 msgstr "Përmbajtës TrueCrypt/VeraCrypt"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:82
-#, fuzzy
 msgid "Configure a Tor bridge"
-msgstr "Formësoni një _urë Tor"
+msgstr "Formësoni një urë Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
 msgid ""
@@ -3694,9 +3695,8 @@ msgid "Ask for a bridge based on your _region"
 msgstr "Kërkoni një urë Tor bazuar në _rajonin tuaj"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
-#, fuzzy
 msgid "_Ask for a bridge by email"
-msgstr "_Kërkoni një urë Tor përmes email-i"
+msgstr "_Kërkoni një urë përmes email-i"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
 msgid ""
@@ -3867,9 +3867,8 @@ msgstr ""
 "rrjete publike, ose nën disa kontrolle prindërore."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1410
-#, fuzzy
 msgid "Configure a Tor _Bridge"
-msgstr "Formësoni një Urë Tor"
+msgstr "Formësoni një _urë Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1449
 msgid ""

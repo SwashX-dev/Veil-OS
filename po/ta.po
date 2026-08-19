@@ -7,13 +7,13 @@
 # Morpheus Aurelius, 2022
 # Khaleel Jageer <jskcse4@gmail.com>, 2014
 # தமிழ்நேரம் <anishprabu.t@gmail.com>, 2025.
-# emma peel <emma.peel@riseup.net>, 2025.
+# emma peel <emma.peel@riseup.net>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/tor/tails-gui/ta/"
 ">\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -90,6 +90,7 @@ msgid "The configuration of your additional software failed."
 msgstr "உங்கள் கூடுதல் மென்பொருளின் உள்ளமைவு தோல்வியடைந்தது."
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:99
+#, fuzzy
 msgid ""
 "To install it automatically when starting Tails, you can create a Persistent "
 "Storage and activate the <b>Additional Software</b> feature."
@@ -153,6 +154,7 @@ msgid "{beginning} and {last}"
 msgstr "{beginning} மற்றும் {last}"
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:220
+#, fuzzy
 msgid ", "
 msgstr "அருவடிக்கு "
 
@@ -213,6 +215,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/share/tails/additional-software/configuration-window.ui:135
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:205
+#, fuzzy
 msgid ""
 "To add more, install some software using <a "
 "href=\"synaptic.desktop\">Synaptic Package Manager</a> or <a "
@@ -227,6 +230,7 @@ msgid "_Create persistent storage"
 msgstr "_ஒரேநிலை சேமிப்பகத்தை உருவாக்கு"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:62
+#, fuzzy
 msgid ""
 "Tails needs donations to keep everybody free and safe online.\n"
 "\n"
@@ -352,7 +356,7 @@ msgstr[1] "{count} கள்"
 #. Translators: don't translate {time}, {downloaded}, {size}
 #. and {speed}, they are placeholders and will be replaced.
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/DownloadProgress.pm:139
-#, perl-brace-format
+#, fuzzy, perl-brace-format
 msgid "#{time} left — {downloaded} of {size} ({speed}/sec)\n"
 msgstr ""
 "#{time} மீதம் - {downloaded} இதில் {size} ({speed}/நொடி) பதிவிறக்கம் "
@@ -360,16 +364,19 @@ msgstr ""
 
 #. Translators: KB is the short form for kilobyte
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Role/FormatByte.pm:32
+#, fuzzy
 msgid "KB"
 msgstr "கே.பி."
 
 #. Translators: MB is the short form for megabyte
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Role/FormatByte.pm:34
+#, fuzzy
 msgid "MB"
 msgstr "எம்பி"
 
 #. Translators: GB is the short form for gigabyte
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Role/FormatByte.pm:36
+#, fuzzy
 msgid "GB"
 msgstr "சிபி"
 
@@ -397,6 +404,7 @@ msgid "Error while checking for upgrades"
 msgstr "மேம்படுத்தல் சோதனையில் பிழை"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:344
+#, fuzzy
 msgid ""
 "<b>Could not determine whether an upgrade is available from our website.</"
 "b>\n"
@@ -443,6 +451,7 @@ msgid "The system is up-to-date"
 msgstr "கணினி புதுப்பித்த நிலையில் உள்ளது"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:411
+#, fuzzy
 msgid ""
 "You are currently running the latest version. There is no upgrade "
 "available.\n"
@@ -450,6 +459,7 @@ msgstr ""
 "நீங்கள் தற்போது அண்மைக் கால பதிப்பை இயக்குகிறீர்கள். மேம்படுத்தல் எதுவும் கிடைக்கவில்லை.\n"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:414
+#, fuzzy
 msgid "Tails is up to date"
 msgstr "வால்கள் புதுப்பித்த நிலையில் உள்ளன"
 
@@ -476,6 +486,7 @@ msgstr ""
 "தேவைப்படுகிறது, ஆனால் {free_memory} மட்டுமே கிடைக்கிறது."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:473
+#, fuzzy
 msgid ""
 "An error occurred while detecting available upgrades.\n"
 "This should not happen. Please report a bug."
@@ -497,7 +508,7 @@ msgstr ""
 " இது நடக்கக்கூடாது. ஒரு பிழையைப் புகாரளிக்கவும்."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:504
-#, perl-brace-format
+#, fuzzy, perl-brace-format
 msgid ""
 "<b>You should upgrade to {name} {version}.</b>\n"
 "\n"
@@ -622,6 +633,7 @@ msgid "Apply upgrade"
 msgstr "மேம்படுத்தலைப் பயன்படுத்துங்கள்"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:768
+#, fuzzy
 msgid ""
 "<b>Your Tails device was successfully upgraded.</b>\n"
 "\n"
@@ -678,6 +690,7 @@ msgid "Upgrading the system"
 msgstr "கணினியை மேம்படுத்துதல்"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:820
+#, fuzzy
 msgid ""
 "<b>Your Tails device is being upgraded...</b>\n"
 "\n"
@@ -1522,14 +1535,17 @@ msgid "Learn More"
 msgstr "மேலும் அறிய"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:18
+#, fuzzy
 msgid "Partitioning Error"
 msgstr "பகிர்வு பிழை"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:19
+#, fuzzy
 msgid "Errors were detected in the partitioning of your Tails USB stick."
 msgstr "உங்கள் வால்கள் யூ.எச்.பி ச்டிக்கின் பகிர்வில் பிழைகள் கண்டறியப்பட்டன."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:26
+#, fuzzy
 msgid ""
 "We recommend that you create a backup of your Tails using <i>Tails Cloner</"
 "i> to migrate to a new USB stick."
@@ -1538,14 +1554,17 @@ msgstr ""
 "வால்களின் காப்புப்பிரதியை உருவாக்க பரிந்துரைக்கிறோம்."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:33
+#, fuzzy
 msgid "Open Tails Cloner"
 msgstr "திறந்த வால்கள் குளோனர்"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:42
+#, fuzzy
 msgid "Creation of Persistent Storage has been disabled."
 msgstr "தொடர்ச்சியான சேமிப்பகத்தை உருவாக்குவது முடக்கப்பட்டுள்ளது."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:44
+#, fuzzy
 msgid ""
 "We recommend that you reinstall Tails from scratch. If the error persists, "
 "reinstall on a new USB stick."
@@ -1594,6 +1613,7 @@ msgid "About Tails"
 msgstr "வால்கள் பற்றி"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:34
+#, fuzzy
 msgid "Check for Upgrades"
 msgstr "மேம்படுத்தல்களை சரிபார்க்கவும்"
 
@@ -1632,6 +1652,7 @@ msgid "Stop installing {package} automatically"
 msgstr "{package} தானாக நிறுவுவதை நிறுத்துங்கள்"
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:215
+#, fuzzy
 msgid ""
 "To do so, install some software using <a href=\"synaptic.desktop\">Synaptic "
 "Package Manager</a> or <a href=\"org.gnome.Terminal.desktop\">APT on the "
@@ -1642,6 +1663,7 @@ msgstr ""
 "இல் சில மென்பொருளை நிறுவவும்."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:227
+#, fuzzy
 msgid ""
 "To do so, unlock your Persistent Storage when starting Tails and install "
 "some software using <a href=\"synaptic.desktop\">Synaptic Package Manager</"
@@ -1652,6 +1674,7 @@ msgstr ""
 "\"org.gnome.terminal.desktop\"> apt on கட்டளை வரி </a>."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:240
+#, fuzzy
 msgid ""
 "To do so, create a Persistent Storage and install some software using <a "
 "href=\"synaptic.desktop\">Synaptic Package Manager</a> or <a "
@@ -1833,7 +1856,7 @@ msgid ""
 msgstr ""
 
 #: config/chroot_local-includes/usr/local/bin/tails-upgrade-frontend-wrapper:37
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid ""
 "<b>Not enough memory available to check for upgrades.</b>\n"
 "\n"
@@ -1883,6 +1906,7 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/config.py:9
 #: config/chroot_local-includes/usr/local/bin/tca:11
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:1
+#, fuzzy
 msgid "Tor Connection"
 msgstr "TOR இணைப்பு"
 
@@ -1905,6 +1929,7 @@ msgid "_Use a bridge that you already know"
 msgstr "You நீங்கள் ஏற்கனவே அறிந்த ஒரு பாலத்தைப் பயன்படுத்தவும்"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:411
+#, fuzzy
 msgid ""
 "To save your bridge, <a href=\"doc/persistent_storage\">unlock your "
 "Persistent Storage</a>."
@@ -1913,6 +1938,7 @@ msgstr ""
 "சேமிப்பிடத்தைத் திறக்கவும் </a>."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:418
+#, fuzzy
 msgid ""
 "To save your bridge, <a href=\"doc/persistent_storage\">create a Persistent "
 "Storage</a> on your Tails USB stick."
@@ -1926,6 +1952,7 @@ msgid "Invalid: {exception}"
 msgstr "தவறானது: {exception}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:450
+#, fuzzy
 msgid ""
 "You need to configure a WebTunnel or an obfs4 bridge to hide that you are "
 "using Tor"
@@ -1962,11 +1989,13 @@ msgid "Asking for a Tor bridge based on your region…"
 msgstr "_ மின்னஞ்சல் மூலம் ஒரு டோர் பாலத்திற்கு கேளுங்கள்"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:774
+#, fuzzy
 msgid "Connecting to Tor without bridges…"
 msgstr "பாலங்கள் இல்லாமல் TOR உடன் இணைக்கிறது…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:781
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:813
+#, fuzzy
 msgid "Connecting to Tor with default bridges…"
 msgstr "இயல்புநிலை பாலங்களுடன் TOR உடன் இணைகிறது…"
 
@@ -1976,15 +2005,18 @@ msgid "Connecting to Tor with a bridge based on your region…"
 msgstr "இயல்புநிலை பாலங்களுடன் TOR உடன் இணைகிறது…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:796
+#, fuzzy
 msgid "Connecting to Tor with a custom bridge…"
 msgstr "தனிப்பயன் பாலத்துடன் TOR உடன் இணைகிறது…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:914
+#, fuzzy
 msgid "Connected to Tor successfully with bridges"
 msgstr "பாலங்களுடன் வெற்றிகரமாக TOR உடன் இணைக்கப்பட்டுள்ளது"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:916
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2340
+#, fuzzy
 msgid "Connected to Tor successfully"
 msgstr "TOR உடன் வெற்றிகரமாக இணைக்கப்பட்டுள்ளது"
 
@@ -2024,6 +2056,7 @@ msgid "Are you sure you want to lose progress?"
 msgstr "முன்னேற்றத்தை இழக்க விரும்புகிறீர்களா?"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1412
+#, fuzzy
 msgid ""
 "Tails will continue connecting to Tor after you close the Tor Connection "
 "assistant.\n"
@@ -2057,6 +2090,7 @@ msgid "Start Tor Browser Offline"
 msgstr "டோர் உலாவி ஆஃப்லைனில் தொடங்கவும்"
 
 #: config/chroot_local-includes/usr/local/lib/launch-tor-browser:41
+#, fuzzy
 msgid "Open Tor Connection"
 msgstr "திறந்த TOR இணைப்பு"
 
@@ -2065,6 +2099,7 @@ msgid "Tor Status"
 msgstr "Tor நிலைமை"
 
 #: config/chroot_local-includes/usr/share/gnome-shell/extensions/torstatus@tails.boum.org/extension.js:47
+#, fuzzy
 msgid "Open Tor Connection Assistant"
 msgstr "திறந்த டோர் இணைப்பு உதவியாளர்"
 
@@ -2074,7 +2109,7 @@ msgid "View Tor Circuits"
 msgstr "டோர் சுற்றுகள் காண்க"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps/device.py:353
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid ""
 "Only {available_memory} KiB of memory is available, need at least "
 "{required_memory} KiB.\n"
@@ -2303,6 +2338,7 @@ msgid "You can send an error report to help solve the issue."
 msgstr "சிக்கலைத் தீர்க்க உதவும் பிழை அறிக்கையை நீங்கள் அனுப்பலாம்."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/error_dialog.py:61
+#, fuzzy
 msgid "_Send Error Report"
 msgstr "_SEND பிழை அறிக்கை"
 
@@ -2564,7 +2600,7 @@ msgid "Failed to add container"
 msgstr "கொள்கலன் சேர்க்கத் தவறிவிட்டது"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/unlock_veracrypt_volumes/volume_manager.py:185
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "Could not add file container %s: Timeout while waiting for loop setup.\n"
 "Please try using the <i>Disks</i> application instead."
@@ -2699,6 +2735,7 @@ msgid "Unable to create or to send the mail."
 msgstr "மின்னஞ்சல் உருவாக்க அல்லது அனுப்ப முடியவில்லை."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/whisperBack/gui.py:231
+#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -2714,6 +2751,7 @@ msgid "Your message has been sent."
 msgstr "உங்கள் தகவல் அனுப்பப்பட்டது."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/whisperBack/gui.py:250
+#, fuzzy
 msgid "An error occurred during encryption."
 msgstr "குறியாக்கத்தின் போது பிழை ஏற்பட்டது."
 
@@ -2736,6 +2774,7 @@ msgid "Invalid contact OpenPGP public key block"
 msgstr "செல்லா தொடர்பு OpenPGP ஆணை பொது சாவி தொகுதி"
 
 #: config/chroot_local-includes/usr/local/bin/tca:12
+#, fuzzy
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -2811,6 +2850,7 @@ msgid "install;clone;upgrade;manual"
 msgstr "நிறுவ, நகலி, வால்களை மேம்படுத்தவும்"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2
+#, fuzzy
 msgid "Connect Tails to the Tor network"
 msgstr "TOR நெட்வொர்க்குடன் வால்களை இணைக்கவும்"
 
@@ -3050,10 +3090,12 @@ msgid "Impossible to unlock the Persistent Storage."
 msgstr "தொடர்ச்சியான சேமிப்பகத்தைத் திறக்க இயலாது."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:605
+#, fuzzy
 msgid "Partitioning Errors"
 msgstr "பகிர்வு பிழைகள்"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:641
+#, fuzzy
 msgid ""
 "Errors were detected in the partitioning of your Tails USB stick.\n"
 "\n"
@@ -3065,6 +3107,7 @@ msgstr ""
 "நிறுவவும்."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:673
+#, fuzzy
 msgid "_Additional Settings"
 msgstr "_ADDISIAL அமைப்புகள்"
 
@@ -3339,6 +3382,7 @@ msgstr ""
 "persistence.conf ஐ மாற்றவும்."
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:856
+#, fuzzy
 msgid ""
 "<a href=\"doc/persistent_storage\">Learn more about the Persistent Storage.</"
 "a>"
@@ -3347,6 +3391,7 @@ msgstr ""
 "அறிக. </a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/locked_view.ui.in:53
+#, fuzzy
 msgid ""
 "<b>Your Persistent Storage is locked.</b>\n"
 "\n"
@@ -3404,6 +3449,7 @@ msgid "_Create Persistent Storage"
 msgstr "_ தொடர்ச்சியான சேமிப்பிடத்தை உருவாக்கவும்"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:56
+#, fuzzy
 msgid ""
 "Everything you do disappears automatically when you shut down Tails.\n"
 "\n"
@@ -3432,6 +3478,7 @@ msgstr ""
 "அறிக. </a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:93
+#, fuzzy
 msgid ""
 "Sorry, it is impossible to create a Persistent Storage on this device.\n"
 "\n"
@@ -3466,6 +3513,7 @@ msgid "File Containers"
 msgstr "கோப்பு கொள்கலன்கள்"
 
 #: ../config/chroot_local-includes/usr/share/tails/unlock-veracrypt-volumes/main.ui.in:80
+#, fuzzy
 msgid "_Add"
 msgstr "_ADD"
 
@@ -3486,6 +3534,7 @@ msgstr ""
 "அங்கீகரிக்கப்படவில்லை."
 
 #: ../config/chroot_local-includes/usr/share/tails/unlock-veracrypt-volumes/volume.ui.in:29
+#, fuzzy
 msgid "_Open"
 msgstr "_OPEN"
 
@@ -3527,6 +3576,7 @@ msgstr ""
 "ID, உங்கள் சாவிக்கான இணைப்பு, அல்லது அந்த சாவியை ஒரு பொது சாவி தொகுதியாக சேர்க்கவும்:"
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:226
+#, fuzzy
 msgid "WhisperBack"
 msgstr "விச்பர்பேக்"
 
@@ -3539,6 +3589,7 @@ msgid "What were you trying to achieve?"
 msgstr "நீங்கள் எதை அடைய முயற்சிக்கிறீர்கள்?"
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:340
+#, fuzzy
 msgid ""
 "<b>What happened instead?</b>\n"
 "Describe the error with as many details as possible."
@@ -3547,6 +3598,7 @@ msgstr ""
 " முடிந்தவரை பல விவரங்களுடன் பிழையை விவரிக்கவும்."
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:385
+#, fuzzy
 msgid ""
 "<b>What did you do that triggered this error?</b>\n"
 "Describe the exact steps that caused the error, so we can try to make it "
@@ -3563,6 +3615,7 @@ msgid "Error reporting guidelines"
 msgstr "பிழை அறிக்கையிடல் வழிகாட்டுதல்கள்"
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:445
+#, fuzzy
 msgid ""
 "<b>Email address</b>\n"
 "So we can answer you or ask for more details."
@@ -3604,6 +3657,7 @@ msgid "Debugging Information"
 msgstr "பிழைத்திருத்த செய்தி"
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:730
+#, fuzzy
 msgid "_Send"
 msgstr "_SEND"
 
@@ -3617,6 +3671,7 @@ msgid "Configure a Tor bridge"
 msgstr "ஒரு டோர் _ பிரிட்சை உள்ளமைக்கவும்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
+#, fuzzy
 msgid ""
 "Bridges are secret Tor relays. Use a bridge as your first Tor relay if "
 "accessing Tor is blocked from where you are.\n"
@@ -3638,10 +3693,12 @@ msgid "Use a _default bridge"
 msgstr "_ டெஃபால்ட் பாலத்தைப் பயன்படுத்தவும்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:184
+#, fuzzy
 msgid "obfs4 (recommended)"
 msgstr "OBFS4 (பரிந்துரைக்கப்படுகிறது)"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:185
+#, fuzzy
 msgid "WebTunnel"
 msgstr "வலை சுரங்கப்பாதை"
 
@@ -3661,6 +3718,7 @@ msgid "_Ask for a bridge by email"
 msgstr "_ மின்னஞ்சல் மூலம் ஒரு டோர் பாலத்திற்கு கேளுங்கள்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
+#, fuzzy
 msgid ""
 "Send an empty email to <tt>bridges@torproject.org</tt> from a Gmail or "
 "Riseup email address with your phone and scan the QR code that is attached "
@@ -3685,6 +3743,7 @@ msgid "Bridge"
 msgstr "பாலம்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:473
+#, fuzzy
 msgid "obfs4 or webtunnel…"
 msgstr "OBFS4 அல்லது WebTunnel…"
 
@@ -3705,10 +3764,12 @@ msgid "_Connect to Tor"
 msgstr "TOR உடன் இணைக்கவும்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:763
+#, fuzzy
 msgid "Error connecting to Tor"
 msgstr "TOR உடன் இணைப்பதில் பிழை"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:783
+#, fuzzy
 msgid "This local network seems to be blocking access to Tor."
 msgstr "இந்த உள்ளக பிணையம் TOR க்கான அணுகலைத் தடுப்பதாகத் தெரிகிறது."
 
@@ -3782,6 +3843,7 @@ msgid "• Wrong clock"
 msgstr "• தவறான கடிகாரம்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1162
+#, fuzzy
 msgid "Your clock and time zone need to be correct to connect to Tor."
 msgstr "TOR உடன் இணைக்க உங்கள் கடிகாரம் மற்றும் நேர மண்டலம் சரியாக இருக்க வேண்டும்."
 
@@ -3828,6 +3890,7 @@ msgid "• Tor bridge"
 msgstr "• மின்னஞ்சல் மூலம் டோர் பிரிட்ச்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1394
+#, fuzzy
 msgid ""
 "Tor bridges are secret Tor relays. Use a bridge as your first Tor relay if "
 "connections to Tor are blocked, for example in some countries, by some "
@@ -3870,6 +3933,7 @@ msgstr ""
 "சேவையகங்கள்."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1544
+#, fuzzy
 msgid "<b>Connect to Tor _automatically</b>"
 msgstr "<b> TOR _AUTOTOCALLY </b> உடன் இணைக்கவும்"
 
@@ -3898,6 +3962,7 @@ msgid "Configure a Tor _bridge"
 msgstr "ஒரு டோர் _ பிரிட்சை உள்ளமைக்கவும்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1692
+#, fuzzy
 msgid ""
 "Tor bridges are secret Tor relays. Use a bridge as your first Tor relay if "
 "connections to Tor are blocked, for example in some countries, by some "
@@ -3916,10 +3981,12 @@ msgstr ""
 "பாலம் தேவையா என்பதை வால்கள் தன்னியக்கமாக்கும்."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1734
+#, fuzzy
 msgid "<b>_Hide to my local network that I'm connecting to Tor</b>"
 msgstr "<b> _ எனது உள்ளக நெட்வொர்க்கிற்கு நான் டோர் </b> உடன் இணைக்கிறேன்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1784
+#, fuzzy
 msgid ""
 "You might need to go unnoticed if using Tor could look suspicious to someone "
 "who monitors your Internet connection."
@@ -3928,6 +3995,7 @@ msgstr ""
 "இருந்தால் நீங்கள் கவனிக்கப்படாமல் போக வேண்டும்."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1802
+#, fuzzy
 msgid ""
 "Tails will only connect to Tor after you configured a Tor bridge. Bridges "
 "are secret Tor relays that hide that you are connecting to Tor.\n"
@@ -3959,10 +4027,12 @@ msgstr ""
 "பற்றி மேலும் அறிக </a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1937
+#, fuzzy
 msgid "No Wi-Fi hardware detected"
 msgstr "வைஃபை வன்பொருள் எதுவும் கண்டறியப்படவில்லை"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1955
+#, fuzzy
 msgid ""
 "Tails couldn't find any Wi-Fi interface on your computer. If your computer "
 "has a Wi-Fi interface, it might not work on Tails.\n"
@@ -3989,6 +4059,7 @@ msgstr ""
 "                "
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1979
+#, fuzzy
 msgid ""
 "\n"
 "<a href=\"doc/anonymous_internet/no-wifi\">\n"
@@ -4016,6 +4087,7 @@ msgstr ""
 "முதலில் வைஃபை, கம்பி அல்லது மொபைல் நெட்வொர்க்குடன் இணைக்க வேண்டும்."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2038
+#, fuzzy
 msgid "Open Wi-Fi Settings"
 msgstr "வைஃபை அமைப்புகளைத் திறக்கவும்"
 
@@ -4028,18 +4100,22 @@ msgid "You have access to the Internet"
 msgstr "உங்களுக்கு இணைய அணுகல் உள்ளது"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2161
+#, fuzzy
 msgid "Testing access to Tor…"
 msgstr "TOR க்கான அணுகலை சோதனை…"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2204
+#, fuzzy
 msgid "You can connect to Tor"
 msgstr "நீங்கள் TOR உடன் இணைக்கலாம்"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2234
+#, fuzzy
 msgid "Failed to connect to Tor without bridges."
 msgstr "பாலங்கள் இல்லாமல் TOR உடன் இணைக்கத் தவறிவிட்டது."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2250
+#, fuzzy
 msgid "This local network is blocking access to Tor."
 msgstr "இந்த உள்ளக பிணையம் TOR க்கான அணுகலைத் தடுக்கிறது."
 
@@ -4064,14 +4140,17 @@ msgid "No proxy"
 msgstr "பதிலாள் இல்லை"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2490
+#, fuzzy
 msgid "SOCKS 4"
 msgstr "சாக்ச் 4"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2491
+#, fuzzy
 msgid "SOCKS 5"
 msgstr "சாக்ச் 5"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2492
+#, fuzzy
 msgid "HTTP / HTTPS"
 msgstr "Http / https"
 

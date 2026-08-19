@@ -42,8 +42,8 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-04-25 20:09+0000\n"
-"Last-Translator: emma peel <emma.peel@riseup.net>\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/tor/"
 "tails-gui/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -52,7 +52,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
 "1000000 == 0 ? 1 : 2;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -3483,6 +3483,7 @@ msgid "_Create Persistent Storage"
 msgstr "_Crie um Armazenamento Persistente"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:56
+#, fuzzy
 msgid ""
 "Everything you do disappears automatically when you shut down Tails.\n"
 "\n"
@@ -3698,6 +3699,7 @@ msgid "Configure a Tor bridge"
 msgstr "Configure uma _ponte Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
+#, fuzzy
 msgid ""
 "Bridges are secret Tor relays. Use a bridge as your first Tor relay if "
 "accessing Tor is blocked from where you are.\n"
@@ -4057,6 +4059,7 @@ msgid ""
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1979
+#, fuzzy
 msgid ""
 "\n"
 "<a href=\"doc/anonymous_internet/no-wifi\">\n"

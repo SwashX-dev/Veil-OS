@@ -38,13 +38,14 @@
 # fadoua <bouaouda.fadoua@gmail.com>, 2025.
 # emma peel <emma.peel@riseup.net>, 2026.
 # The Wizard <adhamsaid800@gmail.com>, 2026.
+# Weblate <noreply-mt-weblate@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-05-05 13:11+0000\n"
-"Last-Translator: The Wizard <adhamsaid800@gmail.com>\n"
+"PO-Revision-Date: 2026-08-16 20:51+0000\n"
+"Last-Translator: jonnysemon <jonnysemon@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/tor/tails-gui/ar/"
 ">\n"
 "Language: ar\n"
@@ -53,7 +54,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -745,11 +746,12 @@ msgstr "حدث خطأ اثناء تثبيت التحديث"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr ""
+msgstr "برمجية جنوم"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
 msgstr ""
+"لا يمكن تشغيل «GNOME Software» إلا بعد اكتمال عملية التمهيد الأولي لـ Tor."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -1678,6 +1680,7 @@ msgstr ""
 "او <a href=\"org.gnome.Terminal.desktop\">APT على سطر الأوامر</a>."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:240
+#, fuzzy
 msgid ""
 "To do so, create a Persistent Storage and install some software using <a "
 "href=\"synaptic.desktop\">Synaptic Package Manager</a> or <a "
@@ -1933,6 +1936,7 @@ msgstr ""
 "الخاص بك</a>."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:418
+#, fuzzy
 msgid ""
 "To save your bridge, <a href=\"doc/persistent_storage\">create a Persistent "
 "Storage</a> on your Tails USB stick."
@@ -1998,6 +2002,7 @@ msgid "Connecting to Tor with a custom bridge…"
 msgstr "الاتصال بـ Tor بجسر مخصص…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:914
+#, fuzzy
 msgid "Connected to Tor successfully with bridges"
 msgstr "متصل بـتور بنجاح مع الجسور"
 
@@ -2576,7 +2581,7 @@ msgid "Failed to add container"
 msgstr "فشل إضافة مستوعب"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/unlock_veracrypt_volumes/volume_manager.py:185
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "Could not add file container %s: Timeout while waiting for loop setup.\n"
 "Please try using the <i>Disks</i> application instead."
@@ -2740,6 +2745,7 @@ msgid "Invalid contact OpenPGP public key block"
 msgstr "مفتاح الـOpenPGP العام غير صحيح"
 
 #: config/chroot_local-includes/usr/local/bin/tca:12
+#, fuzzy
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -3135,6 +3141,7 @@ msgid "Send Error Report"
 msgstr "إرسال تقرير عن الخطأ"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:63
+#, fuzzy
 msgid ""
 "Your Persistent Storage is unlocked.\n"
 "\n"
@@ -3294,12 +3301,11 @@ msgstr "تنشيط البرمجيات الإضافية"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
 msgid "Flatpak"
-msgstr ""
+msgstr "فلاتباك"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "تنشيط عميل SSH"
+msgstr "فعِّل Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
@@ -3326,6 +3332,7 @@ msgstr ""
 "TailsData_unlocked/persistence.conf."
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:856
+#, fuzzy
 msgid ""
 "<a href=\"doc/persistent_storage\">Learn more about the Persistent Storage.</"
 "a>"
@@ -3333,6 +3340,7 @@ msgstr ""
 "<a href=\"doc/persistent_storage\"> تعرف على المزيد حول التخزين الدائم.</a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/locked_view.ui.in:53
+#, fuzzy
 msgid ""
 "<b>Your Persistent Storage is locked.</b>\n"
 "\n"
@@ -3388,6 +3396,7 @@ msgid "_Create Persistent Storage"
 msgstr "ان_شاء تخزين دائم"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:56
+#, fuzzy
 msgid ""
 "Everything you do disappears automatically when you shut down Tails.\n"
 "\n"
@@ -3415,6 +3424,7 @@ msgstr ""
 "<a href=\"doc/persistent_storage\"> تعرّف على المزيد حول التخزين الدائم. </a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:93
+#, fuzzy
 msgid ""
 "Sorry, it is impossible to create a Persistent Storage on this device.\n"
 "\n"
@@ -3838,6 +3848,7 @@ msgstr ""
 "مُرحلات تور هي خوادم تديرها منظمات ومتطوعون مختلفون حول العالم."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1544
+#, fuzzy
 msgid "<b>Connect to Tor _automatically</b>"
 msgstr "<b>ا_تصال بـتور تلقائيًا</b>"
 
@@ -3850,6 +3861,7 @@ msgstr ""
 "العديد من الأشخاص في بلدك يستخدمون Tor للتحايل على الرقابة."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1612
+#, fuzzy
 msgid ""
 "Tails will try different ways of connecting to Tor until it succeeds.\n"
 "\n"
@@ -3883,6 +3895,7 @@ msgstr ""
 "Tails تلقائيًا ما إذا كنت بحاجة إلى جسر للاتصال بـ Tor من شبكتك المحلية."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1734
+#, fuzzy
 msgid "<b>_Hide to my local network that I'm connecting to Tor</b>"
 msgstr "<b>أخ_ف إنني متصل بتور من شبكتي المحلية</b>"
 
@@ -3895,6 +3908,7 @@ msgstr ""
 "بالإنترنت."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1802
+#, fuzzy
 msgid ""
 "Tails will only connect to Tor after you configured a Tor bridge. Bridges "
 "are secret Tor relays that hide that you are connecting to Tor.\n"

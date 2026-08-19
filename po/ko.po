@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/tor/tails-gui/ko/"
 ">\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -225,6 +225,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/share/tails/additional-software/configuration-window.ui:135
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:205
+#, fuzzy
 msgid ""
 "To add more, install some software using <a "
 "href=\"synaptic.desktop\">Synaptic Package Manager</a> or <a "
@@ -499,7 +500,7 @@ msgstr ""
 "예상치 못한 오류가 발생했습니다. 버그를 신고해 주세요."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:504
-#, perl-brace-format
+#, fuzzy, perl-brace-format
 msgid ""
 "<b>You should upgrade to {name} {version}.</b>\n"
 "\n"
@@ -537,7 +538,7 @@ msgid "Upgrade later"
 msgstr "나중에 업그레이드"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:527
-#, perl-brace-format
+#, fuzzy, perl-brace-format
 msgid ""
 "<b>You should do a manual upgrade to the latest version of {name}.</b>\n"
 "\n"
@@ -1517,6 +1518,7 @@ msgid "Errors were detected in the partitioning of your Tails USB stick."
 msgstr "Tails USB 스틱의 파티션을 나누는 동안 오류가 감지되었습니다."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:26
+#, fuzzy
 msgid ""
 "We recommend that you create a backup of your Tails using <i>Tails Cloner</"
 "i> to migrate to a new USB stick."
@@ -1619,6 +1621,7 @@ msgid "Stop installing {package} automatically"
 msgstr "{package} 자동 설치 중지"
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:215
+#, fuzzy
 msgid ""
 "To do so, install some software using <a href=\"synaptic.desktop\">Synaptic "
 "Package Manager</a> or <a href=\"org.gnome.Terminal.desktop\">APT on the "
@@ -1629,6 +1632,7 @@ msgstr ""
 "를 설치해보세요."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:227
+#, fuzzy
 msgid ""
 "To do so, unlock your Persistent Storage when starting Tails and install "
 "some software using <a href=\"synaptic.desktop\">Synaptic Package Manager</"
@@ -1640,6 +1644,7 @@ msgstr ""
 "를 설치해보세요."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:240
+#, fuzzy
 msgid ""
 "To do so, create a Persistent Storage and install some software using <a "
 "href=\"synaptic.desktop\">Synaptic Package Manager</a> or <a "
@@ -3571,6 +3576,7 @@ msgid "Configure a Tor bridge"
 msgstr "_Tor 브리지 설정하기"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
+#, fuzzy
 msgid ""
 "Bridges are secret Tor relays. Use a bridge as your first Tor relay if "
 "accessing Tor is blocked from where you are.\n"
@@ -3615,6 +3621,7 @@ msgid "_Ask for a bridge by email"
 msgstr "_이메일로 Tor 브리지 받기"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
+#, fuzzy
 msgid ""
 "Send an empty email to <tt>bridges@torproject.org</tt> from a Gmail or "
 "Riseup email address with your phone and scan the QR code that is attached "
@@ -3814,6 +3821,7 @@ msgstr ""
 "Tor 중계기는 전 세계의 다양한 조직 및 자원봉사자들이 운영하는 서버입니다."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1544
+#, fuzzy
 msgid "<b>Connect to Tor _automatically</b>"
 msgstr "<b>_자동으로 Tor에 연결하기</b>"
 

@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/tor/tails-gui/fi/"
 ">\n"
@@ -37,7 +37,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1552,6 +1552,7 @@ msgid "Errors were detected in the partitioning of your Tails USB stick."
 msgstr ""
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:26
+#, fuzzy
 msgid ""
 "We recommend that you create a backup of your Tails using <i>Tails Cloner</"
 "i> to migrate to a new USB stick."
@@ -3141,6 +3142,7 @@ msgid "Send Error Report"
 msgstr "Lähetä virheilmoitus"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:63
+#, fuzzy
 msgid ""
 "Your Persistent Storage is unlocked.\n"
 "\n"
@@ -3336,6 +3338,7 @@ msgstr ""
 "live/persistence/TailsData_unlocked/persistence.conf."
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:856
+#, fuzzy
 msgid ""
 "<a href=\"doc/persistent_storage\">Learn more about the Persistent Storage.</"
 "a>"
@@ -3401,6 +3404,7 @@ msgid "_Create Persistent Storage"
 msgstr "_Luo pysyvä tallennustila"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:56
+#, fuzzy
 msgid ""
 "Everything you do disappears automatically when you shut down Tails.\n"
 "\n"
@@ -3865,6 +3869,7 @@ msgid "<b>Connect to Tor _automatically</b>"
 msgstr "<b>Muodosta Tor-yhteys _automaattisesti</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1594
+#, fuzzy
 msgid ""
 "We recommend connecting to Tor automatically if you are on a public Wi-Fi "
 "network or if many people in your country use Tor to circumvent censorship."
