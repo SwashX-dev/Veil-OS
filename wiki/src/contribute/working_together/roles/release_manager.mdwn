@@ -46,12 +46,6 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
   If needed, create a merge request against [[!tails_gitlab tails/gitlab-config]].
   Make another Tails Team member the *Reviewer*.
 
-- Verify there's ; if there's none,
-  submit a MR against [[!tails_gitlab tails/gitlab-config]]
-  to create one.
-
-   Make another Tails Team member the *Reviewer*.
-
 - [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Upgrade%20Tor%20Browser)
   for upgrading Tor Browser in the release your shift is about
 
