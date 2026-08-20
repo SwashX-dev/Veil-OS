@@ -1330,14 +1330,7 @@ The "normal" command we had in place is really slow nowadays. The snippet that
 follows is much faster. However, it's not as smart, so it can only handle cases
 in which IUKs have been built exactly once.
 
-```sh
-ssh jenkins.mtl-libvirt-02 <<EOF | grep -E '[.]iuk$' > "jenkins_${VERSION}.sha256sum"
-find /var/lib/jenkins/jobs/ -name '*.iuk' -mtime -1 -exec sha256sum {} \;
-EOF
-sed -i 's@/.*/Tails_@Tails_@'  "jenkins_${VERSION}.sha256sum"
-diff <(sort "jenkins_${VERSION}.sha256sum") <(sort "${IUKS_HASHES:?}")
-rm "jenkins_${VERSION}.sha256sum"
-```
+    ./bin/alternative-rsync-server-iuks-verify "${VERSION:?}" "${IUKS_HASHES:?}"
 
 If this script is not working fine for you, please refer to the next section.
 
