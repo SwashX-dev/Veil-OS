@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -eu
 set -o pipefail
@@ -11,7 +11,7 @@ MATCHING_JENKINS_IMAGES_BUILD_ID="${4}"
 ./bin/automailer.py <<EOF
 To: rm@tails.net, sajolida@pimienta.org
 Subject: Testing Tails ${VERSION:?}
-X-Attach: $(/bin/ls -1 "$ISOS/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}".{build-manifest,packages} "$ISOS/tails-amd64-${VERSION:?}/"tails-amd64-${VERSION:?}.{iso,img}.sig | tr '\n' ,)
+X-Attach: $(/bin/ls -1 "$ISOS/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}".{build-manifest,packages} "$ISOS/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}".{iso,img}.sig | tr '\n' ,)
 
 You can now start testing Tails ${VERSION}:
 
