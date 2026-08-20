@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -eu
+set -o pipefail
+
+VERSION="${1}"
+DIST="${2}"
+
+[ "${DIST:?}" = alpha ] && ./bin/automailer.py <<EOF
+To: tails-testers@boum.org
+Subject: Call for testing: ${VERSION?}
+
+Hi,
+
+The *candidate* images for Tails ${VERSION} are ready for testing:
+
+https://download.tails.net/tails/${DIST:?}/tails-amd64-${VERSION}/tails-amd64-${VERSION}.img
+
+They did not go through our entire QA yet.
+
+Please test and report back by Tuesday, 09:00 UTC.
+
+Thanks!
+EOF
