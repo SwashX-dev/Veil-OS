@@ -5,20 +5,21 @@
 
 # How
 
-Run the test suite from the `stable` branch, on current images built from
-that branch.
+1. Checkout the tag for the last released
 
-We want the test suite run to be as "vanilla" and reproducible as
-possible, so the only allowed options for `run_test_suite` are:
+2. Run the test suite on the last released images (passed via `--iso`)
 
-  - `--artifacts-base-uri`
-  - `--capture` and `--capture-all`
-  - `--tmpdir`
-  - `--view`
-  - `--vnc-server-only`
-  - `--iso` and `--old-iso` (in fact, both of these are mandatory)
+   We want the test suite run to be as "vanilla" and reproducible as
+   possible, so the only allowed options for `run_test_suite` are:
 
-For `cucumber` itself we only allow the `--format` option.
+    - `--artifacts-base-uri`
+    - `--capture` and `--capture-all`
+    - `--tmpdir`
+    - `--view`
+    - `--vnc-server-only`
+    - `--iso` and `--old-iso` (in fact, both of these are mandatory)
+
+   For `cucumber` itself we only allow the `--format` option.
 
 # Why?
 
