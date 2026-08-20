@@ -1737,6 +1737,8 @@ Public testing
 
        ./bin/announce-public-testing "${VERSION:?}" "${DIST:?}"
 
+   Note:
+
    - This is a public list, don't point to the pad.
    - Make a deadline clear: until when is feedback useful?
 
