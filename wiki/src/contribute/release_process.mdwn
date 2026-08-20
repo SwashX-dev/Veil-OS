@@ -1729,16 +1729,16 @@ Public testing
 
 ## If you are publishing a RC
 
-Verify that the image has been propagated to at least 3 mirrors:
+1. Verify that the image has been propagated to at least 3 mirrors:
 
-    echo "https://download.tails.net/tails/${DIST:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
+       echo "https://download.tails.net/tails/${DIST:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
 
-Then email <tails-testers@boum.org> to ask them to test the tentative images:
+2. Email <tails-testers@boum.org> to ask them to test the tentative images:
 
-    ./bin/announce-public-testing "${VERSION:?}" "${DIST:?}"
+       ./bin/announce-public-testing "${VERSION:?}" "${DIST:?}"
 
-- This is a public list, don't point to the pad.
-- Make a deadline clear: until when is feedback useful?
+   - This is a public list, don't point to the pad.
+   - Make a deadline clear: until when is feedback useful?
 
 Lead the internal manual testing to conclusion
 ==============================================
