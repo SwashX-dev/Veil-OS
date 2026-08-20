@@ -602,7 +602,7 @@ To do so, on each of these pages:
 
   - [issues](https://gitlab.tails.boum.org/tails/tails/-/work_items?state=closed)
   - [merge requests](https://gitlab.tails.boum.org/tails/tails/-/merge_requests?state=merged)
-  - [merge requests](https://gitlab.tails.boum.org/tails/tails-private/-/merge_requests?state=merged)
+  - [private merge requests](https://gitlab.tails.boum.org/tails/tails-private/-/merge_requests?state=merged)
 
 Do this:
 
