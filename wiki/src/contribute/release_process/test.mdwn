@@ -90,25 +90,11 @@ In a directory with many Tails ISO and USB images
 Automated test suite
 ====================
 
-* Point `--old-iso` to the ISO image of the previous stable release.
+Verify that the relevant test suite run on Jenkins, for the branch this release
+is built from, succeed.
 
-* We want the test suite run to be as "vanilla" and reproducible as
-  possible, so the only allowed options for `run_test_suite` are:
-
-  - `--artifacts-base-uri`
-  - `--capture` and `--capture-all`
-  - `--tmpdir`
-  - `--view`
-  - `--vnc-server-only`
-  - `--iso` and `--old-iso` (in fact, both of these are mandatory)
-
-  For `cucumber` itself we only allow the `--format` option.
-
-See:
-
- - [[automated test suite documentation|test/automated_tests]]
- - [[test/setup]]
- - [[test/usage]]
+To make sure you look at a test suite run on the tagged image, check the name of
+the images from the parent build job.
 
 GitLab CI
 =========

@@ -52,6 +52,9 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
 - [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Refresh%20About%20Tor%20Patches)
   for refreshing the about:tor patches for that new Tor Browser
 
+- [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Run%20Automated%20Test%20Suite%20Locally)
+  for running our test suite on a local trusted system
+
 - [Check](https://gitlab.tails.boum.org/tails/tails/-/work_items?scope=all&state=opened&label_name[]=Core%20Work%3ATechnical%20writing&search=release+notes)
   if there are issues about writing the release notes, for:
     - the final release
