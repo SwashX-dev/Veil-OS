@@ -98,6 +98,32 @@ Desktop file to ensure that it executes the wrapper:
 
 - [[!tails_gitweb config/chroot_local-hooks/30-flatpak]]
 
+# Localization
+
+Flatpak Apps are localized in three different ways (or not at all):
+
+1. All available localization is part of the base Flatpak app
+   (e.g. `org.signal.Signal`)
+2. Localization is handled in a non-standard way, e.g. downloaded on
+   application start (e.g. `org.telegram.desktop`)
+3. The localization bits are split into a `.Locale` Flatpak extension
+   that contains all locales, but is only partially installed; only
+   the locale matching the system locale (or whatever was manually
+   configured with `flatpak config --set languages`) is installed.
+
+Tails doesn't do anything special here, so there is really nothing to
+say about 1 and 2. For 3 the only relevant thing to mention is about
+switching locales:
+
+When a Flatpak app is initially installed its `.Locale` extension (if
+it exists) is also installed, but only pulling the part of it that is
+for the current system locale (as selected by the user at the Welcome
+Screen). If a user restart Tails in a different locale the new parts
+of the `.Locale` extension are pulled the next time Flatpak upgrades
+are installed, which is according to GNOME Software's update schedule,
+mentioned above. So new locales will not necessarily be pulled in
+immediately after switching, it might take a few days.
+
 # Related pages
 
 See also:
