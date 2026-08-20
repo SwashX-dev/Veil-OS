@@ -1733,7 +1733,7 @@ Public testing
 
    echo "https://download.tails.net/tails/${DIST:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
 
-2. Emailed <tails-testers@boum.org> to ask them to test the tentative images:
+2. Email <tails-testers@boum.org> to ask them to test the tentative images:
 
    - This is a public list, don't point to the pad.
    - Make a deadline clear: until when is feedback useful?
