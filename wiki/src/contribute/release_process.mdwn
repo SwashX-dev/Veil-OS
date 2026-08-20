@@ -598,7 +598,7 @@ This ensures the generated changelog will include these changes, and ensures we
 have a correct record of which release presumably fixed which bug (that's useful
 for example when triaging bug reports).
 
-To do so, on each of these 2 pages:
+To do so, on each of these pages:
 
   - [issues](https://gitlab.tails.boum.org/tails/tails/-/work_items?state=closed)
   - [merge requests](https://gitlab.tails.boum.org/tails/tails/-/merge_requests?state=merged)
