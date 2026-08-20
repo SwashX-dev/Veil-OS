@@ -20,7 +20,15 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
 
 - Check the [Firefox Release Calendar](https://whattrainisitnow.com/calendar/) `[skip-if-emergency-release]`
 
-- Reply to the email sent to <tails-dev@boum.org> and
+- Ensure <tails-dev@boum.org> is aware of the release.
+
+  If you are preparing an unscheduled emergency release, announce:
+
+    - There's an upcoming emergency release. Don't say why if it's a secret.
+    - Announce the code freeze.
+    - Say when you expect the tests to happen.
+
+  Otherwise, reply to the email sent to <tails-dev@boum.org> and
   <tails-l10n@boum.org> by the RM for the previous release,
   to provide information they could not, if any, such as: `[skip-if-emergency-release]`
 
@@ -165,18 +173,6 @@ and close it with the _Rejected_ label.
 This mostly depends on the availability of release managers and manual
 testers. Privately reach out to them, asking when they could do their part of
 the work. Then, release managers make this decision.
-
-### Additional steps
-
-After going through the steps listed in the "In the beginning of your shift" section:
-
-  - Announce to <tails-dev@boum.org>:
-
-    - There's an upcoming emergency release. Don't say why if it's a secret.
-
-    - Announce the code freeze.
-
-    - Say when you expect the tests to happen.
 
 ### Irrelevant steps
 
