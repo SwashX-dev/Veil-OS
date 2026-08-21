@@ -2009,14 +2009,10 @@ complete successfully:
         git commit config/base_branch \
           -m "Ensure base branch on 'master' remains 'stable'"
       git push origin "${WEBSITE_RELEASE_BRANCH:?}" devel:devel
-      git commit --allow-empty -m "Publish Tails ${VERSION:?}"
-      git push origin \
-          -o ci.skip \
-          -o merge_request.auto_merge \
-          "${WEBSITE_RELEASE_BRANCH:?}"
     )
 
-Mark the merge request for `$WEBSITE_RELEASE_BRANCH` as ready.
+Mark the merge request for `$WEBSITE_RELEASE_BRANCH` as ready and set
+it to auto-merge.
 
 Close the "Write release notes" ticket manually since
 `Closes:` statements are not sufficient when updating `master`.
