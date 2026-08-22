@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2026-03-26 08:18+0100\n"
-"PO-Revision-Date: 2026-03-29 14:22+0000\n"
-"Last-Translator: xin <xin@riseup.net>\n"
+"PO-Revision-Date: 2026-08-21 15:56+0000\n"
+"Last-Translator: _ignifugo <ignifugo@insicuri.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -163,10 +163,9 @@ msgid "   The implications of both methods are detailed below.\n"
 msgstr "   I dettagli delle implicazioni di entrambi i metodi sono di seguito.\n"
 
 #. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "<h1 id=\"bridges\">Tor relays and bridges</h1>\n"
+#, no-wrap
 msgid "<h2 id=\"bridges\">Tor relays and bridges</h2>\n"
-msgstr "<h1 id=\"bridges\">Relè e ponti Tor</h1>\n"
+msgstr "<h2 id=\"bridges\">Relè e ponti Tor</h2>\n"
 
 #. type: Bullet: '- '
 msgid "**Public Tor relays**"
@@ -247,10 +246,9 @@ msgid "  Tor bridges are often less reliable and slower than public Tor relays.\
 msgstr "  I ponti Tor sono spesso meno affidabili e più lenti dei relè Tor pubblici.\n"
 
 #. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "<h1 id=\"automatic\">Connecting to Tor automatically</h1>\n"
+#, no-wrap
 msgid "<h2 id=\"automatic\">Connecting to Tor automatically</h2>\n"
-msgstr "<h1 id=\"automatic\">Collegarsi a Tor automaticamente</h1>\n"
+msgstr "<h2 id=\"automatic\">Collegarsi a Tor automaticamente</h2>\n"
 
 #. type: Plain text
 msgid ""
@@ -411,10 +409,11 @@ msgstr ""
 "questi tentativi come provenienti da un utente di Tails."
 
 #. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "<h1 id=\"hiding\">Hiding to your local network that you are connecting to Tor</h1>\n"
+#, no-wrap
 msgid "<h2 id=\"hiding\">Hiding to your local network that you are connecting to Tor</h2>\n"
-msgstr "<h1 id=\"hiding\">Nasconde alla tua rete locale che ti stai connettendo a Tor</h1>\n"
+msgstr ""
+"<h2 id=\"hiding\">Nasconde alla tua rete locale che ti stai connettendo a "
+"Tor</h2>\n"
 
 #. type: Plain text
 msgid ""
@@ -442,7 +441,8 @@ msgid ""
 "of exit nodes of the Tor network</a> is public.</p>\n"
 msgstr ""
 "<p>È impossibile nascondere ai siti web che visiti che stai usando\n"
-"Tor, perché la <a href=\"https://metrics.torproject.org/exonerator.html\">lista\n"
+"Tor, perché la <a href=\"https://metrics.torproject.org/exonerator.html\">"
+"lista\n"
 "dei nodi di uscita della rete Tor </a> è pubblica.</p>\n"
 
 #. type: Plain text
@@ -468,10 +468,9 @@ msgid "Default bridges are not available."
 msgstr "I bridge predefiniti non sono disponibili."
 
 #. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "<h1 id=\"bridges\">Tor relays and bridges</h1>\n"
+#, no-wrap
 msgid "<h2 id=\"bridge\">Configuring a Tor bridge</h2>\n"
-msgstr "<h1 id=\"bridges\">Relè e ponti Tor</h1>\n"
+msgstr "<h2 id=\"bridges\">Relè e ponti Tor</h2>\n"
 
 #. type: Plain text
 msgid ""
@@ -500,10 +499,11 @@ msgstr ""
 "dell'Archivio Persistente."
 
 #. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "<h1 id=\"troubleshoot-tor\">Troubleshooting connecting to Tor</h1>\n"
+#, no-wrap
 msgid "<h2 id=\"troubleshoot-tor\">Troubleshooting connecting to Tor</h2>\n"
-msgstr "<h1 id=\"troubleshoot-tor\">Risoluzione dei problemi di connessione a Tor</h1>\n"
+msgstr ""
+"<h2 id=\"troubleshoot-tor\">Risoluzione dei problemi di connessione a Tor</"
+"h2>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -516,10 +516,9 @@ msgid "<p>See our documentation on [[troubleshooting connecting to Tor|tor/troub
 msgstr "<p>Vedi la nostra documentazione su [[risoluzione dei problemi di connessione a Tor|tor/troubleshoot]].</p>\n"
 
 #. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "<h1 id=\"status\">Viewing the status of Tor</h1>\n"
+#, no-wrap
 msgid "<h2 id=\"status\">Viewing the status of Tor</h2>\n"
-msgstr "<h1 id=\"status\">Visualizzando lo stato di Tor</h1>\n"
+msgstr "<h2 id=\"status\">Visualizzando lo stato di Tor</h2>\n"
 
 #. type: Plain text
 msgid "The status of Tor appears as an onion icon in the notification area:"
