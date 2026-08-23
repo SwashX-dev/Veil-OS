@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2026-04-01 00:15+0000\n"
-"PO-Revision-Date: 2026-04-06 12:18+0000\n"
-"Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
+"PO-Revision-Date: 2026-08-23 18:56+0000\n"
+"Last-Translator: Ecron Smith <ecron_89@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -126,10 +126,8 @@ msgstr ""
 "signatura de Tails."
 
 #. type: Bullet: '1. '
-#, fuzzy
-#| msgid "Certify the Tails signing key with your own key:"
 msgid "Import the Tails signing key in your *GnuPG* keyring:"
-msgstr "Certifiqueu la clau de signatura de Tails amb la vostra pròpia clau:"
+msgstr "Importeu la clau de signatura de Tails al vostre clauer *GnuPG*:"
 
 #. type: Plain text
 #, no-wrap
@@ -435,16 +433,12 @@ msgid "   <p>If you are not sure about the device, stop proceeding.</p>\n"
 msgstr ""
 
 #. type: Bullet: '1. '
-#, fuzzy
-#| msgid ""
-#| "Execute the following commands to copy the USB image that you downloaded "
-#| "earlier to the USB stick."
 msgid ""
 "Execute the following commands to copy the USB image that you downloaded "
 "earlier to the USB stick. Replace:"
 msgstr ""
-"Executeu les ordres següents per copiar la imatge USB que heu baixat "
-"anteriorment al llapis USB."
+"Executeu les ordres següents per a copiar la imatge USB que heu baixat "
+"anteriorment al llapis USB. Reemplaceu:"
 
 #. type: Bullet: '   - '
 msgid ""
@@ -501,10 +495,12 @@ msgstr ""
 "   d'afegir <code>sudo</code> al principi de l'ordre:</p>\n"
 
 #. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "   <p class=\"command-example\">sudo dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">device</span> bs=16M oflag=direct status=progress</p>\n"
+#, no-wrap
 msgid "   <p class=\"command-template\">sudo dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">device</span> bs=16M oflag=direct status=progress</p>\n"
-msgstr "   <p class=\"command-example\">dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">dispositiu</span> bs=16M oflag=direct status=progress</p>\n"
+msgstr ""
+"   <p class=\"command-template\">sudo dd if=<span class=\"command-"
+"placeholder\">tails.img</span> of=<span class=\"command-placeholder\">"
+"dispositiu</span> bs=16M oflag=direct status=progress</p>\n"
 
 #. type: Plain text
 #, no-wrap
