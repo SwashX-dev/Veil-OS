@@ -20,13 +20,11 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "[[!meta title=\"Resetting a USB stick using macOS\"]]\n"
 msgid "[[!meta title=\"Uninstalling Tails using macOS\"]]\n"
 msgstr "[[!meta title=\"Restablir un llapis USB utilitzant macOS\"]]\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "[[!inline pages=\"doc/reset.intro\" raw=\"yes\" sort=\"age\"]]\n"
 msgid "[[!inline pages=\"doc/first_steps/uninstall.intro\" raw=\"yes\" sort=\"age\"]]\n"
 msgstr "[[!inline pages=\"doc/reset.intro.ca\" raw=\"yes\" sort=\"age\"]]\n"
 
@@ -36,7 +34,6 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid "Make sure that the USB stick that you want to reset is unplugged."
 msgid "Make sure that the USB stick that you want to uninstall is unplugged."
 msgstr ""
 "Assegureu-vos que el llapis USB que voleu restablir estigui desconnectat."
@@ -56,7 +53,6 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid "Plug in the USB stick that you want to reset."
 msgid "Plug in the USB stick that you want to uninstall."
 msgstr "Connecteu el llapis USB que voleu restablir."
 
@@ -71,9 +67,6 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "In the list of storage devices, verify that the device corresponds to the "
-#| "USB stick that you want to reset, its brand, its size, etc."
 msgid ""
 "In the list of storage devices, verify that the device corresponds to the "
 "USB stick that you want to uninstall, its brand, its size, etc."
@@ -84,33 +77,26 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<div class=\"caution\">\n"
 msgid "   <div class=\"caution\">\n"
 msgstr "<div class=\"caution\">\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<p><b>You might overwrite any hard disk on the computer.</b></p>\n"
 msgid "   <p>You might overwrite any hard disk on the computer.</p>\n"
 msgstr "<p><b>Podeu sobreescriure qualsevol disc dur de l'ordinador.</b></p>\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<p>If at some point you are not sure about which device to choose, stop proceeding.</p>\n"
 msgid "   <p>If you are not sure about which device to choose, stop proceeding.</p>\n"
 msgstr "<p>Si en algun punt no esteu segur de quin dispositiu triar, millor no continueu.</p>\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "</div>\n"
 msgid "   </div>\n"
 msgstr "</div>\n"
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "   b. If there is an **Erase**\n"
-#| "   button on the top middle, click on it.\n"
 msgid "To reset the USB stick, select the **Erase** button in the top middle."
 msgstr ""
 "   b. Si hi ha un botó <span class=\"bold\">\n"
@@ -173,7 +159,6 @@ msgstr "<span class=\"hide\">[[!toggle id=\"format\" text=\"\"]]</span>\n"
 
 #. type: Title -
 #, fuzzy, no-wrap
-#| msgid "Resetting a USB stick using the command line"
 msgid "Formatting the USB stick using the command line"
 msgstr "Restablir un llapis USB mitjançant la línia d'ordres"
 
@@ -264,7 +249,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<p>If at some point you are not sure about which device to choose, stop proceeding.</p>\n"
 msgid "   <p>If you are not sure about the device, stop proceeding.</p>\n"
 msgstr "<p>Si en algun punt no esteu segur de quin dispositiu triar, millor no continueu.</p>\n"
 
@@ -300,9 +284,6 @@ msgstr "   <p class=\"command-template\">sudo fdisk -iy <span class=\"command-pl
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "You can try to reset the USB stick again using *Disk Utility* from the "
-#| "beginning of this page."
 msgid ""
 "You can try to uninstall the USB stick again using *Disk Utility* from the "
 "beginning of this page."

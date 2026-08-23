@@ -173,8 +173,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "  [[!img desktop/keyboard.png class=\"screenshot\" alt=\"Keyboard Menu\"]]\n"
-msgstr ""
-"  [[!img desktop/keyboard.png class=\"screenshot\" alt=\"Menú de teclat\"]]\n"
+msgstr "  [[!img desktop/keyboard.png class=\"screenshot\" alt=\"Menú de teclat\"]]\n"
 
 #. type: Bullet: '* '
 msgid ""

@@ -29,8 +29,8 @@ msgid ""
 "title=\"\"]]"
 msgstr ""
 "[[!meta stylesheet=\"index\" rel=\"stylesheet\" title=\"\"]] [[!meta "
-"stylesheet=\"doc/about/trust/testimonials.inline\" rel=\"stylesheet\" title="
-"\"\"]]"
+"stylesheet=\"doc/about/trust/testimonials.inline\" rel=\"stylesheet\" "
+"title=\"\"]]"
 
 #. type: Content of: <script>
 msgid ""
@@ -202,8 +202,8 @@ msgid ""
 "[[!inline pages=\"doc/about/trust/testimonials.inline\" raw=\"yes\" "
 "sort=\"age\"]]"
 msgstr ""
-"[[!inline pages=\"doc/about/trust/testimonials.inline.ca\" raw=\"yes\" sort="
-"\"age\"]]"
+"[[!inline pages=\"doc/about/trust/testimonials.inline.ca\" raw=\"yes\" "
+"sort=\"age\"]]"
 
 #. type: Content of: <section><h1>
 msgid "Supporters"

@@ -498,10 +498,6 @@ msgstr "Máxima seguridad gratis"
 
 #. type: Content of: <section><div><p>
 #, fuzzy
-#| msgid ""
-#| "Nobody should have to pay to be safe while using a computer.  That is why "
-#| "we are giving out Tails for free and try to make it easy to use by "
-#| "anybody."
 msgid ""
 "Nobody should have to pay to be safe while using a computer.  That is why we "
 "are giving out Tails for free and want to make it easy to use by anybody."
@@ -539,9 +535,6 @@ msgstr "[[Seguidores|https://www.torproject.org/es/about/supporters/]]"
 
 #. type: Content of: <section><div><div><ul><li>
 #, fuzzy
-#| msgid ""
-#| "<a href=\"https://community.torproject.org/policies/social_contract/"
-#| "\">Social contract</a>"
 msgid ""
 "[[Social contract|https://community.torproject.org/policies/"
 "social_contract/]]"

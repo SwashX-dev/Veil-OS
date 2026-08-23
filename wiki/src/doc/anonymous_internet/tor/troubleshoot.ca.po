@@ -103,7 +103,6 @@ msgstr "Espereu fins que s'iniciï el *Navegador Insegur*."
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid "Follow the instructions on the homepage of the *Unsafe Browser*."
 msgid "Follow the instructions on the home page of the *Unsafe Browser*."
 msgstr "Seguiu les instruccions de la pàgina d'inici del *Navegador Insegur*."
 

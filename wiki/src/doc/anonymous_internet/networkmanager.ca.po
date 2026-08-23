@@ -48,9 +48,7 @@ msgstr "Obriu el menú del sistema a l'extrem superior dret."
 #. type: Plain text
 #, no-wrap
 msgid "   [[!img doc/first_steps/desktop/system-with-wired.png class=\"screenshot\" alt=\"\"]]\n"
-msgstr ""
-"   [[!img doc/first_steps/desktop/system-with-wired.png class=\"screenshot\" "
-"alt=\"\"]]\n"
+msgstr "   [[!img doc/first_steps/desktop/system-with-wired.png class=\"screenshot\" alt=\"\"]]\n"
 
 #. type: Bullet: '   - '
 msgid ""
@@ -65,16 +63,13 @@ msgid ""
 "To connect to a Wi-Fi network, click [[!img lib/go-next.png link=\"no\" "
 "class=\"symbolic\" alt=\"\"]] on the right of the **Wi-Fi** button."
 msgstr ""
-"Per connectar-vos a una xarxa Wi-Fi, premeu "
-"[[!img lib/go-next.png link=\"no\" class=\"symbolic\" alt=\"\"]] a la dreta "
-"del botó de **Wi-Fi**."
+"Per connectar-vos a una xarxa Wi-Fi, premeu [[!img lib/go-next.png "
+"link=\"no\" class=\"symbolic\" alt=\"\"]] a la dreta del botó de **Wi-Fi**."
 
 #. type: Plain text
 #, no-wrap
 msgid "     A list of available Wi-Fi networks appears below the **Wi-Fi** button.\n"
-msgstr ""
-"     A sota del botó **Wi-Fi** apareix una llista de xarxes Wi-Fi "
-"disponibles.\n"
+msgstr "     A sota del botó **Wi-Fi** apareix una llista de xarxes Wi-Fi disponibles.\n"
 
 #. type: Plain text
 #, no-wrap

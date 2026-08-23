@@ -33,10 +33,8 @@ msgid ""
 "<div class=\"step-image usb\">[[!img inc/infography/install-etcher.png link=\"no\" alt=\"\"]]</div>\n"
 "<div class=\"step-image upgrade\">[[!img inc/infography/install-etcher-with-intermediary.png link=\"no\" alt=\"\"]]</div>\n"
 msgstr ""
-"<div class=\"step-image usb\">"
-"[[!img inc/infography/install-etcher.png link=\"no\" alt=\"\"]]</div>\n"
-"<div class=\"step-image upgrade\">[[!img inc/infography/install-etcher-with-"
-"intermediary.png link=\"no\" alt=\"\"]]</div>\n"
+"<div class=\"step-image usb\">[[!img inc/infography/install-etcher.png link=\"no\" alt=\"\"]]</div>\n"
+"<div class=\"step-image upgrade\">[[!img inc/infography/install-etcher-with-intermediary.png link=\"no\" alt=\"\"]]</div>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -44,8 +42,7 @@ msgid ""
 "<p class=\"upgrade\">In the following steps, you will install an intermediary Tails using the Tails USB\n"
 "image that you downloaded earlier.</p>\n"
 msgstr ""
-"<p class=\"upgrade\">En els passos següents, instal·lareu un Tails "
-"intermediari mitjançant la imatge USB\n"
+"<p class=\"upgrade\">En els passos següents, instal·lareu un Tails intermediari mitjançant la imatge USB\n"
 "de Tails que heu baixat abans.</p>\n"
 
 #. type: Plain text
@@ -422,7 +419,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "   <div class=\"caution\"><p>All the data on this USB stick will be lost.</p></div>\n"
 msgid "   <p>All the data on this USB stick will be lost.</p>\n"
 msgstr "   <div class=\"caution\"><p>Totes les dades d'aquest llapis USB es perdran.</p></div>\n"
 
@@ -462,14 +458,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid ""
-#| "   <p>If the image has an <i>.iso</i> file\n"
-#| "   extension, it is the wrong image. Please go back to the\n"
-#| "   <span class=\"windows\">[[download step|windows#download]].</span>\n"
-#| "   <span class=\"mac\">[[download step|mac#download]].</span>\n"
-#| "   <span class=\"upgrade-windows\">[[download step|upgrade/windows#download]].</span>\n"
-#| "   <span class=\"upgrade-mac\">[[download step|upgrade/mac#download]].</span></p>\n"
-#| "   </div>\n"
 msgid ""
 "   <p>If the image has an <i>.iso</i> file\n"
 "   extension, it is the wrong image. Please go back to the\n"

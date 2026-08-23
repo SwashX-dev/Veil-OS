@@ -43,9 +43,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "   [[!img first_steps/welcome_screen/unlock_persistent_storage.png class=\"screenshot\" alt=\"\"]]\n"
-msgstr ""
-"   [[!img first_steps/welcome_screen/unlock_persistent_storage.png class="
-"\"screenshot\" alt=\"\"]]\n"
+msgstr "   [[!img first_steps/welcome_screen/unlock_persistent_storage.png class=\"screenshot\" alt=\"\"]]\n"
 
 #. type: Bullet: '1. '
 msgid "Start Tails."
@@ -66,8 +64,8 @@ msgid ""
 "feature is turned on."
 msgstr ""
 "Els vostres fitxers personals de la carpeta *Persistent* són accessibles des "
-"del navegador de *Fitxers*, si la funcionalitat [[Carpeta "
-"Persistent|configure#persistent_folder]] està activada."
+"del navegador de *Fitxers*, si la funcionalitat [[Carpeta Persistent|"
+"configure#persistent_folder]] està activada."
 
 #. type: Bullet: '   - '
 msgid ""
