@@ -2291,15 +2291,6 @@ Check that you are indeed preparing a final release:
            -m "Add dummy changelog entry for ${NEXT_PLANNED_MAJOR_VERSION:?}."
     )
 
-1. If this command outputs anything:
-
-         git show devel:config/chroot_apt/preferences \
-            | grep -E '^Explanation: freeze exception'
-
-   Then checkout the `devel` branch, and there [thaw the packages that
-   were granted freeze
-   exceptions](https://tails.net/contribute/APT_repository/time-based_snapshots/#freeze-exceptions-post-release).
-
 1. Verify that the snapshots used for this release are OK,
    e.g. they use the correct snapshots, and they were bumped
    appropriately (they should expire after the next planned major release date).
@@ -2404,15 +2395,6 @@ Check that you are indeed preparing a RC:
 
     [ "${DIST:?}" = alpha ]
 
-1. If this command outputs anything:
-
-        git show devel:config/chroot_apt/preferences \
-           | grep -E '^Explanation: freeze exception'
-
-   Then checkout the `devel` branch, and there
-   [thaw](https://tails.net/contribute/APT_repository/time-based_snapshots/#freeze-exceptions-post-release)
-   all packages (if any) that were granted freeze exceptions.
-
 1. On the devel branch,
    [[thaw|APT_repository/time-based_snapshots#thaw]] the time-based
    APT repository snapshots:
@@ -2468,6 +2450,15 @@ Check that you are indeed preparing a RC:
    are OK" step for final releases, above.
 
 ## In any case
+
+1. If this command outputs anything:
+
+         git show devel:config/chroot_apt/preferences \
+            | grep -E '^Explanation: freeze exception'
+
+   Then checkout the `devel` branch, and there
+   [thaw](https://tails.net/contribute/APT_repository/time-based_snapshots/#freeze-exceptions-post-release)
+   all packages (if any) that were granted freeze exceptions.
 
 1. Put aside the configuration file used for this release:
 
