@@ -2302,10 +2302,6 @@ Check that you are indeed preparing a final release:
         ./bin/apt-snapshots-expiry
     )
 
-1. Push the resulting branches:
-
-        git push origin stable testing devel
-
 1. Check the Firefox and Tor Browser release calendars:
 
    * [Tor Browser release calendar](https://gitlab.torproject.org/tpo/applications/wiki/-/wikis/home#release-calendar)
@@ -2437,13 +2433,12 @@ Check that you are indeed preparing a RC:
     )
 
 1. Merge testing into devel (keeping a single changelog entry, for the
-   second next major release), and push them:
+   second next major release):
 
     (
         cd "${RELEASE_CHECKOUT:?}" && \
         git checkout devel && \
-        git merge testing && \
-        git push origin testing devel
+        git merge testing
     )
 
 1. Follow the "Verify that the snapshots used in the release branch
@@ -2459,6 +2454,10 @@ Check that you are indeed preparing a RC:
    Then checkout the `devel` branch, and there
    [thaw](https://tails.net/contribute/APT_repository/time-based_snapshots/#freeze-exceptions-post-release)
    all packages (if any) that were granted freeze exceptions.
+
+1. Ensure everything done so far is pushed:
+
+        git push origin stable testing devel
 
 1. Put aside the configuration file used for this release:
 
