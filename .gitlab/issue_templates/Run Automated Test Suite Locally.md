@@ -17,7 +17,7 @@
     - `--tmpdir`
     - `--view`
     - `--vnc-server-only`
-    - `--iso` (mandatory)
+    - `--iso` and `--old-iso` (in fact, both of these are mandatory)
 
    For `cucumber` itself we only allow the `--format` option.
 
