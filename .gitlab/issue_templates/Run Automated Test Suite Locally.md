@@ -9,17 +9,19 @@
 
 2. Run the test suite on the last released images (passed via `--iso`)
 
-   We want the test suite run to be as "vanilla" and reproducible as
-   possible, so the only allowed options for `run_test_suite` are:
+   * Point `--old-iso` to the ISO image of the previous stable release.
 
-    - `--artifacts-base-uri`
-    - `--capture` and `--capture-all`
-    - `--tmpdir`
-    - `--view`
-    - `--vnc-server-only`
-    - `--iso` and `--old-iso` (in fact, both of these are mandatory)
+   * We want the test suite run to be as "vanilla" and reproducible as
+     possible, so the only allowed options for `run_test_suite` are:
 
-   For `cucumber` itself we only allow the `--format` option.
+      - `--artifacts-base-uri`
+      - `--capture` and `--capture-all`
+      - `--tmpdir`
+      - `--view`
+      - `--vnc-server-only`
+      - `--iso` and `--old-iso` (in fact, both of these are mandatory)
+
+     For `cucumber` itself we only allow the `--format` option.
 
 # Why?
 
