@@ -53,6 +53,7 @@ To install the dependencies on our test suite:
            dbus-x11 \
            devscripts \
            dnsmasq-base \
+           ffmpeg \
            gawk \
            git \
            imagemagick \
@@ -68,12 +69,19 @@ To install the dependencies on our test suite:
            pry \
            python3-debian \
            python3-distro-info \
-           python3-requests \
+           python3-opencv \
+           python3-paramiko \
+           python3-pil \
            python3-psycopg2 \
+           python3-pydantic \
+           python3-requests \
+           python3-rpyc \
            python3-slixmpp \
            python3-tomli-w \
+           python3-typeguard \
            python3-yaml \
            qemu-system-common \
+           qemu-system-modules-spice \
            qemu-system-x86 \
            qemu-utils \
            qrencode \
@@ -88,25 +96,17 @@ To install the dependencies on our test suite:
            tcpdump \
            tcplay \
            tesseract-ocr \
+           tigervnc-viewer \
            tor \
            tshark \
            unclutter \
            virt-viewer \
+           x11-utils \
            x11vnc \
-           tigervnc-viewer \
            x264 \
            xdotool \
            xfwm4 \
            xvfb \
-           ffmpeg \
-           python3-opencv \
-           python3-paramiko \
-           python3-pil \
-           python3-pydantic \
-           python3-typeguard \
-           python3-rpyc \
-           python3-slixmpp \
-           python3-tomli-w \
            && \
        sudo service libvirtd restart
 

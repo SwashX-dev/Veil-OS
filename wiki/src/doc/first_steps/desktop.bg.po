@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-03-27 10:22+0000\n"
+"POT-Creation-Date: 2026-07-22 09:36+0200\n"
 "PO-Revision-Date: 2024-10-17 09:09+0000\n"
 "Last-Translator: Benjamin Held <Benjamin.Held@protonmail.com>\n"
 "Language-Team: Tails translators <tails@boum.org>\n"
@@ -573,7 +573,7 @@ msgstr ""
 
 #. type: Plain text
 #, no-wrap
-msgid "<p>For more security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>\n"
+msgid "<p>For added security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>\n"
 msgstr ""
 
 #. type: Plain text

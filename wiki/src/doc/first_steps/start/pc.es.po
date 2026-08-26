@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2026-03-30 09:38+0000\n"
-"PO-Revision-Date: 2026-06-06 04:35+0000\n"
+"PO-Revision-Date: 2026-07-31 02:56+0000\n"
 "Last-Translator: cacu <cacukin@cryptolab.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -46,10 +46,9 @@ msgid "[[!toc levels=2]]\n"
 msgstr "[[!toc levels=2]]\n"
 
 #. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "<h1 id=\"windows-restart\">Starting from Windows 8 or 10</h1>\n"
+#, no-wrap
 msgid "<h1 id=\"windows-restart\">Starting from Windows</h1>\n"
-msgstr "<h1 id=\"windows-restart\">Arrancar desde Windows 8 o 10</h1>\n"
+msgstr "<h1 id=\"windows-restart\">Arrancar desde Windows</h1>\n"
 
 #. type: Plain text
 msgid "From Windows or the sign-in screen of Windows:"
@@ -102,12 +101,8 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '- '
-#, fuzzy
-#| msgid "In the BIOS or UEFI settings, try to apply the following changes:"
 msgid "Open the BIOS or UEFI settings of the computer."
-msgstr ""
-"En las configuraciones del BIOS o UEFI, prueba aplicar los siguientes "
-"cambios:"
+msgstr "Abre la configuración de la BIOS o UEFI del equipo."
 
 #. type: Plain text
 #, fuzzy, no-wrap
@@ -281,10 +276,8 @@ msgstr ""
 "dependiendo de la computadora."
 
 #. type: Bullet: '- '
-#, fuzzy
-#| msgid "- Disable **Fast boot**."
 msgid "Disable **Fast Boot**."
-msgstr "- inhabilita **Fast boot**."
+msgstr "inhabilita **Fast boot**."
 
 #. type: Bullet: '- '
 #, fuzzy

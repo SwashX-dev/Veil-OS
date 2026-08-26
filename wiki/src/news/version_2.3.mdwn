@@ -18,7 +18,7 @@ upgrade as soon as possible.
 
   - Upgrade *Tor Browser* to 5.5.5.
 
-  - Upgrade *I2P* to [0.9.25](https://geti2p.net/en/blog/post/2016/03/22/0.9.25-Release).
+  - Upgrade *I2P* to 0.9.25.
 
   - Upgrade *Electrum* from 2.5.4 to [2.6.3](https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES).
 

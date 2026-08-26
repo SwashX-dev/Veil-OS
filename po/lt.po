@@ -10,12 +10,13 @@
 # Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
 # emma peel <emma.peel@riseup.net>, 2025.
 # diskomb <diskomb@proton.me>, 2026.
+# Jonas Cyvas <jonascyvas@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-17 11:02+0200\n"
-"PO-Revision-Date: 2026-06-28 08:01+0000\n"
+"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: diskomb <diskomb@proton.me>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "lt/>\n"
@@ -26,7 +27,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -53,15 +54,15 @@ msgstr "Rodyti žurnalą"
 msgid "Configure"
 msgstr "Konfigūruoti"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
 msgid "Password Manager"
 msgstr "Slaptažodžių tvarkyklė"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password"
 msgstr "Slaptažodis"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
 msgstr ""
 
@@ -554,7 +555,7 @@ msgid "Upgrade later"
 msgstr "Naujinti vėliau"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:527
-#, perl-brace-format
+#, fuzzy, perl-brace-format
 msgid ""
 "<b>You should do a manual upgrade to the latest version of {name}.</b>\n"
 "\n"
@@ -731,8 +732,9 @@ msgid "GNOME Software"
 msgstr "GNOME Programinė įranga"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
+#, fuzzy
 msgid "GNOME Software can only start once Tor has bootstrapped."
-msgstr ""
+msgstr "Programa GNOME gali pradėti darbą tik tada kai Tor „bootstrap'inasi“"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -752,11 +754,11 @@ msgstr "_Administravimo slaptažodis"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:196
 msgid "_MAC Address Anonymization"
-msgstr "_MAC Adreso anonimizvimas"
+msgstr "_MAC Adreso anonimizavimas"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:267
 msgid "_Offline Mode"
-msgstr ""
+msgstr "_Išjungtas režimas"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:276
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:399
@@ -773,9 +775,8 @@ msgid "_Unsafe Browser"
 msgstr "_Nesaugi naršyklė"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:348
-#, fuzzy
 msgid "Enabled (default)"
-msgstr "Išjungta (numatytasis)"
+msgstr "Įjungta (numatytasis)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:350
 msgid "Disabled"
@@ -798,27 +799,22 @@ msgid "Off (default)"
 msgstr "Išjungta (numatytasis)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:181
-#, fuzzy
 msgid "Persistent Storage Still Locked"
-msgstr "Sukurti ilgalaikį kaupiklį"
+msgstr "Nuolatinė talpykla vis dar užrakinta"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:183
-#, fuzzy
 msgid ""
 "Do you really want to start Tails without unlocking your Persistent Storage?"
 msgstr ""
-"Ar tikrai norite dabar paleisti Tails iš naujo?\\n\\nVisa jūsų esama veikla "
-"bus prarasta."
+"Ar tikrai norite dabar paleisti Tails be nuolatinės talpyklos atrakinimo?"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:186
-#, fuzzy
 msgid "Start Without Persistent Storage"
-msgstr "Sukurti ilgalaikį kaupiklį"
+msgstr "Pradėti be nuolatinės talpyklos"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:193
-#, fuzzy
 msgid "Language and Keyboard layout"
-msgstr "Kalba ir formatai"
+msgstr "Kalba ir klaviatūros išdėstymas"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:195
 msgid ""
@@ -828,10 +824,15 @@ msgid ""
 "Someone who finds your Tails USB stick can see your language and keyboard "
 "layout."
 msgstr ""
+"Tavo kalbos ir klaviatūros išdėstymo pasirinkimai bus išsaugoti neužšifruoti "
+"Tails USB įrenginyje ir automatiškai pritaikyti ateityje.\n"
+"\n"
+"Jeigu kas nors ras tavo Tails USB atmintinę, galės sužinoti tavo kalbos ir "
+"klaviatūros išdėstymo pasirinkimus."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:200
 msgid "Save Unencrypted"
-msgstr ""
+msgstr "Išsaugoti neužšifruota"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:288
 msgid ""
@@ -977,12 +978,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Jūsų ilgalaikio kaupiklio sukūrimas nepavyko."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Šifruotas ilgalaikis kau_piklis"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Šifruotas ilgalaikis kau_piklis"
 
@@ -992,12 +993,12 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Nepavyko paleisti sistemos iš naujo"
 
@@ -1178,7 +1179,7 @@ msgstr "Nepavyko perskaityti išskleisto paleidimo įrašo (MBR) iš %(path)s"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1309
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1310
-#, python-format
+#, fuzzy, python-format
 msgid "Resetting Master Boot Record of %s"
 msgstr "Atstatomas %s paleidimo įrašas (MBR)"
 
@@ -1577,22 +1578,10 @@ msgstr ""
 "Nepavyksta rasti disko, iš kurio yra paleista Tails. Galbūt, jūs naudojote "
 "\"toram\" parametrą?"
 
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:103
+#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:106
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:120
 msgid "Lock Screen"
 msgstr "Užrakinti ekraną"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:107
-msgid "Suspend"
-msgstr "Pristabdyti"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:111
-msgid "Restart"
-msgstr "Paleisti iš naujo"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:115
-msgid "Power Off"
-msgstr "Išjungti"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
@@ -1875,7 +1864,7 @@ msgstr ""
 "patikima."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/config.py:9
-#: config/chroot_local-includes/usr/local/bin/tca:10
+#: config/chroot_local-includes/usr/local/bin/tca:11
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:1
 msgid "Tor Connection"
 msgstr "Tor ryšys"
@@ -2116,7 +2105,7 @@ msgid ""
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:49
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
 #, fuzzy
@@ -2162,7 +2151,7 @@ msgstr "Šios ypatybės duomenys yra vis dar įrašyti."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
@@ -2175,14 +2164,14 @@ msgstr "Sukurti ilgalaikį kaupiklį"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:279
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:307
 msgid "Details"
 msgstr "Išsamiau"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
@@ -2192,6 +2181,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Sukurti ilgalaikį kaupiklį"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2204,10 +2194,12 @@ msgid "_Delete Data"
 msgstr "Iš_trinti duomenis"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 
@@ -2279,7 +2271,7 @@ msgstr ""
 msgid "_Send Error Report"
 msgstr "_Siųsti pranešimą apie klaidą"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:153
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:154
 msgid ""
 "Impossible to delete the Persistent Storage while it is unlocked.\n"
 "\n"
@@ -2287,7 +2279,7 @@ msgid ""
 "Persistent Storage and open the Persistent Storage settings again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:167
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:168
 msgid ""
 "Impossible to delete the Persistent Storage because the USB stick is read-"
 "only.\n"
@@ -2297,25 +2289,25 @@ msgid ""
 "the Persistent Storage settings again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:175
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:176
 #, fuzzy
 msgid "Impossible to delete the Persistent Storage"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:183
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:218
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:184
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:219
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:35
 #, fuzzy
 msgid "Delete Persistent Storage"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:187
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:188
 msgid ""
 "Are you sure that you want to delete your Persistent Storage? This action "
 "cannot be undone."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:191
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:56
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/change_passphrase_dialog.ui.in:301
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:124
@@ -2323,60 +2315,60 @@ msgstr ""
 msgid "_Cancel"
 msgstr "_Atsisakyti"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:193
 #, fuzzy
 msgid "_Delete Persistent Storage"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:202
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:203
 #, fuzzy
 msgid "Deleting your Persistent Storage..."
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:221
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:222
 msgid "_OK"
 msgstr "_Gerai"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:230
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:231
 msgid ""
 "Sorry, you can't close this app until the ongoing operation has completed."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:233
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:234
 msgid "Please wait"
 msgstr "Palaukite"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:261
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 #, fuzzy
 msgid "Not enough memory to create Persistent Storage"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:268
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:277
 #, fuzzy
 msgid "Failed to create Persistent Storage"
 msgstr "Sukurti ilgalaikį kaupiklį"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:269
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:278
 #, fuzzy
 msgid "An error occurred while creating the Persistent Storage."
 msgstr "Šifruotas ilgalaikis kau_piklis"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:305
 #, fuzzy
 msgid "Error deleting Persistent Storage"
 msgstr "Šifruotas ilgalaikis kau_piklis"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:306
 #, fuzzy
 msgid "An error occurred while deleting the Persistent Storage."
 msgstr "Šifruotas ilgalaikis kau_piklis"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:334
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:346
 msgid "Details (command output)"
 msgstr "Išsamiau (komandos išvestis)"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:361
 msgid "Failed to open the documentation"
 msgstr "Nepavyko atverti dokumentacijos"
 
@@ -2696,7 +2688,7 @@ msgstr "Neteisingas kontakto OpenPGP raktas: %s"
 msgid "Invalid contact OpenPGP public key block"
 msgstr "Neteisingas kontakto OpenPGP viešojo rakto blokas"
 
-#: config/chroot_local-includes/usr/local/bin/tca:11
+#: config/chroot_local-includes/usr/local/bin/tca:12
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -3755,6 +3747,7 @@ msgid ""
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1544
+#, fuzzy
 msgid "<b>Connect to Tor _automatically</b>"
 msgstr "<b>_Automatiškai prisijungti prie Tor</b>"
 
@@ -4017,6 +4010,15 @@ msgstr "Gruodis"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Laikrodis"
+
+#~ msgid "Suspend"
+#~ msgstr "Pristabdyti"
+
+#~ msgid "Restart"
+#~ msgstr "Paleisti iš naujo"
+
+#~ msgid "Power Off"
+#~ msgstr "Išjungti"
 
 #~ msgid "Bridge address malformed"
 #~ msgstr "Netaisyklingas tinklų tilto adresas"

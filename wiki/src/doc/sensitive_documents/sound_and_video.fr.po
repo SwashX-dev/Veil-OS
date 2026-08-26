@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-01-06 19:05+0000\n"
-"PO-Revision-Date: 2026-04-01 22:22+0000\n"
-"Last-Translator: Chre <tor@renaudineau.org>\n"
+"POT-Creation-Date: 2026-07-22 09:36+0200\n"
+"PO-Revision-Date: 2026-08-07 06:56+0000\n"
+"Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: Tails translators <tails@boum.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -63,9 +63,85 @@ msgstr ""
 "enregistreur de son."
 
 #. type: Bullet: '  - '
-msgid "[*Videos*](https://apps.gnome.org/Totem/), an audio and video player."
+#, fuzzy
+#| msgid ""
+#| "[*Videos*](https://apps.gnome.org/Totem/), an audio and video player."
+msgid ""
+"[*Celluloid*](https://celluloid-player.github.io/), an audio and video "
+"player."
 msgstr ""
 "[*Vidéos*](https://apps.gnome.org/fr/Totem/), un lecteur audio et vidéo."
+
+#. type: Plain text
+#, no-wrap
+msgid "    <div class=\"bug\">\n"
+msgstr "    <div class=\"bug\">\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"    <p>For added security, <i>Celluloid</i> cannot access the network. You can\n"
+"    either:</p>\n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "    <ul>\n"
+msgstr "    <ul>\n"
+
+#. type: Plain text
+#, no-wrap
+msgid "      <li>Open online videos, like MP4 and AVI files, in <i>Tor Browser</i>.\n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"      <li>Open online streaming addresses, like IPTV and HLS addresses, in\n"
+"      <i>VLC</i>, installed as [[additional\n"
+"      software|persistent_storage/additional_software]].</li>\n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "      <!-- Test URLs:\n"
+msgstr "      <!-- Test URLs:\n"
+
+#. type: Bullet: '      - '
+msgid "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+msgstr "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+
+#. type: Bullet: '      - '
+msgid "https://tails.net/install/inc/videos/mac.mp4"
+msgstr "https://tails.net/install/inc/videos/mac.mp4"
+
+#. type: Plain text
+#, no-wrap
+msgid "      -->\n"
+msgstr "      -->\n"
+
+#. type: Plain text
+#, no-wrap
+msgid "    </ul>\n"
+msgstr "    </ul>\n"
+
+#. type: Plain text
+#, no-wrap
+msgid "    </div>\n"
+msgstr "    </div>\n"
+
+#. type: Plain text
+#, no-wrap
+msgid "    <p><i>Celluloid</i> doesn't work on some computers from 2011 or earlier.</p>\n"
+msgstr ""
+
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "You can also install using the [[Additional Software|persistent_storage/additional_software]] feature:"
+msgid ""
+"    <p>You can use <i>VLC</i> instead, installed as [[additional\n"
+"    software|persistent_storage/additional_software]].</p>\n"
+msgstr "Vous pouvez aussi installer des [[Logiciels supplémentaires|persistent_storage/additional_software]] :"
 
 #. type: Plain text
 msgid ""
@@ -91,21 +167,6 @@ msgstr ""
 "[*VLC*](https://www.videolan.org/vlc/), un lecteur multimédia avec des "
 "fonctionnalités avancées."
 
-#. type: Plain text
-#, no-wrap
-msgid "  <div class=\"bug\">\n"
-msgstr "  <div class=\"bug\">\n"
-
-#. type: Plain text
-#, no-wrap
-msgid "  <p>Watching [[!wikipedia IPTV]] channels from <i>VLC</i> in Tails doesn't work.</p>\n"
-msgstr "  <p>Regarder des chaînes de [[!wikipedia_fr Télévision_IP desc=\"télévision IP (IPTV)\"]] depuis <i>VLC</i> dans Tails ne fonctionne pas.</p>\n"
-
-#. type: Plain text
-#, no-wrap
-msgid "  </div>\n"
-msgstr "  </div>\n"
-
 #. type: Bullet: '- '
 msgid "[*Pitivi*](https://www.pitivi.org/), a video editor."
 msgstr "[*Pitivi*](https://www.pitivi.org/), un éditeur vidéo."
@@ -129,6 +190,10 @@ msgstr "[[!inline pages=\"doc/sensitive_documents/persistence.fr\" raw=\"yes\" s
 #, no-wrap
 msgid "[[!inline pages=\"doc/sensitive_documents/metadata.inline\" raw=\"yes\" sort=\"age\"]]\n"
 msgstr "[[!inline pages=\"doc/sensitive_documents/metadata.inline.fr\" raw=\"yes\" sort=\"age\"]]\n"
+
+#, no-wrap
+#~ msgid "  <p>Watching [[!wikipedia IPTV]] channels from <i>VLC</i> in Tails doesn't work.</p>\n"
+#~ msgstr "  <p>Regarder des chaînes de [[!wikipedia_fr Télévision_IP desc=\"télévision IP (IPTV)\"]] depuis <i>VLC</i> dans Tails ne fonctionne pas.</p>\n"
 
 #, no-wrap
 #~ msgid "    See the [official documentation](https://help.gnome.org/users/brasero/stable/).\n"

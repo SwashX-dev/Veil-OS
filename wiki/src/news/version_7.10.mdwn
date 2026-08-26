@@ -1,0 +1,92 @@
+[[!meta title="Tails 7.10"]]
+[[!meta date="Thu, 23 Jul 2026 00:00:00 +0000"]]
+[[!pagetemplate template="news.tmpl"]]
+[[!tag announce]]
+
+<h1 id="features">New features</h1>
+
+## New shutdown procedure
+
+Tails now uses the standard shutdown procedure from GNOME.
+
+The [[standard shutdown|doc/first_steps/shutdown]] procedure is a bit slower,
+but better prevents data loss.
+
+For example, the **Power Off** confirmation dialog informs you if an
+application needs to be closed or an open document needs to be saved before
+shutting down.
+
+[[!img doc/first_steps/shutdown/power_off_with_inhibitor.png class="screenshot" alt=""]]
+
+Even without confirming or saving the open documents, Tails will shut down
+after 60 seconds.
+
+You can still use the faster [[emergency
+shutdown|doc/first_steps/shutdown#emergency]] as before.
+
+## *Celluloid* video player
+
+We replaced *GNOME Videos* with *Celluloid*, a more modern and reliable video
+player.
+
+[[!img celluloid.png class="screenshot" alt=""]]
+
+<div class="note">
+
+<p>For added security, <i>Celluloid</i> cannot access the network. You can
+either:</p>
+
+<ul>
+
+  <li>Open online videos, like MP4 and AVI files, in <i>Tor Browser</i>.
+
+  <li>Open online streaming addresses, like IPTV and HLS addresses, in
+  <i>VLC</i>, installed as [[additional
+  software|doc/persistent_storage/additional_software]].</li>
+
+</ul>
+
+</div>
+
+<div class="bug">
+
+<p><i>Celluloid</i> doesn't work on some computers from 2011 or earlier.</p>
+
+<p>You can use <i>VLC</i> instead, installed as [[additional
+software|doc/persistent_storage/additional_software]].</p>
+
+</div>
+
+<h1 id="changes">Changes and updates</h1>
+
+- Update *Tor Browser* to [15.0.19](https://blog.torproject.org/new-release-tor-browser-15019/).
+
+- Update some firmware packages. This improves support for newer
+  hardware: graphics, Wi-Fi, and so on.
+
+For more details, read our [[!tails_gitweb debian/changelog desc="changelog"]].
+
+<h1 id="get">Get Tails 7.10</h1>
+
+## To upgrade your Tails USB stick and keep your Persistent Storage
+
+- Automatic upgrades are available from Tails 7.0 or later to 7.10.
+
+- If you cannot do an automatic upgrade or if Tails fails to start after an
+  automatic upgrade, please try to do a [[manual upgrade|doc/upgrade/#manual]].
+
+## To install Tails 7.10 on a new USB stick
+
+Follow our [[installation instructions|install]].
+
+<div class="caution"><p>The Persistent Storage on the USB stick will be lost if
+you install instead of upgrading.</p></div>
+
+## To download only
+
+If you don't need installation or upgrade instructions, you can download
+Tails 7.10 directly:
+
+- [[For USB sticks (USB image)|install/download]]
+
+- [[For DVDs and virtual machines (ISO image)|install/download-iso]]

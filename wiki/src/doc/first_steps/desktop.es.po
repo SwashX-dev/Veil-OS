@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-03-27 10:22+0000\n"
+"POT-Creation-Date: 2026-07-22 09:36+0200\n"
 "PO-Revision-Date: 2026-07-03 23:45+0000\n"
 "Last-Translator: Cleverson Candido <optimuspraimu@gmail.com>\n"
 "Language-Team: Spanish <http://translate.tails.net/projects/tails/desktop/es/"
@@ -650,8 +650,9 @@ msgstr ""
 "está suspendido.</p>\n"
 
 #. type: Plain text
-#, no-wrap
-msgid "<p>For more security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>\n"
+#, fuzzy, no-wrap
+#| msgid "<p>For more security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>\n"
+msgid "<p>For added security, [[shut down Tails|doc/first_steps/shutdown]] entirely.</p>\n"
 msgstr "<p>Para más seguridad, [[apaga Tails|doc/first_steps/shutdown]] por completo.</p>\n"
 
 #. type: Plain text

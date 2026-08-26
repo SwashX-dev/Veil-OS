@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-17 11:02+0200\n"
-"PO-Revision-Date: 2026-04-09 16:09+0000\n"
-"Last-Translator: emma peel <emma.peel@riseup.net>\n"
+"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"PO-Revision-Date: 2026-08-13 14:43+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Kabyle <https://hosted.weblate.org/projects/tor/tails-gui/kab/"
 ">\n"
 "Language: kab\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -48,15 +48,15 @@ msgstr "Sken-d aɣmis"
 msgid "Configure"
 msgstr "Swel"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
 msgid "Password Manager"
 msgstr "Amsefrak n wawlen n uɛeddi"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password"
 msgstr "awal n uɛeddi"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
 msgstr "Amsefrak n wawlen n uɛeddi"
 
@@ -676,6 +676,7 @@ msgstr ""
 "Ɣef sebba n tɣellist, tuqqna ɣer uẓeṭṭa tensa akka tura."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:855
+#, fuzzy
 msgid ""
 "<b>An error occurred while installing the upgrade.</b>\\n\\nYour Tails "
 "device needs to be repaired and might be unable to restart.\\n\\nPlease "
@@ -964,10 +965,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Aleqqem n tkatut timezgit. Aya yezmer ad yeṭṭef kra n wakud…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
+#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Tuccḍa deg tukksa n usekkeṛ n tkatut timezgit: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
+#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Tuccḍa deg uleqqem n tkatut timezgit: {}"
 
@@ -977,10 +980,12 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "Ur izmir ara ad isermed kra n twuriwin n tkatut timezgit: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
+#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "uccḍa deg usermed n tkatut timezgit: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
+#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "Ur izmer ara asefsex n uṣeggem n unagraw n yifuyla n tkatut timezgit: {}"
@@ -991,7 +996,7 @@ msgstr "Tut_layt"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/region_settings.py:234
 msgid "_Formats"
-msgstr "Imusal (_F)"
+msgstr "_Imusal"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/region_settings.py:271
 msgid "_Keyboard Layout"
@@ -1569,22 +1574,10 @@ msgstr ""
 "Ur izmir ara ad d-yattwaf ibenk ɣef wacu itteddu Tails. Ahat tesqedceḍ "
 "tanefrunt n 'toram'?"
 
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:103
+#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:106
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:120
 msgid "Lock Screen"
 msgstr "Sekkeṛ agdil"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:107
-msgid "Suspend"
-msgstr "Ḥbes di leɛḍil"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:111
-msgid "Restart"
-msgstr "Ales asekker"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:115
-msgid "Power Off"
-msgstr "Sexsi"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
@@ -1884,7 +1877,7 @@ msgid ""
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/config.py:9
-#: config/chroot_local-includes/usr/local/bin/tca:10
+#: config/chroot_local-includes/usr/local/bin/tca:11
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:1
 msgid "Tor Connection"
 msgstr "Tuqqna ɣer Tor"
@@ -2141,7 +2134,7 @@ msgid ""
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:49
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
 msgid "Persistent Storage"
@@ -2184,6 +2177,7 @@ msgstr "Isefka n twuri-agi mazal ttwakelsen."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
+#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Tuccḍa deg usermed n tamahilt {}"
 
@@ -2195,13 +2189,14 @@ msgstr "Teḍra-d tuccḍa deg urmad n tmahilt."
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:279
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:307
 msgid "Details"
 msgstr "Talqayt"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
+#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Tuccḍa deg usensi n tmahilt {}"
 
@@ -2210,6 +2205,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Teḍra-d tuccḍa deg usensi n tmahilt."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2225,10 +2221,12 @@ msgid "_Delete Data"
 msgstr "_Kkes isefka"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Tuccḍa deg tukksa n isefka n tmahilt {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Teḍra-d tuccḍa di tukksa n isefka n tmahilt {}."
 
@@ -2299,7 +2297,7 @@ msgstr "Tzemreḍ ad tazneḍ aneqqis n tuccḍa akken ad tefruḍ ugur-nni."
 msgid "_Send Error Report"
 msgstr "_Azen aneqqis n tuccḍa"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:153
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:154
 msgid ""
 "Impossible to delete the Persistent Storage while it is unlocked.\n"
 "\n"
@@ -2311,7 +2309,7 @@ msgstr ""
 "I tukksa n tkatut timezgit, ales asenker n Tails war tukksa n usekkeṛ u ldi "
 "iɣewwaṛen n tkatut timezgit tikkelt nniḍen."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:167
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:168
 msgid ""
 "Impossible to delete the Persistent Storage because the USB stick is read-"
 "only.\n"
@@ -2327,17 +2325,17 @@ msgstr ""
 "asenker n Tails war tukksa n usekkeṛ n tkatut timezgit syin ldi iɣewwaṛen n "
 "tkatut timezgit tikkelt nniḍen."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:175
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:176
 msgid "Impossible to delete the Persistent Storage"
 msgstr "D awezɣi tukksa n tkatut timezgit"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:183
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:218
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:184
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:219
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:35
 msgid "Delete Persistent Storage"
 msgstr "Kkes takatut timezgit"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:187
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:188
 msgid ""
 "Are you sure that you want to delete your Persistent Storage? This action "
 "cannot be undone."
@@ -2345,7 +2343,7 @@ msgstr ""
 "D tidet tebɣiḍ ad tekkseḍ takatut-ik·im timezgit? Tigawt-agi ur tezmir ara "
 "ad tettwasefsex."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:191
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:56
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/change_passphrase_dialog.ui.in:301
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:124
@@ -2353,53 +2351,53 @@ msgstr ""
 msgid "_Cancel"
 msgstr "Semmet (_C)"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:193
 msgid "_Delete Persistent Storage"
 msgstr "_Kkes takatut timezgit"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:202
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:203
 msgid "Deleting your Persistent Storage..."
 msgstr "Tukksa n tkatut-ik·mi timezgit…"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:221
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:222
 msgid "_OK"
 msgstr "IH (_O)"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:230
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:231
 msgid ""
 "Sorry, you can't close this app until the ongoing operation has completed."
 msgstr "Suref-aɣ, ur tezmireḍ ara ad tmedleḍ asnas-a alamma tfukk temhelt."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:233
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:234
 msgid "Please wait"
 msgstr "Ttxil-k·m arǧu"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:261
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 msgid "Not enough memory to create Persistent Storage"
 msgstr "Ulac aṭas n tkatut i tmerna n tkatut timezgit"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:268
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:277
 msgid "Failed to create Persistent Storage"
 msgstr "Ulamek asnulfu n tkatut timezgit"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:269
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:278
 msgid "An error occurred while creating the Persistent Storage."
 msgstr "Teḍra-d tuccḍa deg usnulfu n tkatut timezgit."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:305
 msgid "Error deleting Persistent Storage"
 msgstr "Tuccḍa deg tukksa n tkatut timezgit"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:306
 msgid "An error occurred while deleting the Persistent Storage."
 msgstr "Teḍra-d tuccḍa deg tukksa n tkatut timezgit."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:334
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:346
 msgid "Details (command output)"
 msgstr "Ifatusen (tuffɣa n tladna)"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:361
 msgid "Failed to open the documentation"
 msgstr "Tuccḍa deg tulya n tsemlit"
 
@@ -2724,7 +2722,7 @@ msgstr "Tasarut OpenPGP n unermis d arameɣtut: %s"
 msgid "Invalid contact OpenPGP public key block"
 msgstr "Iḥder n tsarut tazayezt OpenPGP d tarameɣtut"
 
-#: config/chroot_local-includes/usr/local/bin/tca:11
+#: config/chroot_local-includes/usr/local/bin/tca:12
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -3282,12 +3280,11 @@ msgstr "Rmed iseɣẓanen imernan"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
 msgid "Flatpak"
-msgstr ""
+msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "Rmed amsaɣ SSH"
+msgstr "Rmed Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
@@ -4079,6 +4076,15 @@ msgstr "Duǧamber"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Tamrilt"
+
+#~ msgid "Suspend"
+#~ msgstr "Ḥbes di leɛḍil"
+
+#~ msgid "Restart"
+#~ msgstr "Ales asekker"
+
+#~ msgid "Power Off"
+#~ msgstr "Sexsi"
 
 #~ msgid "Bridge address malformed"
 #~ msgstr "Amasal n tensa n tqenṭert d arameɣtu"

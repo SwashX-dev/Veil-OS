@@ -33,7 +33,7 @@ upgrade as soon as possible.
 
 - Tor to [0.2.7.6](https://gitweb.torproject.org/tor.git/tree/ChangeLog?id=tor-0.2.7.6).
 
-- I2P to [0.9.23](https://geti2p.net/en/blog/post/2015/11/19/0.9.23-Release).
+- I2P to 0.9.23.
 
 - Icedove from 31.8 to 38.4.
 

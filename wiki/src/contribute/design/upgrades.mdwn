@@ -310,7 +310,7 @@ A given IUK is meant to be made available at the URL composed from:
 * `https://download.tails.net/tails/iuk/v2/`
 * the IUK file basename
 
-Example: <https://mirrors.edge.kernel.org/tails/stable/iuk/v2/Tails_amd64_6.0_to_6.1.iuk>
+Example: <https://download.tails.net/tails/stable/iuk/v2/Tails_amd64_7.9_to_7.10.iuk>
 
 ## Client and user interface
 

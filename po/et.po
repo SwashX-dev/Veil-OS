@@ -9,13 +9,14 @@
 # Sarnane <sarnane+transifex@pm.me>, 2021
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 # Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>, 2025.
+# Travis Sova <travis.sova@tptlive.ee>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-17 11:02+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"PO-Revision-Date: 2026-08-18 19:51+0000\n"
+"Last-Translator: Travis Sova <travis.sova@tptlive.ee>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "et/>\n"
 "Language: et\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -46,17 +47,17 @@ msgstr "Kuva logi"
 msgid "Configure"
 msgstr "Seadista"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
 #, fuzzy
 msgid "Password Manager"
 msgstr "Salasõna"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 #, fuzzy
 msgid "password"
 msgstr "Salasõna"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
 msgstr ""
 
@@ -935,12 +936,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Sinu püsiva salvestusruumi loomine ebaõnnestus."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Loo püsiv salvestusruum"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Loo püsiv salvestusruum"
 
@@ -950,12 +951,12 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Loo püsiv salvestusruum"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Süsteemi taaskäivitamine ebaõnnestus"
 
@@ -1179,9 +1180,8 @@ msgstr "Tails installatsioon nurjus!"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:341
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:1
-#, fuzzy
 msgid "Tails Cloner"
-msgstr "Tails'i installer"
+msgstr "Tailsi kloonija"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:393
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:164
@@ -1526,22 +1526,10 @@ msgstr ""
 "Ketas, millel Tails käivitati, ei ole leitav. Võib-olla kasutasid "
 "parameetrit 'toram'?"
 
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:103
+#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:106
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:120
 msgid "Lock Screen"
 msgstr "Lukusta ekraan"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:107
-msgid "Suspend"
-msgstr ""
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:111
-msgid "Restart"
-msgstr "Taaskäivita"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:115
-msgid "Power Off"
-msgstr "Lülita välja"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
@@ -1814,7 +1802,7 @@ msgid ""
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/config.py:9
-#: config/chroot_local-includes/usr/local/bin/tca:10
+#: config/chroot_local-includes/usr/local/bin/tca:11
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:1
 msgid "Tor Connection"
 msgstr "Tor ühendus"
@@ -2052,7 +2040,7 @@ msgid ""
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:49
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
 msgid "Persistent Storage"
@@ -2098,7 +2086,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Loo püsiv salvestusruum"
 
@@ -2111,14 +2099,14 @@ msgstr "Loo püsiv salvestusruum"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:279
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:307
 msgid "Details"
 msgstr "Üksikasjad"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Loo püsiv salvestusruum"
 
@@ -2128,6 +2116,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Loo püsiv salvestusruum"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2141,10 +2130,12 @@ msgid "_Delete Data"
 msgstr "Kustuta"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 
@@ -2218,7 +2209,7 @@ msgstr ""
 msgid "_Send Error Report"
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:153
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:154
 msgid ""
 "Impossible to delete the Persistent Storage while it is unlocked.\n"
 "\n"
@@ -2226,7 +2217,7 @@ msgid ""
 "Persistent Storage and open the Persistent Storage settings again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:167
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:168
 msgid ""
 "Impossible to delete the Persistent Storage because the USB stick is read-"
 "only.\n"
@@ -2236,25 +2227,25 @@ msgid ""
 "the Persistent Storage settings again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:175
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:176
 #, fuzzy
 msgid "Impossible to delete the Persistent Storage"
 msgstr "Loo püsiv salvestusruum"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:183
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:218
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:184
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:219
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:35
 #, fuzzy
 msgid "Delete Persistent Storage"
 msgstr "Loo püsiv salvestusruum"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:187
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:188
 msgid ""
 "Are you sure that you want to delete your Persistent Storage? This action "
 "cannot be undone."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:191
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:56
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/change_passphrase_dialog.ui.in:301
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:124
@@ -2262,60 +2253,60 @@ msgstr ""
 msgid "_Cancel"
 msgstr "_Loobu"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:193
 #, fuzzy
 msgid "_Delete Persistent Storage"
 msgstr "Loo püsiv salvestusruum"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:202
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:203
 #, fuzzy
 msgid "Deleting your Persistent Storage..."
 msgstr "Loo püsiv salvestusruum"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:221
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:222
 msgid "_OK"
 msgstr "_Sobib"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:230
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:231
 msgid ""
 "Sorry, you can't close this app until the ongoing operation has completed."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:233
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:234
 msgid "Please wait"
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:261
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 #, fuzzy
 msgid "Not enough memory to create Persistent Storage"
 msgstr "Loo püsiv salvestusruum"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:268
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:277
 #, fuzzy
 msgid "Failed to create Persistent Storage"
 msgstr "Loo püsiv salvestusruum"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:269
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:278
 #, fuzzy
 msgid "An error occurred while creating the Persistent Storage."
 msgstr "Loo püsiv salvestusruum"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:305
 #, fuzzy
 msgid "Error deleting Persistent Storage"
 msgstr "Loo püsiv salvestusruum"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:306
 #, fuzzy
 msgid "An error occurred while deleting the Persistent Storage."
 msgstr "Loo püsiv salvestusruum"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:334
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:346
 msgid "Details (command output)"
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:361
 #, fuzzy
 msgid "Failed to open the documentation"
 msgstr "Dokumentatsioon"
@@ -2524,7 +2515,7 @@ msgstr ""
 #: ../config/chroot_local-includes/usr/share/applications/unsafe-browser.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:498
 msgid "Unsafe Browser"
-msgstr ""
+msgstr "Ebaturvaline Brauser"
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:100
 msgid ""
@@ -2621,7 +2612,7 @@ msgstr ""
 msgid "Invalid contact OpenPGP public key block"
 msgstr ""
 
-#: config/chroot_local-includes/usr/local/bin/tca:11
+#: config/chroot_local-includes/usr/local/bin/tca:12
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -3936,360 +3927,3 @@ msgstr "Detsember"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Kell"
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Skanneeri QR Kood"
-
-#~ msgid "Documentation"
-#~ msgstr "Dokumentatsioon"
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Võrguühendus"
-
-#~ msgid "Technical details to include"
-#~ msgstr "Tehnilised üksikasjad, mida kaasata"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Silumisteabe saamiseks teosta järgmine käsk: sudo tails-debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Avatud Onion-ringteed"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Allkirjastamisvõtme värskendamisel esines tõrge"
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "Loo"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "Ei suuda avada krüpteeritud salvestusruumi selle parooliga."
-
-#, fuzzy
-#~ msgid "_Passphrase"
-#~ msgstr "Parool:"
-
-#~ msgid "Language & Region"
-#~ msgstr "Keel ja piiskond"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Osad sihtseadme %(device)s jaotused on paigaldatud. Need võetakse ära "
-#~ "enne installimisprotsessi alustamist."
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "Sisenen unmount_device'i \"%(device)s\" jaoks"
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "Võtan ära paigaldatud failisüsteemid seadmel \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "Võtan lahti \"%(udi)s\" seadmel \"%(device)s\""
-
-#~ msgid "Lock screen"
-#~ msgstr "Lukusta ekraan"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Ehitusteave:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "pole saadaval"
-
-#~ msgid "Unlock"
-#~ msgstr "Ava"
-
-#~ msgid "_Delete..."
-#~ msgstr "_Kustutamine..."
-
-#, fuzzy
-#~ msgid "_Change Passphrase..."
-#~ msgstr "Näita parool"
-
-#, fuzzy, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Aita meil parandada vigu!</h1>\n"
-#~ "<p>Loe <a href=\"%s\">meie veast teatamise juhiseid</a>.</p>\n"
-#~ "<p> <strong>Ära lisa rohkem isiklikku informatsiooni, kui vaja. </"
-#~ "strong></p>\n"
-#~ "<h2>Meile e-maili addressi andmisest</h2>\n"
-#~ "<p>Meile e-maili addressi andmine lubab meil sinuga ühendust võtta, et "
-#~ "probleemi täpsustada.\n"
-#~ "See on vajalik suurema osa teadete jaoks, mis me saame, kuna suurem osa "
-#~ "teateid ilma kontaktinformatsioonita on kasutud. Teisest küljest, see "
-#~ "annab ka pealtkuulajatele, nagu sinu e-maili- või internetipakkujale, "
-#~ "võimaluse kinnitada, et sa kasutad Tails\\'i\n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>Ei suutnud valida allalaadimisserverit.</b>\n"
-#~ "\n"
-#~ "Seda ei tohiks juhtuda. Palun teata veast."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Allalaadimisserveri valimisel esines tõrge"
-
-#, fuzzy
-#~ msgid ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-#~ msgstr ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-
-#~ msgid "Enabled"
-#~ msgstr "Lubatud"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist ebaõnnestus tagastuskoodiga {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cryptsetup ebaõnnestus tagastuskoodiga {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist ebaõnnestus tagastuskoodiga {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "umount ebaõnnestus tagastuskoodiga {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Püsivusviisard - Püsiva andmeköite loomine"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "A {size} persistent volume will be created on the <b>{vendor} {model}</b> "
-#~ "device. Data on this volume will be stored in an encrypted form protected "
-#~ "by a passphrase."
-#~ msgstr ""
-#~ "{size} püsiv andmeköide luuakse seadmel <b>{vendor} {model}</b>. Andmed "
-#~ "sellel andmeköitel salvestatakse krüpteeritult, kaitstud parooliga."
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>Ettevaatust!</b> Püsivuse kasutamisel on tagajärjed, mida peab hästi "
-#~ "mõistma. Tails ei saa sind aidata, kui seda valesti kasutad! Lisateabe "
-#~ "saamiseks vaata <i>Krüpteeritud püsivuse</i> lehte Tails\\'i "
-#~ "kasutusjuhendis."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "Parool ei tohi olla tühi"
-
-#~ msgid "Failed"
-#~ msgstr "Ebaõnnestus"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Tails\\'i püsivuspartitsiooni paigaldamine."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "Tails\\'i püsivuspartitsioon paigaldatakse."
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Püsiva andmeköite õigused parandatakse."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "Püsivuse vaikekonfiguratsiooni loomine."
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "Püsivuse vaikekonfiguratsioon luuakse."
-
-#~ msgid "Creating..."
-#~ msgstr "Loomine..."
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Püsiva andmeköite loomine..."
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Püsivusviisard - Püsiva andmeköite konfiguratsioon"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "Täpsusta failiid, mis salvestatakse püsivasse andmeköitesse"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The selected files will be stored in the encrypted partition {partition} "
-#~ "({size}), on the <b>{vendor} {model}</b> device."
-#~ msgstr ""
-#~ "Valitud failid salvestatakse krüpteeritud partitsioonil {partition} "
-#~ "({size}), <b>{vendor} {model}</b> seadmel."
-
-#~ msgid "Saving..."
-#~ msgstr "Salvestamine.."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Püsivuskonfiguratsiooni salvestamine."
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Püsivusviisard - Püsiva andmeköite kustutamine"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "Püsiv andmeköide {partition} ({size}) <b>{vendor} {model}</b> seadmel "
-#~ "kustutatakse."
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "Püsiva andmeköite kustutamine..."
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Keel, administreerimise parool ja lisaseaded"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Salvestatud järjehoidjad Tor\\'i brauseris."
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Võrguseadmete ja -ühenduste konfiguratsioon."
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "Tails\\'i käivitamisel paigaldatud tarkvara"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Thunderbird\\'i e-mailid, vood ja OpenPGP võtmed"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Bitcoin\\'i klient"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Pidgin\\'i profiilid ja OTR võtmestik"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "SSH võtmed, häälestus ja tuntud hostid"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Seadista Tails\\'i püsiv andmeköide"
-
-#~ msgid "Device already has a persistent volume."
-#~ msgstr "Seadmel on juba püsiv andmeköide."
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "Seadmel pole piisavalt jaotamata ruumi."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr "Seadmel ei ole püsivat andmeköidet."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Ei saa kustutada püsivat andmeköidet kasutamise ajal. Sa peaksid "
-#~ "taaskäivitama Tails\\'i ilma püsivuseta."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "Püsiv andmeköide ei ole avatud."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Pusiv andmeköide ei ole paigaldatud."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "Püsiv andmeköide ei ole loetav. Õiguste või omandiõiguste probleemid?"
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "Püsivale andmeköitele ei ole võimalik kirjutada."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Tails töötab mitte-USB / mitte-SDIO seadmelt."
-
-#~ msgid "Device is optical."
-#~ msgstr "Seade on optiline."
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr "Seadet ei loodud kasutades USB-d või Tails\\'i paigaldajat."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Püsivusviisard - lõpetatud"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "Kõik tehtud muudatused jõustuvad alles Tails\\'i taaskäivitamise järel."
-
-#~ msgid ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."
-#~ msgstr ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."

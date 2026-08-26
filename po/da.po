@@ -21,14 +21,15 @@
 # Whiz Zurrd <Whizzurrd@hmamail.com>, 2014
 # emma peel <emma.peel@riseup.net>, 2026.
 # Automatic translation add-on <noreply-addon-autotranslate@weblate.org>, 2026.
+# dark dream <linuxdk1978@gmail.com>, 2026.
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-17 11:02+0200\n"
-"PO-Revision-Date: 2026-04-23 17:09+0000\n"
-"Last-Translator: Automatic translation add-on <noreply-addon-"
-"autotranslate@weblate.org>\n"
+"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"PO-Revision-Date: 2026-08-18 15:51+0000\n"
+"Last-Translator: emma peel <emma.peel@riseup.net>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/tor/tails-gui/da/"
 ">\n"
 "Language: da\n"
@@ -36,7 +37,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -63,17 +64,15 @@ msgstr "Vis Log"
 msgid "Configure"
 msgstr "Konfigurer"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
-#, fuzzy
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
 msgid "Password Manager"
-msgstr "Adgangskode"
+msgstr "Adgangskodehåndtering"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
-#, fuzzy
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password"
-msgstr "Adgangskode"
+msgstr "adgangskode"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
 msgstr ""
 
@@ -105,7 +104,6 @@ msgid "The configuration of your additional software failed."
 msgstr "Konfigurationen af dine yderligere software mislykkedes."
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:99
-#, fuzzy
 msgid ""
 "To install it automatically when starting Tails, you can create a Persistent "
 "Storage and activate the <b>Additional Software</b> feature."
@@ -120,7 +118,6 @@ msgid "Create Persistent Storage"
 msgstr "Opret vedvarende lager"
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:113
-#, fuzzy
 msgid "Creating your Persistent Storage failed."
 msgstr "Oprettelse af dit vedvarende lager mislykkedes."
 
@@ -199,12 +196,10 @@ msgid "This can take several minutes."
 msgstr "Det kan tage flere minutter."
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:146
-#, fuzzy
 msgid "The installation of your additional software failed"
 msgstr "Installationen af dine yderligere software mislykkedes."
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-install:161
-#, fuzzy
 msgid "Additional software installed successfully"
 msgstr "Yderligere software blev installeret."
 
@@ -393,11 +388,10 @@ msgid ""
 "b>\\n\\nCheck your network connection and restart Tails.\\n\\nIf the problem "
 "persists, try doing a manual upgrade."
 msgstr ""
-"<b>Der opstod en fejl under opdatering af underskriftsnøglen.</b>\\n\\n<b>Så "
-"det ikke muligt at se om der findes en opgradering fra vores websted.</"
-"b>\\n\\nTjek din netværksforbindelse og genstart Tails for at prøve at "
-"opgradere igen.\\n\\nHvis problemet fortsætter, gå til file:///usr/share/doc/"
-"tails/website/doc/upgrade/error/check.en.html"
+"<b>An error occurred while updating the signing key.</b>\\n\\n<b>This "
+"prevents determining whether an upgrade is available from our website.</"
+"b>\\n\\nCheck your network connection and restart Tails.\\n\\nIf the problem "
+"persists, try doing a manual upgrade."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:309
 msgid "Error while downloading the signing key"
@@ -408,7 +402,6 @@ msgid "Error while checking for upgrades"
 msgstr "Fejl under søgning efter opgraderinger"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:344
-#, fuzzy
 msgid ""
 "<b>Could not determine whether an upgrade is available from our website.</"
 "b>\n"
@@ -419,11 +412,9 @@ msgid ""
 msgstr ""
 "<b>Kunne ikke fastslå om der findes en opgradering fra vores websted.</b>\n"
 "\n"
-"Tjek din netværksforbindelse og genstart Tails for at prøve at opgradere "
-"igen.\n"
+"Tjek din netværksforbindelse og genstart Tails.\n"
 "\n"
-"Hvis problemet fortsætter, gå til file:///usr/share/doc/tails/website/doc/"
-"upgrade/error/check.en.html"
+"Hvis problemet fortsætter, prøv et manuelt opgradering"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:359
 msgid "no automatic upgrade is available from our website for this version"
@@ -432,7 +423,6 @@ msgstr ""
 "version"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:365
-#, fuzzy
 msgid "your device was not created using a USB image or Tails Cloner"
 msgstr ""
 "din enhed blev ikke oprettet med et USB-aftryk eller Tails-"
@@ -493,7 +483,6 @@ msgstr ""
 "hukommelse, men der er kun {free_memory} tilgængelig."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:473
-#, fuzzy
 msgid ""
 "An error occurred while detecting available upgrades.\n"
 "This should not happen. Please report a bug."
@@ -586,9 +575,9 @@ msgid ""
 "connection, and restart Tails to try upgrading again."
 msgstr ""
 "<b>Opgraderingen kunne ikke downloades.</b>\\n\\nTjek din "
-"netværksforbindelse og genstart Tails for at prøve at opgradere igen."
-"\\n\\nHvis problemet ikke forsvinder, gå til file:///usr/share/doc/tails/"
-"website/doc/upgrade/error/download.en.html"
+"netværksforbindelse og genstart Tails for at prøve at opgradere igen.\\n\\n "
+"Hvis problemet ikke forsvinder, gå til file:///usr/share/doc/tails/website/"
+"doc/upgrade/error/download.en.html"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:714
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:729
@@ -613,7 +602,6 @@ msgid "Failed to create temporary download directory"
 msgstr "Kunne ikke oprette midlertidig downloadmappe"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:755
-#, fuzzy
 msgid ""
 "The upgrade was successfully downloaded.\n"
 "\n"
@@ -621,8 +609,9 @@ msgid ""
 "\n"
 "Please save your work and close all other applications."
 msgstr ""
-"Opgraderingen blev downloaded.\n"
+"Opgraderingen blev downloadet.\n"
 "Din netværksforbindelse vil blive deaktiveret mens vi opgraderer.\n"
+"\n"
 "Gem venligst dit arbejde og luk derefter alle programmer."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:760
@@ -700,7 +689,6 @@ msgstr ""
 "Af sikkerhedsgrunde er netværk blevet deaktiveret."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:855
-#, fuzzy
 msgid ""
 "<b>An error occurred while installing the upgrade.</b>\\n\\nYour Tails "
 "device needs to be repaired and might be unable to restart.\\n\\nPlease "
@@ -708,7 +696,7 @@ msgid ""
 "error/install.en.html"
 msgstr ""
 "<b>Der opstod en fejl under installation af opgraderingen.</b>\\n\\nDin "
-"Tails-enhed skal repareres, og kan muligvis ikke genstarte.\\n\\nFølg "
+"Tails -enhed skal repareres, og kan muligvis ikke genstarte.\\n\\nFølg "
 "venligst instruktionerne i file:///usr/share/doc/tails/website/doc/upgrade/"
 "error/install.en.html"
 
@@ -759,9 +747,8 @@ msgid "Disable all networking"
 msgstr "Deaktivér al netværk"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:339
-#, fuzzy
 msgid "_Unsafe Browser"
-msgstr "Usikker browser"
+msgstr "_Usikker browser"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:348
 #, fuzzy
@@ -836,7 +823,7 @@ msgstr "Låser op…"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:490
 #, fuzzy
 msgid "Checking the file system…"
-msgstr "Verificerer filsystem..."
+msgstr "Verificerer filsystem…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:523
 #, fuzzy
@@ -967,12 +954,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Oprettelse af dit vedvarende lager mislykkedes."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Krypteret _vedvarende lager"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Krypteret _vedvarende lager"
 
@@ -982,12 +969,12 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "Kunne ikke konfigurere dit vedvarende lager"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Opret vedvarende lager"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Kunne ikke konfigurere dit vedvarende lager"
 
@@ -1009,9 +996,9 @@ msgid "Unable to write on %(device)s, skipping."
 msgstr "Kan ikke skrive til %(device)s, springer over."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:371
-#, fuzzy, python-format
+#, python-format
 msgid "Wrote to device at %(speed)d MB/s"
-msgstr "Skrev til enhed med %(speed)d MB/s"
+msgstr "Skrevet til enhed med %(speed)d MB/s"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:383
 msgid "Extracting live image to the target device..."
@@ -1099,9 +1086,8 @@ msgid "No mount points found"
 msgstr "Fandt ingen monteringspunkter"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:806
-#, fuzzy
 msgid "Target device has opened files"
-msgstr "Skrev til enhed med %(speed)d MB/s"
+msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:834
 #, python-format
@@ -1572,22 +1558,10 @@ msgstr ""
 "Kan ikke finde drevet som Tails kører fra. Måske bruger du 'toram'-"
 "valgmuligheden?"
 
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:103
+#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:106
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:120
 msgid "Lock Screen"
 msgstr "Lås skærm"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:107
-msgid "Suspend"
-msgstr "Hvile"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:111
-msgid "Restart"
-msgstr "Genstart"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:115
-msgid "Power Off"
-msgstr "Luk ned"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
@@ -1886,7 +1860,7 @@ msgstr ""
 "værende troværdigt, både for værtsstyresystemet og virtualiseringssoftwaren."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/config.py:9
-#: config/chroot_local-includes/usr/local/bin/tca:10
+#: config/chroot_local-includes/usr/local/bin/tca:11
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:1
 msgid "Tor Connection"
 msgstr "Tor-forbindelse"
@@ -2138,12 +2112,11 @@ msgid ""
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:49
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
-#, fuzzy
 msgid "Persistent Storage"
-msgstr "Opret vedvarende lager"
+msgstr "Vedvarende Lager"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:56
 #, fuzzy
@@ -2185,7 +2158,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Opret vedvarende lager"
 
@@ -2198,14 +2171,14 @@ msgstr "Opret vedvarende lager"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:279
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:307
 msgid "Details"
 msgstr "Detaljer"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Opret vedvarende lager"
 
@@ -2215,6 +2188,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Opret vedvarende lager"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2228,10 +2202,12 @@ msgid "_Delete Data"
 msgstr "Slet"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 
@@ -2306,7 +2282,7 @@ msgstr ""
 msgid "_Send Error Report"
 msgstr "WhisperBack-fejlrapportering"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:153
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:154
 msgid ""
 "Impossible to delete the Persistent Storage while it is unlocked.\n"
 "\n"
@@ -2314,7 +2290,7 @@ msgid ""
 "Persistent Storage and open the Persistent Storage settings again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:167
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:168
 msgid ""
 "Impossible to delete the Persistent Storage because the USB stick is read-"
 "only.\n"
@@ -2324,25 +2300,25 @@ msgid ""
 "the Persistent Storage settings again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:175
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:176
 #, fuzzy
 msgid "Impossible to delete the Persistent Storage"
 msgstr "Kunne ikke konfigurere dit vedvarende lager"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:183
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:218
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:184
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:219
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:35
 #, fuzzy
 msgid "Delete Persistent Storage"
 msgstr "Opret vedvarende lager"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:187
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:188
 msgid ""
 "Are you sure that you want to delete your Persistent Storage? This action "
 "cannot be undone."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:191
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:56
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/change_passphrase_dialog.ui.in:301
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:124
@@ -2350,60 +2326,60 @@ msgstr ""
 msgid "_Cancel"
 msgstr "_Annuller"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:193
 #, fuzzy
 msgid "_Delete Persistent Storage"
 msgstr "Opret vedvarende lager"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:202
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:203
 #, fuzzy
 msgid "Deleting your Persistent Storage..."
 msgstr "Opret vedvarende lager"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:221
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:222
 msgid "_OK"
 msgstr "_OK"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:230
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:231
 msgid ""
 "Sorry, you can't close this app until the ongoing operation has completed."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:233
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:234
 msgid "Please wait"
 msgstr "Vent venligst"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:261
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 #, fuzzy
 msgid "Not enough memory to create Persistent Storage"
 msgstr "Opret vedvarende lager"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:268
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:277
 #, fuzzy
 msgid "Failed to create Persistent Storage"
 msgstr "Kunne ikke konfigurere dit vedvarende lager"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:269
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:278
 #, fuzzy
 msgid "An error occurred while creating the Persistent Storage."
 msgstr "Krypteret _vedvarende lager"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:305
 #, fuzzy
 msgid "Error deleting Persistent Storage"
 msgstr "Krypteret _vedvarende lager"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:306
 #, fuzzy
 msgid "An error occurred while deleting the Persistent Storage."
 msgstr "Krypteret _vedvarende lager"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:334
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:346
 msgid "Details (command output)"
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:361
 #, fuzzy
 msgid "Failed to open the documentation"
 msgstr "Dokumentation til Tails"
@@ -2726,7 +2702,7 @@ msgstr "Kontaktens OpenPGP-nøgle er ugyldig: %s"
 msgid "Invalid contact OpenPGP public key block"
 msgstr "Kontaktens offentlig nøgle-blok for OpenPGP er ugyldig"
 
-#: config/chroot_local-includes/usr/local/bin/tca:11
+#: config/chroot_local-includes/usr/local/bin/tca:12
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -3028,7 +3004,6 @@ msgid "Show Passphrase"
 msgstr "Vis adgangskode"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:463
-#, fuzzy
 msgid "Enter your passphrase"
 msgstr "Bekræft adgangskode:"
 
@@ -3632,9 +3607,8 @@ msgid "None"
 msgstr "Ingen"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:242
-#, fuzzy
 msgid "Ask for a bridge based on your _region"
-msgstr "• Bro over e-mail"
+msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
 #, fuzzy
@@ -4145,611 +4119,3 @@ msgstr "December"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Ur"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "Forkert udformet broadresse"
-
-#, fuzzy
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "Det er nødvendigt at indstille en bro hvis du vil skjule at du bruger Tor."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Scan QR-kode"
-
-#~ msgid "Documentation"
-#~ msgstr "Dokumentation"
-
-#, fuzzy
-#~| msgid ""
-#~| "Opens a terminal as the root user, using gksu to ask for the password"
-#~ msgid "Opens a console as the root user"
-#~ msgstr ""
-#~ "Åbner en terminal som root-brugeren, med gksu for at spørge om "
-#~ "adgangskoden"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr "Du skal autentificere, for at kunne starte en root-terminal."
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Netværksforbindelse"
-
-#~ msgid "Obsolete"
-#~ msgstr "Forældet"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Du skal migrere dine OpenPGP-nøgler"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i> 78 erstatter nu <i>Enigmail</i> med den indbyggede "
-#~ "support for OpenPGP kryptering. Følg vores migrations instruktioner for "
-#~ "at fortsætte med, at anvende dine OpenPGP nøgler i <i>Thunderbird</i>."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "_Åbn migrations-instruktioner"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_Migrer senere"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "Vi erstattede denne yderligere indstilling i Tails 4.19 (Juni 2021) med "
-#~ "en Tor-forbindelsesassistent som er integreret i skrivebordet.\n"
-#~ "\n"
-#~ "Du bliver spurgt om du vil bruge Tor-broer til at oprette forbindelse til "
-#~ "Tor når Tails startes.\n"
-#~ "\n"
-#~ "Hvis du vil arbejde offline, så aktivér offline-tilstand i yderligere "
-#~ "indstillinger."
-
-#~ msgid "Technical details to include"
-#~ msgstr "Tekniske detaljer som skal med"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Root-terminal"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Åbn netværksovervågning"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Få fejlretningsinformation ved at køre følgende kommando: sudo tails-"
-#~ "debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Åbn onionkredsløb"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Starter Usikker browser..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Det kan tage et stykke tid, så vær venligst tålmodig."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Nulstil Tor-forbindelse"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Fejl under opdatering af underskriftsnøglen"
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "Opret"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Fejlrapporten kunne ikke sende, sandsynligvis pga. netværksproblemer. "
-#~ "Prøv venligst at genoprette forbindelsen til netværket og klik på send "
-#~ "igen.\n"
-#~ "\n"
-#~ "Virker det ikke, så får du mulighed for at gemme fejlrapporten."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Kan ikke gemme %s."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Fejlrapporten kunne ikke sendes, sandsynligvis pga. netværksproblemer.\n"
-#~ "\n"
-#~ "Som en midlertidig løsning kan du gemme fejlrapporten som en fil på et "
-#~ "USB-drev og prøve at sende den til os på %s fra din e-mailkonto på et "
-#~ "andet system. Bemærk at din fejlrapport ikke længere er anonym, med "
-#~ "mindre du selv foretager yderligere trin (f.eks. bruger Tor med en e-"
-#~ "mailkonto der kan kasseres).\n"
-#~ "\n"
-#~ "Vil du gemme fejlrapporten til en fil?"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "Kan ikke låse op for krypteret lager med denne adgangskode."
-
-#, fuzzy
-#~ msgid "_Passphrase"
-#~ msgstr "Adgangskode:"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "Kunne ikke opsætte chroot."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Kunne ikke konfigurere browseren."
-
-#, fuzzy, sh-format
-#~| msgid ""
-#~| "MAC address anonymization failed for network card ${nic_name} (${nic}) "
-#~| "so it is temporarily disabled.\n"
-#~| "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "Anonymisering af MAC-adresse mislykkedes for netværkskortet ${nic_name} "
-#~ "(${nic}), så det er deaktiveret midlertidigt.\n"
-#~ "Det kan være du vil foretrække at genstarte Tails og deaktivere "
-#~ "anonymisering af MAC-adresse."
-
-#~ msgid "Language & Region"
-#~ msgstr "Sprog og region"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Nogle partitioner på målenheden %(device)s er monteret. De afmonteres før "
-#~ "installationsprocessen starter."
-
-#, fuzzy, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "Starter afmontering for \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "Afmonterer de monterede filsystemer på \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "Afmonterer \"%(udi)s\" på \"%(device)s\""
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Rapportér en fejl"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "Du tændte for offline-tilstand på velkomstskærmen."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "Det er umuligt at oprette forbindelse til Tor i offline-tilstand."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "Genstart Tails uden offline-stand for at oprette forbindelse til Tor og "
-#~ "internettet."
-
-#~ msgid "Lock screen"
-#~ msgstr "Lås skærm"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Byggeinformation:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "ikke tilgængelig"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Navnet på det påvirkede software"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Præcise trin til er reproducere fejlen"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Resultatet og beskrivelse af fejlen"
-
-#~ msgid "Desired result"
-#~ msgstr "Ønsket resultat"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Send feedback i en krypteret mail."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Ophavsret © 2009-2018 Tails-udviklere (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Tails-udviklere <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "scootergrisen"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Ophavsret © 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack - Send feedback i en krypteret mail\n"
-#~ "Ophavsret (C) 2009-2018 Tails-udviklere <tails@boum.org>\n"
-#~ "\n"
-#~ "Dette program er fri software; du kan videredistribuere det og/eller "
-#~ "ændre\n"
-#~ "det i henhold til GNU General Public License som udgivet af\n"
-#~ "Free Software Foundation; enten version 3 af licensen, eller (efter\n"
-#~ "eget valg) en hvilken som helst senere version.\n"
-#~ "\n"
-#~ "Dette program er distribueret i håbet om at det vil være anvendeligt, "
-#~ "men\n"
-#~ "UDEN NOGEN GARANTI;   uden selv den underforståede garanti for\n"
-#~ "SALGSBARHED eller EGNETHED TIL ET BESTEMT FORMÅL. Læs GNU\n"
-#~ "General Public License for flere detaljer.\n"
-#~ "\n"
-#~ "Du burde have modtaget en kopi af GNU General Public License\n"
-#~ "sammen med dette program. Hvis ikke, se <http://www.gnu.org/licenses/>.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Hjælp:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "E-mailadresse (hvis du vil have et svar fra os)"
-
-#~ msgid "Unlock"
-#~ msgstr "Lås op"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "Krypteret _vedvarende lager"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr "Indtast din adgangskode for at låse op for det vedvarende lager"
-
-#, fuzzy
-#~ msgid "_Delete..."
-#~ msgstr "Sletter..."
-
-#, fuzzy
-#~ msgid "_Change Passphrase..."
-#~ msgstr "Vis adgangskode"
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Hjælp os med at rette din fejl!</h1>\n"
-#~ "<p>Læs <a href=\"%s\">vores instruktioner til fejlrapportering</a>.</p>\n"
-#~ "<p><strong>Inkludér ikke mere personlig information end hvad der\n"
-#~ "er brug for!</strong></p>\n"
-#~ "<h2>Angående det at give os en e-mailadresse</h2>\n"
-#~ "<p>\n"
-#~ "Ved at give os en e-mailadresse giver det os mulighed til at kontakte dig "
-#~ "for at præcisere problemet. Det\n"
-#~ "er nødvendigt for langt størstedelen af de rapporter vi modtager, idet de "
-#~ "fleste rapporter\n"
-#~ "uden kontaktinformation er ubrugelige. På den anden side giver det også\n"
-#~ "en mulighed for aflytning, såsom din e-mail- eller internetudbyder, for "
-#~ "at\n"
-#~ "bekræfte at du bruger Tails.\n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>Kunne ikke vælge en downloadserver.</b>\n"
-#~ "\n"
-#~ "Det burde ikke ske. Rapportér venligst en fejl."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Fejl under valg af downloadserver"
-
-#, fuzzy
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "The Amnesic Incognito Live System"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Start Usikker browser?"
-
-#~ msgid "Enabled"
-#~ msgstr "Aktiveret"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist mislykkedes med returkoden {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cryptsetup mislykkedes med returkoden {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist mislykkedes med returkoden {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "umount mislykkedes med returkoden {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Vedvarende guide - Oprettelse af vedvarende diskområde"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "A {size} persistent volume will be created on the <b>{vendor} {model}</b> "
-#~ "device. Data on this volume will be stored in an encrypted form protected "
-#~ "by a passphrase."
-#~ msgstr ""
-#~ "Et {size} vedvarende diskområde vil blive oprettet på <b>{vendor} {model}"
-#~ "</b>-enheden. Data på diskområdet vil blive gemt i krypteret form "
-#~ "beskyttet af en adgangskode."
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>OBS!</b> Brug af vedvarende har konsekvenser som er vigtige er forstå "
-#~ "godt. Tails kan ikke hjælpe dig, hvis det bruges forkert. Se <i>Krypteret "
-#~ "vedvarende</i>-siden i dokumentationen til Tails for at lære mere."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "Adgangskoden må ikke være tom"
-
-#~ msgid "Failed"
-#~ msgstr "Mislykkedes"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Monterer Tails vedvarende partition."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "Tails vedvarende partition vil blive monteret."
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Tilladelserne på det vedvarende diskområde vil blive rettede."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "Opretter standardkonfiguration for vedvarende."
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "Standardkonfiguration for vedvarende vil blive oprettet."
-
-#~ msgid "Creating..."
-#~ msgstr "Opretter..."
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Opretter det vedvarende diskområde..."
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Vedvarende guide - Konfiguration af vedvarende diskområde"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "Angiv de filer som skal gemmes på det vedvarende diskområde"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The selected files will be stored in the encrypted partition {partition} "
-#~ "({size}), on the <b>{vendor} {model}</b> device."
-#~ msgstr ""
-#~ "De valgte filer vil blive gemt i den krypterede partition {partition} "
-#~ "({size}), på <b>{vendor} {model}</b>-enheden."
-
-#~ msgid "Saving..."
-#~ msgstr "Gemmer..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Gemmer vedvarende konfiguration..."
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Vedvarende guide - Sletning af vedvarende diskområde"
-
-#~ msgid "Your persistent data will be deleted."
-#~ msgstr "Dine vedvarende data vil blive slettet."
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "Det vedvarende diskområde {partition} ({size}), på <b>{vendor} {model}</"
-#~ "b>-enheden vil blive slettet."
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "Sletter det vedvarende diskområde..."
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "Behold filer som er gemt i \"Persistent\"-mappen"
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Sprog, administrationsadgangskode og yderligere indstillinger"
-
-#~ msgid "Save the last bridge that you used to connect to Tor"
-#~ msgstr ""
-#~ "Gem den sidste bro, som du brugte til at oprette forbindelse til Tor"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Bogmærker som er gemt i Tor Browser"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Konfiguration af netværksenheder og forbindelser"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "Software som er installeret når Tails starter"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Thunderbird emails, lister og OpenPGP nøgler"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Bitcoin-klient"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Pidgin-profiler og OTR-nøglering"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "SSH-nøgler, -konfiguration og kendte værter"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Opsæt vedvarende diskområde i Tails"
-
-#~ msgid "Device already has a persistent volume."
-#~ msgstr "Enheden har allerede et vedvarende diskområde."
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "Enheden har ikke nok uallokeret plads."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr "Enheden har ikke noget vedvarende diskområde."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Kan ikke slette det vedvarende volume mens det er i brug. Du bør "
-#~ "genstarte Tails uden vedholdenhed."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "Vedholdenhed volume er ikke låst op."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Vedholdenhed volume er ikke monteret."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "Vedholdenhed volume er ikke læsbart. Rettigheder eller ejerskabs "
-#~ "problemer?"
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "Vedvarende diskområde er ikke skrivbar."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Tails kører fra enhed som ikke er USB/SDIO."
-
-#~ msgid "Device is optical."
-#~ msgstr "Enheden er optisk."
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr ""
-#~ "Enheden blev ikke oprettet med et USB-aftryk eller Tails-"
-#~ "installationsprogram."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Vedvarende guide - Færdig"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "Ændringer du har foretaget vil først træde i kræft efter du har "
-#~ "genstartet Tails."
-
-#~ msgid "Delete the persistent volume and its content"
-#~ msgstr "Slet det vedvarende diskområde og dets indhold"
-
-#~ msgid "Configure persistent volume"
-#~ msgstr "Konfigurer vedvarende diskområde"
-
-#~ msgid "image"
-#~ msgstr "billede"
-
-#~ msgid "heading"
-#~ msgstr "heading"
-
-#~ msgid "_Request a new bridge"
-#~ msgstr "_Anmod om en ny bro"
-
-#~ msgid "toggle-button"
-#~ msgstr "til-/fra-knap"

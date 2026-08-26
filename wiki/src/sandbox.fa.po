@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
-"POT-Creation-Date: 2025-12-17 16:14+0000\n"
+"POT-Creation-Date: 2026-07-30 11:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-msgid "This is the SandBox."
+msgid "This is the SandBox :)"
 msgstr ""
 
 #. type: Plain text

@@ -119,7 +119,7 @@ that does *not* behave like Tails should. Follow the
 No. Upgrading whenever you get a notification from *[[Tails
 Upgrader|doc/upgrade]]* is enough.
 
-Tails provides upgrades every 4 weeks, which are thoroughly tested
+Tails provides upgrades every 2 weeks, which are thoroughly tested
 to make sure that no security feature or configuration gets broken.
 
 If you upgrade the system yourself using `apt` or *Synaptic*,
@@ -136,7 +136,7 @@ No, we don't sell preinstalled Tails devices.
 Selling preinstalled devices would in fact be a pretty bad idea:
 
 - If burned on a DVD, then this DVD would be outdated on the next
-  release. This means after 4 weeks at most.
+  release. This means after 2 weeks at most.
 
 - If installed onto a USB stick, then it would be impossible to verify
   that the Tails on the USB stick is genuine. Trusting that a Tails USB stick
@@ -228,7 +228,7 @@ XXX: Check https://2019.www.torproject.org/docs/torbutton/torbutton-faq.html.en#
 
 No.
 
-Tails provides upgrades every 4 weeks, which are thoroughly tested
+Tails provides upgrades every 2 weeks, which are thoroughly tested
 to make sure that no security feature or configuration gets broken.
 
 Updating add-ons in *Tor Browser* might

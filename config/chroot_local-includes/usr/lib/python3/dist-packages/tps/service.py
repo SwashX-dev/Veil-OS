@@ -45,7 +45,6 @@ from tps import (
     TPS_MOUNT_POINT,
     TPS_BACKUP_MOUNT_POINT,
     ON_ACTIVATED_HOOKS_DIR,
-    ON_DEACTIVATED_HOOKS_DIR,
     DBUS_FEATURES_PATH,
 )
 
@@ -299,8 +298,7 @@ class Service(DBusObject, ServiceUsingJobs):
 
         logger.info("Activating Persistent Storage...")
 
-        # Wait for all udev and UDisks events to finish
-        executil.check_call(["udevadm", "settle"])
+        # Wait for all UDisks events to finish
         udisks().settle()
 
         # Check if we can activate the Persistent Storage

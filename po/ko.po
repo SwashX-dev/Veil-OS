@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-17 11:02+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
+"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/tor/tails-gui/ko/"
 ">\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -62,17 +62,17 @@ msgstr "로그 보기"
 msgid "Configure"
 msgstr "설정"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
 #, fuzzy
 msgid "Password Manager"
 msgstr "비밀번호"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 #, fuzzy
 msgid "password"
 msgstr "비밀번호"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
 msgstr ""
 
@@ -225,6 +225,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/share/tails/additional-software/configuration-window.ui:135
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:205
+#, fuzzy
 msgid ""
 "To add more, install some software using <a "
 "href=\"synaptic.desktop\">Synaptic Package Manager</a> or <a "
@@ -499,7 +500,7 @@ msgstr ""
 "예상치 못한 오류가 발생했습니다. 버그를 신고해 주세요."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:504
-#, perl-brace-format
+#, fuzzy, perl-brace-format
 msgid ""
 "<b>You should upgrade to {name} {version}.</b>\n"
 "\n"
@@ -537,7 +538,7 @@ msgid "Upgrade later"
 msgstr "나중에 업그레이드"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:527
-#, perl-brace-format
+#, fuzzy, perl-brace-format
 msgid ""
 "<b>You should do a manual upgrade to the latest version of {name}.</b>\n"
 "\n"
@@ -961,10 +962,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "영구 저장소를 업그레이드하고 있습니다. 잠시만 기다려주세요…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
+#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "영구 저장소 잠금 해제 오류: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
+#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "영구 저장소 업그레이드 오류: {}"
 
@@ -974,10 +977,12 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "영구 저장소의 일부 기능 활성화 실패: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
+#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "영구 저장소 활성화 중 오류: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
+#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "영구 저장소 파일 시스템을 복구하는 중 중단에 실패했습니다: {}"
 
@@ -1513,6 +1518,7 @@ msgid "Errors were detected in the partitioning of your Tails USB stick."
 msgstr "Tails USB 스틱의 파티션을 나누는 동안 오류가 감지되었습니다."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:26
+#, fuzzy
 msgid ""
 "We recommend that you create a backup of your Tails using <i>Tails Cloner</"
 "i> to migrate to a new USB stick."
@@ -1561,22 +1567,10 @@ msgstr ""
 "Tails가 실행되는 드라이브를 찾을 수 없습니다. 혹시 'toram' 옵션을 사용하셨나"
 "요?"
 
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:103
+#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:106
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:120
 msgid "Lock Screen"
 msgstr "잠금 화면"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:107
-msgid "Suspend"
-msgstr "일시정지"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:111
-msgid "Restart"
-msgstr "다시 시작"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:115
-msgid "Power Off"
-msgstr "전원 끄기"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
@@ -1627,6 +1621,7 @@ msgid "Stop installing {package} automatically"
 msgstr "{package} 자동 설치 중지"
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:215
+#, fuzzy
 msgid ""
 "To do so, install some software using <a href=\"synaptic.desktop\">Synaptic "
 "Package Manager</a> or <a href=\"org.gnome.Terminal.desktop\">APT on the "
@@ -1637,6 +1632,7 @@ msgstr ""
 "를 설치해보세요."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:227
+#, fuzzy
 msgid ""
 "To do so, unlock your Persistent Storage when starting Tails and install "
 "some software using <a href=\"synaptic.desktop\">Synaptic Package Manager</"
@@ -1648,6 +1644,7 @@ msgstr ""
 "를 설치해보세요."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:240
+#, fuzzy
 msgid ""
 "To do so, create a Persistent Storage and install some software using <a "
 "href=\"synaptic.desktop\">Synaptic Package Manager</a> or <a "
@@ -1877,7 +1874,7 @@ msgstr ""
 "할 수 있습니다."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/config.py:9
-#: config/chroot_local-includes/usr/local/bin/tca:10
+#: config/chroot_local-includes/usr/local/bin/tca:11
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:1
 msgid "Tor Connection"
 msgstr "Tor 연결"
@@ -2137,7 +2134,7 @@ msgstr ""
 "다. 해당 대상에 접근 중인 응용 프로그램을 모두 종료하고 다시 시도하세요."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:49
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
 msgid "Persistent Storage"
@@ -2180,6 +2177,7 @@ msgstr "이 기능의 데이터가 아직 저장되어 있습니다."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
+#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "{} 기능 활성화 오류"
 
@@ -2191,13 +2189,14 @@ msgstr "기능 활성화 중 오류가 발생했습니다."
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:279
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:307
 msgid "Details"
 msgstr "세부사항"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
+#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "{} 기능 비활성화 오류"
 
@@ -2206,6 +2205,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "기능 비활성화 중 오류가 발생했습니다."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2221,10 +2221,12 @@ msgid "_Delete Data"
 msgstr "_데이터 삭제"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "{} 기능의 데이터 삭제 오류"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "{} 기능의 데이터 삭제 중 오류가 발생했습니다."
 
@@ -2295,7 +2297,7 @@ msgstr "문제 해결에 도움을 주려면 오류 보고서를 보내주세요
 msgid "_Send Error Report"
 msgstr "_오류 보고서 보내기"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:153
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:154
 msgid ""
 "Impossible to delete the Persistent Storage while it is unlocked.\n"
 "\n"
@@ -2307,7 +2309,7 @@ msgstr ""
 "영구 저장소를 삭제하려면 Tails를 다시 시작한 뒤 영구 저장소의 잠금을 해제하"
 "지 말고 영구 저장소 설정을 여십시오."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:167
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:168
 msgid ""
 "Impossible to delete the Persistent Storage because the USB stick is read-"
 "only.\n"
@@ -2321,23 +2323,23 @@ msgstr ""
 "영구 저장소를 삭제하려면 USB 스틱의 읽기 전용 보호를 해제하고 Tails를 다시 시"
 "작한 뒤 영구 저장소의 잠금을 해제하지 말고 영구 저장소 설정을 여십시오."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:175
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:176
 msgid "Impossible to delete the Persistent Storage"
 msgstr "영구 저장소 삭제 불가"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:183
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:218
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:184
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:219
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:35
 msgid "Delete Persistent Storage"
 msgstr "영구 저장소 삭제"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:187
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:188
 msgid ""
 "Are you sure that you want to delete your Persistent Storage? This action "
 "cannot be undone."
 msgstr "영구 저장소를 정말로 삭제하시겠습니까? 이 작업은 취소할 수 없습니다."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:191
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:56
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/change_passphrase_dialog.ui.in:301
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:124
@@ -2345,53 +2347,53 @@ msgstr "영구 저장소를 정말로 삭제하시겠습니까? 이 작업은 �
 msgid "_Cancel"
 msgstr "_취소"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:193
 msgid "_Delete Persistent Storage"
 msgstr "_영구 저장소 삭제"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:202
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:203
 msgid "Deleting your Persistent Storage..."
 msgstr "영구 저장소 삭제 중..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:221
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:222
 msgid "_OK"
 msgstr "_확인"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:230
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:231
 msgid ""
 "Sorry, you can't close this app until the ongoing operation has completed."
 msgstr "진행 중인 작업이 완료될 때까지는 앱을 종료할 수 없습니다."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:233
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:234
 msgid "Please wait"
 msgstr "잠시만 기다려주세요"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:261
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 msgid "Not enough memory to create Persistent Storage"
 msgstr "메모리가 부족하여 영구 저장소를 생성하지 못함"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:268
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:277
 msgid "Failed to create Persistent Storage"
 msgstr "영구 저장소 생성 실패"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:269
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:278
 msgid "An error occurred while creating the Persistent Storage."
 msgstr "영구 저장소 생성 중 오류가 발생했습니다."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:305
 msgid "Error deleting Persistent Storage"
 msgstr "영구 저장소 삭제 오류"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:306
 msgid "An error occurred while deleting the Persistent Storage."
 msgstr "영구 저장소 삭제 중 오류가 발생했습니다."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:334
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:346
 msgid "Details (command output)"
 msgstr "세부사항 (명령 출력)"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:361
 msgid "Failed to open the documentation"
 msgstr "문서 열람 실패"
 
@@ -2714,7 +2716,7 @@ msgstr "잘못된 연락처 OpenPGP 키: %s"
 msgid "Invalid contact OpenPGP public key block"
 msgstr "잘못된 연락처 OpenPGP 공개 키 블록"
 
-#: config/chroot_local-includes/usr/local/bin/tca:11
+#: config/chroot_local-includes/usr/local/bin/tca:12
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -3574,6 +3576,7 @@ msgid "Configure a Tor bridge"
 msgstr "_Tor 브리지 설정하기"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
+#, fuzzy
 msgid ""
 "Bridges are secret Tor relays. Use a bridge as your first Tor relay if "
 "accessing Tor is blocked from where you are.\n"
@@ -3618,6 +3621,7 @@ msgid "_Ask for a bridge by email"
 msgstr "_이메일로 Tor 브리지 받기"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
+#, fuzzy
 msgid ""
 "Send an empty email to <tt>bridges@torproject.org</tt> from a Gmail or "
 "Riseup email address with your phone and scan the QR code that is attached "
@@ -3817,6 +3821,7 @@ msgstr ""
 "Tor 중계기는 전 세계의 다양한 조직 및 자원봉사자들이 운영하는 서버입니다."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1544
+#, fuzzy
 msgid "<b>Connect to Tor _automatically</b>"
 msgstr "<b>_자동으로 Tor에 연결하기</b>"
 
@@ -4122,6 +4127,15 @@ msgstr "12월"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "시간 및 날짜"
+
+#~ msgid "Suspend"
+#~ msgstr "일시정지"
+
+#~ msgid "Restart"
+#~ msgstr "다시 시작"
+
+#~ msgid "Power Off"
+#~ msgstr "전원 끄기"
 
 #~ msgid "Bridge address malformed"
 #~ msgstr "잘못된 형식의 브리지 주소"

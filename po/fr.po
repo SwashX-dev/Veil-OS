@@ -48,13 +48,16 @@
 # intrigeri <intrigeri@torproject.org>, 2025.
 # emma peel <emma.peel@riseup.net>, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
+# Ætheri0us <aetheri0us@users.noreply.hosted.weblate.org>, 2026.
+# niiitnek <bouisquentin@gmail.com>, 2026.
+# OrthoScrapper <orthoscrapper.fantasize442@passinbox.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-17 11:02+0200\n"
-"PO-Revision-Date: 2026-04-25 09:06+0000\n"
-"Last-Translator: xin <xin@riseup.net>\n"
+"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"PO-Revision-Date: 2026-08-09 19:52+0000\n"
+"Last-Translator: OrthoScrapper <orthoscrapper.fantasize442@passinbox.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/tor/tails-gui/fr/"
 ">\n"
 "Language: fr\n"
@@ -63,7 +66,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
 "1000000 == 0 ? 1 : 2;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -90,15 +93,15 @@ msgstr "Afficher le journal"
 msgid "Configure"
 msgstr "Configurer"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
 msgid "Password Manager"
 msgstr "Gestionnaire de mots de passe"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password"
 msgstr "mot de passe"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
 msgstr "gestionnaire-de-mots-de-passe"
 
@@ -770,11 +773,13 @@ msgstr "Erreur d’installation de la mise à jour"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr ""
+msgstr "Logiciel GNOME"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
+#, fuzzy
 msgid "GNOME Software can only start once Tor has bootstrapped."
 msgstr ""
+"GNOME Software ne peut démarrer qu'une fois que Tor a terminé son amorçage."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -1049,10 +1054,12 @@ msgstr ""
 "Mise à jour du stockage persistant. Cela peut prendre un certain temps…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
+#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Erreur de déverrouillage du stockage persistant : {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
+#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Erreur de mise à jour du stockage persistant : {}"
 
@@ -1064,10 +1071,12 @@ msgstr ""
 "{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
+#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Erreur d'activation du stockage persistant : {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
+#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "Échec de l'annulation de la réparation du système de fichiers du stockage "
@@ -1668,22 +1677,10 @@ msgstr ""
 "Le périphérique sur lequel Tails tourne ne peut pas être trouvé. Peut-être "
 "avez-vous utilisée l’option « toram » ?"
 
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:103
+#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:106
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:120
 msgid "Lock Screen"
 msgstr "Verrouiller l’écran"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:107
-msgid "Suspend"
-msgstr "Mettre en veille"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:111
-msgid "Restart"
-msgstr "Redémarrer"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:115
-msgid "Power Off"
-msgstr "Éteindre"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
@@ -1928,8 +1925,9 @@ msgstr ""
 "sont donc désactivées."
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:28
+#, fuzzy
 msgid "Secure Boot Update Needed"
-msgstr ""
+msgstr "Mise à jour du Démarrage Sécurisé requise"
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:30
 msgid ""
@@ -1937,6 +1935,9 @@ msgid ""
 "Apply all available updates from your regular operating system to update to "
 "the latest Secure Boot certificates of Microsoft."
 msgstr ""
+"À l'avenir, Tails ne pourra plus démarrer sur cet ordinateur. Installez "
+"toutes les mises à jour disponibles de votre système d'exploitation habituel "
+"afin de bénéficier des derniers certificats Microsoft du Démarrage Sécurisé."
 
 #: config/chroot_local-includes/usr/local/bin/tails-upgrade-frontend-wrapper:37
 #, python-brace-format
@@ -1990,7 +1991,7 @@ msgstr ""
 "d’exploitation hôte et le logiciel de virtualisation."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/config.py:9
-#: config/chroot_local-includes/usr/local/bin/tca:10
+#: config/chroot_local-includes/usr/local/bin/tca:11
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:1
 msgid "Tor Connection"
 msgstr "Connexion à Tor"
@@ -2002,11 +2003,11 @@ msgstr "Automatique"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:284
 msgid "Frequently selected regions"
-msgstr ""
+msgstr "Régions fréquemment sélectionnées"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:291
 msgid "Other regions"
-msgstr ""
+msgstr "Autres régions"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:369
 msgid "_Use a bridge that you already know"
@@ -2068,9 +2069,8 @@ msgid "Synchronizing the system's clock…"
 msgstr "Synchronisation de l’horloge système…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:726
-#, fuzzy
 msgid "Asking for a Tor bridge based on your region…"
-msgstr "_Demandez un pont Tor par courriel"
+msgstr "Demander un pont Tor selon votre région…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:774
 msgid "Connecting to Tor without bridges…"
@@ -2082,9 +2082,8 @@ msgid "Connecting to Tor with default bridges…"
 msgstr "Connexion à Tor avec les ponts par défaut…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:789
-#, fuzzy
 msgid "Connecting to Tor with a bridge based on your region…"
-msgstr "Connexion à Tor avec les ponts par défaut…"
+msgstr "Se connecter à Tor avec un pont selon votre région…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:796
 msgid "Connecting to Tor with a custom bridge…"
@@ -2257,7 +2256,7 @@ msgstr ""
 "réessayer."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:49
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
 msgid "Persistent Storage"
@@ -2300,6 +2299,7 @@ msgstr "Les données de cette fonctionnalité sont toujours sauvegardées."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
+#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Erreur d'activation de la fonctionnalité {}"
 
@@ -2311,13 +2311,14 @@ msgstr "Une erreur s'est produite lors de l'activation de la fonctionnalité."
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:279
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:307
 msgid "Details"
 msgstr "Détails"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
+#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Erreur de désactivation de la fonctionnalité {}"
 
@@ -2327,6 +2328,7 @@ msgstr ""
 "Une erreur s'est produite lors de la désactivation de la fonctionnalité."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2344,10 +2346,12 @@ msgid "_Delete Data"
 msgstr "_Effacer les données"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Erreur de suppression des données de la fonctionnalité {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Erreur lors de la suppression des données de la fonctionnalité {}."
 
@@ -2419,7 +2423,7 @@ msgstr ""
 msgid "_Send Error Report"
 msgstr "_Envoyer un rapport d'erreur"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:153
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:154
 msgid ""
 "Impossible to delete the Persistent Storage while it is unlocked.\n"
 "\n"
@@ -2432,7 +2436,7 @@ msgstr ""
 "le stockage persistant et ouvrez à nouveau les paramètres du stockage "
 "persistant."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:167
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:168
 msgid ""
 "Impossible to delete the Persistent Storage because the USB stick is read-"
 "only.\n"
@@ -2448,17 +2452,17 @@ msgstr ""
 "seule de la clé USB, redémarrez Tails sans déverrouiller le stockage "
 "persistant et ouvrez à nouveau les paramètres du stockage persistant."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:175
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:176
 msgid "Impossible to delete the Persistent Storage"
 msgstr "Impossible de supprimer le stockage persistant"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:183
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:218
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:184
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:219
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:35
 msgid "Delete Persistent Storage"
 msgstr "Supprimer le stockage persistant"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:187
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:188
 msgid ""
 "Are you sure that you want to delete your Persistent Storage? This action "
 "cannot be undone."
@@ -2466,7 +2470,7 @@ msgstr ""
 "Voulez-vous vraiment supprimer votre stockage persistant ? Cette action ne "
 "peut pas être annulée."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:191
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:56
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/change_passphrase_dialog.ui.in:301
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:124
@@ -2474,55 +2478,55 @@ msgstr ""
 msgid "_Cancel"
 msgstr "_Annuler"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:193
 msgid "_Delete Persistent Storage"
 msgstr "_Supprimer le stockage persistant"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:202
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:203
 msgid "Deleting your Persistent Storage..."
 msgstr "Suppression de votre stockage persistant..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:221
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:222
 msgid "_OK"
 msgstr "_OK"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:230
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:231
 msgid ""
 "Sorry, you can't close this app until the ongoing operation has completed."
 msgstr ""
 "Désolé, vous ne pouvez pas fermer cette application tant que l'opération en "
 "cours n'est pas terminée."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:233
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:234
 msgid "Please wait"
 msgstr "Veuillez patienter"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:261
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 msgid "Not enough memory to create Persistent Storage"
 msgstr "Mémoire insuffisante pour créer un stockage persistant"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:268
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:277
 msgid "Failed to create Persistent Storage"
 msgstr "Échec de la création du stockage persistant"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:269
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:278
 msgid "An error occurred while creating the Persistent Storage."
 msgstr "Une erreur est survenue lors de la création du stockage persistant."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:305
 msgid "Error deleting Persistent Storage"
 msgstr "Erreur lors de la suppression du stockage persistant"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:306
 msgid "An error occurred while deleting the Persistent Storage."
 msgstr "Une erreur est survenue lors de la suppression du stockage persistant."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:334
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:346
 msgid "Details (command output)"
 msgstr "Détails (sortie de la commande)"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:361
 msgid "Failed to open the documentation"
 msgstr "Échec d'ouverture de la documentation"
 
@@ -2852,7 +2856,7 @@ msgstr "La clé OpenPGP du contact est invalide : %s"
 msgid "Invalid contact OpenPGP public key block"
 msgstr "Le bloc de clé publique OpenPGP du contact est invalide"
 
-#: config/chroot_local-includes/usr/local/bin/tca:11
+#: config/chroot_local-includes/usr/local/bin/tca:12
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -3429,12 +3433,11 @@ msgstr "Activation de logiciels supplémentaires"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
 msgid "Flatpak"
-msgstr ""
+msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "Activer le client SSH"
+msgstr "Activer Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
@@ -3848,29 +3851,24 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:856
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:930
-#, fuzzy
 msgid "Try configuring another bridge."
-msgstr "Configurer un pont Tor"
+msgstr "Essayez de configurer un autre pont."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:884
-#, fuzzy
 msgid "Error connecting to Tor with default bridges"
-msgstr "Connexion à Tor avec les ponts par défaut…"
+msgstr "Erreur de connexion à Tor avec les ponts par défaut"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:900
-#, fuzzy
 msgid "Your network is blocking access to Tor and the default bridges."
-msgstr "Ce réseau local bloque l'accès à Tor."
+msgstr "Votre réseau bloque l'accès à Tor et aux ponts par défaut."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:916
-#, fuzzy
 msgid "Bridge: <b>default bridges</b>"
-msgstr "Utiliser un pont par _défaut"
+msgstr "Pont : <b>ponts par défaut</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:958
-#, fuzzy
 msgid "Error connecting to Tor with bridges"
-msgstr "Connexion à Tor sans ponts…"
+msgstr "Erreur lors de la connexion à Tor avec des ponts"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:974
 msgid "None of the bridges recommended for this region worked."
@@ -3881,9 +3879,8 @@ msgid "Try another region or getting a bridge by mail."
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1018
-#, fuzzy
 msgid "Error asking for a bridge"
-msgstr "Erreur de vérification de la présence de mises à jour"
+msgstr "Erreur lors de la demande d'un pont"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1034
 msgid "Tails failed to ask for a bridge based on your region."
@@ -3948,9 +3945,8 @@ msgid "Configure a Local _Proxy"
 msgstr "Configurer un _mandataire local"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1374
-#, fuzzy
 msgid "• Tor bridge"
-msgstr "• Pont Tor par courriel"
+msgstr "• Pont Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1394
 msgid ""
@@ -4305,6 +4301,15 @@ msgstr "décembre"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Horloge"
+
+#~ msgid "Suspend"
+#~ msgstr "Mettre en veille"
+
+#~ msgid "Restart"
+#~ msgstr "Redémarrer"
+
+#~ msgid "Power Off"
+#~ msgstr "Éteindre"
 
 #~ msgid "Bridge address malformed"
 #~ msgstr "L’adresse du pont est malformée"

@@ -24,7 +24,4 @@ Make sure that you:
   [[building the website again|contribute/build/website]]
   (you might need to pass `--rebuild`) and unfuzz machine-readable strings.
 
-- To update the configuration of our production website, send a patch
-  against
-  [[!tails_gitweb_puppet_code site/profile/templates/tails/website/ikiwiki.setup.epp]]
-  to <sysadmins@tails.net>.
+- Update other instances of `po_translatable_pages`: see [[website/production]].

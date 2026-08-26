@@ -11,13 +11,14 @@
 # Osoitz <oelkoro@gmail.com>, 2019
 # Radiation Gamma, 2019
 # emma peel <emma.peel@riseup.net>, 2026.
+# BereneFoundation <Berenefoundation@proton.me>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-17 11:02+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"PO-Revision-Date: 2026-08-07 16:51+0000\n"
+"Last-Translator: BereneFoundation <Berenefoundation@proton.me>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/tor/tails-gui/eu/"
 ">\n"
 "Language: eu\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -52,19 +53,19 @@ msgstr "Erakutsi erregistroa"
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:25
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
 #, fuzzy
 msgid "Password Manager"
 msgstr "Sarhitza"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 #, fuzzy
 msgid "password"
 msgstr "Sarhitza"
 
-#: config/chroot_local-includes/usr/local/lib/change-apps-menu-name:26
+#: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
-msgstr ""
+msgstr "Pasahitz kudeatzailea"
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:57
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:95
@@ -237,6 +238,10 @@ msgid ""
 "Every bit helps in our fight against surveillance and censorship!\n"
 "\n"
 msgstr ""
+"Tails donazioak behar ditu guztioi doaki interneten babesteko.\n"
+"\n"
+"Gutxi ere gure zaintze eta zentsuraren aurkako borrokan lagunduko du!\n"
+"\n"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:72
 msgid ""
@@ -245,6 +250,10 @@ msgid ""
 "Help us keep your bitcoins safe!\n"
 "\n"
 msgstr ""
+"Tails zure diru zorroa babesten du.\n"
+"\n"
+"Lagundu iezaguzu zure bitcoins-ak seguru mantentzen!\n"
+"\n"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:140
 msgid "Donate Now"
@@ -447,6 +456,7 @@ msgid ""
 "You are currently running the latest version. There is no upgrade "
 "available.\n"
 msgstr ""
+"Azken bertsioa exekutatzen ari zara. Ez dago eguneraketarik eskuragarri.\n"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:414
 #, fuzzy
@@ -499,7 +509,7 @@ msgstr ""
 "Hau ez litzateke gertatu behar. Mesedez, eman ezazu akats honen berri."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:504
-#, perl-brace-format
+#, fuzzy, perl-brace-format
 msgid ""
 "<b>You should upgrade to {name} {version}.</b>\n"
 "\n"
@@ -714,7 +724,7 @@ msgstr "Errore bat gertatu da bertsio berria instalatzean"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr ""
+msgstr "GNOME Softwarea"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
@@ -810,10 +820,15 @@ msgid ""
 "Someone who finds your Tails USB stick can see your language and keyboard "
 "layout."
 msgstr ""
+"Zure hizkuntza eta teklatuaren distribuzioa enkriptatu gabe gordeko da zure "
+"Tails USB stick-ean eta automatikoki aplikatua izango da etorkizunean.\n"
+"\n"
+"Zure Tails USB stick-a aurkitzen duena zure hizkuntza eta tecklatuaren "
+"distribuzioa ikusi ahalko du."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:200
 msgid "Save Unencrypted"
-msgstr ""
+msgstr "Gorde enkriptatu gabe"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:288
 msgid ""
@@ -990,10 +1005,12 @@ msgstr ""
 "izatea…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
+#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Biltegiratze Iraunkorra desblokeatzerakoan akats bat gertatu da: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
+#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Biltegiratze Iraunkorra eguneratzerakoan akats bat gertatu da: {}"
 
@@ -1005,10 +1022,12 @@ msgstr ""
 "{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
+#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Biltegiratze Iraunkorra ezin izan da aktibatu: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
+#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "Biltegiratze Iraunkorraren fitxategi sistema konpontzen zen bitartean bertan "
@@ -1182,16 +1201,16 @@ msgstr "%(device)s FAT32 bezala formateatzen"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1290
 #, python-format
 msgid "Reading extracted MBR from %s"
-msgstr ""
+msgstr "Ateratako MBR irakurtzen ari da %s-tik"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1295
 #, python-format
 msgid "Could not read the extracted MBR from %(path)s"
-msgstr ""
+msgstr "Ezin da izan da irakurri %(path)s-etik ateratako MBR-a"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1309
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:1310
-#, python-format
+#, fuzzy, python-format
 msgid "Resetting Master Boot Record of %s"
 msgstr "%s ren abio-erregistro nagusia (MBR) berrezartzen"
 
@@ -1232,7 +1251,7 @@ msgstr "Instalazioa burutu da! (%s)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:239
 msgid "Tails installation failed!"
-msgstr ""
+msgstr "Tails-en instalazioa huts egin du!"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:341
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:1
@@ -1243,12 +1262,12 @@ msgstr "Tails instalatzailea"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:393
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:164
 msgid "Clone the current Tails"
-msgstr ""
+msgstr "Tails hau klonatu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:401
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:200
 msgid "Use a downloaded Tails ISO image"
-msgstr ""
+msgstr "Deskargatutako Tails ISO image bat erabili"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:453
 msgid "Upgrade"
@@ -1256,7 +1275,7 @@ msgstr "Eguneratu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:454
 msgid "Manual Upgrade Instructions"
-msgstr ""
+msgstr "Eskuzko eguneratzeko instrukzioak"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:465
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:730
@@ -1277,7 +1296,7 @@ msgstr "Instalazio Argibideak"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:482
 #, python-format
 msgid "%(size)s %(vendor)s %(model)s device (%(device)s)"
-msgstr ""
+msgstr "%(size)s %(vendor)s %(model)s gailu (%(device)s)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:495
 msgid "No ISO image selected"
@@ -1285,13 +1304,15 @@ msgstr "Ez da ISO irudirik aukeratu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:495
 msgid "Please select a Tails ISO image."
-msgstr ""
+msgstr "Mesedez, Tails ISO image bat aukeratu."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:546
 msgid ""
 "Clone the current Persistent Storage\n"
 "Impossible to clone the Persistent Storage because it is locked."
 msgstr ""
+"Oraingo Euskarri Iraunkorra klonatu.\n"
+"Ezin izan da Euskarri Iraunkorra klonatu, blokeatua baitago."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:550
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:180
@@ -1304,6 +1325,8 @@ msgid ""
 "Clone the current Persistent Storage\n"
 "You can only choose to reinstall when cloning the Persistent Storage."
 msgstr ""
+"Oraingo Euskarri Iraunkorra klonatu.\n"
+"Bakarrik berrinstalatu dezakezu Euskarri Iraunkorra klonatzen ari bazara."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:591
 #, python-format
@@ -1316,7 +1339,7 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:600
 #, python-format
 msgid "The device \"%(pretty_name)s\" is read-only."
-msgstr ""
+msgstr "\"%(pretty_name)s\" gailua bakarrik irakurketa onartzen du."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:608
 #, python-format
@@ -1344,7 +1367,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:660
 msgid "An error happened while installing Tails"
-msgstr ""
+msgstr "Errorre bat egon da Tails instalatzen ari zela"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:717
 msgid "Installation complete!"
@@ -1365,7 +1388,7 @@ msgstr "Zure datu iraunkorrak ezabatuko dira."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:788
 msgid "Delete Persistent Storage and Reinstall"
-msgstr ""
+msgstr "Euskarri Iraunkorra ezabatu eta berrinstalatu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:790
 msgid ""
@@ -1373,10 +1396,13 @@ msgid ""
 "\n"
 "All data on this USB stick will be lost."
 msgstr ""
+"\n"
+"\n"
+"Datu guztiak USB stick honetan ezabatuak izango dira."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:791
 msgid "Delete All Data and Install"
-msgstr ""
+msgstr "Datu guztiak ezabatu eta instalatu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:792
 #, python-format
@@ -1385,7 +1411,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:797
 msgid "Confirm the target USB stick"
-msgstr ""
+msgstr "Konfirmatu USB stick-a ondo aukeratu duzula"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:827
 msgid "Unable to mount device"
@@ -1414,7 +1440,7 @@ msgstr "%(filename)s hautatua"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:37
 msgid "Unable to find Tails on ISO"
-msgstr ""
+msgstr "Ezin izan da Tails aurkitu ISO fitxategian"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:44
 #, python-format
@@ -1432,12 +1458,12 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:70
 #, python-format
 msgid "\"%s\" does not exist"
-msgstr ""
+msgstr "\"%s\" ez da aurkitu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:72
 #, python-format
 msgid "\"%s\" is not a directory"
-msgstr ""
+msgstr "\"%s\" ez da direktorio bat"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:84
 #, python-format
@@ -1453,7 +1479,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/utils.py:144
 msgid "Could not open device for writing."
-msgstr ""
+msgstr "Ezin izan da gailua ezagutu."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:19
 #, fuzzy, sh-format
@@ -1481,7 +1507,7 @@ msgstr "Berrizendatu"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:27
 msgid "Keep current name"
-msgstr ""
+msgstr "Oraingo izena mantendu"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:29
 msgid "Rename Password Database?"
@@ -1489,19 +1515,19 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/local/bin/replace-su-with-sudo:19
 msgid "su is disabled. Please use sudo instead."
-msgstr ""
+msgstr "su desaktibatuta dago. Mesedez, sudo erabili."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:3
 msgid "Error Reading Data from Tails USB Stick"
-msgstr ""
+msgstr "Arazo bat egon da zure Tails USB stick-a irakurtzean"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:4
 msgid "The hardware of your USB stick is probably failing."
-msgstr ""
+msgstr "Zure USB stick-aren hardwarea seguruenik arazoak izan ari ditu."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:5
 msgid "We recommend that you reinstall Tails on a different USB stick."
-msgstr ""
+msgstr "Gomendatzen dizugu Tails beste USB stick batean berrinstalatzea."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:7
 msgid ""
@@ -1523,7 +1549,7 @@ msgstr "Ikasi gehiago"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:18
 msgid "Partitioning Error"
-msgstr ""
+msgstr "Partizioekin arazoa egon da"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:19
 msgid "Errors were detected in the partitioning of your Tails USB stick."
@@ -1577,22 +1603,10 @@ msgstr ""
 "Tails topatu ezin daitekeen unitate batetik erabiltzen ari zara. Agian "
 "'toram' aukera erabili duzu?"
 
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:103
+#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:106
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:120
 msgid "Lock Screen"
 msgstr "Blokeo-pantaila"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:107
-msgid "Suspend"
-msgstr "Eseki"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:111
-msgid "Restart"
-msgstr "Berrabiarazi"
-
-#: config/chroot_local-includes/usr/share/gnome-shell/extensions/status-menu-helper@tails.boum.org/extension.js:115
-msgid "Power Off"
-msgstr "Itzali"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
@@ -1616,7 +1630,7 @@ msgstr ""
 #: config/chroot_local-includes/usr/local/bin/tails-about:64
 #, python-format
 msgid "Built from %s"
-msgstr ""
+msgstr "%s-tik eraikita"
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:114
 #, python-brace-format
@@ -1854,7 +1868,7 @@ msgid ""
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/config.py:9
-#: config/chroot_local-includes/usr/local/bin/tca:10
+#: config/chroot_local-includes/usr/local/bin/tca:11
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:1
 msgid "Tor Connection"
 msgstr ""
@@ -2094,7 +2108,7 @@ msgid ""
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:49
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
 msgid "Persistent Storage"
@@ -2140,6 +2154,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
+#, python-brace-format
 msgid "Error activating feature {}"
 msgstr ""
 
@@ -2152,13 +2167,14 @@ msgstr "Errore bat gertatu da sistema berrabiaraztean"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:349
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:413
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/change_passphrase_dialog.py:115
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:279
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:307
 msgid "Details"
 msgstr "Xehetasunak"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
+#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr ""
 
@@ -2168,6 +2184,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Errore bat gertatu da sistema berrabiaraztean"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2181,10 +2198,12 @@ msgid "_Delete Data"
 msgstr "Delete"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 
@@ -2258,7 +2277,7 @@ msgstr ""
 msgid "_Send Error Report"
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:153
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:154
 msgid ""
 "Impossible to delete the Persistent Storage while it is unlocked.\n"
 "\n"
@@ -2266,7 +2285,7 @@ msgid ""
 "Persistent Storage and open the Persistent Storage settings again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:167
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:168
 msgid ""
 "Impossible to delete the Persistent Storage because the USB stick is read-"
 "only.\n"
@@ -2276,25 +2295,25 @@ msgid ""
 "the Persistent Storage settings again."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:175
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:176
 #, fuzzy
 msgid "Impossible to delete the Persistent Storage"
 msgstr "Euskarri iraunkorra ezabatzen..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:183
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:218
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:184
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:219
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:35
 #, fuzzy
 msgid "Delete Persistent Storage"
 msgstr "Euskarri iraunkorra ezabatzen..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:187
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:188
 msgid ""
 "Are you sure that you want to delete your Persistent Storage? This action "
 "cannot be undone."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:191
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:56
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/change_passphrase_dialog.ui.in:301
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:124
@@ -2302,60 +2321,60 @@ msgstr ""
 msgid "_Cancel"
 msgstr "_Utzi bertan behera"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:192
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:193
 #, fuzzy
 msgid "_Delete Persistent Storage"
 msgstr "Euskarri iraunkorra ezabatzen..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:202
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:203
 #, fuzzy
 msgid "Deleting your Persistent Storage..."
 msgstr "Euskarri iraunkorra ezabatzen..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:221
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:222
 msgid "_OK"
 msgstr "_Ados"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:230
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:231
 msgid ""
 "Sorry, you can't close this app until the ongoing operation has completed."
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:233
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:234
 msgid "Please wait"
 msgstr "Itxaron mesedez"
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:261
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 #, fuzzy
 msgid "Not enough memory to create Persistent Storage"
 msgstr "Euskarri iraunkorra ezabatzen..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:268
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:277
 #, fuzzy
 msgid "Failed to create Persistent Storage"
 msgstr "Euskarri iraunkorra ezabatzen..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:269
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:278
 #, fuzzy
 msgid "An error occurred while creating the Persistent Storage."
 msgstr "Euskarri iraunkorra ezabatzen..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:289
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:296
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:298
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:305
 #, fuzzy
 msgid "Error deleting Persistent Storage"
 msgstr "Euskarri iraunkorra ezabatzen..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:297
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:306
 #, fuzzy
 msgid "An error occurred while deleting the Persistent Storage."
 msgstr "Euskarri iraunkorra ezabatzen..."
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:334
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:346
 msgid "Details (command output)"
 msgstr ""
 
-#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:349
+#: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:361
 #, fuzzy
 msgid "Failed to open the documentation"
 msgstr "Tails dokumentazioa"
@@ -2665,7 +2684,7 @@ msgstr "Harremanetarako OpenPGP gako baliogabea: %s"
 msgid "Invalid contact OpenPGP public key block"
 msgstr "Harremanarako OpenPGP giltz publiko blokea baliogabea"
 
-#: config/chroot_local-includes/usr/local/bin/tca:11
+#: config/chroot_local-includes/usr/local/bin/tca:12
 msgid ""
 "You turned on Offline Mode in the Welcome Screen.\n"
 "It is impossible to connect to Tor in Offline Mode.\n"
@@ -3979,6 +3998,15 @@ msgstr "Abendua"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Erlojua"
+
+#~ msgid "Suspend"
+#~ msgstr "Eseki"
+
+#~ msgid "Restart"
+#~ msgstr "Berrabiarazi"
+
+#~ msgid "Power Off"
+#~ msgstr "Itzali"
 
 #~ msgid "Scan QR Code"
 #~ msgstr "Eskaneatu QR kodea"

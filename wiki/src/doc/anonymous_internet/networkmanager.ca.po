@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2025-09-17 11:40+0200\n"
-"PO-Revision-Date: 2026-02-03 20:16+0000\n"
+"PO-Revision-Date: 2026-08-23 18:56+0000\n"
 "Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -48,9 +48,7 @@ msgstr "Obriu el menú del sistema a l'extrem superior dret."
 #. type: Plain text
 #, no-wrap
 msgid "   [[!img doc/first_steps/desktop/system-with-wired.png class=\"screenshot\" alt=\"\"]]\n"
-msgstr ""
-"   [[!img doc/first_steps/desktop/system-with-wired.png class=\"screenshot\" "
-"alt=\"\"]]\n"
+msgstr "   [[!img doc/first_steps/desktop/system-with-wired.png class=\"screenshot\" alt=\"\"]]\n"
 
 #. type: Bullet: '   - '
 msgid ""
@@ -65,16 +63,13 @@ msgid ""
 "To connect to a Wi-Fi network, click [[!img lib/go-next.png link=\"no\" "
 "class=\"symbolic\" alt=\"\"]] on the right of the **Wi-Fi** button."
 msgstr ""
-"Per connectar-vos a una xarxa Wi-Fi, premeu "
-"[[!img lib/go-next.png link=\"no\" class=\"symbolic\" alt=\"\"]] a la dreta "
-"del botó de **Wi-Fi**."
+"Per connectar-vos a una xarxa Wi-Fi, premeu [[!img lib/go-next.png "
+"link=\"no\" class=\"symbolic\" alt=\"\"]] a la dreta del botó de **Wi-Fi**."
 
 #. type: Plain text
 #, no-wrap
 msgid "     A list of available Wi-Fi networks appears below the **Wi-Fi** button.\n"
-msgstr ""
-"     A sota del botó **Wi-Fi** apareix una llista de xarxes Wi-Fi "
-"disponibles.\n"
+msgstr "     A sota del botó **Wi-Fi** apareix una llista de xarxes Wi-Fi disponibles.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -157,17 +152,12 @@ msgid "Modifying your network settings"
 msgstr "Modificació de la configuració de la xarxa"
 
 #. type: Plain text
-#, fuzzy
-#| msgid ""
-#| "To modify your network settings, for example, to configure whether or not "
-#| "to automatically connect to a Wi-Fi network, choose **Applications&nbsp;▸ "
-#| "System Tools&nbsp;▸ Settings&nbsp;▸ Network**."
 msgid ""
 "To modify your network settings, for example, to configure whether or not to "
 "automatically connect to a Wi-Fi network, choose **Apps&nbsp;▸ System "
 "Tools&nbsp;▸ Settings&nbsp;▸ Network**."
 msgstr ""
-"Per modificar la configuració de la vostra xarxa, per exemple, per "
+"Per a modificar la configuració de la vostra xarxa, per exemple, per a "
 "configurar si us connecteu automàticament o no a una xarxa Wi-Fi, "
 "seleccioneu **Aplicacions&nbsp;▸ Eines del sistema&nbsp;▸ Paràmetres&nbsp;▸ "
 "Xarxa**."

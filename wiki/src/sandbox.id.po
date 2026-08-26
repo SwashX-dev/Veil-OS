@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
-"POT-Creation-Date: 2025-12-17 16:14+0000\n"
+"POT-Creation-Date: 2026-07-30 11:31+0000\n"
 "PO-Revision-Date: 2017-12-21 21:10+0100\n"
 "Last-Translator: Sebastian Kuhnert <mail@sebastian-kuhnert.de>\n"
 "Language-Team: None\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. type: Plain text
-msgid "This is the SandBox."
+msgid "This is the SandBox :)"
 msgstr ""
 
 #. type: Plain text

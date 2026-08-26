@@ -30,9 +30,19 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
 
 - Update [[contribute/calendar]] accordingly.
 
-- [[!tails_gitlab groups/tails/-/milestones desc="Check"]] if there's a GitLab
-  milestone with the correct due date. If needed, create a merge request against
-  [[!tails_gitlab tails/gitlab-config]] to create or fix it.
+- Check if there's:
+
+  1. a GitLab milestone with the correct due date on [[!tails_gitlab groups/tails/-/milestones]]
+  2. a `missed:$VERSION` label on [[!tails_gitlab groups/tails/-/labels]]
+
+  If needed, create a merge request against [[!tails_gitlab tails/gitlab-config]].
+  Make another Tails Team member the *Reviewer*.
+
+- Verify there's ; if there's none,
+  submit a MR against [[!tails_gitlab tails/gitlab-config]]
+  to create one.
+
+   Make another Tails Team member the *Reviewer*.
 
 - [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Upgrade%20Tor%20Browser)
   for upgrading Tor Browser in the release your shift is about
@@ -49,11 +59,6 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
   the same as for manual QA, i.e. 10:00 UTC).
 
   [Create any missing issues](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Write%20Release%20Notes).
-
-- Verify there's a `missed:$VERSION` label
-  on [[!tails_gitlab groups/tails/-/labels]]; if there's none,
-  submit a MR against [[!tails_gitlab tails/gitlab-config]]
-  to create one.
 
 - The ISO images for *every* previous beta, RC, and final release
   based on the version of Debian that will be used for the release
@@ -84,7 +89,7 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
 - Ensure the next steps are tracked in your preferred personal
   organization tool.
 
-## Two weeks after the beginning of your shift
+## One week after the beginning of your shift
 
 - Check that enough developers have booked time for manual tests.
 
@@ -165,44 +170,13 @@ the work. Then, release managers make this decision.
 
 After going through the steps listed in the "In the beginning of your shift" section:
 
-1. Move to the milestone that was just created for the emergency release
-   every:
-
-    - issue that was resolved
-    - merge request that was merged
-
-   … and that currently have the milestone of the next planned non-emergency
-   bugfix release. In other words, since every change that is on the `stable`
-   branch, but not released yet, will be released for the first time in this
-   upcoming emergency release, it must have the milestone of that
-   emergency release.
-
-   This ensures the generated changelog will include these changes, and ensures
-   we have a correct record of which release presumably fixed which bug (that's
-   useful for example when triaging bug reports).
-
-   To do so, on each of these 2 pages:
-
-    - [[!tails_gitlab tails/tails/-/work_items?state=closed desc="issues"]]
-    - [[!tails_gitlab tails/tails/-/merge_requests?state=merged desc="merge requests"]]
-
-   Do this:
-
-   1. Filter by milestone = the next planned non-emergency bugfix release
-
-   2. Click *Bulk edit*
-
-   3. Select all items
-
-   4. Set the milestone of the emergency release
-
-2. Announce to <tails-dev@boum.org>:
+  - Announce to <tails-dev@boum.org>:
 
     - There's an upcoming emergency release. Don't say why if it's a secret.
 
     - Announce the code freeze.
 
-3. Announce to manual testers: when you expect the tests to happen
+    - Say when you expect the tests to happen.
 
 ### Irrelevant steps
 
