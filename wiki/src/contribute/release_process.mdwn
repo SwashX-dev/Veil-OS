@@ -631,8 +631,8 @@ Changelog
 
 Update the Changelog entry for the release you're preparing:
 
-	git checkout "${RELEASE_BRANCH:?}" && \
-	./bin/update-changelog --version "${MILESTONE:?}"
+    git checkout "${RELEASE_BRANCH:?}" && \
+    ./bin/update-changelog --version "${MILESTONE:?}"
 
 ### If you are preparing a release candidate:
 
@@ -1800,10 +1800,10 @@ branch in `${RELEASE_CHECKOUT:?}`, making sure we catch up with the
 technical writers who have likely prepared release notes:
 
     (
-	cd "${RELEASE_CHECKOUT:?}" && \
-	   git checkout "${WEBSITE_RELEASE_BRANCH:?}" && \
-	   git fetch && \
-	   git merge "origin/${WEBSITE_RELEASE_BRANCH:?}"
+    cd "${RELEASE_CHECKOUT:?}" && \
+       git checkout "${WEBSITE_RELEASE_BRANCH:?}" && \
+       git fetch && \
+       git merge "origin/${WEBSITE_RELEASE_BRANCH:?}"
     )
 
 If no release notes where prepared, create one with placeholders:
@@ -1836,18 +1836,18 @@ Skip this part if preparing a RC.
 
 Rename, copy, garbage collect and update various files:
 
-	./bin/add-release-files-to-website
+    ./bin/add-release-files-to-website
 
 Then, build the website and commit this last set of changes:
 
     (
-	if [ "$(./bin/po4a-version)" = 0.73 ]; then
-	    ./build-website && \
-	    git add wiki/src/{inc,torrents} && \
-	    git commit -m "Update various website source files for ${VERSION:?}"
-	else
-	    echo "Wrong po4a version"
-	fi
+    if [ "$(./bin/po4a-version)" = 0.73 ]; then
+        ./build-website && \
+        git add wiki/src/{inc,torrents} && \
+        git commit -m "Update various website source files for ${VERSION:?}"
+    else
+        echo "Wrong po4a version"
+    fi
     )
 
 Ensure our [[contribute/working_together/roles/technical_writer]] has
@@ -1876,9 +1876,9 @@ Skip this part if preparing a final release:
 
 Copy the signatures into the website repository:
 
-	cp "${ISO_PATH:?}.sig" \
-	   "${IMG_PATH:?}.sig" \
-	   "${RELEASE_CHECKOUT:?}/wiki/src/torrents/files/"
+    cp "${ISO_PATH:?}.sig" \
+       "${IMG_PATH:?}.sig" \
+       "${RELEASE_CHECKOUT:?}/wiki/src/torrents/files/"
 
 If our [[contribute/working_together/roles/technical_writer]] did not
 prepare the announcement for the release, write it yourself:
@@ -1921,14 +1921,14 @@ Generate PO files for the pages added or updated earlier in this
 section, and publish them on the `$WEBSITE_RELEASE_BRANCH` branch:
 
     (
-	if [ "$(./bin/po4a-version)" = 0.73 ]; then
-	    ./build-website && \
-	    git add wiki/src && \
-	    git commit -m "Releasing version ${VERSION:?}" && \
-	    git push origin "${WEBSITE_RELEASE_BRANCH:?}"
-	else
+    if [ "$(./bin/po4a-version)" = 0.73 ]; then
+        ./build-website && \
+        git add wiki/src && \
+        git commit -m "Releasing version ${VERSION:?}" && \
+        git push origin "${WEBSITE_RELEASE_BRANCH:?}"
+    else
         echo "Wrong po4a version"
-	fi
+    fi
     )
 
 ## If you are publishing a final release: draft the Tor blog post
