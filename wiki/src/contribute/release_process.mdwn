@@ -105,14 +105,20 @@ To release Tails you'll need some packages installed:
   Go packages, such as [[!debpts podman]], you should be able to install
   them from a more recent Debian release with APT pinning.
 
-* `perl5lib` [dependencies](https://tails.net/contribute/release_process/perl5lib/#build-deps)
+* `perl5lib` dependencies:
 
-* `iuk` [dependencies](https://tails.net/contribute/release_process/tails-iuk/#build-deps)
+      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/perl5lib.mdwn"
+
+* `iuk` dependencies:
+
+      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/tails-iuk.mdwn"
 
 * `ikiwiki` from Debian testing (Forky) or newer
 
 
-* packages to [build a local version of the website](https://tails.net/contribute/build/website/)
+* packages to build a local version of the website:
+
+      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/build/website.mdwn"
 
 Configuration files
 -------------------
@@ -219,10 +225,13 @@ Pre-freeze
 Check the Release Manager role
 ------------------------------
 
-Make sure all the shift preparation steps, in the [Release
-Manager](https://tails.net/contribute/working_together/roles/release_manager/)
-role documentation, have been done. Fill the gaps if needed, otherwise
-the release process will be blocked later.
+Make sure all the shift preparation steps, in the Release Manager role
+documentation, have been done:
+
+    "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/working_together/roles/release_manager.mdwn"
+
+Fill the gaps if needed, otherwise the release process will be blocked
+later.
 
 <a id="dsa-check"></a>
 
@@ -669,8 +678,11 @@ version's `.packages` file and the one from the to-be-released images:
 
    - If you are preparing an emergency release: package updates that are part of
      the reason for doing this emergency release.
-   - new upstream releases of applications mentioned in [Features and
-     included software](https://tails.net/doc/about/features/)
+   - new upstream releases of user applications specifically mentioned
+     as included in Tails:
+
+         "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/doc/about/features.mdwn"
+
      - You can ignore new Debian releases for such packages, but you should not
        ignore minor releases or patch releases.
    - new upstream releases of other important components such as the
@@ -2365,10 +2377,12 @@ Check that you are indeed preparing a final release:
    *Disclosure agreement* in the description. Those are the ones in scope for
    this task and that should be disclosed eventually.
 
-   For these issues, follow the guidance from our [security issue
-   response
-   policy](https://tails.net/contribute/security_policy/). Unless
-   specified otherwise there, we follow [Tor's
+   For these issues, follow the guidance from our security issue
+   response policy:
+
+       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/security_policy.mdwn"
+
+   Unless specified otherwise there, we follow [Tor's
    policy](https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/SecurityPolicy#how-will-the-developers-handle-security-issues)
    for this, which as of 2026-05-27 was:
 
@@ -2451,9 +2465,14 @@ Check that you are indeed preparing a RC:
          git show devel:config/chroot_apt/preferences \
             | grep -E '^Explanation: freeze exception'
 
-   Then checkout the `devel` branch, and there
-   [thaw](https://tails.net/contribute/APT_repository/time-based_snapshots/#freeze-exceptions-post-release)
-   all packages (if any) that were granted freeze exceptions.
+   Then thaw all packages for the `devel` branch that were granted
+   freeze exceptions by following the instructions in the
+   _Post-release_ section of the following page:
+
+    (
+        git checkout devel && \
+        "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/APT_repository/time-based_snapshots.mdwn"
+    )
 
 1. Ensure everything done so far is pushed:
 
