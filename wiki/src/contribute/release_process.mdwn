@@ -1743,7 +1743,7 @@ Public testing
 
 1. Verify that the image has been propagated to at least 3 mirrors:
 
-       echo "https://download.tails.net/tails/${DIST:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
+       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://download.tails.net/tails/${DIST:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
 
 2. Email <tails-testers@boum.org> to ask them to test the tentative images:
 
@@ -1987,7 +1987,7 @@ Look at the mirror status.
       fi
       echo "${base}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.iso?mirrorlist"
       echo "${base}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
-    ) | sort -u
+    ) | sort -u | xargs -n1 "${RELEASE_CHECKOUT:?}"/bin/rm-open-link
 
 Wait for each of these pages to include:
  - at least 6 working mirrors
@@ -2101,7 +2101,9 @@ Check:
 
     [ "${DIST:?}" = alpha ]
 
-wait until `https://tails.net/news/test_$TAG/` is live.
+wait until the call for testing is live:
+
+     "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://tails.net/news/test_${TAG:?}/"
 
 X.com
 -----
@@ -2371,7 +2373,7 @@ Check that you are indeed preparing a final release:
 
    Open the list of potentially relevant issues:
 
-        echo "https://gitlab.tails.boum.org/groups/tails/-/work_items?sort=updated_asc&state=closed&milestone_title=Tails_${VERSION:?}&confidential=yes" | wl-copy
+       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/groups/tails/-/work_items?sort=updated_asc&state=closed&milestone_title=Tails_${VERSION:?}&confidential=yes"
 
    In that list, look for issues about security vulnerabilities, that have our
    *Disclosure agreement* in the description. Those are the ones in scope for
