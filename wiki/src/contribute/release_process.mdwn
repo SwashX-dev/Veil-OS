@@ -131,18 +131,18 @@ To release Tails you need:
 
   You need at least this content:
 
-        [global]
-        ssl_verify = true
+      [global]
+      ssl_verify = true
 
-        [TailsRM]
-        url = https://gitlab.tails.boum.org
-        per_page = 100
-        private_token = XXX
+      [TailsRM]
+      url = https://gitlab.tails.boum.org
+      per_page = 100
+      private_token = XXX
 
-        [Tails]
-        url = https://gitlab.tails.boum.org
-        per_page = 100
-        private_token = XXX
+      [Tails]
+      url = https://gitlab.tails.boum.org
+      per_page = 100
+      private_token = XXX
 
    Then:
 
@@ -167,9 +167,9 @@ To release Tails you need:
 
   Ensure your SSH client is configured to connect to the APT server:
 
-        Host apt.lizard
-            HostName lizard.tails.boum.org
-            Port 3003
+      Host apt.lizard
+          HostName lizard.tails.boum.org
+          Port 3003
 
 * Configure _automailer_
 
@@ -186,17 +186,17 @@ you need to set a bunch of environment variables.
 1. To generate the `~/.config/tails/release_management/current.yml` template,
    run:
 
-        ./bin/rm-config generate-boilerplate
+       ./bin/rm-config generate-boilerplate
 
 2. Edit `~/.config/tails/release_management/current.yml` and replace
-  `FIXME`:s:
+   `FIXME`:s:
 
-        "${EDITOR:?}" ~/.config/tails/release_management/current.yml
+       "${EDITOR:?}" ~/.config/tails/release_management/current.yml
 
 3. Generate the resulting environment variables and export them into your
    environment:
 
-        eval $(./bin/rm-config generate-environment --stage base)
+       eval $(./bin/rm-config generate-environment --stage base)
 
 ### Notes
 
@@ -348,16 +348,16 @@ Follow this part ONLY if you are preparing the *first* release candidate for a m
 
 1. Merge the `master` Git branch into `devel`:
 
-        git checkout devel && git fetch origin && git merge origin/devel && git merge --no-ff origin/master
+       git checkout devel && git fetch origin && git merge origin/devel && git merge --no-ff origin/master
 
 2. Merge each APT overlay suite listed in the `devel` branch's
    `config/APT_overlays.d/` into the `devel` APT suite:
 
-        ./bin/merge-APT-overlays devel
+       ./bin/merge-APT-overlays devel
 
 3. Merge the `devel` Git branch into the `testing` one:
 
-        git checkout testing && git merge origin/testing && git merge devel
+       git checkout testing && git merge origin/testing && git merge devel
 
    ... and check that the resulting `config/APT_overlays.d/` in the
    `testing` branch is empty.
@@ -365,19 +365,19 @@ Follow this part ONLY if you are preparing the *first* release candidate for a m
 4. Hard reset the `testing` custom APT suite to the current state of the
    `devel` one:
 
-        ./bin/reset-custom-APT-suite testing devel
+       ./bin/reset-custom-APT-suite testing devel
 
 5. Freeze the [[time-based APT repository
    snapshots|APT_repository/time-based_snapshots]] that shall be used
    during the code freeze, and those used by our builder VM:
 
-        ./bin/freeze-all-APT-snapshots
+       ./bin/freeze-all-APT-snapshots
 
 6. Make it so the time-based APT repository snapshots are kept around
    long enough, by bumping their `Valid-Until` half a year from now:
 
-        git checkout "$RELEASE_BRANCH" && \
-        ./bin/bump-APT-snapshots-expiration-date 183
+       git checkout "$RELEASE_BRANCH" && \
+       ./bin/bump-APT-snapshots-expiration-date 183
 
 ## If you are preparing a bugfix release
 
@@ -390,12 +390,12 @@ Follow this part ONLY if you are preparing a bugfix release.
 
 1. Merge the `master` Git branch into `stable`:
 
-        git checkout stable && git fetch && git merge origin/stable && git merge --no-ff origin/master
+       git checkout stable && git fetch && git merge origin/stable && git merge --no-ff origin/master
 
 2. Merge each APT overlay suite listed in the `stable` branch's
    `config/APT_overlays.d/` into the `stable` APT suite:
 
-        ./bin/merge-APT-overlays stable
+       ./bin/merge-APT-overlays stable
 
 ## In any case
 
@@ -410,9 +410,9 @@ merge it into `$RELEASE_BRANCH`.
 Reset the release branch's `config/base_branch`:
 
     (
-        echo "${RELEASE_BRANCH:?}" > config/base_branch
-        git commit config/base_branch \
-          -m "Restore ${RELEASE_BRANCH:?}'s base branch." || :
+    echo "${RELEASE_BRANCH:?}" > config/base_branch
+    git commit config/base_branch \
+        -m "Restore ${RELEASE_BRANCH:?}'s base branch." || :
     )
 
 Push `$RELEASE_BRANCH`:
@@ -434,27 +434,27 @@ Bootstrap internal manual testing coordination:
 
 1. To give the pad a clear title, add this section on top:
 
-        printf -- "---\ntitle: Testing ${VERSION:?}\n---\n" | wl-copy
+       printf -- "---\ntitle: Testing ${VERSION:?}\n---\n" | wl-copy
 
 2. Set the `PAD` environment variable to the URL of this pad.
 
 3. Copy the manual test suite:
 
-        (
-        set -eu -o pipefail
-        git checkout ${RELEASE_BRANCH:?}"
-        wl-copy < wiki/src/contribute/release_process/test.mdwn
-        )
+       (
+       set -eu -o pipefail
+       git checkout ${RELEASE_BRANCH:?}"
+       wl-copy < wiki/src/contribute/release_process/test.mdwn
+       )
 
    … and paste it into this pad.
 
 4. Generate boilerplate for the call for manual testing:
 
-        ./bin/generate-call-for-manual-testers \
-           --release-branch "${RELEASE_BRANCH:?}" \
-           --dist "${DIST:?}" \
-           --pad "${PAD:?}" \
-           --version "${VERSION:?}" | ./bin/automailer.py
+       ./bin/generate-call-for-manual-testers \
+          --release-branch "${RELEASE_BRANCH:?}" \
+          --dist "${DIST:?}" \
+          --pad "${PAD:?}" \
+          --version "${VERSION:?}" | ./bin/automailer.py
 
 5. Send the call for manual testing:
 
@@ -483,15 +483,15 @@ refresh the code PO files,
 and commit the result, including new PO files:
 
     (
-     cd "${RELEASE_CHECKOUT:?}"
-     set -x
-     err() { echo "Error $*"; exit 1; }
-     ./import-translations || err "importing translations"
-     ./refresh-translations || err "refreshing translations"
-     ./submodules/jenkins-tools/slaves/lint_po || err "in lint"
-     ./bin/check-po-msgfmt || err "in msgfmt"
-     git add po
-     git commit -m 'Update PO files.' || :
+    cd "${RELEASE_CHECKOUT:?}"
+    set -x
+    err() { echo "Error $*"; exit 1; }
+    ./import-translations || err "importing translations"
+    ./refresh-translations || err "refreshing translations"
+    ./submodules/jenkins-tools/slaves/lint_po || err "in lint"
+    ./bin/check-po-msgfmt || err "in msgfmt"
+    git add po
+    git commit -m 'Update PO files.' || :
     )
 
 If `lint_po` complains:
@@ -550,7 +550,7 @@ Update other base branches
 
 1. Merge the release branch into `devel`:
 
-        ./bin/merge-main-branch "${RELEASE_BRANCH:?}" devel
+       ./bin/merge-main-branch "${RELEASE_BRANCH:?}" devel
 
    If you did *not* proceed with the merge, it means you're in a non-standard
    situation, and need to investigate what's appropriate to do.
@@ -559,23 +559,23 @@ Update other base branches
    branch, the time-based APT repository snapshots being used
    during the freeze:
 
-        git checkout devel && \
-        ./auto/scripts/apt-snapshots-serials thaw && \
-        git commit \
-            -m "Thaw APT snapshots." \
-            config/APT_snapshots.d/*/serial || :
+       git checkout devel && \
+       ./auto/scripts/apt-snapshots-serials thaw && \
+       git commit \
+           -m "Thaw APT snapshots." \
+           config/APT_snapshots.d/*/serial || :
 
    It's fine if that results in a no-op (it depends on how exactly previous
    operations were performed).
 
 4. Look at the APT overlays for `$RELEASE_BRANCH` and `devel`:
 
-        for branch in ${RELEASE_BRANCH} devel; do
-            git switch ${branch}
-            echo "{{{ ${branch}"
-            ls config/APT_overlays.d/
-            echo "}}}"
-        done
+       for branch in ${RELEASE_BRANCH} devel; do
+           git switch ${branch}
+           echo "{{{ ${branch}"
+           ls config/APT_overlays.d/
+           echo "}}}"
+       done
 
    Verify that the `$RELEASE_BRANCH` and `devel` branches have nothing
    in `config/APT_overlays.d/`. If there still are unmerged APT
@@ -584,9 +584,9 @@ Update other base branches
 
 5. Push the modified branches to Git:
 
-        git push origin                          \
-           "${RELEASE_BRANCH:?}:${RELEASE_BRANCH:?}" \
-           devel:devel
+       git push origin                          \
+          "${RELEASE_BRANCH:?}:${RELEASE_BRANCH:?}" \
+          devel:devel
 
 # Set the milestone on issues and merge requests
 
@@ -695,12 +695,12 @@ version's `.packages` file and the one from the to-be-released images:
 
 3. Sanity check the version, commit, and push:
 
-	    if [ "$(dpkg-parsechangelog -SVersion)" = "${VERSION:?}" ]; then
-	       git commit debian/changelog -m "Update changelog for ${VERSION:?}."
-	    else
-	       echo 'Error: version mismatch: please compare ${VERSION:?} with the last entry in debian/changelog'
-	    fi && \
-        git push origin "${RELEASE_BRANCH:?}"
+       if [ "$(dpkg-parsechangelog -SVersion)" = "${VERSION:?}" ]; then
+           git commit debian/changelog -m "Update changelog for ${VERSION:?}."
+       else
+           echo 'Error: version mismatch: please compare ${VERSION:?} with the last entry in debian/changelog'
+       fi && \
+       git push origin "${RELEASE_BRANCH:?}"
 
 4. Let Technical Writers know that the changelog is ready
 
@@ -711,9 +711,9 @@ version's `.packages` file and the one from the to-be-released images:
 documentation:
 
         (
-             echo "Dear @technical-writers,"
-             echo "- The changelog entry is ready: https://gitlab.tails.boum.org/tails/tails/-/blob/${RELEASE_BRANCH:?}/debian/changelog"
-             echo "- The latest corresponding images built by Jenkins are there: https://nightly.tails.boum.org/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/build-artifacts"
+        echo "Dear @technical-writers,"
+        echo "- The changelog entry is ready: https://gitlab.tails.boum.org/tails/tails/-/blob/${RELEASE_BRANCH:?}/debian/changelog"
+        echo "- The latest corresponding images built by Jenkins are there: https://nightly.tails.boum.org/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/build-artifacts"
         ) | pee cat wl-copy
 
 
@@ -798,17 +798,17 @@ Collect the almost-final build artifacts
    1. To update the `~/.config/tails/release_management/current.yml` template
       with newly required variables, run:
 
-        ./bin/rm-config generate-boilerplate --stage built-almost-final
+          ./bin/rm-config generate-boilerplate --stage built-almost-final
 
    2. Edit `~/.config/tails/release_management/current.yml` and replace
       `FIXME`:s:
 
-        "${EDITOR:?}" ~/.config/tails/release_management/current.yml
+          "${EDITOR:?}" ~/.config/tails/release_management/current.yml
 
    3. Generate the resulting environment variables and export them
       into your environment:
 
-        eval $(./bin/rm-config generate-environment --stage built-almost-final)
+          eval $(./bin/rm-config generate-environment --stage built-almost-final)
 
 SquashFS file order
 ===================
@@ -857,20 +857,20 @@ Feel free to skip this section when preparing an emergency release.
 
    Run this command:
 
-           ./bin/clean-squashfs-sort-file config/binary_rootfs/squashfs.sort
+       ./bin/clean-squashfs-sort-file config/binary_rootfs/squashfs.sort
 
 1. Inspect the Git diff (including diff stat), apply common sense:
 
-        diff -NaurB \
-            <( cut -d' ' -f1 config/binary_rootfs/squashfs.sort.old | sort ) \
-            <( cut -d' ' -f1 config/binary_rootfs/squashfs.sort     | sort ) \
-            | less
+       diff -NaurB \
+           <( cut -d' ' -f1 config/binary_rootfs/squashfs.sort.old | sort ) \
+           <( cut -d' ' -f1 config/binary_rootfs/squashfs.sort     | sort ) \
+           | less
 
 1. Commit the new SquashFS sort file and clean up
 
-        git commit -m 'Updating SquashFS sort file' \
-            config/binary_rootfs/squashfs.sort && \
-        rm -f config/binary_rootfs/squashfs.sort.old
+       git commit -m 'Updating SquashFS sort file' \
+           config/binary_rootfs/squashfs.sort && \
+       rm -f config/binary_rootfs/squashfs.sort.old
 
 Sanity check: need to redo some steps?
 ======================================
@@ -920,29 +920,29 @@ Finalize and tag the release
 
 1. Mark the version as "released" in the changelog:
 
-        dch --release --no-force-save-on-release --maintmaint && \
-        git commit -m "Mark Tails ${VERSION:?} as released." debian/changelog
+       dch --release --no-force-save-on-release --maintmaint && \
+       git commit -m "Mark Tails ${VERSION:?} as released." debian/changelog
 
 1. To update the `~/.config/tails/release_management/current.yml` template
    with newly required variables, run:
 
-        ./bin/rm-config generate-boilerplate --stage finalized-changelog
+       ./bin/rm-config generate-boilerplate --stage finalized-changelog
 
 1. Edit `~/.config/tails/release_management/current.yml` and replace
-  `FIXME`:s:
+   `FIXME`:s:
 
-        "${EDITOR:?}" ~/.config/tails/release_management/current.yml
+       "${EDITOR:?}" ~/.config/tails/release_management/current.yml
 
 1. Generate the resulting environment variables and export them
    into your environment:
 
-        eval $(./bin/rm-config generate-environment --stage finalized-changelog)
+       eval $(./bin/rm-config generate-environment --stage finalized-changelog)
 
 1. Tag the release:
 
-        git tag -u "${TAILS_SIGNATURE_KEY:?}" \
-                -m "tagging version ${VERSION:?}" "${TAG:?}" && \
-        git push origin "${TAG:?}" "${RELEASE_BRANCH:?}"
+       git tag -u "${TAILS_SIGNATURE_KEY:?}" \
+               -m "tagging version ${VERSION:?}" "${TAG:?}" && \
+       git push origin "${TAG:?}" "${RELEASE_BRANCH:?}"
 
 Prepare the versioned APT suites
 --------------------------------
@@ -959,17 +959,17 @@ Wait for this APT suite to be created and initialize it with the packages
 currently found in the APT suite corresponding to the branch used to prepare
 the release:
 
-      while ! ssh reprepro@incoming.deb.tails.net reprepro list "${TAG:?}" >/dev/null 2>&1; do
-         sleep 5
-      done && \
-      ssh reprepro@incoming.deb.tails.net \
-         tails-merge-suite "${RELEASE_BRANCH:?}" "${TAG:?}"
+    while ! ssh reprepro@incoming.deb.tails.net reprepro list "${TAG:?}" >/dev/null 2>&1; do
+       sleep 5
+    done && \
+    ssh reprepro@incoming.deb.tails.net \
+       tails-merge-suite "${RELEASE_BRANCH:?}" "${TAG:?}"
 
 ### Tagged snapshots of upstream APT repositories
 
 Create tagged snapshots of upstream APT repositories:
 
-      ./bin/tag-apt-snapshots "${ALMOST_FINAL_BUILD_MANIFEST:?}" "${TAG:?}"
+    ./bin/tag-apt-snapshots "${ALMOST_FINAL_BUILD_MANIFEST:?}" "${TAG:?}"
 
 Note:
 
@@ -992,7 +992,7 @@ Jenkins workers.
 
 1. Build the final images:
 
-        rake build
+       rake build
 
    Do _not_ set `keeprunning` nor `rescue` in `$TAILS_BUILD_OPTIONS`.
    Our build system will apply the correct compression settings automatically
@@ -1022,9 +1022,9 @@ Jenkins workers.
 1. Compare the new build manifest with the one from the previous,
    almost-final build:
 
-        diff -Naur \
-           "${ALMOST_FINAL_BUILD_MANIFEST:?}" \
-           "${ARTIFACTS:?}/tails-amd64-${VERSION:?}.build-manifest"
+       diff -Naur \
+          "${ALMOST_FINAL_BUILD_MANIFEST:?}" \
+          "${ARTIFACTS:?}/tails-amd64-${VERSION:?}.build-manifest"
 
    They should be identical, except that the `debian-security` serial might be higher.
 
@@ -1036,12 +1036,12 @@ Verify that Jenkins reproduced your images
 Verify that Jenkins reproduced your images:
 
     (
-     set -eu
-     cd "${ARTIFACTS:?}"
-     url="https://nightly.tails.boum.org/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
-     curl --fail "$url" > SHA512SUMS-jenkins.txt
-     grep --perl-regexp '[.]img|iso' SHA512SUMS-jenkins.txt | sha512sum -c -
-     rm SHA512SUMS-jenkins.txt
+    set -eu
+    cd "${ARTIFACTS:?}"
+    url="https://nightly.tails.boum.org/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
+    curl --fail "$url" > SHA512SUMS-jenkins.txt
+    grep --perl-regexp '[.]img|iso' SHA512SUMS-jenkins.txt | sha512sum -c -
+    rm SHA512SUMS-jenkins.txt
     )
 
 ### If the ISO and USB images hashes match
@@ -1076,14 +1076,14 @@ Then:
  fetch Jenkins' image, compare it with your, and try to rule out
  build system compromise:
 
-      sudo diffoscope \
-          --text diffoscope.txt \
-          --html diffoscope.html \
-          --max-report-size 262144000 \
-          --max-diff-block-lines 10000 \
-          --max-diff-input-lines 10000000 \
-              path/to/your/tails-amd64-${VERSION:?}.iso \
-              path/to/jenkins/tails-amd64-${VERSION:?}.iso
+    sudo diffoscope \
+        --text diffoscope.txt \
+        --html diffoscope.html \
+        --max-report-size 262144000 \
+        --max-diff-block-lines 10000 \
+        --max-diff-input-lines 10000000 \
+            path/to/your/tails-amd64-${VERSION:?}.iso \
+            path/to/jenkins/tails-amd64-${VERSION:?}.iso
 
  Do the same for the USB image as well.
 
@@ -1460,52 +1460,52 @@ Prepare upgrade-description files
 
    Run this command, after adjusting it if needed as explained above:
 
-        ${RELEASE_CHECKOUT:?}/config/chroot_local-includes/usr/src/iuk/bin/tails-iuk-generate-upgrade-description-files \
-            --version="${VERSION:?}" \
-            $( \
-                if [ "${DIST:?}" = stable ]; then
-                    echo \
-                        --next_version="${NEXT_PLANNED_MAJOR_VERSION:?}" \
-                        --next_version="${NEXT_PLANNED_MAJOR_VERSION:?}~rc1" \
-                        --next_version="${NEXT_PLANNED_BUGFIX_VERSION:?}" \
-                        --next_version="${NEXT_POTENTIAL_EMERGENCY_VERSION:?}"
-                else
-                    echo \
-                        --next_version="${NEXT_PLANNED_MAJOR_VERSION:?}" \
-                        --next_version="${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}"
-                fi
-            ) \
-            $( \
-                for version in "$((${VERSION%%.*}+1)).0~"{beta,rc}{1,2,3}; do
-                   echo --next_version=${version:?}
-                done \
-            ) \
-            $( \
-                for version in $(echo ${IUK_SOURCE_VERSIONS?}); do
-                   echo "--previous_version=${version:?}"
-                done \
-            ) \
-            $( \
-                find ${RELEASE_CHECKOUT:?}/wiki/src/upgrade/v2/Tails \
-                   -type d \
-                   -name "$((${VERSION%%.*}-1)).*" \
-                   '!' -name '*~testoverlayfs' \
-                   -printf '--previous_version=%f ' \
-            ) \
-            --iso="${ISO_PATH:?}" \
-            --iuks="${IUKS_DIR:?}" \
-            --release_checkout="${RELEASE_CHECKOUT:?}" \
-            --major_release="${MAJOR_RELEASE:?}" \
-            --channel="${DIST:?}"
+       ${RELEASE_CHECKOUT:?}/config/chroot_local-includes/usr/src/iuk/bin/tails-iuk-generate-upgrade-description-files \
+           --version="${VERSION:?}" \
+           $( \
+               if [ "${DIST:?}" = stable ]; then
+                   echo \
+                       --next_version="${NEXT_PLANNED_MAJOR_VERSION:?}" \
+                       --next_version="${NEXT_PLANNED_MAJOR_VERSION:?}~rc1" \
+                       --next_version="${NEXT_PLANNED_BUGFIX_VERSION:?}" \
+                       --next_version="${NEXT_POTENTIAL_EMERGENCY_VERSION:?}"
+               else
+                   echo \
+                       --next_version="${NEXT_PLANNED_MAJOR_VERSION:?}" \
+                       --next_version="${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}"
+               fi
+           ) \
+           $( \
+               for version in "$((${VERSION%%.*}+1)).0~"{beta,rc}{1,2,3}; do
+                  echo --next_version=${version:?}
+               done \
+           ) \
+           $( \
+               for version in $(echo ${IUK_SOURCE_VERSIONS?}); do
+                  echo "--previous_version=${version:?}"
+               done \
+           ) \
+           $( \
+               find ${RELEASE_CHECKOUT:?}/wiki/src/upgrade/v2/Tails \
+                  -type d \
+                  -name "$((${VERSION%%.*}-1)).*" \
+                  '!' -name '*~testoverlayfs' \
+                  -printf '--previous_version=%f ' \
+           ) \
+           --iso="${ISO_PATH:?}" \
+           --iuks="${IUKS_DIR:?}" \
+           --release_checkout="${RELEASE_CHECKOUT:?}" \
+           --major_release="${MAJOR_RELEASE:?}" \
+           --channel="${DIST:?}"
 
 1. Create an armoured detached signature for each created or modified
    upgrade-description file.
 
-        ./bin/sign-udfs -u
+       ./bin/sign-udfs -u
 
 1. Verify that all UDFs are correctly signed:
 
-        ./bin/check-udfs-signature
+       ./bin/check-udfs-signature
 
    If this isn't the case, check what went wrong in the signing step!
 
@@ -1513,16 +1513,16 @@ Prepare upgrade-description files
    signatures to the Git branch used to prepare the release
    (`$WEBSITE_RELEASE_BRANCH`):
 
-        cd "${RELEASE_CHECKOUT:?}" && \
-        git add wiki/src/upgrade && \
-        git commit -m "Update upgrade-description files." && \
-        git push origin ${WEBSITE_RELEASE_BRANCH:?}
+       cd "${RELEASE_CHECKOUT:?}" && \
+       git add wiki/src/upgrade && \
+       git commit -m "Update upgrade-description files." && \
+       git push origin ${WEBSITE_RELEASE_BRANCH:?}
 
 1. Copy the generated UDF for the previous stable release to the *test*
    channel in `$MASTER_CHECKOUT`, modify their content accordingly,
    sign them, commit and push:
 
-        ./bin/publish-test-udfs
+       ./bin/publish-test-udfs
 
 Prepare the image description file for the download verification
 ----------------------------------------------------------------
@@ -1596,29 +1596,29 @@ are preparing:
 
  - first check that it's not going to remove anything we want to keep:
 
-        ssh rsync.lizard /bin/sh -c \
-            \"find /srv/rsync/tails/tails/alpha/iuk/v2  \
-                   /srv/rsync/tails/tails/stable/iuk/v2 \
-                   -type f \
-                   -name "*_to_${VERSION:?}~*.iuk" \
-                   -not -name '*~test_*~test.iuk' \
-                   -not -name '*~testoverlayfs_*~testoverlayfs.iuk' \
-                   -not -name '*~testoverlayfsng_*~testoverlayfsng.iuk' \
-                   -ls \
-            \"
+       ssh rsync.lizard /bin/sh -c \
+           \"find /srv/rsync/tails/tails/alpha/iuk/v2  \
+                  /srv/rsync/tails/tails/stable/iuk/v2 \
+                  -type f \
+                  -name "*_to_${VERSION:?}~*.iuk" \
+                  -not -name '*~test_*~test.iuk' \
+                  -not -name '*~testoverlayfs_*~testoverlayfs.iuk' \
+                  -not -name '*~testoverlayfsng_*~testoverlayfsng.iuk' \
+                  -ls \
+           \"
 
  - then actually delete the files:
 
-        ssh rsync.lizard /bin/sh -c \
-            \"find /srv/rsync/tails/tails/alpha/iuk/v2  \
-                   /srv/rsync/tails/tails/stable/iuk/v2 \
-                   -type f \
-                   -name "*_to_${VERSION:?}~*.iuk" \
-                   -not -name '*~test_*~test.iuk' \
-                   -not -name '*~testoverlayfs_*~testoverlayfs.iuk' \
-                   -not -name '*~testoverlayfsng_*~testoverlayfsng.iuk' \
-                   -print -delete \
-            \"
+       ssh rsync.lizard /bin/sh -c \
+           \"find /srv/rsync/tails/tails/alpha/iuk/v2  \
+                  /srv/rsync/tails/tails/stable/iuk/v2 \
+                  -type f \
+                  -name "*_to_${VERSION:?}~*.iuk" \
+                  -not -name '*~test_*~test.iuk' \
+                  -not -name '*~testoverlayfs_*~testoverlayfs.iuk' \
+                  -not -name '*~testoverlayfsng_*~testoverlayfsng.iuk' \
+                  -print -delete \
+           \"
 
 Rationale: avoid the need for mirrors to store 3 concurrent sets of IUKs
 ([[!tails_ticket 17944]]). It's OK to delete them now, because we're past the
@@ -1858,11 +1858,11 @@ Generate an announcement mentioning the security vulnerabilities affecting the p
 in `wiki/src/security/known_security_vulnerabilities_in_${PREVIOUS_STABLE_VERSION:?}.mdwn`, in
 order to let the users of the old versions know that they have to upgrade:
 
-        ./bin/generate-security-advisory \
-           --previous-version "${PREVIOUS_STABLE_VERSION:?}" \
-           --version "${VERSION:?}" \
-           --tag "${TAG:?}" \
-        > "wiki/src/security/known_security_vulnerabilities_in_${PREVIOUS_STABLE_VERSION:?}.mdwn"
+    ./bin/generate-security-advisory \
+       --previous-version "${PREVIOUS_STABLE_VERSION:?}" \
+       --version "${VERSION:?}" \
+       --tag "${TAG:?}" \
+    > "wiki/src/security/known_security_vulnerabilities_in_${PREVIOUS_STABLE_VERSION:?}.mdwn"
 
 Remove obsolete bits from `wiki/src/home/testing.html`. For example,
 remove any text that's specific to a release candidate we may have
@@ -1890,13 +1890,13 @@ prepare the announcement for the release, write it yourself:
 
 2. Generate the boilerplate contents from the template:
 
-        ./bin/generate-call-for-testing \
-           --version "${VERSION:?}" \
-           --tag "${TAG:?}" \
-           --date "${RELEASE_DATE:?}" \
-           --final-version "${NEXT_PLANNED_MAJOR_VERSION:?}" \
-           --final-date "${FINAL_RELEASE_DATE:?}" \
-        > ${RELEASE_CHECKOUT:?}/wiki/src/news/test_${TAG:?}.mdwn
+       ./bin/generate-call-for-testing \
+          --version "${VERSION:?}" \
+          --tag "${TAG:?}" \
+          --date "${RELEASE_DATE:?}" \
+          --final-version "${NEXT_PLANNED_MAJOR_VERSION:?}" \
+          --final-date "${FINAL_RELEASE_DATE:?}" \
+       > ${RELEASE_CHECKOUT:?}/wiki/src/news/test_${TAG:?}.mdwn
 
 3. Edit `${RELEASE_CHECKOUT:?}/wiki/src/news/test_${TAG:?}.mdwn`:
 
@@ -1948,7 +1948,7 @@ documentation](https://gitlab.torproject.org/tpo/tpa/team/-/wikis/service/blog#h
 
 - Generate the draft blog post:
 
-        TOR_BLOG_FILE=$(./bin/generate-Tor-blog-post "${VERSION:?}" "${TAG:?}" "${DIST:?}" "${RELEASE_DATE:?}")
+      TOR_BLOG_FILE=$(./bin/generate-Tor-blog-post "${VERSION:?}" "${TAG:?}" "${DIST:?}" "${RELEASE_DATE:?}")
 
 - Ensure the `summary` section of the draft blog post in `${TOR_BLOG_FILE}` has adequate contents:
 
@@ -1967,7 +1967,7 @@ documentation](https://gitlab.torproject.org/tpo/tpa/team/-/wikis/service/blog#h
 
 - Prepare a *draft* merge request against the [Tor blog](https://gitlab.torproject.org/tpo/web/blog)
 
-        ./bin/create-tor-blog-mr "${TOR_BLOG_CHECKOUT:?}" "${VERSION:?}" "${TOR_BLOG_FILE:?}"
+      ./bin/create-tor-blog-mr "${TOR_BLOG_CHECKOUT:?}" "${VERSION:?}" "${TOR_BLOG_FILE:?}"
 
 Go wild!
 ========
@@ -1978,15 +1978,15 @@ Wait for the HTTP mirrors to catch up
 Look at the mirror status.
 
     (
-      base="https://download.tails.net/tails/${DIST:?}"
-      if [ "$((${VERSION%%.*}))" = "$((${PREVIOUS_STABLE_VERSION%%.*}))" ]; then
-          echo "${base}/iuk/v2/Tails_amd64_${PREVIOUS_STABLE_VERSION:?}_to_${VERSION:?}.iuk?mirrorlist"
-      fi
-      if [ "$((${VERSION%%.*}))" = "$((${PREVIOUS_VERSION%%.*}))" ]; then
-          echo "${base}/iuk/v2/Tails_amd64_${PREVIOUS_VERSION:?}_to_${VERSION:?}.iuk?mirrorlist"
-      fi
-      echo "${base}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.iso?mirrorlist"
-      echo "${base}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
+    base="https://download.tails.net/tails/${DIST:?}"
+    if [ "$((${VERSION%%.*}))" = "$((${PREVIOUS_STABLE_VERSION%%.*}))" ]; then
+        echo "${base}/iuk/v2/Tails_amd64_${PREVIOUS_STABLE_VERSION:?}_to_${VERSION:?}.iuk?mirrorlist"
+    fi
+    if [ "$((${VERSION%%.*}))" = "$((${PREVIOUS_VERSION%%.*}))" ]; then
+        echo "${base}/iuk/v2/Tails_amd64_${PREVIOUS_VERSION:?}_to_${VERSION:?}.iuk?mirrorlist"
+    fi
+    echo "${base}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.iso?mirrorlist"
+    echo "${base}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
     ) | sort -u | xargs -n1 "${RELEASE_CHECKOUT:?}"/bin/rm-open-link
 
 Wait for each of these pages to include:
@@ -2013,14 +2013,14 @@ This will make the release go live on our website once all required checks
 complete successfully:
 
     (
-      set -eu
-      cd "${RELEASE_CHECKOUT:?}"
-      git checkout "${WEBSITE_RELEASE_BRANCH:?}"
-      echo "stable" > config/base_branch
-      git diff --quiet HEAD config/base_branch || \
+    set -eu
+    cd "${RELEASE_CHECKOUT:?}"
+    git checkout "${WEBSITE_RELEASE_BRANCH:?}"
+    echo "stable" > config/base_branch
+    git diff --quiet HEAD config/base_branch || \
         git commit config/base_branch \
-          -m "Ensure base branch on 'master' remains 'stable'"
-      git push origin "${WEBSITE_RELEASE_BRANCH:?}" devel:devel
+            -m "Ensure base branch on 'master' remains 'stable'"
+    git push origin "${WEBSITE_RELEASE_BRANCH:?}" devel:devel
     )
 
 Mark the merge request for `$WEBSITE_RELEASE_BRANCH` as ready and set
@@ -2040,13 +2040,13 @@ Skip this part if preparing a release candidate:
 1. Postpone to the next scheduled release any remaining open issue and merge
    request whose milestone is the version you've just released:
 
-    (
-        cd "${MASTER_CHECKOUT:?}" && \
-        git checkout master && \
-        ./bin/gitlab-triage-post-release \
-            --host-url "$(bin/gitlab-url TailsRM)" \
-            --token "$(bin/gitlab-api-token TailsRM)"
-    )
+       (
+       cd "${MASTER_CHECKOUT:?}" && \
+       git checkout master && \
+       ./bin/gitlab-triage-post-release \
+           --host-url "$(bin/gitlab-url TailsRM)" \
+           --token "$(bin/gitlab-api-token TailsRM)"
+       )
 
 3. Finally, submit a MR against
    [tails/gitlab-config](https://gitlab.tails.boum.org/tails/gitlab-config)
@@ -2066,9 +2066,9 @@ MR](https://gitlab.tails.boum.org/tails/gitlab-config/-/edit/master/main.yml)
    website to identify the issues that might
    be resolved in this release.
 
-        ./bin/closed-issues-linked-from-website \
-            --target-directory "${MASTER_CHECKOUT:?}" \
-            --end-user-doc
+       ./bin/closed-issues-linked-from-website \
+           --target-directory "${MASTER_CHECKOUT:?}" \
+           --end-user-doc
 
 2. Create a GitLab issue to list them.
 
@@ -2103,7 +2103,7 @@ Check:
 
 wait until the call for testing is live:
 
-     "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://tails.net/news/test_${TAG:?}/"
+    "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://tails.net/news/test_${TAG:?}/"
 
 X.com
 -----
@@ -2155,7 +2155,7 @@ Check that you are indeed preparing a final release:
 1. If you just released a new stable release, remove the previous
    stable release from our rsync server:
 
-         ssh rsync.lizard sudo rm -rf /srv/rsync/tails/tails/stable/tails-amd64-${PREVIOUS_STABLE_VERSION:?}/
+       ssh rsync.lizard sudo rm -rf /srv/rsync/tails/tails/stable/tails-amd64-${PREVIOUS_STABLE_VERSION:?}/
 
 1. Remove any remaining RC for the just-published release from
    `rsync.lizard:/srv/rsync/tails/tails/alpha/`.
@@ -2197,7 +2197,7 @@ Check that you are indeed preparing a final release:
 
 1. Check how much space our mirrors need:
 
-        ssh rsync.lizard du -sh /srv/rsync/tails
+       ssh rsync.lizard du -sh /srv/rsync/tails
 
    Compare it to the minimum disk space we ask of our mirror operators
    (80 GiB) and determine if any further action is needed to either
@@ -2206,32 +2206,32 @@ Check that you are indeed preparing a final release:
 
 1. Update your local `$MASTER_CHECKOUT`
 
-    (
-        cd "${MASTER_CHECKOUT:?}" && \
-        git checkout master && \
-        git fetch && \
-        git merge origin/master && \
-        git submodule update --init
-    )
+       (
+       cd "${MASTER_CHECKOUT:?}" && \
+       git checkout master && \
+       git fetch && \
+       git merge origin/master && \
+       git submodule update --init
+       )
 
 1. Remove UDFs for versions that were never released:
 
-    (
-        cd "${MASTER_CHECKOUT:?}" && \
-        git checkout master && \
-        ./bin/remove-unused-udfs --before-version "${VERSION:?}" && \
-        git push origin master
-    )
+       (
+       cd "${MASTER_CHECKOUT:?}" && \
+       git checkout master && \
+       ./bin/remove-unused-udfs --before-version "${VERSION:?}" && \
+       git push origin master
+       )
 
 1. Pull `master` back and merge it into `stable`:
 
-    (
-        cd "${RELEASE_CHECKOUT:?}" && \
-        git fetch origin && \
-        git checkout stable && \
-        git merge origin/stable && \
-        git merge origin/master
-    )
+       (
+       cd "${RELEASE_CHECKOUT:?}" && \
+       git fetch origin && \
+       git checkout stable && \
+       git merge origin/stable && \
+       git merge origin/master
+       )
 
    Note: After a final *major* release is published, it's normal to
    leave the `testing` branch alone: it will only become relevant
@@ -2239,49 +2239,49 @@ Check that you are indeed preparing a final release:
 
 1. Delete Git branches that were merged:
 
-    (
-        cd "${RELEASE_CHECKOUT:?}" && \
-        git checkout stable && \
-        bare_repo=$(mktemp -d) && \
-        git clone --bare --reference "${RELEASE_CHECKOUT:?}" \
+       (
+       cd "${RELEASE_CHECKOUT:?}" && \
+       git checkout stable && \
+       bare_repo=$(mktemp -d) && \
+       git clone --bare --reference "${RELEASE_CHECKOUT:?}" \
            git@gitlab-ssh.tails.boum.org:tails/tails \
            "${bare_repo:?}" && \
-        PYTHONPATH=lib/python3 ./bin/delete-merged-git-branches \
+       PYTHONPATH=lib/python3 ./bin/delete-merged-git-branches \
            --repo "${bare_repo:?}" && \
-        rm -rf "${bare_repo:?}"
-    )
+       rm -rf "${bare_repo:?}"
+       )
 
 1. Put the `stable` Git branch and the corresponding APT suite
    in the desired shape:
 
-    (
-        if [ "${MAJOR_RELEASE:?}" -eq 1 ]; then
+       (
+       if [ "${MAJOR_RELEASE:?}" -eq 1 ]; then
            ./bin/reset-custom-APT-suite stable testing && \
            git checkout stable && \
            if [ $(find config/APT_overlays.d -maxdepth 1 -type f | wc -l) -gt 1 ]; then
-              git rm config/APT_overlays.d/* && \
-              git commit config/APT_overlays.d/ \
-                 -m "Empty the list of APT overlays: they were merged"
+               git rm config/APT_overlays.d/* && \
+               git commit config/APT_overlays.d/ \
+                   -m "Empty the list of APT overlays: they were merged"
            fi
-        fi
-    )
+       fi
+       )
 
 1. Increment the version number in stable's `debian/changelog`, so that
    next builds from the `stable` branch do not use the APT suite meant
    for the last release:
 
-    (
-        cd "${RELEASE_CHECKOUT}" && \
-        git checkout stable && \
-        dch --newversion "${NEXT_STABLE_CHANGELOG_VERSION:?}" \
+       (
+       cd "${RELEASE_CHECKOUT}" && \
+       git checkout stable && \
+       dch --newversion "${NEXT_STABLE_CHANGELOG_VERSION:?}" \
            "Dummy entry for next release." && \
-        git commit debian/changelog \
+       git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_STABLE_CHANGELOG_VERSION:?}."
-    )
+       )
 
 1. Merge the `stable` branch and its APT suite into `devel`:
 
-        ./bin/merge-main-branch stable devel
+       ./bin/merge-main-branch stable devel
 
    When there's a merge conflict, the script aborts to let you resolve
    the conflict. Then:
@@ -2296,25 +2296,25 @@ Check that you are indeed preparing a final release:
 
    If this is not the case yet, run:
 
-    (
-        cd "${RELEASE_CHECKOUT}" && \
-        git checkout devel && \
-        dch --newversion "${NEXT_PLANNED_MAJOR_VERSION:?}" \
+       (
+       cd "${RELEASE_CHECKOUT}" && \
+       git checkout devel && \
+       dch --newversion "${NEXT_PLANNED_MAJOR_VERSION:?}" \
            "Dummy entry for next release." && \
-        git commit debian/changelog \
+       git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_PLANNED_MAJOR_VERSION:?}."
-    )
+       )
 
 1. Verify that the snapshots used for this release are OK,
    e.g. they use the correct snapshots, and they were bumped
    appropriately (they should expire after the next planned major release date).
    Look carefully at the output of this command:
 
-    (
-        cd "${RELEASE_CHECKOUT:?}" && \
-        git checkout stable && \
-        ./bin/apt-snapshots-expiry
-    )
+       (
+       cd "${RELEASE_CHECKOUT:?}" && \
+       git checkout stable && \
+       ./bin/apt-snapshots-expiry
+       )
 
 1. Check the Firefox and Tor Browser release calendars:
 
@@ -2335,7 +2335,7 @@ Check that you are indeed preparing a final release:
 
 1. Announce the date of the next release:
 
-         ./bin/announce-next-release-schedule "${NEXT_PLANNED_VERSION:?}"
+       ./bin/announce-next-release-schedule "${NEXT_PLANNED_VERSION:?}"
 
    Adjust the body if needed:
 
@@ -2361,7 +2361,7 @@ Check that you are indeed preparing a final release:
 
    Otherwise, kindly remind the next release manager about this :)
 
-        ./bin/remind-next-rm "${NEXT_PLANNED_VERSION:?}"
+       ./bin/remind-next-rm "${NEXT_PLANNED_VERSION:?}"
 
    - If there's a release candidate scheduled before our next release,
      do the same for the release manager of that release candidate.
@@ -2411,13 +2411,13 @@ Check that you are indeed preparing a RC:
    [[thaw|APT_repository/time-based_snapshots#thaw]] the time-based
    APT repository snapshots:
 
-    (
-        git checkout devel && \
-        ./auto/scripts/apt-snapshots-serials thaw && \
-        git commit \
-            -m "Thaw APT snapshots." \
-            config/APT_snapshots.d/*/serial || :
-    )
+       (
+       git checkout devel && \
+       ./auto/scripts/apt-snapshots-serials thaw && \
+       git commit \
+           -m "Thaw APT snapshots." \
+           config/APT_snapshots.d/*/serial || :
+       )
 
    This should generally be a no-op but if there was some hiccup earlier it
    could be needed.
@@ -2426,36 +2426,36 @@ Check that you are indeed preparing a RC:
    used for the release, to match the upcoming non-RC release, so that
    the next builds from it do not use the APT suite meant for the RC:
 
-    (
-        cd "${RELEASE_CHECKOUT}" && \
-        git checkout "${RELEASE_BRANCH:?}" && \
-        dch --newversion "${NEXT_PLANNED_MAJOR_VERSION:?}" \
+       (
+       cd "${RELEASE_CHECKOUT}" && \
+       git checkout "${RELEASE_BRANCH:?}" && \
+       dch --newversion "${NEXT_PLANNED_MAJOR_VERSION:?}" \
            "Dummy entry for next release." && \
-        git commit debian/changelog \
+       git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_PLANNED_MAJOR_VERSION:?}."
-    )
+       )
 
 1. Increment the version number in `devel`'s `debian/changelog` to
    match the second next major release, so that images built from there
    have the right version number:
 
-    (
-        cd "${RELEASE_CHECKOUT}" && \
-        git checkout devel && \
-        dch --newversion "${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}" \
-           "Dummy entry for next release." && \
-        git commit debian/changelog \
-           -m "Add dummy changelog entry for ${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}." || :
-    )
+       (
+       cd "${RELEASE_CHECKOUT}" && \
+       git checkout devel && \
+       dch --newversion "${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}" \
+          "Dummy entry for next release." && \
+       git commit debian/changelog \
+          -m "Add dummy changelog entry for ${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}." || :
+       )
 
 1. Merge testing into devel (keeping a single changelog entry, for the
    second next major release):
 
-    (
-        cd "${RELEASE_CHECKOUT:?}" && \
-        git checkout devel && \
-        git merge testing
-    )
+       (
+       cd "${RELEASE_CHECKOUT:?}" && \
+       git checkout devel && \
+       git merge testing
+       )
 
 1. Follow the "Verify that the snapshots used in the release branch
    are OK" step for final releases, above.
@@ -2464,37 +2464,37 @@ Check that you are indeed preparing a RC:
 
 1. If this command outputs anything:
 
-         git show devel:config/chroot_apt/preferences \
-            | grep -E '^Explanation: freeze exception'
+       git show devel:config/chroot_apt/preferences \
+           | grep -E '^Explanation: freeze exception'
 
    Then thaw all packages for the `devel` branch that were granted
    freeze exceptions by following the instructions in the
    _Post-release_ section of the following page:
 
-    (
-        git checkout devel && \
-        "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/APT_repository/time-based_snapshots.mdwn"
-    )
+       (
+       git checkout devel && \
+       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/APT_repository/time-based_snapshots.mdwn"
+       )
 
 1. Ensure everything done so far is pushed:
 
-        git push origin stable testing devel
+       git push origin stable testing devel
 
 1. Put aside the configuration file used for this release:
 
-    (
-        mkdir -p ~/.config/tails/release_management/old && \
-        mv ~/.config/tails/release_management/current.yml \
+       (
+       mkdir -p ~/.config/tails/release_management/old && \
+       mv ~/.config/tails/release_management/current.yml \
            ~/.config/tails/release_management/old/${VERSION:?}.yml.disabled
-    )
+       )
 
 1. Delete your local copy of the IUKs
 
-        rm -f "${IUKS_DIR:?}/"Tails_amd64_*_to_${VERSION:?}.iuk "${IUKS_HASHES:?}"
+       rm -f "${IUKS_DIR:?}/"Tails_amd64_*_to_${VERSION:?}.iuk "${IUKS_HASHES:?}"
 
 1. Delete logs
 
-        rm -f /var/tmp/wrap_tails_create_iuks*.log
+       rm -f /var/tmp/wrap_tails_create_iuks*.log
 
 1. If you've prepared a branch with release process improvements:
    turn it into a MR.
