@@ -1068,13 +1068,13 @@ Then:
 
 ### If there is a hash mismatch
 
- Now we are in a
- tricky situation: on the one hand it seems like a poor idea to
- block users from benefiting from this release's security updates,
- but on the other hand the failure might imply that something
- nefarious is going on. At this stage, no matter what, immediately
- fetch Jenkins' image, compare it with your, and try to rule out
- build system compromise:
+Now we are in a
+tricky situation: on the one hand it seems like a poor idea to
+block users from benefiting from this release's security updates,
+but on the other hand the failure might imply that something
+nefarious is going on. At this stage, no matter what, immediately
+fetch Jenkins' image, compare it with your, and try to rule out
+build system compromise:
 
     sudo diffoscope \
         --text diffoscope.txt \
@@ -1085,38 +1085,38 @@ Then:
             path/to/your/tails-amd64-${VERSION:?}.iso \
             path/to/jenkins/tails-amd64-${VERSION:?}.iso
 
- Do the same for the USB image as well.
+Do the same for the USB image as well.
 
- Then carefully investigate the `diffoscope` report:
+Then carefully investigate the `diffoscope` report:
 
-   - If you cannot rule out that the difference is harmful: let's take
-     a step back; we might be compromised, so we are in no position to
-     release. Halt the release, involve the rest of <foundations@tails.net>, and then
-     try to re-establish trust in all build machines and infra
-     involved, etc. Have fun!
+ - If you cannot rule out that the difference is harmful: let's take
+   a step back; we might be compromised, so we are in no position to
+   release. Halt the release, involve the rest of <foundations@tails.net>, and then
+   try to re-establish trust in all build machines and infra
+   involved, etc. Have fun!
 
-   - Otherwise, if the change is definitely harmless:
+ - Otherwise, if the change is definitely harmless:
 
-     * If the source of non-determinism is identified quickly and
-       is easy and fast to fix, *and* the QA of the current images
-       has not gone very far (so at least that time is not wasted),
-       then you should consider abandoning the current version, and
-       immediately start preparing an emergency release with:
+   * If the source of non-determinism is identified quickly and
+     is easy and fast to fix, *and* the QA of the current images
+     has not gone very far (so at least that time is not wasted),
+     then you should consider abandoning the current version, and
+     immediately start preparing an emergency release with:
 
-       - the reproducibility fix,
+     - the reproducibility fix,
 
-       - a new changelog entry,
+     - a new changelog entry,
 
-       - adjustments to the release notes so they are re-purposed for
-         this emergency release (the abandoned release gets none, since
-         it effectively never will be released publicly).
+     - adjustments to the release notes so they are re-purposed for
+       this emergency release (the abandoned release gets none, since
+       it effectively never will be released publicly).
 
-     * Otherwise, if the fix looks time-consuming or difficult,
-       let's release anyway. But let's add a known issue about
-       "This Tails release does not build reproducibility" to the
-       release notes, linking to the issue where
-       the nature of the reproducibility failure is clearly
-       described.
+   * Otherwise, if the fix looks time-consuming or difficult,
+     let's release anyway. But let's add a known issue about
+     "This Tails release does not build reproducibility" to the
+     release notes, linking to the issue where
+     the nature of the reproducibility failure is clearly
+     described.
 
 Initialize the website release branch
 -------------------------------------
