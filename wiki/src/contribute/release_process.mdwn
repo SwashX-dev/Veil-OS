@@ -1672,7 +1672,7 @@ Public testing
 
        "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://download.tails.net/tails/${DIST:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
 
-2. Email <tails-testers@boum.org> to ask them to test the tentative images:
+2. Email <tails-testers@lists.torproject.org> to ask them to test the tentative images:
 
        ./bin/announce-public-testing "${VERSION:?}" "${DIST:?}"
 
@@ -1924,7 +1924,7 @@ Sanity checks
 
 * Triage feedback received on the _Internal testing_ pad.
 
-* Triage feedback received on [tails-testers@boum.org](https://lists.autistici.org/mindex/tails-testers@20380101.000000.00000000.en.html).
+* Triage feedback received on [tails-testers@lists.torproject.org](https://lists.torproject.org/mailman3/hyperkitty/list/tails-testers@lists.torproject.org/).
 
 * [Verify once more](#tor-browser-check) that the Tor Browser we ship
   is still the most recent.
