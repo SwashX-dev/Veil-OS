@@ -277,11 +277,15 @@ class Config:
 def generate_boilerplate(stage: str):
     """Generate boilerplate for STAGE"""
     log.debug("Generating boilerplate for stage '%s'", stage)
+    if stage == "base":
+        write_mode = "w"
+    else:
+        write_mode = "a"
     with open(
         git_repo_root() / ("config/release_management/templates/%s.yml" % stage),
     ) as src, open(
         Path(xdg_config_home) / "tails/release_management/current.yml",
-        "a",
+        write_mode,
     ) as dst:
         dst.write(f"# Stage {stage}:\n")
         dst.write(src.read())
