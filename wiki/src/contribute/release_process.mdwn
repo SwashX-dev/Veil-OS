@@ -16,9 +16,9 @@ There are exactly 3 types of releases:
 
  - A major release
 
- - A release candidate. A release candidate can only be made for a major release
+ - A release candidate. A release candidate can only be made for a major release.
 
-We will not cover beta release in this document.
+We will not cover beta releases in this document.
 
 Both a bugfix release and a major release are called "final". A release candidate is not a final release.
 
@@ -40,18 +40,18 @@ enjoyable.
 Here are some useful tips that will hopefully help you have a pleasant release
 process:
 
- - if time allows, try to unblock other people's work.
-   For example, reaching the _Get the internal manual testing started_ on Monday
-   would be great, because it allows manual testers to plan their job better.
+ - Try to unblock other people's work ASAP.
 
- - when you are clocking off, or just spending some time afk, consider keeping
+   For example, reaching the _Get the internal manual testing started_ ASAP is
+   great, because it allows manual testers to plan their work better, and it
+   increases the chance this part of the critical path is dealt with earlier.
+
+ - When you are clocking off, or just spending some time afk, consider keeping
    your CPU busy with some long-running jobs. Here are some good candidates:
 
    - Building the final image
    - Building IUKs
    - Running the automated test suite
-
- - cross your fingers 🤞
 
 Prepare your checklist
 ======================
@@ -90,33 +90,28 @@ When you clock off, or take any other kind of long break, please communicate thi
 
    - When will manual testers be able to start their work?
 
-
 Requirements
 ============
 
 Packages
 --------
 
-To release Tails you'll need some packages installed:
+Ensure the system(s) you will use for the release process have these packages
+installed:
 
-* `oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
-
-  Note: if the Debian version you are running does not include all required
-  Go packages, such as [[!debpts podman]], you should be able to install
-  them from a more recent Debian release with APT pinning.
+* `apt install oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
 
 * `perl5lib` dependencies:
 
       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/perl5lib.mdwn"
 
-* `iuk` dependencies:
+* packages needed to build IUKs:
 
       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/tails-iuk.mdwn"
 
 * `ikiwiki` from Debian testing (Forky) or newer
 
-
-* packages to build a local version of the website:
+* packages needed to build the website:
 
       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/build/website.mdwn"
 
@@ -165,7 +160,7 @@ To release Tails you need:
 
 * SSH client (`~/.ssh/config`)
 
-  Ensure your SSH client is configured to connect to the APT server:
+  Ensure your SSH client is configured to connect to the system that hosts our APT repositories:
 
       Host apt.lizard
           HostName lizard.tails.boum.org
@@ -238,7 +233,7 @@ later.
 Coordinate with Debian security updates
 ---------------------------------------
 
-If the person responsible for Frontdesk is available this section can
+If the person responsible for Frontdesk is available, this section can
 be delegated to them.
 
 ### Released security updates
@@ -468,7 +463,7 @@ Update included files
 Update Tails version in about:tor
 ---------------------------------
 
-Ensure that the about:tor patches reference the
+Ensure that the `about:tor` patches reference the
 to-be-released version of Tails:
 
     bin/bump-tails-version-in-about-tor "${VERSION:?}"
@@ -532,8 +527,7 @@ Only follow this section if you are preparing a final release:
     [ "${DIST:?}" = stable ]
 
 Merge each APT overlay suite listed in the release branch's
-`config/APT_overlays.d/` into its custom APT suite (in some cases this
-has already been done and the following does nothing):
+`config/APT_overlays.d/` into its custom APT suite (it's OK if this is a no-op):
 
     git checkout "${RELEASE_BRANCH:?}" && \
     ./bin/merge-APT-overlays "${RELEASE_BRANCH:?}"
@@ -709,7 +703,6 @@ documentation:
         echo "- The latest corresponding images built by Jenkins are there: https://nightly.tails.boum.org/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/build-artifacts"
         ) | pee cat wl-copy
 
-
 Included website
 ----------------
 
@@ -844,12 +837,14 @@ Feel free to skip this section when preparing an emergency release.
 
        ./bin/clean-squashfs-sort-file config/binary_rootfs/squashfs.sort
 
-1. Inspect the Git diff (including diff stat), apply common sense:
+1. Inspect the diff:
 
        diff -NaurB \
            <( cut -d' ' -f1 config/binary_rootfs/squashfs.sort.old | sort ) \
            <( cut -d' ' -f1 config/binary_rootfs/squashfs.sort     | sort ) \
            | less
+
+1. Inspect `git diff --stat`
 
 1. Commit the new SquashFS sort file and clean up
 
@@ -876,7 +871,7 @@ after you went through the *Freeze* section:
    Note: many of these steps are not idempotent, so in some cases you'll need to
    do something smarter than following the instructions as-is a second time.
 
-4. Close the full copy of the release process that you have used for
+4. Close the copy of the release process that you have used for
    this section.
 
 Build images
@@ -1329,7 +1324,7 @@ in which IUKs have been built exactly once.
 
 If this script is not working fine for you, please refer to the next section.
 
-#### Otherwise, if the network problem is over or if if you want a safe, non-optimized, script
+#### Otherwise, if the network problem is over or if you want a safe, non-optimized, script
 
 Run this command to verify that Jenkins reproduced your IUKs:
 
@@ -1669,9 +1664,7 @@ Let's be sure that this happens via
     ssh rsync.lizard sudo systemctl restart mirrorbits.service
 
 If, at a later stage of the process, you realize Mirrorbits is still not
-"noticing" that mirrors are up-to-date, don't be afraid of restarting
-the Mirrorbits service again.
-
+"noticing" that mirrors are up-to-date, restart the Mirrorbits service again.
 
 <a id="run-automated-tests"></a>
 
@@ -1724,7 +1717,7 @@ Public testing
 
 ## If you are publishing a RC
 
-1. Verify that the image has been propagated to at least 3 mirrors:
+1. Verify that the image is available on at least 3 mirrors:
 
        "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://download.tails.net/tails/${DIST:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.img?mirrorlist"
 
@@ -2020,8 +2013,7 @@ Skip this part if preparing a release candidate:
 
     [ "${DIST:?}" = stable ]
 
-1. Postpone to the next scheduled release any remaining open issue and merge
-   request whose milestone is the version you've just released:
+1. Postpone issues and merge requests with a now obsolete milestone:
 
        (
        cd "${MASTER_CHECKOUT:?}" && \
@@ -2038,8 +2030,8 @@ Skip this part if preparing a release candidate:
    this as an example:
    [tails/gitlab-config!18](https://gitlab.tails.boum.org/tails/gitlab-config/-/merge_requests/18/diffs)
    
-   A cheap way to do this, could be to use [Gitlab web interface to create the
-MR](https://gitlab.tails.boum.org/tails/gitlab-config/-/edit/master/main.yml)
+   You may use [Gitlab web interface to create the
+   MR](https://gitlab.tails.boum.org/tails/gitlab-config/-/edit/master/main.yml).
 
    Make another Tails Team member the *Reviewer*.
 
@@ -2064,7 +2056,9 @@ Wait for the website update
 Wait for the release to be fully published, that is for the website to have been
 fully refreshed. To do so, first wait for the
 [GitLab CI pipeline](https://gitlab.tails.boum.org/tails/tails/-/pipelines/?ref=master)
-triggered by the automatic merge of `$WEBSITE_RELEASE_BRANCH` to build and deploy the website. And then:
+triggered by the automatic merge of `$WEBSITE_RELEASE_BRANCH` to build and deploy the website.
+
+And then:
 
 ### If you are publishing a final release
 
@@ -2311,10 +2305,9 @@ Check that you are indeed preparing a final release:
 
    * [Firefox Release Calendar](https://whattrainisitnow.com/calendar/)
 
-   If the upcoming release dates in the Firefox Release Calendar does not match
-   what we have in our release calendar, then alert
-   <tails-dev@boum.org>, <rm@tails.net>, and explicitly Cc the
-   designated RM for that upcoming release.
+   If the upcoming release dates in the Firefox Release Calendar do not match
+   what we have in our release calendar, then raise the topic to the team,
+   by emailing <rm@tails.net>.
 
 1. Announce the date of the next release:
 
@@ -2342,12 +2335,12 @@ Check that you are indeed preparing a final release:
    tasks that must be done at the beginning of your shift in the
    [[release manager role page|contribute/working_together/roles/release_manager#shift]].
 
-   Otherwise, kindly remind the next release manager about this :)
+   Otherwise, kindly remind the next release manager about this:
 
        ./bin/remind-next-rm "${NEXT_PLANNED_VERSION:?}"
 
-   - If there's a release candidate scheduled before our next release,
-     do the same for the release manager of that release candidate.
+   If there's a release candidate scheduled before our next release,
+   do the same for the release manager of that release candidate.
 
 1. Schedule the *disclosure of security vulnerabilities* fixed in the
    release you've just published
