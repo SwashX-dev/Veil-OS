@@ -850,15 +850,7 @@ Feel free to skip this section when preparing an emergency release.
 
 1. Copy the new sort file to `config/binary_rootfs/squashfs.sort`.
 
-1. To remove:
-
-   - runtime-generated files that don't exist in the rootfs,
-     in order to avoid confusing noise in the build output
-
-   - the bits about `kill-boot-profile` at the end: they're
-     only useful when profiling the boot
-
-   - some hardware-dependent files
+1. Clean up the new sort file:
 
    Run this command:
 
