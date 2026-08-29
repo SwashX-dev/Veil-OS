@@ -478,21 +478,9 @@ Update PO files
 
 Expected time: 5-30 minutes depending on how many errors you'll get.
 
-Pull updated translations for languages translated in Transifex,
-refresh the code PO files,
-and commit the result, including new PO files:
+Update PO files:
 
-    (
-    cd "${RELEASE_CHECKOUT:?}"
-    set -x
-    err() { echo "Error $*"; exit 1; }
-    ./import-translations || err "importing translations"
-    ./refresh-translations || err "refreshing translations"
-    ./submodules/jenkins-tools/slaves/lint_po || err "in lint"
-    ./bin/check-po-msgfmt || err "in msgfmt"
-    git add po
-    git commit -m 'Update PO files.' || :
-    )
+    ./bin/update-po-files "${RELEASE_CHECKOUT:?}"
 
 If `lint_po` complains:
 

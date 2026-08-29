@@ -1,0 +1,17 @@
+#!/bin/sh
+
+RELEASE_CHECKOUT="$1"
+
+set -eu -o pipefail
+set -x
+
+cd "${RELEASE_CHECKOUT:?}"
+
+err() { echo "Error $*"; exit 1; }
+
+./import-translations || err "importing translations"
+./refresh-translations || err "refreshing translations"
+./submodules/jenkins-tools/slaves/lint_po || err "in lint"
+./bin/check-po-msgfmt || err "in msgfmt"
+git add po
+git commit -m 'Update PO files.' || :
