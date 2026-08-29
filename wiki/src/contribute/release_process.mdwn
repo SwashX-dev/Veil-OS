@@ -293,6 +293,17 @@ Verify that the latest
 [pipeline](https://gitlab.tails.boum.org/tails/tails/-/pipelines) for
 the branch this release will be built from succeeded.
 
+Merge the private repo
+======================
+
+Look at [tails/tails-private](https://gitlab.tails.boum.org/tails/tails-private):
+
+    git fetch tails-private && \
+    git log origin/"${RELEASE_BRANCH:?}"..tails-private/"${RELEASE_BRANCH:?}"
+
+If anything was merged there during the current development cycle,
+merge it into `$RELEASE_BRANCH`.
+
 Freeze
 ======
 
@@ -362,13 +373,14 @@ Follow this part ONLY if you are preparing a bugfix release.
 
 ## In any case
 
-Look at [tails/tails-private](https://gitlab.tails.boum.org/tails/tails-private):
-
-    git fetch tails-private && \
-    git log origin/"${RELEASE_BRANCH:?}"..tails-private/"${RELEASE_BRANCH:?}"
-
-If anything was merged there during the current development cycle,
-merge it into `$RELEASE_BRANCH`.
+    (
+    set -eu -o pipefail
+    git checkout stable
+    git fetch
+    git merge origin/stable
+    git merge --no-ff origin/master
+    ./bin/merge-APT-overlays stable
+    )
 
 Reset the release branch's `config/base_branch`:
 
