@@ -7,7 +7,10 @@ set -x
 
 cd "${RELEASE_CHECKOUT:?}"
 
-err() { echo "Error $*"; exit 1; }
+err() {
+    echo "Error $*"
+    exit 1
+}
 
 ./import-translations || err "importing translations"
 ./refresh-translations || err "refreshing translations"
