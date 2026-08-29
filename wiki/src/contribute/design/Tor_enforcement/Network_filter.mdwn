@@ -73,8 +73,8 @@ mapping facility.
 
 #### Transparent proxy
 
-We transparently proxy all of `amnesia`'s outgoing TCP Internet connection
-through tor.
+Tails transparently proxies all of `amnesia`'s outgoing TCP Internet
+traffic through `tor`.
 
 #### IPv6
 

@@ -32,12 +32,13 @@
 # Chris Batris <robo.chris11@gmail.com>, 2025.
 # emma peel <emma.peel@riseup.net>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2026.
+# Spiros Vlachos <vitaspiros@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-07-15 07:01+0000\n"
+"PO-Revision-Date: 2026-08-18 13:51+0000\n"
 "Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/tor/tails-gui/el/"
 ">\n"
@@ -46,7 +47,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -74,18 +75,16 @@ msgid "Configure"
 msgstr "Διαμόρφωση"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
-#, fuzzy
 msgid "Password Manager"
-msgstr "Κωδικός ασφαλείας"
+msgstr "Διαχειριστής κωδικών πρόσβασης"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
-#, fuzzy
 msgid "password"
-msgstr "Κωδικός ασφαλείας"
+msgstr "κωδικός πρόσβασης"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
-msgstr ""
+msgstr "διαχειριστής-κωδικών"
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:57
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:95
@@ -247,7 +246,7 @@ msgid ""
 "href=\"org.gnome.Terminal.desktop\">APT on the command line</a>."
 msgstr ""
 "Για να προσθέσετε περισσότερα, εγκαταστήστε λογισμικό χρησιμοποιώντας το <a "
-"href=\"synaptic.desktop\">Synaptic Package Manager</a>ή το <a "
+"href=\"synaptic.desktop\">Synaptic Package Manager</a> ή το <a "
 "href=\"org.gnome.Terminal.desktop\">ΑΡΤ στην γραμμή εντολών</a>."
 
 #: config/chroot_local-includes/usr/share/tails/additional-software/configuration-window.ui:154
@@ -511,13 +510,12 @@ msgstr ""
 "αλλά μόνο {free_memory} είναι διαθέσιμη."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:473
-#, fuzzy
 msgid ""
 "An error occurred while detecting available upgrades.\n"
 "This should not happen. Please report a bug."
 msgstr ""
-"Παρουσιάστηκε σφάλμα κατά τον έλεγχο αναβαθμίσεων.\n"
-"Δεν θα έπρεπε να συμβεί. Παρακαλούμε υποβάλετε αναφορά σφάλματος."
+"Παρουσιάστηκε σφάλμα κατά τον έλεγχο για διαθέσιμες αναβαθμίσεις.\n"
+"Αυτό δεν θα έπρεπε να συμβεί. Παρακαλούμε υποβάλετε αναφορά σφάλματος."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:476
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:495
@@ -746,11 +744,12 @@ msgstr "Προέκυψε σφάλμα κατά την εγκατάσταση τ�
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr ""
+msgstr "Λογισμικό GNOME"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
 msgstr ""
+"Το λογισμικό GNOME μπορεί να ξεκινήσει μόνο αφού το Tor έχει εκκινηθεί."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -830,9 +829,8 @@ msgid "Start Without Persistent Storage"
 msgstr "Συνέχεια χωρίς το μόνιμο αποθηκευτικό χώρο"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:193
-#, fuzzy
 msgid "Language and Keyboard layout"
-msgstr "Γλώσσα και μορφές"
+msgstr "Γλώσσα και διάταξη πληκτρολογίου"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:195
 msgid ""
@@ -842,10 +840,16 @@ msgid ""
 "Someone who finds your Tails USB stick can see your language and keyboard "
 "layout."
 msgstr ""
+"Η γλώσσα κι η διάταξη του πληκτρολογίου σας θα αποθηκευτούν μη-"
+"κρυπτογραφημένα στο Tails USB στικάκι σας και θα εφαρμόζονται αυτόματα στο "
+"μέλλον.\n"
+"\n"
+"Κάποιος που θα βρει το Tails USB στικάκι σας μπορεί να δει τη γλώσσα και τη "
+"διάταξη πληκτρολογίου σας."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:200
 msgid "Save Unencrypted"
-msgstr ""
+msgstr "Αποθήκευση μη-κρυπτογραφημένα"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:288
 msgid ""
@@ -1362,7 +1366,7 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:600
 #, python-format
 msgid "The device \"%(pretty_name)s\" is read-only."
-msgstr ""
+msgstr "Η συσκευή \"%(pretty_name)s\" είναι μόνο-ανάγνωσης."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:608
 #, python-format
@@ -1520,7 +1524,7 @@ msgid "Could not open device for writing."
 msgstr "Δεν ήταν δυνατό το άνοιγμα της συσκευής προς εγγραφή."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:19
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "You have a <i>KeePassXC</i> or <i>Secrets</i> database in your "
 "<i>Persistent</i> folder:\n"
@@ -1530,16 +1534,13 @@ msgid ""
 "Renaming your database to <i>${default_filename}</i> allows <i>Secrets</i> "
 "to open it automatically in the future."
 msgstr ""
-"<b><big>Θέλετε να μετονομάσετε τη βάση δεδομένων σας <i>KeePassXC</i>;</"
-"big></b>\n"
-"\n"
-"Έχετε τη βάση δεδομένων <i>KeePassXC</i> στον φάκελο <i>μόνιμης αποθήκευσης</"
-"i>:\n"
+"Έχετε τη βάση δεδομένων <i>KeePassXC</i> ή <i>Secrets</i> στον φάκελο "
+"<i>μόνιμης αποθήκευσης</i>:\n"
 "\n"
 "<i>${filename}</i>\n"
 "\n"
-"Η μετονομασία της βάσης δεδομένων σας σε <i>${default_filename}</i> θα "
-"επιτρέψει στο <i>KeePassXC</i> το αυτόματο άνοιγμά του στο μέλλον."
+"Η μετονομασία της βάσης δεδομένων σας σε <i>${default_filename}</i> "
+"επιτρέπει στο <i>Secrets</i> το αυτόματο άνοιγμά του στο μέλλον."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:25
 msgid "Rename"
@@ -1551,7 +1552,7 @@ msgstr "Διατηρήστε το τρέχον όνομα"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:29
 msgid "Rename Password Database?"
-msgstr ""
+msgstr "Μετονομασία βάσης δεδομένων κωδικών πρόσβασης;"
 
 #: config/chroot_local-includes/usr/local/bin/replace-su-with-sudo:19
 msgid "su is disabled. Please use sudo instead."
@@ -1710,7 +1711,7 @@ msgid ""
 "command line</a>."
 msgstr ""
 "Για να το κάνετε αυτό, εγκαταστήστε λογισμικό χρησιμοποιώντας το <a "
-"href=\"synaptic.desktop\">Synaptic Package Manager</a>ή το <a "
+"href=\"synaptic.desktop\">Synaptic Package Manager</a> ή το <a "
 "href=\"org.gnome.Terminal.desktop\">ΑΡΤ στην γραμμή εντολών</a>."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:227
@@ -1721,7 +1722,7 @@ msgid ""
 msgstr ""
 "Για να το κάνετε αυτό, ξεκλειδώστε το μόνιμο αποθηκευτικό σας χώρο κατά την "
 "εκκίνηση του Tails και εγκαταστήστε λογισμικό χρησιμοποιώντας το <a "
-"href=\"synaptic.desktop\">Synaptic Package Manager</a>ή το <a "
+"href=\"synaptic.desktop\">Synaptic Package Manager</a> ή το <a "
 "href=\"org.gnome.Terminal.desktop\">ΑΡΤ στην γραμμή εντολών</a>."
 
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:240
@@ -1755,7 +1756,7 @@ msgstr "Αποτυχία συγχρονισμού του ρολογιού!"
 
 #: config/chroot_local-includes/usr/local/lib/tails-low-ram-notify-user:26
 msgid "Insufficient Memory Detected"
-msgstr ""
+msgstr "Εντοπίστηκε Ανεπαρκής Μνήμη"
 
 #: config/chroot_local-includes/usr/local/lib/tails-low-ram-notify-user:28
 #, python-brace-format
@@ -1764,6 +1765,9 @@ msgid ""
 "{installed_ram_gb} GB. You might experience reduced performance, "
 "instability, or crashes."
 msgstr ""
+"Το Tails απαιτεί {required_ram_gb} GB RAM, αλλά αυτός ο υπολογιστής έχει "
+"μόνο {installed_ram_gb} GB. Μπορεί να βιώσετε μειωμένη απόδοση, αστάθεια ή "
+"καταρρεύσεις."
 
 #: config/chroot_local-includes/usr/local/lib/tails-low-ram-notify-user:41
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:47
@@ -1780,9 +1784,8 @@ msgid "Set up a password to unlock the screen."
 msgstr "Όρισε κωδικό για το κλείδωμα της οθόνης."
 
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:147
-#, fuzzy
 msgid "Show Password"
-msgstr "Κωδικός ασφαλείας"
+msgstr "Εμφάνιση Κωδικού"
 
 #: config/chroot_local-includes/usr/local/bin/tails-screen-locker:151
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2580
@@ -1898,7 +1901,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:28
 msgid "Secure Boot Update Needed"
-msgstr ""
+msgstr "Χρειάζεται ενημέρωση της Ασφαλούς Εκκίνησης"
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:30
 msgid ""
@@ -1906,6 +1909,10 @@ msgid ""
 "Apply all available updates from your regular operating system to update to "
 "the latest Secure Boot certificates of Microsoft."
 msgstr ""
+"Το Tails δεν θα ξεκινάει σε αυτόν τον υπολογιστή κάποια στιγμή στο μέλλον. "
+"Εφαρμόστε όλες τις διαθέσιμες ενημερώσεις από το κανονικό σας λειτουργικό "
+"σύστημα για να ενημερωθείτε στα πιο πρόσφατα πιστοποιητικά Ασφαλούς "
+"Εκκίνησης της Microsoft."
 
 #: config/chroot_local-includes/usr/local/bin/tails-upgrade-frontend-wrapper:37
 #, python-brace-format
@@ -1969,11 +1976,11 @@ msgstr "Αυτόματα"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:284
 msgid "Frequently selected regions"
-msgstr ""
+msgstr "Συχνά επιλεγμένες περιοχές"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:291
 msgid "Other regions"
-msgstr ""
+msgstr "Άλλες περιοχές"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:369
 msgid "_Use a bridge that you already know"
@@ -2002,13 +2009,12 @@ msgid "Invalid: {exception}"
 msgstr "Μη έγκυρο: {exception}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:450
-#, fuzzy
 msgid ""
 "You need to configure a WebTunnel or an obfs4 bridge to hide that you are "
 "using Tor"
 msgstr ""
-"Θα πρέπει να ρυθμίσετε μια γέφυρα obfs4 για να κρύψετε το ότι χρησιμοποιείτε "
-"Tor"
+"Θα πρέπει να ρυθμίσετε μια γέφυρα WebTunnel ή obfs4 για να κρύψετε το ότι "
+"χρησιμοποιείτε Tor"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:514
 msgid "Failed to configure your Persistent Storage"
@@ -2035,9 +2041,8 @@ msgid "Synchronizing the system's clock…"
 msgstr "Συγχρονισμός του ρολογιού συστήματος…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:726
-#, fuzzy
 msgid "Asking for a Tor bridge based on your region…"
-msgstr "_Αίτηση γέφυρας Tor μέσω email"
+msgstr "Αίτηση γέφυρας Tor με βάση την περιοχή σας…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:774
 msgid "Connecting to Tor without bridges…"
@@ -2049,9 +2054,8 @@ msgid "Connecting to Tor with default bridges…"
 msgstr "Σύνδεση στο Tor με χρήση προεπιλεγμένων γεφυρών…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:789
-#, fuzzy
 msgid "Connecting to Tor with a bridge based on your region…"
-msgstr "Σύνδεση στο Tor με χρήση προεπιλεγμένων γεφυρών…"
+msgstr "Σύνδεση στο Tor με χρήση μιας γέφυρας βασισμένη στην περιοχή σας…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:796
 msgid "Connecting to Tor with a custom bridge…"
@@ -2077,21 +2081,21 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:985
 #, python-brace-format
 msgid "Bridge: <b>{bridge}</b>"
-msgstr ""
+msgstr "Γέφυρα: <b>{bridge}</b>"
 
 #. Translators: only translate "Error code:" and adjust
 #. text-direction
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:997
 #, python-brace-format
 msgid "Error code: {code}"
-msgstr ""
+msgstr "Κωδικός σφάλματος: {code}"
 
 #. Translators: only translate "Proxy:" and adjust
 #. text-direction
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1024
 #, python-brace-format
 msgid "Proxy: <b>{proxy}</b>"
-msgstr ""
+msgstr "Διαμεσολαβητής: <b>{proxy}</b>"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1323
 #, python-brace-format
@@ -2663,7 +2667,7 @@ msgid ""
 msgstr ""
 "Δεν μπόρεσε να προστεθεί ο φορέας αρχείου %s: Σφάλμα κατά την αναμονή "
 "εγκατάστασης.\n"
-"Παρακαλούμε προσπαθήστε να χρησιμοποιήσετε την εφαρμογή <i>δίσκων</i>αντ' "
+"Παρακαλούμε προσπαθήστε να χρησιμοποιήσετε την εφαρμογή <i>δίσκων</i> αντ' "
 "αυτού."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/unlock_veracrypt_volumes/volume_manager.py:241
@@ -2842,6 +2846,8 @@ msgid ""
 "Authentication is required to run the Synaptic Package Manager. Enter the "
 "administration password that you set up in the Welcome Screen."
 msgstr ""
+"Χρειάζεται πιστοποίηση για να τρέξει ο Synaptic Package Manager. Εισάγετε "
+"τον κωδικό διαχειριστή που φτιάξατε στην Οθόνη Καλοσωρίσματος."
 
 #: config/chroot_local-includes/usr/local/lib/polkit-policy-change-message:71
 msgid ""
@@ -2849,6 +2855,9 @@ msgid ""
 "default. To run the Synaptic Package Manager, restart Tails and set up an "
 "administration password in the Welcome Screen."
 msgstr ""
+"Για καλύτερη ασφάλεια, δεν δημιουργείται κωδικός διαχειριστή στο Tails από "
+"προεπιλογή. Για να τρέξετε τον Synaptic Package Manager, επανεκκινήστε το "
+"Tails και δημιουργήστε έναν κωδικό διαχειριστή στην Οθόνη Καλοσωρίσματος."
 
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:2
 msgid ""
@@ -2858,9 +2867,8 @@ msgstr ""
 "Ρυθμίστε ποια αρχεία και ρυθμίσεις εφαρμογής αποθηκεύονται μεταξύ συνεδριών"
 
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:3
-#, fuzzy
 msgid "configuration;saved"
-msgstr "Διαμόρφωση εκτυπωτών"
+msgstr "διαμόρφωση;αποθηκεύτηκε"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-documentation.desktop.in.h:1
 msgid "Tails Documentation"
@@ -2871,8 +2879,9 @@ msgid "Learn how to use Tails"
 msgstr "Μάθετε πώς να χρησιμοποιείτε το Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-documentation.desktop.in.h:3
+#, fuzzy
 msgid "learn"
-msgstr ""
+msgstr "μαθαίνω"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-about.desktop.in.h:2
 msgid "Learn more about Tails"
@@ -2898,18 +2907,16 @@ msgid "Install, clone, upgrade Tails"
 msgstr "Εγκατάσταση, κλωνοποίηση, αναβάθμιση του Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
-#, fuzzy
 msgid "install;clone;upgrade;manual"
-msgstr "Εγκατάσταση, κλωνοποίηση, αναβάθμιση του Tails"
+msgstr "εγκατάσταση;κλωνοποίηση;αναβάθμιση;εγχειρίδιο"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2
 msgid "Connect Tails to the Tor network"
 msgstr "Σύνδεση του Tails στο δίκτυο Tor"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:3
-#, fuzzy
 msgid "connect;tor;network"
-msgstr "Σύνδεση σε τοπικό δίκτυο"
+msgstr "σύνδεση;tor;δίκτυο"
 
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.TorBrowser.desktop.in.h:1
 msgid "Tor Browser"
@@ -2920,9 +2927,8 @@ msgid "Anonymous Web Browser"
 msgstr "Ανώνυμος φυλλομετρητής ιστού"
 
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.TorBrowser.desktop.in.h:3
-#, fuzzy
 msgid "web;tor;browser"
-msgstr "Tor Browser"
+msgstr "ιστός;tor;φυλλομετρητής"
 
 #: ../config/chroot_local-includes/usr/share/applications/unsafe-browser.desktop.in.h:2
 msgid "Browse the World Wide Web without anonymity"
@@ -2934,7 +2940,7 @@ msgstr "Μη ασφαλής φυλλομετρητής ιστού"
 
 #: ../config/chroot_local-includes/usr/share/applications/unsafe-browser.desktop.in.h:4
 msgid "web;captive;portal"
-msgstr ""
+msgstr "ιστός;αιχμάλωτος;πύλη"
 
 #: ../config/chroot_local-includes/usr/share/applications/unlock-veracrypt-volumes.desktop.in.h:2
 msgid "Mount VeraCrypt encrypted file containers and devices"
@@ -2943,7 +2949,7 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/applications/unlock-veracrypt-volumes.desktop.in.h:3
 msgid "mount;encrypted;container;truecrypt"
-msgstr ""
+msgstr "ανάρτηση;κρυπτογραφημένο;δοχείο;truecrypt"
 
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.AdditionalSoftware.desktop.in.h:2
 msgid ""
@@ -2954,9 +2960,8 @@ msgstr ""
 "Storage κατά την εκκίνηση του Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.AdditionalSoftware.desktop.in.h:3
-#, fuzzy
 msgid "persistent;storage;package;install"
-msgstr "Διαγραφή του μόνιμου αποθηκευτικού χώρου και επανεγκατάσταση"
+msgstr "μόνιμος;αποθηκευτικός χώρος;πακέτο;εγκατάσταση"
 
 #: ../config/chroot_local-includes/usr/share/applications/whisperback.desktop.in.h:1
 msgid "WhisperBack Error Reporting"
@@ -2967,9 +2972,8 @@ msgid "Send feedback via encrypted e-mail"
 msgstr "Αποστολή σχόλιων μέσω κρυπτογραφημένου email"
 
 #: ../config/chroot_local-includes/usr/share/applications/whisperback.desktop.in.h:3
-#, fuzzy
 msgid "feedback;bug;report;tails;error;"
-msgstr "feedback;bug;report;tails;error;"
+msgstr "ανατροφοδότηση;πρόβλημα;αναφορά;tails;σφάλμα"
 
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:2
 msgid "Tails specific tools"
@@ -3053,7 +3057,6 @@ msgstr ""
 "απενεργοποιήσετε όλη τη δικτύωση για αυξημένη ασφάλεια."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:514
-#, fuzzy
 msgid ""
 "The Unsafe Browser allows you to sign in to a network using a captive "
 "portal.\n"
@@ -3073,11 +3076,7 @@ msgstr ""
 "όπως η διεύθυνση email.\n"
 "\n"
 "Το Unsafe Browser δεν είναι ανώνυμο και μπορεί να σας εκθέσει. "
-"Χρησιμοποιήστε το μόνο για να συνδεθείτε σε δίκτυα.\n"
-"\n"
-"Το Unsafe Browser είναι ενεργοποιημένο από προεπιλογή από το Tails 5.8 "
-"(Δεκέμβριος 2022), μετά τη διόρθωση του ζητήματος ασφαλείας που μας "
-"υποχρέωσε να το απενεργοποιήσουμε από προεπιλογή στο Tails 4.8 (Ιούνιο 2020)."
+"Χρησιμοποιήστε το μόνο για να συνδεθείτε σε δίκτυα."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:560
 msgid "Enable the Unsafe Browser (default)"
@@ -3406,12 +3405,11 @@ msgstr "Ενεργοποίηση πρόσθετου λογισμικού"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
 msgid "Flatpak"
-msgstr ""
+msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "Ενεργοποίηση Πελάτη SSH"
+msgstr "Ενεργοποίηση Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
@@ -3714,12 +3712,10 @@ msgid "TrueCrypt/VeraCrypt container"
 msgstr "Φορέας TrueCrypt/VeraCrypt"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:82
-#, fuzzy
 msgid "Configure a Tor bridge"
-msgstr "Ρύθμιση μιας _γέφυρας Tor"
+msgstr "Ρύθμιση μιας γέφυρας Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
-#, fuzzy
 msgid ""
 "Bridges are secret Tor relays. Use a bridge as your first Tor relay if "
 "accessing Tor is blocked from where you are.\n"
@@ -3727,7 +3723,11 @@ msgid ""
 "You can use <i>obfs4</i> and <i>WebTunnel</i> bridges in Tails.\n"
 msgstr ""
 "Οι γέφυρες είναι μυστικοί αναμεταδότες του Tor. Χρησιμοποιήστε μια γέφυρα ως "
-"τον πρώτο σας αναμεταδότη αν η πρόσβαση στο Tor μπλοκάρεται στην περιοχή σας."
+"τον πρώτο σας αναμεταδότη αν η πρόσβαση στο Tor μπλοκάρεται στην περιοχή "
+"σας.\n"
+"\n"
+"Μπορείτε να χρησιμοποιήσετε γέφυρες <i>obfs4</i> και <i>WebTunnel</i> στο "
+"Tails.\n"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:126
 msgid "<a href=\"doc/anonymous_internet/tor\">Learn more about Tor bridges</a>"
@@ -3753,14 +3753,12 @@ msgid "None"
 msgstr "Καμία"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:242
-#, fuzzy
 msgid "Ask for a bridge based on your _region"
-msgstr "_Αίτηση γέφυρας Tor μέσω email"
+msgstr "Αίτηση γέφυρας με βάση την _περιοχή σας"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
-#, fuzzy
 msgid "_Ask for a bridge by email"
-msgstr "_Αίτηση γέφυρας Tor μέσω email"
+msgstr "_Αίτηση γέφυρας μέσω email"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
 msgid ""
@@ -3786,7 +3784,7 @@ msgstr "Γέφυρα"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:473
 msgid "obfs4 or webtunnel…"
-msgstr ""
+msgstr "obfs4 ή webtunnel…"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:546
 msgid "Save bridge to _Persistent Storage"
@@ -3811,69 +3809,67 @@ msgid "This local network seems to be blocking access to Tor."
 msgstr "Το τοπικό σας δίκτυο φαίνεται πως εμποδίζει την πρόσβαση στο Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:811
-#, fuzzy
 msgid "Error connecting to Tor with this bridge"
-msgstr "Σύνδεση στο Tor χωρίς τη χρήση γεφυρών…"
+msgstr "Σφάλμα σύνδεσης στο Tor με αυτήν τη γέφυρα"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:827
 msgid ""
 "Either this Tor bridge is not working or your network is blocking access to "
 "it."
 msgstr ""
+"Είτε αυτή η γέφυρα Tor δεν λειτουργεί είτε το δίκτυό σας σάς αποκλείει την "
+"πρόσβαση σε αυτή."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:856
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:930
-#, fuzzy
 msgid "Try configuring another bridge."
-msgstr "Ρύθμιση μιας γέφυρας Tor"
+msgstr "Προσπαθήστε να διαμορφώσετε μια άλλη γέφυρα."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:884
-#, fuzzy
 msgid "Error connecting to Tor with default bridges"
-msgstr "Σύνδεση στο Tor με χρήση προεπιλεγμένων γεφυρών…"
+msgstr "Σφάλμα σύνδεσης στο Tor με χρήση προεπιλεγμένων γεφυρών"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:900
-#, fuzzy
 msgid "Your network is blocking access to Tor and the default bridges."
-msgstr "Το τοπικό σας δίκτυο εμποδίζει την πρόσβαση στο Tor."
+msgstr ""
+"Το δίκτυό σας εμποδίζει την πρόσβαση στο Tor και στις προεπιλεγμένες γέφυρες."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:916
-#, fuzzy
 msgid "Bridge: <b>default bridges</b>"
-msgstr "Χρήση _προεπιλεγμένης γέφυρας"
+msgstr "Γέφυρα: <b>προεπιλεγμένες γέφυρες</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:958
-#, fuzzy
 msgid "Error connecting to Tor with bridges"
-msgstr "Σύνδεση στο Tor χωρίς τη χρήση γεφυρών…"
+msgstr "Σφάλμα σύνδεσης στο Tor με τη χρήση γεφυρών"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:974
 msgid "None of the bridges recommended for this region worked."
 msgstr ""
+"Δεν λειτούργησε καμία από τις γέφυρες που προτείνονται γι' αυτήν την περιοχή."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:990
 msgid "Try another region or getting a bridge by mail."
-msgstr ""
+msgstr "Προσπαθήστε μια άλλη περιοχή ή να πάρετε μια γέφυρα μέσω mail."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1018
-#, fuzzy
 msgid "Error asking for a bridge"
-msgstr "Προέκυψε σφάλμα κατά τον έλεγχο για αναβαθμίσεις"
+msgstr "Σφάλμα αίτησης γέφυρας"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1034
 msgid "Tails failed to ask for a bridge based on your region."
-msgstr ""
+msgstr "Το Tails απέτυχε να αιτηθεί μια γέφυρα βασισμένο στην περιοχή σας."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1050
 msgid ""
 "Please, <a href=\"support/talk\">report this error</a> and try asking for a "
 "bridge by email."
 msgstr ""
+"Παρακαλώ <a href=\"support/talk\">αναφέρετε αυτό το σφάλμα</a> και "
+"προσπαθήστε να ζητήσετε μια γέφυρα μέσω mail."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1087
-#, fuzzy
 msgid "Open _details"
-msgstr "Άνοιγμα κλωνοποιητή Tails"
+msgstr "Άνοιγμα _λεπτομερειών"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1142
 msgid "• Wrong clock"
@@ -3922,9 +3918,8 @@ msgid "Configure a Local _Proxy"
 msgstr "Ρύθμιση τοπικού _διακομιστή μεσολάβησης"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1374
-#, fuzzy
 msgid "• Tor bridge"
-msgstr "• Γέφυρα Tor μέσω email"
+msgstr "• Γέφυρα Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1394
 msgid ""
@@ -3938,9 +3933,8 @@ msgstr ""
 "ή από ορισμένους γονικούς ελέγχους."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1410
-#, fuzzy
 msgid "Configure a Tor _Bridge"
-msgstr "Ρύθμιση μιας γέφυρας Tor"
+msgstr "Ρύθμιση μιας _Γέφυρας Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1449
 msgid ""
@@ -4109,7 +4103,6 @@ msgid "Connect to a local network"
 msgstr "Σύνδεση σε τοπικό δίκτυο"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2024
-#, fuzzy
 msgid ""
 "You are not connected to a local network yet. To be able to connect to the "
 "Tor network, you first need to connect to a Wi-Fi, wired, or mobile network."
@@ -4278,743 +4271,3 @@ msgstr "Δεκέμβριος"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Ρολόι"
-
-#~ msgid "Suspend"
-#~ msgstr "Σε αναστολή"
-
-#~ msgid "Restart"
-#~ msgstr "Επανεκκίνηση"
-
-#~ msgid "Power Off"
-#~ msgstr "Απενεργοποίηση"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "Η διεύθυνση της γέφυρας έχει κακή μορφή"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "Απαιτείται η ρύθμιση γέφυρας αν θέλετε να κρύψετε το ότι χρησιμοποιείτε "
-#~ "Tor"
-
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "Για λήψη γέφυρας, στείλτε ένα κενό email στο <tt>bridges@torproject.org</"
-#~ "tt> από διεύθυνση Gmail ή Riseup από το τηλέφωνό σας και σαρώστε τον "
-#~ "συνημμένο κωδικό QR που θα λάβετε αυτόματα ως απάντηση."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Σάρωση κωδικού QR"
-
-#~ msgid "Documentation"
-#~ msgstr "Τεκμηρίωση"
-
-#, fuzzy
-#~| msgid ""
-#~| "Opens a terminal as the root user, using gksu to ask for the password"
-#~ msgid "Opens a console as the root user"
-#~ msgstr ""
-#~ "Ανοίγει ένα τερματικό ως χρήστης root, χρησιμοποιώντας το gksu για τον "
-#~ "κωδικό"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr ""
-#~ "Για να ξεκινήσετε ένα Root Terminal, πρέπει να επαληθεύσετε την ταυτότητά "
-#~ "σας."
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Σύνδεση Δικτύου"
-
-#~ msgid "Obsolete"
-#~ msgstr "Απαρχαιωμένο"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Πρέπει να μεταφερθούν τα κλειδιά OpenPGP"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "Στο <i>Thunderbird</i> 78 αντικαθίσταται το πρόσθετο <i>Enigmail</i> με "
-#~ "την ενσωματωμένη υποστήριξη κρυπτογράφησης OpenPGP. Για να συνεχίσετε να "
-#~ "χρησιμοποιείτε τα κλειδιά σας OpenPGP στο <i>Thunderbird</i>, ακολουθήστε "
-#~ "τις οδηγίες μεταφοράς τους."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "_Άνοιγμα οδηγιών μεταφοράς"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_Μεταφορά αργότερα"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "Αντικαταστήσαμε αυτή την επιπλέον ρύθμιση στο Tails 4.19 (Ιούνιος 2021) "
-#~ "με έναν βοηθό Σύνδεσης στο Tor, ενσωματωμένο στο desktop.\n"
-#~ "\n"
-#~ "Θα ερωτηθείτε αν θέλετε να χρησιμοποιήσετε γέφυρες όταν συνδεθείτε στο "
-#~ "Tor αφού ξεκινήσετε το Tails.\n"
-#~ "\n"
-#~ "Αν θέλετε να δουλέψετε εκτός σύνδεσης, ενεργοποιήστε τη Λειτουργία εκτός "
-#~ "σύνδεσης στις επιπλέον ρυθμίσεις."
-
-#~ msgid "Technical details to include"
-#~ msgstr "Τεχνικές λεπτομέρειες που πρέπει να συμπεριληφθούν"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Τερματικό Root"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "obfs4 ..."
-#~ msgstr "obfs4 ..."
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Άνοιγμα της εποπτείας δικτύου"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Για πληροφορίες αποσφαλμάτωσης, χρησιμοποιήστε την ακόλουθη εντολή: sudo "
-#~ "tails-debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Άνοιγμα κυκλωμάτων του Onion"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Εκκίνηση του μη ασφαλούς περιηγητή..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Αυτό μπορεί να πάρει λίγο χρόνο· παρακαλούμε περιμένετε."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Επαναφορά σύνδεσης Tor"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Προέκυψε σφάλμα κατά την ενημέρωση του κλειδιού εγγραφής"
-
-#~ msgid ""
-#~ "Something went wrong when starting your Tails USB stick for the first "
-#~ "time: resizing the system partition failed"
-#~ msgstr ""
-#~ "Παρουσιάστηκε σφάλμα κατά την πρώτη εκκίνηση του USB Tails: η αλλαγή "
-#~ "μεγέθους του διαμερίσματος συστήματος απέτυχε"
-
-#~ msgid ""
-#~ "It will be impossible to create a Persistent Storage or apply automatic "
-#~ "upgrades."
-#~ msgstr ""
-#~ "Δεν είναι δυνατή η δημιουργία του Μόνιμου αποθηκευτικού χώρου ή των "
-#~ "αυτόματων ενημερώσεων."
-
-#~ msgid ""
-#~ "Try to follow our instructions on <a href=\"%INSTALLPAGE%\">installing "
-#~ "Tails on a USB stick</a> again or use a different USB stick."
-#~ msgstr ""
-#~ "Δοκιμάστε ξανά τις οδηγίες μας για <a href=\"%INSTALLPAGE%\">εγκατάσταση "
-#~ "με USB συσκευή</a> ή χρησιμοποιήστε διαφορετική συσκευή USB."
-
-#~ msgid ""
-#~ "If you have already tried this, please send us an error report to help us "
-#~ "solve this issue."
-#~ msgstr ""
-#~ "Αν έχετε δοκιμάσει ήδη αυτή την επιλογή, παρακαλούμε στείλτε μας αναφορά "
-#~ "σφάλματος για να μας βοηθήσετε στην επίλυση αυτού του προβλήματος."
-
-#~ msgid ""
-#~ "Tails protects your wallet.\n"
-#~ "\n"
-#~ "Help us keep your bitcoins safe!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">How we spend our money.</a>"
-#~ msgstr ""
-#~ "Το Tails προστατεύει το πορτοφόλι σας.\n"
-#~ "\n"
-#~ "Βοηθήσετε μας να διατηρούμε ασφαλή τα bitcoins σας!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">Πώς ξοδεύουμε τα χρήματά μας.</a>"
-
-#~ msgid "Create Backup"
-#~ msgstr "Δημιουργία αντιγράφου ασφαλείας"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Η αναφορά σφάλματος δεν μπόρεσε να σταλεί, λόγω προβλημάτων σύνδεσης. "
-#~ "Παρακαλούμε προσπαθήστε να συνδεθείτε ξανά και πατήστε \"Αποστολή "
-#~ "πάλι\". \n"
-#~ "\n"
-#~ "Αν δεν δουλέψει, θα δοθεί η επιλογή αποθήκευσης της αναφοράς του "
-#~ "σφάλματος."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Αδύνατη η αποθήκευση %s."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Η αναφορά σφάλματος δεν μπορούσε να σταλεί, λόγω προβλημάτων σύνδεσης.\n"
-#~ "\n"
-#~ "Εναλλακτικά, μπορείτε να αποθηκεύσετε την αναφορά του σφάλματος ως αρχείο "
-#~ "σε έναν δίσκο USB και να προσπαθήσετε να μας το στείλετε στο %s μέσω του "
-#~ "ηλεκτρονικού σας λογαριασμού από άλλο σύστημα. Σημειώστε ότι το μήνυμα "
-#~ "δεν θα σταλεί ανώνυμα με αυτή την επιλογή εκτός και αν κάνετε οι ίδιοι "
-#~ "κάποια πρόσθετα βηματα ( π.χ. να χρησιμοποιήσετε το Tor με έναν "
-#~ "λογαριασμό email μιας χρήσης).\n"
-#~ "\n"
-#~ "Θέλετε να αποθηκεύσετε την αναφορά του σφάλματος ως αρχείο;"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr ""
-#~ "Δεν μπορούμε να ξεκλειδώσουμε τον κρυπτογραφημένο αποθηκευτικό χώρο με "
-#~ "αυτήν τη φράση κλειδί."
-
-#~ msgid "_Passphrase"
-#~ msgstr "_Συνθηματικό"
-
-#~ msgid "Resizing System Partition Failed"
-#~ msgstr "Η αλλαγή του χώρου συστήματος απέτυχε"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "Αποτυχία ρύθμισης chroot."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Αποτυχία ρύθμισης του περιηγητή."
-
-#, sh-format
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "Η απόκρυψη της διεύθυνσης MAC απέτυχε για την κάρτα δικτύου ${nic_name} "
-#~ "(${nic}) και απενεργοποιήθηκε προσωρινά.\n"
-#~ "\n"
-#~ "Επανεκκινήστε το Tails και να απενεργοποιήσετε την απόκρυψη της MAC."
-
-#~ msgid "Language & Region"
-#~ msgstr "Γλώσσα και περιοχή"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Κάποιες κατατμήσεις του δίσκου %(device)s είναι προσαρτημένες. Θα "
-#~ "αποσυνδεθούν πριν ξεκινήσει η διαδικασία εγκατάστασης."
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "Εισαγωγή unmount_device για ''%(device)s''"
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "Αποπροσάρτηση προσαρτημένων συστημάτων αρχείων σε ''%(device)s''"
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "Αποπροσάρτηση ''%(udi)s'' σε ''%(device)s''"
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Αναφορά σφάλματος"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "Ενεργοποιήσατε τη Λειτουργία εκτός σύνδεσης στην Οθόνη υποδοχής."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "Είναι αδύνατο να συνδεθείτε στο Tor στη Λειτουργία εκτός σύνδεσης."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "Για να συνδεθείτε στο Tor και το διαδίκτυο, επανεκκινείστε το Tails χωρίς "
-#~ "τη Λειτουργία εκτός σύνδεσης."
-
-#~ msgid "Lock screen"
-#~ msgstr "Κλείδωμα οθόνης"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Πληροφορίες Κατασκεύης:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "μη διαθέσιμο"
-
-#~ msgid ""
-#~ "End this year by giving the gift of privacy.\n"
-#~ "\n"
-#~ "Contribute to our annual fundraiser today!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Why donate "
-#~ "to Tails?</a>"
-#~ msgstr ""
-#~ "Αποχαιρετίστε αυτή τη χρονιά προσφέροντας το δώρο της ιδιωτικότητας.\n"
-#~ "\n"
-#~ "Συνεισφέρετε στον ετήσιο έρανο μας σήμερα!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Γιατί να "
-#~ "κάνετε δωρεά στο Tails;</a>"
-
-#~ msgid ""
-#~ "Our annual fundraiser is live!\n"
-#~ "\n"
-#~ "Keep everybody free and safe online with a gift to Tails.\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Why donate "
-#~ "to Tails?</a>"
-#~ msgstr ""
-#~ "Ο ετήσιος έρανος μας έχει ξεκινήσει!\n"
-#~ "\n"
-#~ "Διατηρήστε τους όλους ελεύθερους και ασφαλείς στο διαδίκτυο με ένα δώρο "
-#~ "στο Tails.\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Γιατί να "
-#~ "κάνετε δωρεά στο Tails;</a>"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Όνομα του προσβεβλημένου λογισμικού"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Οδηγίες για την αναπαραγωγή του προβλήματος"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Το καθαυτό αποτέλεσμα και περιγραφή του πρόβληματος"
-
-#~ msgid "Desired result"
-#~ msgstr "Επιθυμητό αποτέλεσμα"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr ""
-#~ "Αποστολή σχόλιων μέσω κρυπτογραφημένου μηνύματος ηλεκτρονικού ταχυδρομίου."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Πνευματική ιδιοκτησία © 2009-2018 Tails developers (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Tails developers <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "credits-μεταφραστών"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Πνευματική ιδιοκτησία © 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack - Επικοινωνήστε μαζί μας με κρυπτογραφημένο μήνυμα\n"
-#~ "Πνευματική ιδιοκτησία (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "Το πρόγραμμα αυτό αποτελεί δωρεάν λογισμικό· μπορείτε να το αναδιανέμετε "
-#~ "ή/και να το τροποποιήσετε\n"
-#~ "υπό τους όρους της GNU General Public License όπως αυτή δημοσιεύεται από\n"
-#~ "το Free Software Foundation· είτε η έκδοση 3 της Άδειας,\n"
-#~ "είτε (με δική σας επιλογή) κάθε παλαιότερη έκδοσή της.\n"
-#~ "\n"
-#~ "Το πρόγραμμα διανέμεται με την ελπίδα ότι θα φανεί χρήσιμο, αλλά\n"
-#~ "ΧΩΡΙΣ ΟΥΔΕΜΙΑ ΕΓΓΥΗΣΗ· χωρίς καν την υπονοούμενη εγγύηση\n"
-#~ "ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΚΑΠΟΙΟΝ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ.\n"
-#~ "Για περισσότερες πληροφορίες, δείτε την Άδεια GNU\n"
-#~ "General Public License.\n"
-#~ "\n"
-#~ "Μαζί με το πρόγραμμα αυτό θα πρέπει να έχετε λάβει και ένα αντίγραφο της "
-#~ "GNU General Public License.\n"
-#~ "Αν όχι, δείτε την ιστοσελίδα <http://www.gnu.org/licenses/>.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Βοήθεια:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Διεύθυνση email (αν χρειάζεστε απάντηση από εμάς)"
-
-#~ msgid "Unlock"
-#~ msgstr "Ξεκλείδωμα"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "Κρυπτογραφημένος _Μόνιμος αποθηκευτικός χώρος"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr ""
-#~ "Εισάγετε το συνθηματικό για να ξεκλειδώσετε το μόνιμο χώρο αποθήκευσης"
-
-#~ msgid "_Delete..."
-#~ msgstr "_Διαγραφή..."
-
-#~ msgid "_Change Passphrase..."
-#~ msgstr "_Αλλαγή φράσης πρόσβασης..."
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Βοηθήστε μας να διορθώσουμε το σφάλμα!</h1>\n"
-#~ "<p>Διαβάστε <a href=\"%s\">τις οδηγίες μας σχετικά με την αναφορά "
-#~ "σφάλματος</a>.</p>\n"
-#~ "<p><strong>Μην συμπεριλαμβάνετε περισσότερες προσωπικές πληροφορίες από "
-#~ "ότι\n"
-#~ "χρειάζεται!</strong></p>\n"
-#~ "<h2>Σχετικά με τη διεύθυνση email σας</h2>\n"
-#~ "<p>\n"
-#~ "Δίνοντάς μας μια διεύθυνση email μας επιτρέπετε να επικοινωνήσουμε μαζί "
-#~ "σας για διασαφήνιση του προβλήματος. Αυτό \n"
-#~ "χρειάζεται για τη συντριπτική πλειοψηφία των αναφορών που λαμβάνουμε "
-#~ "καθώς οι περισσότερες αναφορές \n"
-#~ "είναι άχρηστες χωρίς κάποια πληροφορία για επικοινωνία. Από την άλλη "
-#~ "πλευρά, αυτό δίνει ευκαιρία \n"
-#~ "σε ωτακουστές, όπως τον πάροχο e-mail σας ή τον πάροχο Internet, να \n"
-#~ "επιβεβαιώσουν ότι χρησιμοποιείτε Tails. \n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>Δεν μπόρεσε να γίνει επιλογή διακομιστή λήψης.</b>\n"
-#~ "\n"
-#~ "Αυτό δε θα έπρεπε να συμβεί. Παρακαλούμε υποβάλλετε αναφορά σφάλματος."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Προέκυψε σφάλμα κατά την επιλογή διακομιστή λήψης"
-
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "Το Amnesic Incognito Live System"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Εκκίνηση του Unsafe Browser;"
-
-#~ msgid ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-#~ msgstr ""
-#~ "Το Unsafe Browser δεν είναι ανώνυμο και οι ιστότοποι που επισκέπτεστε "
-#~ "μπορούν να δουν την πραγματική διεύθυνση IP σας.\\n\\nΧρησιμοποιήστε το "
-#~ "Unsafe Browser μόνο για σύνδεση στο δίκτυο και τερματίστε το."
-
-#~ msgid "Enabled"
-#~ msgstr "Ενεργοποιημένο"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "το live-persist απέτυχε με τον κωδικό επιστροφής {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "Το cryptsetup απέτυχε με τον κωδικό επιστροφής {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "το live-persist απέτυχε με τον κωδικό επιστροφής {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "το umount απέτυχε με τον κωδικό επιστροφής {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Οδηγός μόνιμου τομέα - Δημιουργία μόνιμου τομέα"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "A {size} persistent volume will be created on the <b>{vendor} {model}</b> "
-#~ "device. Data on this volume will be stored in an encrypted form protected "
-#~ "by a passphrase."
-#~ msgstr ""
-#~ "Θα δημιουργηθεί μόνιμος τομέας {size} στη συσκευή <b>{vendor} {model}</"
-#~ "b>. Τα δεδομένα σε αυτό τον τομέα θα αποθηκεύονται σε κρυπτογραφημένη "
-#~ "μορφή που προστατεύεται από μια συνθηματική φράση."
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>Προσοχή!</b>Η χρήση μόνιμου τόμου έχει συνέπειες που πρέπει να γίνουν "
-#~ "κατανοητές. Τo Tails δεν μπορεί να σας βοηθήσουν αν τo χρησιμοποιείτε "
-#~ "λάθος! Δείτε τη σελίδα για τον <i>κρυπτογραφημένο μόνιμο τόμο</i> στα "
-#~ "έγγραφα του Tails για να μάθετε περισσότερα."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "Το Συνθηματικό δεν μπορεί να παραμείνει κενό"
-
-#~ msgid "Failed"
-#~ msgstr "Απέτυχε"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Προσάρτηση μόνιμου τόμου του Tails."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "Ο μόνιμος τόμος του Tails θα προσαρτηθεί. "
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Τα δικαιώματα του μόνιμου τομέα θα διορθωθούν."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "Δημιουργία ρυθμίσεων μόνιμου τόμου"
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "Ο μόνιμος τόμος του Tails θα δημιουργηθεί."
-
-#~ msgid "Creating..."
-#~ msgstr "Δημιουργία..."
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Δημιουργία του μόνιμου τομέα..."
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Οδηγός μόνιμου τομέα - Διαμόρφωση μόνιμου τομέα"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "Καθορίστε τα αρχεία που θα αποθηκεύονται στο μόνιμο τομέα"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The selected files will be stored in the encrypted partition {partition} "
-#~ "({size}), on the <b>{vendor} {model}</b> device."
-#~ msgstr ""
-#~ "Τα επιλεγμένα αρχεία θα αποθηκεύονται στο κρυπτογραφημένο τόμο "
-#~ "{partition} ({size}) στη συσκευή <b>{vendor} {model}</b>."
-
-#~ msgid "Saving..."
-#~ msgstr "Αποθήκευση..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Αποθήκευση ρυθμίσεων μόνιμου τόμου..."
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Οδηγός μόνιμου τομέα - Διαγραφή μόνιμου τομέα "
-
-#~ msgid "Your persistent data will be deleted."
-#~ msgstr "Τα μόνιμα δεδομένα σας θα διαγραφούν."
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "Ο μόνιμος τομέας {partition} ({size}), στη συσκευή <b>{vendor} {model}</"
-#~ "b> θα διαγραφεί."
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "Διαγραφή μόνιμου τομέα..."
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr ""
-#~ "Κράτηση αρχείων που είναι αποθηκευμένα στον `Μόνιμο' αποθηκευτικό χώρο"
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Γλώσσα, κωδικός διαχείρισης και επιπλέον ρυθμίσεις."
-
-#~ msgid "Save the last bridge that you used to connect to Tor"
-#~ msgstr ""
-#~ "Αποθηκεύστε την τελευταία γέφυρα που χρησιμοποιήσατε για σύνδεση στο Tor"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Σελιδοδείκτες που αποθηκεύτηκαν στον Tor Browser"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Ρύθμιση συσκευών δικτύων και συνδέσεων"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "Εγκατεστημένο λογισμικό κατά την εκκίνηση του Tails"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Κλειδιά των Thunderbird emails, τροφοδοσίας και OpenPGP"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Πελάτης Bitcoin"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Προφίλ του Pidgin και κλειδοθήκη OTR "
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "Κλειδιά SSH, ρυθμίσεις και γνωστοί διακομιστές"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr " Διαμόρφωση μόνιμου τομέα του Tails"
-
-#~ msgid "Device already has a persistent volume."
-#~ msgstr "Η συσκευή περιέχει ήδη ένα μόνιμο τομέα."
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "Η συσκευή δεν έχει αρκετό μη εκχωρημένο χώρο."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr "Η συσκευή δεν έχει μόνιμο τομέα."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Δεν είναι δυνατή η διαγραφή του τομέα, ενώ βρίσκεται σε χρήση. Θα πρέπει "
-#~ "να επανεκκινήσετε το Tails χωρίς να ενεργοποιήσετε τον μόνιμο τομέα. "
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "Ο μόνιμος τομέας δεν είναι ξεκλείδωτος. "
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Ο μόνιμος τομέας δεν είναι προσαρτημένος. "
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "Ο μόνιμος τομέας δεν είναι αναγνώσιμος. Προβλήματα δικαιωμάτων ή "
-#~ "ιδιοκτησίας; "
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "Ο μόνιμος τομέας δεν είναι εγγράψιμος."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Το Tails εκτελείται από συσκευή μη USB / SDIO."
-
-#~ msgid "Device is optical."
-#~ msgstr "Η συσκευή είναι οπτική."
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr ""
-#~ "Η συσκευή δεν δημιουργήθηκε με χρήση εικόνας USB ή το πρόγραμμα "
-#~ "εγκατάστασης Tails."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Ολοκλήρωσε ο οδηγός μόνιμου τόμου"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr "Όλες οι αλλαγές θα ισχύσουν μετά την επανεκκίνηση του Tails."
-
-#~ msgid ""
-#~ "\\n\\nTo always enable the Unsafe Browser, turn on the Welcome Screen "
-#~ "feature of the Persistent Storage."
-#~ msgstr ""
-#~ "\\n\\nΓια την μόνιμη ενεργοποίηση του μη ασφαλή περιηγητής, ενεργοποιήστε "
-#~ "την δυνατότητα της οθόνης υποδοχής από το χώρο μόνιμης αποθήκευσης."
-
-#~ msgid "Delete the persistent volume and its content"
-#~ msgstr "Διαγραφή μόνιμου τομέα και των περιεχομένων του."
-
-#~ msgid "Configure persistent volume"
-#~ msgstr "Ρύθμιση του μόνιμου τομέα"
-
-#~ msgid "image"
-#~ msgstr "εικόνα"
-
-#~ msgid "heading"
-#~ msgstr "επικεφαλίδα"
-
-#~ msgid "_Request a new bridge"
-#~ msgstr "_Αίτημα νέας γέφυρας"
-
-#~ msgid "toggle-button"
-#~ msgstr "κουμπί-εναλλαγής"
-
-#~ msgid ""
-#~ "To request new Tor bridges, you can also:\n"
-#~ "\n"
-#~ "            1. Send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address.\n"
-#~ "\n"
-#~ "              2. Type below one of the bridges that you received by email."
-#~ msgstr ""
-#~ "Για να αιτηθείτε νέες γέφυρες Tor, μπορείτε επίσης:\n"
-#~ "\n"
-#~ "            1. Να στείλετε ένα κενό μήνυμα στο "
-#~ "<tt>bridges@torproject.org</tt> από μια διεύθυνση Gmail ή Riseup.\n"
-#~ "\n"
-#~ "              2. Να πληκτρολογήσετε παρακάτω μία από τις γέφυρες που "
-#~ "λάβατε στο email σας."

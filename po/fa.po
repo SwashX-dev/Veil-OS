@@ -41,13 +41,15 @@
 # emma peel <emma.peel@riseup.net>, 2026.
 # haidi s <haidi@torproject.org>, 2026.
 # milad19s <alirezaaazami2000@gmail.com>, 2026.
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-06-28 12:01+0000\n"
-"Last-Translator: milad19s <alirezaaazami2000@gmail.com>\n"
+"PO-Revision-Date: 2026-07-22 22:01+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/tor/tails-gui/fa/"
 ">\n"
 "Language: fa\n"
@@ -55,7 +57,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -88,9 +90,8 @@ msgid "Password Manager"
 msgstr "گذرواژه"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
-#, fuzzy
 msgid "password"
-msgstr "گذرواژه"
+msgstr "کلمه عبور"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
@@ -453,7 +454,6 @@ msgid "no automatic upgrade is available from our website for this version"
 msgstr "ارتقای خودکار برای این نسخه در وب‌سایت ما موجود نیست"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:365
-#, fuzzy
 msgid "your device was not created using a USB image or Tails Cloner"
 msgstr "دستگاه شما با استفاده از ایمیج USB و یا نصب‌کننده Tails ایجاد نشده است"
 
@@ -513,7 +513,6 @@ msgstr ""
 "{free_memory} در دسترس است."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:473
-#, fuzzy
 msgid ""
 "An error occurred while detecting available upgrades.\n"
 "This should not happen. Please report a bug."
@@ -960,13 +959,13 @@ msgid ""
 "of your Persistent Storage first."
 msgstr ""
 "خطاهایی در سیستم فایل ذخیره‌سازی ماندگار شما شناسایی شده است.\n"
-"\n"
+"............\n"
 "Tails می‌تواند برای برطرف‌کردن این خطاها تلاش کند، اما ممکن است بخشی از "
 "داده‌های شما پاک شود و زمان زیادی طول بکشد.\n"
 "\n"
 "اگر نسخهٔ پشتیبان به‌روزی از ذخیره‌سازی ماندگار دارید، پیشنهاد می‌کنیم برای "
 "تعمیر آن تلاش کنید.\n"
-"\n"
+"............\n"
 "اگر نسخهٔ پشتیبان ندارید، پیشنهاد می‌کنیم نخست یک تصویر پارتیشن از ذخیره‌سازی "
 "ماندگار خود بسازید."
 
@@ -1062,9 +1061,9 @@ msgid "Unable to write on %(device)s, skipping."
 msgstr "روی دستگاه ‎%(device)s نمی‌توان نوشت. از روی این مرحله پرش می‌کنیم."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:371
-#, fuzzy, python-format
+#, python-format
 msgid "Wrote to device at %(speed)d MB/s"
-msgstr "نوشته شده روی دستگاه جانبی در %(speed)d مگابایت بر ثانیه"
+msgstr "نوشته شده بر روی دستگاه جانبی در %(speed)d مگابایت بر ثانیه"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/creator.py:383
 msgid "Extracting live image to the target device..."
@@ -1978,7 +1977,6 @@ msgstr ""
 "ذخیره‌سازی ماندگار خود را باز کنید</a>."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:418
-#, fuzzy
 msgid ""
 "To save your bridge, <a href=\"doc/persistent_storage\">create a Persistent "
 "Storage</a> on your Tails USB stick."
@@ -1992,7 +1990,6 @@ msgid "Invalid: {exception}"
 msgstr "نامعتبر: {exception}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:450
-#, fuzzy
 msgid ""
 "You need to configure a WebTunnel or an obfs4 bridge to hide that you are "
 "using Tor"
@@ -2785,7 +2782,6 @@ msgid "Your message has been sent."
 msgstr "پیام شما ارسال شد."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/whisperBack/gui.py:250
-#, fuzzy
 msgid "An error occurred during encryption."
 msgstr "در هنگام رمزنگاری خطایی رخ داده است."
 
@@ -3036,7 +3032,6 @@ msgstr ""
 "شبکه را غیرفعال کنید."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:514
-#, fuzzy
 msgid ""
 "The Unsafe Browser allows you to sign in to a network using a captive "
 "portal.\n"
@@ -3053,18 +3048,16 @@ msgstr ""
 "\n"
 "کپتیو پورتال یک صفحه وب است که قبل از دسترسی به اینترنت نمایش داده می شود. "
 "کپتیو پورتال‌ها معمولا از شما می‌خواهند که وارد شبکه شوید یا اطلاعاتی مانند "
-"نشانی ایمیل را وارد کنید.\n"
+"آدرس ایمیل را وارد کنید.\n"
 "\n"
 "مرورگر Unsafe ناشناس نیست و می‌تواند شما را شما را از گمنامی خارج کند. فقط "
 "برای ورود به شبکه‌ها از آن استفاده کنید."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:560
-#, fuzzy
 msgid "Enable the Unsafe Browser (default)"
 msgstr "غیر فعال کردن مرورگر ناامن (پیش‌فرض)"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:606
-#, fuzzy
 msgid "Disable the Unsafe Browser"
 msgstr "فعال‌سازی مرورگر نا‌امن"
 
@@ -3704,9 +3697,8 @@ msgid "TrueCrypt/VeraCrypt container"
 msgstr "محفظهٔ TrueCrypt/VeraCryp"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:82
-#, fuzzy
 msgid "Configure a Tor bridge"
-msgstr "پیکربندی یک _پل Tor"
+msgstr "پیکربندی پل تور"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
 #, fuzzy
@@ -3747,9 +3739,8 @@ msgid "Ask for a bridge based on your _region"
 msgstr "_درخواست یک پل Tor از طریق ایمیل"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
-#, fuzzy
 msgid "_Ask for a bridge by email"
-msgstr "_درخواست یک پل Tor از طریق ایمیل"
+msgstr "_درخواست پل با رایانامه"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
 msgid ""
@@ -4015,7 +4006,6 @@ msgstr ""
 "مشکوک به نظر برسد، شاید لازم باشد جلب توجه نکنید."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1802
-#, fuzzy
 msgid ""
 "Tails will only connect to Tor after you configured a Tor bridge. Bridges "
 "are secret Tor relays that hide that you are connecting to Tor.\n"
@@ -4027,13 +4017,13 @@ msgid ""
 "yet, if you connect from a public Wi-Fi network, or if you are in the "
 "Eastern Hemisphere."
 msgstr ""
-"تیلز فقط پس از پیکربندی پل Tor به Tor متصل می‌شود. پل‌ها رله‌های مخفی Tor هستند "
-"که اتصال شما به Tor را پنهان می‌کنند.\n"
+"تیلز فقط پس از پیکربندی پل تور به تور متصل می‌شود. پل‌ها رله‌های مخفی تور هستند "
+"که اتصال شما به تور را پنهان می‌کنند.\n"
 "\n"
 "تیم ما تمام تلاش خود را می‌کند تا به شما کمک کند تا با استفاده از انواع پل‌های "
-"Tor مجزا به Tor متصل شوید.\n"
+"تور مجزا به تور متصل شوید.\n"
 "\n"
-"اگر هنوز هیچ پل Tor را نمی‌شناسید، اگر از یک شبکه Wi-Fi عمومی وصل می‌شوید، یا "
+"اگر هنوز هیچ پل تور را نمی شناسید، اگر از یک شبکه Wi-Fi عمومی وصل می‌شوید، یا "
 "اگر در نیمکره شرقی هستید، باید تنظیمات بیشتری را انجام دهید."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1847
@@ -4093,7 +4083,6 @@ msgid "Connect to a local network"
 msgstr "اتصال به یک شبکهٔ محلی"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2024
-#, fuzzy
 msgid ""
 "You are not connected to a local network yet. To be able to connect to the "
 "Tor network, you first need to connect to a Wi-Fi, wired, or mobile network."
@@ -4102,7 +4091,6 @@ msgstr ""
 "شوید، نخست باید به یک شبکهٔ Wi-Fi، شبکهٔ سیمی یا شبکهٔ تلفن همراه متصل شوید."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2038
-#, fuzzy
 msgid "Open Wi-Fi Settings"
 msgstr "باز‌ کردن تنظیمات وای-فای"
 
@@ -4127,7 +4115,6 @@ msgid "Failed to connect to Tor without bridges."
 msgstr "اتصال به Tor بدون پل‌ها ناموفق بود."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2250
-#, fuzzy
 msgid "This local network is blocking access to Tor."
 msgstr "شبکه محلی شما دسترسی به Tor را مسدود کرده است."
 

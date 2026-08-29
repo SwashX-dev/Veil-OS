@@ -19,13 +19,16 @@
 # Максим Горпиніч <gorpinicmaksim5@gmail.com>, 2025.
 # Максим Горпиніч <gorpinicmaksim0@gmail.com>, 2025, 2026.
 # emma peel <emma.peel@riseup.net>, 2026.
+# Шмат Кави <koristuvachua@gmail.com>, 2026.
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-08-05 20:01+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "uk/>\n"
 "Language: uk\n"
@@ -36,7 +39,7 @@ msgstr ""
 "11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -64,14 +67,12 @@ msgid "Configure"
 msgstr "Налаштування"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
-#, fuzzy
 msgid "Password Manager"
-msgstr "Пароль"
+msgstr "Менеджер Паролів"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
-#, fuzzy
 msgid "password"
-msgstr "Пароль"
+msgstr "пароль"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
@@ -729,12 +730,14 @@ msgid "Error while installing the upgrade"
 msgstr "При встановлені оновлень виникла помилка"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
+#, fuzzy
 msgid "GNOME Software"
-msgstr ""
+msgstr "ПЗ GNOME"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
+#, fuzzy
 msgid "GNOME Software can only start once Tor has bootstrapped."
-msgstr ""
+msgstr "ПЗ GNOME може бути запущеним лише після запуску Tor"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -1517,7 +1520,7 @@ msgstr "Залишити поточну назву"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:29
 msgid "Rename Password Database?"
-msgstr ""
+msgstr "Перейменувати базу паролів?"
 
 #: config/chroot_local-includes/usr/local/bin/replace-su-with-sudo:19
 msgid "su is disabled. Please use sudo instead."
@@ -1859,7 +1862,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:28
 msgid "Secure Boot Update Needed"
-msgstr ""
+msgstr "Необхідно оновити Secure Boot"
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:30
 msgid ""
@@ -1867,6 +1870,9 @@ msgid ""
 "Apply all available updates from your regular operating system to update to "
 "the latest Secure Boot certificates of Microsoft."
 msgstr ""
+"Через певний час Tails більше не запускатиметься на цьому комп'ютері. "
+"Застосуйте усі доступні оновлення з Вашої регулярної ОС, щоб оновити "
+"сертифікати Secure Boot від Microsoft."
 
 #: config/chroot_local-includes/usr/local/bin/tails-upgrade-frontend-wrapper:37
 #, python-brace-format
@@ -1929,12 +1935,13 @@ msgid "Automatic"
 msgstr "Автоматичний"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:284
+#, fuzzy
 msgid "Frequently selected regions"
-msgstr ""
+msgstr "Популярні регіони"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:291
 msgid "Other regions"
-msgstr ""
+msgstr "Інші регіони"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:369
 msgid "_Use a bridge that you already know"
@@ -1993,9 +2000,8 @@ msgid "Synchronizing the system's clock…"
 msgstr "Синхронізація годинника системи…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:726
-#, fuzzy
 msgid "Asking for a Tor bridge based on your region…"
-msgstr "_Попросити міст Tor електронною поштою"
+msgstr "Запит моста Tor для вашого регіону…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:774
 msgid "Connecting to Tor without bridges…"
@@ -2007,9 +2013,8 @@ msgid "Connecting to Tor with default bridges…"
 msgstr "Під'єднання до Tor за допомогою типових мостів…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:789
-#, fuzzy
 msgid "Connecting to Tor with a bridge based on your region…"
-msgstr "Під'єднання до Tor за допомогою типових мостів…"
+msgstr "Під'єднання до Tor за допомогою моста для вашого регіону…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:796
 msgid "Connecting to Tor with a custom bridge…"
@@ -2034,21 +2039,21 @@ msgstr "Тепер ви можете переглядати інтернет а�
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:985
 #, python-brace-format
 msgid "Bridge: <b>{bridge}</b>"
-msgstr ""
+msgstr "Міст: <b>{bridge}</b>"
 
 #. Translators: only translate "Error code:" and adjust
 #. text-direction
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:997
 #, python-brace-format
 msgid "Error code: {code}"
-msgstr ""
+msgstr "Код помилки: {code}"
 
 #. Translators: only translate "Proxy:" and adjust
 #. text-direction
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1024
 #, python-brace-format
 msgid "Proxy: <b>{proxy}</b>"
-msgstr ""
+msgstr "Проксі: <b>{proxy}</b>"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1323
 #, python-brace-format
@@ -3346,12 +3351,11 @@ msgstr "Активувати додаткове програмне забезп�
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
 msgid "Flatpak"
-msgstr ""
+msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "Активувати клієнт SSH"
+msgstr "Активувати Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
@@ -3381,7 +3385,8 @@ msgstr ""
 msgid ""
 "<a href=\"doc/persistent_storage\">Learn more about the Persistent Storage.</"
 "a>"
-msgstr "<a href=\"doc/persistent_storage\">Докладніше про постійне сховище</a>"
+msgstr ""
+"<a href=\"doc/persistent_storage\">Докладніше про постійне сховище.</a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/locked_view.ui.in:53
 msgid ""
@@ -3465,7 +3470,7 @@ msgstr ""
 "• Закладки вашого браузера\n"
 "• ...\n"
 "\n"
-"<a href=\"doc/persistent_storage\">Докладніше про постійне сховище</a>"
+"<a href=\"doc/persistent_storage\">Докладніше про постійне сховище.</a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:93
 msgid ""
@@ -3646,9 +3651,8 @@ msgid "TrueCrypt/VeraCrypt container"
 msgstr "Контейнер TrueCrypt/VeraCrypt"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:82
-#, fuzzy
 msgid "Configure a Tor bridge"
-msgstr "Налаштуйте _міст Tor"
+msgstr "Налаштувати міст Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
 msgid ""
@@ -3685,14 +3689,12 @@ msgid "None"
 msgstr "Нічого"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:242
-#, fuzzy
 msgid "Ask for a bridge based on your _region"
-msgstr "_Попросити міст Tor електронною поштою"
+msgstr "Попросити міст для вашого _регіону"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
-#, fuzzy
 msgid "_Ask for a bridge by email"
-msgstr "_Попросити міст Tor електронною поштою"
+msgstr "_Попросити міст електронною поштою"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
 msgid ""
@@ -3744,9 +3746,8 @@ msgid "This local network seems to be blocking access to Tor."
 msgstr "Схоже, що ця локальна мережа блокує доступ до Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:811
-#, fuzzy
 msgid "Error connecting to Tor with this bridge"
-msgstr "Під'єднання до Tor без мостів…"
+msgstr "Помилка під'єднання до Tor через цей міст"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:827
 msgid ""

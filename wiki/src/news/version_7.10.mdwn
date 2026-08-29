@@ -50,7 +50,7 @@ either:</p>
 
 <div class="bug">
 
-<p><i>Celluloid</i> doesn't work on some computer from 2011 or earlier.</p>
+<p><i>Celluloid</i> doesn't work on some computers from 2011 or earlier.</p>
 
 <p>You can use <i>VLC</i> instead, installed as [[additional
 software|doc/persistent_storage/additional_software]].</p>

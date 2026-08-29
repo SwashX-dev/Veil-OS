@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-06-22 13:12+0000\n"
+"PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Viktor Varga <viktor.varga@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "hu/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -711,8 +711,9 @@ msgid "Error while installing the upgrade"
 msgstr "Hiba frissítés telepítésekor"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
+#, fuzzy
 msgid "GNOME Software"
-msgstr ""
+msgstr "GNOME Software"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
@@ -3334,8 +3335,9 @@ msgid "Activate Additional Software"
 msgstr "További szoftverek aktiválása"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
+#, fuzzy
 msgid "Flatpak"
-msgstr ""
+msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
 msgid "Activate Flatpak"

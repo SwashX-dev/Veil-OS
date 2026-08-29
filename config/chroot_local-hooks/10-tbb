@@ -190,9 +190,11 @@ apply_prefs_hacks() {
     (
         cd "${tmp}"
         7z x -tzip "${tbb_install}/browser/omni.ja"
+        temp000torbrowser=$(mktemp)
         # Remove TBB's Tor Launcher settings since we don't enable it in
-        # our Tor Browser.
-        sed -i '/extensions\.torlauncher\./d' defaults/preferences/000-tor-browser.js
+        # our Tor Browser, except extensions.torlauncher.bridgedb_targets, which indeed we use
+        grep --perl-regexp --invert-match 'extensions[.]torlauncher[.](?!bridgedb_targets)' <defaults/preferences/000-tor-browser.js >"$temp000torbrowser"
+        mv "$temp000torbrowser" defaults/preferences/000-tor-browser.js
         # Display the Stop/Reload button: our test suite currently depends on it
         perl -pi -E \
             's/^(pref\("browser\.uiCustomization\.state",.*\\"loop-button\\")/$1,\\"stop-reload-button\\"/' \
@@ -241,6 +243,25 @@ extract_default_bridges() {
             cat /usr/share/tails/tca/default_bridges.txt >&2
             exit 1
         fi
+    )
+    rm -r "${tmp}"
+}
+
+extract_moat_targets() {
+    local tbb_install tmp
+    tbb_install="${1}"
+
+    tmp="$(mktemp -d)"
+    (
+        cd "${tmp}"
+        7z e -tzip "${tbb_install}/browser/omni.ja" defaults/preferences/000-tor-browser.js
+
+        sed <000-tor-browser.js \
+            --regexp-extended \
+            --silent \
+            -e 's/pref[(]"extensions[.]torlauncher[.]bridgedb_targets", "(.*)"[)];/\1/p' \
+            >/usr/share/tails/tca/moat_targets.txt
+        rm 000-tor-browser.js
     )
     rm -r "${tmp}"
 }
@@ -393,6 +414,7 @@ rm -f /usr/local/lib/tor-browser/start-tor-browser.orig
 apply_prefs_hacks "${TBB_INSTALL}" "${TBB_TIMESTAMP}"
 hide_tor_donation_campaign "${TBB_INSTALL}" "${TBB_TIMESTAMP}"
 extract_default_bridges "${TBB_INSTALL}"
+extract_moat_targets "${TBB_INSTALL}"
 extract_moat_countries "${TBB_INSTALL}"
 install_debian_extensions "${TBB_INSTALL}" "${TBB_TIMESTAMP}"
 disable_update_checks "${TBB_INSTALL}"

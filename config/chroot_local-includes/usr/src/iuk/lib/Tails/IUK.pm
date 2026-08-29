@@ -254,7 +254,7 @@ method _build_overlay_dir () {
 }
 method _build_format_version () { "2"; }
 method _build_gensquashfs_options () { [
-    qw{--keep-xattr --quiet},
+    qw{--keep-xattr --quiet --compressor zstd},
 ]}
 
 method _build_gensquashfs_prefix_cmd () { [
@@ -399,7 +399,7 @@ method create_squashfs_diff () {
         $self->list_gensquashfs_prefix_cmd,
         qw{gensquashfs},
         $self->list_gensquashfs_options,
-        '--comp-extra', 'x86,dictsize=1024K',
+        '--comp-extra', 'level=18',
         '--block-size', '1048576',
         '--pack-dir', $union_upperdir,
         $self->overlay_dir->child('live', $self->squashfs_diff_name),

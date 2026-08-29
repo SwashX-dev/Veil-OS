@@ -66,7 +66,7 @@ So, we have to adjust profiles a bit to make them support the paths
 that are actually seen by AppArmor in the context of Tails.
 
 First, we are using a couple of
-[aliases](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#Alias_and_rewrite_rules)
+[aliases](https://wiki.apparmor.net/man/master/apparmor.d/#Alias-rules)
 so that rules applying to "normal" paths (e.g.
 `/home/amnesia/.gnupg/`) also apply to Debian Live -specific paths,
 such as `/lib/live/mount/overlay/rw/home/amnesia/.gnupg/`. And, to avoid

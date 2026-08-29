@@ -18,7 +18,7 @@ For general GitLab usage information, see the
 If you were using Redmine previously, read [[how to transition to
 GitLab|GitLab/transition]]. If you have an account at [0xacab](https://0xacab.org/), you can
 go to the Tails Gitlab [[!tails_gitlab users/sign_in desc="login page"]] and use your 0xacab
-account to sign in. Else, to request a GitLab account, please e-mail sysadmins@tails.net.
+account to sign in. Else, to request a GitLab account, please e-mail foundations@tails.net.
 If you want, you can
 [[!tails_gitlab help/user/profile/index.md#add-your-gender-pronouns desc="add your pronouns"]]
 to your GitLab account so that your pronouns appear next to your name in your profile.
@@ -536,19 +536,6 @@ Please check these views once in a while and talk to us! :)
 We use [GitLab CI](https://docs.gitlab.com/ee/ci/) for some quality assurance checks that
 don't require building or booting Tails images.
 
-## Feedback and patches are welcome
-
-Please [[give feedback and
-input|https://gitlab.torproject.org/tpo/tpa/team/-/wikis/tails/role-description#contact]] about this
-topic to Tails sysadmins.
-
-For example, you can propose new tests that we could run on GitLab CI.
-Please explain what the expected benefit would be for your work or for Tails
-users: this will help us prioritize our work.
-
-Finally, you can send merge requests that improve the existing jobs
-or add new ones: [[!tails_gitweb .gitlab-ci-pipeline.yml]].
-
 ## Container images policy
 
 Because we use give a lot of power to some jobs in the CI, we have a
@@ -567,10 +554,7 @@ our GitLab.
 If you need to do something in GitLab and you appear to lack the
 needed credentials, please ask the [Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home).
 
-They will triage your request and potentially vouch for you,
-asking the Tails
-[[system administrators|https://gitlab.torproject.org/tpo/tpa/team/-/wikis/tails/role-description#contact]]
-to grant you more power.
+They will triage your request and potentially grant you more power.
 
 For example, you will need "Reporter" access on the [[!tails_gitlab
 tails/tails]] project in order to add labels or assign issues.
@@ -588,8 +572,8 @@ Do not grant access via the web interface:
    requirements.
 
 Instead, after following the relevant process (if any),
-request the access modification from the Tails
-[[system administrators|https://gitlab.torproject.org/tpo/tpa/team/-/wikis/tails/role-description#contact]].
+request the access modification from the
+[Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home).
 
 ## Relevant GitLab doc
 
@@ -630,5 +614,194 @@ desc="Protected branch flow"]]:
 
 # Operations
 
-See our documentation about [[GitLab for Tails
-sysadmins|https://gitlab.torproject.org/tpo/tpa/team/-/wikis/tails/services/gitlab]].
+## Administrator accounts
+
+To protect ourselves against human error and to decrease our attack surface,
+individual GitLab accounts with administrator privileges MUST be used according
+to these requirements:
+
+ - 2FA is enabled, ideally using a separate device.
+
+ - You use your administrator account in a web browser environment that is
+   separate from, and cannot be easily confused with, the one where use you your
+   regular GitLab account: for example, in a dedicated web browser profile, or
+   in a short-lived "incognito" window.
+
+ - If you use your administrator account via the API, use a setup separate from
+   the one you use for operations that don't need administrator privileges.
+
+   More specifically, in your `~/.python-gitlab.cfg`, create a new dedicated
+   `TailsRoot` section for your administrator account, separate from your other
+   existing sections (`Tails`, `TailsRM`, etc.). Other documentation relies on
+   this configuration existing and being called like that.
+
+ - You manually log out from the administrator account as soon as you don't need
+   the corresponding elevated privileges anymore. Closing the window is not
+   sufficient to achieve this in the general case.
+
+## Administration of GitLab
+
+Our friends at <https://www.immerda.ch/> host [the Tails' GitLab
+instance](https://gitlab.tails.boum.org). We usually contact them through
+e-mail (see their [contact info](https://www.immerda.ch/contact.html)).
+
+The Tails Team administrates this GitLab instance:
+
+ - See responsibilities on
+   https://gitlab.tails.boum.org/tails/team/-/wikis/roles/frontdesk
+
+ - They don't have shell access to the VM hosting the service so, among many
+   other things, using [Server
+   Hooks](https://docs.gitlab.com/ce/administration/server_hooks.html) is not
+   easy and would depend on coordination with the service provider.
+
+## Configuration of GitLab
+
+The configuration of our GitLab instance lives in the private
+[tails/gitlab-config](https://gitlab.tails.boum.org/tails/gitlab-config) GitLab
+project.
+
+If you have access to that project, you can propose configuration changes: push
+a topic branch and submit a merge request.
+
+This can be useful, for example:
+
+ - to modify group membership when someone joins or leaves a team
+
+ - to propose new [labels](https://gitlab.tails.boum.org/groups/tails/-/labels)
+   shared by all our GitLab projects
+
+ - to propose a new project under the `tails/` namespace, ensuring our common
+   project settings & permission model are applied
+
+Note that GitLab's `root` user is an owner of all projects because that makes
+sense for the way Tails currently manages user permissions for the different
+groups and projects. Notifications are turned off for that user and it
+shouldn't be used for communicating with other users.
+
+## Access controller
+
+### Objects
+
+- _Canonical Git repo_: the authoritative
+  [tails/tails](https://gitlab.tails.boum.org/tails/tails) repository, hosted
+  on GitLab
+
+- _Major branches_: `master`, `stable`, `testing`, `devel`
+
+- _Release tags_: a signed Git tag that identifies the source code
+  used to build a specific Tails release; currently all tags
+  in the authoritative `tails.git` repository are release tags;
+  the tag name is a version number, with '~' replaced by '-'.
+
+- _Particularly sensitive data_: confidential data that specific teams
+  need to handle, but that other
+  contributors generally don't need direct access to. This definitely
+  include issues; this might include Git repositories at some point.
+
+  Note that as of 2020-03-29, it is undefined:
+
+  - What subset of this data can go to a web-based issue tracker or not.
+    This was already a problem with Redmine.
+    Fixing this will require discussions between various stakeholders.
+
+  - What subset of this data could live in a cleartext Git
+    repository hosted here or there, as opposed to requiring
+    end-to-end encryption between members of these teams.
+    This is a hypothetical problem for now.
+
+### Subjects
+
+- An _admin_:
+
+  - can configure GitLab
+
+    As a consequence, an admin can grant themselves
+    any permission they want if an emergency requires it;
+    in other situations, better follow due process to request
+    such status or permissions :)
+
+  - MUST comply with our "Level B" security policy
+
+- A _committer_:
+
+  - can push and force-push to any ref in the canonical Git repo,
+    including major branches and release tags;
+    incidentally, this ensures the following requirement is met:
+
+  - their branches are picked up by Jenkins; it follows that they
+    MUST comply with our "Infrastructure" security policy
+
+  - can merge MRs into major branches
+
+  - can modify issues metadata
+
+  - is allowed to view confidential issues in the
+    [tails/tails](https://gitlab.tails.boum.org/tails/tails) GitLab project;
+    that's OK, because particularly sensitive data lives somewhere else, with
+    stricter access control
+
+  - can edit other users' comments
+
+  - MUST comply with our "Level B" security policy
+
+- A _regular, particularly trusted contributor_:
+
+  - can push and force-push to a subset of refs in the canonical Git repo;
+    this subset MUST NOT include any major branch nor release tag;<br/>
+    this is required to ensure the following requirement is met:
+
+  - their branches are picked up by Jenkins; it follows that they
+    MUST comply with our "Infrastructure" security policy
+
+  - can modify issues metadata
+
+  - is allowed to view confidential issues in the
+    [tails/tails](https://gitlab.tails.boum.org/tails/tails) GitLab project;
+    that's OK, because particularly sensitive data lives somewhere else, with
+    stricter access control
+
+- A _regular contributor_:
+
+  - can fork the Git repositories and push changes to their own fork
+
+  - can modify issues metadata
+
+  - is allowed to view confidential issues in the
+    [tails/tails](https://gitlab.tails.boum.org/tails/tails) GitLab project;
+    that's OK, because particularly sensitive data lives somewhere else, with
+    stricter access control
+
+- _Anybody with a GitLab account_ on the instance we use:
+
+  - can view and submit issues in public projects
+
+  - can submit MRs in public projects
+
+## Interactions with other parts of our infrastructure
+
+The following pieces of the Tails infrastructure interact with GitLab either
+directly or indirectly:
+
+- The [Ticket
+  Gardener](https://tails.net/contribute/working_together/roles/ticket_gardener)
+  queries GitLab for information about the state of issues and merge requests.
+
+- The [Translation
+  Platform](https://contribute/working_together/roles/translation_platform)
+  constantly merges modifications made through
+  [Weblate](https://translate.tails.net) and pushes them back to the Tails main
+  repository (see [the
+  script](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/cron.sh)
+  for that). We use a local "gatekeeper" repository with a
+  [hook](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/gitolite/hooks/tails-weblate-update.hook)
+  to prevent the Translation Platform from messing with more things than it
+  should.
+
+- Our [Jenkins](tails/services/jenkins) master [is also
+  notified](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/templates/gitolite/hooks/tails-post-receive.erb)
+  when there are relevant changes to the main Tails repository, and its Jenkins
+  slaves query GitLab to determine [whether to conduct reproducibility
+  tests](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/decide_if_reproduce)
+  and [whether to send notifications through
+  e-mail](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/output_ISO_builds_and_tests_notifications).

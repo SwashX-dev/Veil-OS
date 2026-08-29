@@ -52,13 +52,14 @@
 # emma peel <emma.peel@riseup.net>, 2026.
 # Nina <nina13@riseup.net>, 2026.
 # DatVex <kinorealme241@gmail.com>, 2026.
+# vanapro1 <law820314@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-07-15 22:01+0000\n"
-"Last-Translator: DatVex <kinorealme241@gmail.com>\n"
+"PO-Revision-Date: 2026-08-01 01:01+0000\n"
+"Last-Translator: vanapro1 <law820314@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/tor/tails-gui/ru/"
 ">\n"
 "Language: ru\n"
@@ -1525,7 +1526,7 @@ msgid "Could not open device for writing."
 msgstr "Не могу открыть устройство в режиме записи."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:19
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "You have a <i>KeePassXC</i> or <i>Secrets</i> database in your "
 "<i>Persistent</i> folder:\n"
@@ -1535,14 +1536,13 @@ msgid ""
 "Renaming your database to <i>${default_filename}</i> allows <i>Secrets</i> "
 "to open it automatically in the future."
 msgstr ""
-"<b><big>Хотите переименовать вашу базу данных <i>KeePassXC</i>?</big></b>\n"
-"\n"
-"Ваша база <i>KeePassXC</i> находится в <i>постоянной</i> папке:\n"
+"В папке <i>Persistent</i> у вас находится база данных <i>KeePassXC</i> или "
+"<i>Secrets</i>:\n"
 "\n"
 "<i>${filename}</i>\n"
 "\n"
-"Переименование базы данных <i>${default_filename}</i> позволит <i>KeePassXC</"
-"i> открывать её в будущем автоматически."
+"Если переименовать базу данных в <i>${default_filename}</i>, программа "
+"<i>Secrets</i> сможет автоматически открывать её в будущем."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:25
 msgid "Rename"
@@ -2038,9 +2038,8 @@ msgid "Synchronizing the system's clock…"
 msgstr "Синхронизация системных часов…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:726
-#, fuzzy
 msgid "Asking for a Tor bridge based on your region…"
-msgstr "_Запросить мост Tor по электронной почте"
+msgstr "Запрос на мост Tor с учетом вашего региона…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:774
 msgid "Connecting to Tor without bridges…"
@@ -2052,9 +2051,9 @@ msgid "Connecting to Tor with default bridges…"
 msgstr "Подключение к Tor через мосты по умолчанию…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:789
-#, fuzzy
 msgid "Connecting to Tor with a bridge based on your region…"
-msgstr "Подключение к Tor через мосты по умолчанию…"
+msgstr ""
+"Подключение к Tor через мост, выбранный в зависимости от вашего региона…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:796
 msgid "Connecting to Tor with a custom bridge…"
@@ -3400,9 +3399,8 @@ msgid "Flatpak"
 msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "Активировать клиент SSH"
+msgstr "Включить Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
@@ -3435,7 +3433,7 @@ msgid ""
 "<a href=\"doc/persistent_storage\">Learn more about the Persistent Storage.</"
 "a>"
 msgstr ""
-"<a href=\"doc/persistent_storage\">Узнайте больше о Постоянном хранилище</a>"
+"<a href=\"doc/persistent_storage\">Узнайте больше о постоянном хранилище.</a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/locked_view.ui.in:53
 msgid ""
@@ -3700,9 +3698,8 @@ msgid "TrueCrypt/VeraCrypt container"
 msgstr "Контейнер TrueCrypt/VeraCrypt"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:82
-#, fuzzy
 msgid "Configure a Tor bridge"
-msgstr "Настроить мост _Tor"
+msgstr "Настроить мост Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
 msgid ""
@@ -3738,14 +3735,12 @@ msgid "None"
 msgstr "Нет"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:242
-#, fuzzy
 msgid "Ask for a bridge based on your _region"
-msgstr "_Запросить мост Tor по электронной почте"
+msgstr "Запросите мост в зависимости от вашего _региона"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
-#, fuzzy
 msgid "_Ask for a bridge by email"
-msgstr "_Запросить мост Tor по электронной почте"
+msgstr "_Запросите мост по электронной почте"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
 msgid ""
@@ -3796,9 +3791,8 @@ msgid "This local network seems to be blocking access to Tor."
 msgstr "Кажется, ваша локальная сеть блокирует доступ к сети Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:811
-#, fuzzy
 msgid "Error connecting to Tor with this bridge"
-msgstr "Подключение к Tor без мостов…"
+msgstr "Ошибка при подключении к Tor через этот мост"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:827
 msgid ""
@@ -3808,29 +3802,24 @@ msgstr "Этот мост Tor не работает, или ваша сеть б
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:856
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:930
-#, fuzzy
 msgid "Try configuring another bridge."
-msgstr "Настроить мост Tor"
+msgstr "Попробуйте настроить другой мост."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:884
-#, fuzzy
 msgid "Error connecting to Tor with default bridges"
-msgstr "Подключение к Tor через мосты по умолчанию…"
+msgstr "Ошибка при подключении к Tor с использованием мостов по умолчанию"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:900
-#, fuzzy
 msgid "Your network is blocking access to Tor and the default bridges."
-msgstr "Эта локальная сеть блокирует доступ к сети Tor."
+msgstr "Ваша сеть блокирует доступ к Tor и мостам по умолчанию."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:916
-#, fuzzy
 msgid "Bridge: <b>default bridges</b>"
-msgstr "Использовать _мост по умолчанию"
+msgstr "Мост: <b>мосты по умолчанию</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:958
-#, fuzzy
 msgid "Error connecting to Tor with bridges"
-msgstr "Подключение к Tor без мостов…"
+msgstr "Ошибка при подключении к Tor с использованием мостов"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:974
 msgid "None of the bridges recommended for this region worked."
@@ -3842,9 +3831,8 @@ msgstr ""
 "Попробуйте выбрать другой регион или получить мост по электронной почте."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1018
-#, fuzzy
 msgid "Error asking for a bridge"
-msgstr "Ошибка проверки обновлений"
+msgstr "Ошибка при запросе моста"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1034
 msgid "Tails failed to ask for a bridge based on your region."
@@ -3859,9 +3847,8 @@ msgstr ""
 "попробуйте запросить мост по электронной почте."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1087
-#, fuzzy
 msgid "Open _details"
-msgstr "Открыть Клонировщик Tails"
+msgstr "Посмотреть _подробности"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1142
 msgid "• Wrong clock"
@@ -3909,9 +3896,8 @@ msgid "Configure a Local _Proxy"
 msgstr "Настроить локальный _прокси"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1374
-#, fuzzy
 msgid "• Tor bridge"
-msgstr "• Мост Tor через эл. почту"
+msgstr "• Tor мост"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1394
 msgid ""
@@ -3924,9 +3910,8 @@ msgstr ""
 "общественными сетями или средствами родительского контроля."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1410
-#, fuzzy
 msgid "Configure a Tor _Bridge"
-msgstr "Настроить мост Tor"
+msgstr "Настройка моста _Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1449
 msgid ""
@@ -3955,7 +3940,7 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1544
 msgid "<b>Connect to Tor _automatically</b>"
-msgstr "<b>_Автоматически подключаться к Tor </b>"
+msgstr "<b>Подключаться к Tor _автоматически</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1594
 msgid ""

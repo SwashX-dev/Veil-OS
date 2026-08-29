@@ -17,13 +17,21 @@ We set it up for the user in per-user mode for these reasons:
 
 # Routing all Flatpak apps' network traffic over Tor
 
-Our [[!tails_ticket 21554 desc="research"]] has shown that:
+Tails transparently proxies all of `amnesia`'s outgoing TCP Internet
+traffic through `tor`, so since Tails' Flatpak-integration is set up
+for per-user mode (described above) all Flatpak apps installed in the
+ways we support will be torified. Notably this means that the stream
+isolation is limited to `IsolateDestAddr` and `IsolateDestPort` for
+all Flatpak apps.
 
- - Standard environment variables, such as `HTTP_PROXY` and `SOCKS_SERVER`,
-   are not honored by most Flatpak apps.
- - `torsocks` is not a viable approach either.
+## Proxy-related environment variables
 
-So instead we implemented transparent torification via the Tor's `TransPort`.
+Our [[!tails_ticket 21554 desc="research"]] has shown that standard
+environment variables, such as `HTTP_PROXY` and `SOCKS_SERVER`, are
+not honored by most Flatpak apps. However, if we find Flatpak apps
+that support them and work better (e.g. improved stream isolation by
+setting SOCKS username/password) we might consider adding overrides on
+a per-app basis.
 
 # Repositories
 
@@ -64,18 +72,25 @@ if met proceeds to fetch updates. The main condition is that it will
 only fetch updates if the last attempt for that was done another
 calendar day. It implements that by comparing the current time with a
 timestamp (`org.gnome.software.check-timestamp` GSetting) that was set
-last time it fetched updates (if not set it will also proceed).
+last time it fetched updates (if not set it will also proceed). To
+benefit from this scheduling we make this timestamp (and GNOME
+Software's other settings) persistent as part of the Flatpak feature:
 
-An issue in Tails is that this timestamp is updated even when the
-update fetch fails, so if GNOME Software starts before Tor has
-bootstrapped it will set the timestamp even though no updates were
-fetched. Combined with the condition mentioned above that means that
-GNOME Software only will fetch updates in Tails sessions that run from
-one calendar day to the next. For this reason we take great care in
-preventing GNOME Software from starting before Tor has bootstrapped.
+- [[!tails_gitweb
+  config/chroot_local-includes/usr/lib/systemd/user/gnome-software.service.d/persist-dconf-state.conf]]
+- [[!tails_git_web
+  config/chroot_local-includes/usr/local/lib/tails-persist-gnome-software-dconf-state]]
 
 A wrapper for GNOME Software prevents it from starting if Tor isn't
-bootstrapped, informing users of this requirement:
+bootstrapped, informing users of this requirement. The reason for this
+is that GNOME Software updates the timestamp mentioned above even if
+started before Tor has bootstrapped so fetching upgrades will fail,
+and as a result all update checks fail for the rest of the day, so
+updates would only be fetched if the session extend far into the next
+day when the update check can succeed again. GNOME Software has a
+network availability check that will prevent the timestamp from being
+updated if there's no network, which prevents this issue in most
+normal cases, but not ours.
 
 - [[!tails_gitweb
   config/chroot_local-includes/usr/local/bin/gnome-software]]
@@ -90,6 +105,32 @@ XDG autostart is disabled, and `DBusActivatable` is dropped from the
 Desktop file to ensure that it executes the wrapper:
 
 - [[!tails_gitweb config/chroot_local-hooks/30-flatpak]]
+
+# Localization
+
+Flatpak Apps are localized in three different ways (or not at all):
+
+1. All available localization is part of the base Flatpak app
+   (e.g. `org.signal.Signal`)
+2. Localization is handled in a non-standard way, e.g. downloaded on
+   application start (e.g. `org.telegram.desktop`)
+3. The localization bits are split into a `.Locale` Flatpak extension
+   that contains all locales, but is only partially installed; only
+   the locale matching the system locale (or whatever was manually
+   configured with `flatpak config --set languages`) is installed.
+
+Tails doesn't do anything special here, so there is really nothing to
+say about 1 and 2. For 3 the only relevant thing to mention is about
+switching locales:
+
+When a Flatpak app is initially installed its `.Locale` extension (if
+it exists) is also installed, but only pulling the part of it that is
+for the current system locale (as selected by the user at the Welcome
+Screen). If a user restart Tails in a different locale the new parts
+of the `.Locale` extension are pulled the next time Flatpak upgrades
+are installed, which is according to GNOME Software's update schedule,
+mentioned above. So new locales will not necessarily be pulled in
+immediately after switching, it might take a few days.
 
 # Related pages
 

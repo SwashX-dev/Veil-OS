@@ -68,7 +68,7 @@ The following changes were introduced in Tails 1.4.
 
   - Upgrade **Tor** to 0.2.6.7.
 
-  - Upgrade ***I2P*** to [0.9.19](https://geti2p.net/en/blog/post/2015/04/12/0.9.19-Release)
+  - Upgrade ***I2P*** to 0.9.19
     that has several fixes and improvements for floodfill
     performance.
 

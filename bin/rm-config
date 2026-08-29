@@ -117,12 +117,12 @@ class Config:
     """Load, validate, generate, and output Release Management configuration"""
 
     def __init__(self, stage: str):
-        self.stage = stage
         self.config_files = [
             git_repo_root() / "config/release_management/defaults.yml",
             *list((Path(xdg_config_home) / "tails/release_management").glob("*.yml")),
         ]
         self.data = self.load_config_files()
+        self.stage = stage if stage != "auto" else self.detect_stage()
         self.data.update(self.generate_config())
         log.debug("Configuration:\n%s", self.data)
         try:
@@ -140,6 +140,25 @@ class Config:
             log.debug("Loading %s", config_file)
             data.update(yaml.safe_load(open(config_file)))
         return data
+
+    def detect_stage(self) -> None | str:
+        last_good_stage = None
+
+        for stage in STAGES:
+            # This "validation" is extremely rough: we consider a stage to be correctly
+            # set if even just one of its fields is set.
+            # You might think that any() could be replaced by all(), but that would
+            # fail, because generate_config() is yet to be called when detect_stage() is
+            # invoked, and it depends on self.stage being set.
+            # So that's an easy-enough workaround, which won't result in validation
+            # problems: we will do a strict validation after this method is called.
+            if any(field in self.data for field in STAGE_SCHEMA[stage]):
+                last_good_stage = stage
+            else:
+                break
+
+        log.debug("Detected stage: %s", last_good_stage)
+        return last_good_stage
 
     def generate_config(self):
         """
@@ -258,13 +277,19 @@ class Config:
 def generate_boilerplate(stage: str):
     """Generate boilerplate for STAGE"""
     log.debug("Generating boilerplate for stage '%s'", stage)
+    if stage == "base":
+        write_mode = "w"
+    else:
+        write_mode = "a"
     with open(
         git_repo_root() / ("config/release_management/templates/%s.yml" % stage),
     ) as src, open(
         Path(xdg_config_home) / "tails/release_management/current.yml",
-        "a",
+        write_mode,
     ) as dst:
+        dst.write(f"# Stage {stage}:\n")
         dst.write(src.read())
+        dst.write("\n")
 
 
 def generate_environment(stage: str):
@@ -332,8 +357,8 @@ def main():
         "--stage",
         type=str,
         action="store",
-        default="base",
-        choices=STAGES,
+        default="auto",
+        choices=["auto", *STAGES],
         help="Select stage",
     )
     parser_generate_environment.set_defaults(func=generate_environment)
