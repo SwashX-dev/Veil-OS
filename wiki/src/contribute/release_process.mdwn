@@ -1051,12 +1051,14 @@ Initialize the website release branch
 The final steps towards publishing
 the release will be done in a new, dedicated branch.
 
+    (
+    set -eu -o pipefail
     if [ "${DIST:?}" = alpha ]; then
         START_POINT=origin/master
     else
         START_POINT="${TAG:?}"
     fi
-    git checkout -b "${WEBSITE_RELEASE_BRANCH:?}" "${START_POINT:?}" && \
+    git checkout -b "${WEBSITE_RELEASE_BRANCH:?}" "${START_POINT:?}"
     git push \
         --set-upstream \
         -o merge_request.create \
@@ -1064,6 +1066,7 @@ the release will be done in a new, dedicated branch.
         -o merge_request.target=master \
         -o merge_request.title="Draft: Publish Tails ${VERSION}" \
         origin "${WEBSITE_RELEASE_BRANCH:?}"
+    )
 
 Generate the OpenPGP signatures
 ===============================
@@ -1461,14 +1464,15 @@ If preparing a RC, skip this part:
 Update the image description file (IDF) used by the verification JavaScript:
 
     (
-    cd "${RELEASE_CHECKOUT:?}" && \
+    set -eu -o pipefail
+    cd "${RELEASE_CHECKOUT:?}"
     ./bin/idf-content \
        --version "${VERSION:?}" \
        --iso "${ISO_PATH:?}" \
        --img "${IMG_PATH:?}" \
-       > wiki/src/install/v2/Tails/amd64/stable/latest.json && \
-    git add wiki/src/install/v2/Tails/amd64/stable/latest.json && \
-    git commit -m "Update image description file for download verification" && \
+       > wiki/src/install/v2/Tails/amd64/stable/latest.json
+    git add wiki/src/install/v2/Tails/amd64/stable/latest.json
+    git commit -m "Update image description file for download verification"
     git push origin "${WEBSITE_RELEASE_BRANCH:?}"
     )
 
@@ -1583,7 +1587,8 @@ command below.
 Copy the ISO and USB images to our rsync server:
 
     (
-    cd "${RELEASE_CHECKOUT:?}" && \
+    set -eu -o pipefail
+    cd "${RELEASE_CHECKOUT:?}"
     ./bin/copy-images-to-rsync-server-and-verify \
         --version "${VERSION:?}" \
         --dist "${DIST:?}" \
@@ -1934,7 +1939,7 @@ This will make the release go live on our website once all required checks
 complete successfully:
 
     (
-    set -eu
+    set -eu -o pipefail
     cd "${RELEASE_CHECKOUT:?}"
     git checkout "${WEBSITE_RELEASE_BRANCH:?}"
     echo "stable" > config/base_branch
