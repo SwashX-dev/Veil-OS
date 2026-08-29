@@ -193,27 +193,6 @@ you need to set a bunch of environment variables.
 
        eval $(./bin/rm-config generate-environment --stage base)
 
-### Notes
-
-* Unless the release process explicitly instructs you to change the
-  value of one such variable, treat it as a constant: else,
-  inconsistency will surely arise, which can cause trouble later on.
-
-* Regarding version numbers, what follows supports just fine the case
-  when we do something else than alternating bugfix and major releases
-  consistently. For example, if the next two releases are bugfix ones,
-  do not set `$NEXT_PLANNED_MAJOR_VERSION` to one of these
-  bugfix releases. Instead, set it to the version number of the next
-  major release.
-
-* The `$NEXT*VERSION` constants are used only for two types of
-  operations: preparing upgrade-description files and adding changelog
-  entries. This two types of operations have to be consistent with
-  each other: for example, if one adds a dummy entry for version X in
-  a changelog, an UDF must exist for version X as well… hence the use
-  of shared constants to encode the values that must be the same on
-  both sides :)
-
 Pre-freeze
 ==========
 
@@ -293,8 +272,6 @@ Browser we want to ship is based on in these Git repositories:
 
 A new tag may indicate that a new Tor Browser release or rebuild is imminent.
 
-Better catch this before people spend time doing manual tests.
-
 Check CI results
 ----------------
 
@@ -309,15 +286,10 @@ and check that the jobs for the release branch have good enough results:
 
    - else, if you're preparing a release candidate: the `devel` branch
 
- - look at the last build of the corresponding `test_Tails_ISO_*` job;
+ - the last build of the corresponding `test_Tails_ISO_*` job should look OK:
    if anything looks unusual or fishy, check the few previous builds
    to see if it's a one-off robustness issue, a serious regression,
-   or what not. In particular:
-
-   Check the results of *Scenario: All packages are up-to-date*.
-   If it does not pass, evaluate whether the problems fixed in the missing
-   package update are worth delaying the release. If not, create an issue
-   to track them.
+   or what not.
 
 ### GitLab CI
 
@@ -693,9 +665,7 @@ version's `.packages` file and the one from the to-be-released images:
 
    - Open the [GitLab issue about the release notes](https://gitlab.tails.boum.org/groups/tails/-/work_items?scope=all&search=release+notes&sort=milestone&state=opened)
 
-   - Notify `@technical-writers` that the changelog is ready,
-     and provide them a link to latest relevant Jenkins built image, so they can use that to make screenshots or write
-documentation:
+   - Notify `@technical-writers` that the changelog is ready:
 
         (
         echo "Dear @technical-writers,"
@@ -931,13 +901,7 @@ Expected time: 10 minutes
 
 ### Versioned APT suite in our custom APT repository
 
-Within a few minutes after pushing the new release's Git tag, a cronjob
-creates a new APT suite in our custom APT repository. This new APT suite is
-called `$TAG` and is initially empty.
-
-Wait for this APT suite to be created and initialize it with the packages
-currently found in the APT suite corresponding to the branch used to prepare
-the release:
+Wait for the new empty APT suite called `$TAG` to be created and copy the relevant packages there:
 
     while ! ssh reprepro@incoming.deb.tails.net reprepro list "${TAG:?}" >/dev/null 2>&1; do
        sleep 5
@@ -975,8 +939,6 @@ Jenkins workers.
        rake build
 
    Do _not_ set `keeprunning` nor `rescue` in `$TAILS_BUILD_OPTIONS`.
-   Our build system will apply the correct compression settings automatically
-   so don't bother setting it yourself.
 
 1. Manually start a build of the release branch on Jenkins, removing
    other builds from the _Build Queue_ if needed so it can start
@@ -985,14 +947,13 @@ Jenkins workers.
    Take note of the ID of this build.
 
    Note that Jenkins automatically started a build earlier when you
-   pushed the tag, but since the versioned APT suite wasn't finished
+   pushed the tag, but since the versioned APT suite wasn't prepared
    by then, we avoid using that build and rely on the manually started
    one to be safe.
 
 1. Make sure the Jenkins build is right: you can recognize this is the case,
    when you see Jenkins start building the website (which should happen in
-   \~2-3 minutes). Jenkins will take
-   20-30 minutes to complete the build.
+   \~2-3 minutes).
 
 1. This could be a good time for a break until both builds complete!
 
@@ -1631,10 +1592,7 @@ then copy images from your own computer, which is often faster:
 … then pass `--skip-downloading-images` to the `copy-images-to-rsync-server-and-verify`
 command below.
 
-Copy the ISO and USB images to our rsync server, verify their signature,
-move them in place with proper ownership and permissions and update
-the time in `project/trace` file on our rsync server and on the live
-website (even for a release candidate):
+Copy the ISO and USB images to our rsync server:
 
     (
     cd "${RELEASE_CHECKOUT:?}" && \
@@ -1831,8 +1789,7 @@ Ensure our [[contribute/working_together/roles/technical_writer]] has
 announcement for the release in `wiki/src/news/version_${TAG:?}.mdwn`.
 
 Generate an announcement mentioning the security vulnerabilities affecting the previous version
-in `wiki/src/security/known_security_vulnerabilities_in_${PREVIOUS_STABLE_VERSION:?}.mdwn`, in
-order to let the users of the old versions know that they have to upgrade:
+in `wiki/src/security/known_security_vulnerabilities_in_${PREVIOUS_STABLE_VERSION:?}.mdwn`:
 
     ./bin/generate-security-advisory \
        --previous-version "${PREVIOUS_STABLE_VERSION:?}" \
