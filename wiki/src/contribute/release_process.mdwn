@@ -257,10 +257,10 @@ important security fixes to be available.
 Coordinate with Tor Browser releases
 ------------------------------------
 
-Verify that the Tor Browser release used in Tails still is the most
+Verify that the Tor Browser release used in Tails is still the most
 recent. Also look if there's a new `-buildX` tag (e.g.
-`tor-browser-60.3.0esr-8.0-1-build1`) for the Firefox version the Tor
-Browser we want to ship is based on in these Git repositories:
+`tor-browser-60.3.0esr-8.0-1-build1`) for the Tor
+Browser version we want to ship, in these Git repositories:
 
 * [tor-browser-build activity](https://gitlab.torproject.org/tpo/applications/tor-browser-build/activity)
   (`maint-X.Y` branch)
