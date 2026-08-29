@@ -237,24 +237,20 @@ for the `debian-security` archive have a problem. To investigate, you can:
 
 ### Upcoming security updates
 
-Look at the [list of upcoming Debian Security Advisories (DSA)][DSA needed]
-found in the Debian [security tracker][web]'s [Git repository][git]. Looking at recent
-commits in [the Git history][DSA needed history] can reveal DSAs that
-just have been assigned but that haven't been published yet.
+**Goal**: determine if it's worth delaying the release a bit, while waiting for
+important security fixes to be available.
 
-Also look at the Git history of the relevant branch of the `Vcs-Git` for
-`src:linux`. Recent commits usually indicate an upcoming Linux DSA. For Trixie,
-this is:
-https://salsa.debian.org/kernel-team/linux/-/commits/debian/6.12/trixie-security
+1. Look at:
 
-[web]: https://security-tracker.debian.org/tracker/
-[git]: https://salsa.debian.org/security-tracker-team/security-tracker
-[DSA needed]: https://salsa.debian.org/security-tracker-team/security-tracker/blob/master/data/dsa-needed.txt
-[DSA needed history]: https://salsa.debian.org/security-tracker-team/security-tracker/-/commits/master/data/dsa-needed.txt
+    - [upcoming Debian Security Advisories (DSA)](https://salsa.debian.org/security-tracker-team/security-tracker/blob/master/data/dsa-needed.txt)
+    - recent commits in [the Git history](https://salsa.debian.org/security-tracker-team/security-tracker/-/commits/master/data/dsa-needed.txt),
+      which can reveal DSAs that are in progress (they have just been assigned but that haven't been published yet).
 
-Rationale: we don't want to release Tails and learn 2 days later about
-important security issues fixed by Debian security updates. In some cases, it
-may be worth delaying a Tails release a bit, while waiting for a DSA to happen.
+2. Look at the Git history of the relevant branch of the `Vcs-Git` for
+   `src:linux`. Recent commits usually indicate an upcoming Linux DSA.
+
+   For Trixie, this is:
+   https://salsa.debian.org/kernel-team/linux/-/commits/debian/6.12/trixie-security
 
 <a id="tor-browser-check"></a>
 
