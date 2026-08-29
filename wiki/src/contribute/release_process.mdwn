@@ -307,11 +307,9 @@ merge it into `$RELEASE_BRANCH`.
 Freeze
 ======
 
-This section ensures freezing is done. Freezing is relevant for Release Candidates and for bugfix releases.
-You can skip this if you're releasing a final major version.
+Skip this if you're releasing a final major release.
 
 ## If you are preparing a RC
-
 
 Check that you are indeed preparing a RC:
 
@@ -319,42 +317,34 @@ Check that you are indeed preparing a RC:
 
 Follow this part ONLY if you are preparing the *first* release candidate for a major release.
 
+1. Prepare the `devel` APT suite and the `testing` branch:
 
-1. Merge the `master` Git branch into `devel`:
-
-       git checkout devel && git fetch origin && git merge origin/devel && git merge --no-ff origin/master
-
-2. Merge each APT overlay suite listed in the `devel` branch's
-   `config/APT_overlays.d/` into the `devel` APT suite:
-
+       (
+       set -eu -o pipefail
+       git checkout devel
+       git fetch origin
+       git merge origin/devel
+       git merge --no-ff origin/master
        ./bin/merge-APT-overlays devel
+       git checkout testing
+       git merge origin/testing
+       git merge devel
+       )
 
-3. Merge the `devel` Git branch into the `testing` one:
-
-       git checkout testing && git merge origin/testing && git merge devel
-
-   ... and check that the resulting `config/APT_overlays.d/` in the
+2. Check that the resulting `config/APT_overlays.d/` in the
    `testing` branch is empty.
 
-4. Hard reset the `testing` custom APT suite to the current state of the
-   `devel` one:
+4. Prepare the `testing` custom APT suite and the corresponding APT snapshots:
 
+       (
+       set -eu -o pipefail
        ./bin/reset-custom-APT-suite testing devel
-
-5. Freeze the [[time-based APT repository
-   snapshots|APT_repository/time-based_snapshots]] that shall be used
-   during the code freeze, and those used by our builder VM:
-
        ./bin/freeze-all-APT-snapshots
-
-6. Make it so the time-based APT repository snapshots are kept around
-   long enough, by bumping their `Valid-Until` half a year from now:
-
-       git checkout "$RELEASE_BRANCH" && \
+       git checkout "$RELEASE_BRANCH"
        ./bin/bump-APT-snapshots-expiration-date 183
+       )
 
 ## If you are preparing a bugfix release
-
 
 Check that you are indeed preparing a bugfix release:
 
@@ -362,16 +352,7 @@ Check that you are indeed preparing a bugfix release:
 
 Follow this part ONLY if you are preparing a bugfix release.
 
-1. Merge the `master` Git branch into `stable`:
-
-       git checkout stable && git fetch && git merge origin/stable && git merge --no-ff origin/master
-
-2. Merge each APT overlay suite listed in the `stable` branch's
-   `config/APT_overlays.d/` into the `stable` APT suite:
-
-       ./bin/merge-APT-overlays stable
-
-## In any case
+Prepare the `stable` branch and `stable` custom APT suite:
 
     (
     set -eu -o pipefail
@@ -382,17 +363,16 @@ Follow this part ONLY if you are preparing a bugfix release.
     ./bin/merge-APT-overlays stable
     )
 
-Reset the release branch's `config/base_branch`:
+Ensure the base branch is correct
+=================================
 
     (
+    set -eu -o pipefail
     echo "${RELEASE_BRANCH:?}" > config/base_branch
     git commit config/base_branch \
         -m "Restore ${RELEASE_BRANCH:?}'s base branch." || :
-    )
-
-Push `$RELEASE_BRANCH`:
-
     git push origin "${RELEASE_BRANCH:?}:${RELEASE_BRANCH:?}"
+    )
 
 Take note of the ID of the Jenkins build job that was triggered by this last
 push, wherever it works for you. We'll call it the *almost final* build.
