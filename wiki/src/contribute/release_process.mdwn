@@ -2065,9 +2065,9 @@ deployment". Check if everything looks good.
 Amnesia news
 ------------
 
-[Log in](https://www.autistici.org/mailman/admindb/amnesia-news)
+[Log in](https://lists.torproject.org/mailman3/postorius/lists/tails-news.lists.torproject.org/)
 and accept the release announcement (it's been automatically sent
-to `amnesia-news@` every half hour and is stuck in the
+to `tails-news@` every half hour and is stuck in the
 moderation queue).
 
 Prepare for the next development cycle
