@@ -117,9 +117,7 @@ msgstr "   [[!img install/inc/screenshots/tails_cloner.png class=\"pc-clone mac-
 #. type: Plain text
 #, no-wrap
 msgid "   [[!img install/inc/screenshots/tails_cloner_upgrade.png class=\"upgrade screenshot\" alt=\"Tails Cloner: 'Clone the current Tails'\"]]\n"
-msgstr ""
-"   [[!img install/inc/screenshots/tails_cloner_upgrade.png class=\"upgrade "
-"screenshot\" alt=\"Clonador de Tails: «Clona el Tails actual»\"]]\n"
+msgstr "   [[!img install/inc/screenshots/tails_cloner_upgrade.png class=\"upgrade screenshot\" alt=\"Clonador de Tails: «Clona el Tails actual»\"]]\n"
 
 #. type: Plain text
 #, no-wrap
