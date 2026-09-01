@@ -32,3 +32,21 @@ Feature: Installing and running Flatpak apps in Tails
     And I go to the main screen of GNOME Software
     When I uninstall Signal Desktop using GNOME Software
     Then the org.signal.Signal Flatpak is uninstalled after at most 60 seconds
+
+  @check_tor_leaks
+  Scenario: Changing locale after installing a Flatpak
+    Given I have started Tails with the Flatpak feature from a USB drive with a persistent partition enabled and logged in and the network is connected
+    When I start GNOME Software
+    And I install Thunderbird using GNOME Software
+    Then the org.mozilla.thunderbird Flatpak is installed after at most 600 seconds
+    And the de locale is not present in the org.mozilla.thunderbird.Locale Flatpak extension
+    Given I set Tails to boot with options "flatpak"
+    When I cold reboot the computer
+    Then the computer boots Tails
+    When I enable persistence
+    And I log in to a new session in German (de)
+    Given it has been 3 days since GNOME Software checked for updates
+    And GNOME Software thinks it is after 06:00 but before 23:00
+    When the network is plugged
+    And Tor is ready
+    Then the de locale is present in the org.mozilla.thunderbird.Locale Flatpak extension after at most 600 seconds
