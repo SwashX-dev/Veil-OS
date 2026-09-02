@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-09-03 08:20+0000\n"
+"POT-Creation-Date: 2026-09-02 08:03+0000\n"
 "PO-Revision-Date: 2025-09-18 15:11+0000\n"
 "Last-Translator: drebs <drebs@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,8 +123,8 @@ msgid ""
 "[[Social contract|https://community.torproject.org/policies/"
 "social_contract/]]"
 msgstr ""
-"[[Contrato social|https://community.torproject.org/policies/social_contract/"
-"]]"
+"[[Contrato social|https://community.torproject.org/policies/"
+"social_contract/]]"
 
 #. type: Content of: <div><ul><li>
 msgid "[[Supporters|https://www.torproject.org/about/supporters/]]"
@@ -151,20 +151,10 @@ msgid "News"
 msgstr "Notícias"
 
 #. type: Content of: <div><p>
-msgid "Subscribe to our [[newsletter|news]]"
-msgstr "Inscreva-se na nossa [[newsletter|news]]"
-
-#. type: Content of: <div><form>
-#, fuzzy
-#| msgid ""
-#| "<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
-#| "label=\"Subscribe\" type=\"submit\"><strong>Subscribe</strong></button>"
 msgid ""
-"<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
-"label=\"Subscribe\" type=\"submit\">Subscribe</button>"
+"<a href=\"https://lists.torproject.org/mailman3/postorius/lists/tails-"
+"news.lists.torproject.org/\">Subscribe</a> to our [[newsletter|news]]"
 msgstr ""
-"<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
-"label=\"Inscrever\" type=\"submit\"><strong>Inscrever</strong></button>"
 
 #. type: Content of: <div><div><div>
 msgid ""
@@ -246,6 +236,20 @@ msgstr "[[!img lib/tor-black.png link=\"no\" class=\"svg\" alt=\"\"]]"
 msgid ""
 "Tails is made by the <a href=\"https://torproject.org/\">Tor Project</a>."
 msgstr ""
+
+#~ msgid "Subscribe to our [[newsletter|news]]"
+#~ msgstr "Inscreva-se na nossa [[newsletter|news]]"
+
+#, fuzzy
+#~| msgid ""
+#~| "<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
+#~| "label=\"Subscribe\" type=\"submit\"><strong>Subscribe</strong></button>"
+#~ msgid ""
+#~ "<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
+#~ "label=\"Subscribe\" type=\"submit\">Subscribe</button>"
+#~ msgstr ""
+#~ "<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
+#~ "label=\"Inscrever\" type=\"submit\"><strong>Inscrever</strong></button>"
 
 #~ msgid "[[Sponsors|sponsors]]"
 #~ msgstr "[[Patrocinadores|sponsors]]"

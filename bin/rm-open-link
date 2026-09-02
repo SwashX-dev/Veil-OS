@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -eu
+set -o pipefail
+
+${TAILS_RM_BROWSER:-exec /usr/bin/xdg-open} "${@}"

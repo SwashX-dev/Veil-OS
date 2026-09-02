@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-09-03 08:20+0000\n"
+"POT-Creation-Date: 2026-09-02 08:03+0000\n"
 "PO-Revision-Date: 2026-01-01 15:29+0000\n"
 "Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,8 +119,8 @@ msgid ""
 "[[Social contract|https://community.torproject.org/policies/"
 "social_contract/]]"
 msgstr ""
-"[[Contracte social|https://community.torproject.org/policies/social_contract/"
-"]]"
+"[[Contracte social|https://community.torproject.org/policies/"
+"social_contract/]]"
 
 #. type: Content of: <div><ul><li>
 msgid "[[Supporters|https://www.torproject.org/about/supporters/]]"
@@ -131,8 +131,8 @@ msgid ""
 "[[Code of conduct|https://community.torproject.org/policies/"
 "code_of_conduct/]]"
 msgstr ""
-"[[Codi de conducta|https://community.torproject.org/policies/code_of_conduct/"
-"]]"
+"[[Codi de conducta|https://community.torproject.org/policies/"
+"code_of_conduct/]]"
 
 #. type: Content of: <div><ul><li>
 msgid "[[License|doc/about/license]]"
@@ -147,16 +147,10 @@ msgid "News"
 msgstr "Notícies"
 
 #. type: Content of: <div><p>
-msgid "Subscribe to our [[newsletter|news]]"
-msgstr "Subscriviu-vos al nostre [[butlletí|news]]"
-
-#. type: Content of: <div><form>
 msgid ""
-"<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
-"label=\"Subscribe\" type=\"submit\">Subscribe</button>"
+"<a href=\"https://lists.torproject.org/mailman3/postorius/lists/tails-"
+"news.lists.torproject.org/\">Subscribe</a> to our [[newsletter|news]]"
 msgstr ""
-"<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
-"label=\"Subscribe\" type=\"submit\">Subscriu-me</button>"
 
 #. type: Content of: <div><div><div>
 msgid ""
@@ -239,6 +233,16 @@ msgid ""
 "Tails is made by the <a href=\"https://torproject.org/\">Tor Project</a>."
 msgstr ""
 "Tails està fet pel <a href=\"https://torproject.org/ca/\">Projecte Tor</a>."
+
+#~ msgid "Subscribe to our [[newsletter|news]]"
+#~ msgstr "Subscriviu-vos al nostre [[butlletí|news]]"
+
+#~ msgid ""
+#~ "<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
+#~ "label=\"Subscribe\" type=\"submit\">Subscribe</button>"
+#~ msgstr ""
+#~ "<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
+#~ "label=\"Subscribe\" type=\"submit\">Subscriu-me</button>"
 
 #~ msgid "[[Sponsors|sponsors]]"
 #~ msgstr "[[Patrocinadors|sponsors]]"

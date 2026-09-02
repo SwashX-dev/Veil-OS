@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -eu
+set -o pipefail
+
+NEXT_PLANNED_VERSION="$1"
+
+./bin/automailer.py <<EOF
+Subject: RM for Tails ${NEXT_PLANNED_VERSION}
+
+This is a reminder that you will be RM for Tails ${NEXT_PLANNED_VERSION}.
+
+Please see https://tails.net/contribute/working_together/roles/release_manager/#shift
+EOF

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-09-03 08:20+0000\n"
+"POT-Creation-Date: 2026-09-02 08:03+0000\n"
 "PO-Revision-Date: 2025-12-09 13:29+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,8 +130,8 @@ msgid ""
 "[[Code of conduct|https://community.torproject.org/policies/"
 "code_of_conduct/]]"
 msgstr ""
-"[[Code de conduite|https://community.torproject.org/policies/code_of_conduct/"
-"]]"
+"[[Code de conduite|https://community.torproject.org/policies/"
+"code_of_conduct/]]"
 
 #. type: Content of: <div><ul><li>
 msgid "[[License|doc/about/license]]"
@@ -146,16 +146,10 @@ msgid "News"
 msgstr "Actualités"
 
 #. type: Content of: <div><p>
-msgid "Subscribe to our [[newsletter|news]]"
-msgstr "S'abonner à notre [[liste de diffusion|news]]"
-
-#. type: Content of: <div><form>
 msgid ""
-"<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
-"label=\"Subscribe\" type=\"submit\">Subscribe</button>"
+"<a href=\"https://lists.torproject.org/mailman3/postorius/lists/tails-"
+"news.lists.torproject.org/\">Subscribe</a> to our [[newsletter|news]]"
 msgstr ""
-"<input aria-label=\"Courrier électronique\" name=\"email\" value=\"\"/> "
-"<button aria-label=\"S'abonner\" type=\"submit\">S'abonner</button>"
 
 #. type: Content of: <div><div><div>
 msgid ""
@@ -238,6 +232,16 @@ msgid ""
 "Tails is made by the <a href=\"https://torproject.org/\">Tor Project</a>."
 msgstr ""
 "Tails est fait par le <a href=\"https://torproject.org/fr/\">Projet Tor</a>."
+
+#~ msgid "Subscribe to our [[newsletter|news]]"
+#~ msgstr "S'abonner à notre [[liste de diffusion|news]]"
+
+#~ msgid ""
+#~ "<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
+#~ "label=\"Subscribe\" type=\"submit\">Subscribe</button>"
+#~ msgstr ""
+#~ "<input aria-label=\"Courrier électronique\" name=\"email\" value=\"\"/> "
+#~ "<button aria-label=\"S'abonner\" type=\"submit\">S'abonner</button>"
 
 #~ msgid "[[Sponsors|sponsors]]"
 #~ msgstr "[[Sponsors|sponsors]]"
