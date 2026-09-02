@@ -4,7 +4,7 @@ set -eu
 set -o pipefail
 
 VERSION="${1}"
-IUKS_HASHES="${1}"
+IUKS_HASHES="${2}"
 
 ssh jenkins.mtl-libvirt-02 <<EOF | grep -E '[.]iuk$' >"jenkins_${VERSION}.sha256sum"
 find /var/lib/jenkins/jobs/ -name '*.iuk' -mtime -1 -exec sha256sum {} \;
