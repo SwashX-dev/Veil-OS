@@ -38,7 +38,7 @@ obvious ways, but it might still contain undiscovered issues.
 
 Please, report any new problem before {{deadline}} to either:
 
-- <tails-testers@boum.org> (public mailing list)
+- <tails-testers@lists.torproject.org> (public mailing list)
 
 - <support@tails.net> (private email)
 

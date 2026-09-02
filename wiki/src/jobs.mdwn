@@ -39,12 +39,7 @@ Learn about new opportunities
 
 - Follow us on Twitter: [@Tails_live](https://twitter.com/tails_live).
 
-- Subscribe to our newsletter, amnesia-news:
-
-  <form method="POST" action="https://www.autistici.org/mailman/subscribe/amnesia-news">
-          <input name="email" value=""/>
-          <input type="submit" value="Subscribe"/>
-  </form>
+- <a href="https://lists.torproject.org/mailman3/postorius/lists/tails-news.lists.torproject.org/">Subscribe</a> to our newsletter, tails-news
 
 - Follow the RSS or Atom feed of our job opportunities:
 
