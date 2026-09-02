@@ -71,6 +71,8 @@ mapping facility.
 - [[!tails_gitweb config/chroot_local-includes/etc/tor/torrc]]
 - [[!tails_gitweb config/chroot_local-includes/etc/ferm/ferm.conf]]
 
+<a id="transparent-proxy"></a>
+
 #### Transparent proxy
 
 Tails transparently proxies all of `amnesia`'s outgoing TCP Internet
