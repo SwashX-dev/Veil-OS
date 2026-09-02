@@ -16,8 +16,7 @@ retry() {
 }
 . config/chroot_local-includes/etc/default/htpdate.pools
 err=0
-for url in $(echo "$HTP_POOL_1" "$HTP_POOL_2" "$HTP_POOL_3" | tr ',' ' ')
-do
+for url in $(echo "$HTP_POOL_1" "$HTP_POOL_2" "$HTP_POOL_3" | tr ',' ' '); do
     echo "$url"
     if ! retry ./https-get-expired -reject-expired "https://$url"; then
         echo "ERROR on $url"
