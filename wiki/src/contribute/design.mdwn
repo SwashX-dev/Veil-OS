@@ -918,7 +918,8 @@ has bootstrapped already.
 
 #### Transparent torification
 
-Tails transparently proxies all of `amnesia`'s outgoing TCP Internet
+Tails [[transparently proxies|design/Tor_enforcement/Network_filter#transparent-proxy]]
+all of `amnesia`'s outgoing TCP Internet
 traffic through `tor`. However we still prefer to explicitly configure
 applications to use `tor` via their SOCKS configuration when
 available, since we consider that more reliable than the magic of
