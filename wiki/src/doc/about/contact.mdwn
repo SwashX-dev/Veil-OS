@@ -45,22 +45,13 @@ experience.</p>
 
 <h2 id="tails-testers">tails-testers</h2>
 
-<p>tails-testers@boum.org is the mailing list for people who want to help
+<p>tails-testers@lists.torproject.org is the mailing list for people who want to help
 [[test|contribute/how/testing]] new releases or features.</p>
 
-<form method="POST" action="https://www.autistici.org/mailman/subscribe/tails-testers">
-	<input name="email" value=""/>
-	<input type="submit" value="Subscribe"/>
-</form>
+<p><a
+href="https://lists.torproject.org/mailman3/postorius/lists/tails-testers.lists.torproject.org/">Subscribe</a></p>
 
-<p>Public archive of tails-testers: <a href="https://lists.autistici.org/list/tails-testers.html">https://lists.autistici.org/list/tails-testers.html</a></p>
-
-<form action="https://lists.autistici.org/cgi-lurker/keyword.cgi" accept-charset="UTF-8">
-    <input type="hidden" name="doc-url" value="https://lists.autistici.org">
-	<input type="hidden" name="format" value="en.html">
-	<input type="text"   name="query" value="" placeholder="ml:tails-testers search terms" onclick="value='ml:tails-testers '">
-	<input type="submit" name="submit" value="Search archive">
-</form>
+<p><a href="https://lists.torproject.org/mailman3/hyperkitty/list/tails-testers@lists.torproject.org/">Browse the archive</a></p>
 
 </div>
 
