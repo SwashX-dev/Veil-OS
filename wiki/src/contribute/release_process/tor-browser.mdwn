@@ -398,11 +398,11 @@ clean up:
     done
 	git push -o merge_request.create -o merge_request.draft --set-upstream \
 	   origin "${TBB_IMPORT_BRANCH:?}"
-	cd "${TBB_ARCHIVE:?}" && \
-	git annex drop -- "${TBB_VERSION:?}" && \
-    git annex sync --no-content && \
-    rm -rf "$DL_DIR" && \
-    cd "${TAILS_GIT_REPO:?}" && \
+	cd "${TBB_ARCHIVE:?}"
+	git annex drop -- "${TBB_VERSION:?}"
+    git annex sync --no-content
+    rm -rf "$DL_DIR"
+    cd "${TAILS_GIT_REPO:?}"
     rm -f sha256sums-unsigned-build.txt{,.asc${TBB_SIGNER_SUFFIX}}
     )
 
