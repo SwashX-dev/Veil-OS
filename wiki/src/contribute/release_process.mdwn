@@ -1190,6 +1190,9 @@ Make sure that Jenkins has finished building the images so you have set
         --release-branch "${RELEASE_BRANCH:?}" \
         --matching-jenkins-images-build-id "${MATCHING_JENKINS_IMAGES_BUILD_ID:?}"
 
+Then, go to Jenkins and cancel all of the `test_` jobs **except** the one which is testing the candidate image
+(that one is needed for QA): this will make the next section quicker.
+
 Then, wait (a few minutes, `*/15` crontab) until the images appear
 on <https://iso-history.tails.net/?C=M&O=D>:
 
