@@ -41,7 +41,7 @@ index 28e3a260b7b4b074c41259ba54c28663d80ab0f8..08b3ba8fc588a4dfc4d7080ddf43b78d
 +  padding-inline-start: 0;
 +}
 diff --git a/browser/components/abouttor/content/aboutTor.html b/browser/components/abouttor/content/aboutTor.html
-index 23e8a54defa863560d19b39fa9f82238d556dad7..6e0fd5c9f62adaa6c0267976b518eff91f2f30c5 100644
+index 23e8a54defa863560d19b39fa9f82238d556dad7..1a585fd1198a509e3758235f2e4e0218d1d65be7 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.html
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.html
 @@ -105,7 +105,7 @@
@@ -104,7 +104,7 @@ index 23e8a54defa863560d19b39fa9f82238d556dad7..6e0fd5c9f62adaa6c0267976b518eff9
 +        <span data-l10n-id="tails-release-notes">
 +          <a
 +            data-l10n-name="tails-release-notes-link"
-+            href="https://tails.net/news/version_7.11"
++            href="https://tails.net/news/version_7.12"
 +            target="_blank"
 +          ></a>
 +        </span>

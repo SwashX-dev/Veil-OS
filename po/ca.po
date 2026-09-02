@@ -7,7 +7,7 @@
 # Assumpta, 2014
 # Assumpta, 2018
 # Benny Beat <bennybeat@gmail.com>, 2019
-# Ecron <ecron_89@hotmail.com>, 2018,2020
+# Ecron <ecron_89@hotmail.com>, 2018,2020, 2026.
 # Eloi García i Fargas, 2014
 # El Virus <eloimc4@gmail.com>, 2021
 # Emma Peel, 2018
@@ -29,9 +29,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-08-05 11:02+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-09-02 11:11+0200\n"
+"PO-Revision-Date: 2026-08-27 08:51+0000\n"
+"Last-Translator: Ecron <ecron_89@hotmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/tor/tails-gui/ca/"
 ">\n"
 "Language: ca\n"
@@ -39,7 +39,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -67,18 +67,16 @@ msgid "Configure"
 msgstr "Configura"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:28
-#, fuzzy
 msgid "Password Manager"
-msgstr "Contrasenya"
+msgstr "Gestor de contrasenyes"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
-#, fuzzy
 msgid "password"
-msgstr "Contrasenya"
+msgstr "contrasenya"
 
 #: config/chroot_local-includes/usr/local/lib/change-apps-desktop-file:29
 msgid "password-manager"
-msgstr ""
+msgstr "gestor-de-contrasenyes"
 
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:57
 #: config/chroot_local-includes/usr/local/lib/additional-software/asp-handle-package-changes:95
@@ -736,11 +734,11 @@ msgstr "S'ha produït un error en instal·lar l'actualització"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr ""
+msgstr "GNOME Software"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
-msgstr ""
+msgstr "GNOME Software només es pot iniciar quan el Tor hagi arrencat."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -818,9 +816,8 @@ msgid "Start Without Persistent Storage"
 msgstr "Comença sense l'Emmagatzematge Persistent"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:193
-#, fuzzy
 msgid "Language and Keyboard layout"
-msgstr "Llengua i formats"
+msgstr "Llengua i disposició de teclat"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:195
 msgid ""
@@ -830,10 +827,15 @@ msgid ""
 "Someone who finds your Tails USB stick can see your language and keyboard "
 "layout."
 msgstr ""
+"La vostra llengua i disposició de teclat es desaran sense xifrar a la unitat "
+"USB de Tails i s'aplicaran de manera automàtica en el futur.\n"
+"\n"
+"Si algú trobés la unitat USB de Tails podria veure la vostra llengua i "
+"disposició de teclat."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:200
 msgid "Save Unencrypted"
-msgstr ""
+msgstr "Desa-ho sense xifrar"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:288
 msgid ""
@@ -1012,12 +1014,10 @@ msgstr ""
 "S'està actualitzant l'Emmagatzematge Persistent. Això pot trigar una estona…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "S'ha produït un error en desbloquejar l'Emmagatzematge Persistent: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "S'ha produït un error en actualitzar l'Emmagatzematge Persistent: {}"
 
@@ -1029,12 +1029,10 @@ msgstr ""
 "{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "S'ha produït un error en activar l'Emmagatzematge Persistent: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "No s'ha pogut interrompre en reparar el sistema de fitxers de "
@@ -1352,7 +1350,7 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:600
 #, python-format
 msgid "The device \"%(pretty_name)s\" is read-only."
-msgstr ""
+msgstr "El dispositiu «%(pretty_name)s» és només de lectura."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:608
 #, python-format
@@ -1507,7 +1505,7 @@ msgid "Could not open device for writing."
 msgstr "No s'ha pogut obrir el dispositiu per a l'escriptura."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:19
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "You have a <i>KeePassXC</i> or <i>Secrets</i> database in your "
 "<i>Persistent</i> folder:\n"
@@ -1517,16 +1515,13 @@ msgid ""
 "Renaming your database to <i>${default_filename}</i> allows <i>Secrets</i> "
 "to open it automatically in the future."
 msgstr ""
-"<b><big>Voleu canviar el nom de la vostra base de dades <i>KeePassXC</i>?</"
-"big></b>\n"
-"\n"
-"Teniu una base de dades <i>KeePassXC</i> a la vostra carpeta <i>Persistent</"
-"i>:\n"
+"Teniu una base de dades <i>KeePassXC</i> o <i>Secrets</i> a la vostra "
+"carpeta <i>Persistent</i>:\n"
 "\n"
 "<i>${filename}</i>\n"
 "\n"
 "Canviar el nom de la vostra base de dades a <i>${default_filename}</i> "
-"permetria que <i>KeePassXC</i> l'obrís automàticament en el futur."
+"permet que <i>Secrets</i> l'obri automàticament en el futur."
 
 #: config/chroot_local-includes/usr/local/bin/secrets:25
 msgid "Rename"
@@ -1538,7 +1533,7 @@ msgstr "Manté el nom actual"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:29
 msgid "Rename Password Database?"
-msgstr ""
+msgstr "Voleu canviar el nom de la base de dades de contrasenyes?"
 
 #: config/chroot_local-includes/usr/local/bin/replace-su-with-sudo:19
 msgid "su is disabled. Please use sudo instead."
@@ -1886,7 +1881,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:28
 msgid "Secure Boot Update Needed"
-msgstr ""
+msgstr "Cal una actualització de l'arrencada segura"
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:30
 msgid ""
@@ -1894,6 +1889,10 @@ msgid ""
 "Apply all available updates from your regular operating system to update to "
 "the latest Secure Boot certificates of Microsoft."
 msgstr ""
+"El Tails deixarà d'iniciar-se en aquest equip en algun moment del futur. "
+"Apliqueu totes les actualitzacions de seguretat del vostre sistema operatiu "
+"habitual per a actualitzar als últims certificats d'Arrencada Segura de "
+"Microsoft."
 
 #: config/chroot_local-includes/usr/local/bin/tails-upgrade-frontend-wrapper:37
 #, python-brace-format
@@ -1957,11 +1956,11 @@ msgstr "Automàtic"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:284
 msgid "Frequently selected regions"
-msgstr ""
+msgstr "Regions seleccionades sovint"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:291
 msgid "Other regions"
-msgstr ""
+msgstr "Altres regions"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:369
 msgid "_Use a bridge that you already know"
@@ -2023,9 +2022,8 @@ msgid "Synchronizing the system's clock…"
 msgstr "S'està sincronitzant el rellotge del sistema…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:726
-#, fuzzy
 msgid "Asking for a Tor bridge based on your region…"
-msgstr "_Demaneu un pont de Tor per correu electrònic"
+msgstr "S'està demanant pont Tor basat en la vostra regió…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:774
 msgid "Connecting to Tor without bridges…"
@@ -2037,9 +2035,8 @@ msgid "Connecting to Tor with default bridges…"
 msgstr "S'està connectant a Tor amb ponts predeterminats…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:789
-#, fuzzy
 msgid "Connecting to Tor with a bridge based on your region…"
-msgstr "S'està connectant a Tor amb ponts predeterminats…"
+msgstr "S'està connectant a Tor amb ponts basats en la vostra regió…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:796
 msgid "Connecting to Tor with a custom bridge…"
@@ -2064,21 +2061,21 @@ msgstr "Ara podeu navegar per Internet de manera anònima i sense censura."
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:985
 #, python-brace-format
 msgid "Bridge: <b>{bridge}</b>"
-msgstr ""
+msgstr "Pont: <b>{bridge}</b>"
 
 #. Translators: only translate "Error code:" and adjust
 #. text-direction
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:997
 #, python-brace-format
 msgid "Error code: {code}"
-msgstr ""
+msgstr "Codi d'error: {code}"
 
 #. Translators: only translate "Proxy:" and adjust
 #. text-direction
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1024
 #, python-brace-format
 msgid "Proxy: <b>{proxy}</b>"
-msgstr ""
+msgstr "Servidor intermediari: <b>{proxy}</b>"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1323
 #, python-brace-format
@@ -2256,7 +2253,6 @@ msgstr "Les dades d'aquesta funció encara estan desades."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "S'ha produït un error en activar la funció {}"
 
@@ -2275,7 +2271,6 @@ msgstr "Detalls"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "S'ha produït un error en desactivar la funció {}"
 
@@ -2284,7 +2279,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "S'ha produït un error en desactivar la funcionalitat."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2301,12 +2295,10 @@ msgid "_Delete Data"
 msgstr "_Suprimeix les dades"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "S'ha produït un error en suprimir les dades de la funció {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "S'ha produït un error en suprimir les dades de la funcionalitat {}."
 
@@ -2927,9 +2919,8 @@ msgid "Mount VeraCrypt encrypted file containers and devices"
 msgstr "Munta els dispositius i contenidors de fitxers xifrats VeraCrypt"
 
 #: ../config/chroot_local-includes/usr/share/applications/unlock-veracrypt-volumes.desktop.in.h:3
-#, fuzzy
 msgid "mount;encrypted;container;truecrypt"
-msgstr "muntar;encriptat;xifrat;contenidor;truecryt"
+msgstr "muntar;encriptat;xifrat;contenidor;truecrypt"
 
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.AdditionalSoftware.desktop.in.h:2
 msgid ""
@@ -3384,12 +3375,11 @@ msgstr "Activeu el Programari Addicional"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
 msgid "Flatpak"
-msgstr ""
+msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "Activa el client SSH"
+msgstr "Activa el Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
@@ -3691,9 +3681,8 @@ msgid "TrueCrypt/VeraCrypt container"
 msgstr "Contenidor TrueCrypt / VeraCrypt"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:82
-#, fuzzy
 msgid "Configure a Tor bridge"
-msgstr "Configura un _pont de Tor"
+msgstr "Configura un pont Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
 msgid ""
@@ -3731,14 +3720,12 @@ msgid "None"
 msgstr "Cap"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:242
-#, fuzzy
 msgid "Ask for a bridge based on your _region"
-msgstr "_Demaneu un pont de Tor per correu electrònic"
+msgstr "Demaneu un pont Tor basat en la vostra _regió"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
-#, fuzzy
 msgid "_Ask for a bridge by email"
-msgstr "_Demaneu un pont de Tor per correu electrònic"
+msgstr "_Demaneu un pont per correu electrònic"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
 msgid ""
@@ -3789,69 +3776,63 @@ msgid "This local network seems to be blocking access to Tor."
 msgstr "Sembla que aquesta xarxa local està bloquejant l'accés a Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:811
-#, fuzzy
 msgid "Error connecting to Tor with this bridge"
-msgstr "S'està connectant a Tor sense ponts…"
+msgstr "Error en connectar a Tor amb aquest pont"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:827
 msgid ""
 "Either this Tor bridge is not working or your network is blocking access to "
 "it."
-msgstr ""
+msgstr "El pont Tor no funciona o la vostra xarxa està blocant-hi l'accés."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:856
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:930
-#, fuzzy
 msgid "Try configuring another bridge."
-msgstr "Configureu un pont de Tor"
+msgstr "Proveu de configurar un altre pont."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:884
-#, fuzzy
 msgid "Error connecting to Tor with default bridges"
-msgstr "S'està connectant a Tor amb ponts predeterminats…"
+msgstr "Error en connectar a Tor amb ponts predeterminats"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:900
-#, fuzzy
 msgid "Your network is blocking access to Tor and the default bridges."
-msgstr "Aquesta xarxa local està bloquejant l'accés a Tor."
+msgstr "La vostra xarxa està blocant l'accés a Tor i als pots predeterminats."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:916
-#, fuzzy
 msgid "Bridge: <b>default bridges</b>"
-msgstr "Utilitzeu un pont _predeterminat"
+msgstr "Pont: <b>ponts predeterminats</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:958
-#, fuzzy
 msgid "Error connecting to Tor with bridges"
-msgstr "S'està connectant a Tor sense ponts…"
+msgstr "Error en connectar a Tor amb ponts"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:974
 msgid "None of the bridges recommended for this region worked."
-msgstr ""
+msgstr "Cap dels ponts recomanats per a aquesta regió han funcionat."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:990
 msgid "Try another region or getting a bridge by mail."
-msgstr ""
+msgstr "Proveu una altra regió o obteniu un pont per correu."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1018
-#, fuzzy
 msgid "Error asking for a bridge"
-msgstr "S'ha produït un error mentre es cercaven actualitzacions"
+msgstr "S'ha produït un error en demanar un pont"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1034
 msgid "Tails failed to ask for a bridge based on your region."
-msgstr ""
+msgstr "El Tails ha fallat en demanar un pont basat en la vostra regió."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1050
 msgid ""
 "Please, <a href=\"support/talk\">report this error</a> and try asking for a "
 "bridge by email."
 msgstr ""
+"<a href=\"support/talk\">Notifiqueu aquest error</a> i proveu de demanar un "
+"pont per correu electrònic."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1087
-#, fuzzy
 msgid "Open _details"
-msgstr "Obre el Clonador de Tails"
+msgstr "Obre els _detalls"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1142
 msgid "• Wrong clock"
@@ -3900,9 +3881,8 @@ msgid "Configure a Local _Proxy"
 msgstr "Configura un _Servidor Intermediari local"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1374
-#, fuzzy
 msgid "• Tor bridge"
-msgstr "• Pont de Tor per correu electrònic"
+msgstr "• Pont Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1394
 msgid ""
@@ -3916,9 +3896,8 @@ msgstr ""
 "parentals."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1410
-#, fuzzy
 msgid "Configure a Tor _Bridge"
-msgstr "Configureu un pont de Tor"
+msgstr "Configureu un _pont Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1449
 msgid ""
@@ -4254,696 +4233,3 @@ msgstr "desembre"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Rellotge"
-
-#~ msgid "Suspend"
-#~ msgstr "Suspèn"
-
-#~ msgid "Restart"
-#~ msgstr "Reinicia"
-
-#~ msgid "Power Off"
-#~ msgstr "Apaga"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "Hi ha un error de sintaxis a l'adreça del pont"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr "Cal establir un pont si voleu ocultar que esteu utilitzant Tor"
-
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "Per obtenir un pont, envieu un correu electrònic buit a "
-#~ "<tt>bridges@torproject.org</tt> des d'una adreça de correu electrònic de "
-#~ "Gmail o Riseup amb el vostre telèfon i escanegeu el codi QR que s'adjunta "
-#~ "a la resposta automàtica."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Escaneja codi QR"
-
-#~ msgid "Documentation"
-#~ msgstr "Documentació"
-
-#~ msgid ""
-#~ "Authentication is required to start a Root Console. Enter the "
-#~ "administration password that you set up in the Welcome Screen."
-#~ msgstr ""
-#~ "Cal autenticar-se per iniciar una consola d'administrador. Introduïu la "
-#~ "contrasenya d'administrador que heu configurat a la Pantalla de "
-#~ "Benvinguda."
-
-#~ msgid ""
-#~ "For better security, no administration password is set up in Tails by "
-#~ "default. To start a Root Console, restart Tails and set up an "
-#~ "administration password in the Welcome Screen."
-#~ msgstr ""
-#~ "Per a una millor seguretat, Tails no té una contrasenya d'administrador "
-#~ "configurada per defecte. Per executar el terminal d'administrador, "
-#~ "reinicieu Tails i configureu una contrasenya d'administrador a la "
-#~ "Pantalla de Benvinguda."
-
-#~ msgid "Root Console"
-#~ msgstr "Terminal d'administrador"
-
-#~ msgid "Opens a console as the root user"
-#~ msgstr "Obre un terminal com a administrador"
-
-#~ msgid "admin"
-#~ msgstr "administrador"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr "Per a executar un terminal amb accés complet heu d'autenticar-vos."
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Connexió de xarxa"
-
-#~ msgid "Obsolete"
-#~ msgstr "Obsolet"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Heu de migrar les vostres claus OpenPGP"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i> 78 ara substitueix l'extensió <i>Enigmail</i> amb "
-#~ "suport integrat per a l'encriptació OpenPGP. Per continuar utilitzant les "
-#~ "vostres claus OpenPGP a <i>Thunderbird</i>, seguiu les nostres "
-#~ "instruccions de migració."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "_Obre les instruccions de migració"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_Migrar més tard"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "Vam substituir aquesta configuració addicional a Tails 4.19 (juny de "
-#~ "2021) per un assistent de connexió Tor integrat a l'escriptori.\n"
-#~ "\n"
-#~ "Se us demanarà si voleu utilitzar els ponts Tor quan us connecteu a Tor "
-#~ "després d'iniciar Tails.\n"
-#~ "\n"
-#~ "Si voleu treballar fora de línia, activeu el mode fora de línia a la "
-#~ "configuració addicional."
-
-#~ msgid "Technical details to include"
-#~ msgstr "Detalls tècnics per incloure"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Terminal d'administrador"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "obfs4 ..."
-#~ msgstr "obfs4 ..."
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Obre el Monitor de Xarxa"
-
-#, python-brace-format
-#~ msgid ""
-#~ "<b>Shape the future of Tails, today.</b>\n"
-#~ "\n"
-#~ "Contribute to <a href=\"{url}\">our ongoing fundraiser</a>!"
-#~ msgstr ""
-#~ "<b>Doneu forma al futur de Tails, avui.</b>\n"
-#~ "\n"
-#~ "Contribuïu a <a href=\"{url}\">la nostra recaptació de fons</a>!"
-
-#, python-brace-format
-#~ msgid ""
-#~ "<b>Your donations help us innovate and stay independent.</b>\n"
-#~ "\n"
-#~ "Support <a href=\"{url}\">our ongoing fundraiser</a>!"
-#~ msgstr ""
-#~ "<b>Les vostres donacions ens ajuden a innovar i a mantenir-nos "
-#~ "independents.</b>\n"
-#~ "\n"
-#~ "Doneu suport a <a href=\"{url}\">la nostra recaptació de fons</a>!"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Per informació de depuració, executeu l'ordre següent: sudo tails-"
-#~ "debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Obre els circuits onion"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "S'està iniciant el Navegador Insegur..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Això pot trigar una estona, espereu."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Restableix la connexió Tor"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "S'ha produït un error en actualitzar la clau de signatura"
-
-#~ msgid ""
-#~ "Something went wrong when starting your Tails USB stick for the first "
-#~ "time: resizing the system partition failed"
-#~ msgstr ""
-#~ "S'ha produït un error en iniciar el vostre llapis USB de Tails per "
-#~ "primera vegada: no s'ha pogut canviar la mida de la partició del sistema"
-
-#~ msgid ""
-#~ "It will be impossible to create a Persistent Storage or apply automatic "
-#~ "upgrades."
-#~ msgstr ""
-#~ "Serà impossible crear un Emmagatzematge Persistent o aplicar "
-#~ "actualitzacions automàtiques."
-
-#~ msgid ""
-#~ "Try to follow our instructions on <a href=\"%INSTALLPAGE%\">installing "
-#~ "Tails on a USB stick</a> again or use a different USB stick."
-#~ msgstr ""
-#~ "Intenteu seguir les nostres instruccions sobre com <a href=\"%INSTALLPAGE%"
-#~ "\">instal·lar Tails en un llapis USB</a> de nou o utilitzeu un llapis USB "
-#~ "diferent."
-
-#~ msgid ""
-#~ "If you have already tried this, please send us an error report to help us "
-#~ "solve this issue."
-#~ msgstr ""
-#~ "Si ja ho heu provat, envieu-nos un informe d'error per ajudar-nos a "
-#~ "resoldre aquest problema."
-
-#~ msgid ""
-#~ "Tails protects your wallet.\n"
-#~ "\n"
-#~ "Help us keep your bitcoins safe!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">How we spend our money.</a>"
-#~ msgstr ""
-#~ "Tails protegeix la vostra cartera.\n"
-#~ "\n"
-#~ "Ajudeu-nos a mantenir els vostres bitcoins segurs!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">Com gastem els nostres diners.</a>"
-
-#~ msgid "Create Backup"
-#~ msgstr "Crea una còpia de seguretat"
-
-#, sh-format
-#~ msgid ""
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "És possible que preferiu reiniciar Tails i desactivar l'anonimització "
-#~ "d'adreces MAC."
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "El registre d'error no s'ha enviat per problemes de connexió. Intenteu "
-#~ "tornar a connectar-vos a la xarxa i cliqueu envia.\n"
-#~ "\n"
-#~ "Si això no funciona, podreu desar el registre."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "No s'ha pogut desar: %s."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "No s'ha enviat l'informe d'errors, probablement per problemes de xarxa.\n"
-#~ "\n"
-#~ "Com a opció, podeu desar-lo com a fitxer en un llapis USB i enviar-lo a "
-#~ "%s des d'un correu electrònic. Tingueu en compte que l'informe no serà "
-#~ "anònim si no preneu les vostres pròpies precaucions (fer servir Tor amb "
-#~ "un compte de correu electrònic d'un sol ús).\n"
-#~ "\n"
-#~ "Voleu desar-lo ara en un arxiu?"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "No es pot desbloquejar la memòria encriptada amb la contrasenya."
-
-#~ msgid "_Passphrase"
-#~ msgstr "_Contrasenya"
-
-#~ msgid "Resizing System Partition Failed"
-#~ msgstr "No s'ha pogut canviar la mida de la partició del sistema"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "S'ha produït un problema en configurar chroot."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "S'ha produït un problema en configurar el navegador."
-
-#, sh-format
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "L'anonimització de l'adreça MAC ha fallat per a la targeta de xarxa "
-#~ "${nic_name} (${nic}), de manera que s'ha desactivat temporalment.\n"
-#~ "\n"
-#~ "És possible que preferiu reiniciar Tails i desactivar l'anonimització "
-#~ "d'adreces MAC."
-
-#~ msgid "Language & Region"
-#~ msgstr "Llengua i regió"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Algunes particions del dispositiu de destinació %(device)s estan "
-#~ "muntades. Es desmuntaran abans de començar el procés d'instal·lació."
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "S'està introduint el dispositiu_desmuntat per a \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "S'estan desmuntant els sistemes de fitxers muntats a \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "S'està desmuntant \"%(udi)s\" a \"%(device)s\""
-
-#~ msgid "Report an Error"
-#~ msgstr "Informe d'error"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "Heu activat el mode fora de línia a la pantalla de benvinguda."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "És impossible connectar-se a Tor en mode fora de línia."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "Per connectar-vos a Tor i a Internet, reinicieu Tails sense el mode fora "
-#~ "de línia."
-
-#~ msgid "Lock screen"
-#~ msgstr "Bloca la pantalla"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Informació de la versió del paquet:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "no disponible"
-
-#~ msgid ""
-#~ "End this year by giving the gift of privacy.\n"
-#~ "\n"
-#~ "Contribute to our annual fundraiser today!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Why donate "
-#~ "to Tails?</a>"
-#~ msgstr ""
-#~ "Acabeu aquest any regalant privadesa.\n"
-#~ "\n"
-#~ "Contribuïu avui a la nostra recaptació de fons anual!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Per què "
-#~ "fer una donació a Tails?</a>"
-
-#~ msgid ""
-#~ "Our annual fundraiser is live!\n"
-#~ "\n"
-#~ "Keep everybody free and safe online with a gift to Tails.\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Why donate "
-#~ "to Tails?</a>"
-#~ msgstr ""
-#~ "Hem activat la nostra recaptació de fons anual!\n"
-#~ "\n"
-#~ "Mantingueu tothom lliure i segur en línia amb un regal a Tails.\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Per què "
-#~ "fer una donació a Tails?</a>"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Nom del programari afectat"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Passos exactes per reproduir l'error"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Resultat real i descripció de l'error"
-
-#~ msgid "Desired result"
-#~ msgstr "Resultat desitjat"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Envieu-nos comentaris en un correu encriptat."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Copyright © 2009-2018 desenvolupadors de Tails (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Desenvolupadors de Tails <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "Víctor Dargallo"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Copyright © 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack: envia comentaris en un correu xifrat\n"
-#~ "Copyright (C) 2009-2018 desenvolupadors de Tails <tails@boum.org>\n"
-#~ "\n"
-#~ "Aquest programa és programari lliure; es pot redistribuir-lo i/o "
-#~ "modificar\n"
-#~ "sota els termes de la Llicència Pública General de GNU tal com la "
-#~ "publica\n"
-#~ "la Free Software Foundation; ja sigui la versió 3 de la llicència, o "
-#~ "(segons\n"
-#~ "la vostra opció) qualsevol versió posterior.\n"
-#~ "\n"
-#~ "Aquest programa es distribueix amb l'esperança que sigui útil, però\n"
-#~ "SENSE CAP GARANTIA; sense ni tan sols la garantia implícita de\n"
-#~ "COMERCIABILITAT O ADEQUACIÓ PER A UN PROPÒSIT PARTICULAR. Vegeu la\n"
-#~ "Llicència Pública General de GNU per obtenir més detalls.\n"
-#~ "\n"
-#~ "Heu d'haver rebut una còpia de la Llicència Pública General de GNU\n"
-#~ "juntament amb aquest programa. Si no, vegeu <http://www.gnu.org/licenses/"
-#~ ">.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Ajuda:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Adreça de correu electrònic (si voleu una resposta de nosaltres)"
-
-#~ msgid "Unlock"
-#~ msgstr "Desbloquejar"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "_Emmagatzematge persistent encriptat"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr "Entrar contrasenya per desbloquejar l'emmagatzematge persistent"
-
-#~ msgid "_Delete..."
-#~ msgstr "_Suprimeix..."
-
-#~ msgid "_Change Passphrase..."
-#~ msgstr "_Canvia la contrasenya..."
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Ajudeu-nos a arreglar aquest error!</h1>\n"
-#~ "<p>Llegeix <a href=\"%s\">les nostres instruccions de comunicació "
-#~ "d'errors</a>.</p>\n"
-#~ "<p><strong>No incloeu més informació personal \n"
-#~ "que la necessària!</strong></p>\n"
-#~ "<h2>Sobre el fet de donar-nos una adreça de correu</h2>\n"
-#~ "<p>\n"
-#~ "Donar-nos una adreça de correu ens permet contactar amb vosaltres per "
-#~ "aclarir el\n"
-#~ "problema. Això és necessari per la majoria d'informes que rebem, ja que "
-#~ "la major part\n"
-#~ "d'informes sense informació de contacte són inútils. D'altra banda, "
-#~ "aquest fet també dóna\n"
-#~ "una oportunitat als espies o al vostre proveïdor d'internet per confirmar "
-#~ "que esteu usant el Tails.\n"
-#~ "</p> \n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>No s'ha pogut triar un servidor de baixada.</b>\n"
-#~ "\n"
-#~ "Això no hauria de passar. Informeu de l'error."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Hi ha hagut un error mentre es triava el servidor de baixada"
-
-#, fuzzy
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "The Amnesic Incognito Live System"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Voleu iniciar el Navegador Insegur?"
-
-#, fuzzy
-#~ msgid ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-#~ msgstr ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-
-#~ msgid "Enabled"
-#~ msgstr "Habilitat"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist ha fallat amb el següent codi {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cryptsetup amb el següent codi {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "ive-persist ha fallat amb el següent codi {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "unmount ha fallat amb el següent codi {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Assistent de persistència - Creació de volum persistent"
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>Aneu amb compte!</b> L'ús de la persistència té conseqüències que cal "
-#~ "entendre bé. El Tails no us pot ajudar si l'utilitza malament. Consulteu "
-#~ "la pàgina de <i>persistència xifrada</i>de la documentació del Tails per "
-#~ "a més informació."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "La contrasenya no pot quedar buida"
-
-#~ msgid "Failed"
-#~ msgstr "Error"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "S'està muntant la partició persistent de Tails."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "La partició persistent de Tails serà muntada. "
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Els permisos del volum persistent seran corregits."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "S'està creant la configuració de persistència predeterminada."
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "Es crearà la configuració de persistència predeterminada."
-
-#~ msgid "Creating..."
-#~ msgstr "Creant..."
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Creant el volum persistent..."
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Assistent de persistència - Configuració del volum persistent"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "Especifiqueu els arxius que seran desats al volum persistent"
-
-#~ msgid "Saving..."
-#~ msgstr "S'està desant..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Desant la configuració persistent..."
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Assistent de persistència - Eliminació del volum persistent"
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "Esborrant el volum persistent..."
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "Conserva els arxius emmagatzemats en la carpeta \"Persistent\""
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Llengua, administració de contrasenya i configuració addicional"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Adreces d'interès desades al Navegador Tor"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Configuració de dispositius en xarxa i connexions"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "Programari instal·lat en iniciar el Tails"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Client Bitcoin"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Perfils de Pidgin i clauer d'OTR"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "Claus SSH, configuració i amfitrions coneguts"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Configura el volum persistent de Tails"
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "No es pot eliminar un volum persistent mentre es troba en us. Cal "
-#~ "reiniciar Tails sense persistència."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "El volum persistent no està desbloquejat."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "El volum persistent no està muntat."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "El volum persistent és il·legible. Potser hi ha problemes de permisos o "
-#~ "propietat."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Assistent de persistència - Acabat"
-
-#~ msgid ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."
-#~ msgstr ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."
-
-#~ msgid "Delete the persistent volume and its content"
-#~ msgstr "Suprimeix el volum persistent i el seu contingut"
-
-#~ msgid "Configure persistent volume"
-#~ msgstr "Configura el volum persistent"

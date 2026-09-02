@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Remove:
+#
+# - runtime-generated files that don't exist in the rootfs,
+#   in order to avoid confusing noise in the build output
+# - the bits about `kill-boot-profile` at the end: they're
+#   only useful when profiling the boot
+# - some hardware-dependent files
+
 set -eu
 set -o pipefail
 

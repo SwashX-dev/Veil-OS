@@ -12,13 +12,15 @@
 # Pham Tri <phamxminhtri3@gmail.com>, 2026.
 # Ngo Lam Bao An <onionandsalad@gmail.com>, 2026.
 # Anonymous <onionandsalad@proton.me>, 2026.
+# Phạm Minh Đức <gaggag_gaggag_gag@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-08-05 11:02+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-09-02 11:11+0200\n"
+"PO-Revision-Date: 2026-08-27 10:51+0000\n"
+"Last-Translator: Phạm Minh Đức "
+"<gaggag_gaggag_gag@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/tor/tails-gui/"
 "vi/>\n"
 "Language: vi\n"
@@ -26,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -981,12 +983,10 @@ msgstr ""
 "Đang nâng cấp kho lưu trữ lâu dài. Quá trình này có thể sẽ mất một lúc…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Có lỗi xảy ra khi đang mở khoá Ổ đĩa lưu trữ Bền vững: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Có lỗi xảy ra khi đang nâng cấp Ổ đĩa lưu trữ Bền vững: {}"
 
@@ -998,12 +998,10 @@ msgstr ""
 "{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Có lỗi xảy ra khi đang kích hoạt Ổ đĩa lưu trữ Bền vững: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "Không thể hủy bỏ quá trình sửa chữa hệ thống tập tin của kho lưu trữ lâu "
@@ -2176,7 +2174,7 @@ msgstr ""
 #: ../config/chroot_local-includes/usr/share/applications/org.boum.tails.PersistentStorage.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/window.ui.in:24
 msgid "Persistent Storage"
-msgstr "Kho Lưu Trữ Bền vững"
+msgstr "Bộ Nhớ Lưu Trữ Bền Vững"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:56
 msgid "Failed to start the Persistent Storage service"
@@ -2215,7 +2213,6 @@ msgstr "Dữ liệu của tính năng này vẫn được lưu lại."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Có lỗi xảy ra khi kích hoạt tính năng {}"
 
@@ -2234,7 +2231,6 @@ msgstr "Các chi tiết"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Có lỗi xảy ra khi bỏ kích hoạt tính năng {}"
 
@@ -2243,7 +2239,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Có lỗi xảy ra trong khi bỏ kích hoạt tính năng."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2261,12 +2256,10 @@ msgid "_Delete Data"
 msgstr "_Xoá bỏ Dữ liệu"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Đã có lỗi xảy ra khi xoá bỏ dữ liệu của tính năng {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Đã có lỗi xảy ra trong khi xoá bỏ dữ liệu của tính năng {}."
 
@@ -4207,594 +4200,3 @@ msgstr "Tháng mười hai"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Đồng hồ"
-
-#~ msgid "Suspend"
-#~ msgstr "Tạm ngưng"
-
-#~ msgid "Restart"
-#~ msgstr "Khởi động lại"
-
-#~ msgid "Power Off"
-#~ msgstr "Tắt nguồn"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "Địa chỉ cầu Bridge không đúng dạng"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "Cài đặt một cầu Bridge là cần thiết nếu bạn muốn ẩn giấu rằng bạn đang sử "
-#~ "dụng Tor"
-
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "Để lấy một cầu Bridge, gửi một email rỗng tới <tt>bridges@torproject.org</"
-#~ "tt> từ một địa chỉ email Gmail hoặc Riseup với điện thoại của bạn và quét "
-#~ "scan mã code QR được đính kèm vào phản hồi tự động."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Quét mã QR"
-
-#~ msgid "Documentation"
-#~ msgstr "Tài liệu"
-
-#, fuzzy
-#~| msgid ""
-#~| "Opens a terminal as the root user, using gksu to ask for the password"
-#~ msgid "Opens a console as the root user"
-#~ msgstr ""
-#~ "Mở một Terminal với tư cách quản lý hệ thống, sử dụng gksu để yêu cầu mật "
-#~ "khẩu"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr "Để khởi động một Root Terminal gốc, bạn cần phải xác thực."
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Kết nối Mạng"
-
-#~ msgid "Obsolete"
-#~ msgstr "Lỗi thời"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Bạn cần di tản các khoá key OpenPGP của bạn"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i> 78 hiện thay thế cho tiện ích <i>Enigmail</i> với hỗ "
-#~ "trợ tích hợp sẵn cho mã hoá OpenPGP. Để tiếp tụp sử dụng khoá key OpenPGP "
-#~ "trong <i>Thunderbird</i>, hãy theo bước các chỉ dẫn dịch chuyển của chúng "
-#~ "tôi."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "_Mở các chỉ dẫn dịch chuyển"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_Dịch chuyển sau"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "Chúng tôi đã thay thế cài đặt bổ sung này trong Tails 4.19 (tháng sáu "
-#~ "2021) với một trình hỗ trợ kết nối Tor được tích hợp trong màn hình "
-#~ "Desktop.\n"
-#~ "\n"
-#~ "Bạn sẽ được hỏi rằng, liệu bạn có muốn sử dụng cầu Bridge Tor khi kết nối "
-#~ "tới Tor sau khi khởi chạy Tails không.\n"
-#~ "\n"
-#~ "Nếu bạn muốn làm việc ngoại tuyến, hãy kích hoạt Chế độ Ngoại tuyến trong "
-#~ "phần cài đặt bổ sung."
-
-#~ msgid "Technical details to include"
-#~ msgstr "Những chi tiết kỹ thuật để bao gồm"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Mở Terminal Root với tư cách quản lý hệ thống"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "obfs4 ..."
-#~ msgstr "obfs4 ..."
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Mở trình theo dõi Mạng"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Để có thông tin gỡ rối, thực thi dòng lệnh dưới đây: sudo tails-debugging-"
-#~ "info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Mở các mạch nối Onion"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Đang khởi chạy trình duyệt không an toàn..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Việc này có thể mất chút thời gian, nên hay kiên nhẫn."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Khởi động lại kết nối Tor"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Đã có lỗi trong khi cập nhật khoá key chữ ký"
-
-#, fuzzy
-#~| msgid "You can send an error report to help solve the issue."
-#~ msgid ""
-#~ "If you have already tried this, please send us an error report to help us "
-#~ "solve this issue."
-#~ msgstr "Bạn có thể gửi đi một báo cáo sự cố để giúp khắc phục vấn đề."
-
-#~ msgid ""
-#~ "Tails protects your wallet.\n"
-#~ "\n"
-#~ "Help us keep your bitcoins safe!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">How we spend our money.</a>"
-#~ msgstr ""
-#~ "Tails bảo vệ cho túi tiền, ví của bạn.\n"
-#~ "\n"
-#~ "Hãy giúp đỡ chúng tôi giữ cho những đồng bitcoin của các bạn được an "
-#~ "toàn!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">Chúng tôi chi tiêu tiền bạc của chúng tôi như "
-#~ "thế nào.</a>"
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "Tạo ra"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Báo cáo lỗi bug không thể được gửi đi, có thể do vấn đề về mạng. Vui lòng "
-#~ "thử kết nối lại tới mạng và bấm gửi lại.\n"
-#~ "\n"
-#~ "Nếu nó không hoạt động, bạn sẽ được đề nghị lưu lại báo cáo lỗi bug."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Không thể sao lưu %s."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Báo cáo lỗi bug không thể được gửi đi, có thể do lỗi mạng.\n"
-#~ "\n"
-#~ "Như một biện pháp gỡ rối, bạn có thể sao lưu báo cáo lỗi bug như một tập "
-#~ "tin trên ổ USB và cố gắng gửi nó cho chúng tôi tại %s từ tài khoản email "
-#~ "của bạn sử dụng một hệ thống khác. Hãy lưu ý rằng báo cáo lỗi bug của bạn "
-#~ "sẽ không được ẩn danh khi làm như vậy trừ khi tự bạn có thể thực hiện một "
-#~ "số biện pháp bổ sung (ví dụ như sử dụng Tor với một tài khoản email bỏ "
-#~ "đi).\n"
-#~ "\n"
-#~ "Bạn có muốn sao lưu báo cáo lỗi bug vào một tập tin không?"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "Không thể mở khóa vùng lưu trữ đã được mã hóa với cụm mật khẩu này."
-
-#~ msgid "_Passphrase"
-#~ msgstr "_Cụm mật khẩu"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "Thất bại khi cài đặt chroot."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Thất bại khi cấu hình trình duyệt."
-
-#, fuzzy, sh-format
-#~| msgid ""
-#~| "MAC address anonymization failed for network card ${nic_name} (${nic}) "
-#~| "so it is temporarily disabled.\n"
-#~| "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "Ẩn danh hoá địa chỉ MAC đã thất bại cho card mạng ${nic_name} (${nic}) do "
-#~ "đó nó đã bị vô hiệu hoá tạm thời.\n"
-#~ "Có lẽ sẽ thích hợp hơn cho bạn khi khởi động lại Tails và vô hiệu hoá ẩn "
-#~ "danh địa chỉ MAC."
-
-#~ msgid "Language & Region"
-#~ msgstr "Ngôn ngữ và Vùng miền"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Một vài phân vùng của thiết bị %(device)s đã được gắn lên. Chũng sẽ bị gỡ "
-#~ "ra trước khi bắt đầu quá trình cài đặt."
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "Đang nhập _thiết bị rời unmount cho \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr ""
-#~ "Đang tách rời unmount hệ thống tập tin đã gắn mounted trên \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "Đang tách rời unmount \"%(udi)s\" trên \"%(device)s\""
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Báo cáo một lỗi"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "Bạn đã bật Chế độ Ngoại tuyến trong Màn hình Chào mừng."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "Kết nối tới Tor trong chế độ ngoại tuyến là bất khả khi."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "Để kết nối tới Tor và Internet, khởi động lại Tails mà không có Chế độ "
-#~ "Ngoại tuyến."
-
-#~ msgid "Lock screen"
-#~ msgstr "Khóa màn hình"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Thông tin phiên bản:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "không có sẵn"
-
-#, fuzzy
-#~| msgid ""
-#~| "Tails needs donations to keep everybody free and safe online.\n"
-#~| "\n"
-#~| "Every bit helps in our fight against surveillance and censorship!\n"
-#~| "\n"
-#~| "<a href=\"file:///usr/share/doc/tails/website/"
-#~| "donate.en.html#expenses\">How we spend our money.</a>"
-#~ msgid ""
-#~ "Our annual fundraiser is live!\n"
-#~ "\n"
-#~ "Keep everybody free and safe online with a gift to Tails.\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Why donate "
-#~ "to Tails?</a>"
-#~ msgstr ""
-#~ "Tails cần những sự quyên góp trợ giúp để giúp cho mọi người được tự do và "
-#~ "an toàn trực tuyến online.\n"
-#~ "\n"
-#~ "Mỗi chút một những đóng góp hỗ trợ cho cuộc đấu tranh của chúng tôi kháng "
-#~ "lại sự theo dõi và kiểm duyệt!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">Chúng tôi chi tiêu tiền bạc của chúng tôi như "
-#~ "thế nào.</a>"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Tên của phần mềm bị ảnh hưởng"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Các bước chính xác để tạo lại lỗi sai"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Kết quả thực tế và mô tả của lỗi"
-
-#~ msgid "Desired result"
-#~ msgstr "Kết quả mong muốn"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Gửi phản hồi trong thư được mã hóa."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Bản quyền © 2009-2018 Các lập trình viên Tails (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Các nhà phát triển Tails <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "phiên dịch viên-những sự đóng góp"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Bản quyền © 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack - Gửi phản hồi trong thư được mã hóa\n"
-#~ "Bản quyền (C) 2009-2018 Nhà phát triển Tails <tails@boum.org>\n"
-#~ "\n"
-#~ "Chương trình này là  phần mềm miễn phí; bạn có thể phân phối lại  nó và/"
-#~ "hoặc sửa đổi\n"
-#~ "nó theo  các điều khoản của Giấy phép Công cộng Chung GNU  được phát hành "
-#~ "bởi\n"
-#~ "Tổ chức Phần mềm Tự do; hoặc  phiên bản 3 của Giấy phép, hoặc (tại\n"
-#~ "tùy chọn của bạn) bất kỳ phiên bản nào sau này.\n"
-#~ "\n"
-#~ "Chương trình này  được phân phối với  hy vọng rằng nó sẽ  hữu ích, nhưng\n"
-#~ "KHÔNG CÓ   BẤT KỲ  BẢO HÀNH NÀO;   thậm chí  còn không có   bảo đảm   về\n"
-#~ "KHẢ NĂNG THƯƠNG MẠI  hoặc PHÙ HỢP  CHO MỘT  MỤC ĐÍCH CỤ THỂ .   Xem  GNU\n"
-#~ "Giấy phép Công cộng Chung để biết thêm chi tiết.\n"
-#~ "\n"
-#~ "Bạn nên nhận được một bản sao Giấy phép Công cộng Chung GNU\n"
-#~ "cùng với chương trình này.  Nếu không, hãy xem <http://www.gnu.org/"
-#~ "licenses/>.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Trợ giúp:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Địa chỉ Email (nếu bạn muốn một câu trả lời từ chúng tôi)"
-
-#~ msgid "Unlock"
-#~ msgstr "Mở khóa"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "Đã mã hoá _Ổ đĩa lưu trữ liên tục kéo dài"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr "Nhập cụm mật khẩu của bạn để mở khóa ổ đĩa lưu trữ liên tục kéo dài"
-
-#~ msgid "_Delete..."
-#~ msgstr "_Đang xóa..."
-
-#~ msgid "_Change Passphrase..."
-#~ msgstr "_Thay đổi cụm mật khẩu..."
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Hãy giúp chúng tôi sửa lỗi của bạn!</h1>\n"
-#~ "<p>Đọc <a href=\"%s\"> những hướng dẫn báo cáo lỗi của chúng tôi</a>.</"
-#~ "p>\n"
-#~ "<p><strong>Đừng kèm theo những thông tin cá nhân ngoài những thứ\n"
-#~ "cần thiết!</strong></p>\n"
-#~ "<h2>Về việc đưa địa chỉ email cho chúng tôi</h2>\n"
-#~ "<p>\n"
-#~ "Việc đưa địa chỉ email cho phép chúng tôi liên hệ với bạn để làm rõ vấn "
-#~ "đề. Việc này\n"
-#~ "cần thiết đối với phần lớn những báo cáo chúng tôi nhận được vì đa số "
-#~ "những báo cáo\n"
-#~ "không có bất kỳ thông tin liên lạc nào đều là vô dụng. Mặt khác nó cũng "
-#~ "cung cấp\n"
-#~ "cơ hội cho những kẻ nghe trộm, như nhà cung cấp email hoặc Internet của "
-#~ "bạn, để\n"
-#~ "xác nhận rằng bạn đang sử dụng Tails\n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>Không thể chọn máy chủ tải về.</b>\n"
-#~ "\n"
-#~ "Việc này không nên xảy ra. Vui lòng báo lỗi."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Có lỗi khi chọn máy chủ tải về"
-
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "Hệ thống Cải trang Ẩn danh tự xóa Trực tuyến"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Khởi chạy trình duyệt không an toàn chứ?"
-
-#~ msgid ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-#~ msgstr ""
-#~ "Trình duyệt không an toàn không hề ẩn danh và các trang web mà bạn truy "
-#~ "cập có thể thấy rõ ràng địa chỉ IP thật của bạn.\\n\\n Chỉ sử dụng trình "
-#~ "duyệt không an toàn để đăng nhập vào một mạng lưới, và rồi đóng nó lại."
-
-#~ msgid "Enabled"
-#~ msgstr "Được bật lên"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persit thất bại với mã trả về {returncode}:\n"
-#~ " {stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cài đặt mã hóa thất bại với mã trả về {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "Tính trực tiếp-bền vững đã hỏng với mã trả về {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "gỡ ra thất bại với mã trả về {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Hướng dẫn phân vùng bền vững - Việc tạo dung lượng bền vững"
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "Đoạn mật khẩu không thể bỏ trống"
-
-#~ msgid "Failed"
-#~ msgstr "Thất bại"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Đang gắn phân vùng bền vững của Tails."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "Phân vùng bên vững của Tails sẽ được gắn vào"
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Sự cho phép của ổ đĩa bền vững sẽ được sửa chữa."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "Tạo cấu hình mặc định cho ổ đĩa bền vững."
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "Cấu hình mặc định cho ổ đĩa bền vững sẽ được tạo."
-
-#~ msgid "Creating..."
-#~ msgstr "Đang tạo..."
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Đang tạo ổ đĩa bền vững..."
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Hướng dẫn phân vùng bền vững - Cấu hình của ở đĩa bền vững"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "Chỉ rõ những tập tin sẽ được lưu lại trong ổ đĩa bền vững"
-
-#~ msgid "Saving..."
-#~ msgstr "Đang lưu..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Đang lưu cấu hình vùng bền vững..."
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Hướng dẫn phân vùng bền vững - Việc xóa ổ đĩa bền vững"
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "Đang xóa ổ đĩa bền vững..."
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "Giữ các tập tin được lưu trong thư mục `Persistent'"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Những thẻ đánh dấu được lưu trong Trình duyệt Tor"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Cấu hình của những thiết bị mạng và kết nối"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Máy trạm Bitcoin"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Những cấu hình Pidgin và móc khóa OTR"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "Những khóa SSH, cấu hình và những máy chủ được biết đến"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Cài đặt ổ đĩa bền vững của Tails"
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Không thể xóa ổ đĩa bền vững trong khi đang sử dụng. Bạn nên khởi động "
-#~ "lại Tails mà không có vùng bền vững."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "Dung lượng bền vững không được mở khóa."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Dung lượng bền vững chưa được gắn vào."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "Dung lượng bền vững không đọc được. Có vấn đề về sự cho phép hay sự sở "
-#~ "hữu?"
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Hướng dẫn phân vùng bền vững - Đã hoàn tất"
