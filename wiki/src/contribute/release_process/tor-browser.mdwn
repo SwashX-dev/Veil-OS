@@ -356,10 +356,11 @@ Commit and push your changes
 ----------------------------
 
     (
-	cd "${TBB_ARCHIVE:?}" && \
-	git commit -m "Add Tor Browser ${TBB_VERSION:?}" && \
-	git annex sync --no-content && \
-	git annex copy --to origin -- "${TBB_VERSION:?}" && \
+	set -eu -o pipefail
+	cd "${TBB_ARCHIVE:?}"
+	git commit -m "Add Tor Browser ${TBB_VERSION:?}"
+	git annex sync --no-content
+	git annex copy --to origin -- "${TBB_VERSION:?}"
 	git annex sync --no-content
     )
 
@@ -367,13 +368,14 @@ Adjust the URL in the main Git repository
 -----------------------------------------
 
     (
-    cd "${TAILS_GIT_REPO:?}" && \
+    set -eu -o pipefail
+    cd "${TAILS_GIT_REPO:?}"
     git checkout "${TBB_IMPORT_BRANCH:?}"
     current_branch=$(git branch | awk '/^\* / { print $2 }')
     for branch in "${current_branch:?}" ; do
-       git checkout "${branch:?}" && \
+       git checkout "${branch:?}"
        echo "https://torbrowser-archive.tails.net/${TBB_VERSION:?}/" > \
-            config/chroot_local-includes/usr/share/tails/tbb-dist-url.txt && \
+            config/chroot_local-includes/usr/share/tails/tbb-dist-url.txt
        git commit config/chroot_local-includes/usr/share/tails/tbb-dist-url.txt \
            -m "Fetch Tor Browser from our own archive" && \
        git show
