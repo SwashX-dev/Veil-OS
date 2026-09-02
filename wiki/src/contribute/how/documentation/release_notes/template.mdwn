@@ -61,7 +61,7 @@ vulnerability in $APPLICATION.
 - Update the *Tor* client to 0.1.2.3.
 
 - Update (the *Linux* kernel to a.b.c|(some|most) firmware packages). <!-- Only if 'a.b' increased --> This improves support for newer
-  hardware: graphics, Wi-Fi, and so on.
+  hardware, including graphics cards, Wi-Fi, and more.
 
 <!--
 
