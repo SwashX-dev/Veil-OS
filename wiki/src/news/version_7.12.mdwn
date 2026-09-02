@@ -3,11 +3,10 @@
 [[!pagetemplate template="news.tmpl"]]
 [[!tag announce]]
 
-*Firefox* is moving to a [2-week release
+Firefox is moving to a [2-week release
 cadence](https://groups.google.com/a/mozilla.org/g/dev-platform/c/qlaQ1YSlOP8)
-starting in September, and so Tails is doing the same. Tails 7.12 is the first
-regular release on this new cadence, as [[Tails 7.11|news/version_7.11]] was
-released only 2 weeks ago.
+starting in September, and so Tor Browser and Tails are doing the same. Tails
+7.12 is the first release on this new cadence.
 
 <h1 id="changes">Changes and updates</h1>
 
