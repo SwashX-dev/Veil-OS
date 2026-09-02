@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"POT-Creation-Date: 2026-09-02 11:11+0200\n"
 "PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Armenian <https://hosted.weblate.org/projects/tor/tails-gui/"
@@ -906,12 +906,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Արդիացվում է հաստատակամ պահեստարանը: Սա կարող է երկար տևել…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Հաստատակամ պահեստարան ապակողպման սխալ. {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Հաստատակամ պահեստարանի արդիացման սխալ. {}"
 
@@ -923,12 +921,11 @@ msgstr ""
 "{features}:"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Հաստատակամ պահեստարանի գործարկման սխալ. {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Չստացվեց սկսել հաստատակամ պահեստարանի ծառայությունը"
 
@@ -2037,7 +2034,6 @@ msgstr "Այս հատկության տվյալները միևնույն է պա�
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Հատկության գործարկման սխալ {}"
 
@@ -2057,7 +2053,6 @@ msgstr "Մանրամասներ"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Հատկության ապագործարկման սխալ {}"
 
@@ -2067,7 +2062,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Հատկության ապագործարկման սխալ {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2083,12 +2077,11 @@ msgid "_Delete Data"
 msgstr "_Ջնջել տվյալները"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "{} հատկությունից տվյալների ջնջման սխալ"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "{} հատկությունից տվյալների ջնջման սխալ"
 

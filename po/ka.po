@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"POT-Creation-Date: 2026-09-02 11:11+0200\n"
 "PO-Revision-Date: 2026-07-12 20:01+0000\n"
 "Last-Translator: Alan <georgianization@outlook.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/tor/tails-gui/"
@@ -978,12 +978,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "ახლდება მუდმივი საცავი. გარკვეულ დროს გასტანს…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "შეცდომა მუდმივი საცავის გახსნისას: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "შეცდომა მუდმივი საცავის განახლებისას: {}"
 
@@ -995,12 +993,10 @@ msgstr ""
 "{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "შეცდომა მუდმივი საცავის ამოქმედებისას: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "ვერ მოხერხდა მუდმივი მეხსიერების საფაილო სისტემის გასწორება: {}"
 
@@ -2205,7 +2201,6 @@ msgstr "ამ შესაძლებლობის მონაცემე�
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "შეცდომა შესაძლებლობის ამოქმედებისას {}"
 
@@ -2224,7 +2219,6 @@ msgstr "დეტალები"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "შეცდომა შესაძლებლობის გაუქმებისას {}"
 
@@ -2233,7 +2227,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "შეცდომა წარმოიშვა ამ შესაძლებლობის გაუქმებისას."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2250,12 +2243,10 @@ msgid "_Delete Data"
 msgstr "მონაცემების _წაშლა"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "შეცდომა მონაცემების წაშლისას შესაძლებლობისთვის {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "შეცდომა წარმოიშვა მონაცემების წაშლისას შესაძლებლობისთვის {}."
 

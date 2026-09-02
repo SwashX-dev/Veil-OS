@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"POT-Creation-Date: 2026-09-02 11:11+0200\n"
 "PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Serbian <https://hosted.weblate.org/projects/tor/tails-gui/sr/"
@@ -978,12 +978,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Надоградња Трајног складишта. Ово може потрајати…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Greška pri otključavanju Upornog Skladišta: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Greška pri nadogradnji Upornog Skladišta: {}"
 
@@ -994,12 +992,10 @@ msgstr ""
 "Neuspelo aktiviranje nekih karakteristika Upornog Skladišta: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Greška tokom aktiviranja Upornog Skladišta: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "Није успело прекидање приликом поправке система датотека Трајног складишта: "
@@ -2205,7 +2201,6 @@ msgstr "Podaci ove odlike su još uvek sačuvani."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Greška pri aktiviranju odlike {}"
 
@@ -2224,7 +2219,6 @@ msgstr "Detalji"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Greška pri detektovanju odlike {}"
 
@@ -2233,7 +2227,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Догодила се грешка приликом деактивације одлике."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2249,12 +2242,10 @@ msgid "_Delete Data"
 msgstr "_Obriši Podatke"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Greška pri brisanju podataka ove odlike {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Догодила се грешка приликом брисања података одлике {}."
 

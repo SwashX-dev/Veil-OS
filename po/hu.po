@@ -23,9 +23,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-08-05 11:02+0000\n"
-"Last-Translator: Viktor Varga <viktor.varga@gmail.com>\n"
+"POT-Creation-Date: 2026-09-02 11:11+0200\n"
+"PO-Revision-Date: 2026-08-25 17:39+0000\n"
+"Last-Translator: emma peel <emma.peel@riseup.net>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "hu/>\n"
 "Language: hu\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -711,7 +711,6 @@ msgid "Error while installing the upgrade"
 msgstr "Hiba frissítés telepítésekor"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
-#, fuzzy
 msgid "GNOME Software"
 msgstr "GNOME Software"
 
@@ -991,12 +990,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Tartós tároló frissítése. Ez eltarthat egy darabig…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Tartós tároló feloldási hiba: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Tartós tároló frissítési hiba: {}"
 
@@ -1006,12 +1003,10 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "A Tartós tároló néhány funkciójának beállítása sikertelen: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Tartós tároló aktiválási hiba: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Sikertelen megszakítás a Tartós tároló fájlrendszer javításának: {}"
 
@@ -1486,7 +1481,7 @@ msgid ""
 "Renaming your database to <i>${default_filename}</i> allows <i>Secrets</i> "
 "to open it automatically in the future."
 msgstr ""
-"Van egy <i>KeePassXC</i> vagy <i>Secrets</i>adatbázisod a <i>Tartós</i> "
+"Van egy <i>KeePassXC</i> vagy <i>Secrets</i> adatbázisod a <i>Tartós</i> "
 "mappában:\n"
 "\n"
 "<i>${filename}</i>\n"
@@ -2214,7 +2209,6 @@ msgstr "A funkció adatai továbbra is mentve."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Hiba a funkció aktiválásakor {}"
 
@@ -2233,7 +2227,6 @@ msgstr "Részletek"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Hiba a funkció deaktiválásakor {}"
 
@@ -2242,7 +2235,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Hiba történt a funkció deaktiválásakor."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2259,12 +2251,10 @@ msgid "_Delete Data"
 msgstr "Adatok _törlése"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Hiba a(z) {} szolgáltatás adatainak törlésekor"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Hiba történt a {} szolgáltatás adatainak törlésekor."
 
@@ -3335,7 +3325,6 @@ msgid "Activate Additional Software"
 msgstr "További szoftverek aktiválása"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
-#, fuzzy
 msgid "Flatpak"
 msgstr "Flatpak"
 
@@ -4186,642 +4175,3 @@ msgstr "December"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Óra"
-
-#~ msgid "Suspend"
-#~ msgstr "Felfüggesztés"
-
-#~ msgid "Restart"
-#~ msgstr "Újraindítás"
-
-#~ msgid "Power Off"
-#~ msgstr "Leállítás"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "Rosszul formázott híd cím"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "Egy híd beállítása szükséges, ha el szeretné rejteni azt hogy Tor-t "
-#~ "használ"
-
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "Híd kéréséhez küldjön egy üres emailt a <tt>bridges@torproject.org</tt> "
-#~ "címre Gmail vagy Riseup email címről a telefonjáról és olvassa le a QR "
-#~ "kódot ami az automatikus válaszhoz lett csatolva."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "QR-kód leolvasása"
-
-#~ msgid "Documentation"
-#~ msgstr "Dokumentáció"
-
-#, fuzzy
-#~| msgid ""
-#~| "Opens a terminal as the root user, using gksu to ask for the password"
-#~ msgid "Opens a console as the root user"
-#~ msgstr ""
-#~ "Indít egy terminált root felhasználóként, a gsku-val kérve a jelszót"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr "A Root terminálhoz azonosítania kell magát."
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Hálózati kapcsolat"
-
-#~ msgid "Obsolete"
-#~ msgstr "Elavult"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Migrálnia kell OpenPGP kulcsait"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i> 78 kicseréli az <i>Enigmail</i> bővítményt beépített "
-#~ "támogatással az OpenPGP titkosításhoz. Az OpenPGP kulcsai <i>Thunderbird</"
-#~ "i> használatához, kövesse a migrációs útmutatónkat."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "Migrálási útmutató meg_nyitása"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_Migrálás később"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "Kicseréltük ezt a további beállítást a Tails 4.19-ben (2021 június) egy "
-#~ "integrált Tor kapcsolat asszisztenssel.\n"
-#~ "\n"
-#~ "Rá fog kérdezni, hogy szeretne a Tor hidakat használni, a Tor-hoz "
-#~ "kapcsolódáshoz a Tails indítása után. \n"
-#~ "\n"
-#~ "Ha offline szeretne dolgozni válassz az Offline módot a további "
-#~ "beállításoknál."
-
-#~ msgid "Technical details to include"
-#~ msgstr "A csatolandó technikai adatok"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Root Terminal"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Hálózati monitor megnyitása"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Hibakeresési információért hajtsa végre a következő parancsot: sudo tails-"
-#~ "debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Nyitott Onion Áramkörök"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Az Unsafe Browser indítása..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Ez eltarthat egy ideig, kérjük legyen türelemmel."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Tor kapcsolat alaphelyzetbe állítása"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Hiba az aláíró kulcs frissítése során"
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "Létrehoz"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "A hibajelentés elküldése sikertelen, valószínűleg hálózati problémák "
-#~ "miatt. Kérjük csatlakozzon újra a hálózathoz, majd kattintson a küldésre "
-#~ "újra.\n"
-#~ "\n"
-#~ "Ha ez nem működik, lehetősége lesz lementeni a hibajelentést."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "A %s mentése sikertelen."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "A hibabejelentés nem volt elküldhető hálózati probléma miatt.\n"
-#~ "\n"
-#~ "Átmeneti megoldásként lementheti a hibát egy USB meghajtóra, elküldheti a "
-#~ "%s címre, az email címéről, egy másik gépről. Fontos tudni, hogy ebben az "
-#~ "esetben nem lesz névtelen a beküldése, csak akkor ha további lépéseket "
-#~ "tesz. (Például: Tor-t egy eldobható email címmel együtt használva.)\n"
-#~ "\n"
-#~ "Szeretné lementeni a hibajelentést egy fájlba?"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "A titkosított tároló nem dekódolható ezzel a jelszóval."
-
-#, fuzzy
-#~ msgid "_Passphrase"
-#~ msgstr "Jelszó:"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "A chroot beállítása sikertelen."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "A böngésző beállítása sikertelen."
-
-#, fuzzy, sh-format
-#~| msgid ""
-#~| "MAC address anonymization failed for network card ${nic_name} (${nic}) "
-#~| "so it is temporarily disabled.\n"
-#~| "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "A MAC cím anonimizálás a(z) ${nic_name} (${nic}) hálózati kártyán "
-#~ "sikertelen volt, így a szolgáltatás átmenetileg le lett tiltva.\n"
-#~ "Újraindíthatja a Tails-t és letilthatja a MAC cím anonimizálást."
-
-#~ msgid "Language & Region"
-#~ msgstr "Nyelv és régió"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Néhány partíció a cél eszközön %(device)s csatolva van. Ezek lecsatolásra "
-#~ "kerülnek a telepítés megkezdése előtt."
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "unmount_device végrehajtása a \"%(device)s\" eszközre"
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "Csatolt fájlrendszerek lecsatolása a \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "\"%(udi)s\" lecsatolása innen: \"%(device)s\""
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Hiba jelentése"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "Bekapcsolta az Offline módot az Üdvözlő képernyőn."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "Nem lehetséges a csatlakozás a Tor-hoz Offline módban."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "A Tor-hoz és internethez csatlakozáshoz indítsa újra a Tails-t Offline "
-#~ "mód nélkül."
-
-#~ msgid "Lock screen"
-#~ msgstr "Képernyőzár"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Verzió információ:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "nem elérhető"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Az érintett szoftver neve"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "A hiba reprodukálásának pontos lépései"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Aktuális eredmény és a hiba leírása"
-
-#~ msgid "Desired result"
-#~ msgstr "Elvárt eredmény"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Visszajelzés küldése titkosított emailben."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Copyright © 2009-2018 Tails fejlesztők (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Tails fejlesztők <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "fordítás készítői"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Copyright © 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack - Visszajelzés küldése titkosított emailben\n"
-#~ "Copyright (C) 2009-2018 Tails fejlesztők <tails@boum.org>\n"
-#~ "\n"
-#~ "Ez a program szabad szoftver; terjesztheti, és módosíthatja a\n"
-#~ " GNU General Public  License szerint amit a \n"
-#~ "Free Software Foundation publikált; a verzió 3 szerint, vagy \n"
-#~ "(döntése alapján) egy későbbi verzió szerint.\n"
-#~ "\n"
-#~ "Ez a program abban a reményben került terjesztésre, hogy hasznos, de NEM "
-#~ "VÁLLAL SEMMI GARANCIÁT;  belerétve a forgalomképességre és a megfelelő az "
-#~ "adott célra garanciákat is.\n"
-#~ "Tekintse meg a GNU\n"
-#~ "General Public License-t a részletekért.\n"
-#~ "\n"
-#~ "Kellett, hogy egy másolatot kapjon ezzel a szoftverrel a a GNU General "
-#~ "Public License-ből.\n"
-#~ "Ha nem találja tekintse meg a  <http://www.gnu.org/licenses/> oldalon.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Segítség:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Email cím (ha választ szeretne tőlünk)"
-
-#~ msgid "Unlock"
-#~ msgstr "Feloldás"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "Titkosított _Tartós tár"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr "Adja meg a jelszavát a tartóstár feloldásához"
-
-#, fuzzy
-#~ msgid "_Delete..."
-#~ msgstr "Törlés..."
-
-#, fuzzy
-#~ msgid "_Change Passphrase..."
-#~ msgstr "Jelmondat megjelenítése"
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Segítsen kijavítani a hibát!</h1>\n"
-#~ "<p>Olvassa el <a href=\"%s\">hibabejelentési útmutatót</a>.</p>\n"
-#~ "<p><strong>Kérjük a szükségesnél több személyes információt ne adjon meg!"
-#~ "</strong></p>\n"
-#~ "<h2>Az email címe megadásáról</h2>\n"
-#~ "<p>\n"
-#~ "Ha megadja nekünk az email címét, fel tudjuk venni a kapcsolatot a "
-#~ "probléma tisztázásához. Az esetek többségében ez a legtöbb "
-#~ "hibabejelentéshez szükséges, nélküle nem tudunk segíteni a "
-#~ "hibaelhárításban.\n"
-#~ "\n"
-#~ "Viszont ez lehetővé teszi egy harmadik fél részére, pl. internet- vagy "
-#~ "email szolgáltató, hogy tudomást szerezzen arról, hogy esetenként proxy "
-#~ "átjárókat használ az interneteléréshez.\n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>Nem sikerült letöltő szervert választani.</b>\n"
-#~ "\n"
-#~ "Ennek nem kellett volna megtörténnie. Kérjük, jelentse a hibát!"
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Hiba történt a letöltő szerver kiválasztása közben"
-
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "Az Amnesic Incognito Live System"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Indítsuk az Unsafe Browser-t?"
-
-#~ msgid "Enabled"
-#~ msgstr "Engedélyezve"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Perzisztencia varázsló - Tartós kötet létrehozása"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "A {size} persistent volume will be created on the <b>{vendor} {model}</b> "
-#~ "device. Data on this volume will be stored in an encrypted form protected "
-#~ "by a passphrase."
-#~ msgstr ""
-#~ "A {size} tartós kötet létre lesz hozva a <b>{vendor} {model}</b> "
-#~ "eszközön. Az adatok titkosított formában lesznek tárolva egy jelszóval."
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>Figyelem</b> A tartóstár használata olyan következményekhez vezethet, "
-#~ "amit jól meg kell érteni. A Tails nem tud segíteni azon, ha rosszul "
-#~ "csinálja! Tekintse meg a <i>Titkosított tartóstár</i> oldalt a Tails "
-#~ "dokumentációban a részletekért."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "A jelszó nem lehet üres"
-
-#~ msgid "Failed"
-#~ msgstr "Sikertelen"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Tails tartós partíció csatolása."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "A Tails tartós partíció csatolva lesz."
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "A hozzáférési jogosultságok javítva lettek a tartós köteten."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "Alapértelmezett tartóstár konfiguráció létrehozása"
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "Az alapértelmezett tartóstár konfiguráció kerül létrehozásra."
-
-#~ msgid "Creating..."
-#~ msgstr "Létrehozás..."
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Tartós kötet létrehozása..."
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Tartóstár varázsló - Tartós kötet konfigurálása"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "Válassza ki azokat a fájlokat amik a tartós kötetbe lesznek mentve"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The selected files will be stored in the encrypted partition {partition} "
-#~ "({size}), on the <b>{vendor} {model}</b> device."
-#~ msgstr ""
-#~ "A kiválasztott fájlok tárolva lesznek a {partition} ({size}) titkosított "
-#~ "partíción a(z) <b>{vendor} {model}</b> eszközön."
-
-#~ msgid "Saving..."
-#~ msgstr "Mentés..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Tartóstár beállítások mentése..."
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Tartóstár varázsló - Tartós kötet törlés"
-
-#~ msgid "Your persistent data will be deleted."
-#~ msgstr "A tartós adatok törlésre kerülnek."
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "A {partition} ({size}) tartós kötet a(z) <b>{vendor} {model}</b> eszközön "
-#~ "törölve lesz."
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "A tartós kötet törlése..."
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "A fájlok tárolása a 'Tartós' könyvtárban"
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Nyelv, adminisztrációs jelszó és további beállítások"
-
-#~ msgid "Save the last bridge that you used to connect to Tor"
-#~ msgstr "Az utolsó híd mentése, amit a Tor kapcsolathoz használt"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Könyvjelzők elmentve a Tor Böngészőben."
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Hálózati eszközök és kapcsolatok beállítása"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "A Tails indulásakor telepített szoftverek"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Thunderbird emailek, feedek és OpenPGP kulcsok"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Bitcoin kliens"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Pidgin profilok és OTR kulcstár"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "SSH kulcsok, konfiguráció és ismert számítógépek"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Tails tartós kötet telepítése"
-
-#~ msgid "Device already has a persistent volume."
-#~ msgstr "Az eszköz már rendelkezik tartós kötettel."
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "Az eszköz nem rendelkezik elég szabad hellyel."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr " Az eszköz nem tartalmaz tartós kötetet."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Nem lehet a tartós kötetet törölni amíg használatban van. Lehet újra kell "
-#~ "indítania a Tails-t tartós kötet nélkül."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "A tartós kötet zárolva van."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "A tartós kötet nincs csatolva."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "A tartós kötet nem olvasható. Jogosultság vagy tulajdonos problémák?"
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "A tartós kötet em írható."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Tails nem USB vagy SDIO eszközről fut."
-
-#~ msgid "Device is optical."
-#~ msgstr "Az eszköz optikai."
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr "Az eszköz nem a USB képpel vagy Tails telepítővel volt létrehozva."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Tartóstár varázsló - Befejezve"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "Bármilyen változtatás történt csak a Tails újraindítása után lép érvénybe."
-
-#~ msgid ""
-#~ "\\n\\nTo always enable the Unsafe Browser, turn on the Welcome Screen "
-#~ "feature of the Persistent Storage."
-#~ msgstr ""
-#~ "\\n\\nAz Unsafe Browser állandó engedélyezéséhez kapcsolja be a Tartós "
-#~ "Tár Üdvözlő Képernyő funkcióját."
-
-#~ msgid "Delete the persistent volume and its content"
-#~ msgstr "Tartós kötet és tartalmának törlése"
-
-#~ msgid "Configure persistent volume"
-#~ msgstr "Tartós kötet beállításai"
-
-#~ msgid "image"
-#~ msgstr "kép"
-
-#~ msgid "heading"
-#~ msgstr "fejléc"
-
-#~ msgid "_Request a new bridge"
-#~ msgstr "Új híd _kérése"
-
-#~ msgid "toggle-button"
-#~ msgstr "váltó-gomb"
-
-#~ msgid ""
-#~ "To request new Tor bridges, you can also:\n"
-#~ "\n"
-#~ "            1. Send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address.\n"
-#~ "\n"
-#~ "              2. Type below one of the bridges that you received by email."
-#~ msgstr ""
-#~ "Új Tor hidak kéréséhez teheti még:\n"
-#~ "\n"
-#~ "            1. Küldjön egy üres email-t a <tt>bridges@torproject.org</tt> "
-#~ "címre Gmail vagy Riseup email címről.\n"
-#~ "\n"
-#~ "            2. Írja be alább a hidakat, amit emailben kapott."
