@@ -52,6 +52,18 @@ That feature makes these directories persistent:
 - `~/.cache/gnome-software`: icons and repository data cached by GNOME Software
   in its own format
 
+# Recommended apps
+
+Our current list of "recommended apps" (terminology still being discussed) is:
+
+- **Signal**, as the most useful messaging app
+- **Delta Chat**, as an alternative end-to-end encrypted messaging that don't require a phone number (or even registering any account)
+- **Karere**, as WhatsApp client for global accessibility
+
+The research that led to this list of apps happened on [[!tails_ticket 21549]].
+
+This list may change in the future, for example with [[!tails_ticket 8573]] or [[!tails_ticket 21374]].
+
 # Apps management user interface
 
 We install GNOME Software with [[!debpts gnome-software-plugin-flatpak]]. We *do
