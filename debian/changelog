@@ -1,4 +1,4 @@
-tails (7.12) UNRELEASED; urgency=medium
+tails (7.12) unstable; urgency=medium
 
   * Upgrade to Tor Browser 15.0.21 based on Firefox ESR 140.15 (tails/tails!3221)
 
@@ -185,7 +185,7 @@ tails (7.12) UNRELEASED; urgency=medium
       - clarify and pad stages in current.yml
       - rm-config --stage=auto
 
- -- Tails developers <foundations@tails.net>  Wed, 02 Sep 2026 09:32:02 +0000
+ -- Tails developers <foundations@tails.net>  Wed, 02 Sep 2026 13:02:26 +0200
 
 tails (7.11) unstable; urgency=medium
 
