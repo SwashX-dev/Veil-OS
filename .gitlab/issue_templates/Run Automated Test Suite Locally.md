@@ -1,6 +1,7 @@
 # When creating this issue
 
  - [ ] Set the milestone to the upcoming release
+ - [ ] Set the title to "Run the automated test suite on a local trusted system"
  - [ ] Delete this section
 
 # How
@@ -39,7 +40,6 @@ ensure we would eventually notice such a flaw, to decrease the incentive to use
 this attack: this helps us build trust that Jenkins is not lying, and shrinks
 the opportunity window for an attacker.
 
-/title "Run the automated test suite on a local trusted system"
 /label ~"Tails Team"
 /label ~"To Do"
 /label ~"P:Elevated"
