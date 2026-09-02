@@ -92,7 +92,13 @@ Wi-Fi, etc.):
 
 <h1 id="fixes">Fixed problems</h1>
 
+<!--
+
+Remove link to Changelog until #21752 is fixed.
+
 For more details, read our [[!tails_gitweb debian/changelog desc="changelog"]].
+
+-->
 
 <!--
 
