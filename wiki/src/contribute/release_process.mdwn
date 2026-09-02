@@ -103,17 +103,17 @@ installed:
 
 * `perl5lib` dependencies:
 
-      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/perl5lib.mdwn"
+     RELEASE_CHECKOUT=. ./bin/rm-pager wiki/src/contribute/release_process/perl5lib.mdwn
 
 * packages needed to build IUKs:
 
-      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/tails-iuk.mdwn"
+    RELEASE_CHECKOUT=. ./bin/rm-pager wiki/src/contribute/release_process/tails-iuk.mdwn
 
 * `ikiwiki` from Debian testing (Forky) or newer
 
 * packages needed to build the website:
 
-      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/build/website.mdwn"
+    RELEASE_CHECKOUT=. ./bin/rm-pager wiki/src/contribute/build/website.mdwn
 
 Configuration files
 -------------------
