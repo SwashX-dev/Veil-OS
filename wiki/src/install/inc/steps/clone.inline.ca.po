@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2025-09-17 11:40+0200\n"
-"PO-Revision-Date: 2026-08-23 18:56+0000\n"
+"PO-Revision-Date: 2026-08-31 23:56+0000\n"
 "Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -117,7 +117,7 @@ msgstr "   [[!img install/inc/screenshots/tails_cloner.png class=\"pc-clone mac-
 #. type: Plain text
 #, no-wrap
 msgid "   [[!img install/inc/screenshots/tails_cloner_upgrade.png class=\"upgrade screenshot\" alt=\"Tails Cloner: 'Clone the current Tails'\"]]\n"
-msgstr "   [[!img install/inc/screenshots/tails_cloner_upgrade.png class=\"upgrade screenshot\" alt=\"Clonador de Tails: 'Clona el Tails actual'\"]]\n"
+msgstr "   [[!img install/inc/screenshots/tails_cloner_upgrade.png class=\"upgrade screenshot\" alt=\"Clonador de Tails: «Clona el Tails actual»\"]]\n"
 
 #. type: Plain text
 #, no-wrap
