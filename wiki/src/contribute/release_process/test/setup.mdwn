@@ -51,7 +51,6 @@ To install the dependencies on our test suite:
        sudo apt update && \
        sudo apt install \
            $(. config/test_suite_variables && echo "$TEST_SUITE_DEPENDENCIES") \
-           libnss3-tools \
            python3-debian \
            python3-distro-info \
            python3-psycopg2 \
