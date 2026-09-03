@@ -389,7 +389,7 @@ Bootstrap internal manual testing coordination:
 
 1. To give the pad a clear title, add this section on top:
 
-       printf -- "---\ntitle: Testing ${VERSION:?}\n---\n" | wl-copy
+       printf -- "---\ntitle: Testing ${VERSION:?}\ntags: QA\n---\n" | wl-copy
 
 2. Set the `PAD` environment variable to the URL of this pad.
 
