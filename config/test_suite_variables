@@ -52,6 +52,7 @@ tor
 tshark
 unclutter
 virt-viewer
+x11-utils
 xdotool
 xfwm4
 xvfb

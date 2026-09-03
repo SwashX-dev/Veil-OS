@@ -52,7 +52,6 @@ To install the dependencies on our test suite:
        sudo apt install \
            $(. config/test_suite_variables && echo "$TEST_SUITE_DEPENDENCIES") \
            tigervnc-viewer \
-           x11-utils \
            x11vnc \
            x264 \
            && \
