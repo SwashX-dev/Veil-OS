@@ -13,6 +13,12 @@ from tailslib.git import Git
 # "base_project_name", with the other key-value pairs overwritten by
 # those in the custom branch below.
 custom_branches = [
+    {
+        "base_project_name": "stable",
+        "project_name": "stable-flatpak",
+        "recipients": "whoever_broke_the_build",
+        "custom_config": {"default_extra_suite_args": " --extra-boot-options flatpak "},
+    }
 ]
 
 
