@@ -29,21 +29,21 @@ class ActiveBranches(Git):
     """
 
     # These branches are always considered as worthy to be built.
-    ALWAYS_ACTIVE_BRANCHES = [
+    ALWAYS_ACTIVE_BRANCHES = (
         "devel",
         "stable",
-    ]
+    )
 
     # These branches are used for the "has this topic branch been
     # merged already?" logic. The "base branch" concept here is
     # different from its homonyms (e.g. what's in config/base_branch,
     # or the base APT suite concept).
-    BASE_BRANCHES = [
+    BASE_BRANCHES = (
         "devel",
         "master",
         "stable",
         "testing",
-    ]
+    )
 
     def __init__(self, git_repo, active_days):
         # A branch that has not seen activity since this number of days
