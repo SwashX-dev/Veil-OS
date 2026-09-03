@@ -25,13 +25,14 @@
 # zk, 2015
 # emma peel <emma.peel@riseup.net>, 2025, 2026.
 # Arif Budiman <arifpedia@gmail.com>, 2026.
+# penerjemahtor <penerjemahtor@proton.me>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-08-05 11:02+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-09-02 11:11+0200\n"
+"PO-Revision-Date: 2026-08-23 03:52+0000\n"
+"Last-Translator: penerjemahtor <penerjemahtor@proton.me>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "id/>\n"
 "Language: id\n"
@@ -39,7 +40,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -993,12 +994,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Meningkatkan Penyimpanan Persisten. Ini mungkin memerlukan waktu…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Kesalahan membuka kunci Penyimpanan Persisten: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Kesalahan meningkatkan Penyimpanan Persisten: {}"
 
@@ -1008,12 +1007,10 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "Gagal mengaktifkan beberapa fitur Penyimpanan Persisten: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Kesalahan mengaktifkan Penyimpanan Persisten: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "Gagal membatalkan saat memperbaiki sistem berkas Penyimpanan Persisten: {}"
@@ -2221,7 +2218,6 @@ msgstr "Data fitur ini masih tersimpan."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Kesalahan mengaktifkan fitur {}"
 
@@ -2240,7 +2236,6 @@ msgstr "Rincian"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Kesalahan menonaktifkan fitur {}"
 
@@ -2249,7 +2244,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Terjadi kesalahan saat menonaktifkan fitur."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2266,12 +2260,10 @@ msgid "_Delete Data"
 msgstr "_Hapus Data"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Kesalahan menghapus data fitur {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Terjadi kesalahan saat menghapus data fitur {}."
 
@@ -3361,7 +3353,7 @@ msgstr "Aktifkan Dotfiles"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:795
 msgid "Custom"
-msgstr "Kustom"
+msgstr "Tersuai"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:814
 msgid ""
@@ -4201,656 +4193,3 @@ msgstr "Desember"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Jam"
-
-#~ msgid "Suspend"
-#~ msgstr "Ditangguhkan"
-
-#~ msgid "Restart"
-#~ msgstr "Mulai ulang"
-
-#~ msgid "Power Off"
-#~ msgstr "Matikan"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "Alamat bridge tidak valid"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "Mengatur bridge diperlukan jika Anda ingin menyembunyikan fakta bahwa "
-#~ "Anda sedang menggunakan Tor"
-
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "Untuk mendapatkan bridge, kirim email kosong ke "
-#~ "<tt>bridges@torproject.org</tt> dari alamat email Gmail atau Riseup "
-#~ "melalui ponsel Anda dan pindai kode QR yang terlampir pada balasan "
-#~ "otomatis."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Pindai Kode QR"
-
-#~ msgid "Documentation"
-#~ msgstr "Dokumentasi"
-
-#, fuzzy
-#~| msgid ""
-#~| "Opens a terminal as the root user, using gksu to ask for the password"
-#~ msgid "Opens a console as the root user"
-#~ msgstr ""
-#~ "Buka terminal sebagai pengguna root, menggunakan gksu untuk menanyakan "
-#~ "password"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr ""
-#~ "Untuk menggunakan Terminal dengan akses Dasar, Anda perlu memasukkan "
-#~ "password."
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Koneksi Jaringan"
-
-#~ msgid "Obsolete"
-#~ msgstr "Obsolet"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Anda perlu migrasikan kunci OpenPGP Anda"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i>78 sekarang menggantikan ekstensi <i>Enigmail</i> "
-#~ "dengan dukungan bawaan untuk enkripsi OpenPGP. untuk terus menggunakan "
-#~ "kunci OpenPGP Anda di <i>Thunderbird</i>, ikuti instruksi migrasi kami."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "_Buka Instruksi Migrasi"
-
-#, fuzzy
-#~ msgid "_Migrate Later"
-#~ msgstr "Migrasi di lain waktu"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "Kami mengganti pengaturan tambahan ini di Tails 4.19 (Juni 2021) dengan "
-#~ "asisten Tor Connection yang terintegrasi di desktop.\n"
-#~ "\n"
-#~ "Anda akan ditanya apakah Anda ingin menggunakan Tor Bridge saat "
-#~ "menghubungkan ke Tor setelah memulai Tails.\n"
-#~ "\n"
-#~ "Jika Anda ingin bekerja secara offline, aktifkan Mode Offline di "
-#~ "pengaturan tambahan."
-
-#~ msgid "Technical details to include"
-#~ msgstr "Detail teknis dimasukkan"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Terminal asal"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Buka Monitor Jaringan"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Untuk informasi pengawakutuan, eksekusi perintah berikut: sudo tails-"
-#~ "debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Buka Sirkuit Onion"
-
-#, fuzzy
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Memulai Unsafe Browser"
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Mungkin ini memakan waktu lama, mohon bersabar."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Setel Ulang Koneksi Tor"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Terjadi kesalahan saat memperbarui kunci penandatanganan"
-
-#~ msgid "Create Backup"
-#~ msgstr "Buat Cadangan"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Pelaporan kutu tidak bisa dikirimkan, sepertinya karena masalah jaringan. "
-#~ "Mohon coba sambungkan kembali jaringan dan klik kirim lagi.\n"
-#~ "\n"
-#~ "Jika tidak bisa juga, Anda akan ditawari untuk menyimpan laporan kutu "
-#~ "tersebut."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Tidak bisa menyimpan %s."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Laporan kutu tidak bisa dikirim, sepertinya karena maslaah jaringan.\n"
-#~ "\n"
-#~ "Solusinya Anda dapat menyimpan laporan kutu tersebut sebagai sebuah "
-#~ "berkas di perangkat USB dan coba kirimkan kepada kami di %s dari akun "
-#~ "surel Anda dengan menggunakan sistem lain. Mohon dicatat bahwa laporan "
-#~ "kutu Anda tidak akan anonim kecuali Anda mengambil langkah yang lebih "
-#~ "aman (mis. menggunakan Tor dengan akun surel sementara).\n"
-#~ "\n"
-#~ "Apakah Anda ingin menyimpan laporan kutu ke dalam berkas?"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "Tidak dapat membuka penyimpanan terenkripsi dengan frasa sandi ini."
-
-#, fuzzy
-#~ msgid "_Passphrase"
-#~ msgstr "Frasa sandi:"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "Gagal mengkonfigurasi chroot."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Konfigurasi peramban gagal."
-
-#, fuzzy, sh-format
-#~| msgid ""
-#~| "MAC address anonymization failed for network card ${nic_name} (${nic}) "
-#~| "so it is temporarily disabled.\n"
-#~| "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "Anonimisasi alamat MAC gagal untuk kartu jaringan ${nic_name} (${nic}) "
-#~ "sehingga dinonaktifkan untuk sementara.\n"
-#~ "Anda mungkin lebih suka memulai ulang Tails dan menonaktifkan anonimisasi "
-#~ "alamat MAC."
-
-#~ msgid "Language & Region"
-#~ msgstr "Bahasa & Wilayah"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Beberapa partisi dari perangkat target %(device)s terpasang. mereka akan "
-#~ "tidak terpasang sebelum start proses instalasi"
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "Memasukkan unmount_device untuk \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "Mencabut filesystems yang dipasang pada \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "Mencabut \"%(udi)s\" pada \"%(device)s\""
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Laporkan kesalahan"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "Anda menyalakan Mode Offline pada Layar Selamat datang."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "Tidak mungkin untuk menyambungkan ke Tor pada Mode Offline."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "Untuk menyambungkan ke Tor dan Internet, mulai ulang Tails tanpa Mode "
-#~ "Offline."
-
-#~ msgid "Lock screen"
-#~ msgstr "Kunci layar"
-
-#, fuzzy, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Build information:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "tak tersedia"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Nama perangkat lunak yang terpengaruh"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Tahapan rinci untuk memproduksi ulang galat"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Hasil aktual dan deskripsi galat"
-
-#~ msgid "Desired result"
-#~ msgstr "Hasil yang diharapkan"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Kirim umpan balik melalui surel terenkripsi."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Hak Cipta © 2009-2018 Tails developers (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Pengembang Tails <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "Penghargaan untuk Penerjemah"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Hak Cipta © 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack - Kirim umpan balik dalam surel terenkripsi\n"
-#~ "Hak Cipta (C) 2009-2018 pengembang Tails <tails@boum.org>\n"
-#~ "\n"
-#~ "Program ini adalah perangkat lunak gratis; Anda diizinkan untuk "
-#~ "mendistribusikan dan/atau memodifikasinya\n"
-#~ "di bawah ketentuan GNU General Public License sebagaimana seperti yang "
-#~ "dipublikasikan oleh\n"
-#~ "Free Software Foundation; baik versi 3 dari Lisensi, atau (dengan\n"
-#~ "pilihan Anda) versi yang lebih baru.\n"
-#~ "\n"
-#~ "Program ini didistribusikan dengan harapan akan berguna, tetapi\n"
-#~ "TANPA GARANSI; bahkan tanpa jaminan tersirat dari\n"
-#~ "DAGANGAN atau KECOCOKAN UNTUK TUJUAN TERTENTU. Lihat GNU\n"
-#~ "General Public License untuk lebih jelas.\n"
-#~ "\n"
-#~ "Anda seharusnya menerima salinan dari GNU General Public License\n"
-#~ "bersama dengan program ini. Jika tidak, lihat <http://www.gnu.org/"
-#~ "licenses/>.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Bantuan:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Alamat surel (Jika Anda ingin jawaban dari kami)"
-
-#~ msgid "Unlock"
-#~ msgstr "Tidak terkunci"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "_Penyimpanan Menetap Terenkripsi"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr "Masukkan kata kunci untuk memprotect volume persistent"
-
-#, fuzzy
-#~ msgid "_Delete..."
-#~ msgstr "Sedang menghapus...."
-
-#, fuzzy
-#~ msgid "_Change Passphrase..."
-#~ msgstr "Tampilkan Kata Kunci"
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Bantu kami memperbaiki kutu!</h1>\n"
-#~ "<p>Baca <a href=\"%s\">panduan pelaporan kutu kami</a>.</p>\n"
-#~ "<p><strong>Jangan sertakan informasi personal lebih dari\n"
-#~ "yang diperlukan!</strong></p>\n"
-#~ "<h2>Tentang alamat surel yang Anda berikan kepada kami</h2>\n"
-#~ "<p>\n"
-#~ "Memberikan alamat surel Anda kepada kami memungkinkan kami menghubungi\n"
-#~ "Anda untuk mengklarifikasi masalah tersebut. Hal ini diperlukan untuk "
-#~ "sebagian\n"
-#~ "besar laporan yang kami terima karena kebanyakan laporan tanpa informasi "
-#~ "kontak\n"
-#~ "tidak berguna. Dengan kata lain, hal tersebut juga menyediakan informasi\n"
-#~ "kemungkinan adanya orang di tengah, seperti surel atau penyedia Internet "
-#~ "Anda,\n"
-#~ "untuk mengonfirmasi bahwa Anda menggunakan Tails.\n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>Tidak dapat memilih server unduh</b>\n"
-#~ "\n"
-#~ "Hal ini seharusnya tidak terjadi. Silakan laporkan bug."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Kesalahan saat memilih server unduh"
-
-#, fuzzy
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "The Amnesic Incognito Live System"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Luncurkan Penjelajah yang Tidak Aman?"
-
-#~ msgid "Enabled"
-#~ msgstr "Diaktifkan"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist gagal dengan kode {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cryptsetup gagal dengan kode {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist gagal dengan kode {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "umount gagal dengan kode {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Wizard persistent - persistent volume creation"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "A {size} persistent volume will be created on the <b>{vendor} {model}</b> "
-#~ "device. Data on this volume will be stored in an encrypted form protected "
-#~ "by a passphrase."
-#~ msgstr ""
-#~ "Volume persistent sebesar {size} akan dibuat pada perangkat<b>{vendor} "
-#~ "{model}</b>. Data pada volume ini akan disimpan pada bentuk yang "
-#~ "terenkripsi yang dilindungi oleh kata sandi."
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>Waspadalah!</b> Menggunakan volume tetap memiliki konsekuensi yang "
-#~ "harus dimengerti. Tails tidak dapat menolong jika Anda salah "
-#~ "menggunakannya! Lihat halaman <i>Volume tetap terenkripsi</i> pada "
-#~ "dokumentasi Tails untuk mempelajari lebih lanjut."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "Kalimat tidak boleh kosong"
-
-#~ msgid "Failed"
-#~ msgstr "Gagal"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Pemasangan Partisi Tail persistent"
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "Partisi persistent akan di pasang"
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Izin  volume persistent akan dikoreksi"
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "Membuat konfigurasi volume tetap standar."
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "Konfigurasi standar volume tetap akan dibuat."
-
-#~ msgid "Creating..."
-#~ msgstr "Membuat...."
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Pembuatan volume persistent"
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Wizard Persistent - konfigurasi persisent volume"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "File spesifik yang tersimpan di dalam persistent volume"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The selected files will be stored in the encrypted partition {partition} "
-#~ "({size}), on the <b>{vendor} {model}</b> device."
-#~ msgstr ""
-#~ "File yang terpilih akan disimpan pada partisi yang terenkripsi "
-#~ "{partition} ({size}), pada perangkat <b>{vendor} {model}</b>."
-
-#~ msgid "Saving..."
-#~ msgstr "Sedang menyimpan...."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "konfigurasi penyimpanan persistent"
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Wizard Persistence - Penghapusan volume persistent"
-
-#~ msgid "Your persistent data will be deleted."
-#~ msgstr "Data Persistent anda akan dihapus"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "Volume persistent {partition} ({size}), pada perangkat <b>{vendor} {model}"
-#~ "</b>, akan dihapus."
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "Penghapusan persistent volume"
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "Simpan berkas di direktori `Persistent'"
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Bahasa, administrasi password, dan pengaturan tambahan"
-
-#~ msgid "Save the last bridge that you used to connect to Tor"
-#~ msgstr "Simpan bridge terakhir yang anda gunakan untuk terhubung ke Tor"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Markah tersimpan di dalam peramban Tor"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Pengaturan perangkat jaringan dan koneksi"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "Perangkat lunak terpasang saat memulai Tails"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Surel Thunderbird, feed, dan kunci OpenPGP"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Klien Bitcoin"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Profil Pidgin dan keyring OTR"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "Kunci SSH, konfigurasi dan hos yang dikenal"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Pengaturan volume tetap Tails"
-
-#~ msgid "Device already has a persistent volume."
-#~ msgstr "Perangkat telah memiliki volume persistent."
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "Perangkat tidak memiliki ruang kosong yang cukup."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr "Perangkat tidak memiliki volume yang persisten."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Tidak dapat menghapus volume persistent selagi dalam penggunaan. Anda "
-#~ "harus restart Tails tanpa persistent"
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "Volume persistent tidak terkunci"
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Volume persistent tidak terpasang"
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr "Volume persistent tidak terbaca. masalah Izin atau kepemilikan"
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "Volume yang persisten tidak dapat ditulisi."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Tails berjalan dari non-USB / perangkat non-SDIO."
-
-#~ msgid "Device is optical."
-#~ msgstr "Perangkat adalah optikal"
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr "Perangkat tidak dibuat menggunakan image USB atau Installer Tails."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Wizard persistent - selesai"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "Semua perubahan yang telah Anda buat hanya akan berpengaruh setelah Anda "
-#~ "memulai ulang Tails."
-
-#~ msgid "Tails is configuring your Persistent Storage. Please wait..."
-#~ msgstr ""
-#~ "Tails sedang mengonfigurasi Penyimpanan Persisten Anda. Harap tunggu..."
-
-#~ msgid ""
-#~ "\\n\\nTo always enable the Unsafe Browser, turn on the Welcome Screen "
-#~ "feature of the Persistent Storage."
-#~ msgstr ""
-#~ "\\n\\nUntuk selalu mengaktifkan Unsafe Broswer, nyalakan fitur Layar "
-#~ "Selamat datang dari Penyimpanan persisten."
-
-#~ msgid "Delete the persistent volume and its content"
-#~ msgstr "Hapus volume persistent dan kontennya"
-
-#~ msgid "Configure persistent volume"
-#~ msgstr "Konfigurasi volume persistent"
-
-#~ msgid "image"
-#~ msgstr "image"
-
-#~ msgid "heading"
-#~ msgstr "heading"
-
-#~ msgid "_Request a new bridge"
-#~ msgstr "_Request bridge babru"
-
-#~ msgid "toggle-button"
-#~ msgstr "toggle-button"
-
-#~ msgid ""
-#~ "To request new Tor bridges, you can also:\n"
-#~ "\n"
-#~ "            1. Send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address.\n"
-#~ "\n"
-#~ "              2. Type below one of the bridges that you received by email."
-#~ msgstr ""
-#~ "Untuk meminta jembatan Tor baru, Anda juga dapat:\n"
-#~ "\n"
-#~ "1. Kirim SUREL kosong ke bridges@torproject.org dari alamat surel Gmail "
-#~ "atau Riseup.\n"
-#~ "\n"
-#~ "2. Ketik di bawah salah satu jembatan yang Anda terima melalui email."

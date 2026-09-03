@@ -6,6 +6,6 @@ Requires=tca-portal.socket
 Type=notify
 User=root
 ExecStart=/usr/local/lib/tca-portal --systemd-socket
-# Override /etc/resolv.conf so tca-portal uses a clearnet DNS server
-# to resolve the hostname used by tails-get-network-time.
+# Override /etc/resolv.conf so tca-portal uses a clearnet DNS server:
+# this is required by tails-get-network-time and tails-circumvention-settings.
 BindReadOnlyPaths=/etc/resolv-over-clearnet.conf:/etc/resolv.conf

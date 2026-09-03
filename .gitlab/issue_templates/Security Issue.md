@@ -18,7 +18,9 @@ To Do
   - We can assess the severity of this issue.
   - Our technical writers have the information they need to write release notes.
 - [ ] Assess the severity of this issue according to our [Security issue response policy](https://tails.net/contribute/security_policy/)
-- [ ] Have the severity assessment confirmed by another Tails Team member
+  - [ ] Have the severity assessment confirmed by another Tails Team member
+  - [ ] Prepend the *Summary* section with a line clarifying the assessed severity
+        (`Severity: ${ASSESSED_SEVERITY}`)
 - [ ] Track the next steps, according to our [Security issue response policy](https://tails.net/contribute/security_policy/)
   - The next steps depend on the severity of this issue.
   - Disclosing this issue is already covered by the release process.

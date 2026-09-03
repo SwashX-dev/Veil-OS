@@ -1,3 +1,128 @@
+tails (7.12) unstable; urgency=medium
+
+  * Upgrade to Tor Browser 15.0.21 based on Firefox ESR 140.15 (tails/tails!3221)
+
+    Closes issues:
+      - Upgrade to Tor Browser 15.0.21 based on Firefox ESR  140.15 (tails/tails#21742)
+
+    Commits:
+      - Upgrade Tor Browser to 15.0.21-build1-linux-x86_64 (refs: tails#21742)
+      - CI: run all tests for 21742-tor-browser-15.0.21
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.15.0esr-15.0-1-build1
+
+
+  * Upgrade Electrum to 4.8.1
+
+  * Update APT snapshot of the 'debian' archive to 2026083101 (tails/tails!3220)
+
+    Closes issues:
+      - needed-package-updates: firmware-nonfree, electrum (tails/tails#21757)
+
+    Commits:
+      - Update APT snapshot of the 'debian' archive to 2026083101
+
+  * Reject flatpak Spawn for Tor Browser (tails/tails-private!11)
+
+    Commits:
+      - Enable the 21516-block-spawn-for-tor-browser APT overlay (refs: #21516).
+
+  * Install firmware for Cirrus Logic audio chips (tails/tails!3226)
+
+    Commits:
+      - Install firmware for Cirrus Logic audio chips
+
+  * Hide unnecessarily detailed explanations from the Release Manager
+    (tails/tails!3217)
+
+    Commits:
+      - shfmt
+      - Add or use shell guardrails
+      - Make section easier to follow
+      - Merge private repo before freezing
+      - Improve phrasing
+      - Make instructions easier to follow
+      - Remove superfluous text
+      - Minor phrasing & layout improvements + typo fixes
+      - Move code to script
+      - Move details to code comments
+
+  * Move tails-testers@ and amnesia-news@ to lists.torproject.org
+    (tails/tails!3214)
+
+    Commits:
+      - improve spelling
+      - move amnesia-news@boum.org to tails-news@lists.torproject.org
+      - update links to tails-testers@ mailing list
+      - drop form to subscribe to ML (and move tails-testers to lists.torproject.org)
+
+  * Security Issue template: make severity easier to find (tails/tails!3206)
+
+    Commits:
+      - link to the text of the Security Issue template
+      - make sure the severity is easily accessible
+
+  * Streamline release process (tails/tails!3194)
+
+    Closes issues:
+      - Release manager role: merge "Additional steps" for emergency release into the
+        regular "In the beginning of your shift" section (tails/tails#21720)
+      - Release QA: rely on Jenkins' automated test suite run + out of band regular
+        sanity check (tails/tails#21713)
+
+    Commits:
+      - Actually use --old-iso
+      - Revert "We won't pass --old-iso in that case"
+      - We won't pass --old-iso in that case
+      - Verify exactly what Jenkins tested
+      - Release QA: rely on Jenkins' automated test suite run + out of band regular
+        sanity check
+      - Remove leftover incomplete content
+      - Release manager role: merge "Additional steps" for emergency release into the
+        regular "In the beginning of your shift" section
+
+  * Release process improvements after 7.11 (tails/tails!3193)
+
+    Commits:
+      - Release process: improve structure
+      - Release process: reflow
+      - Release process: fix indentation for whole section that was off
+      - Release process: convert tabs used for indentation to 4 spaces
+      - Release process: fix indentation for tons of code blocks
+      - Release process: use rm-open-link in more places where it adds convenience
+      - Release process: open some website pages on the release branch
+      - Release process: ensure everything is pushed
+      - Release process: refactor step into common path
+      - Release process: manually set auto-merge when realeasing
+      - Avoid orphan bullet list
+      - Bring back numbered list
+      - bin/announce-testing-can-start: appease shellcheck
+      - shfmt
+      - Release process: skip GitLab CI when publishing release to avoid delay
+      - Release process: drop outer numbered list and various fixes
+      - Release process: move code snippet to script (refs: tails#21724)
+      - Release process: fix typo
+      - bin/announce-next-release-schedule: bash → sh
+      - Release process: move code snippet to script (refs: tails#21724)
+      - Release process: clarify link
+      - Release process: drop (current incorrect) count
+      - Release process: streamline by eliminating branch
+      - Release process: stop listing requirements that we sanity check for
+      - Release process: avoid ikiwiki shortcuts for URLs we often copy-paste (refs:
+        tails#21725)
+      - Release process: move another code snippet to script (refs: tails#21724)
+      - Release process: move code snippet to script (refs: tails#21724)
+      - Release process: make code snippets with EOF copy-pasteable
+      - bin/rm-config: overwrite existing current.yml
+
+  * bin/rm-config detects stage automatically (tails/tails!3176)
+
+    Commits:
+      - clarify and pad stages in current.yml
+      - rm-config --stage=auto
+
+ -- Tails developers <foundations@tails.net>  Wed, 02 Sep 2026 13:02:26 +0200
+
 tails (7.11) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.101-1 (DSA 6415-1)

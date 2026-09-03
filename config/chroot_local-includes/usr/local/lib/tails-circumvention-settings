@@ -1,5 +1,9 @@
 #!/usr/bin/python3 -I
 
+# To test if this works properly without going through Tor Connection's UI, run this:
+#     sudo -u debian-tor bwrap --bind / / --dev-bind /dev /dev --bind /etc/resolv-over-clearnet.conf /etc/resolv.conf /usr/local/lib/tails-circumvention-settings --transport bridge --transport obfs4
+
+
 import argparse
 import json
 import os

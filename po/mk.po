@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-22 09:20+0200\n"
-"PO-Revision-Date: 2026-08-05 11:02+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-09-02 11:11+0200\n"
+"PO-Revision-Date: 2026-08-21 00:17+0000\n"
+"Last-Translator: emma peel <emma.peel@riseup.net>\n"
 "Language-Team: Macedonian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "mk/>\n"
 "Language: mk\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -706,7 +706,6 @@ msgstr ""
 "Од безбедносни причини, поврзувањето на мрежата сега е оневозможена."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:855
-#, fuzzy
 msgid ""
 "<b>An error occurred while installing the upgrade.</b>\\n\\nYour Tails "
 "device needs to be repaired and might be unable to restart.\\n\\nPlease "
@@ -716,7 +715,7 @@ msgstr ""
 "<b>Настана грешка при инсталирањето на ажурирањето.</b>\\n\\nТвојот Tails "
 "уре треба да биде поправен и може да не може да биде повторно стартуван."
 "\\n\\nВе молиме следете ги инструкциите на file:///usr/share/doc/tails/"
-"website/doc/upgrade/error/install.en.html"
+"website/doc/upgrade/error/install.mk.html"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:860
 msgid "Error while installing the upgrade"
@@ -979,12 +978,11 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Создавањето на вашиот постојан склад не успеа."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Енкриптиран Постојан склад: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Енкриптиран_Постојан склад: {}"
 
@@ -996,12 +994,11 @@ msgstr ""
 "трајното складирање: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Создај Постојан склад: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Не успеа кофигурирањето на вашиот Постојан склад."
 
@@ -2208,7 +2205,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error activating feature {}"
 msgstr "Создај Постојан склад: {}"
 
@@ -2228,7 +2225,7 @@ msgstr "Detalji"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error deactivating feature {}"
 msgstr "Создај Постојан склад: {}"
 
@@ -2238,7 +2235,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Создај Постојан склад: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2252,12 +2248,10 @@ msgid "_Delete Data"
 msgstr "Избриши"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 
@@ -4187,658 +4181,3 @@ msgstr "Декември"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Часовник"
-
-#~ msgid "Suspend"
-#~ msgstr "Суспендирано"
-
-#~ msgid "Restart"
-#~ msgstr "Повторно стартувај"
-
-#~ msgid "Power Off"
-#~ msgstr "Исклучување"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "Адресата на мостот е неисправна"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "Поставувањето на мост е потребно ако сакате да сокриете дека користите Tor"
-
-#, fuzzy
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "За да побарате мост, можете да испратите празна е-пошта на\n"
-#~ "<tt>bridges@torproject.org</tt> од Gmail или Riseup е-пошта адресите.\n"
-#~ "\n"
-#~ "На пример, можете да ја испратите е-поштата од вашиот телефон и да го "
-#~ "впишете мостот во Tails.\n"
-
-#~ msgid "Documentation"
-#~ msgstr "Документација"
-
-#, fuzzy
-#~| msgid ""
-#~| "Opens a terminal as the root user, using gksu to ask for the password"
-#~ msgid "Opens a console as the root user"
-#~ msgstr ""
-#~ "Отвори терминал како root корисник, користејќи gksu за да бидеш прашан за "
-#~ "лозинка"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr "Да стартуваш Root Терминал, потребна е идентификување."
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Мрежно поврзување"
-
-#~ msgid "Obsolete"
-#~ msgstr "Застарено"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Треба да ги мигрирате вашите OpenPGP клучеви"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i> 78 сега го заменува <i>Enigmail</i> проширувањето со "
-#~ "вградена поддршка за OpenPGP енкрипција. За да продолжите со користење на "
-#~ "OpenPGP клучевите во <i>Thunderbird</i>, следете ги нашите инструкции за "
-#~ "миграција."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "_Отвори Инструкции за Миграција"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_Мигрирај подоцна"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "Ја променивме оваа дополнителна поставка во Tails 4.19 (Јуни 2021) со Tor "
-#~ "помошникот за врска интегриран во декстоп.\n"
-#~ "\n"
-#~ "Ќе бидете прашани кога сакате да ги користите Tor мостовите при "
-#~ "поврзување со Tor по стартување на Tails.\n"
-#~ "\n"
-#~ "Ако сакате да работите офлајн, овозможете го Офлајн модот во "
-#~ "дополнителните поставки."
-
-#~ msgid "Technical details to include"
-#~ msgstr "Додавање на технички детали"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Root терминал"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Отвори мрежен монитор"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "За информации за отстранување на грешки, извршете ја оваа команда: sudo "
-#~ "tails-debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Отвори Onion кругови"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Стартување на Небезбеден прелистувач..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Ова може да потрае, ве молиме бидете трпеливи."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Престартувај го Tor поврзувањето"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Грешка при ажурирање на сертификациониот клуч"
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "Создади"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Пријавата за грешка не може да биде испратена, најверојатно поради "
-#~ "проблеми со мрежата. Ве молиме обидете се повторно да се поврзете со "
-#~ "мрежата или кликнете испрати повторно.\n"
-#~ "\n"
-#~ "Ако ова не работи, ќе ви биде понудено да го зачувате извештајот за "
-#~ "грешката."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Не може да се зачува %s."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Извештајот за грешка не може да биде испратен, најверојатно поради "
-#~ "проблеми со мрежата.\n"
-#~ "\n"
-#~ "Како заобиколување можете да го зачувате извештајот за грешката како "
-#~ "датотека на USB уред и да се обидете да ни го испратите на %s од вашата "
-#~ "сметка на е-поштата користејќи друг систем. Земете во предвид дека вашиот "
-#~ "извештај за грешката нема да биде анонимен ако го направите тоа освен ако "
-#~ "не преземете понатамошни чекори вие самите (пр. користејќи Tor со сметка "
-#~ "за е-пошта која не ви е важна вас).\n"
-#~ "\n"
-#~ "Дали сакате да го зачувате извештајот за грешка во датотека?"
-
-#, fuzzy
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "Не може да се отклучи енкриптираниот скалд со оваа лозинка"
-
-#, fuzzy
-#~ msgid "_Passphrase"
-#~ msgstr "Лозинка:"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "Не беше поставен chroot."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Прелистувачот не се конфигурираше."
-
-#, fuzzy, sh-format
-#~| msgid ""
-#~| "MAC address anonymization failed for network card ${nic_name} (${nic}) "
-#~| "so it is temporarily disabled.\n"
-#~| "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "Анонимизирањето на MAC адресата не успеа за мрежната картичка ${nic_name} "
-#~ "(${nic}) па поради тоа е привремено оневозможена.\n"
-#~ "Можеби повеќе ќе сакате повторно да го стартувате Tails и да го "
-#~ "оневозможите анонимизирањето на MAC адресата."
-
-#~ msgid "Language & Region"
-#~ msgstr "Јазик и Регион"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Некои партиции на целниот уред %(device)s се монтирани. Тие ќе бидат "
-#~ "демонтирани бред почетокот на инсталацијата."
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "Внесување unmount_device за \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "Демонтирање на монтираната системска датотека на \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "Демонтирање на \"%(udi)s\" на \"%(device)s\""
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Пријави грешка"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "Го вклучивте Офлајн модот на Почетниот екран."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "Невозможно е да се поврзете на Tor во Офлајн мод."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "За да се поврзете на Tor и на Интернет, повторно стартувајте го Tails без "
-#~ "Офлајн мод."
-
-#~ msgid "Lock screen"
-#~ msgstr "Екран за заклучување"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Информации за градба:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "не е достапно"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Име на погодениот софтвер"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Точни чекори за репродуцирање на грешката"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Вистински резултат и опис на грешката"
-
-#~ msgid "Desired result"
-#~ msgstr "Посакуван резултат"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Испрати повраратна информација преку енкриптирана е-пошта."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Авторски права © 2009-2018 Tails развивачи (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Tails развивачи <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "Преведувачи: Лилјана Ацковска, Жарко Ѓуров."
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Авторски права © 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "ШепотиНазад - Испрати повратна информација преку енкриптирана е-пошта.\n"
-#~ "Copyright (C) 2009-2018 Tails развивачи <tails@boum.org>\n"
-#~ "\n"
-#~ "Оваа програма е слободен софтвер; може да го редистрибуирате и/или "
-#~ "модификувате под условите на GNU Општата Јавна Лиценца кои се објавени "
-#~ "од\n"
-#~ "Фондацијата Слободен Софтвер; верзија 3 на Лиценцата, или (по\n"
-#~ "ваше мислење) понова.\n"
-#~ "\n"
-#~ "Оваа програма е дистрибуирана со надеж дека ќе биде корисна, но\n"
-#~ "БЕЗ НИКАКВИ ПРЕУПРЕДУВАЊА;  дури и без подразбирање на гаранција за\n"
-#~ "КОМЕРЦИЈАЛИЗАЦИЈА или ПРИЛАГОДУВАЊЕ ЗА ОДРЕДЕНА НАМЕНА. Видете ја GNU\n"
-#~ "Општата Јавна Лиценца за повеќе детали.\n"
-#~ "\n"
-#~ "Вие треба да имате добиено копија од GNU Општата Јавна Лиценца\n"
-#~ "заедно со оваа програма. Ако не сте добиле, видете на <http://www.gnu.org/"
-#~ "licenses/>.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Помош:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Е-пошта (ако сакте одговор од нас)"
-
-#~ msgid "Unlock"
-#~ msgstr "Отклучи"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "Енкриптиран_Постојан склад"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr "Внесете ја вашата лозинка за да го отклучите постојаниот склад"
-
-#, fuzzy
-#~ msgid "_Delete..."
-#~ msgstr "Бришење..."
-
-#, fuzzy
-#~ msgid "_Change Passphrase..."
-#~ msgstr "Покажи лозинка"
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Помогнете ни да ја поправиме вашата грешка!</h1>\n"
-#~ "<p>Прочитајте ги <a href=\"%s\">нашите инструкции за пријавување на "
-#~ "грешка</a>.</p>\n"
-#~ "<p><strong>Не вклучувај лични информации повеќе отколку што е потребно!</"
-#~ "strong></p>\n"
-#~ "<h2>За да ни дадете адреса за е-пошта</h2>\n"
-#~ "<p>\n"
-#~ "Со давањето на адреса за е-пошта ни овозможувате да ве контактираме за да "
-#~ "го појасниме проблемот. Ова\n"
-#~ "е потребно за огромното мнозинство на извештаи кои ги добиваме а "
-#~ "најголемиот број на извештаи\n"
-#~ "без информации за контакт се бескорисни. Од друга страна тоа исто така им "
-#~ "дава\n"
-#~ "можност на прислушувачите, како вашата е-пошта или Интернет провајдерот, "
-#~ "да\n"
-#~ "потврдат дека користите Tails.\n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>Не можеше да избере сервер за преземање.</b>\n"
-#~ "\n"
-#~ "Ова не би требало да се случи. Ве молиме пријавете грешка."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Грешка за време на избирање на сервер за преземање"
-
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "Амнезирачки Анонимен Жив Систем"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Стартувај го Небезбедниот Прелистувач?"
-
-#~ msgid "Enabled"
-#~ msgstr "Овозможено"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "живо-постојаното не успеа со повратниот код {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cryptsetup не успеа со повратен код {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "живо-постојаното не успеа со повратен код {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "демонтирањето не успеа со повратен код {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Волшебник за Постојаност - Создавање на Постојан простор"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "A {size} persistent volume will be created on the <b>{vendor} {model}</b> "
-#~ "device. Data on this volume will be stored in an encrypted form protected "
-#~ "by a passphrase."
-#~ msgstr ""
-#~ "{size} постојан простор ќе биде создаден на <b>{vendor} {model}</b>уред. "
-#~ "Податоците за овој простор ќе бидат складирани во енкриптирана форма "
-#~ "заштитени со лозинка."
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>Пазете се!</b> Користењето на постојаност има последици кои мора добро "
-#~ "да ги разберете. Tails не може да ви помогне ако го корисите погрешно! "
-#~ "Видете ја страната <i>Енкриптирана постојаност</i>во документацијата за "
-#~ "Tails за да научите повеќе."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "Полето за лозинка не може да биде празно"
-
-#~ msgid "Failed"
-#~ msgstr "Не успеа"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Монтирање на Tails постојана партиција."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "Tails постојаната партицијата ќе биде монтирана."
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Дозволите од постојаниот простор ќе бидат поправени."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "Создавање на стандардна постојана конфигурација."
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "Стандардната постојана конфигурација ќе биде создадедна."
-
-#~ msgid "Creating..."
-#~ msgstr "Создавање..."
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Создавање на постојаниот простор..."
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Волшебник за Постојаност - Конфигурирање на Постојан простор"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "Наведи ги датотеките кои ќе бидат зачувани на постојаниот простор"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The selected files will be stored in the encrypted partition {partition} "
-#~ "({size}), on the <b>{vendor} {model}</b> device."
-#~ msgstr ""
-#~ "Избраните датотеки ќе бидат складирани во енкриптираната партиција   "
-#~ "{partition} ({size}) на <b>{vendor} {model}</b> уредот."
-
-#~ msgid "Saving..."
-#~ msgstr "Зачувување..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Зачувување на постојана конфигурација..."
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Волшебник за Постојаност - Бришење на Постојан простор"
-
-#~ msgid "Your persistent data will be deleted."
-#~ msgstr "Вашите постојани податоци ќе бидат избришани."
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "Постојаниот простор {partition} ({size}), на <b>{vendor} {model}</b> "
-#~ "уред, ќе биде избришан."
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "Бришење на постојаниот простор..."
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "Чувај ги датотеките складирани во `Постојаниот' директориум"
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Јазик, администраторска лозинка и дополнителни поставки"
-
-#~ msgid "Save the last bridge that you used to connect to Tor"
-#~ msgstr "Зачувај го последниот мост кој го користеше за поврзување на Tor"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Обележувачите се зачувани во Tor прелистувачот"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Конфигурирање на мрежните уреди и поврзувања"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "Софтверот е инсталиран кога Tails е стартуван"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Thunderbird е-пошти, тековници, и OpenPGP клучеви"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Биткоин клиент"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Pidgin профили и OTR привезок"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "SSH клучеви, конфигурација и познати хостови"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Поставување на постојан простор на Tails"
-
-#~ msgid "Device already has a persistent volume."
-#~ msgstr "Уредот веќе има постојан простор."
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "Уредот нема долволно нераспределен простор."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr "Уредот нема постојан простор."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Не може да биде избришан постојаниот простор додека е во употреба. Треба "
-#~ "да го ребутирате Tails без постојаност."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "Постојаниот на просторот не е отклучен."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Постојаниот простор не е монтиран."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "Постојаниот простор не е вчитлив. Дозволи или проблеми со сопственоста?"
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "Постојаниот простор не е впишлив."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Tails е стартуван од не-USB / не-SDIO уред."
-
-#~ msgid "Device is optical."
-#~ msgstr "Уредот е оптички."
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr ""
-#~ "Уредот не беше создаден со користење на USB слика или со Tails Installer."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Волшебник за Постојаност - Завршенo"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "Сите промени кои ќе ги преземете ќе имаат ефект само откако повторно ќе "
-#~ "го стартувате Tails."
-
-#~ msgid "Tails is configuring your Persistent Storage. Please wait..."
-#~ msgstr "Tails го конфигурира вашиот Постојан склад. Ве молиме почекајте..."
-
-#~ msgid ""
-#~ "\\n\\nTo always enable the Unsafe Browser, turn on the Welcome Screen "
-#~ "feature of the Persistent Storage."
-#~ msgstr ""
-#~ "\\n\\nЗасекогаш да го овозможите Небезбедниот Прелистувач, вклучете ја "
-#~ "опцијата за Почетниот екран на Постојаниот склад."
-
-#~ msgid "Delete the persistent volume and its content"
-#~ msgstr "Избриши го постојаниот простор и неговата содржина"
-
-#~ msgid "Configure persistent volume"
-#~ msgstr "Конфигурирај го постојаниот простор"
-
-#~ msgid "image"
-#~ msgstr "слика"
-
-#~ msgid "heading"
-#~ msgstr "заглавје"
-
-#~ msgid "_Request a new bridge"
-#~ msgstr "_Побарај нов мост"
-
-#~ msgid "toggle-button"
-#~ msgstr "вклучи-копче"
-
-#~ msgid ""
-#~ "To request new Tor bridges, you can also:\n"
-#~ "\n"
-#~ "            1. Send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address.\n"
-#~ "\n"
-#~ "              2. Type below one of the bridges that you received by email."
-#~ msgstr ""
-#~ "За да побарате нови Tor ностови, можете исто така да:\n"
-#~ "\n"
-#~ "           1. Испратите празна е-пошта на <tt>bridges@torproject.org</tt> "
-#~ "од Gmail и Riseup е-пошта адресите.\n"
-#~ "\n"
-#~ "          2. Впишете подолу еден од мостовите кои ги добивте преку е-"
-#~ "поштата."
