@@ -75,6 +75,7 @@ To install the dependencies on our test suite:
            python3-psycopg2 \
            python3-pydantic \
            python3-requests \
+           python3-rpyc \
            python3-slixmpp \
            python3-tomli-w \
            python3-typeguard \
