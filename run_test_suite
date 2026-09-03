@@ -8,8 +8,6 @@ NAME=$(basename "${0}")
 
 . config/test_suite_variables
 
-GENERAL_DEPENDENCIES="$TEST_SUITE_DEPENDENCIES"
-
 # Recent tor client require a Chutney network with tor >= 0.4.4.6 (#18190)
 MINIMUM_TOR_VERSION=0.4.4.6
 
@@ -30,7 +28,7 @@ Options for '@product' features:
                      instance.
   --capture          Save video recordings of the system under test's screen,
                      for failed scenarios, in the temporary directory
-                     (see --tmpdir). Requires x264.
+                     (see --tmpdir).
   --capture-all      Save video recording for all scenarios, including
                      successful ones (implies --capture).
   --collect-always   Keep artifacts (logs, videos) even for successful scenarios
@@ -79,10 +77,10 @@ Options for '@product' features:
                      (default is TMPDIR in the environment, and if unset,
                      /tmp/TailsToaster).
   --(no-)view        Display the system under test's screen in a separate
-                     window. Requires x11vnc and tigervnc-viewer.
+                     window.
   --view-interact    The test session can be \"touched\". For debugging purposes
                      only.
-  --vnc-server-only  Start a VNC server for the test session. Requires x11vnc.
+  --vnc-server-only  Start a VNC server for the test session.
   --iso IMAGE        Test '@product' features using IMAGE.
   --old-iso IMAGE    For some '@product' features (e.g. usb_install) we need
                      an older version of Tails, which this option specifies.
@@ -182,7 +180,6 @@ start_xvfb() {
 }
 
 start_vnc_server() {
-    check_dependencies x11vnc
     # shellcheck disable=SC2086
     VNC_SERVER_PORT="$(env -u WAYLAND_DISPLAY x11vnc \
         -listen localhost -display "${TARGET_DISPLAY}" \
@@ -196,7 +193,6 @@ start_vnc_viewer() {
     if [[ "${VNC_VIEWER_VIEWONLY}" = yes ]]; then
         opts=-viewonly
     fi
-    check_dependencies tigervnc-viewer
     xtigervncviewer \
         -nojpeg $opts \
         -RemoteResize=0 \
@@ -265,11 +261,9 @@ while [ $# -gt 0 ]; do
         VNC_SERVER=yes
         ;;
     --capture)
-        check_dependencies x264
         export CAPTURE="yes"
         ;;
     --capture-all)
-        check_dependencies x264
         export CAPTURE="yes"
         export CAPTURE_ALL="yes"
         ;;
@@ -349,7 +343,7 @@ if [ "${EUID}" -ne 0 ] && [ -z "${ALLOW_NON_ROOT}" ]; then
 fi
 
 # shellcheck disable=SC2086
-check_dependencies ${GENERAL_DEPENDENCIES}
+check_dependencies ${TEST_SUITE_DEPENDENCIES}
 check_tor_version
 
 TARGET_DISPLAY=$(next_free_display)

@@ -48,11 +48,14 @@ tcpdump
 tcplay
 tesseract-ocr
 tesseract-ocr-eng
+tigervnc-viewer
 tor
 tshark
 unclutter
 virt-viewer
 x11-utils
+x11vnc
+x264
 xdotool
 xfwm4
 xvfb

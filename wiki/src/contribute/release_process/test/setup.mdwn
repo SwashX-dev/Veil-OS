@@ -49,12 +49,7 @@ To install the dependencies on our test suite:
    `stable` branch:
 
        sudo apt update && \
-       sudo apt install \
-           $(. config/test_suite_variables && echo "$TEST_SUITE_DEPENDENCIES") \
-           tigervnc-viewer \
-           x11vnc \
-           x264 \
-           && \
+       sudo apt install $(. config/test_suite_variables && echo "$TEST_SUITE_DEPENDENCIES") && \
        sudo service libvirtd restart
 
 Other requirements
