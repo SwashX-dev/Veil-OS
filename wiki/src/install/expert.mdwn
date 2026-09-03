@@ -49,10 +49,10 @@ key.
 
    <p class="command">sudo apt update && sudo apt install debian-keyring</p>
 
-1. Import the OpenPGP key of [[!wikipedia Chris_Lamb_(software_developer) desc="Chris Lamb"]], a former
-   Debian Project Leader, from the Debian keyring into your keyring:
+1. Import the OpenPGP key of intrigeri, a Debian and Tails developer,
+   from the Debian keyring into your keyring:
 
-   <p class="command">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export chris@chris-lamb.co.uk | gpg --import</p>
+   <p class="command">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export intrigeri@debian.org | gpg --import</p>
 
 1. Verify the certifications made on the Tails signing key:
 
@@ -60,10 +60,10 @@ key.
 
    In the output of this command, look for the following line:
 
-       sig!2        0x1E953E27D4311E58 2020-03-19  Chris Lamb <chris@chris-lamb.co.uk>
+       sig!3        0xC92949B8A63BB098 2026-09-02  intrigeri <intrigeri@torproject.org>
 
-   Here, `sig!2` means that Chris
-   Lamb verified and certified the Tails signing key with his key and a level 2 check.
+   Here, `sig!3` means that intrigeri
+   verified and certified the Tails signing key with his key and a level 3 check.
 
    It is also possible to verify the certifications made by other
    people. Their name and email address appear in the list of
