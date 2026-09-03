@@ -1,9 +1,9 @@
 ---
 origin_references:
   debian:
-    reference: '2026072002'
+    reference: '2026083101'
   debian-security:
-    reference: '2026081901'
+    reference: '2026090202'
   torproject:
     reference: '2026060201'
 packages:
@@ -157,7 +157,7 @@ packages:
     version: 1:2.41.5-0+deb13u1
   - arch: amd64
     package: bubblewrap
-    version: 0.11.0-2+deb13u1
+    version: 0.12.0-1~deb13u1
   - arch: amd64
     package: build-essential
     version: '12.12'
@@ -406,7 +406,7 @@ packages:
     version: 2.41.5-0+deb13u1
   - arch: all
     package: electrum
-    version: 4.7.2+dfsg-1~bpo13+1
+    version: 4.8.1+dfsg-1~bpo13+1
   - arch: all
     package: emacsen-common
     version: 3.0.8
@@ -463,64 +463,67 @@ packages:
     version: 4.10.0-3
   - arch: all
     package: firmware-amd-graphics
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-ath9k-htc
-    version: 1.4.0-110-ge888634+dfsg1-0.3
+    version: 1.4.0-110-ge888634+dfsg1-0.4
   - arch: all
     package: firmware-atheros
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-brcm80211
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-carl9170
-    version: 1.9.9-690-gc6e7ab0-0.2
+    version: 1.9.9-690-gc6e7ab0-0.3
+  - arch: all
+    package: firmware-cirrus
+    version: 20260810-1
   - arch: all
     package: firmware-intel-graphics
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-intel-misc
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-intel-sound
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-ipw2x00
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-iwlwifi
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-libertas
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-linux-free
     version: 20241210-3
   - arch: all
     package: firmware-linux-nonfree
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-linux
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-mediatek
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-misc-nonfree
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-nvidia-graphics
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-realtek
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-sof-signed
     version: 2025.12.2-2
   - arch: all
     package: firmware-ti-connectivity
-    version: 20260622-1
+    version: 20260810-1
   - arch: all
     package: firmware-zd1211
     version: 1:1.5-13
@@ -529,7 +532,7 @@ packages:
     version: 1.4.4-2
   - arch: amd64
     package: flatpak
-    version: 1.16.6-1~deb13u2tails1
+    version: 1.16.6-1~deb13u2tails2
   - arch: amd64
     package: fontconfig-config
     version: 2.15.0-2.3
@@ -655,10 +658,10 @@ packages:
     version: 10.05.1~dfsg-1+deb13u1
   - arch: all
     package: gimp-data
-    version: 3.0.4-3+deb13u9
+    version: 3.0.4-3+deb13u10
   - arch: amd64
     package: gimp
-    version: 3.0.4-3+deb13u9
+    version: 3.0.4-3+deb13u10
   - arch: amd64
     package: gir1.2-accountsservice-1.0
     version: 23.13.9-7
@@ -676,7 +679,7 @@ packages:
     version: 1:0.1.114-2
   - arch: amd64
     package: gir1.2-flatpak-1.0
-    version: 1.16.6-1~deb13u2tails1
+    version: 1.16.6-1~deb13u2tails2
   - arch: amd64
     package: gir1.2-freedesktop
     version: 1.84.0-1
@@ -703,7 +706,7 @@ packages:
     version: 2.7.2-2
   - arch: amd64
     package: gir1.2-gimp-3.0
-    version: 3.0.4-3+deb13u9
+    version: 3.0.4-3+deb13u10
   - arch: amd64
     package: gir1.2-girepository-2.0
     version: 1.84.0-1
@@ -730,7 +733,7 @@ packages:
     version: 1.10.8-5
   - arch: amd64
     package: gir1.2-gst-plugins-bad-1.0
-    version: 1.26.2-3+deb13u2
+    version: 1.26.2-3+deb13u3
   - arch: amd64
     package: gir1.2-gst-plugins-base-1.0
     version: 1.26.2-1+deb13u1
@@ -763,7 +766,7 @@ packages:
     version: 1.5.32-2
   - arch: amd64
     package: gir1.2-javascriptcoregtk-4.1
-    version: 2.52.5-1~deb13u1
+    version: 2.52.6-1~deb13u1
   - arch: amd64
     package: gir1.2-mutter-16
     version: 48.7-0+deb13u1
@@ -799,7 +802,7 @@ packages:
     version: 1.90.9-1
   - arch: amd64
     package: gir1.2-webkit2-4.1
-    version: 2.52.5-1~deb13u1
+    version: 2.52.6-1~deb13u1
   - arch: amd64
     package: gir1.2-wnck-3.0
     version: 43.2-1
@@ -2080,7 +2083,7 @@ packages:
     version: 1.5.0+ds-2
   - arch: amd64
     package: libflatpak0
-    version: 1.16.6-1~deb13u2tails1
+    version: 1.16.6-1~deb13u2tails2
   - arch: amd64
     package: libflite1
     version: 2.2-7
@@ -2212,7 +2215,7 @@ packages:
     version: 5.2.2-1+deb13u1
   - arch: amd64
     package: libgimp-3.0-0
-    version: 3.0.4-3+deb13u9
+    version: 3.0.4-3+deb13u10
   - arch: amd64
     package: libgirepository-1.0-1
     version: 1.84.0-1
@@ -2380,7 +2383,7 @@ packages:
     version: 1.26.2-1+deb13u1
   - arch: amd64
     package: libgstreamer-plugins-bad1.0-0
-    version: 1.26.2-3+deb13u2
+    version: 1.26.2-3+deb13u3
   - arch: amd64
     package: libgstreamer-plugins-base1.0-0
     version: 1.26.2-1+deb13u1
@@ -2677,7 +2680,7 @@ packages:
     version: 2.14-2+b3
   - arch: amd64
     package: libjavascriptcoregtk-4.1-0
-    version: 2.52.5-1~deb13u1
+    version: 2.52.6-1~deb13u1
   - arch: amd64
     package: libjbig0
     version: 2.1-6.1+b2
@@ -4185,6 +4188,9 @@ packages:
     package: libssl3t64
     version: 3.5.6-1~deb13u2
   - arch: amd64
+    package: libssl3t64
+    version: 3.5.7-1~deb13u2
+  - arch: amd64
     package: libstaroffice-0.0-0
     version: 0.0.7-1+b2
   - arch: amd64
@@ -4582,7 +4588,7 @@ packages:
     version: 2:4.22.10+dfsg-0+deb13u2
   - arch: amd64
     package: libwebkit2gtk-4.1-0
-    version: 2.52.5-1~deb13u1
+    version: 2.52.6-1~deb13u1
   - arch: amd64
     package: libwebp7
     version: 1.5.0-0.1
@@ -4929,26 +4935,26 @@ packages:
     package: linux-base
     version: 4.12.1
   - arch: amd64
-    package: linux-headers-6.12.101+deb13-amd64
-    version: 6.12.101-1
+    package: linux-headers-6.12.107+deb13-amd64
+    version: 6.12.107-1
   - arch: all
-    package: linux-headers-6.12.101+deb13-common
-    version: 6.12.101-1
+    package: linux-headers-6.12.107+deb13-common
+    version: 6.12.107-1
   - arch: amd64
     package: linux-headers-amd64
-    version: 6.12.101-1
+    version: 6.12.107-1
   - arch: amd64
-    package: linux-image-6.12.101+deb13-amd64
-    version: 6.12.101-1
+    package: linux-image-6.12.107+deb13-amd64
+    version: 6.12.107-1
   - arch: amd64
     package: linux-image-amd64
-    version: 6.12.101-1
+    version: 6.12.107-1
   - arch: amd64
-    package: linux-kbuild-6.12.101+deb13
-    version: 6.12.101-1
+    package: linux-kbuild-6.12.107+deb13
+    version: 6.12.107-1
   - arch: all
     package: linux-libc-dev
-    version: 6.12.101-1
+    version: 6.12.107-1
   - arch: all
     package: linux-sysctl-defaults
     version: 4.12.1
@@ -5139,8 +5145,11 @@ packages:
     package: openssl-provider-legacy
     version: 3.5.6-1~deb13u2
   - arch: amd64
+    package: openssl-provider-legacy
+    version: 3.5.7-1~deb13u2
+  - arch: amd64
     package: openssl
-    version: 3.5.6-1~deb13u2
+    version: 3.5.7-1~deb13u2
   - arch: all
     package: orca
     version: 48.1-1+deb13u2
@@ -5455,7 +5464,7 @@ packages:
     version: 0.0.7+ds-2~bpo13+1
   - arch: all
     package: python3-electrum
-    version: 4.7.2+dfsg-1~bpo13+1
+    version: 4.8.1+dfsg-1~bpo13+1
   - arch: all
     package: python3-email-validator
     version: 2.2.0-1
@@ -5588,9 +5597,6 @@ packages:
   - arch: amd64
     package: python3-propcache
     version: 0.3.1-1
-  - arch: amd64
-    package: python3-protobuf
-    version: 3.21.12-11+deb13u1
   - arch: amd64
     package: python3-psutil
     version: 7.0.0-2
@@ -5941,7 +5947,7 @@ packages:
     version: 5.5.0-1+b1
   - arch: amd64
     package: thunderbird
-    version: 1:140.13.0esr-2~deb13u1
+    version: 1:140.14.0esr-1~deb13u1
   - arch: amd64
     package: tinysparql
     version: 3.8.2-7
