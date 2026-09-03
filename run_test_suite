@@ -28,10 +28,10 @@ python3-opencv
 python3-paramiko
 python3-pil
 python3-pydantic
-python3-typeguard
 python3-rpyc
 python3-slixmpp
 python3-tomli-w
+python3-typeguard
 qemu-system-x86
 qrencode
 ruby-bindex
