@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-04-01 00:15+0000\n"
+"POT-Creation-Date: 2026-09-03 15:00+0000\n"
 "PO-Revision-Date: 2026-08-23 18:56+0000\n"
 "Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,18 +153,23 @@ msgid "   <p class=\"command\">sudo apt update && sudo apt install debian-keyrin
 msgstr "   <p class=\"command\">sudo apt update && sudo apt install debian-keyring</p>\n"
 
 #. type: Bullet: '1. '
+#, fuzzy
+#| msgid ""
+#| "Import the OpenPGP key of [[!wikipedia Chris_Lamb_(software_developer) "
+#| "desc=\"Chris Lamb\"]], a former Debian Project Leader, from the Debian "
+#| "keyring into your keyring:"
 msgid ""
-"Import the OpenPGP key of [[!wikipedia Chris_Lamb_(software_developer) "
-"desc=\"Chris Lamb\"]], a former Debian Project Leader, from the Debian "
-"keyring into your keyring:"
+"Import the OpenPGP key of intrigeri, a Debian and Tails developer, from the "
+"Debian keyring into your keyring:"
 msgstr ""
 "Importeu la clau OpenPGP de [[!wikipedia Chris_Lamb_(software_developer) "
 "desc=\"Chris Lamb\"]], un antic líder del projecte Debian, des de l'anell de "
 "claus de Debian al vostre anell de claus:"
 
 #. type: Plain text
-#, no-wrap
-msgid "   <p class=\"command\">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export chris@chris-lamb.co.uk | gpg --import</p>\n"
+#, fuzzy, no-wrap
+#| msgid "   <p class=\"command\">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export chris@chris-lamb.co.uk | gpg --import</p>\n"
+msgid "   <p class=\"command\">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export intrigeri@debian.org | gpg --import</p>\n"
 msgstr "   <p class=\"command\">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export chris@chris-lamb.co.uk | gpg --import</p>\n"
 
 #. type: Bullet: '1. '
@@ -183,14 +188,17 @@ msgstr "   Al resultat d'aquesta ordre, cerqueu la línia següent:\n"
 
 #. type: Plain text
 #, no-wrap
-msgid "       sig!2        0x1E953E27D4311E58 2020-03-19  Chris Lamb <chris@chris-lamb.co.uk>\n"
-msgstr "       sig!2        0x1E953E27D4311E58 2020-03-19  Chris Lamb <chris@chris-lamb.co.uk>\n"
+msgid "       sig!3        0xC92949B8A63BB098 2026-09-02  intrigeri <intrigeri@torproject.org>\n"
+msgstr ""
 
 #. type: Plain text
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "   Here, `sig!2` means that Chris\n"
+#| "   Lamb verified and certified the Tails signing key with his key and a level 2 check.\n"
 msgid ""
-"   Here, `sig!2` means that Chris\n"
-"   Lamb verified and certified the Tails signing key with his key and a level 2 check.\n"
+"   Here, `sig!3` means that intrigeri\n"
+"   verified and certified the Tails signing key with his key and a level 3 check.\n"
 msgstr ""
 "   Aquí, `sig!2` significa que Chris\n"
 "   Lamb va verificar i certificar la clau de signatura de Tails amb la seva clau i un control de nivell 2.\n"
@@ -513,6 +521,10 @@ msgstr "[[!inline pages=\"install/inc/steps/restart_first_time.inline.ca\" raw=\
 #, no-wrap
 msgid "[[!inline pages=\"install/inc/steps/welcome.inline\" raw=\"yes\" sort=\"age\"]]\n"
 msgstr "[[!inline pages=\"install/inc/steps/welcome.inline.ca\" raw=\"yes\" sort=\"age\"]]\n"
+
+#, no-wrap
+#~ msgid "       sig!2        0x1E953E27D4311E58 2020-03-19  Chris Lamb <chris@chris-lamb.co.uk>\n"
+#~ msgstr "       sig!2        0x1E953E27D4311E58 2020-03-19  Chris Lamb <chris@chris-lamb.co.uk>\n"
 
 #, no-wrap
 #~ msgid ""

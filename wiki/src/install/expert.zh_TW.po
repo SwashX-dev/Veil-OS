@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails l10n\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-04-01 00:15+0000\n"
+"POT-Creation-Date: 2026-09-03 15:00+0000\n"
 "PO-Revision-Date: 2024-05-20 18:01+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: Tails Chinese translators <jxt@twngo.xyz>\n"
@@ -152,16 +152,15 @@ msgstr ""
 #. type: Bullet: '1. '
 #, fuzzy
 msgid ""
-"Import the OpenPGP key of [[!wikipedia Chris_Lamb_(software_developer) "
-"desc=\"Chris Lamb\"]], a former Debian Project Leader, from the Debian "
-"keyring into your keyring:"
+"Import the OpenPGP key of intrigeri, a Debian and Tails developer, from the "
+"Debian keyring into your keyring:"
 msgstr ""
 "自 Debian 密鑰圈中滙入 [[!wikipedia Stefano_Zacchiroli]]的OpenPGP-密鑰 ,到自"
 "己的密鑰圈裏。這是一任 Debian 前任專案開發隊長的密鑰:"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-msgid "   <p class=\"command\">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export chris@chris-lamb.co.uk | gpg --import</p>\n"
+msgid "   <p class=\"command\">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export intrigeri@debian.org | gpg --import</p>\n"
 msgstr "       gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export zack@upsilon.cc | gpg --import\n"
 
 #. type: Bullet: '1. '
@@ -179,15 +178,15 @@ msgid "   In the output of this command, look for the following line:\n"
 msgstr "   在此指令的輸出結果中，找到下列這行：\n"
 
 #. type: Plain text
-#, fuzzy, no-wrap
-msgid "       sig!2        0x1E953E27D4311E58 2020-03-19  Chris Lamb <chris@chris-lamb.co.uk>\n"
-msgstr "       sig!         0x1E953E27D4311E58 2020-03-19  Chris Lamb <chris@chris-lamb.co.uk>\n"
+#, no-wrap
+msgid "       sig!3        0xC92949B8A63BB098 2026-09-02  intrigeri <intrigeri@torproject.org>\n"
+msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
 msgid ""
-"   Here, `sig!2` means that Chris\n"
-"   Lamb verified and certified the Tails signing key with his key and a level 2 check.\n"
+"   Here, `sig!3` means that intrigeri\n"
+"   verified and certified the Tails signing key with his key and a level 3 check.\n"
 msgstr ""
 "   這個 <code>sig!</code>, 帶有驚嘆符號, 代表　Stefano\n"
 "   Zacchiroli 已用他的密鑰來查核與證明 Tails 的簽名金鑰。\n"
@@ -496,6 +495,10 @@ msgstr "[[!inline pages=\"install/inc/steps/restart_first_time.inline.zh_TW\" ra
 #, no-wrap
 msgid "[[!inline pages=\"install/inc/steps/welcome.inline\" raw=\"yes\" sort=\"age\"]]\n"
 msgstr "[[!inline pages=\"install/inc/steps/welcome.inline.zh_TW\" raw=\"yes\" sort=\"age\"]]\n"
+
+#, fuzzy, no-wrap
+#~ msgid "       sig!2        0x1E953E27D4311E58 2020-03-19  Chris Lamb <chris@chris-lamb.co.uk>\n"
+#~ msgstr "       sig!         0x1E953E27D4311E58 2020-03-19  Chris Lamb <chris@chris-lamb.co.uk>\n"
 
 #~ msgid ""
 #~ "Import the Tails signing key in your <span class=\"application\">GnuPG</"
