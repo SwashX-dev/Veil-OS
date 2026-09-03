@@ -8,6 +8,13 @@ from datetime import datetime, timedelta
 from operator import itemgetter
 from tailslib.git import Git
 
+# These will result in "fake" custom branches. Each member results in
+# a copy of the active branch with "project_name" equal to
+# "base_project_name", with the other key-value pairs overwritten by
+# those in the custom branch below.
+custom_branches = [
+]
+
 
 class ActiveBranches(Git):
     """
@@ -40,10 +47,18 @@ class ActiveBranches(Git):
         assert isinstance(self.active_days, int)
 
     def compute(self):
-        return sorted(
-            [self.job_params(branch) for branch in self.active_branches()],
-            key=itemgetter("branch_name"),
-        )
+        git_branches = [self.job_params(branch) for branch in self.active_branches()]
+        all_branches = git_branches.copy()
+        for custom_branch in custom_branches:
+            new_branch = next(
+                b.copy()
+                for b in git_branches
+                if b["project_name"] == custom_branch["base_project_name"]
+            )
+            new_branch.update(custom_branch)
+            del new_branch["base_project_name"]
+            all_branches.append(new_branch)
+        return sorted(all_branches, key=itemgetter("branch_name"))
 
     def job_params(self, branch):
         return {
