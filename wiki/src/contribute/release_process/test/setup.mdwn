@@ -51,7 +51,6 @@ To install the dependencies on our test suite:
        sudo apt update && \
        sudo apt install \
            $(. config/test_suite_variables && echo "$TEST_SUITE_DEPENDENCIES") \
-           qemu-utils \
            tigervnc-viewer \
            x11-utils \
            x11vnc \
