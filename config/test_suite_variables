@@ -31,6 +31,7 @@ python3-slixmpp
 python3-tomli-w
 python3-typeguard
 python3-yaml
+qemu-system-modules-spice
 qemu-system-x86
 qrencode
 ruby-bindex
