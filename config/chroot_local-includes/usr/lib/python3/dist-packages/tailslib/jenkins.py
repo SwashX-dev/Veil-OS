@@ -9,7 +9,7 @@ from tailslib.git import Git
 # These will result in "fake" custom branches. Each member results in
 # a copy of the active branch with "project_name" equal to
 # "base_project_name", with the other key-value pairs overwritten by
-# those in the custom branch below.
+# those in the custom branch's dictionary.
 custom_branches = [
     {
         "base_project_name": "stable",
