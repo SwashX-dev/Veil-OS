@@ -15,7 +15,7 @@ workflow:
 # This block is nothing special in GitLab CI semantics. It's just a place we're
 # putting "variables" to be reused later
 .definitions:
-  # Please, make sure to only use images from `registry.gitlab.tails.boum.org`
+  # Please, make sure to only use images from `registry.gitlab.tails.net`
   # or `containers.torproject.org/tpo/tpa/base-images`
   # as we give significant privileges to our Runners wrt. what they can do in our
   # repositories.
@@ -28,9 +28,9 @@ workflow:
   # these *current-suite-*-image:
   current-suite-debian-image: &current-suite-debian-image "containers.torproject.org/tpo/tpa/base-images/debian:trixie"
   current-suite-golang-image: &current-suite-golang-image "containers.torproject.org/tpo/tpa/base-images/golang:trixie"
-  current-suite-perl-image: &current-suite-perl-image "registry.gitlab.tails.boum.org/tails/container-images/perl:trixie"
+  current-suite-perl-image: &current-suite-perl-image "registry.gitlab.tails.net/tails/container-images/perl:trixie"
   current-suite-python-image: &current-suite-python-image "containers.torproject.org/tpo/tpa/base-images/python:trixie"
-  current-suite-python-git-image: &current-suite-python-git-image "registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie"
+  current-suite-python-git-image: &current-suite-python-git-image "registry.gitlab.tails.net/tails/container-images/python-git:trixie"
 
 image: *image-trixie
 
@@ -52,7 +52,7 @@ build-website:
     - changes:
         - .gitlab-ci.yml
         - .gitlab-ci-pipeline.yml
-  image: registry.gitlab.tails.boum.org/tails/container-images/website:trixie
+  image: registry.gitlab.tails.net/tails/container-images/website:trixie
   cache:
     key: website-$CI_COMMIT_REF_SLUG
     paths:
@@ -71,7 +71,7 @@ build-website:
     - mkdir -p ${UNDERLAYS_DIR}
     - |
       for i in etcher-binary promotion-material; do
-        test -d ${UNDERLAYS_DIR}/${i} || git clone --depth=1 https://gitlab.tails.boum.org/tails/${i}.git ${UNDERLAYS_DIR}/${i}
+        test -d ${UNDERLAYS_DIR}/${i} || git clone --depth=1 https://gitlab.tails.net/tails/${i}.git ${UNDERLAYS_DIR}/${i}
         git -C ${UNDERLAYS_DIR}/${i} switch master
         git -C ${UNDERLAYS_DIR}/${i} pull
       done
@@ -79,15 +79,15 @@ build-website:
       if [ "$CI_COMMIT_BRANCH" == "master" ]; then
         git checkout -B master $CI_COMMIT_SHA
         git branch -u origin/master
-        git remote set-url origin https://user:$WEBSITE_BUILD_PROJECT_ACCESS_TOKEN@gitlab.tails.boum.org/tails/tails.git
+        git remote set-url origin https://user:$WEBSITE_BUILD_PROJECT_ACCESS_TOKEN@gitlab.tails.net/tails/tails.git
       fi
     - |
       ./build-website ${IKIWIKI_RCS_OPTION} \
         --url "https://tails.net" \
         --usedirs \
         --sslcookie \
-        --historyurl "https://gitlab.tails.boum.org/tails/tails/-/commits/master/wiki/src/[[file]]" \
-        --diffurl "https://gitlab.tails.boum.org/tails/tails/-/commit/[[sha1_commit]]" \
+        --historyurl "https://gitlab.tails.net/tails/tails/-/commits/master/wiki/src/[[file]]" \
+        --diffurl "https://gitlab.tails.net/tails/tails/-/commit/[[sha1_commit]]" \
         --rss \
         --atom \
         --set exclude='^misc\/.*|\.(ar|fa|id|pl|sr_Latn|tr|zh|zh_TW)\.po$' \
@@ -98,7 +98,7 @@ deploy-website:
   needs: [build-website, lint-po, check-website-core-pages, check-po-msgfmt, check-po-meta-date, check-translatable-live-website-urls]
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
-  image: registry.gitlab.tails.boum.org/tails/container-images/website:trixie
+  image: registry.gitlab.tails.net/tails/container-images/website:trixie
   dependencies:
     - build-website
   environment: production
@@ -122,7 +122,7 @@ deploy-website:
     - rsync --rsh="ssh -p ${SSH_PORT} -o UserKnownHostsFile=.ssh/known_hosts -i .ssh/private_key" --checksum --archive --no-times --verbose --mkpath --delete "config/chroot_local-includes/usr/share/doc/tails/website/" www-data@${SSH_SERVER}:/
 
 lint-po:
-  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
+  image: registry.gitlab.tails.net/tails/container-images/python-git:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -132,11 +132,11 @@ lint-po:
   script:
     - *apt-update
     - apt-get -qy install --no-install-recommends i18nspector
-    - git clone https://gitlab.tails.boum.org/tails/jenkins-tools.git /tmp/jenkins-tools
+    - git clone https://gitlab.tails.net/tails/jenkins-tools.git /tmp/jenkins-tools
     - /tmp/jenkins-tools/slaves/lint_po
 
 avoid-gtk-launch:
-  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
+  image: registry.gitlab.tails.net/tails/container-images/python-git:trixie
   script:
     - ./bin/test-utils/gtk-launch
 
@@ -151,7 +151,7 @@ git-history:
     - ./bin/test-utils/check-git-history "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}"
 
 codespell:
-  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
+  image: registry.gitlab.tails.net/tails/container-images/linters:trixie
   script:
     - codespell --version
     - codespell
@@ -164,7 +164,7 @@ ruff-lint-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: registry.gitlab.tails.boum.org/tails/container-images/ruff:sid
+  image: registry.gitlab.tails.net/tails/container-images/ruff:sid
 
   script:
     - ruff --version
@@ -183,7 +183,7 @@ ruff-format-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: registry.gitlab.tails.boum.org/tails/container-images/ruff:sid
+  image: registry.gitlab.tails.net/tails/container-images/ruff:sid
 
   script:
     - ruff --version
@@ -191,7 +191,7 @@ ruff-format-changed-files:
     - ./bin/test-utils/ruff "origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:?}" format --check
 
 check-isolated-python:
-  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
+  image: registry.gitlab.tails.net/tails/container-images/python-git:trixie
   script:
     - *apt-update
     - apt-get -qy install --no-install-recommends python3-sh
@@ -225,7 +225,7 @@ check-po-msgfmt:
     - ./bin/check-po-msgfmt
 
 check-po-meta-date:
-  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
+  image: registry.gitlab.tails.net/tails/container-images/linters:trixie
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(master|stable|testing|devel)$/'
     - changes:
@@ -251,7 +251,7 @@ check-locale-descriptions:
     - ./bin/locale-descriptions suggest
 
 rubocop:
-  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
+  image: registry.gitlab.tails.net/tails/container-images/linters:trixie
   script:
   - rubocop --version
   - rubocop --format junit --out rubocop.xml --format markdown
@@ -292,7 +292,7 @@ test-perl5lib:
   - dzil test --all
 
 shellcheck:
-  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
+  image: registry.gitlab.tails.net/tails/container-images/python-git:trixie
   script:
   - *apt-update
   - apt-get -qy install --no-install-recommends shellcheck xmlstarlet
@@ -313,7 +313,7 @@ shfmt-changed-files:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0
 
-  image: registry.gitlab.tails.boum.org/tails/container-images/linters:trixie
+  image: registry.gitlab.tails.net/tails/container-images/linters:trixie
 
   script:
     - shfmt --version
@@ -393,7 +393,7 @@ test-whisperback:
       junit: report.xml
 
 test-ci-configuration:
-  image: registry.gitlab.tails.boum.org/tails/container-images/python-git:trixie
+  image: registry.gitlab.tails.net/tails/container-images/python-git:trixie
   variables:
     GIT_STRATEGY: clone
     # GIT_DEPTH=0 disables shallow cloning, see
@@ -473,7 +473,7 @@ https-get-expired:
 Ensure MR from stable into devel:
   rules:
     - if: '$CI_COMMIT_BRANCH == "stable"'
-  image: registry.gitlab.tails.boum.org/tails/container-images/python-gitlab:trixie
+  image: registry.gitlab.tails.net/tails/container-images/python-gitlab:trixie
   script:
     - |
       ./bin/ensure-merge-request \
