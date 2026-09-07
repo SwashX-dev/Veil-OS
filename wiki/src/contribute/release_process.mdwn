@@ -273,7 +273,7 @@ Check CI results
 
 ### Jenkins
 
-Visit the [Jenkins RM view](https://jenkins.tails.boum.org/view/RM/)
+Visit the [Jenkins RM view](https://jenkins.tails.net/view/RM/)
 and check that the jobs for the release branch have good enough results:
 
  - the last build and reproducibility testing builds have succeeded for:
@@ -1204,11 +1204,11 @@ Build the Incremental Upgrade Kits on Jenkins
    has finished, and that images have appeared on the web server:
    <https://iso-history.tails.boum.org/?C=M&O=D>
 
-1. On <https://jenkins.tails.boum.org/job/build_IUKs/configure>, adjust
+1. On <https://jenkins.tails.net/job/build_IUKs/configure>, adjust
    the `SOURCE_VERSION` axis to list all versions in `$IUK_SOURCE_VERSIONS`,
    and save the updated configuration.
 
-1. On <https://jenkins.tails.boum.org/job/build_IUKs/build?delay=0sec>,
+1. On <https://jenkins.tails.net/job/build_IUKs/build?delay=0sec>,
    fill the form with these values:
 
     - `TAILS_GIT_COMMIT`: the value of `$TAG` in your release environment
@@ -1307,7 +1307,7 @@ If this is the case:
 
 If the last command failed:
 
-1. Visit https://jenkins.tails.boum.org/job/build_IUKs/lastBuild/parameters/
+1. Visit https://jenkins.tails.net/job/build_IUKs/lastBuild/parameters/
 
    It tells you which parameters you've passed to the upstream Jenkins
    job, which spawned the many workers. Make sure to use the build
