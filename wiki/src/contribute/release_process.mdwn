@@ -1191,7 +1191,7 @@ Make sure that Jenkins has finished building the images so you have set
         --matching-jenkins-images-build-id "${MATCHING_JENKINS_IMAGES_BUILD_ID:?}"
 
 Then, wait (a few minutes, `*/15` crontab) until the images appear
-on <https://iso-history.tails.boum.org/?C=M&O=D>:
+on <https://iso-history.tails.net/?C=M&O=D>:
 
     "${RELEASE_CHECKOUT:?}/bin/wait-for-images-in-iso-history" "${VERSION:?}" "${ISOS:?}"
 
@@ -1202,7 +1202,7 @@ Build the Incremental Upgrade Kits on Jenkins
 
 1. Make sure the push to ISO history (started in the previous section)
    has finished, and that images have appeared on the web server:
-   <https://iso-history.tails.boum.org/?C=M&O=D>
+   <https://iso-history.tails.net/?C=M&O=D>
 
 1. On <https://jenkins.tails.boum.org/job/build_IUKs/configure>, adjust
    the `SOURCE_VERSION` axis to list all versions in `$IUK_SOURCE_VERSIONS`,
