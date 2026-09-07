@@ -28,10 +28,18 @@ Given /^I copy the sample videos to "([^"]+)" as user "([^"]+)"$/ do |destinatio
 end
 
 When(/^I open "(.*[.].*)" in Celluloid$/) do |filepath|
-  # Wait for the window to be visible
-  celluloid.child('Celluloid', recursive: false)
-  # I can't find a way to click on "Open File..." from Dogtail, so let's use a shortcut
-  @screen.press('ctrl', 'o')
+  # Wait for the window to be visible, which isn't super reliable so
+  # we might have to retry
+  window = celluloid.child('Celluloid', recursive: false)
+  try_for(10, recovery_proc: proc { window.click }) do
+    # There is no way to click on "Open File..." from Dogtail, so
+    # let's use a shortcut
+    @screen.press('ctrl', 'o')
+    # Verify that the Open File dialog actually opened
+    Dogtail::Application.new('org.gnome.Nautilus')
+                        .child('Open File', roleName: 'frame', recursive: false,
+                               retry: false)
+  end
 
   nautilus_open_file(filepath, button_label: 'Select')
 end
