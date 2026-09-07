@@ -6,7 +6,7 @@ set -o pipefail
 NEXT_PLANNED_VERSION="$1"
 
 ./bin/automailer.py <<EOF
-To: tails-dev@boum.org,tails-l10n@boum.org
+To: tails-dev@lists.torproject.org,tails-l10n@lists.torproject.org
 Subject: Release schedule for Tails ${NEXT_PLANNED_VERSION:?}
 
 Hi,

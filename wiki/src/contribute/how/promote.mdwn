@@ -29,5 +29,5 @@ on GitLab.
 
 # Talk to us
 
-You can subscribe to [[tails-dev@boum.org|doc/about/contact#tails-dev]],
+You can subscribe to [[tails-dev@lists.torproject.org|doc/about/contact#tails-dev]],
 our community mailing list.
