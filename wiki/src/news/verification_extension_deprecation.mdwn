@@ -40,7 +40,7 @@ time to help us with the verification JavaScript!
 In the future, this simplification will allow us to further simplify the
 download page and installation instructions. We also want to research how to
 make the verification faster. If you know WebAssembly, see if you can help us
-[speed up the checksum computation](https://gitlab.tails.boum.org/tails/tails/-/issues/16905).
+[speed up the checksum computation](https://gitlab.tails.net/tails/tails/-/issues/16905).
 
 See also our [[design document on the security and threat model of the
 download verification|contribute/design/download_verification]].

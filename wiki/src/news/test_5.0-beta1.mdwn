@@ -41,7 +41,7 @@ before the end of April.
 # Changelog
 
 For more details about what has changed in Tails 5.0~beta1, read our
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/raw/5.0-beta1/debian/changelog).
+[changelog](https://gitlab.tails.net/tails/tails/-/raw/5.0-beta1/debian/changelog).
 
 # Known issues
 
@@ -57,7 +57,7 @@ For more details about what has changed in Tails 5.0~beta1, read our
 
 * Tails 5.0~beta1 takes more time to start than previous versions ([[!tails_ticket 18906]]).
 
-* [Open issues for Tails 5.0](https://gitlab.tails.boum.org/tails/tails/-/boards/4?label_name%5B%5D=Core%20Work%3AFoundations%20Team&milestone_title=Tails_5.0)
+* [Open issues for Tails 5.0](https://gitlab.tails.net/tails/tails/-/boards/4?label_name%5B%5D=Core%20Work%3AFoundations%20Team&milestone_title=Tails_5.0)
 
 See the list of [[long-standing issues|support/known_issues]].
 

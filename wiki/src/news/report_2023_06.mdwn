@@ -20,7 +20,7 @@ Highlights
   migration.
 
 - We also published the [entire Puppet
-  codebase](https://gitlab.tails.boum.org/tails/puppet-code) that manages the
+  codebase](https://gitlab.tails.net/tails/puppet-code) that manages the
   Tails infrastructure. Have a look under the hood!
 
 Releases

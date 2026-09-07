@@ -20,29 +20,29 @@ Tails 4.19 is scheduled for June 1.
 Code
 ====
 
-* [Make it possible to resume an automatic upgrade download](https://gitlab.tails.boum.org/tails/tails/-/issues/15875)
+* [Make it possible to resume an automatic upgrade download](https://gitlab.tails.net/tails/tails/-/issues/15875)
 
-* [Add download size and estimated time when downloading upgrades](https://gitlab.tails.boum.org/tails/tails/-/issues/6502)
+* [Add download size and estimated time when downloading upgrades](https://gitlab.tails.net/tails/tails/-/issues/6502)
 
 Documentation and website
 =========================
 
-* [Started improving our doc on MAT and metadata](https://gitlab.tails.boum.org/tails/tails/-/issues/8416)
+* [Started improving our doc on MAT and metadata](https://gitlab.tails.net/tails/tails/-/issues/8416)
 
-* [Documented how to using Dino in Tails](https://gitlab.tails.boum.org/tails/tails/-/issues/18235)
+* [Documented how to using Dino in Tails](https://gitlab.tails.net/tails/tails/-/issues/18235)
 
-* [Improved the error page when upgrades fail](https://gitlab.tails.boum.org/tails/tails/-/issues/18265)
+* [Improved the error page when upgrades fail](https://gitlab.tails.net/tails/tails/-/issues/18265)
 
-* [Ordered 2 Panda wireless adapters to debug recent user reports](https://gitlab.tails.boum.org/tails/tails/-/issues/17987)
+* [Ordered 2 Panda wireless adapters to debug recent user reports](https://gitlab.tails.net/tails/tails/-/issues/17987)
 
-* [Tested the JavaScript verification in Firefox and Chrome beta](https://gitlab.tails.boum.org/tails/tails/-/issues/18283)
+* [Tested the JavaScript verification in Firefox and Chrome beta](https://gitlab.tails.net/tails/tails/-/issues/18283)
 
-* [Edited the template answers for Help Desk](https://gitlab.tails.boum.org/tails/tails/-/issues/18070)
+* [Edited the template answers for Help Desk](https://gitlab.tails.net/tails/tails/-/issues/18070)
 
 User experience
 ===============
 
-Implemented parts of the [redesigned network connection configuration](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/network_connection#ux-design)
+Implemented parts of the [redesigned network connection configuration](https://gitlab.tails.net/tails/blueprints/-/wikis/network_connection#ux-design)
 
 Highlights:
 

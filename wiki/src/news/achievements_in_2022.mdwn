@@ -181,14 +181,14 @@ and automates some tedious work.
 
 Our team grew and welcomed 2 new full-time workers:
 
-- [@disoj](https://gitlab.tails.boum.org/disoj) joined us as our Project
+- [@disoj](https://gitlab.tails.net/disoj) joined us as our Project
   Manager in April.
 
   She will help our team grow, mature, and ultimately serve our users better.
   It's the first time that we hired for a managerial position, so it's a very
   big and positive change.
 
-- [@groente](https://gitlab.tails.boum.org/groente), a long-term Sysadmin
+- [@groente](https://gitlab.tails.net/groente), a long-term Sysadmin
   consultant, joined us full-time in July.
 
   He will help us deploy better infrastructure to make our work more efficient

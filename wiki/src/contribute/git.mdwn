@@ -78,7 +78,7 @@ For more information about our usage of Git submodules, see
 Developers with write access to the repositories should:
 
 	git config --global url.git@gitlab-ssh.tails.net:.insteadOf \
-	   https://gitlab.tails.boum.org/
+	   https://gitlab.tails.net/
 
 We also recommend the following setting in your Tails clone since it
 otherwise is too easy to forget pushing updated submodules:

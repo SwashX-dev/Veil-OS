@@ -48,7 +48,7 @@ In Tails 6.5, we brought:
 
 To know more, check out the Tails 6.5 [[release notes|news/version_6.5]] and
 the
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/blob/master/debian/changelog). 
+[changelog](https://gitlab.tails.net/tails/tails/-/blob/master/debian/changelog). 
 
 Metrics
 =======

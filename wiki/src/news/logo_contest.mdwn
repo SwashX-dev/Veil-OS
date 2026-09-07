@@ -11,7 +11,7 @@ We want to have a great logo by then to give Tails the visual impact it
 deserves. The image and
 banner we have been using so far don't really do the job anymore...
 
-<img src="https://gitlab.tails.boum.org/tails/blueprints/-/wikis/logo/tails-logo-round.png" width="250"/>
+<img src="https://gitlab.tails.net/tails/blueprints/-/wikis/logo/tails-logo-round.png" width="250"/>
 
 So we're starting a contest for designers to create a logo for Tails.
 We have already brainstormed on the idea, and received some great

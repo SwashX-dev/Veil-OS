@@ -7,7 +7,7 @@
 Highlights
 ==========
 
-- [@bokonon](https://gitlab.tails.boum.org/bokonon) joined our team, as our
+- [@bokonon](https://gitlab.tails.net/bokonon) joined our team, as our
   Fundraising Lead. bokonon will help us develop and grow our fundraising
   initiatives, to support the work we do to accomplish our
   [[mission|contribute/mission]].

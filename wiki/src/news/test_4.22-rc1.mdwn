@@ -30,7 +30,7 @@ that the bridges do not need to be reentered every time Tails is restarted.
 - Offline documentation includes the Russian language translation.
 
 For more details, read our
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/raw/4.22-rc1/debian/changelog).
+[changelog](https://gitlab.tails.net/tails/tails/-/raw/4.22-rc1/debian/changelog).
 
 <h1>Get Tails 4.22~rc1</h1>
 
