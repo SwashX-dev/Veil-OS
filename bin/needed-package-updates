@@ -5,8 +5,8 @@ It uses the the Ultimate Debian Database (UDD) to get a
 list of version in the Debian repository.
 
 By default it will get the last successful build manifest file from testing or stable from here:
-https://nightly.tails.boum.org/build_Tails_ISO_testing/lastSuccessful/archive/build-artifacts/
-https://nightly.tails.boum.org/build_Tails_ISO_stable/lastSuccessful/archive/build-artifacts/
+https://nightly.tails.net/build_Tails_ISO_testing/lastSuccessful/archive/build-artifacts/
+https://nightly.tails.net/build_Tails_ISO_stable/lastSuccessful/archive/build-artifacts/
 """
 
 import argparse
@@ -66,7 +66,7 @@ def add_metadata(yml, name):
 
 
 def get_build_manifest(suite: str) -> dict:
-    base_url = f"https://nightly.tails.boum.org/build_Tails_ISO_{suite}/lastSuccessful/archive/build-artifacts/"
+    base_url = f"https://nightly.tails.net/build_Tails_ISO_{suite}/lastSuccessful/archive/build-artifacts/"
 
     shasum_response = requests.get(
         urllib.parse.urljoin(base_url, "tails-build-artifacts.shasum"),
