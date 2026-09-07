@@ -7,7 +7,7 @@ VERSION="${1}"
 DIST="${2}"
 
 [ "${DIST:?}" = alpha ] && ./bin/automailer.py <<EOF
-To: tails-testers@boum.org
+To: tails-testers@lists.torproject.org
 Subject: Call for testing: ${VERSION?}
 
 Hi,
