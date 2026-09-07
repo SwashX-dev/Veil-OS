@@ -31,7 +31,7 @@ fi
 # bootstrapping swiftly, but it doesn't work because of a bug in
 # Tor. Details:
 # * https://gitlab.torproject.org/tpo/core/tor/-/issues/1247
-# * https://gitlab.tails.boum.org/tails/tails/-/blob/7fae4a761a06e5a14048baff21e0bdb71a1f7226/wiki/src/bugs/tor_vs_networkmanager.mdwn
+# * https://gitlab.tails.net/tails/tails/-/blob/7fae4a761a06e5a14048baff21e0bdb71a1f7226/wiki/src/bugs/tor_vs_networkmanager.mdwn
 # To work around this we restart Tor.
 echo >&2 "$BASENAME: $1 up: restarting tor@default.service"
 systemctl restart tor@default.service
