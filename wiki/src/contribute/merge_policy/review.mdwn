@@ -30,7 +30,7 @@ In particular, see
 - Build the topic branch and test the feature.
 
 - Check automated ISO build and test results on
-  <https://jenkins.tails.boum.org/>.
+  <https://jenkins.tails.net/>.
 
 - Review the diff, either in the GitLab interface or on the command line.
   If you're using the command line, beware of changes introduced
