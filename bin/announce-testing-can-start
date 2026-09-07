@@ -19,7 +19,7 @@ You can now start testing Tails ${VERSION}:
 ======================
 
 Either use \`git-annex\` or download from
-https://nightly.tails.boum.org/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/
+https://nightly.tails.net/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/
 
 2. Verify the images
 ====================

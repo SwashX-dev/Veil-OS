@@ -618,7 +618,7 @@ version's `.packages` file and the one from the to-be-released images:
    
        diff --color=never -u \
            "wiki/src/torrents/files/tails-amd64-${PREVIOUS_VERSION}.packages" \
-           <(curl --silent "https://nightly.tails.boum.org/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/latest.packages") \
+           <(curl --silent "https://nightly.tails.net/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/latest.packages") \
         | wdiff --diff-input  --terminal | grep -v --perl-regexp '^[~.:+a-zA-Z_0-9 \t\s-]*$'
 
 2. In the diff, look for:
@@ -658,7 +658,7 @@ version's `.packages` file and the one from the to-be-released images:
         (
         echo "Dear @technical-writers,"
         echo "- The changelog entry is ready: https://gitlab.tails.boum.org/tails/tails/-/blob/${RELEASE_BRANCH:?}/debian/changelog"
-        echo "- The latest corresponding images built by Jenkins are there: https://nightly.tails.boum.org/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/build-artifacts"
+        echo "- The latest corresponding images built by Jenkins are there: https://nightly.tails.net/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/build-artifacts"
         ) | pee cat wl-copy
 
 Included website
@@ -967,7 +967,7 @@ Verify that Jenkins reproduced your images:
     (
     set -eu
     cd "${ARTIFACTS:?}"
-    url="https://nightly.tails.boum.org/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
+    url="https://nightly.tails.net/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
     curl --fail "$url" > SHA512SUMS-jenkins.txt
     grep --perl-regexp '[.]img|iso' SHA512SUMS-jenkins.txt | sha512sum -c -
     rm SHA512SUMS-jenkins.txt
