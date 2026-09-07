@@ -2171,7 +2171,7 @@ Check that you are indeed preparing a final release:
        git checkout stable && \
        bare_repo=$(mktemp -d) && \
        git clone --bare --reference "${RELEASE_CHECKOUT:?}" \
-           git@gitlab-ssh.tails.boum.org:tails/tails \
+           git@gitlab-ssh.tails.net:tails/tails \
            "${bare_repo:?}" && \
        PYTHONPATH=lib/python3 ./bin/delete-merged-git-branches \
            --repo "${bare_repo:?}" && \
