@@ -85,7 +85,7 @@ Steps
    as `wiki/src/install/inc/js/download-2.js`.
 
    See our discussion about [deploying backward incompatible
-   changes](https://gitlab.tails.boum.org/tails/tails/-/issues/16091#note_159623)
+   changes](https://gitlab.tails.net/tails/tails/-/issues/16091#note_159623)
    on GitLab.
 
 Checklist

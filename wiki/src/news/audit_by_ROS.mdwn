@@ -13,7 +13,7 @@ integration.
 To better protect our users, we addressed most of the security vulnerabilities
 as soon as they were discovered and reported to us, without waiting for the
 audit to be complete and public. We can now share with your the [final
-report](https://gitlab.tails.boum.org/tails/tails/uploads/df935595f41faa687805136a6bfa2910/tails-ros-penetration-test-report-1-2.pdf).
+report](https://gitlab.tails.net/tails/tails/uploads/df935595f41faa687805136a6bfa2910/tails-ros-penetration-test-report-1-2.pdf).
 
 We are proud of the conclusion of the auditors:
 

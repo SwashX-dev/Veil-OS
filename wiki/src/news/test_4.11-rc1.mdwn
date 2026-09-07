@@ -31,7 +31,7 @@ issues to us!
 # Changelog
 
 For more details about what has changed in Tails 4.11~rc1, read our
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/raw/4.11-rc1/debian/changelog).
+[changelog](https://gitlab.tails.net/tails/tails/-/raw/4.11-rc1/debian/changelog).
 
 # Known issues
 

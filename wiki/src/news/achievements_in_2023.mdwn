@@ -98,7 +98,7 @@ High footfall areas of the website got a new carpet too. Check out our new
 us|doc/about/contact]] pages.
 
 A huge shout-out to the volunteers who made these possible:
-[@jawlensky](https://gitlab.tails.boum.org/jawlensky) for the website redesign
+[@jawlensky](https://gitlab.tails.net/jawlensky) for the website redesign
 and to our [[Catalan translations team|contribute/how/translate/team/ca]]!
 
 ## Community and organizational health
@@ -126,7 +126,7 @@ progressive change. Like this [damning
 indictment](https://nocallaronlasolas.serendipia.digital/) of the Mexican
 army's systematic surveillance of feminists in the country.
 
-I, ([@bokonon](https://gitlab.tails.boum.org/bokonon)), joined our small team at
+I, ([@bokonon](https://gitlab.tails.net/bokonon)), joined our small team at
 Tails this year, to lead our fundraising activities. I have been obsessing over
 how a free software project like ours can continue improving Tails while
 keeping it free. And one thing is already clear: we will need your help. Often.
