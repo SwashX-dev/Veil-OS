@@ -317,6 +317,7 @@ def cmd_helper(cmd, env: {}, print_output: false, output_in_exception: true)
   env = ENV.to_h.merge(env)
   out = ''
   IO.popen(env, cmd) do |p|
+    $cmd_helper_process = p
     loop do
       line = p.readline
       out += line
