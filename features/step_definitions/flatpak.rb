@@ -105,7 +105,8 @@ Given /^it has been (\d+) days since GNOME Software checked for updates$/ do |da
                'org.gnome.software.dconf-dump'
   if $vm.file_exist?(dconf_file)
     $vm.execute_successfully(
-      "sed -i 's/^check-timestamp=int64 .*$/check-timestamp=int64 #{new_timestamp}/' " +
+      'sed --regexp-extended -i ' \
+      "'s/^check-timestamp=int64 .*$/check-timestamp=int64 #{new_timestamp}/' " +
       dconf_file
     )
   end
@@ -127,7 +128,7 @@ Given /^GNOME Software thinks it is after 06:00 but before 23:00$/ do
   end
 
   $vm.execute_successfully(
-    "sed -i 's@ExecStart=@ExecStart=env TZ=Etc/GMT+12 @' " \
+    "sed --regexp-extended -i 's@ExecStart=@ExecStart=env TZ=Etc/GMT+12 @' " \
     '/lib/systemd/user/gnome-software.service'
   )
   $vm.execute_successfully('systemctl --user daemon-reload', user: LIVE_USER)
