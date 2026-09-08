@@ -81,7 +81,7 @@ When /^I kill the (.*) Flatpak$/ do |app_id|
   end
 end
 
-Then /^the (.+) locale is not present in the (.+) Flatpak extension$/ do |locale, id|
+Then /^the "([^"]+)" locale is not present in the (.+) Flatpak extension$/ do |locale, id|
   assert_false(
     $vm.directory_exist?(
       "/home/#{LIVE_USER}/.local/share/flatpak/runtime/#{id}/x86_64/stable/active/" \
@@ -90,7 +90,7 @@ Then /^the (.+) locale is not present in the (.+) Flatpak extension$/ do |locale
   )
 end
 
-Then /^the (.+) locale is present in the (.+) Flatpak extension after at most (\d+) seconds$/ do |locale, id, timeout|
+Then /^the "([^"]+)" locale is present in the (.+) Flatpak extension after at most (\d+) seconds$/ do |locale, id, timeout|
   try_for(timeout.to_i) do
     $vm.directory_exist?(
       "/home/#{LIVE_USER}/.local/share/flatpak/runtime/#{id}/x86_64/stable/active/" \

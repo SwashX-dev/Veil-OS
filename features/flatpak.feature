@@ -39,7 +39,7 @@ Feature: Installing and running Flatpak apps in Tails
     When I start GNOME Software
     And I install Thunderbird using GNOME Software
     Then the org.mozilla.thunderbird Flatpak is installed after at most 600 seconds
-    And the de locale is not present in the org.mozilla.thunderbird.Locale Flatpak extension
+    And the "de" locale is not present in the org.mozilla.thunderbird.Locale Flatpak extension
     Given I set Tails to boot with options "flatpak"
     When I cold reboot the computer
     Then the computer boots Tails
@@ -49,4 +49,4 @@ Feature: Installing and running Flatpak apps in Tails
     And GNOME Software thinks it is after 06:00 but before 23:00
     When the network is plugged
     And Tor is ready
-    Then the de locale is present in the org.mozilla.thunderbird.Locale Flatpak extension after at most 600 seconds
+    Then the "de" locale is present in the org.mozilla.thunderbird.Locale Flatpak extension after at most 600 seconds
