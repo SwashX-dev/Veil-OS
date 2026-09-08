@@ -84,7 +84,8 @@ end
 Then /^the (.+) locale is not present in the (.+) Flatpak extension$/ do |locale, id|
   assert_false(
     $vm.directory_exist?(
-      "/home/#{LIVE_USER}/.local/share/flatpak/runtime/#{id}/x86_64/stable/active/files/#{locale}"
+      "/home/#{LIVE_USER}/.local/share/flatpak/runtime/#{id}/x86_64/stable/active/" \
+      "files/#{locale}"
     )
   )
 end
@@ -92,21 +93,25 @@ end
 Then /^the (.+) locale is present in the (.+) Flatpak extension after at most (\d+) seconds$/ do |locale, id, timeout|
   try_for(timeout.to_i) do
     $vm.directory_exist?(
-      "/home/#{LIVE_USER}/.local/share/flatpak/runtime/#{id}/x86_64/stable/active/files/#{locale}"
+      "/home/#{LIVE_USER}/.local/share/flatpak/runtime/#{id}/x86_64/stable/active/" \
+      "files/#{locale}"
     )
   end
 end
 
 Given /^it has been (\d+) days since GNOME Software checked for updates$/ do |days_since|
   new_timestamp = (DateTime.now - days_since.to_i).to_time.utc.to_i
-  dconf_file = '/live/persistence/TailsData_unlocked/flatpak/gnome-software/org.gnome.software.dconf-dump'
+  dconf_file = '/live/persistence/TailsData_unlocked/flatpak/gnome-software/' \
+               'org.gnome.software.dconf-dump'
   if $vm.file_exist?(dconf_file)
     $vm.execute_successfully(
-      "sed -i 's/^check-timestamp=int64 .*$/check-timestamp=int64 #{new_timestamp}/' #{dconf_file}"
+      "sed -i 's/^check-timestamp=int64 .*$/check-timestamp=int64 #{new_timestamp}/' " +
+      dconf_file
     )
   end
   $vm.execute_successfully(
-    "gsettings set org.gnome.software check-timestamp 'int64 #{new_timestamp}'", user: LIVE_USER
+    "gsettings set org.gnome.software check-timestamp 'int64 #{new_timestamp}'",
+    user: LIVE_USER
   )
 end
 
@@ -122,7 +127,8 @@ Given /^GNOME Software thinks it is after 06:00 but before 23:00$/ do
   end
 
   $vm.execute_successfully(
-    "sed -i 's@ExecStart=@ExecStart=env TZ=Etc/GMT+12 @' /lib/systemd/user/gnome-software.service"
+    "sed -i 's@ExecStart=@ExecStart=env TZ=Etc/GMT+12 @' " \
+    '/lib/systemd/user/gnome-software.service'
   )
   $vm.execute_successfully('systemctl --user daemon-reload', user: LIVE_USER)
 end
