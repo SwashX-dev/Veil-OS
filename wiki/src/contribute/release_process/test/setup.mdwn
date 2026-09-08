@@ -45,69 +45,11 @@ To install the dependencies on our test suite:
        EOF
        fi
 
-1. Install the following packages:
+1. To install the needed packages, run this command from a checkout of our
+   `stable` branch:
 
        sudo apt update && \
-       sudo apt install \
-           cucumber \
-           dbus-x11 \
-           devscripts \
-           dnsmasq-base \
-           ffmpeg \
-           gawk \
-           git \
-           imagemagick \
-           libcap2-bin \
-           libnss3-tools \
-           libvirt-clients \
-           libvirt-daemon-system \
-           libvirt-dev \
-           libvirt0 \
-           obfs4proxy \
-           openssh-server \
-           ovmf \
-           pry \
-           python3-debian \
-           python3-distro-info \
-           python3-opencv \
-           python3-paramiko \
-           python3-pil \
-           python3-psycopg2 \
-           python3-pydantic \
-           python3-requests \
-           python3-rpyc \
-           python3-slixmpp \
-           python3-tomli-w \
-           python3-typeguard \
-           python3-yaml \
-           qemu-system-common \
-           qemu-system-modules-spice \
-           qemu-system-x86 \
-           qemu-utils \
-           qrencode \
-           ruby-guestfs \
-           ruby-json \
-           ruby-libvirt \
-           ruby-packetfu \
-           ruby-rb-inotify \
-           ruby-rspec \
-           ruby-test-unit \
-           seabios \
-           tcpdump \
-           tcplay \
-           tesseract-ocr \
-           tigervnc-viewer \
-           tor \
-           tshark \
-           unclutter \
-           virt-viewer \
-           x11-utils \
-           x11vnc \
-           x264 \
-           xdotool \
-           xfwm4 \
-           xvfb \
-           && \
+       sudo apt install $(. config/test_suite_variables && echo "$TEST_SUITE_DEPENDENCIES") && \
        sudo service libvirtd restart
 
 Other requirements
