@@ -20,7 +20,7 @@ See <https://gitlab.tails.net/tails/team/-/wikis/responsibilities>.
 
 - Check the [Firefox Release Calendar](https://whattrainisitnow.com/calendar/) `[skip-if-emergency-release]`
 
-- Ensure <tails-dev@boum.org> is aware of the release.
+- Ensure <tails-dev@lists.torproject.org> is aware of the release.
 
   If you are preparing an unscheduled emergency release, announce:
 
@@ -28,8 +28,8 @@ See <https://gitlab.tails.net/tails/team/-/wikis/responsibilities>.
     - Announce the code freeze.
     - Say when you expect the tests to happen.
 
-  Otherwise, reply to the email sent to <tails-dev@boum.org> and
-  <tails-l10n@boum.org> by the RM for the previous release,
+  Otherwise, reply to the email sent to <tails-dev@lists.torproject.org> and
+  <tails-l10n@lists.torproject.org> by the RM for the previous release,
   to provide information they could not, if any, such as: `[skip-if-emergency-release]`
 
   - Code freeze date, if it's different from what's in the email sent by the previous RM.

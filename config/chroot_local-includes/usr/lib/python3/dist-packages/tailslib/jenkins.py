@@ -1,5 +1,3 @@
-#!/usr/bin/python3 -I
-#
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 import re
@@ -7,6 +5,19 @@ import re
 from datetime import datetime, timedelta
 from operator import itemgetter
 from tailslib.git import Git
+
+# These will result in "fake" custom branches. Each member results in
+# a copy of the active branch with "project_name" equal to
+# "base_project_name", with the other key-value pairs overwritten by
+# those in the custom branch's dictionary.
+custom_branches = [
+    {
+        "base_project_name": "stable",
+        "project_name": "stable-flatpak",
+        "recipients": "whoever_broke_the_build",
+        "custom_config": {"default_extra_suite_args": " --extra-boot-options flatpak "},
+    }
+]
 
 
 class ActiveBranches(Git):
@@ -16,21 +27,21 @@ class ActiveBranches(Git):
     """
 
     # These branches are always considered as worthy to be built.
-    ALWAYS_ACTIVE_BRANCHES = [
+    ALWAYS_ACTIVE_BRANCHES = (
         "devel",
         "stable",
-    ]
+    )
 
     # These branches are used for the "has this topic branch been
     # merged already?" logic. The "base branch" concept here is
     # different from its homonyms (e.g. what's in config/base_branch,
     # or the base APT suite concept).
-    BASE_BRANCHES = [
+    BASE_BRANCHES = (
         "devel",
         "master",
         "stable",
         "testing",
-    ]
+    )
 
     def __init__(self, git_repo, active_days):
         # A branch that has not seen activity since this number of days
@@ -40,10 +51,18 @@ class ActiveBranches(Git):
         assert isinstance(self.active_days, int)
 
     def compute(self):
-        return sorted(
-            [self.job_params(branch) for branch in self.active_branches()],
-            key=itemgetter("branch_name"),
-        )
+        git_branches = [self.job_params(branch) for branch in self.active_branches()]
+        all_branches = git_branches.copy()
+        for custom_branch in custom_branches:
+            new_branch = next(
+                b.copy()
+                for b in git_branches
+                if b["project_name"] == custom_branch["base_project_name"]
+            )
+            new_branch.update(custom_branch)
+            del new_branch["base_project_name"]
+            all_branches.append(new_branch)
+        return sorted(all_branches, key=itemgetter("branch_name"))
 
     def job_params(self, branch):
         return {

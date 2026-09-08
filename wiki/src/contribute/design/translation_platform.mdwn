@@ -472,7 +472,7 @@ Currently implemented proposal
        the user's page, e.g.
        [intrigeri's](https://translate.tails.net/user/intrigeri/).
        In other words, we use proof-of-work to increase the cost of attacks.
-    2. Let <tails-l10n@boum.org> and all the other Weblate reviewers
+    2. Let <tails-l10n@lists.torproject.org> and all the other Weblate reviewers
        know about this status change.
 
   - Contributors can reach an agreement on tails-l10n mailing list and

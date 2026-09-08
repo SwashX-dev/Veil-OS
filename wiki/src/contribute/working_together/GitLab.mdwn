@@ -805,3 +805,5 @@ directly or indirectly:
   tests](https://gitlab.tails.net/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/decide_if_reproduce)
   and [whether to send notifications through
   e-mail](https://gitlab.tails.net/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/output_ISO_builds_and_tests_notifications).
+
+- Our [HedgeDoc pad](https://pad.tails.net/) authenticates via GitLab with OIDC.
