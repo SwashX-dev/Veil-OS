@@ -250,7 +250,11 @@ Then /^no unexpected connection has leaked from Thunderbird$/ do
     tor_connections_from_log,
     expected_hosts: thunderbird_non_suspicious_connections
   )
-  assert_equal(0, connections.size, "Unexpected connections: #{connections.join(',')}")
+
+  unless connections.empty?
+    raise FirewallAssertionFailedError,
+          "Unexpected connections: #{connections.join(',')}"
+  end
 end
 
 Then /^the system only established connections with my email server$/ do
@@ -273,8 +277,10 @@ Then /^the system only established connections with my email server$/ do
       server.end_with?(".#{email_domain}")
   end
 
-  assert(unwanted_connections.empty?,
-         "Unexpected connections: #{unwanted_connections.join(',')}")
+  unless unwanted_connections.empty?
+    raise FirewallAssertionFailedError,
+          "Unexpected connections: #{unwanted_connections.join(',')}"
+  end
 end
 
 Given(/^Thunderbird is installed$/) do
