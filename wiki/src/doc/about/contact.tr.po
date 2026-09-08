@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-09-02 08:03+0000\n"
+"POT-Creation-Date: 2026-09-07 14:23+0000\n"
 "PO-Revision-Date: 2023-03-11 11:29+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,49 +73,17 @@ msgstr "<a id=\"amnesia-news\"></a>\n"
 #. type: Plain text
 #, fuzzy, no-wrap
 msgid ""
-"<p>tails-dev@boum.org is the mailing list where the project is coordinated:\n"
+"<p>tails-dev@lists.torproject.org is the mailing list where the project is coordinated:\n"
 "technical design questions, upcoming events, monthly reports, and user\n"
 "experience.</p>\n"
 msgstr "tails-dev@boum.org ist die Mailingliste, auf der Entwicklungsarbeit koordiniert und technische Designfragen diskutiert werden. Abonnieren Sie, wenn Sie [[Code beisteuern|contribute/how/code]] möchten."
 
 #. type: Plain text
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
-"<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-dev\">\n"
-"\t<input name=\"email\" value=\"\"/>\n"
-"\t<input type=\"submit\" value=\"Subscribe\"/>\n"
-"</form>\n"
+"<p><a\n"
+"href=\"https://lists.torproject.org/mailman3/postorius/lists/tails-dev.lists.torproject.org/\">Subscribe</a></p>\n"
 msgstr ""
-"<p>\n"
-"<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-ux\">\n"
-"\t<input class=\"text\" name=\"email\" value=\"\"/>\n"
-"\t<input class=\"bold\" type=\"submit\" value=\"Abonnieren\"/>\n"
-"</form>\n"
-"</p>\n"
-
-#. type: Plain text
-#, fuzzy, no-wrap
-msgid "<p>Public archive of tails-dev: <a href=\"https://lists.autistici.org/list/tails-dev.html\">https://lists.autistici.org/list/tails-dev.html</a></p>\n"
-msgstr "Öffentliches Archiv von tails-ux: <https://lists.autistici.org/list/tails-ux.html/>."
-
-#. type: Plain text
-#, fuzzy, no-wrap
-msgid ""
-"<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
-"    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
-"\t<input type=\"hidden\" name=\"format\" value=\"en.html\">\n"
-"\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-dev search terms\" onclick=\"value='ml:tails-dev '\">\n"
-"\t<input type=\"submit\" name=\"submit\" value=\"Search archive\">\n"
-"</form>\n"
-msgstr ""
-"<p>\n"
-"<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
-"    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
-"\t<input type=\"hidden\" name=\"format\" value=\"de.html\">\n"
-"\t<input type=\"text\"   name=\"query\" value=\"\" class=\"longtext\" placeholder=\"ml:tails-ux search terms\" onclick=\"value='ml:tails-ux '\">\n"
-"\t<input type=\"submit\" name=\"submit\" value=\"Archiv durchsuchen\">\n"
-"</form>\n"
-"</p>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -283,6 +251,42 @@ msgid ""
 "developers hang out there, so email is preferred for anything that\n"
 "might be of interest for the larger community.</p>\n"
 msgstr ""
+
+#, fuzzy, no-wrap
+#~ msgid ""
+#~ "<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-dev\">\n"
+#~ "\t<input name=\"email\" value=\"\"/>\n"
+#~ "\t<input type=\"submit\" value=\"Subscribe\"/>\n"
+#~ "</form>\n"
+#~ msgstr ""
+#~ "<p>\n"
+#~ "<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-ux\">\n"
+#~ "\t<input class=\"text\" name=\"email\" value=\"\"/>\n"
+#~ "\t<input class=\"bold\" type=\"submit\" value=\"Abonnieren\"/>\n"
+#~ "</form>\n"
+#~ "</p>\n"
+
+#, fuzzy, no-wrap
+#~ msgid "<p>Public archive of tails-dev: <a href=\"https://lists.autistici.org/list/tails-dev.html\">https://lists.autistici.org/list/tails-dev.html</a></p>\n"
+#~ msgstr "Öffentliches Archiv von tails-ux: <https://lists.autistici.org/list/tails-ux.html/>."
+
+#, fuzzy, no-wrap
+#~ msgid ""
+#~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
+#~ "\t<input type=\"hidden\" name=\"format\" value=\"en.html\">\n"
+#~ "\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-dev search terms\" onclick=\"value='ml:tails-dev '\">\n"
+#~ "\t<input type=\"submit\" name=\"submit\" value=\"Search archive\">\n"
+#~ "</form>\n"
+#~ msgstr ""
+#~ "<p>\n"
+#~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
+#~ "\t<input type=\"hidden\" name=\"format\" value=\"de.html\">\n"
+#~ "\t<input type=\"text\"   name=\"query\" value=\"\" class=\"longtext\" placeholder=\"ml:tails-ux search terms\" onclick=\"value='ml:tails-ux '\">\n"
+#~ "\t<input type=\"submit\" name=\"submit\" value=\"Archiv durchsuchen\">\n"
+#~ "</form>\n"
+#~ "</p>\n"
 
 #, fuzzy, no-wrap
 #~ msgid ""

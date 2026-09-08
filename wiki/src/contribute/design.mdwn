@@ -670,7 +670,7 @@ document on the Tor wiki:
 
 The impact of HTTP keepalive and possible solutions are being
 discussed
-on the [[tails-dev@boum.org|doc/about/contact#tails-dev]] mailing list.
+on the [[tails-dev@lists.torproject.org|doc/about/contact#tails-dev]] mailing list.
 
 ### 2.7.3 Mounting of filesystems stored on removable devices
 
