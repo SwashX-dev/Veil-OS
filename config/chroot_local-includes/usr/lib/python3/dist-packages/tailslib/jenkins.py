@@ -77,7 +77,7 @@ class ActiveBranches(Git):
         since = int((datetime.now() - timedelta(days=self.active_days)).timestamp())
         branches = list(
             set(
-                ActiveBranches.ALWAYS_ACTIVE_BRANCHES
+                list(ActiveBranches.ALWAYS_ACTIVE_BRANCHES)
                 + [
                     branch
                     for branch in self.all_branches()
