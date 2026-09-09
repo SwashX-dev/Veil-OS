@@ -242,6 +242,9 @@ def thunderbird_non_suspicious_connections
     'cloudfront.debian.net',
     'deb.tails.net',
     'deb.torproject.org',
+    # Used by GNOME Software that is running in the background
+    'dl.flathub.org',
+    'odrs.gnome.org',
   ]
 end
 
