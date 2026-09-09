@@ -24,7 +24,7 @@ import gitlab
 import django.utils.dateparse  # type: ignore[import-untyped]
 
 PYTHON_GITLAB_CONFIG_FILE = os.getenv(
-    "PYTHON_GITLAB_CONFIG_FILE", default=Path.home() / ".python-gitlab.cfg"
+    "PYTHON_GITLAB_CONFIG_FILE", default=str(Path.home() / ".python-gitlab.cfg")
 )
 
 PYTHON_GITLAB_NAME = os.getenv("GITLAB_NAME", default="Tails")
