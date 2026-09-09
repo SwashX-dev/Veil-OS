@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2026-04-01 01:19+0000\n"
 "PO-Revision-Date: 2026-09-09 04:56+0000\n"
-"Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
+"Last-Translator: cacu <cacukin@cryptolab.net>\n"
 "Language-Team: Spanish <http://translate.tails.net/projects/tails/"
 "reset_linux/es/>\n"
 "Language: es\n"
@@ -53,9 +53,8 @@ msgid "   </div>\n"
 msgstr "   </div>\n"
 
 #. type: Bullet: '1. '
-#, fuzzy
 msgid "Install *GNOME Disks*."
-msgstr "Usando *Discos de GNOME*"
+msgstr "Instala *Discos de GNOME*."
 
 #. type: Bullet: '   - '
 msgid ""
