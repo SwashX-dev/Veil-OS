@@ -250,7 +250,7 @@ if __name__ == "__main__":
     )
     gl.auth()
 
-    now = datetime.datetime.now(tz=datetime.timezone.utc)
+    now = datetime.datetime.now(tz=datetime.UTC)
 
     max_creation_date = now - args.min_creation_age
     log.debug("Max creation date: %s", max_creation_date)
