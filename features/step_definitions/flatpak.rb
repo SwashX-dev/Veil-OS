@@ -80,3 +80,56 @@ When /^I kill the (.*) Flatpak$/ do |app_id|
     !flatpak_running?(app_id)
   end
 end
+
+Then /^the "([^"]+)" locale is not present in the (.+) Flatpak extension$/ do |locale, id|
+  assert_false(
+    $vm.directory_exist?(
+      "/home/#{LIVE_USER}/.local/share/flatpak/runtime/#{id}/x86_64/stable/active/" \
+      "files/#{locale}"
+    )
+  )
+end
+
+Then /^the "([^"]+)" locale is present in the (.+) Flatpak extension after at most (\d+) seconds$/ do |locale, id, timeout|
+  try_for(timeout.to_i) do
+    $vm.directory_exist?(
+      "/home/#{LIVE_USER}/.local/share/flatpak/runtime/#{id}/x86_64/stable/active/" \
+      "files/#{locale}"
+    )
+  end
+end
+
+Given /^it has been (\d+) days since GNOME Software checked for updates$/ do |days_since|
+  new_timestamp = (DateTime.now - days_since.to_i).to_time.utc.to_i
+  dconf_file = '/live/persistence/TailsData_unlocked/flatpak/gnome-software/' \
+               'org.gnome.software.dconf-dump'
+  if $vm.file_exist?(dconf_file)
+    $vm.execute_successfully(
+      'sed --regexp-extended -i ' \
+      "'s/^check-timestamp=int64 .*$/check-timestamp=int64 #{new_timestamp}/' " +
+      dconf_file
+    )
+  end
+  $vm.execute_successfully(
+    "gsettings set org.gnome.software check-timestamp 'int64 #{new_timestamp}'",
+    user: LIVE_USER
+  )
+end
+
+# GNOME Software refuses to do update checks no matter what if it is
+# between 00:00 and 06:00, so in that case we shift the timezone 12
+# hours to make it stop refusing.
+Given /^GNOME Software thinks it is after 06:00 but before 23:00$/ do
+  now = Time.now.utc
+  next if now.hour >= 6 && now.hour < 23
+  if $vm.execute('systemctl --user is-active gnome-software.service',
+                 user: LIVE_USER).success?
+    raise 'This step must be run before GNOME Software starts'
+  end
+
+  $vm.execute_successfully(
+    "sed --regexp-extended -i 's@ExecStart=@ExecStart=env TZ=Etc/GMT+12 @' " \
+    '/lib/systemd/user/gnome-software.service'
+  )
+  $vm.execute_successfully('systemctl --user daemon-reload', user: LIVE_USER)
+end
