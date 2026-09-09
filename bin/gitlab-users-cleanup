@@ -20,7 +20,7 @@ from pathlib import Path
 import sys
 
 import dateutil.parser
-import gitlab  # type: ignore
+import gitlab
 import django.utils.dateparse  # type: ignore
 
 PYTHON_GITLAB_CONFIG_FILE = os.getenv(
