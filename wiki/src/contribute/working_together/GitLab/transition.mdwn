@@ -22,7 +22,7 @@ user account. To activate it:
 
 5. Confirm your email address:
 
-   1. Visit <https://gitlab.tails.boum.org/users/confirmation>
+   1. Visit <https://gitlab.tails.net/users/confirmation>
       in a web browser.
 
    2. Enter your email address.
@@ -54,12 +54,12 @@ Here's how to do that:
    For example, you would run:
 
        git remote set-url origin \
-           https://gitlab.tails.boum.org/tails/tails.git
+           https://gitlab.tails.net/tails/tails.git
 
    or:
 
        git remote set-url origin \
-           git@gitlab-ssh.tails.boum.org:tails/tails.git
+           git@gitlab-ssh.tails.net:tails/tails.git
 
 3. Remove any obsolete `insteadOf` configuration you may have in `~/.gitconfig`,
    `~/.config/git/config`, and in this repository's `.git/config`. These could

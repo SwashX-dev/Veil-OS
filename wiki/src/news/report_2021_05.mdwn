@@ -24,7 +24,7 @@ activity in Tails. We haven't implemented any such activity yet, but
 we plan to do so in the next few months, in particular to detect
 captive portals and test bridge reachability. If you're curious,
 [[have a look at the changes
-yourself|https://gitlab.tails.boum.org/tails/tails/-/merge_requests/416/diffs]]!
+yourself|https://gitlab.tails.net/tails/tails/-/merge_requests/416/diffs]]!
 
 ## Prevent future automatic upgrade issues
 

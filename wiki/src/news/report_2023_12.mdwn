@@ -25,9 +25,9 @@ We released [[Tails 5.21|/news/version_5.21/]]. In 5.21:
 
 - we improved Tails's handling of date and time: you'll find localised dates in the top navigation, and separately, we replaced the unpunctual web servers in our htpdate pool
 
-- the backup feature of *Tails Cloner* is friendlier to use. Thanks [@BenWestgate](https://gitlab.tails.boum.org/BenWestgate)!
+- the backup feature of *Tails Cloner* is friendlier to use. Thanks [@BenWestgate](https://gitlab.tails.net/BenWestgate)!
 
-And [lots more](https://gitlab.tails.boum.org/tails/tails/-/blob/master/debian/changelog).
+And [lots more](https://gitlab.tails.net/tails/tails/-/blob/master/debian/changelog).
 
 Metrics
 =======

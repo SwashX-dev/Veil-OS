@@ -103,7 +103,7 @@ There are several languages enabled, some of them with few or no
 translations. As everything is fed back to the Tails canonical
 repository, all files are available when cloning this repository:
 
-    git clone https://gitlab.tails.boum.org/tails/tails.git
+    git clone https://gitlab.tails.net/tails/tails.git
 
 If needed, for exceptional means, Weblate's Git repository can be cloned
 or added as a remote:

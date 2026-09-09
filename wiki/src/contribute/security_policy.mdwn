@@ -44,7 +44,7 @@ policy](https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/Security
 apply here as well.
 
 Please refer to [the page about DSA in Tails Team' public
-wiki](https://gitlab.tails.boum.org/tails/team/-/wikis/roles/frontdesk/dsa) for more guidance on how to process
+wiki](https://gitlab.tails.net/tails/team/-/wikis/roles/frontdesk/dsa) for more guidance on how to process
 DSAs.
 
 ## research questions
