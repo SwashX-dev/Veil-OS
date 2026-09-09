@@ -33,7 +33,7 @@ Steps to create and configure an account:
    full name field. Then, click the **Register** button.
 
 1. Check your e-mail inbox, you should receive a message by
-   **root@lizard.tails.boum.org** with a verification link to activate
+   with a verification link to activate
    your account. Access that link and choose a new passphrase for your
    account. You should leave the **Current password** field empty if you have
    just activated the account and it's the first time you set up a password
