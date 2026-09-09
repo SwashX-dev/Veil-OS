@@ -14,7 +14,7 @@ Tails 4.17 is [[scheduled for March 23|contribute/calendar]].
 Code
 ====
  - We started the redesign [[network connection
-   configuration|https://gitlab.tails.boum.org/tails/blueprints/-/wikis/network_connection#ux-design]]:
+   configuration|https://gitlab.tails.net/tails/blueprints/-/wikis/network_connection#ux-design]]:
     - Usability testing of paper prototypes for the network connection
       configuration.
     - Display Tor Launcher to all users by default ([[!tails_ticket 17330]]).
@@ -34,7 +34,7 @@ Documentation and website
 - Documented [[how to start Tails from an external hard disk|/doc/about/requirements/]] ([[!tails_ticket 18113]]).
 - Explained what "[[Your browser is being managed by your organization|/doc/anonymous_internet/Tor_Browser/#security-level]]" means ([[!tails_ticket 18029]]).
 - Avoid pointing people to [[empty security advisories from our release
-  notes|https://gitlab.tails.boum.org/tails/tails/-/blob/stable/config/release_management/templates/security_advisory.mdwn]]
+  notes|https://gitlab.tails.net/tails/tails/-/blob/stable/config/release_management/templates/security_advisory.mdwn]]
   ([[!tails_ticket 18221]]).
 - Documented better [[what to do when the Persistent Storage
   disappears|/support/known_issues/#persistence-disappears]]
@@ -47,11 +47,11 @@ Big redesigns
 -------------
 
 - We did a design sprint and usability tests in January to [[redesign
-  the Persistent Storage|https://gitlab.tails.boum.org/tails/blueprints/-/wikis/Persistent-Storage-redesign]].
+  the Persistent Storage|https://gitlab.tails.net/tails/blueprints/-/wikis/Persistent-Storage-redesign]].
 - Started a [[!tails_ticket 5501 desc="discussion on how we should save
   language and keyboard layout from the Welcome Screen"]].
 - Did another design sprint and usability tests on the [[process of connecting
-  to Tor from Tails|https://gitlab.tails.boum.org/tails/blueprints/-/wikis/network_connection#ux-design]].
+  to Tor from Tails|https://gitlab.tails.net/tails/blueprints/-/wikis/network_connection#ux-design]].
 
 Hot topics on our help desk
 ===========================

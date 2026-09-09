@@ -49,7 +49,7 @@ correct the clock before connecting to Tor.
 You can read more about our security
 design
 and [current implementation
-plans](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/robust_time_syncing#current-plan)
+plans](https://gitlab.tails.net/tails/blueprints/-/wikis/robust_time_syncing#current-plan)
 or test the nightly
 build
 of our prototype.

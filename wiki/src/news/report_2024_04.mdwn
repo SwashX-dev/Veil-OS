@@ -44,7 +44,7 @@ Tails 6.2 carries:
 
 To know more, check out the Tails 6.2 [[release notes|news/version_6.2]] and
 the
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/blob/master/debian/changelog).
+[changelog](https://gitlab.tails.net/tails/tails/-/blob/master/debian/changelog).
 
 Also, we're always looking for volunteers to help increase Tails's language
 diversity. If that sounds like it could be you, do consider contributing to the

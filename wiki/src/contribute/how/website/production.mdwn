@@ -17,7 +17,7 @@ places:
 
 When you update [[!tails_gitweb ikiwiki.setup]]:
 
-1. `git clone https://gitlab.tails.boum.org/tails/puppet-code.git` and apply the
+1. `git clone https://gitlab.tails.net/tails/puppet-code.git` and apply the
    same changes to the ikiwiki configuration used by Weblate's staging website:
 
    - [[!tails_gitweb_puppet_code site/profile/templates/tails/website/ikiwiki.setup.epp]]

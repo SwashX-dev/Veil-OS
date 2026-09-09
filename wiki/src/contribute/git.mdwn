@@ -77,8 +77,8 @@ For more information about our usage of Git submodules, see
 
 Developers with write access to the repositories should:
 
-	git config --global url.git@gitlab-ssh.tails.boum.org:.insteadOf \
-	   https://gitlab.tails.boum.org/
+	git config --global url.git@gitlab-ssh.tails.net:.insteadOf \
+	   https://gitlab.tails.net/
 
 We also recommend the following setting in your Tails clone since it
 otherwise is too easy to forget pushing updated submodules:
@@ -258,7 +258,7 @@ Initializing a git-remote-gcrypt repository
 Clone the new, empty repository in a way that tells Git it's going to
 be encrypted:
 
-	git clone gcrypt::git@gitlab-ssh.tails.boum.org:$REPOSITORY
+	git clone gcrypt::git@gitlab-ssh.tails.net:$REPOSITORY
 
 Change directory into the newly cloned repository:
 

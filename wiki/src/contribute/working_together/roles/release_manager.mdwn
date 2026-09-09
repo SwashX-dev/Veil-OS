@@ -7,7 +7,7 @@
 
 # Duties
 
-See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
+See <https://gitlab.tails.net/tails/team/-/wikis/responsibilities>.
 
 <a id="shift"></a>
 
@@ -46,16 +46,16 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
   If needed, create a merge request against [[!tails_gitlab tails/gitlab-config]].
   Make another Tails Team member the *Reviewer*.
 
-- [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Upgrade%20Tor%20Browser)
+- [Create an issue](https://gitlab.tails.net/tails/tails/-/work_items/new?description_template=Upgrade%20Tor%20Browser)
   for upgrading Tor Browser in the release your shift is about
 
-- [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Refresh%20About%20Tor%20Patches)
+- [Create an issue](https://gitlab.tails.net/tails/tails/-/work_items/new?description_template=Refresh%20About%20Tor%20Patches)
   for refreshing the about:tor patches for that new Tor Browser
 
-- [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Run%20Automated%20Test%20Suite%20Locally)
+- [Create an issue](https://gitlab.tails.net/tails/tails/-/work_items/new?description_template=Run%20Automated%20Test%20Suite%20Locally)
   for running our test suite on a local trusted system
 
-- [Check](https://gitlab.tails.boum.org/tails/tails/-/work_items?scope=all&state=opened&label_name[]=Core%20Work%3ATechnical%20writing&search=release+notes)
+- [Check](https://gitlab.tails.net/tails/tails/-/work_items?scope=all&state=opened&label_name[]=Core%20Work%3ATechnical%20writing&search=release+notes)
   if there are issues about writing the release notes, for:
     - the final release
     - any prior beta and release candidate.
@@ -63,7 +63,7 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
   On every such existing issue, make the exact deadline explicit (usually it's
   the same as for manual QA, i.e. 10:00 UTC).
 
-  [Create any missing issues](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Write%20Release%20Notes).
+  [Create any missing issues](https://gitlab.tails.net/tails/tails/-/work_items/new?description_template=Write%20Release%20Notes).
 
 - The ISO images for *every* previous beta, RC, and final release
   based on the version of Debian that will be used for the release

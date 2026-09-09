@@ -62,7 +62,7 @@ new versions of Tails:
 - Checkout and build locally the weblate repository, and see that there are no
   errors.
 
-- Edit the `./ikiwiki.setup` file, both for the production website and in [[!tails_gitlab tails/tails desc="the `tails/tails` project"]] (for the bundled offline documentation) ([example for Russian locale](https://gitlab.tails.boum.org/tails/tails/-/commit/db7a64d89a5ecd062cfaf2545e03c048351aa19f)):
+- Edit the `./ikiwiki.setup` file, both for the production website and in [[!tails_gitlab tails/tails desc="the `tails/tails` project"]] (for the bundled offline documentation) ([example for Russian locale](https://gitlab.tails.net/tails/tails/-/commit/db7a64d89a5ecd062cfaf2545e03c048351aa19f)):
 
   - Remove the locale from the regexp exclude line.
 

@@ -12,7 +12,7 @@ sparking some welcome conversations around the sustainability requirements of
 FOSS projects.
 
 - First, there was the RFDS Intel CPU vulnerability. The fixed CPU firmware
-  [shipped](https://gitlab.tails.boum.org/tails/tails/-/issues/20274) in Tails
+  [shipped](https://gitlab.tails.net/tails/tails/-/issues/20274) in Tails
   6.1 addresses the vulnerability! 
 
 - Then, March ended with the xz/liblzma almost-apocalypse that the world
@@ -21,7 +21,7 @@ FOSS projects.
 In March, we continued investing in the long-term sustainability of Tails:
 
 - We improved the reliability of our test suite. With
-  [@segfault](https://gitlab.tails.boum.org/segfault), we have been working
+  [@segfault](https://gitlab.tails.net/segfault), we have been working
   extra hard to make our automated test suite more robust. We are going to keep
   working on improving the experience of development work at Tails in the coming
   months.
@@ -48,7 +48,7 @@ Tails 6.1 carries:
 
 To know more, check out the Tails 6.1 [[release notes|news/version_6.1]] and
 the
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/blob/master/debian/changelog).
+[changelog](https://gitlab.tails.net/tails/tails/-/blob/master/debian/changelog).
 
 Metrics
 =======

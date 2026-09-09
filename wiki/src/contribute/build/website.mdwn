@@ -14,7 +14,7 @@ changes will apply on the website.
 
 1. Clone our main [[Git repository|git]]:
 
-       git clone https://gitlab.tails.boum.org/tails/tails.git \
+       git clone https://gitlab.tails.net/tails/tails.git \
        && cd tails
 
    <div class="tip">
