@@ -17,7 +17,7 @@ allowing developers and service admins to do their jobs.
 ## Scope and affected users
 
 This proposal applies to projects in the [Tails GitLab
-instance](https://gitlab.tails.boum.org) whose repositories or CI/CD pipelines
+instance](https://gitlab.tails.net) whose repositories or CI/CD pipelines
 can directly affect the contents of the Tails OS image or website.
 
 Affected users are members of such projects who have permissions to do at least
@@ -119,14 +119,14 @@ trusted runners.
 
 Examples of sensitive jobs are:
 
-- [`build-website`](https://gitlab.tails.boum.org/tails/tails/-/blob/b3aca174421cc27eb670da1e05192016d7fca2f8/.gitlab-ci.yml#L65):
+- [`build-website`](https://gitlab.tails.net/tails/tails/-/blob/b3aca174421cc27eb670da1e05192016d7fca2f8/.gitlab-ci.yml#L65):
   gets an Access Tokens with Maintainer permissions in order to be able to push
   new commits back to protected branches of the [[!tails_gitlab tails/tails]]
   repository.
-- [`deploy-website`](https://gitlab.tails.boum.org/tails/tails/-/blob/b3aca174421cc27eb670da1e05192016d7fca2f8/.gitlab-ci.yml#L80):
+- [`deploy-website`](https://gitlab.tails.net/tails/tails/-/blob/b3aca174421cc27eb670da1e05192016d7fca2f8/.gitlab-ci.yml#L80):
   gets SSH credentials so it can push static data to our website mirrors.
 - [`Ensure MR from master into
-  stable`](https://gitlab.tails.boum.org/tails/gitlab-config/-/blob/50aa8d7d105b9a91fb0a20e053a6ac73c5c63e81/.gitlab-ci.yml#L6):
+  stable`](https://gitlab.tails.net/tails/gitlab-config/-/blob/50aa8d7d105b9a91fb0a20e053a6ac73c5c63e81/.gitlab-ci.yml#L6):
   gets an Access Tokens with Maintainer permissions in order to be able to create
   MRs to protected branches of [[!tails_gitlab tails/tails]] that will be merged
   automatically when the pipeline succeeds.

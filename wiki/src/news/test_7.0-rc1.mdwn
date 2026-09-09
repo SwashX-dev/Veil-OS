@@ -98,7 +98,7 @@ GitLab.
   We plan to fix this in the final Tails 7.0.
 
 For more details, see the list of [issues on the 7.0 milestone in
-GitLab](https://gitlab.tails.boum.org/groups/tails/-/milestones/144#tab-issues).
+GitLab](https://gitlab.tails.net/groups/tails/-/milestones/144#tab-issues).
 
 <h1 id="feedback">Send your feedback</h1>
 

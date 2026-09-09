@@ -34,9 +34,9 @@ Wireframe library for GNOME and Tails
 
 This Git repository contains wireframes from past projects:
 
-<https://gitlab.tails.boum.org/tails/ux>
+<https://gitlab.tails.net/tails/ux>
 
 In the *generic* folder, you can find reusable wireframes and icons for
 GNOME and Tails, like the desktop or *Files*:
 
-<https://gitlab.tails.boum.org/tails/ux/-/tree/master/generic>
+<https://gitlab.tails.net/tails/ux/-/tree/master/generic>

@@ -21,7 +21,7 @@ In August:
 * We resumed our work to design a better backup feature for the _Persistent
   Storage_. We integrated the valuable feedback received in July on our design
   proposal for the improved backup feature ([mockups on
-  Gitlab](https://gitlab.tails.boum.org/tails/tails/-/issues/20194)).
+  Gitlab](https://gitlab.tails.net/tails/tails/-/issues/20194)).
 
 * We published [[instructions for installing
   Dangerzone|news/dangerzone/]] in Tails. Dangerzone will help Tails users
@@ -45,7 +45,7 @@ In Tails 6.6, we brought:
 
 To know more, check out the Tails 6.6 [[release notes|news/version_6.6]] and
 the
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/blob/master/debian/changelog). 
+[changelog](https://gitlab.tails.net/tails/tails/-/blob/master/debian/changelog). 
 
 Metrics
 =======

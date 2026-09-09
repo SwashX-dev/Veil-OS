@@ -20,7 +20,7 @@
                ssl_verify = true
 
                [Tails]
-               url = https://gitlab.tails.boum.org
+               url = https://gitlab.tails.net
                per_page = 100
                private_token = XXX
 
