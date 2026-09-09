@@ -267,12 +267,12 @@ if __name__ == "__main__":
         log.debug("Max post-sign-up activity: %s", args.max_post_sign_up_activity)
 
     if args.not_in_group is not None:
-        group = [
+        group = next(
             g
             for g in gl.groups.list(all=True)
             # Disambiguate between groups whose names share a common prefix
             if g.full_path == args.not_in_group
-        ][0]
+        )
         group_members_ids = [m.id for m in group.members_all.list(get_all=True)]
     else:
         group_members_ids = []
