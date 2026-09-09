@@ -27,9 +27,6 @@ class TestIsValidLink(unittest.TestCase):
     def test_wrong_domain(self):
         assert not whisperBack.utils.is_valid_link("ftp://example_org/")
 
-    def test_wrong_domain(self):
-        assert not whisperBack.utils.is_valid_link("ftp://example_org/")
-
 
 class TestSanitiseHardwareInfo(unittest.TestCase):
     def test_iptables_ip(self):
