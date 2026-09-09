@@ -46,22 +46,35 @@ class TestSanitiseHardwareInfo(unittest.TestCase):
         assert "ff02:0000:0000:0000:0000:0000:0000:0002" not in sanitized_log
 
     def test_usb_serial(self):
-        assert "1234567890AB" not in whisperBack.utils.sanitize_hardware_info("[  431.655363] usb 1-1: SerialNumber: 1234567890AB")
+        assert "1234567890AB" not in whisperBack.utils.sanitize_hardware_info(
+            "[  431.655363] usb 1-1: SerialNumber: 1234567890AB"
+        )
 
     @unittest.skip(
         "Not implemented yet see: https://gitlab.tails.net/tails/tails/-/issues/6799"
     )
     def test_ata_serial(self):
-        assert "123456789ABYZ" not in whisperBack.utils.sanitize_hardware_info("ata3.00: ATA-8: Hitachi 123456789ABYZ, JP1234MA, max UDMA/133")
+        assert "123456789ABYZ" not in whisperBack.utils.sanitize_hardware_info(
+            "ata3.00: ATA-8: Hitachi 123456789ABYZ, JP1234MA, max UDMA/133"
+        )
 
     def test_tveeprom_serial(self):
-        assert "XXAZ09XX" not in whisperBack.utils.sanitize_hardware_info("tveeprom 9-0050: Hauppauge model 78631, rev C1E9, serial# XXAZ09XX")
+        assert "XXAZ09XX" not in whisperBack.utils.sanitize_hardware_info(
+            "tveeprom 9-0050: Hauppauge model 78631, rev C1E9, serial# XXAZ09XX"
+        )
 
     def test_intel_serial(self):
-        assert "XXXXAZ09XXXX" not in whisperBack.utils.sanitize_hardware_info("(II) intel(0): Serial No: XXXXAZ09XXXX")
+        assert "XXXXAZ09XXXX" not in whisperBack.utils.sanitize_hardware_info(
+            "(II) intel(0): Serial No: XXXXAZ09XXXX"
+        )
 
     def test_dmi(self):
-        assert "1234ABYZ, BIOS 1234ABYZ.1234ABCDWXYZ.1234.5678.9012" not in whisperBack.utils.sanitize_hardware_info("DMI:                  /1234ABYZ, BIOS 1234ABYZ.1234ABCDWXYZ.1234.5678.9012 12/22/2011")
+        assert (
+            "1234ABYZ, BIOS 1234ABYZ.1234ABCDWXYZ.1234.5678.9012"
+            not in whisperBack.utils.sanitize_hardware_info(
+                "DMI:                  /1234ABYZ, BIOS 1234ABYZ.1234ABCDWXYZ.1234.5678.9012 12/22/2011"
+            )
+        )
 
 
 if __name__ == "__main__":
