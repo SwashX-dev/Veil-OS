@@ -1,9 +1,7 @@
 #!/usr/bin/python3 -I
 
-import sys
 import unittest
 
-print(sys.path)
 import whisperBack.utils
 
 
