@@ -16,7 +16,7 @@ def thunderbird_inbox
   # Dogtail mangles the regexps we pass it, which we have to workaround,
   # hence the suboptimal regexp below (the simpler /^Inbox( .*)?$/ would
   # not work). For details, see
-  # https://gitlab.tails.boum.org/tails/tails/-/issues/19928#note_215864
+  # https://gitlab.tails.net/tails/tails/-/issues/19928#note_215864
   folder_view.child(/^Inbox|Inbox (.*)$/, roleName: 'tree item')
 end
 

@@ -63,7 +63,7 @@ class TestSanitiseHardwareInfo(unittest.TestCase):
         )
 
     @unittest.skip(
-        "Not implemented yet see: https://gitlab.tails.boum.org/tails/tails/-/issues/6799"
+        "Not implemented yet see: https://gitlab.tails.net/tails/tails/-/issues/6799"
     )
     def test_ata_serial(self):
         self.assertTrue(

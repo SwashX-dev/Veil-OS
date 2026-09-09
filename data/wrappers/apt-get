@@ -61,7 +61,7 @@ elif [ "$mode" = update ]; then
         echo "APT update failed."
         echo "You may be experiencing a known issue,"
         echo "that thankfully has a documented workaround:"
-        echo "see https://gitlab.tails.boum.org/tails/tails/-/issues/20009"
+        echo "see https://gitlab.tails.net/tails/tails/-/issues/20009"
     fi
     exit $RET
 else
