@@ -2,7 +2,7 @@
 
 import re
 import sys
-import polib  # type: ignore
+import polib
 
 tails_live_website_urls = []
 
