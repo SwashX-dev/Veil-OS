@@ -20,13 +20,11 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "[[!meta title=\"Resetting a USB stick using Linux\"]]\n"
 msgid "[[!meta title=\"Uninstalling Tails using Linux\"]]\n"
 msgstr "[[!meta title=\"Reiniciar un dispositivo USB usando Linux\"]]\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "[[!inline pages=\"doc/reset.intro\" raw=\"yes\" sort=\"age\"]]\n"
 msgid "[[!inline pages=\"doc/first_steps/uninstall.intro\" raw=\"yes\" sort=\"age\"]]\n"
 msgstr "[[!inline pages=\"doc/reset.intro.es\" raw=\"yes\" sort=\"age\"]]\n"
 
@@ -72,7 +70,6 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid "Make sure that the USB stick that you want to reset is unplugged."
 msgid "Make sure that the USB stick that you want to uninstall is unplugged."
 msgstr ""
 "Asegúrate de que el dispositivo USB que quieres resetear está desconectado."
@@ -104,7 +101,6 @@ msgstr "   [[!img install/inc/icons/gnome-disks.png link=\"no\" alt=\"\"]]\n"
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid "Plug in the USB stick that you want to reset."
 msgid "Plug in the USB stick that you want to uninstall."
 msgstr "Conecta la memoria USB que quieres reiniciar."
 
@@ -117,9 +113,6 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "In the right pane of the window, verify that the device corresponds to "
-#| "the USB stick that you want to reset, its brand, its size, etc."
 msgid ""
 "In the right pane of the window, verify that the device corresponds to the "
 "USB stick that you want to uninstall, its brand, its size, etc."
@@ -134,13 +127,11 @@ msgstr "   <div class=\"caution\">\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<p><b>You might overwrite any hard disk on the computer.</b></p>\n"
 msgid "   <p>You might overwrite any hard disk on the computer.</p>\n"
 msgstr "<p><b>Podrías sobreescribir cualquier disco de tu ordenador.</b></p>\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<p>If at some point you are not sure about which device to choose, stop proceeding.</p>\n"
 msgid "   <p>If you are not sure about the device, stop proceeding.</p>\n"
 msgstr "<p>Si no estás seguro del dispositivo a elegir, mejor para.</p>\n"
 
@@ -206,19 +197,14 @@ msgid "   button in the title bar.\n"
 msgstr ""
 
 #, fuzzy, no-wrap
-#~| msgid "[[!toc levels=1]]\n"
 #~ msgid "[[!toc startlevel=2]]\n"
 #~ msgstr "[[!toc levels=1]]\n"
 
 #, fuzzy, no-wrap
-#~| msgid "Resetting a Tails USB stick from itself"
 #~ msgid "Uninstalling a Tails USB stick from itself"
 #~ msgstr "Resetear una memoria USB Tails desde sí misma"
 
 #, fuzzy
-#~| msgid ""
-#~| "If Tails is your only Linux system, you can generally reset a Tails USB "
-#~| "stick directly from that USB stick while running Tails."
 #~ msgid ""
 #~ "If Tails is your only Linux system, you can generally uninstall a Tails "
 #~ "USB stick directly from that USB stick while running Tails."
@@ -235,10 +221,6 @@ msgstr ""
 #~ "dispositivo USB usando *Discos de GNOME*|linux#disks]]."
 
 #, fuzzy, no-wrap
-#~| msgid ""
-#~| "    **If the system fails to start**, that means that the computer does not have\n"
-#~| "    enough memory for this operation mode. Try with another computer, or find\n"
-#~| "    another Linux system, such as another Tails USB stick, to do the reset from.\n"
 #~ msgid ""
 #~ "    **If the system fails to start**, that means that the computer does not have\n"
 #~ "    enough memory for this operation mode. Try with another computer, or find\n"

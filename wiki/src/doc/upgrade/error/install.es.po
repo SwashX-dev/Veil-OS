@@ -56,7 +56,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "Repairing your Tails USB stick"
 msgid "<h2 id=\"repair\">Repairing your Tails USB stick</h2>\n"
 msgstr "Reparar tu memoria USB de Tails"
 
@@ -80,7 +79,6 @@ msgstr "<p>El Almacenamiento Persistente será preservado en la memoria USB.</p>
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "Reporting the problem to our help desk"
 msgid "<h2 id=\"report\">Reporting us the problem</h2>\n"
 msgstr "Reportar el problema a nuesta mesa de ayuda"
 
@@ -108,9 +106,6 @@ msgid "Send us the file *tails-debugging-info* by [[email|support/talk]]."
 msgstr ""
 
 #, fuzzy
-#~| msgid ""
-#~| "If you are comfortable with the command line, please [[report the "
-#~| "problem to our help desk|support/talk]]."
 #~ msgid ""
 #~ "If you are comfortable with the command line, please [[report us the "
 #~ "problem|support/talk]]."
@@ -122,21 +117,10 @@ msgstr ""
 #~ msgstr "Incluye en tu reporte:"
 
 #, fuzzy
-#~| msgid "the debugging information that appears in the error message"
 #~ msgid "- The debugging information that appears in the error message"
 #~ msgstr "la información de depuración que aparece en el mensaje de error"
 
 #, fuzzy, no-wrap
-#~| msgid ""
-#~| "   - the output of the five following commands, run in a\n"
-#~| "    [[<span class=\\\"application\\\">Terminal</span>|first_steps/desktop#terminal]]:\n"
-#~| "    <pre>\n"
-#~| "        ls -l /lib/live/mount/medium/live\n"
-#~| "        cat /lib/live/mount/medium/live/Tails.module\n"
-#~| "        mount\n"
-#~| "        df -h\n"
-#~| "        free -m\n"
-#~| "    </pre>\n"
 #~ msgid ""
 #~ "      ls -l /lib/live/mount/medium/live\n"
 #~ "      cat /lib/live/mount/medium/live/Tails.module\n"
@@ -155,9 +139,6 @@ msgstr ""
 #~ "    </pre>\n"
 
 #, fuzzy
-#~| msgid ""
-#~| "If the manual upgrade fails as well, please [[report another error|"
-#~| "first_steps/bug_reporting]]."
 #~ msgid ""
 #~ "If the manual upgrade fails as well, please [[report another error|"
 #~ "first_steps/whisperback]]."
