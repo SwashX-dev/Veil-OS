@@ -71,6 +71,7 @@ the upgrade:
         git push \
            -o merge_request.create \
            -o merge_request.draft \
+           -o merge_request.title="Upgrade the Tor client to ${TOR_VERSION}" \
            --set-upstream \
            origin "${TOR_BRANCH:?}"
 
