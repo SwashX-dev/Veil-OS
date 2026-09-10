@@ -17,7 +17,7 @@ custom_branches = [
         "recipients": "whoever_broke_the_build",
         "custom_config": {
             "default_extra_suite_args": " --extra-boot-options flatpak ",
-            "pollscm_cron": "",
+            "build_triggers": [{"timed": "@daily"}],
         },
     }
 ]
