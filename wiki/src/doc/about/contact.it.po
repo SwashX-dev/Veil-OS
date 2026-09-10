@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-09-07 14:23+0000\n"
+"POT-Creation-Date: 2026-09-09 08:36+0000\n"
 "PO-Revision-Date: 2025-12-06 21:29+0000\n"
 "Last-Translator: _ignifugo <ignifugo@insicuri.net>\n"
 "Language-Team: ita <transitails@inventati.org>\n"
@@ -216,9 +216,12 @@ msgid "<h2 id=\"tails-foundations\">Tails Team</h2>\n"
 msgstr "<h2 id=\"tails-foundations\">Tails Team</h2>\n"
 
 #. type: Plain text
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "<p>To get in touch with the <a href=\"https://gitlab.tails.boum.org/tails/team/-/wikis/home\">Tails Team</a>, write to\n"
+#| "<a href=\"mailto:foundations@tails.net\">foundations@tails.net</a>.</p>\n"
 msgid ""
-"<p>To get in touch with the <a href=\"https://gitlab.tails.boum.org/tails/team/-/wikis/home\">Tails Team</a>, write to\n"
+"<p>To get in touch with the <a href=\"https://gitlab.tails.net/tails/team/-/wikis/home\">Tails Team</a>, write to\n"
 "<a href=\"mailto:foundations@tails.net\">foundations@tails.net</a>.</p>\n"
 msgstr ""
 "<p>Per contattare il <a href=\"https://gitlab.tails.boum.org/tails/team/-/wikis/home\">Tails Team</a>, scrivi a\n"
