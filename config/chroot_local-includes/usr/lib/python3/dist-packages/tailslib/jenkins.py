@@ -15,10 +15,7 @@ custom_branches = [
         "base_project_name": "stable",
         "project_name": "stable-flatpak",
         "recipients": "whoever_broke_the_build",
-        "custom_config": {
-            "default_extra_suite_args": " --extra-boot-options flatpak ",
-            "pollscm_cron": "",
-        },
+        "custom_config": {"default_extra_suite_args": " --extra-boot-options flatpak "},
     }
 ]
 
