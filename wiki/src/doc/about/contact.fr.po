@@ -84,8 +84,7 @@ msgid ""
 "technical design questions, upcoming events, monthly reports, and user\n"
 "experience.</p>\n"
 msgstr ""
-"<p>tails-dev@lists.torproject.org est la liste sur laquelle la coordination "
-"du projet se fait :\n"
+"<p>tails-dev@lists.torproject.org est la liste sur laquelle la coordination du projet se fait :\n"
 "conception technique, évènements à venir, rapports mensuels et expérience\n"
 "d'utilisation.</p>\n"
 
@@ -103,9 +102,6 @@ msgstr "<h2 id=\"tails-testers\">tails-testers</h2>\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid ""
-#| "<p>tails-testers@boum.org is the mailing list for people who want to help\n"
-#| "[[test|contribute/how/testing]] new releases or features.</p>\n"
 msgid ""
 "<p>tails-testers@lists.torproject.org is the mailing list for people who want to help\n"
 "[[test|contribute/how/testing]] new releases or features.</p>\n"
@@ -223,8 +219,7 @@ msgid ""
 "<p>To get in touch with the <a href=\"https://gitlab.tails.net/tails/team/-/wikis/home\">Tails Team</a>, write to\n"
 "<a href=\"mailto:foundations@tails.net\">foundations@tails.net</a>.</p>\n"
 msgstr ""
-"<p>Pour prendre contact avec l'<a href=\"https://gitlab.tails.net/tails/"
-"team/-/wikis/home\">équipe Tails</a>, écrivez à\n"
+"<p>Pour prendre contact avec l'<a href=\"https://gitlab.tails.net/tails/team/-/wikis/home\">équipe Tails</a>, écrivez à\n"
 "<a href=\"mailto:foundations@tails.net\">foundations@tails.net</a>.</p>\n"
 
 #. type: Plain text

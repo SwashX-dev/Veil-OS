@@ -161,10 +161,6 @@ msgstr "   <p class=\"command\">sudo apt update && sudo apt install debian-keyri
 #
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "Import the OpenPGP key of [[!wikipedia Chris_Lamb_(software_developer) "
-#| "desc=\"Chris Lamb\"]], a former Debian Project Leader, from the Debian "
-#| "keyring into your keyring:"
 msgid ""
 "Import the OpenPGP key of intrigeri, a Debian and Tails developer, from the "
 "Debian keyring into your keyring:"
@@ -175,7 +171,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "   <p class=\"command\">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export chris@chris-lamb.co.uk | gpg --import</p>\n"
 msgid "   <p class=\"command\">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export intrigeri@debian.org | gpg --import</p>\n"
 msgstr "   <p class=\"command\">gpg --keyring=/usr/share/keyrings/debian-keyring.gpg --export chris@chris-lamb.co.uk | gpg --import</p>\n"
 
@@ -206,8 +201,7 @@ msgid ""
 "   verified and certified the Tails signing key with his key and a level 3 check.\n"
 msgstr ""
 "   Ici, `sig!3` signifie que intrigeri\n"
-"   a vérifié et certifié la clé de signature Tails avec sa clé et une "
-"vérification de niveau 3.\n"
+"   a vérifié et certifié la clé de signature Tails avec sa clé et une vérification de niveau 3.\n"
 
 #. type: Plain text
 #, no-wrap
