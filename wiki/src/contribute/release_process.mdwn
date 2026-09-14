@@ -93,6 +93,13 @@ When you clock off, or take any other kind of long break, please communicate thi
 Requirements
 ============
 
+Prepare your release checkout
+--------------------------------
+
+In your shell, change the directory to the release checkout, checkout the release branch (`stable` for bugfix
+releases, `testing` for major releases and RCs), then run `git pull`.
+
+
 Packages
 --------
 
