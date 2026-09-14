@@ -304,7 +304,8 @@ class CommandFailed < StandardError
   end
 end
 
-def cmd_helper(cmd, env: {}, print_output: false, output_in_exception: true)
+def cmd_helper(cmd, env: {}, print_output: false, output_in_exception: true,
+               popen_opts: {})
   # print_output will print the output *as it arrives*; which implies it will be printed
   # also for successful commands. Setting this to true might be useful if you want to
   # debug a long-running command which prints useful information as it runs
@@ -316,7 +317,7 @@ def cmd_helper(cmd, env: {}, print_output: false, output_in_exception: true)
   end
   env = ENV.to_h.merge(env)
   out = ''
-  IO.popen(env, cmd) do |p|
+  IO.popen(env, cmd, **popen_opts) do |p|
     $cmd_helper_process = p
     loop do
       line = p.readline
