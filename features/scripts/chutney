@@ -16,6 +16,7 @@ cd "${CHUTNEY_DIR}"
 
 if [ -n "${RESTRICT_CHUTNEY_MEMORY:-}" ]; then
     systemd-run ${MODE} --scope \
+        --setenv="MALLOC_ARENA_MAX=${CHUTNEY_MALLOC_ARENA_MAX:-1}" \
         --property=MemoryHigh="${CHUTNEY_MEMORY_HIGH:-4G}" \
         --property=MemoryMax="${CHUTNEY_MEMORY_MAX:-6G}" \
         "${CHUTNEY_SCRIPT}" "$@"
