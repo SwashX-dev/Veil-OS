@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 11:11+0200\n"
+"POT-Creation-Date: 2026-09-15 10:51+0200\n"
 "PO-Revision-Date: 2026-08-05 11:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/tor/tails-gui/fi/"
@@ -989,10 +989,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Pysyvän tallennustilan päivittäminen. Tämä voi kestää jonkin aikaa…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
+#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Virhe avatessa pysyvää tallennustilaa: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
+#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Virhe päivitettäessä pysyvää tallennustilaa: {}"
 
@@ -1004,10 +1006,12 @@ msgstr ""
 "{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
+#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Virhe aktivoidessa pysyvää tallennustilaa: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
+#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "Keskeyttäminen epäonnistui korjattaessa pysyvää "
@@ -2193,6 +2197,7 @@ msgstr "Tämän ominaisuuden tiedot ovat edelleen tallessa."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
+#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Virhe aktivoitaessa ominaisuutta {}"
 
@@ -2211,6 +2216,7 @@ msgstr "Yksityiskohdat"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
+#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Virhe poistettaessa ominaisuuden {} aktivointia"
 
@@ -2219,6 +2225,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Virhe poistettaessa ominaisuuden aktivointia."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2236,10 +2243,12 @@ msgid "_Delete Data"
 msgstr "_Poista tiedot"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Virhe poistettaessa ominasuuden {} tietoja"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Virhe poistettaessa ominasuuden {} tietoja."
 
