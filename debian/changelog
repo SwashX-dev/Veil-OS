@@ -1,4 +1,4 @@
-tails (7.13) UNRELEASED; urgency=medium
+tails (7.13) unstable; urgency=medium
 
   * Upgrade to Tor Browser 15.0.23 (tails/tails!3286)
 
@@ -199,7 +199,7 @@ tails (7.13) UNRELEASED; urgency=medium
       - Chutney: update to current upstream at d6659ac34c36122ed2590714e37269d1b983c336
       - CI: run all tests for 21461-update-chutney
 
- -- Tails developers <foundations@tails.net>  Tue, 15 Sep 2026 08:56:59 +0000
+ -- Tails developers <foundations@tails.net>  Tue, 15 Sep 2026 11:15:16 +0200
 
 tails (7.12) unstable; urgency=medium
 
