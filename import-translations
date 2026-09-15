@@ -2,6 +2,7 @@
 
 set -e
 set -u
+set -o pipefail
 
 TAILS_PO_DIR='po'
 SCRIPT_DIR=$(readlink -f "$(dirname "$0")")
