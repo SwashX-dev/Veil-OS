@@ -25,7 +25,7 @@ FIXME: changes and updates go here
 # Changelog
 
 For more details about what has changed in Tails {{version}}, read our
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/raw/{{tag}}/debian/changelog).
+[changelog](https://gitlab.tails.net/tails/tails/-/raw/{{tag}}/debian/changelog).
 
 # Known issues
 

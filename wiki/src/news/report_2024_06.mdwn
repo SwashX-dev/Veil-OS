@@ -24,7 +24,7 @@ Highlights
     do, GNOME gently notifies the user. 
 
 - We have been working on a [new user journey for
-  backups](https://gitlab.tails.boum.org/tails/tails/-/issues/20194#note_236586).
+  backups](https://gitlab.tails.net/tails/tails/-/issues/20194#note_236586).
   In June, we finished designing all interfaces and solicited feedback. The
   proposal was well received by 2 volunteers who have contributed code related to
   backups. 
@@ -44,7 +44,7 @@ In Tails 6.4, we brought:
   repositories
 
 To know more, check out the Tails 6.4 [[release notes|news/version_6.4]] and
-the [changelog](https://gitlab.tails.boum.org/tails/tails/-/blob/master/debian/changelog).
+the [changelog](https://gitlab.tails.net/tails/tails/-/blob/master/debian/changelog).
 
 Metrics
 =======

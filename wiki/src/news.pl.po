@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-09-01 17:04+0200\n"
+"POT-Creation-Date: 2026-09-02 08:02+0000\n"
 "PO-Revision-Date: 2018-10-27 07:07+0000\n"
 "Last-Translator: Weblate Admin <admin@example.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,17 +24,10 @@ msgid "[[!meta title=\"News\"]]"
 msgstr ""
 
 #. type: Content of: <p>
-msgid "Subscribe to our newsletter to receive the same news by email:"
-msgstr ""
-
-#. type: Content of: <form>
 msgid ""
-"<input aria-label=\"Email\" name=\"email\" value=\"\"/> <button aria-"
-"label=\"Subscribe\" class=\"button\" type=\"submit\">Subscribe</button>"
-msgstr ""
-
-#. type: Content of: <form><p>
-msgid "[[Archive of all news|news/archive]]"
+"<a href=\"https://lists.torproject.org/mailman3/postorius/lists/tails-"
+"news.lists.torproject.org/\">Subscribe to our newsletter</a> to receive the "
+"same news by email."
 msgstr ""
 
 #.  Inlined news 

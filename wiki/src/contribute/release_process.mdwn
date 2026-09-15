@@ -103,17 +103,17 @@ installed:
 
 * `perl5lib` dependencies:
 
-      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/perl5lib.mdwn"
+      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/perl5lib.mdwn"
 
 * packages needed to build IUKs:
 
-      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/tails-iuk.mdwn"
+      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/release_process/tails-iuk.mdwn"
 
 * `ikiwiki` from Debian testing (Forky) or newer
 
 * packages needed to build the website:
 
-      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/build/website.mdwn"
+      "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/build/website.mdwn"
 
 Configuration files
 -------------------
@@ -130,12 +130,12 @@ To release Tails you need:
       ssl_verify = true
 
       [TailsRM]
-      url = https://gitlab.tails.boum.org
+      url = https://gitlab.tails.net
       per_page = 100
       private_token = XXX
 
       [Tails]
-      url = https://gitlab.tails.boum.org
+      url = https://gitlab.tails.net
       per_page = 100
       private_token = XXX
 
@@ -202,7 +202,7 @@ Check the Release Manager role
 Make sure all the shift preparation steps, in the Release Manager role
 documentation, have been done:
 
-    "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/working_together/roles/release_manager.mdwn"
+    "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/working_together/roles/release_manager.mdwn"
 
 Fill the gaps if needed, otherwise the release process will be blocked
 later.
@@ -273,7 +273,7 @@ Check CI results
 
 ### Jenkins
 
-Visit the [Jenkins RM view](https://jenkins.tails.boum.org/view/RM/)
+Visit the [Jenkins RM view](https://jenkins.tails.net/view/RM/)
 and check that the jobs for the release branch have good enough results:
 
  - the last build and reproducibility testing builds have succeeded for:
@@ -290,13 +290,13 @@ and check that the jobs for the release branch have good enough results:
 ### GitLab CI
 
 Verify that the latest
-[pipeline](https://gitlab.tails.boum.org/tails/tails/-/pipelines) for
+[pipeline](https://gitlab.tails.net/tails/tails/-/pipelines) for
 the branch this release will be built from succeeded.
 
 Merge the private repo
 ======================
 
-Look at [tails/tails-private](https://gitlab.tails.boum.org/tails/tails-private):
+Look at [tails/tails-private](https://gitlab.tails.net/tails/tails-private):
 
     git fetch tails-private && \
     git log origin/"${RELEASE_BRANCH:?}"..tails-private/"${RELEASE_BRANCH:?}"
@@ -556,9 +556,9 @@ for example when triaging bug reports).
 
 To do so, on each of these pages:
 
-  - [issues](https://gitlab.tails.boum.org/tails/tails/-/work_items?state=closed)
-  - [merge requests](https://gitlab.tails.boum.org/tails/tails/-/merge_requests?state=merged)
-  - [private merge requests](https://gitlab.tails.boum.org/tails/tails-private/-/merge_requests?state=merged)
+  - [issues](https://gitlab.tails.net/tails/tails/-/work_items?state=closed)
+  - [merge requests](https://gitlab.tails.net/tails/tails/-/merge_requests?state=merged)
+  - [private merge requests](https://gitlab.tails.net/tails/tails-private/-/merge_requests?state=merged)
 
 Do this:
 
@@ -601,7 +601,7 @@ Update the Changelog entry for the release you're preparing:
    section of the Changelog.
 
    If you're tempted to skip this step, see the [last discussion on this
-   topic](https://gitlab.tails.boum.org/tails/tails/-/work_items/21151#note_266794).
+   topic](https://gitlab.tails.net/tails/tails/-/work_items/21151#note_266794).
 
 ### In any case
 
@@ -618,7 +618,7 @@ version's `.packages` file and the one from the to-be-released images:
    
        diff --color=never -u \
            "wiki/src/torrents/files/tails-amd64-${PREVIOUS_VERSION}.packages" \
-           <(curl --silent "https://nightly.tails.boum.org/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/latest.packages") \
+           <(curl --silent "https://nightly.tails.net/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/latest.packages") \
         | wdiff --diff-input  --terminal | grep -v --perl-regexp '^[~.:+a-zA-Z_0-9 \t\s-]*$'
 
 2. In the diff, look for:
@@ -628,7 +628,7 @@ version's `.packages` file and the one from the to-be-released images:
    - new upstream releases of user applications specifically mentioned
      as included in Tails:
 
-         "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/doc/about/features.mdwn"
+         "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/doc/about/features.mdwn"
 
      - You can ignore new Debian releases for such packages, but you should not
        ignore minor releases or patch releases.
@@ -651,14 +651,14 @@ version's `.packages` file and the one from the to-be-released images:
 
 4. Let Technical Writers know that the changelog is ready
 
-   - Open the [GitLab issue about the release notes](https://gitlab.tails.boum.org/groups/tails/-/work_items?scope=all&search=release+notes&sort=milestone&state=opened)
+   - Open the [GitLab issue about the release notes](https://gitlab.tails.net/groups/tails/-/work_items?scope=all&search=release+notes&sort=milestone&state=opened)
 
    - Notify `@technical-writers` that the changelog is ready:
 
         (
         echo "Dear @technical-writers,"
-        echo "- The changelog entry is ready: https://gitlab.tails.boum.org/tails/tails/-/blob/${RELEASE_BRANCH:?}/debian/changelog"
-        echo "- The latest corresponding images built by Jenkins are there: https://nightly.tails.boum.org/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/build-artifacts"
+        echo "- The changelog entry is ready: https://gitlab.tails.net/tails/tails/-/blob/${RELEASE_BRANCH:?}/debian/changelog"
+        echo "- The latest corresponding images built by Jenkins are there: https://nightly.tails.net/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/build-artifacts"
         ) | pee cat wl-copy
 
 Included website
@@ -967,7 +967,7 @@ Verify that Jenkins reproduced your images:
     (
     set -eu
     cd "${ARTIFACTS:?}"
-    url="https://nightly.tails.boum.org/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
+    url="https://nightly.tails.net/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
     curl --fail "$url" > SHA512SUMS-jenkins.txt
     grep --perl-regexp '[.]img|iso' SHA512SUMS-jenkins.txt | sha512sum -c -
     rm SHA512SUMS-jenkins.txt
@@ -1191,7 +1191,7 @@ Make sure that Jenkins has finished building the images so you have set
         --matching-jenkins-images-build-id "${MATCHING_JENKINS_IMAGES_BUILD_ID:?}"
 
 Then, wait (a few minutes, `*/15` crontab) until the images appear
-on <https://iso-history.tails.boum.org/?C=M&O=D>:
+on <https://iso-history.tails.net/?C=M&O=D>:
 
     "${RELEASE_CHECKOUT:?}/bin/wait-for-images-in-iso-history" "${VERSION:?}" "${ISOS:?}"
 
@@ -1202,13 +1202,13 @@ Build the Incremental Upgrade Kits on Jenkins
 
 1. Make sure the push to ISO history (started in the previous section)
    has finished, and that images have appeared on the web server:
-   <https://iso-history.tails.boum.org/?C=M&O=D>
+   <https://iso-history.tails.net/?C=M&O=D>
 
-1. On <https://jenkins.tails.boum.org/job/build_IUKs/configure>, adjust
+1. On <https://jenkins.tails.net/job/build_IUKs/configure>, adjust
    the `SOURCE_VERSION` axis to list all versions in `$IUK_SOURCE_VERSIONS`,
    and save the updated configuration.
 
-1. On <https://jenkins.tails.boum.org/job/build_IUKs/build?delay=0sec>,
+1. On <https://jenkins.tails.net/job/build_IUKs/build?delay=0sec>,
    fill the form with these values:
 
     - `TAILS_GIT_COMMIT`: the value of `$TAG` in your release environment
@@ -1307,7 +1307,7 @@ If this is the case:
 
 If the last command failed:
 
-1. Visit https://jenkins.tails.boum.org/job/build_IUKs/lastBuild/parameters/
+1. Visit https://jenkins.tails.net/job/build_IUKs/lastBuild/parameters/
 
    It tells you which parameters you've passed to the upstream Jenkins
    job, which spawned the many workers. Make sure to use the build
@@ -1974,14 +1974,14 @@ Skip this part if preparing a release candidate:
        )
 
 3. Finally, submit a MR against
-   [tails/gitlab-config](https://gitlab.tails.boum.org/tails/gitlab-config)
+   [tails/gitlab-config](https://gitlab.tails.net/tails/gitlab-config)
    to close the just-released
-   [milestone](https://gitlab.tails.boum.org/groups/tails/-/milestones). See
+   [milestone](https://gitlab.tails.net/groups/tails/-/milestones). See
    this as an example:
-   [tails/gitlab-config!18](https://gitlab.tails.boum.org/tails/gitlab-config/-/merge_requests/18/diffs)
+   [tails/gitlab-config!18](https://gitlab.tails.net/tails/gitlab-config/-/merge_requests/18/diffs)
    
    You may use [Gitlab web interface to create the
-   MR](https://gitlab.tails.boum.org/tails/gitlab-config/-/edit/master/main.yml).
+   MR](https://gitlab.tails.net/tails/gitlab-config/-/edit/master/main.yml).
 
    Make another Tails Team member the *Reviewer*.
 
@@ -2005,7 +2005,7 @@ Wait for the website update
 
 Wait for the release to be fully published, that is for the website to have been
 fully refreshed. To do so, first wait for the
-[GitLab CI pipeline](https://gitlab.tails.boum.org/tails/tails/-/pipelines/?ref=master)
+[GitLab CI pipeline](https://gitlab.tails.net/tails/tails/-/pipelines/?ref=master)
 triggered by the automatic merge of `$WEBSITE_RELEASE_BRANCH` to build and deploy the website.
 
 And then:
@@ -2171,7 +2171,7 @@ Check that you are indeed preparing a final release:
        git checkout stable && \
        bare_repo=$(mktemp -d) && \
        git clone --bare --reference "${RELEASE_CHECKOUT:?}" \
-           git@gitlab-ssh.tails.boum.org:tails/tails \
+           git@gitlab-ssh.tails.net:tails/tails \
            "${bare_repo:?}" && \
        PYTHONPATH=lib/python3 ./bin/delete-merged-git-branches \
            --repo "${bare_repo:?}" && \
@@ -2299,7 +2299,7 @@ Check that you are indeed preparing a final release:
 
    Open the list of potentially relevant issues:
 
-       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/groups/tails/-/work_items?sort=updated_asc&state=closed&milestone_title=Tails_${VERSION:?}&confidential=yes"
+       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/groups/tails/-/work_items?sort=updated_asc&state=closed&milestone_title=Tails_${VERSION:?}&confidential=yes"
 
    In that list, look for issues about security vulnerabilities, that have our
    *Disclosure agreement* in the description. Those are the ones in scope for
@@ -2308,7 +2308,7 @@ Check that you are indeed preparing a final release:
    For these issues, follow the guidance from our security issue
    response policy:
 
-       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/security_policy.mdwn"
+       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/security_policy.mdwn"
 
    Unless specified otherwise there, we follow [Tor's
    policy](https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/SecurityPolicy#how-will-the-developers-handle-security-issues)
@@ -2399,7 +2399,7 @@ Check that you are indeed preparing a RC:
 
        (
        git checkout devel && \
-       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.boum.org/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/APT_repository/time-based_snapshots.mdwn"
+       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/APT_repository/time-based_snapshots.mdwn"
        )
 
 1. Ensure everything done so far is pushed:

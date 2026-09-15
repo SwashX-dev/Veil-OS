@@ -103,7 +103,7 @@ There are several languages enabled, some of them with few or no
 translations. As everything is fed back to the Tails canonical
 repository, all files are available when cloning this repository:
 
-    git clone https://gitlab.tails.boum.org/tails/tails.git
+    git clone https://gitlab.tails.net/tails/tails.git
 
 If needed, for exceptional means, Weblate's Git repository can be cloned
 or added as a remote:
@@ -472,7 +472,7 @@ Currently implemented proposal
        the user's page, e.g.
        [intrigeri's](https://translate.tails.net/user/intrigeri/).
        In other words, we use proof-of-work to increase the cost of attacks.
-    2. Let <tails-l10n@boum.org> and all the other Weblate reviewers
+    2. Let <tails-l10n@lists.torproject.org> and all the other Weblate reviewers
        know about this status change.
 
   - Contributors can reach an agreement on tails-l10n mailing list and

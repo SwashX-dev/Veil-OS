@@ -210,7 +210,7 @@ prototypes, conducted
 [[!tails_blueprint veracrypt desc="quantitative surveys"]], and defined better our
 audience using [[personas|contribute/personas]].
 
-[[<img src="https://gitlab.tails.boum.org/tails/ux/-/raw/master/personas/personas-small.png" id="picture" class="img-responsive" alt="Our 3 personas: Riou, Cris, and Kim">|contribute/personas]]
+[[<img src="https://gitlab.tails.net/tails/ux/-/raw/master/personas/personas-small.png" id="picture" class="img-responsive" alt="Our 3 personas: Riou, Cris, and Kim">|contribute/personas]]
 
 This usability work was key in all the work that we did since 2015 to
 make Tails easier to install:
@@ -226,7 +226,7 @@ To cope with this rapid development and the many releases, we built a
 cutting edge *continuous integration* infrastructure:
 
 - Images of Tails are [built
-  automatically](https://nightly.tails.boum.org/) every time we develop
+  automatically](https://nightly.tails.net/) every time we develop
   a change for an upcoming release.
 - These images are [[tested
   automatically|contribute/release_process/test/automated_tests]]

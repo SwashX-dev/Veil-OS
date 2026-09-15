@@ -28,7 +28,7 @@ Highlights
 
     - We added an animation when expanding the collapsible sections in our
       warnings page. Changes should be more noticeable now. ([Gitlab
-      issue](https://gitlab.tails.boum.org/tails/tails/-/issues/19202))
+      issue](https://gitlab.tails.net/tails/tails/-/issues/19202))
 
     - We also added a "Security/Fixed" pill on security advisories that are
       fixed. As an example, see our advisory on "[[Possible remote attack on
@@ -37,7 +37,7 @@ Highlights
     - We also fixed the display of SVG images when JavaScript is disabled. Now,
       we are using PNG by default and adding some JavaScript to enhance images
       back to SVG when useful. ([Gitlab
-      issue](https://gitlab.tails.boum.org/tails/tails/-/issues/17805))
+      issue](https://gitlab.tails.net/tails/tails/-/issues/17805))
 
     - We replaced the CSS framework Bootstrap on our website with custom and
       modern CSS code. The most challenging page to convert was our donation
@@ -56,7 +56,7 @@ In Tails 6.3, you will find:
 
 To know more, check out the Tails 6.3 [[release notes|news/version_6.3]] and
 the
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/blob/master/debian/changelog).
+[changelog](https://gitlab.tails.net/tails/tails/-/blob/master/debian/changelog).
 
 Metrics
 =======

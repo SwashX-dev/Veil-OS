@@ -670,7 +670,7 @@ document on the Tor wiki:
 
 The impact of HTTP keepalive and possible solutions are being
 discussed
-on the [[tails-dev@boum.org|doc/about/contact#tails-dev]] mailing list.
+on the [[tails-dev@lists.torproject.org|doc/about/contact#tails-dev]] mailing list.
 
 ### 2.7.3 Mounting of filesystems stored on removable devices
 
@@ -916,6 +916,20 @@ has bootstrapped already.
 
 - [[!tails_gitweb_dir config/chroot_local-includes/usr/share/gnome-shell/extensions/torstatus@tails.boum.org/extension.js]]
 
+#### Transparent torification
+
+Tails [[transparently proxies|design/Tor_enforcement/Network_filter#transparent-proxy]]
+all of `amnesia`'s outgoing TCP Internet
+traffic through `tor`. However we still prefer to explicitly configure
+applications to use `tor` via their SOCKS configuration when
+available, since we consider that more reliable than the magic of
+transparent proxying. Furthermore, we often prefer to use wrappers
+that set SOCKS authentication credentials with unique values to get
+stronger stream isolation through `IsolateSOCKSAuth` compared to the
+default. When SOCKS authentication isn't supported we resort to
+`torsocks --isolate`, although we try to avoid it whenever possible
+due to its history of issues.
+
 ### 3.6.2 IPv6
 
 See [[the dedicated design document|design/ipv6]].
@@ -932,10 +946,8 @@ Tails does not include any HTTP proxy anymore.
 
 ### 3.6.5 SOCKS libraries
 
-torsocks and torify are installed. Since Tor-ification is done at a
-lower level (in-kernel network filter, Tor-ified DNS), these tools are
-actually unnecessary. They are solely included due to dependencies and
-configured for completeness.
+Tails installs `torsocks` and uses it only for improving stream
+isolation over what transparent torification offers.
 
 - [[!tails_gitweb config/chroot_local-includes/etc/tor/tor-tsocks.conf]]
 - [[!tails_gitweb config/chroot_local-hooks/09-torsocks-configuration]]

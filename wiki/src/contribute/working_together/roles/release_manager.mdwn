@@ -7,7 +7,7 @@
 
 # Duties
 
-See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
+See <https://gitlab.tails.net/tails/team/-/wikis/responsibilities>.
 
 <a id="shift"></a>
 
@@ -20,7 +20,7 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
 
 - Check the [Firefox Release Calendar](https://whattrainisitnow.com/calendar/) `[skip-if-emergency-release]`
 
-- Ensure <tails-dev@boum.org> is aware of the release.
+- Ensure <tails-dev@lists.torproject.org> is aware of the release.
 
   If you are preparing an unscheduled emergency release, announce:
 
@@ -28,8 +28,8 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
     - Announce the code freeze.
     - Say when you expect the tests to happen.
 
-  Otherwise, reply to the email sent to <tails-dev@boum.org> and
-  <tails-l10n@boum.org> by the RM for the previous release,
+  Otherwise, reply to the email sent to <tails-dev@lists.torproject.org> and
+  <tails-l10n@lists.torproject.org> by the RM for the previous release,
   to provide information they could not, if any, such as: `[skip-if-emergency-release]`
 
   - Code freeze date, if it's different from what's in the email sent by the previous RM.
@@ -46,16 +46,16 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
   If needed, create a merge request against [[!tails_gitlab tails/gitlab-config]].
   Make another Tails Team member the *Reviewer*.
 
-- [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Upgrade%20Tor%20Browser)
+- [Create an issue](https://gitlab.tails.net/tails/tails/-/work_items/new?description_template=Upgrade%20Tor%20Browser)
   for upgrading Tor Browser in the release your shift is about
 
-- [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Refresh%20About%20Tor%20Patches)
+- [Create an issue](https://gitlab.tails.net/tails/tails/-/work_items/new?description_template=Refresh%20About%20Tor%20Patches)
   for refreshing the about:tor patches for that new Tor Browser
 
-- [Create an issue](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Run%20Automated%20Test%20Suite%20Locally)
+- [Create an issue](https://gitlab.tails.net/tails/tails/-/work_items/new?description_template=Run%20Automated%20Test%20Suite%20Locally)
   for running our test suite on a local trusted system
 
-- [Check](https://gitlab.tails.boum.org/tails/tails/-/work_items?scope=all&state=opened&label_name[]=Core%20Work%3ATechnical%20writing&search=release+notes)
+- [Check](https://gitlab.tails.net/tails/tails/-/work_items?scope=all&state=opened&label_name[]=Core%20Work%3ATechnical%20writing&search=release+notes)
   if there are issues about writing the release notes, for:
     - the final release
     - any prior beta and release candidate.
@@ -63,7 +63,7 @@ See <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities>.
   On every such existing issue, make the exact deadline explicit (usually it's
   the same as for manual QA, i.e. 10:00 UTC).
 
-  [Create any missing issues](https://gitlab.tails.boum.org/tails/tails/-/work_items/new?description_template=Write%20Release%20Notes).
+  [Create any missing issues](https://gitlab.tails.net/tails/tails/-/work_items/new?description_template=Write%20Release%20Notes).
 
 - The ISO images for *every* previous beta, RC, and final release
   based on the version of Debian that will be used for the release

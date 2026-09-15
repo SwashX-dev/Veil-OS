@@ -30,7 +30,7 @@ that the Persistent Storage could do a lot more for you if it had more features
 and was easier to use.
 
 We've worked hard since 2021 to implement a [new
-design](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/Persistent-Storage-redesign)
+design](https://gitlab.tails.net/tails/blueprints/-/wikis/Persistent-Storage-redesign)
 and completely rewrite the code in Python.
 
 The new Persistent Storage doesn't require restarting after creating it or each

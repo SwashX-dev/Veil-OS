@@ -46,7 +46,7 @@ the sexiest, slickest, and sleekest Tails yet. It brings:
 
 To know more, check out the Tails 6.0 [[release notes|news/version_6.0]] and
 the
-[changelog](https://gitlab.tails.boum.org/tails/tails/-/blob/master/debian/changelog).
+[changelog](https://gitlab.tails.net/tails/tails/-/blob/master/debian/changelog).
 Thank you to everyone who helped us out by testing the [[release
 candidate|news/test_6.0-rc1/]].
 

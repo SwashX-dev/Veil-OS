@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-01-22 08:55+0000\n"
+"POT-Creation-Date: 2026-09-15 11:07+0200\n"
 "PO-Revision-Date: 2025-12-09 13:29+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: ita <transitails@inventati.org>\n"
@@ -364,9 +364,13 @@ msgid "[[Design documents|contribute/design]]"
 msgstr "- [[Design documents|contribute/design]]"
 
 #. type: Bullet: '- '
+#, fuzzy
+#| msgid ""
+#| "[Blueprints](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/) to "
+#| "help structuring ideas for future improvements"
 msgid ""
-"[Blueprints](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/) to "
-"help structuring ideas for future improvements"
+"[Blueprints](https://gitlab.tails.net/tails/blueprints/-/wikis/) to help "
+"structuring ideas for future improvements"
 msgstr ""
 "[Blueprints](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/) to "
 "help structuring ideas for future improvements"
@@ -424,7 +428,9 @@ msgid "[[Customize Tails|contribute/customize]]"
 msgstr "[[Customize Tails|contribute/customize]]"
 
 #. type: Bullet: '  * '
-msgid "[Nightly Tails image builds](https://nightly.tails.boum.org)"
+#, fuzzy
+#| msgid "[Nightly Tails image builds](https://nightly.tails.boum.org)"
+msgid "[Nightly Tails image builds](https://nightly.tails.net)"
 msgstr "[Nightly Tails image builds](https://nightly.tails.boum.org)"
 
 #. type: Bullet: '  * '
@@ -579,9 +585,13 @@ msgid "Teams and roles"
 msgstr "Teams and roles"
 
 #. type: Bullet: '  * '
+#, fuzzy
+#| msgid ""
+#| "[Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home) "
+#| "(formerly known as: Foundations Team)"
 msgid ""
-"[Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home) "
-"(formerly known as: Foundations Team)"
+"[Tails Team](https://gitlab.tails.net/tails/team/-/wikis/home) (formerly "
+"known as: Foundations Team)"
 msgstr ""
 "[Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home) "
 "(formerly known as: Foundations Team)"

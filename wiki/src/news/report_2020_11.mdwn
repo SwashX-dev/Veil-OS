@@ -13,15 +13,15 @@ The following changes were introduced in Tails 4.13:
 
 * Update Thunderbird from 68.12 to 78.4.2. Thunderbird 78 replaces the Enigmail extension with built-in support for OpenPGP encryption. If you used Enigmail before Tails 4.13, follow our instructions to migrate from Enigmail to Thunderbird 78.
 
-* Add a button to restart Tails at the end of creating the Persistent Storage. ([#16384](https://gitlab.tails.boum.org/tails/tails/-/issues/16384))
+* Add a button to restart Tails at the end of creating the Persistent Storage. ([#16384](https://gitlab.tails.net/tails/tails/-/issues/16384))
 
-* Only include translations for languages that are available in the Welcome Screen. This reduces the size of the download by 5%. ([#17139](https://gitlab.tails.boum.org/tails/tails/-/issues/17139))
+* Only include translations for languages that are available in the Welcome Screen. This reduces the size of the download by 5%. ([#17139](https://gitlab.tails.net/tails/tails/-/issues/17139))
 
-* Make the root directory of the Persistent Storage only readable by the root user. ([#7465](https://gitlab.tails.boum.org/tails/tails/-/issues/7465))
+* Make the root directory of the Persistent Storage only readable by the root user. ([#7465](https://gitlab.tails.net/tails/tails/-/issues/7465))
 
 * Users of the Dotfiles feature of the Persistent Storage can choose Places ▸ Dotfiles to open the /live/persistence/TailsData_unlocked/dotfiles folder in the Files browser.
 
-* Enable TCP timestamps. This might increase stability on slower Internet connections. ([#17491](https://gitlab.tails.boum.org/tails/tails/-/issues/17491))
+* Enable TCP timestamps. This might increase stability on slower Internet connections. ([#17491](https://gitlab.tails.net/tails/tails/-/issues/17491))
 
 
 Release management

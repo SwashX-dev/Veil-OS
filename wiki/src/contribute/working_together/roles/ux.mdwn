@@ -8,7 +8,7 @@
   - The core pages of our website
 
 - Answer or raise usability concerns related to the work of the
-  [Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home). They deal with the code, the UX designers deal
+  [Tails Team](https://gitlab.tails.net/tails/team/-/wikis/home). They deal with the code, the UX designers deal
   with the user experience.
 
 - Do background research work to understand better our user base, who
@@ -23,7 +23,7 @@
     surveys, etc.
 
 - Handle
-  [newly GitLab issues](https://gitlab.tails.boum.org/groups/tails/-/work_items?scope=all&utf8=%E2%9C%93&state=opened&not[label_name][]=To%20Do&not[label_name][]=Doing&not[label_name][]=Needs%20Validation)
+  [newly GitLab issues](https://gitlab.tails.net/groups/tails/-/work_items?scope=all&utf8=%E2%9C%93&state=opened&not[label_name][]=To%20Do&not[label_name][]=Doing&not[label_name][]=Needs%20Validation)
   that are about feature requests and the
   scope of Tails.
 

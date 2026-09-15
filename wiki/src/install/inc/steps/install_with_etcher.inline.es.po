@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2026-04-01 00:15+0000\n"
-"PO-Revision-Date: 2026-07-31 02:56+0000\n"
+"PO-Revision-Date: 2026-09-09 04:56+0000\n"
 "Last-Translator: cacu <cacukin@cryptolab.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -42,8 +42,7 @@ msgid ""
 "<p class=\"upgrade\">In the following steps, you will install an intermediary Tails using the Tails USB\n"
 "image that you downloaded earlier.</p>\n"
 msgstr ""
-"<p class=\"upgrade\">En los siguientes pasos, instalará un Tails "
-"intermediario usando la imagen USB de Tails \n"
+"<p class=\"upgrade\">En los siguientes pasos, instalará un Tails intermediario usando la imagen USB de Tails \n"
 "que descargó anteriormente.</p>\n"
 
 #. type: Plain text
@@ -142,13 +141,11 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid "Plug your USB stick in the computer."
 msgid "Plug your USB stick into the computer."
 msgstr "Conecta la memoria USB a la computadora."
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid "Execute again the same command:"
 msgid "Execute again the same command."
 msgstr "Ejecuta otra vez el mismo comando:"
 
@@ -180,7 +177,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "Take note of the *device name* of your USB stick.  In this example, the USB stick is 8.0 GB and its device name is <span class=\"code\">/dev/disk1</span>.  Yours might be different."
 msgid ""
 "   In this example, the USB stick is 8.0 GB and its device name is <span class=\"command-placeholder\">/dev/disk1</span>.\n"
 "   Yours might be different.\n"
@@ -208,9 +204,6 @@ msgstr "   </div>\n"
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "<span class=\"command-placeholder\">device</span> with the device name "
-#| "found in step 6"
 msgid ""
 "Execute the following command to safely eject the USB stick. Replace <span "
 "class=\"command-placeholder\">device</span> with the device name found in "
@@ -226,9 +219,6 @@ msgstr "   <p class=\"command-template\">diskutil unmountDisk <span class=\"comm
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "Execute the following commands to copy the USB image that you downloaded "
-#| "earlier to the USB stick."
 msgid ""
 "Execute the following commands to copy the USB image that you downloaded "
 "earlier to the USB stick. Replace:"
@@ -290,7 +280,6 @@ msgstr "   Deberías obtener algo como esto:\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "   <p class=\"pre command-example\">dd if=/Users/me/tails-amd64-3.12.img of=/dev/rdisk9 bs=16m && sync</p>\n"
 msgid "   <p class=\"command-template\">dd if=/Users/me/tails-amd64-3.12.img of=/dev/rdisk9 bs=16m && sync</p>\n"
 msgstr "   <p class=\"pre command-example\">dd if=/Users/me/tails-amd64-3.12.img of=/dev/rdisk9 bs=16m && sync</p>\n"
 
@@ -305,10 +294,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid ""
-#| "   <div class=\"note\">\n"
-#| "   <p>If you get a <span class=\"guilabel\">Permission denied</span> error, try\n"
-#| "   adding <code>sudo</code> at the beginning of the command:</p>\n"
 msgid ""
 "   <div class=\"note\">\n"
 "   <p>If you get a <code>Permission denied</code> error, try\n"
@@ -320,15 +305,11 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "   <p class=\"pre command\">sudo dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">device</span> bs=16m && sync</p>\n"
 msgid "   <p class=\"command-template\">sudo dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">device</span> bs=16m && sync</p>\n"
 msgstr "   <p class=\"pre command\">sudo dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">device</span> bs=16m && sync</p>\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid ""
-#| "   <p>If you get an <span class=\"guilabel\">invalid number ‘16m’</span> error, try\n"
-#| "   using <code>16M</code> instead:</p>\n"
 msgid ""
 "   <p>If you get an <code>invalid number ‘16m’</code> error, try\n"
 "   using <code>16M</code> instead:</p>\n"
@@ -338,13 +319,11 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "   <p class=\"pre command\">dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">device</span> bs=16M && sync</p>\n"
 msgid "   <p class=\"command-template\">dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">device</span> bs=16M && sync</p>\n"
 msgstr "   <p class=\"pre command\">dd if=<span class=\"command-placeholder\">tails.img</span> of=<span class=\"command-placeholder\">device</span> bs=16M && sync</p>\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "   The installation is complete once the command prompt reappeared.\n"
 msgid "   The installation is complete when the command prompt reappears.\n"
 msgstr "   La instalación se ha completado una vez que reaparezca el interprete de comandos.\n"
 
@@ -360,15 +339,10 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "   Save your download to your usual *Downloads* folder and not to the USB stick.\n"
-msgstr ""
-"   Guarde la descarga en su carpeta *Descargas* habitual y no en la memoria "
-"USB..\n"
+msgstr "   Guarde la descarga en su carpeta *Descargas* habitual y no en la memoria USB..\n"
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "Open the <span class=\"application\">balenaEtcher</span> download (DMG "
-#| "disk image)."
 msgid "Open the *balenaEtcher* download (DMG disk image)."
 msgstr ""
 "Abre la descarga de <span class=\"application\">balenaEtcher</span> (imagen "
@@ -390,9 +364,6 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid ""
-#| "Close the installation window of <span "
-#| "class=\"application\">balenaEtcher</span>."
 msgid "Close the installation window of *balenaEtcher*."
 msgstr ""
 "Cierra la ventana de instalación de <span "
@@ -400,9 +371,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid ""
-#| "   Optionally, eject the <span class=\"application\">balenaEtcher</span> disk image\n"
-#| "   from the desktop.\n"
 msgid "   Optionally, eject the disk image of *balenaEtcher* from the sidebar of *Finder*.\n"
 msgstr ""
 "   Opcionalmente, extrae la imagen de disco de <span class=\"application\">balenaEtcher</span>\n"
@@ -460,7 +428,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "   <div class=\"caution\"><p>All the data on this USB stick will be lost.</p></div>\n"
 msgid "   <p>All the data on this USB stick will be lost.</p>\n"
 msgstr "   <div class=\"caution\"><p>Se perderá toda la información en esta memoria USB.</p></div>\n"
 
@@ -489,10 +456,6 @@ msgstr "   Elige la imagen USB que descargaste antes.\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid ""
-#| "   <div class=\"note\">\n"
-#| "   <p>Make sure that the USB image has an\n"
-#| "   <span class=\"filename\">.img</span> file extension.</p>\n"
 msgid ""
 "   <div class=\"note\">\n"
 "   <p>Make sure that the USB image is called <i>[[!inline pages=\"inc/stable_amd64_img_filename\" raw=\"yes\" sort=\"age\"]]</i> and has an\n"
@@ -519,7 +482,6 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #, fuzzy
-#| msgid "Click the **Flash from file** button."
 msgid "Click **Flash**."
 msgstr "Haz click en el botón **Flash from file**."
 
@@ -598,10 +560,6 @@ msgstr ""
 #~ msgstr "Cierra <span class=\"application\">balenaEtcher</span>."
 
 #, fuzzy, no-wrap
-#~| msgid ""
-#~| "Instead of installing <span class=\"application\">balenaEtcher</span>, you can\n"
-#~| "also [[!toggle id=\"dd\" text=\"install Tails using `dd` on the command\n"
-#~| "line\"]].\n"
 #~ msgid ""
 #~ "Instead of using <span class=\"application\">balenaEtcher</span>, you can\n"
 #~ "also [[!toggle id=\"dd\" text=\"install Tails using `dd` on the command\n"
@@ -622,10 +580,6 @@ msgstr ""
 #~ "   </p>\n"
 
 #, fuzzy, no-wrap
-#~| msgid ""
-#~| "   <p class=\"windows upgrade-windows\">\n"
-#~| "   Open the <span class=\"application\">balenaEtcher</span> download.\n"
-#~| "   </p>\n"
 #~ msgid ""
 #~ "   <div class=\"bug windows upgrade-windows\">\n"
 #~ "   <p>If <i>balenaEtcher</i> does not start, restart Windows and try again.</p>\n"
@@ -676,18 +630,6 @@ msgstr ""
 #~ "     <span class=\"guimenuitem\">Terminal.app</span></span>.\n"
 
 #, fuzzy, no-wrap
-#~| msgid ""
-#~| "   <p class=\"pre command-output\">/dev/disk0\n"
-#~| "    #:                     TYPE NAME         SIZE      IDENTIFIER\n"
-#~| "    0:    GUID_partition_scheme             &lowast;500.1 GB  disk0\n"
-#~| "    1:                      EFI              209.7 MB  disk0s1\n"
-#~| "    2:                Apple_HFS MacDrive     250.0 GB  disk0s2\n"
-#~| "    3:                      EFI              134.1 GB  disk0s3\n"
-#~| "    4:     Microsoft Basic Data BOOTCAMP     115.5 GB  disk0s4\n"
-#~| "  /dev/disk1\n"
-#~| "    #:                     TYPE NAME         SIZE      IDENTIFIER\n"
-#~| "    0:   FDisk_partition_scheme             *8.0 GB    disk1\n"
-#~| "    1:                Apple_HFS Untitled 1   8.0 GB    disk1s1</p>\n"
 #~ msgid ""
 #~ "       /dev/disk0\n"
 #~ "        #:                     TYPE NAME         SIZE      IDENTIFIER\n"

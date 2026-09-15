@@ -31,7 +31,7 @@ Related documents
 
 - [[Design document of *Tails Cloner*|installation]]
 - [[Design document of the download verification|download_verification]]
-- [Archive of our design artifacts](https://gitlab.tails.boum.org/tails/ux/-/tree/master/installation%20assistant)
+- [Archive of our design artifacts](https://gitlab.tails.net/tails/ux/-/tree/master/installation%20assistant)
 - [[!tails_ticket 18074 desc="Usability tests from December 2021"]]
 
 Implementation tricks
@@ -155,7 +155,7 @@ For Windows, we instruct people to use
 [*Rufus*](https://rufus.ie/) to copy the USB image onto
 their USB stick. On top of this, we self-host the downloads of *Rufus*
 on our own infrastructure. The
-<https://gitlab.tails.boum.org/tails/etcher-binary> repository is added as an
+<https://gitlab.tails.net/tails/etcher-binary> repository is added as an
 [ikiwiki underlay](https://ikiwiki.info/plugins/underlay/) on our website.
 
 We self-host a copy of *Rufus* because:

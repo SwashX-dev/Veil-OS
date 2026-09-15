@@ -61,7 +61,7 @@ To build Tails you need:
    [[stable branch|contribute/git#main-repo]], execute the
    following commands:
 
-        git clone https://gitlab.tails.boum.org/tails/tails.git && \
+        git clone https://gitlab.tails.net/tails/tails.git && \
         cd tails && \
         git checkout stable && \
         git submodule update --init

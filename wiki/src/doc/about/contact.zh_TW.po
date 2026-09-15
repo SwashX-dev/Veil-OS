@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-09-17 11:40+0200\n"
+"POT-Creation-Date: 2026-09-09 08:36+0000\n"
 "PO-Revision-Date: 2023-03-11 11:29+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,47 +76,17 @@ msgstr "<a id=\"tails-dev\"></a>\n"
 #. type: Plain text
 #, fuzzy, no-wrap
 msgid ""
-"<p>tails-dev@boum.org is the mailing list where the project is coordinated:\n"
+"<p>tails-dev@lists.torproject.org is the mailing list where the project is coordinated:\n"
 "technical design questions, upcoming events, monthly reports, and user\n"
 "experience.</p>\n"
 msgstr "tails-project@boum.org 群組上會發佈討論近期活動、每月報告和其它非技術相關的事務。"
 
 #. type: Plain text
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
-"<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-dev\">\n"
-"\t<input name=\"email\" value=\"\"/>\n"
-"\t<input type=\"submit\" value=\"Subscribe\"/>\n"
-"</form>\n"
+"<p><a\n"
+"href=\"https://lists.torproject.org/mailman3/postorius/lists/tails-dev.lists.torproject.org/\">Subscribe</a></p>\n"
 msgstr ""
-"<form method=\"POST\" action=\"https://mailman.boum.org/subscribe/tails-dev\">\n"
-"\t<input class=\"text\" name=\"email\" value=\"\"/>\n"
-"\t<input class=\"bold\" type=\"submit\" value=\"訂閱\"/>\n"
-"</form>\n"
-
-#. type: Plain text
-#, fuzzy, no-wrap
-msgid "<p>Public archive of tails-dev: <a href=\"https://lists.autistici.org/list/tails-dev.html\">https://lists.autistici.org/list/tails-dev.html</a></p>\n"
-msgstr "tails-dev　郵件群組檔案記錄: <https://mailman.boum.org/pipermail/tails-dev/>."
-
-#. type: Plain text
-#, fuzzy, no-wrap
-msgid ""
-"<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
-"    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
-"\t<input type=\"hidden\" name=\"format\" value=\"en.html\">\n"
-"\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-dev search terms\" onclick=\"value='ml:tails-dev '\">\n"
-"\t<input type=\"submit\" name=\"submit\" value=\"Search archive\">\n"
-"</form>\n"
-msgstr ""
-"<p>\n"
-"<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
-"    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
-"\t<input type=\"hidden\" name=\"format\" value=\"de.html\">\n"
-"\t<input type=\"text\"   name=\"query\" value=\"\" class=\"longtext\" placeholder=\"ml:tails-ux search terms\" onclick=\"value='ml:tails-ux '\">\n"
-"\t<input type=\"submit\" name=\"submit\" value=\"Archiv durchsuchen\">\n"
-"</form>\n"
-"</p>\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
@@ -126,46 +96,21 @@ msgstr "<a id=\"tails-testers\"></a>\n"
 #. type: Plain text
 #, fuzzy, no-wrap
 msgid ""
-"<p>tails-testers@boum.org is the mailing list for people who want to help\n"
+"<p>tails-testers@lists.torproject.org is the mailing list for people who want to help\n"
 "[[test|contribute/how/testing]] new releases or features.</p>\n"
 msgstr "tails-testers@boum.org 是協助Tails 新版本或功能 [[進行測試|contribute/how/testing]] 的討論郵件群組。"
 
 #. type: Plain text
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
-"<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-testers\">\n"
-"\t<input name=\"email\" value=\"\"/>\n"
-"\t<input type=\"submit\" value=\"Subscribe\"/>\n"
-"</form>\n"
+"<p><a\n"
+"href=\"https://lists.torproject.org/mailman3/postorius/lists/tails-testers.lists.torproject.org/\">Subscribe</a></p>\n"
 msgstr ""
-"<form method=\"POST\" action=\"https://mailman.boum.org/subscribe/tails-testers\">\n"
-"\t<input class=\"text\" name=\"email\" value=\"\"/>\n"
-"\t<input class=\"bold\" type=\"submit\" value=\"訂閱\"/>\n"
-"</form>\n"
 
 #. type: Plain text
-#, fuzzy, no-wrap
-msgid "<p>Public archive of tails-testers: <a href=\"https://lists.autistici.org/list/tails-testers.html\">https://lists.autistici.org/list/tails-testers.html</a></p>\n"
-msgstr "tails-測試者的公開郵件檔案庫： <https://mailman.boum.org/pipermail/tails-testers/>."
-
-#. type: Plain text
-#, fuzzy, no-wrap
-msgid ""
-"<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
-"    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
-"\t<input type=\"hidden\" name=\"format\" value=\"en.html\">\n"
-"\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-testers search terms\" onclick=\"value='ml:tails-testers '\">\n"
-"\t<input type=\"submit\" name=\"submit\" value=\"Search archive\">\n"
-"</form>\n"
+#, no-wrap
+msgid "<p><a href=\"https://lists.torproject.org/mailman3/hyperkitty/list/tails-testers@lists.torproject.org/\">Browse the archive</a></p>\n"
 msgstr ""
-"<p>\n"
-"<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
-"    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
-"\t<input type=\"hidden\" name=\"format\" value=\"de.html\">\n"
-"\t<input type=\"text\"   name=\"query\" value=\"\" class=\"longtext\" placeholder=\"ml:tails-ux search terms\" onclick=\"value='ml:tails-ux '\">\n"
-"\t<input type=\"submit\" name=\"submit\" value=\"Archiv durchsuchen\">\n"
-"</form>\n"
-"</p>\n"
 
 #. type: Plain text
 #, fuzzy, no-wrap
@@ -258,7 +203,7 @@ msgstr "<a id=\"tails-accounting\"></a>\n"
 #. type: Plain text
 #, fuzzy, no-wrap
 msgid ""
-"<p>To get in touch with the <a href=\"https://gitlab.tails.boum.org/tails/team/-/wikis/home\">Tails Team</a>, write to\n"
+"<p>To get in touch with the <a href=\"https://gitlab.tails.net/tails/team/-/wikis/home\">Tails Team</a>, write to\n"
 "<a href=\"mailto:foundations@tails.net\">foundations@tails.net</a>.</p>\n"
 msgstr "如果你想資助 Tails，請來信到： <tails-accounting@boum.org>.\n"
 
@@ -316,6 +261,74 @@ msgid ""
 "developers hang out there, so email is preferred for anything that\n"
 "might be of interest for the larger community.</p>\n"
 msgstr "你可以加入 [[使用者聊天室|support/chat]] 和 [[開發人員聊天室|contribute/chat]]。只有幾名 Tails 開發人員會出沒在那裏，因此最好的方法還是寄送郵件以利於更廣大社群的方便利益。"
+
+#, fuzzy, no-wrap
+#~ msgid ""
+#~ "<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-dev\">\n"
+#~ "\t<input name=\"email\" value=\"\"/>\n"
+#~ "\t<input type=\"submit\" value=\"Subscribe\"/>\n"
+#~ "</form>\n"
+#~ msgstr ""
+#~ "<form method=\"POST\" action=\"https://mailman.boum.org/subscribe/tails-dev\">\n"
+#~ "\t<input class=\"text\" name=\"email\" value=\"\"/>\n"
+#~ "\t<input class=\"bold\" type=\"submit\" value=\"訂閱\"/>\n"
+#~ "</form>\n"
+
+#, fuzzy, no-wrap
+#~ msgid "<p>Public archive of tails-dev: <a href=\"https://lists.autistici.org/list/tails-dev.html\">https://lists.autistici.org/list/tails-dev.html</a></p>\n"
+#~ msgstr "tails-dev　郵件群組檔案記錄: <https://mailman.boum.org/pipermail/tails-dev/>."
+
+#, fuzzy, no-wrap
+#~ msgid ""
+#~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
+#~ "\t<input type=\"hidden\" name=\"format\" value=\"en.html\">\n"
+#~ "\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-dev search terms\" onclick=\"value='ml:tails-dev '\">\n"
+#~ "\t<input type=\"submit\" name=\"submit\" value=\"Search archive\">\n"
+#~ "</form>\n"
+#~ msgstr ""
+#~ "<p>\n"
+#~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
+#~ "\t<input type=\"hidden\" name=\"format\" value=\"de.html\">\n"
+#~ "\t<input type=\"text\"   name=\"query\" value=\"\" class=\"longtext\" placeholder=\"ml:tails-ux search terms\" onclick=\"value='ml:tails-ux '\">\n"
+#~ "\t<input type=\"submit\" name=\"submit\" value=\"Archiv durchsuchen\">\n"
+#~ "</form>\n"
+#~ "</p>\n"
+
+#, fuzzy, no-wrap
+#~ msgid ""
+#~ "<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-testers\">\n"
+#~ "\t<input name=\"email\" value=\"\"/>\n"
+#~ "\t<input type=\"submit\" value=\"Subscribe\"/>\n"
+#~ "</form>\n"
+#~ msgstr ""
+#~ "<form method=\"POST\" action=\"https://mailman.boum.org/subscribe/tails-testers\">\n"
+#~ "\t<input class=\"text\" name=\"email\" value=\"\"/>\n"
+#~ "\t<input class=\"bold\" type=\"submit\" value=\"訂閱\"/>\n"
+#~ "</form>\n"
+
+#, fuzzy, no-wrap
+#~ msgid "<p>Public archive of tails-testers: <a href=\"https://lists.autistici.org/list/tails-testers.html\">https://lists.autistici.org/list/tails-testers.html</a></p>\n"
+#~ msgstr "tails-測試者的公開郵件檔案庫： <https://mailman.boum.org/pipermail/tails-testers/>."
+
+#, fuzzy, no-wrap
+#~ msgid ""
+#~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
+#~ "\t<input type=\"hidden\" name=\"format\" value=\"en.html\">\n"
+#~ "\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-testers search terms\" onclick=\"value='ml:tails-testers '\">\n"
+#~ "\t<input type=\"submit\" name=\"submit\" value=\"Search archive\">\n"
+#~ "</form>\n"
+#~ msgstr ""
+#~ "<p>\n"
+#~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
+#~ "\t<input type=\"hidden\" name=\"format\" value=\"de.html\">\n"
+#~ "\t<input type=\"text\"   name=\"query\" value=\"\" class=\"longtext\" placeholder=\"ml:tails-ux search terms\" onclick=\"value='ml:tails-ux '\">\n"
+#~ "\t<input type=\"submit\" name=\"submit\" value=\"Archiv durchsuchen\">\n"
+#~ "</form>\n"
+#~ "</p>\n"
 
 #, fuzzy, no-wrap
 #~ msgid "<h2 id=\"amnesia-news\">amnesia-news</h2>\n"
@@ -467,8 +480,8 @@ msgstr "你可以加入 [[使用者聊天室|support/chat]] 和 [[開發人員�
 #~ "<p>\n"
 #~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" "
 #~ "accept-charset=\"UTF-8\">\n"
-#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists."
-#~ "autistici.org\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://"
+#~ "lists.autistici.org\">\n"
 #~ "\t<input type=\"hidden\" name=\"format\" value=\"en.html\">\n"
 #~ "\t<input type=\"text\"   name=\"query\" value=\"\" class=\"longtext\" "
 #~ "placeholder=\"ml:tails-project search terms\" onclick=\"value='ml:tails-"
@@ -480,8 +493,8 @@ msgstr "你可以加入 [[使用者聊天室|support/chat]] 和 [[開發人員�
 #~ "<p>\n"
 #~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" "
 #~ "accept-charset=\"UTF-8\">\n"
-#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists."
-#~ "autistici.org\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://"
+#~ "lists.autistici.org\">\n"
 #~ "\t<input type=\"hidden\" name=\"format\" value=\"de.html\">\n"
 #~ "\t<input type=\"text\"   name=\"query\" value=\"\" class=\"longtext\" "
 #~ "placeholder=\"ml:tails-project search terms\" onclick=\"value='ml:tails-"
@@ -569,8 +582,8 @@ msgstr "你可以加入 [[使用者聊天室|support/chat]] 和 [[開發人員�
 
 #, fuzzy
 #~ msgid ""
-#~ "Public archive of tails-ux: <https://lists.autistici.org/list/tails-ux."
-#~ "html>."
+#~ "Public archive of tails-ux: <https://lists.autistici.org/list/tails-"
+#~ "ux.html>."
 #~ msgstr ""
 #~ "tails-ux 的公開郵件檔案庫: <https://mailman.boum.org/pipermail/tails-ux/>."
 

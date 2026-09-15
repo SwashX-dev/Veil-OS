@@ -12,7 +12,7 @@ Highlights
 
 - We made lots of progress on a complete rewrite of the Persistent Storage that
   implements a [new
-  design](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/Persistent-Storage-redesign)
+  design](https://gitlab.tails.net/tails/blueprints/-/wikis/Persistent-Storage-redesign)
   from 2021.
 
   For example, the new Persistent Storage won't require restarting each time

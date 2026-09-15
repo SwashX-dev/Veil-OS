@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-01-22 08:55+0000\n"
+"POT-Creation-Date: 2026-09-09 08:36+0000\n"
 "PO-Revision-Date: 2024-11-27 10:16+0000\n"
 "Last-Translator: Benjamin Held <Benjamin.Held@protonmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -273,8 +273,8 @@ msgstr ""
 
 #. type: Bullet: '- '
 msgid ""
-"[Blueprints](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/) to "
-"help structuring ideas for future improvements"
+"[Blueprints](https://gitlab.tails.net/tails/blueprints/-/wikis/) to help "
+"structuring ideas for future improvements"
 msgstr ""
 
 #. type: Bullet: '- '
@@ -472,8 +472,8 @@ msgstr ""
 
 #. type: Bullet: '  * '
 msgid ""
-"[Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home) "
-"(formerly known as: Foundations Team)"
+"[Tails Team](https://gitlab.tails.net/tails/team/-/wikis/home) (formerly "
+"known as: Foundations Team)"
 msgstr ""
 
 #. type: Bullet: '  * '

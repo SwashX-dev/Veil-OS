@@ -114,10 +114,10 @@ implement. At this point, we advise you to:
 
 1. **Gather results of previous research and discussions** on the
    topic you are interested in. Search this website, [[!tails_gitlab
-   groups/tails/-/work_items desc="issues on GitLab"]] and the [tails-dev@boum.org mailing list
-   archive](https://lists.autistici.org/list/tails-dev.html).
+   groups/tails/-/work_items desc="issues on GitLab"]] and the [tails-dev@lists.torproject.org mailing list
+   archive](https://lists.torproject.org/mailman3/hyperkitty/list/tails-dev@lists.torproject.org/)
 
-2. **[[Tell us on tails-dev@boum.org|doc/about/contact#tails-dev]] about your plans** to make sure your
+2. **[[Tell us on tails-dev@lists.torproject.org|doc/about/contact#tails-dev]] about your plans** to make sure your
    idea fits nicely into the [[big picture|contribute/design]], and
    nobody is currently working on the same task.
 
@@ -140,7 +140,7 @@ Before diving into technical details, please read our
 [[contribute/merge policy]].
 
 You can submit small, easy changes as Git patches (prepared with the
-`git format-patch` command) over email to [[tails-dev@boum.org|doc/about/contact#tails-dev]].
+`git format-patch` command) over email to [[tails-dev@lists.torproject.org|doc/about/contact#tails-dev]].
 
 For larger changes that will certainly require a few review/fix cycles
 before being merged, it's better if you:
@@ -178,7 +178,7 @@ debugging information, and son on.  Here is a collection of [[useful development
 
 # Talk to us
 
-You can subscribe to [[tails-dev@boum.org|doc/about/contact#tails-dev]],
+You can subscribe to [[tails-dev@lists.torproject.org|doc/about/contact#tails-dev]],
 our development mailing list.
 
 If you need input and don't know who to ask, mention `@anonym` on the

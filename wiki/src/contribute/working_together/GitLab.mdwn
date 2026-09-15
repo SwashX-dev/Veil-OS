@@ -422,7 +422,7 @@ to make the Tails contribution process more efficient and enjoyable.
 When input is requested from you on an issue or merge request with `@nick`:
 
  - GitLab adds an item in your
-   [To-Do list](https://gitlab.tails.boum.org/dashboard/todos).
+   [To-Do list](https://gitlab.tails.net/dashboard/todos).
 
  - GitLab may send you an email notification
 
@@ -485,7 +485,7 @@ To use them:
         ssl_verify = true
 
         [Tails]
-        url = https://gitlab.tails.boum.org
+        url = https://gitlab.tails.net
         per_page = 100
         private_token = XXX
 
@@ -552,7 +552,7 @@ our GitLab.
 ## Requesting access
 
 If you need to do something in GitLab and you appear to lack the
-needed credentials, please ask the [Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home).
+needed credentials, please ask the [Tails Team](https://gitlab.tails.net/tails/team/-/wikis/home).
 
 They will triage your request and potentially grant you more power.
 
@@ -573,7 +573,7 @@ Do not grant access via the web interface:
 
 Instead, after following the relevant process (if any),
 request the access modification from the
-[Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home).
+[Tails Team](https://gitlab.tails.net/tails/team/-/wikis/home).
 
 ## Relevant GitLab doc
 
@@ -642,13 +642,13 @@ to these requirements:
 ## Administration of GitLab
 
 Our friends at <https://www.immerda.ch/> host [the Tails' GitLab
-instance](https://gitlab.tails.boum.org). We usually contact them through
+instance](https://gitlab.tails.net). We usually contact them through
 e-mail (see their [contact info](https://www.immerda.ch/contact.html)).
 
 The Tails Team administrates this GitLab instance:
 
  - See responsibilities on
-   https://gitlab.tails.boum.org/tails/team/-/wikis/roles/frontdesk
+   https://gitlab.tails.net/tails/team/-/wikis/roles/frontdesk
 
  - They don't have shell access to the VM hosting the service so, among many
    other things, using [Server
@@ -658,7 +658,7 @@ The Tails Team administrates this GitLab instance:
 ## Configuration of GitLab
 
 The configuration of our GitLab instance lives in the private
-[tails/gitlab-config](https://gitlab.tails.boum.org/tails/gitlab-config) GitLab
+[tails/gitlab-config](https://gitlab.tails.net/tails/gitlab-config) GitLab
 project.
 
 If you have access to that project, you can propose configuration changes: push
@@ -668,7 +668,7 @@ This can be useful, for example:
 
  - to modify group membership when someone joins or leaves a team
 
- - to propose new [labels](https://gitlab.tails.boum.org/groups/tails/-/labels)
+ - to propose new [labels](https://gitlab.tails.net/groups/tails/-/labels)
    shared by all our GitLab projects
 
  - to propose a new project under the `tails/` namespace, ensuring our common
@@ -684,7 +684,7 @@ shouldn't be used for communicating with other users.
 ### Objects
 
 - _Canonical Git repo_: the authoritative
-  [tails/tails](https://gitlab.tails.boum.org/tails/tails) repository, hosted
+  [tails/tails](https://gitlab.tails.net/tails/tails) repository, hosted
   on GitLab
 
 - _Major branches_: `master`, `stable`, `testing`, `devel`
@@ -737,7 +737,7 @@ shouldn't be used for communicating with other users.
   - can modify issues metadata
 
   - is allowed to view confidential issues in the
-    [tails/tails](https://gitlab.tails.boum.org/tails/tails) GitLab project;
+    [tails/tails](https://gitlab.tails.net/tails/tails) GitLab project;
     that's OK, because particularly sensitive data lives somewhere else, with
     stricter access control
 
@@ -757,7 +757,7 @@ shouldn't be used for communicating with other users.
   - can modify issues metadata
 
   - is allowed to view confidential issues in the
-    [tails/tails](https://gitlab.tails.boum.org/tails/tails) GitLab project;
+    [tails/tails](https://gitlab.tails.net/tails/tails) GitLab project;
     that's OK, because particularly sensitive data lives somewhere else, with
     stricter access control
 
@@ -768,7 +768,7 @@ shouldn't be used for communicating with other users.
   - can modify issues metadata
 
   - is allowed to view confidential issues in the
-    [tails/tails](https://gitlab.tails.boum.org/tails/tails) GitLab project;
+    [tails/tails](https://gitlab.tails.net/tails/tails) GitLab project;
     that's OK, because particularly sensitive data lives somewhere else, with
     stricter access control
 
@@ -792,16 +792,18 @@ directly or indirectly:
   constantly merges modifications made through
   [Weblate](https://translate.tails.net) and pushes them back to the Tails main
   repository (see [the
-  script](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/cron.sh)
+  script](https://gitlab.tails.net/tails/puppet-tails/-/blob/master/files/weblate/scripts/cron.sh)
   for that). We use a local "gatekeeper" repository with a
-  [hook](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/gitolite/hooks/tails-weblate-update.hook)
+  [hook](https://gitlab.tails.net/tails/puppet-tails/-/blob/master/files/gitolite/hooks/tails-weblate-update.hook)
   to prevent the Translation Platform from messing with more things than it
   should.
 
 - Our [Jenkins](tails/services/jenkins) master [is also
-  notified](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/templates/gitolite/hooks/tails-post-receive.erb)
+  notified](https://gitlab.tails.net/tails/puppet-tails/-/blob/master/templates/gitolite/hooks/tails-post-receive.erb)
   when there are relevant changes to the main Tails repository, and its Jenkins
   slaves query GitLab to determine [whether to conduct reproducibility
-  tests](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/decide_if_reproduce)
+  tests](https://gitlab.tails.net/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/decide_if_reproduce)
   and [whether to send notifications through
-  e-mail](https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/output_ISO_builds_and_tests_notifications).
+  e-mail](https://gitlab.tails.net/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/output_ISO_builds_and_tests_notifications).
+
+- Our [HedgeDoc pad](https://pad.tails.net/) authenticates via GitLab with OIDC.

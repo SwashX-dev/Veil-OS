@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-09-02 08:03+0000\n"
+"POT-Creation-Date: 2026-09-09 08:36+0000\n"
 "PO-Revision-Date: 2024-05-11 07:53+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: \n"
@@ -82,9 +82,13 @@ msgid "<h2 id=\"tails-dev\">tails-dev</h2>\n"
 msgstr "<h2 id=\"tails-dev\">tails-dev</h2>\n"
 
 #. type: Plain text
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "<p>tails-dev@boum.org is the mailing list where the project is coordinated:\n"
+#| "technical design questions, upcoming events, monthly reports, and user\n"
+#| "experience.</p>\n"
 msgid ""
-"<p>tails-dev@boum.org is the mailing list where the project is coordinated:\n"
+"<p>tails-dev@lists.torproject.org is the mailing list where the project is coordinated:\n"
 "technical design questions, upcoming events, monthly reports, and user\n"
 "experience.</p>\n"
 msgstr ""
@@ -95,37 +99,9 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid ""
-"<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-dev\">\n"
-"\t<input name=\"email\" value=\"\"/>\n"
-"\t<input type=\"submit\" value=\"Subscribe\"/>\n"
-"</form>\n"
+"<p><a\n"
+"href=\"https://lists.torproject.org/mailman3/postorius/lists/tails-dev.lists.torproject.org/\">Subscribe</a></p>\n"
 msgstr ""
-"<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-dev\">\n"
-"\t<input name=\"email\" value=\"\"/>\n"
-"\t<input type=\"submit\" value=\"Inscreva-se\"/>\n"
-"</form>\n"
-
-#. type: Plain text
-#, no-wrap
-msgid "<p>Public archive of tails-dev: <a href=\"https://lists.autistici.org/list/tails-dev.html\">https://lists.autistici.org/list/tails-dev.html</a></p>\n"
-msgstr "<p>Arquivo público da lista tails-dev: <a href=\"https://lists.autistici.org/list/tails-dev.html\">https://lists.autistici.org/list/tails-dev.html</a></p>\n"
-
-#. type: Plain text
-#, no-wrap
-msgid ""
-"<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
-"    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
-"\t<input type=\"hidden\" name=\"format\" value=\"en.html\">\n"
-"\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-dev search terms\" onclick=\"value='ml:tails-dev '\">\n"
-"\t<input type=\"submit\" name=\"submit\" value=\"Search archive\">\n"
-"</form>\n"
-msgstr ""
-"<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
-"    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
-"\t<input type=\"hidden\" name=\"format\" value=\"pt.html\">\n"
-"\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-dev termos de busca\" onclick=\"value='ml:tails-dev '\">\n"
-"\t<input type=\"submit\" name=\"submit\" value=\"Buscar no arquivo\">\n"
-"</form>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -261,7 +237,7 @@ msgstr "<h2 id=\"tails-foundations\">foundations</h2>\n"
 #| "Team|contribute/working_together/roles/foundations_team]], write to\n"
 #| "<a href=\"mailto:foundations@tails.net\">foundations@tails.net</a>.</p>\n"
 msgid ""
-"<p>To get in touch with the <a href=\"https://gitlab.tails.boum.org/tails/team/-/wikis/home\">Tails Team</a>, write to\n"
+"<p>To get in touch with the <a href=\"https://gitlab.tails.net/tails/team/-/wikis/home\">Tails Team</a>, write to\n"
 "<a href=\"mailto:foundations@tails.net\">foundations@tails.net</a>.</p>\n"
 msgstr ""
 "<p>Para entrar em contato com o [[Foundations\n"
@@ -337,6 +313,38 @@ msgstr ""
 "[[bate papo de desenvolvedores|contribute/chat]]. Apenas alguns\n"
 "desenvolvedores do Tails ficam por lá, então e-mail é a forma preferencial de contato para qualquer coisa que\n"
 "possa ser de interesse mais amplo da comunidade.</p>\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-dev\">\n"
+#~ "\t<input name=\"email\" value=\"\"/>\n"
+#~ "\t<input type=\"submit\" value=\"Subscribe\"/>\n"
+#~ "</form>\n"
+#~ msgstr ""
+#~ "<form method=\"POST\" action=\"https://www.autistici.org/mailman/subscribe/tails-dev\">\n"
+#~ "\t<input name=\"email\" value=\"\"/>\n"
+#~ "\t<input type=\"submit\" value=\"Inscreva-se\"/>\n"
+#~ "</form>\n"
+
+#, no-wrap
+#~ msgid "<p>Public archive of tails-dev: <a href=\"https://lists.autistici.org/list/tails-dev.html\">https://lists.autistici.org/list/tails-dev.html</a></p>\n"
+#~ msgstr "<p>Arquivo público da lista tails-dev: <a href=\"https://lists.autistici.org/list/tails-dev.html\">https://lists.autistici.org/list/tails-dev.html</a></p>\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
+#~ "\t<input type=\"hidden\" name=\"format\" value=\"en.html\">\n"
+#~ "\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-dev search terms\" onclick=\"value='ml:tails-dev '\">\n"
+#~ "\t<input type=\"submit\" name=\"submit\" value=\"Search archive\">\n"
+#~ "</form>\n"
+#~ msgstr ""
+#~ "<form action=\"https://lists.autistici.org/cgi-lurker/keyword.cgi\" accept-charset=\"UTF-8\">\n"
+#~ "    <input type=\"hidden\" name=\"doc-url\" value=\"https://lists.autistici.org\">\n"
+#~ "\t<input type=\"hidden\" name=\"format\" value=\"pt.html\">\n"
+#~ "\t<input type=\"text\"   name=\"query\" value=\"\" placeholder=\"ml:tails-dev termos de busca\" onclick=\"value='ml:tails-dev '\">\n"
+#~ "\t<input type=\"submit\" name=\"submit\" value=\"Buscar no arquivo\">\n"
+#~ "</form>\n"
 
 #, no-wrap
 #~ msgid ""

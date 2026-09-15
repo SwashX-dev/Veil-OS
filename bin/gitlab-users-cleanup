@@ -20,11 +20,11 @@ from pathlib import Path
 import sys
 
 import dateutil.parser
-import gitlab  # type: ignore
-import django.utils.dateparse  # type: ignore
+import gitlab
+import django.utils.dateparse  # type: ignore[import-untyped]
 
 PYTHON_GITLAB_CONFIG_FILE = os.getenv(
-    "PYTHON_GITLAB_CONFIG_FILE", default=Path.home() / ".python-gitlab.cfg"
+    "PYTHON_GITLAB_CONFIG_FILE", default=str(Path.home() / ".python-gitlab.cfg")
 )
 
 PYTHON_GITLAB_NAME = os.getenv("GITLAB_NAME", default="Tails")
@@ -250,7 +250,7 @@ if __name__ == "__main__":
     )
     gl.auth()
 
-    now = datetime.datetime.now(tz=datetime.timezone.utc)
+    now = datetime.datetime.now(tz=datetime.UTC)
 
     max_creation_date = now - args.min_creation_age
     log.debug("Max creation date: %s", max_creation_date)
@@ -264,17 +264,15 @@ if __name__ == "__main__":
     log.debug("Max activity date: %s", max_activity_date)
 
     if args.max_post_sign_up_activity is not None:
-        log.debug(
-            "Max post-sign-up activity: %s", args.max_post_sign_up_activity
-        )
+        log.debug("Max post-sign-up activity: %s", args.max_post_sign_up_activity)
 
     if args.not_in_group is not None:
-        group = [
+        group = next(
             g
             for g in gl.groups.list(all=True)
             # Disambiguate between groups whose names share a common prefix
             if g.full_path == args.not_in_group
-        ][0]
+        )
         group_members_ids = [m.id for m in group.members_all.list(get_all=True)]
     else:
         group_members_ids = []
@@ -341,8 +339,7 @@ if __name__ == "__main__":
         if user.last_activity_on is None:
             log.debug("User %s was never active", user_desc)
         elif (
-            dateutil.parser.isoparse(user.last_activity_on + "T00Z")
-            < max_activity_date
+            dateutil.parser.isoparse(user.last_activity_on + "T00Z") < max_activity_date
         ):
             log.debug(
                 "User %s is inactive since at least %s",
@@ -362,9 +359,7 @@ if __name__ == "__main__":
             and args.max_post_sign_up_activity is not None
         ):
             created_at = dateutil.parser.isoparse(user.created_at)
-            last_activity_on = dateutil.parser.isoparse(
-                user.last_activity_on + "T00Z"
-            )
+            last_activity_on = dateutil.parser.isoparse(user.last_activity_on + "T00Z")
             if last_activity_on < created_at + args.max_post_sign_up_activity:
                 log.debug(
                     "User %s has not been active for more than %s after sign-up",
@@ -431,8 +426,7 @@ if __name__ == "__main__":
         contribution_events = [
             e
             for e in events
-            if e.target_type
-            in ["Note", "DiscussionNote", "Issue", "merge_request"]
+            if e.target_type in ["Note", "DiscussionNote", "Issue", "merge_request"]
         ]
         if len(contribution_events) <= args.max_contribution_events:
             log.debug(
@@ -465,9 +459,7 @@ if __name__ == "__main__":
 
         if args.action == "deactivate":
             if user.state == "blocked":
-                log.debug(
-                    "User %s is already blocked, cannot deactivate", user_desc
-                )
+                log.debug("User %s is already blocked, cannot deactivate", user_desc)
             elif user.state == "deactivated":
                 log.debug("User %s is already deactivated", user_desc)
             else:
@@ -512,7 +504,7 @@ if __name__ == "__main__":
                         user.block()
         elif args.action == "delete":
             log.info(
-                "Deleting user %s (previous state: %s): https://gitlab.tails.boum.org/%s",
+                "Deleting user %s (previous state: %s): https://gitlab.tails.net/%s",
                 user_desc,
                 user.state,
                 user.username,
@@ -521,7 +513,7 @@ if __name__ == "__main__":
                 user.delete()
         elif args.action == "delete-user-and-contributions":
             log.info(
-                "Deleting user %s and contributions (previous state: %s): https://gitlab.tails.boum.org/%s",
+                "Deleting user %s and contributions (previous state: %s): https://gitlab.tails.net/%s",
                 user_desc,
                 user.state,
                 user.username,

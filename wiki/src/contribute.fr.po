@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-01-22 08:55+0000\n"
-"PO-Revision-Date: 2026-03-26 15:22+0000\n"
+"POT-Creation-Date: 2026-09-15 11:07+0200\n"
+"PO-Revision-Date: 2026-09-13 21:56+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: Tails translators <tails@boum.org>\n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -340,11 +340,11 @@ msgstr "[[Design documents|contribute/design]]"
 
 #. type: Bullet: '- '
 msgid ""
-"[Blueprints](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/) to "
-"help structuring ideas for future improvements"
+"[Blueprints](https://gitlab.tails.net/tails/blueprints/-/wikis/) to help "
+"structuring ideas for future improvements"
 msgstr ""
-"[Blueprints](https://gitlab.tails.boum.org/tails/blueprints/-/wikis/) to "
-"help structuring ideas for future improvements"
+"[Blueprints](https://gitlab.tails.net/tails/blueprints/-/wikis/) to help "
+"structuring ideas for future improvements"
 
 #. type: Bullet: '- '
 msgid "[[Merge policy|contribute/merge_policy]]"
@@ -399,7 +399,9 @@ msgid "[[Customize Tails|contribute/customize]]"
 msgstr "[[Customize Tails|contribute/customize]]"
 
 #. type: Bullet: '  * '
-msgid "[Nightly Tails image builds](https://nightly.tails.boum.org)"
+#, fuzzy
+#| msgid "[Nightly Tails image builds](https://nightly.tails.boum.org)"
+msgid "[Nightly Tails image builds](https://nightly.tails.net)"
 msgstr "[Nightly Tails image builds](https://nightly.tails.boum.org)"
 
 #. type: Bullet: '  * '
@@ -555,11 +557,11 @@ msgstr "Teams and roles"
 
 #. type: Bullet: '  * '
 msgid ""
-"[Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home) "
-"(formerly known as: Foundations Team)"
+"[Tails Team](https://gitlab.tails.net/tails/team/-/wikis/home) (formerly "
+"known as: Foundations Team)"
 msgstr ""
-"[Tails Team](https://gitlab.tails.boum.org/tails/team/-/wikis/home) "
-"(formerly known as: Foundations Team)"
+"[Tails Team](https://gitlab.tails.net/tails/team/-/wikis/home) (formerly "
+"known as: Foundations Team)"
 
 #. type: Bullet: '  * '
 msgid "[[Release manager|contribute/working_together/roles/release_manager]]"
@@ -790,14 +792,12 @@ msgstr ""
 #~ msgstr "[[!tails_roadmap desc=\"Roadmap\"]]"
 
 #, fuzzy
-#~| msgid "[[People|contribute/working_together/people]]"
 #~ msgid ""
 #~ "[[Team manager|contribute/working_together/roles/sponsor_deliverables/"
 #~ "team_manager]]"
 #~ msgstr "[[Personnes|contribute/working_together/people]]"
 
 #, fuzzy
-#~| msgid "[[People|contribute/working_together/people]]"
 #~ msgid ""
 #~ "[[Worker|contribute/working_together/roles/sponsor_deliverables/worker]]"
 #~ msgstr "[[Personnes|contribute/working_together/people]]"
@@ -841,28 +841,6 @@ msgstr ""
 #~ "    - [[Verification JavaScript|contribute/release_process/verification_javascript]]\n"
 
 #, fuzzy, no-wrap
-#~| msgid ""
-#~| "  - Reimbursements\n"
-#~| "    - [[Organizing a sprint|contribute/sprint]]\n"
-#~| "    - [[Sponsorship to attend events on behalf of Tails|contribute/sponsorship_to_attend_events]]\n"
-#~| "    - [[Hardware and other reimbursements|contribute/reimbursements]]\n"
-#~| "  - Teams\n"
-#~| "    - [[Accounting and management team|contribute/working_together/roles/accounting]]\n"
-#~| "    - [[Foundations team|contribute/working_together/roles/foundations_team]]\n"
-#~| "    - [[Fundraising team|contribute/working_together/roles/fundraising]]\n"
-#~| "    - [[Help desk|contribute/working_together/roles/help_desk]]\n"
-#~| "    - [[Release managers|contribute/working_together/roles/release_manager]]\n"
-#~| "    - [[Ticket gardeners|contribute/working_together/roles/ticket_gardener]]\n"
-#~| "    - [[Sysadmins|contribute/working_together/roles/sysadmins]]\n"
-#~| "    - [[Technical writers|contribute/working_together/roles/technical_writer]]\n"
-#~| "    - [[Test suite maintainers|contribute/working_together/roles/test_suite]]\n"
-#~| "    - [[Translation platform maintainers|contribute/working_together/roles/translation_platform]]\n"
-#~| "    - [[UX designers|contribute/working_together/roles/ux]]\n"
-#~| "  - Interfaces between roles and teams\n"
-#~| "    - [[Developers and Release Managers|contribute/working_together/interfaces/developers_and_release_managers]]\n"
-#~| "  - Roles for sponsor deliverables:\n"
-#~| "      - [[Team manager|contribute/working_together/roles/sponsor_deliverables/team_manager]]\n"
-#~| "      - [[Worker|contribute/working_together/roles/sponsor_deliverables/worker]]\n"
 #~ msgid ""
 #~ "  - Reimbursements\n"
 #~ "    - [[Organizing a sprint|contribute/sprint]]\n"
@@ -913,7 +891,6 @@ msgstr ""
 #~ msgstr "<a id=\"mentors\"></a>\n"
 
 #, fuzzy
-#~| msgid "Mentors & guidance for new contributors\n"
 #~ msgid "Mentors & guidance for new contributors"
 #~ msgstr "Mentors & guidance for new contributors\n"
 
@@ -925,14 +902,6 @@ msgstr ""
 #~ "you might need some guidance."
 
 #, fuzzy
-#~| msgid ""
-#~| "Here is a list of mentors who can help with\n"
-#~| "specific tasks. Feel free to talk to them if you plan to work on "
-#~| "anything related to their\n"
-#~| "field of expertise, for example\n"
-#~| "by assigning them tickets on Redmine or <a href=\"#talk\">talking to us</"
-#~| "a>\n"
-#~| "using the usual communication channels.\n"
 #~ msgid ""
 #~ "Here is a list of mentors who can help with\n"
 #~ "specific tasks. Feel free to talk to them if you plan to work on anything "
@@ -951,7 +920,6 @@ msgstr ""
 #~ "using the usual communication channels.\n"
 
 #, fuzzy
-#~| msgid "AppArmor: intrigeri, jvoisin, u"
 #~ msgid "AppArmor: intrigeri, jvoisin"
 #~ msgstr "AppArmor: intrigeri, jvoisin, u"
 
@@ -959,7 +927,6 @@ msgstr ""
 #~ msgstr "Build system (Vagrant, Rake): anonym"
 
 #, fuzzy
-#~| msgid "Debian related work: intrigeri, u"
 #~ msgid "Debian related work: intrigeri"
 #~ msgstr "Debian related work: intrigeri, u"
 
@@ -973,7 +940,6 @@ msgstr ""
 #~ msgstr "*OpenPGP Applet* (Perl): nodens"
 
 #, fuzzy
-#~| msgid "Persistence setup (Perl): intrigeri, kurono"
 #~ msgid "Persistent Storage (Perl): intrigeri, kurono"
 #~ msgstr "Persistence setup (Perl): intrigeri, kurono"
 
@@ -981,12 +947,10 @@ msgstr ""
 #~ msgstr "Sysadmin: [[contact|contribute/how/sysadmin/#contact]]"
 
 #, fuzzy
-#~| msgid "*Tails Greeter* (Python): alan, intrigeri"
 #~ msgid "Welcome Screen (Python): alan, intrigeri"
 #~ msgstr "*Tails Greeter* (Python): alan, intrigeri"
 
 #, fuzzy
-#~| msgid "*Tails Installer* (Python): alan, kurono, u"
 #~ msgid "*Tails Installer* (Python): alan, kurono"
 #~ msgstr "*Tails Installer* (Python): alan, kurono, u"
 
@@ -1009,7 +973,6 @@ msgstr ""
 #~ msgstr "*Tor Browser*: anonym"
 
 #, fuzzy
-#~| msgid "Usability: sajolida, tchou"
 #~ msgid "Usability: sajolida"
 #~ msgstr "Usability: sajolida, tchou"
 
@@ -1023,7 +986,6 @@ msgstr ""
 #~ msgstr "*WhisperBack* (Python): alan"
 
 #, fuzzy
-#~| msgid "Talk with us\n"
 #~ msgid "Talk with us"
 #~ msgstr "Nous contacter\n"
 

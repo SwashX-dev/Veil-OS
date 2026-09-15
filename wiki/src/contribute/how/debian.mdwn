@@ -24,7 +24,7 @@ relationship with Debian.
 * Help maintain backports:
   - look for "backports" on [[!tails_gitweb config/chroot_apt/preferences]]
 
-* Help maintain packages listed in <https://gitlab.tails.boum.org/tails/team/-/wikis/responsibilities/#maintain-relevant-debian-packages-in-debian>.
+* Help maintain packages listed in <https://gitlab.tails.net/tails/team/-/wikis/responsibilities/#maintain-relevant-debian-packages-in-debian>.
 
 * Help with distribution-wide improvements:
 
@@ -35,5 +35,5 @@ relationship with Debian.
 
 # Talk to us
 
-You can subscribe to [[tails-dev@boum.org|doc/about/contact#tails-dev]],
+You can subscribe to [[tails-dev@lists.torproject.org|doc/about/contact#tails-dev]],
 our development mailing list.
