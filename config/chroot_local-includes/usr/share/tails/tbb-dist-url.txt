@@ -1,1 +1,1 @@
-https://torbrowser-archive.tails.net/15.0.21-build1-linux-x86_64/
+https://tb-build-02.torproject.org/~ma1/builds/torbrowser/release/unsigned/15.0.23-build1/
