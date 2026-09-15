@@ -28,7 +28,7 @@ if [ -f 'po/tails.pot' ]; then
 elif [ -f 'po/onioncircuits.pot' ]; then
 	POTFILE='po/onioncircuits.pot'
 	LANG_DOT_PO_LAYOUT=no
-	BRANCH='tails-onioncircuits_release'
+	BRANCH='tails-onioncircuits'
 	AFTER_IMPORT='./setup.py build_i18n && ( cd po && for po in *.po ; do msgmerge --update "$po" onioncircuits.pot ; done )'
 else
 	echo "Current folder is not a project known to this script!"
