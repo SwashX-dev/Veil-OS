@@ -82,7 +82,7 @@ if [ "$LANG_DOT_PO_LAYOUT" = yes ] ; then
 		cp "$po_file" "$TAILS_PO_DIR"
 	done
 else
-	find "$TOR_TRANSLATION_DIR" -name '*.pot' | sort | while read -r po_file; do
+	find "$TOR_TRANSLATION_DIR" -name '*.po' | sort | while read -r po_file; do
 		lang=$(basename "$(dirname "$po_file" | tr - _ | sed 's/\.pot$//')")
 		po_import_filter "$po_file" "$lang" || continue
 		echo "Importing translation for $lang..."
