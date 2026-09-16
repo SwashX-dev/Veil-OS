@@ -202,7 +202,7 @@ Check the Release Manager role
 Make sure all the shift preparation steps, in the Release Manager role
 documentation, have been done:
 
-    "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/working_together/roles/release_manager.mdwn"
+    "${RELEASE_CHECKOUT:?}"/bin/rm-pager wiki/src/contribute/working_together/roles/release_manager.mdwn
 
 Fill the gaps if needed, otherwise the release process will be blocked
 later.
@@ -628,7 +628,7 @@ version's `.packages` file and the one from the to-be-released images:
    - new upstream releases of user applications specifically mentioned
      as included in Tails:
 
-         "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/doc/about/features.mdwn"
+         "${RELEASE_CHECKOUT:?}"/bin/rm-pager wiki/src/doc/about/features.mdwn
 
      - You can ignore new Debian releases for such packages, but you should not
        ignore minor releases or patch releases.
@@ -2308,7 +2308,7 @@ Check that you are indeed preparing a final release:
    For these issues, follow the guidance from our security issue
    response policy:
 
-       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/security_policy.mdwn"
+       "${RELEASE_CHECKOUT:?}"/bin/rm-pager wiki/src/contribute/security_policy.mdwn
 
    Unless specified otherwise there, we follow [Tor's
    policy](https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/SecurityPolicy#how-will-the-developers-handle-security-issues)
@@ -2399,7 +2399,7 @@ Check that you are indeed preparing a RC:
 
        (
        git checkout devel && \
-       "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://gitlab.tails.net/tails/tails/-/raw/${RELEASE_BRANCH:?}/wiki/src/contribute/APT_repository/time-based_snapshots.mdwn"
+       "${RELEASE_CHECKOUT:?}"/bin/rm-pager wiki/src/contribute/APT_repository/time-based_snapshots.mdwn
        )
 
 1. Ensure everything done so far is pushed:

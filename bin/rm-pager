@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# This script will open a file in RELEASE_CHECKOUT using the RM's favorite pager.
+# Of course nothing prevents the RM from setting TAILS_RM_PAGER to an editor rather than a "pure" pager.
+
+set -eu
+set -o pipefail
+
+cd "$RELEASE_CHECKOUT"
+
+${TAILS_RM_PAGER:-exec sensible-pager} "${@}"
