@@ -5,7 +5,7 @@ end
 def looks_random?(data)
   chi_square = chi_squared(data)
   debug_log("Randomness check chi-square = #{chi_square}")
-  # Based on https://gitlab.tails.boum.org/tails/blueprints/-/wikis/veracrypt/#detection
+  # Based on https://gitlab.tails.net/tails/blueprints/-/wikis/veracrypt/#detection
   chi_square.between?(136, 426)
 end
 

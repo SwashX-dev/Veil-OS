@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-09-09 08:36+0000\n"
+"POT-Creation-Date: 2026-09-15 11:07+0200\n"
 "PO-Revision-Date: 2026-03-26 15:22+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: Portuguese <LL@li.org>\n"
@@ -420,7 +420,9 @@ msgid "[[Customize Tails|contribute/customize]]"
 msgstr "[[Customize Tails|contribute/customize]]"
 
 #. type: Bullet: '  * '
-msgid "[Nightly Tails image builds](https://nightly.tails.boum.org)"
+#, fuzzy
+#| msgid "[Nightly Tails image builds](https://nightly.tails.boum.org)"
+msgid "[Nightly Tails image builds](https://nightly.tails.net)"
 msgstr "[Nightly Tails image builds](https://nightly.tails.boum.org)"
 
 #. type: Bullet: '  * '

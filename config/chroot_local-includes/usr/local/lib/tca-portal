@@ -329,7 +329,7 @@ class Handler(socketserver.StreamRequestHandler):
         # to external processes, but it would require either implementing
         # the Popen interface that the portal assumes, or refactoring
         # the Handler.run and Command.run code a fair bit:
-        # https://gitlab.tails.boum.org/tails/tails/-/merge_requests/544#note_174919
+        # https://gitlab.tails.net/tails/tails/-/merge_requests/544#note_174919
         "is-tor-configuration-persistent?": UserCommand(
             ("/usr/local/lib/tpscli", "is-active", TPS_TOR_CONFIG_FEATURE_NAME),
             False,

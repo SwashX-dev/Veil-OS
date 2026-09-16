@@ -1,5 +1,5 @@
 # This mount can be used to prevent symlink attacks when accessing files.
-# Refs: https://gitlab.tails.boum.org/tails/tails/-/merge_requests/339#note_169215
+# Refs: https://gitlab.tails.net/tails/tails/-/merge_requests/339#note_169215
 
 [Unit]
 Description=Bind mount of the filesystem root mounted with nosymfollow

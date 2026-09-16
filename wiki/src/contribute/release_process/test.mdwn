@@ -75,7 +75,7 @@ Image size
 Check the images size has not changed much since the last release.
 
 In a directory with many Tails ISO and USB images
-([archive](https://iso-history.tails.boum.org/)):
+([archive](https://iso-history.tails.net/)):
 
     (
     cd "${ISOS:?}"
