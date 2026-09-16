@@ -1,5 +1,5 @@
 ---
 build-target: amd64
 channel: alpha
-initial-install-version: 7.13~rc1
+initial-install-version: 7.15~rc1
 product-name: Tails
