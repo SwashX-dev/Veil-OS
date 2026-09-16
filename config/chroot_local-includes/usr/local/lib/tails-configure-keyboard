@@ -28,7 +28,9 @@ case "$LANGPREFIX" in
       ;;
    ko)
       PRELOAD="['hangul', 'libpinyin', 'mozc-jp', 'Unikey', 'chewing']"
-      SOURCES="[$SOURCES, ('ibus', 'hangul'), ('ibus', 'libpinyin'), ('ibus', 'chewing'), ('ibus', 'mozc-jp'), ('ibus', 'Unikey')]"
+      # Not including $SOURCES on purpose: the "kr" xkb setup does not
+      # allow typing Korean
+      SOURCES="[('ibus', 'hangul'), ('ibus', 'libpinyin'), ('ibus', 'chewing'), ('ibus', 'mozc-jp'), ('ibus', 'Unikey')]"
       ;;
    vi)
       PRELOAD="['Unikey', 'hangul', 'libpinyin', 'mozc-jp', 'chewing']"
