@@ -8,4 +8,4 @@ set -o pipefail
 
 cd "$RELEASE_CHECKOUT"
 
-${TAILS_RM_PAGER:-exec sensible-pager} "${@}"
+${TAILS_RM_PAGER:-exec xdg-open} "${@}"
