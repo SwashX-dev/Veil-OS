@@ -26,7 +26,7 @@
 # 1. Login as `role-branch-merger` in GitLab
 #
 # 2. Go to the [Pipeline Schedules
-#    page](https://gitlab.tails.boum.org/tails/tails/-/pipeline_schedules)
+#    page](https://gitlab.tails.net/tails/tails/-/pipeline_schedules)
 #    of the tails/tails project
 #
 # 3. Create a new schedule with:
@@ -164,6 +164,6 @@ def output(mrs, status):
 
 
 if __name__ == "__main__":
-    server_url = "https://gitlab.tails.boum.org"
+    server_url = "https://gitlab.tails.net"
     private_token = os.getenv("GITLAB_PRIVATE_TOKEN")
     output(*main(server_url, private_token))

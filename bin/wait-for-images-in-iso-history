@@ -5,7 +5,7 @@ set -eu
 VERSION="$1"
 ISOS="$2"
 
-dirurl="https://iso-history.tails.boum.org/tails-amd64-${VERSION:?}/"
+dirurl="https://iso-history.tails.net/tails-amd64-${VERSION:?}/"
 isourl="${dirurl}tails-amd64-${VERSION:?}.iso"
 isopath="$ISOS/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.iso"
 

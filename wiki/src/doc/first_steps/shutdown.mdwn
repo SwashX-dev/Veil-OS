@@ -21,19 +21,14 @@ Persistent Storage and data loss.
 
 1. Select **Power Off**.
 
-1. A **Power Off** confirmation dialog appears.
-
-   [[!img power_off_without_inhibitor.png class="screenshot" alt=""]]
-
-   If an application needs to be closed or an open document needs to be saved
-   before shutting down, the dialog includes some details.
+1. If an application needs to be closed or an open document needs to be saved
+   before shutting down, a **Power Off** dialog appears with some details.
 
    [[!img power_off_with_inhibitor.png class="screenshot" alt=""]]
 
-1. Select the **Power Off** button to confirm.
+   Select the **Power Off** button to confirm.
 
-   Even without confirming or saving the open documents, Tails will shut down
-   after 60 seconds.
+   Else, the computer shuts down immediately.
 
 <h2 id="emergency">Emergency shutdown</h2>
 

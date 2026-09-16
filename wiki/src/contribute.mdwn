@@ -145,7 +145,7 @@ Tools for contributors
 
   * [[Customize Tails|contribute/customize]]
 
-  * [Nightly Tails image builds](https://nightly.tails.boum.org)
+  * [Nightly Tails image builds](https://nightly.tails.net)
 
   * [[Jenkins CI|https://gitlab.torproject.org/tpo/tpa/team/-/wikis/tails/services/jenkins]]
 

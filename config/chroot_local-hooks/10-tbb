@@ -120,7 +120,7 @@ embed_extensions_in_omni_ja() {
         # uBlock Origin, which is necessary because we get it from the
         # webext-ublock-origin-firefox .deb which is not
         # signed. Context:
-        # https://gitlab.tails.boum.org/tails/tails/-/issues/11419
+        # https://gitlab.tails.net/tails/tails/-/issues/11419
         # Once Tor Browser ships an adblocker we can drop this
         # (https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/17569).
         # Any $ in the below in-line patch must be escaped!

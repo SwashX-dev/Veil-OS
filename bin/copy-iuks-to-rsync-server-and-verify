@@ -13,7 +13,7 @@ from urllib.request import Request, urlopen
 
 from bs4 import BeautifulSoup
 
-JENKINS_IUKS_BASE_URL = "https://nightly.tails.boum.org/build_IUKs"
+JENKINS_IUKS_BASE_URL = "https://nightly.tails.net/build_IUKs"
 RSYNC_SERVER_HOSTNAME = "rsync.lizard"
 LOG_FORMAT = "%(asctime)-15s %(levelname)s %(message)s"
 log = logging.getLogger()

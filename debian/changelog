@@ -1,3 +1,206 @@
+tails (7.13) unstable; urgency=medium
+
+  * Upgrade to Tor Browser 15.0.23 (tails/tails!3286)
+
+    Closes issues:
+      - Upgrade Tor Browser for Tails 7.13 (tails/tails#21765)
+      - Refresh about:tor patches for Tails 7.13 (tails/tails#21766)
+
+    Commits:
+      - Fetch Tor Browser from our own archive
+      - Upgrade Tor Browser to 15.0.23-build1 (refs: tails#21765)
+      - CI: run all tests for 21765-tor-browser-15.0.23
+      - Tor Browser: refresh custom about:tor patches onto origin/tor-
+        browser-140.16.0esr-15.0-1
+
+  * Fix ActiveBranches.active_branches (tails/tails!3262)
+
+    Commits:
+      - Fix ActiveBranches.active_branches
+
+  * Code: migrate from gitlab.tails.boum.org to gitlab.tails.net (tails/tails!3255)
+
+    Commits:
+      - Code: migrate from gitlab.tails.boum.org to gitlab.tails.net
+
+  * Website, GitLab CI, submodules: migrate from gitlab.tails.boum.org to
+    gitlab.tails.net (tails/tails!3253)
+
+    Commits:
+      - Website: migrate from gitlab.tails.boum.org to gitlab.tails.net
+      - Git submodules: migrate from gitlab.tails.boum.org to gitlab.tails.net
+      - GitLab CI: migrate from gitlab.tails.boum.org to gitlab.tails.net
+      - Migrate from gitlab-ssh.tails.boum.org to gitlab-ssh.tails.net
+
+  * Migrate from {iso-history,nightly}.tails.boum.org to their tails.net
+    counterpart (tails/tails!3251)
+
+    Closes issues:
+      - Replace several tails.boum.org addresses with their tails.net counterpart
+        (tails/tails#20607)
+
+    Commits:
+      - Migrate from nightly.tails.boum.org to nightly.tails.net
+      - Migrate from iso-history.tails.boum.org to iso-history.tails.net
+
+  * Upgrade to Tor 0.4.9.12 (tails/tails!3270)
+
+    Closes issues:
+      - Upgrade to Tor 0.4.9.12 (tails/tails#21774)
+
+    Commits:
+      - tor upgrade: set proper MR title
+      - Upgrade tor to 0.4.9.12
+      - Set this branch to run all tests
+
+  * Fix Ruff violations that block the automatic merge of stable into devel
+    (tails/tails!3269)
+
+    Commits:
+      - Ruff format
+      - Remove duplicate test (spotted by Ruff F811)
+      - Remove debugging statement that triggered Ruff E402
+      - Fix Ruff PLW1508
+      - Make "type: ignore" annotation more specific (Ruff PGH003)
+      - Remove obsolete "type: ignore" annotation
+      - Fix Ruff PT009
+      - Fix Ruff RUF015
+      - Fix Ruff UP017
+      - Ruff format files changed on devel..stable
+
+  * Bump debian APT snapshot to upgrade to Trixie 13.7 (tails/tails!3285)
+
+    Closes issues:
+      - Upgrade to Trixie 13.7 (tails/tails#21172)
+
+    Commits:
+      - CI: run all tests for 21172-trixie-13.7
+      - Bump debian APT snapshot to upgrade to Trixie 13.7
+
+  * Jenkins lib: disable build-on-push on jenkins for stable-flatpak take 2
+    (tails/tails!3279)
+
+    Commits:
+      - Jenkins lib: disable build-on-push on jenkins for stable-flatpak (refs:
+        tails/tails#21582)
+      - Revert "Jenkins lib: disable build-on-push on jenkins for stable-flatpak (refs:
+        tails/tails#21582)"
+
+  * Jenkins lib: disable build-on-push on jenkins for stable-flatpak (refs:
+    tails/tails#21582) (tails/tails!3271)
+
+    Commits:
+      - Jenkins lib: disable build-on-push on jenkins for stable-flatpak (refs:
+        tails/tails#21582)
+
+  * Test suite: treat GNOME Software traffic as non-suspicious (tails/tails!3267)
+
+    Commits:
+      - Test suite: treat GNOME Software traffic as non-suspicious
+
+  * Test suite: save the .pcap for unexpected Thunderbird connections
+    (tails/tails!3266)
+
+    Commits:
+      - Test suite: save the .pcap for unexpected Thunderbird connections
+
+  * Only ask the user to confirm shutdown/reboot when inhibited (tails/tails!3264)
+
+    Closes issues:
+      - Consider not asking the user to confirm shutdown/reboot unless inhibited
+        (tails/tails#21733)
+
+    Commits:
+      - Only ask the user to confirm shutdown/reboot when inhibited
+
+  * Test suite: attempt to get backtrace from 'chutney configure' when it hangs
+    (tails/tails!3258)
+
+    Commits:
+      - Test suite: attempt to get backtrace from 'chutney configure' when it hangs
+
+  * Test suite: improve reliability of the 'I open "..." in Celluloid' step
+    (tails/tails!3256)
+
+    Closes issues:
+      - Test suite: step 'I open "..." in Celluloid' is fragile (tails/tails#21771)
+
+    Commits:
+      - Test suite: improve reliability of the 'I open "..." in Celluloid' step
+
+  * Jenkins lib: add support for custom branches and use it to add stable-flatpak
+    (tails/tails!3247)
+
+    Closes issues:
+      - Also run the entire test suite on stable branch with the flatpak feature flag
+        enabled (tails/tails#21582)
+
+    Commits:
+      - Clarify
+      - Appease ruff: EXE001
+      - Appease ruff: RUF012
+      - Jenkins lib: add custom branch stable-flatpak (refs: tails/tails#21582)
+      - Jenkins lib: add support for custom branches
+
+  * Simplify test suite dependency management (tails/tails!3245)
+
+    Commits:
+      - Sort
+      - Test suite: simplify by requiring all dependencies
+      - Properly encode dependency
+      - Remove obsolete dependency
+      - Properly encode dependency
+      - Remove duplicate dependency
+      - Properly encode needed-package-updates dependencies
+      - Remove obsolete dependency
+      - De-duplicate list of test suite dependencies
+
+  * Second batch of post-7.12 doc updates (tails/tails!3241)
+
+    Commits:
+      - clarify which version needs to be tested
+      - Set the title manually, not through a command
+
+  * HTP pool: www.autistici.org → www.systemli.org (tails/tails!3239)
+
+    Closes issues:
+      - Replace www.autistici.org in our htpdate pool (tails/tails#21762)
+
+    Commits:
+      - Improve readability
+      - shfmt
+      - Add shell guardrails
+      - HTP pool: www.autistici.org → www.systemli.org
+
+  * Test suite: test that GNOME Software handles locale switching
+    (tails/tails!3228)
+
+    Closes issues:
+      - Write automated tests for localization of Flatpak apps (P202 2.7)
+        (tails/tails#21559)
+
+    Commits:
+      - Test suite: quote locale step parameter
+      - Test suite: pass --regexp-extended to sed
+      - Appease RuboCop
+      - shfmt
+      - Test suite: make chutney memory restriction work when running as non-root
+      - Test suite: test that GNOME Software handles locale switching nicely
+
+  * Update Chutney in 2026Q3 (tails/tails!3126)
+
+    Closes issues:
+      - Upgrade Chutney (2026Q3) (tails/tails#21461)
+
+    Commits:
+      - Sort dependencies
+      - Sync test suite python3 deps between docs and script
+      - Require new deps for updated Chutney (refs: tails#21461)
+      - Chutney: update to current upstream at d6659ac34c36122ed2590714e37269d1b983c336
+      - CI: run all tests for 21461-update-chutney
+
+ -- Tails developers <foundations@tails.net>  Tue, 15 Sep 2026 11:15:16 +0200
+
 tails (7.12) unstable; urgency=medium
 
   * Upgrade to Tor Browser 15.0.21 based on Firefox ESR 140.15 (tails/tails!3221)
