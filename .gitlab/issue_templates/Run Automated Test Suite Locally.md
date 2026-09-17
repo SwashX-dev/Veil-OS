@@ -1,7 +1,7 @@
 # When creating this issue
 
  - [ ] Set the milestone to the upcoming release
- - [ ] Set the title to "Run the automated test suite for version $VERSION on a local trusted system"
+ - [ ] Set the title to "Run the automated test suite for version `$LAST_STABLE_RELEASE` on a local trusted system" (with `$LAST_STABLE_RELEASE` being the version number for the newest stable version we've released already)
  - [ ] Delete this section
 
 # How
