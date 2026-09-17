@@ -84,7 +84,7 @@ See <https://gitlab.tails.net/tails/team/-/wikis/responsibilities>.
         cd "${TAILS_GIT_REPO:?}"
         ./bin/iuk-source-versions "${VERSION:?}" |
         tr ' ' '\n' |
-        sed -e 's/^/tails-amd64-/'
+        sed --regexp-extended -e 's|^(.*)$|tails-amd64-\1/tails-amd64-\1.iso|'
         ) \
         | xargs --no-run-if-empty git annex get
 
