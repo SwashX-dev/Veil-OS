@@ -79,7 +79,14 @@ See <https://gitlab.tails.net/tails/team/-/wikis/responsibilities>.
   I.e. you can run this inside `isos.git`:
 
         git annex pull --no-content
-        (cd ${TAILS_GIT_REPO:?}; ./bin/iuk-source-versions "${VERSION:?}" | tr ' ' '\n' | sed -e 's/^/tails-amd64-/') | xargs --no-run-if-empty git annex get
+        (
+        set -eu -o pipefail
+        cd "${TAILS_GIT_REPO:?}"
+        ./bin/iuk-source-versions "${VERSION:?}" |
+        tr ' ' '\n' |
+        sed -e 's/^/tails-amd64-/'
+        ) \
+        | xargs --no-run-if-empty git annex get
 
 - Ensure someone will be able to do the bare metal part of the manual QA
 
