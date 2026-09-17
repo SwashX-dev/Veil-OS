@@ -12,7 +12,8 @@ else
     XKBCONF="$XKBLAYOUT+$XKBVARIANT"
 fi
 
-# Choose the keyboard layout we'll use regardless of the IBus input methods
+# Choose the keyboard layout we'll use in most cases, regardless of
+# the IBus input methods
 if [ "$XKBLAYOUT" = 'us' ]; then
     SOURCES="('xkb', '$XKBCONF')"
 else
