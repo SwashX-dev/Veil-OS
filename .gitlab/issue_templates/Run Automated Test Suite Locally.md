@@ -6,11 +6,11 @@
 
 # How
 
-1. Checkout the tag for the last released
+1. Checkout the tag for the last released stable version
 
 2. Run the test suite on the last released images (passed via `--iso`)
 
-   * Point `--old-iso` to the ISO image of the previous stable release.
+   * Point `--old-iso` to the ISO image of the previous stable release (*before* the version being tested that's passed via `--iso`).
 
    * We want the test suite run to be as "vanilla" and reproducible as
      possible, so the only allowed options for `run_test_suite` are:
