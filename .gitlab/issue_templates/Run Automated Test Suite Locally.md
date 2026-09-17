@@ -43,5 +43,5 @@ the opportunity window for an attacker.
 /label ~"Tails Team"
 /label ~"To Do"
 /label ~"P:Elevated"
-/label ~"C:Test Suite"
+/label ~"C:Test suite"
 /label ~"T:Test"
