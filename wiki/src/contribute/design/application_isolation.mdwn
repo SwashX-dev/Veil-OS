@@ -263,7 +263,6 @@ Per-app caveats
 - Unsafe Browser: see [[design/Unsafe_Browser]].
 
 - Everything else: other apps generally run unconfined, which is a problem as well.
-  We have ideas to fix that ([[!tails_ticket 21525]]).
 
 Using alias rules to avoid modifying profiles
 ---------------------------------------------
