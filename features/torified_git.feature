@@ -13,5 +13,5 @@ Feature: Cloning a Git repository
 
   Scenario: Cloning git repository over SSH
     Given I have the SSH key pair for a Git repository
-    When I clone the Git repository "ssh://gitolite3@lizard.tails.boum.org:3004/myprivatekeyispublic/testing.git" in Console
+    When I clone the Git repository "ssh://gitolite3@git.tails.net:3004/myprivatekeyispublic/testing.git" in Console
     Then the Git repository "testing" has been cloned successfully
