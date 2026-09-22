@@ -163,7 +163,7 @@ To release Tails you need:
   Ensure your SSH client is configured to connect to the system that hosts our APT repositories:
 
       Host apt.lizard
-          HostName lizard.tails.boum.org
+          HostName lizard.tails.net
           Port 3003
 
 * Configure _automailer_
@@ -397,7 +397,7 @@ Bootstrap internal manual testing coordination:
 
        (
        set -eu -o pipefail
-       git checkout ${RELEASE_BRANCH:?}"
+       git checkout "${RELEASE_BRANCH:?}"
        wl-copy < wiki/src/contribute/release_process/test.mdwn
        )
 
