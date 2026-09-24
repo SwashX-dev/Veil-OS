@@ -48,8 +48,8 @@ older versions from connecting to them.</p>
 <p>Unfortunately, newer versions of <i>Electrum</i>
 are not available in Debian and cannot be integrated easily in Tails. Given the
 lack of maintenance of Electrum in Debian, we are still
-<a href="http://lists.autistici.org/message/20190319.170700.b3b5bf1f.en.html">assessing
-what is best to do in Tails</a>.</p>
+assessing
+what is best to do in Tails.</p>
 
 <p>Until then, your wallet is not lost and you can restore it from its seed
 using an <a href="https://electrum.org/#download">up-to-date version of
@@ -65,7 +65,7 @@ in the Boot Menu.
 We are still investigating the issue, so if it happens to you, please
 report your findings by email to <tails-testers@boum.org>. Mention the
 model of the computer and the USB stick. This mailing
-list is [archived publicly](https://lists.autistici.org/list/tails-testers.html).
+list is [archived publicly](https://lists.torproject.org/mailman3/hyperkitty/list/tails-testers@lists.torproject.org/).
 
 To fix this issue:
 

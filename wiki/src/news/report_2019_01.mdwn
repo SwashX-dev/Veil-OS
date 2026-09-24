@@ -26,8 +26,7 @@ Code
 ====
 
 - A bunch of Foundations Team members had a sprint focused on porting
-  Tails to Debian 10 (Buster). For details, see the
-  [full report](https://lists.autistici.org/message/20190112.093556.b591a963.en.html).
+  Tails to Debian 10 (Buster).
 
 Documentation and website
 =========================

@@ -784,7 +784,7 @@ The following pieces of the Tails infrastructure interact with GitLab either
 directly or indirectly:
 
 - The [Ticket
-  Gardener](https://tails.net/contribute/working_together/roles/ticket_gardener)
+  Gardener](https://gitlab.tails.boum.org/tails/team/-/wikis/roles/#ticket-gardener)
   queries GitLab for information about the state of issues and merge requests.
 
 - The [Translation
@@ -798,7 +798,7 @@ directly or indirectly:
   to prevent the Translation Platform from messing with more things than it
   should.
 
-- Our [Jenkins](tails/services/jenkins) master [is also
+- Our [Jenkins](https://jenkins.tails.net/) master [is also
   notified](https://gitlab.tails.net/tails/puppet-tails/-/blob/master/templates/gitolite/hooks/tails-post-receive.erb)
   when there are relevant changes to the main Tails repository, and its Jenkins
   slaves query GitLab to determine [whether to conduct reproducibility

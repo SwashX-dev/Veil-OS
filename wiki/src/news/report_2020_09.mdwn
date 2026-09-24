@@ -60,13 +60,12 @@ Also, it seemed important to the Help Desk team to remind Tails users that we ar
 Outreach
 ========
 
-- [Roma hackmeeting](https://www.hackmeeting.org/hackit20/): see
-  the [report](https://lists.autistici.org/message/20200914.110251.d63943a8.en.html)
+- [Roma hackmeeting](https://www.hackmeeting.org/hackit20/)
 
 On-going discussions
 ====================
 
-- [Merge tails-dev, tails-ux, and tails-project mailing lists](https://lists.autistici.org/message/20200904.103800.01272559.en.html)
+- Merge tails-dev, tails-ux, and tails-project mailing lists
 
 Translations
 ============

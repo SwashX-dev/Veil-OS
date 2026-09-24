@@ -102,8 +102,8 @@ Infrastructure
 Funding
 =======
 
-- Analyzed the [results of our last donation
-  campaign](https://lists.autistici.org/message/20200315.002900.a10585d8.en.html).
+- Analyzed the results of our last donation
+  campaign.
 
   We raised 81&#8239;842 € (+10%) from 2006 donations (-10%).
 
@@ -125,8 +125,7 @@ On-going discussions
 ====================
 
 - What our current changelog is useful for,
-  and how we could get the same benefits with less manual work:
-  <https://lists.autistici.org/message/20200322.084523.51704520.en.html>
+  and how we could get the same benefits with less manual work.
 
 Translations
 ============
