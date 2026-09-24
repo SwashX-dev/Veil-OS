@@ -117,8 +117,8 @@ Funding
   the installation on macOS and Windows. This work was supported through
   a grant from The ISC Project.
 
-- We published an [analysis of our 2018 donation
-  campaign](http://lists.autistici.org/message/20190503.174100.f523ad84.en.html).
+- We published an analysis of our 2018 donation
+  campaign.
 
 - We wrote a thank you email to everybody who donated in 2018.
 
@@ -154,7 +154,7 @@ Upcoming events
 On-going discussions
 ====================
 
-- We followed up on the conversation regarding the [future of Electrum in Tails](http://lists.autistici.org/thread/20190503.105531.755bcd23.en.html#i20190503.105531.755bcd23).
+- We followed up on the conversation regarding the future of Electrum in Tails.
 
 Translations
 ============

@@ -95,17 +95,13 @@ On-going discussions
 ====================
 
 - Technical writers sent a proposal to improve and simplify the terminology
-  around "Persistence":
-
-  <https://lists.autistici.org/message/20191108.153500.fbbf3592.en.html>
+  around "Persistence".
 
 - We are discussing what kind of password strength meter we should have in the
   Persistence creation assistant. ([[!tails_ticket 7002]])
 
 - We started discussion whether we should say "*freedom fighters*" or "*human-rights
-  defenders*" in our mission and values:
-
-  <https://lists.autistici.org/message/20191126.113700.b936d424.en.html>
+  defenders*" in our mission and values.
 
 Translations
 ============

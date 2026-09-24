@@ -15,8 +15,8 @@ Highlights
   will publish more about this audit and our mitigation plans in the coming
   months.
 
-- We [analyzed the usability
-  tests](https://lists.autistici.org/message/20230510.091842.23ed75ba.en.html)
+- We analyzed the usability
+  tests
   of the Persistent Storage done in March in Ecuador.
 
 - We applied to the Spyware Accountability

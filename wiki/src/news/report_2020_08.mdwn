@@ -223,9 +223,9 @@ Sponsors
 On-going discussions
 ====================
 
-- Exporting secret PGP key in SeaHorse: Link to the [thread](https://lists.autistici.org/thread/20200909.161300.5d51a9ea.en.html#i20200909.161300.5d51a9ea).
-- GitLab MR terminology update: WIP→ Draft : Link to the [thread](https://lists.autistici.org/thread/20200831.183100.8fbe036d.en.html).
-- Reviewers: Link to the [thread](https://lists.autistici.org/thread/20200819.102500.4dd81e8c.en.html).
+- Exporting secret PGP key in SeaHorse
+- GitLab MR terminology update: WIP → Draft
+- Reviewers
 
 Translations
 ============

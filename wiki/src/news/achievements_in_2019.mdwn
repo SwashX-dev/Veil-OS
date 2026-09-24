@@ -104,7 +104,7 @@ use.
   boum.org. Thank you! As they were reducing their activities, we had to migrate our services. Our
   website is now self-hosted and our mailing-lists are taken care of
   by 2 experienced and trusted autonomous server projects:
-  [autistici.org](https://autistici.org) and
+  [autistici.org](https://en.wikipedia.org/wiki/Autistici/Inventati) and
   [puscii.nl](https://puscii.nl).
 
 

@@ -73,8 +73,8 @@ this entire flow since 2015 and so many things happened since then.
 You can see the detailed findings and the 19 GitLab issues that we created from
 these usability tests in this rainbow
 table
-or read a more [detailed
-report](https://lists.autistici.org/message/20211217.014522.68cdc460.en.html). ([[!tails_ticket 18074]])
+or read a more detailed
+report. ([[!tails_ticket 18074]])
 
 We also published our [[policy for the retention of the user research
 data|contribute/how/user_experience/research]] gathered during such activities.

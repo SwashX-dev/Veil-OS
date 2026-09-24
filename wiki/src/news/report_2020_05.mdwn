@@ -58,8 +58,8 @@ Documentation and website
 User experience
 ===============
 
-- Discussed the UX implications of [dropping our time sync
-  hacks](https://lists.autistici.org/message/20200520.002000.3f43e667.en.html).
+- Discussed the UX implications of dropping our time sync
+  hacks.
 
 - Discussed possible strategies around the [[!tails_ticket
   17183#note_149643 desc="degrading state"]] of the *Passwords and Keys*
@@ -98,14 +98,14 @@ Outreach
 ========
 
 We are discussing
-a [proposal](https://lists.autistici.org/message/20200513.105600.fe3a74d8.en.html)
+a proposal
 to make Tails' [[presence in the
 Fediverse|https://fosstodon.org/@tails/104105188198142765]] official.
 
 On-going discussions
 ====================
 
-We are sharing feedback and tips about [[using GitLab|https://lists.autistici.org/message/20200529.160541.cf87071d.en.html]].
+We are sharing feedback and tips about using GitLab.
 
 Translations
 ============

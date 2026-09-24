@@ -105,7 +105,7 @@ deploy-website:
   resource_group: production/$SSH_SERVER
   parallel:
     matrix:
-      - SSH_SERVER: www.lizard
+      - SSH_SERVER: www.mtl-libvirt-01
         SSH_PORT: 22
       - SSH_SERVER: www2.chameleon
         SSH_PORT: 22

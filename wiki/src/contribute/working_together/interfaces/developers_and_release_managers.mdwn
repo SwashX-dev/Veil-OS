@@ -86,8 +86,8 @@ a mere beta. Here are some guidelines that may help:
    Tails, then a RC may be worth it: production usage has a vastly greater test
    coverage than our automated test suite.
 
-   For example, migrating from `aufs` to `overlayfs` was first
-   done in a [beta](https://lists.autistici.org/message/20191221.150827.105ba267.en.html), then in 4.5~rc1, before being shipped in a stable release.
+   For example, *Tor Connection* was first
+   advertised in [[4.19~beta1|news/test_4.19-beta1]], then in [[4.19~rc1|news/test_4.19-rc1]], before being shipped in [[4.19|news/version_4.19]].
 
  - If the change can be tested very quickly, then a beta may be sufficient.
 

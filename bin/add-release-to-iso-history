@@ -56,7 +56,7 @@ echo "Doing git annex things"
 
 # shellcheck disable=SC2087
 ssh misc.lizard <<EOF
-   ( [ -d isos ] || git clone gitolite@puppet-git.lizard:isos.git ) && \
+   ( [ -d isos ] || git clone gitolite@git.mtl-libvirt-01:isos.git ) && \
    (
     set -eux
     cd isos

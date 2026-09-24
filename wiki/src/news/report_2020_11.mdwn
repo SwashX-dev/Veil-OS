@@ -33,8 +33,8 @@ process, in order to make this part of our work more sustainable. In November,
 the Tails Release Managers team had a sprint focused on this very topic, during
 which we identified a great number of issues and fixed most of them! :)
 
-For details, read the [sprint
-report](https://lists.autistici.org/message/20201116.132555.7bc56b9c.en.html).
+For details, read the sprint
+report.
 
 Code
 ====
