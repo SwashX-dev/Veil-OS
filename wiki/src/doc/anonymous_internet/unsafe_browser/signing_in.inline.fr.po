@@ -75,7 +75,8 @@ msgstr "<a href=\"http://baidu.com/\" target=\"_blank\"/>Baidu</a>"
 
 #. type: Bullet: '1. '
 msgid "If you are redirected to a captive portal, sign in to the network."
-msgstr "Si vous êtes redirigé vers un portail captif, connectez-vous au réseau."
+msgstr ""
+"Si vous êtes redirigé vers un portail captif, connectez-vous au réseau."
 
 #. type: Plain text
 #, no-wrap
@@ -86,8 +87,7 @@ msgid ""
 "   <span class=\"doc\">the <i>Unsafe Browser</i></span>\n"
 "   and try connecting to the Tor network again.\n"
 msgstr ""
-"   Si vous n'êtes pas redirigé vers un portail captif et que le site web "
-"s'affiche,\n"
+"   Si vous n'êtes pas redirigé vers un portail captif et que le site web s'affiche,\n"
 "   cela signifie que vous êtes déjà connecté à Internet. Fermer\n"
 "   <span class=\"warning\">ce navigateur</span>\n"
 "   <span class=\"doc\">le <i>Navigateur non sécurisé</i></span>\n"
@@ -115,12 +115,9 @@ msgid ""
 "   If you keep the <i>Unsafe Browser</i> open, a very advanced network attacker\n"
 "   might use it to deanonymize you.</p>\n"
 msgstr ""
-"   <p>Il est particulièrement important que vous fermiez le <i>Navigateur "
-"non sécurisé</i> si\n"
-"   vous utilisez des fonctionnalités d'accessibilité comme le clavier visuel "
-"ou le lecteur d'écran.\n"
-"   Si vous gardez le <i>Navigateur non sécurisé</i> ouvert, une attaque "
-"réseau très avancée\n"
+"   <p>Il est particulièrement important que vous fermiez le <i>Navigateur non sécurisé</i> si\n"
+"   vous utilisez des fonctionnalités d'accessibilité comme le clavier visuel ou le lecteur d'écran.\n"
+"   Si vous gardez le <i>Navigateur non sécurisé</i> ouvert, une attaque réseau très avancée\n"
 "   pourrait l'utiliser pour vous désanonymiser.</p>\n"
 
 #. type: Plain text
@@ -131,9 +128,7 @@ msgstr "   </div>\n"
 #. type: Plain text
 #, no-wrap
 msgid "   You can use *Tor Browser* or any other application as usual.\n"
-msgstr ""
-"   Vous pouvez utiliser le *Navigateur Tor* ou toute autre application comme "
-"d'habitude.\n"
+msgstr "   Vous pouvez utiliser le *Navigateur Tor* ou toute autre application comme d'habitude.\n"
 
 #, no-wrap
 #~ msgid "   <!-- Clarify this after #18382 and #5785. -->\n"

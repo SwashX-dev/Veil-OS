@@ -35,10 +35,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "[[!img captive_portal.png link=\"no\" class=\"svg\" alt=\"Train station Wi-Fi. Click here for 60 minutes of free Wi-Fi\" title=\"Example of a captive portal\"]]\n"
-msgstr ""
-"[[!img captive_portal.png link=\"no\" class=\"svg\" alt=\"Wi-Fi de la gare. "
-"Cliquez ici pour 60 minutes de Wi-Fi gratuit\" title=\"Exemple de portail "
-"captif\"]]\n"
+msgstr "[[!img captive_portal.png link=\"no\" class=\"svg\" alt=\"Wi-Fi de la gare. Cliquez ici pour 60 minutes de Wi-Fi gratuit\" title=\"Exemple de portail captif\"]]\n"
 
 #. type: Plain text
 msgid ""
@@ -59,12 +56,6 @@ msgstr ""
 #~ "accéder à Internet."
 
 #, fuzzy
-#~| msgid ""
-#~| "A captive portal is a web page that is displayed to the user before the "
-#~| "user can access the Internet. Captive portals usually require the user "
-#~| "to log in to the network or enter information such as an email address. "
-#~| "Captive portals are commonly encountered at Internet cafés, libraries, "
-#~| "airports, hotels, and universities."
 #~ msgid ""
 #~ "A captive portal is a web page that is displayed to the user before the "
 #~ "user can access the Internet. Captive portals usually require the user to "
@@ -79,11 +70,11 @@ msgstr ""
 #~ "bibliothèques, des aéroports, des hôtels et des universités."
 
 #~ msgid ""
-#~ "This is an example of a captive portal (by [AlexEng](https://commons."
-#~ "wikimedia.org/wiki/File:Captive_Portal.png)):"
+#~ "This is an example of a captive portal (by [AlexEng](https://"
+#~ "commons.wikimedia.org/wiki/File:Captive_Portal.png)):"
 #~ msgstr ""
-#~ "Voici un exemple de portail captif (par [AlexEng](https://commons."
-#~ "wikimedia.org/wiki/File:Captive_Portal.png)) :"
+#~ "Voici un exemple de portail captif (par [AlexEng](https://"
+#~ "commons.wikimedia.org/wiki/File:Captive_Portal.png)) :"
 
 #, no-wrap
 #~ msgid "[[!img captive-portal.png link=\"no\" alt=\"Welcome! Please enter your credentials to connect.\"]]\n"

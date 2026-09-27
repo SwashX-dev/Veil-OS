@@ -400,7 +400,6 @@ msgstr "[[Customize Tails|contribute/customize]]"
 
 #. type: Bullet: '  * '
 #, fuzzy
-#| msgid "[Nightly Tails image builds](https://nightly.tails.boum.org)"
 msgid "[Nightly Tails image builds](https://nightly.tails.net)"
 msgstr "[Nightly Tails image builds](https://nightly.tails.boum.org)"
 

@@ -26,9 +26,7 @@ msgstr "[[!meta title=\" Comment puis-je avoir confiance en Tails ?\"]]\n"
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta stylesheet=\"doc/about/trust/testimonials.inline\" rel=\"stylesheet\" title=\"\"]]\n"
-msgstr ""
-"[[!meta stylesheet=\"doc/about/trust/testimonials.inline\" rel=\"stylesheet\""
-" title=\"\"]]\n"
+msgstr "[[!meta stylesheet=\"doc/about/trust/testimonials.inline\" rel=\"stylesheet\" title=\"\"]]\n"
 
 #. type: Plain text
 msgid ""
@@ -224,9 +222,7 @@ msgstr "  Voir aussi notre liste de [[sponsors|https://www.torproject.org/fr/abo
 #. type: Plain text
 #, no-wrap
 msgid "[[!inline pages=\"doc/about/trust/testimonials.inline\" raw=\"yes\" sort=\"age\"]]\n"
-msgstr ""
-"[[!inline pages=\"doc/about/trust/testimonials.inline.fr\" raw=\"yes\" sort="
-"\"age\"]]\n"
+msgstr "[[!inline pages=\"doc/about/trust/testimonials.inline.fr\" raw=\"yes\" sort=\"age\"]]\n"
 
 #, no-wrap
 #~ msgid "  See also our list of [[sponsors]].\n"

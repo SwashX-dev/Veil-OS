@@ -36,9 +36,7 @@ msgstr "Il n'y a pas de menu **Wi-Fi** dans le menu système :"
 #. type: Plain text
 #, no-wrap
 msgid "  [[!img first_steps/desktop/system_without_wifi.png class=\"screenshot\" alt=\"\"]]\n"
-msgstr ""
-"  [[!img first_steps/desktop/system_without_wifi.png class=\"screenshot\" "
-"alt=\"\"]]\n"
+msgstr "  [[!img first_steps/desktop/system_without_wifi.png class=\"screenshot\" alt=\"\"]]\n"
 
 #. type: Bullet: '* '
 msgid ""

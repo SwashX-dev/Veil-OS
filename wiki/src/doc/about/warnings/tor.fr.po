@@ -174,8 +174,8 @@ msgstr ""
 "observe les différentes parties d'un circuit Tor, consultez les graphiques "
 "interactifs en anglais de [[Tor Support: How HTTPS encryption and Tor works "
 "in Tor Browser to enhance your privacy and anonymity|https://"
-"support.torproject.org/about-tor/security/https-encryption-and-tor/]] ou [["
-"leur traduction en français sous forme d'affiche|https://nos-oignons.net/"
+"support.torproject.org/about-tor/security/https-encryption-and-tor/]] ou "
+"[[leur traduction en français sous forme d'affiche|https://nos-oignons.net/"
 "Diffusez/tor-et-https-v2.pdf]]."
 
 #. type: Content of: <div><p>

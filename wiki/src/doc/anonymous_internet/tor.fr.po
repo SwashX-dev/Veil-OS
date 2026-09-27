@@ -199,9 +199,6 @@ msgstr "**Ponts Tor**"
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid ""
-#| "  Tor bridges are secret Tor relays that keep your connection to the Tor\n"
-#| "  network hidden.\n"
 msgid "  Tor bridges are secret Tor relays that hide that you are connecting to Tor.\n"
 msgstr ""
 "  Les ponts Tor sont des relais Tor secrets qui maintiennent votre connexion au \n"
@@ -382,10 +379,6 @@ msgstr "      </div>\n"
 
 #. type: Bullet: '   1. '
 #, fuzzy
-#| msgid ""
-#| "If public relays and default bridges don't work, Tails asks you to "
-#| "configure a **custom bridge**, if connecting using the default bridges "
-#| "fails."
 msgid ""
 "If public relays and default bridges don't work, Tails asks you to configure "
 "a **custom bridge**."
@@ -409,9 +402,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "<h2 id=\"hiding\">Hiding to your local network that you are connecting to Tor</h2>\n"
-msgstr ""
-"<h2 id=\"hiding\">Dissimuler à mon réseau local que je me connecte à Tor</h2>"
-"\n"
+msgstr "<h2 id=\"hiding\">Dissimuler à mon réseau local que je me connecte à Tor</h2>\n"
 
 #. type: Plain text
 msgid ""
@@ -466,7 +457,6 @@ msgstr "Les ponts par défaut ne sont pas disponibles."
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<h1 id=\"bridges\">Tor relays and bridges</h1>\n"
 msgid "<h2 id=\"bridge\">Configuring a Tor bridge</h2>\n"
 msgstr "<h1 id=\"bridges\">Relais et ponts Tor</h1>\n"
 
@@ -498,7 +488,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<h1 id=\"troubleshoot-tor\">Troubleshooting connecting to Tor</h1>\n"
 msgid "<h2 id=\"troubleshoot-tor\">Troubleshooting connecting to Tor</h2>\n"
 msgstr "<h1 id=\"troubleshoot-tor\">Résoudre les problèmes pour se connecter à Tor</h1>\n"
 
@@ -514,7 +503,6 @@ msgstr "<p>Voir notre documentation sur [[comment résoudre les problèmes de co
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "<h1 id=\"status\">Viewing the status of Tor</h1>\n"
 msgid "<h2 id=\"status\">Viewing the status of Tor</h2>\n"
 msgstr "<h1 id=\"status\">Visualiser l'état de Tor</h1>\n"
 

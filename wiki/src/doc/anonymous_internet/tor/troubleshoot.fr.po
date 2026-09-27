@@ -49,9 +49,9 @@ msgid ""
 "If you choose to [[hide that you are connecting to Tor|tor#hiding]], you "
 "might have to fix the clock manually if Tails fails to connect to Tor."
 msgstr ""
-"Si vous choisissez de [[dissimuler que vous vous connectez à "
-"Tor|tor#hiding]], vous pourriez devoir régler l'horloge manuellement si "
-"Tails n'arrive pas à se connecter à Tor."
+"Si vous choisissez de [[dissimuler que vous vous connectez à Tor|"
+"tor#hiding]], vous pourriez devoir régler l'horloge manuellement si Tails "
+"n'arrive pas à se connecter à Tor."
 
 #. type: Plain text
 msgid ""

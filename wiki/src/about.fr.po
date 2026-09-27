@@ -226,9 +226,9 @@ msgid ""
 "Tails includes a selection of applications to <strong>work on sensitive "
 "documents</strong> and <strong>communicate securely</strong>."
 msgstr ""
-"Tails est fourni avec une sélection d'applications permettant de <strong>"
-"travailler sur des documents sensibles</strong> et de <strong>communiquer en "
-"sécurité</strong>."
+"Tails est fourni avec une sélection d'applications permettant de "
+"<strong>travailler sur des documents sensibles</strong> et de "
+"<strong>communiquer en sécurité</strong>."
 
 #. type: Content of: <section><div><p>
 msgid ""

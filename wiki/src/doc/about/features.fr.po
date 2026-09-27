@@ -402,9 +402,6 @@ msgstr ""
 #~ "sensitive_documents/sound_and_video]])"
 
 #, fuzzy
-#~| msgid ""
-#~| "can be run as a virtualized guest inside [VirtualBox](http://"
-#~| "www.virtualbox.org/) ([[More...|doc/advanced_topics/virtualization]])"
 #~ msgid ""
 #~ "Can be run as a virtualized guest inside [VirtualBox](http://"
 #~ "www.virtualbox.org/) ([[More...|doc/advanced_topics/virtualization]])"
@@ -414,9 +411,6 @@ msgstr ""
 #~ "virtualization]])"
 
 #, fuzzy
-#~| msgid ""
-#~| "[GtkHash](https://github.com/tristanheaven/gtkhash) to calculate "
-#~| "checksums ([[More...|doc/encryption_and_privacy/checksums]])"
 #~ msgid ""
 #~ "- [GtkHash](https://github.com/tristanheaven/gtkhash) to calculate "
 #~ "checksums ([[More...|doc/encryption_and_privacy/checksums]])"
