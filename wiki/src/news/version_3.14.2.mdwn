@@ -34,7 +34,7 @@ in the Boot Menu.
 We partially fix this issue in 3.14.1 but are still investigating it, so if it happens to you, please
 report your findings by email to <tails-testers@boum.org>. Mention the
 model of the computer and the USB stick. This mailing
-list is [archived publicly](https://lists.autistici.org/list/tails-testers.html).
+list is [archived publicly](https://lists.torproject.org/mailman3/hyperkitty/list/tails-testers@lists.torproject.org/).
 
 To fix this issue:
 

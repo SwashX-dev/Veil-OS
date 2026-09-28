@@ -69,7 +69,7 @@ Jobs
 On-going discussions
 ====================
 
-- [[Reconsider the terminology around "persistence"|https://lists.autistici.org/message/20200227.123500.9aee624d.en.html]].
+- Reconsider the terminology around "persistence".
 
 Press and testimonials
 ======================

@@ -76,7 +76,7 @@ Make sure to specify:
 * The model of the computer you started from.
 
 Report your findings by email to <tails-testers@boum.org>. This mailing
-list is [archived publicly](https://lists.autistici.org/list/tails-testers.html).
+list is [archived publicly](https://lists.torproject.org/mailman3/hyperkitty/list/tails-testers@lists.torproject.org/).
 
 Known issues
 ============

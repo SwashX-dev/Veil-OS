@@ -169,8 +169,8 @@ To release Tails you need:
 
   Ensure your SSH client is configured to connect to the system that hosts our APT repositories:
 
-      Host apt.lizard
-          HostName lizard.tails.boum.org
+      Host apt.mtl-libvirt-01
+          HostName mtl-libvirt-01.tails.net
           Port 3003
 
 * Configure _automailer_

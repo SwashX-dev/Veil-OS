@@ -14,10 +14,7 @@ Code
 
 - The Foundations
   Team met for
-  a sprint focused on porting Tails to Debian 10 (Buster):
-  [report](https://lists.autistici.org/message/20190408.075929.1c2952c0.en.html),
-  [next
-  steps](https://lists.autistici.org/message/20190429.091241.82e34497.en.html).
+  a sprint focused on porting Tails to Debian 10 (Buster).
 - We finalized our criteria for including dictionaries, fonts and language packs,
   which will be reflected in Tails 3.14.
 - We prototyped a USB image with Secure Boot support and GRUB, in order
@@ -89,8 +86,8 @@ Upcoming events
 On-going discussions
 ====================
 
-- We [studied and narrowed down our
-  options](https://lists.autistici.org/message/20190429.094536.22d3598f.en.html)
+- We studied and narrowed down our
+  options
   regarding the future of Electrum in Tails. It seems there will be
   a way forward, although it's unclear at this point how much effort
   it will require from us.

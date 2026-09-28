@@ -59,14 +59,14 @@ Hot topics on our help desk
 Outreach
 ========
 
-- We have been talking about [outsourcing Tails merchandising](https://lists.autistici.org/message/20210120.181400.e0e54b94.en.html) as we are not doing any merchandising lately because of the effort, but many users would like to support Tails in this way. More information at [[!tails_ticket 18141]].
+- We have been talking about outsourcing Tails merchandising as we are not doing any merchandising lately because of the effort, but many users would like to support Tails in this way. More information at [[!tails_ticket 18141]].
 
 On-going discussions
 ====================
 
-- We are [moving all our repositories to our own gitlab instance](https://lists.autistici.org/message/20210119.151358.c5470864.en.html). Thanks [Immerda.ch](https://www.immerda.ch/) for your support with git-tails.immerda.ch during all these years!
-- We are [moving our blueprints section to gitlab](https://lists.autistici.org/message/20210113.110736.a8b42a2a.en.html) as well ([[!tails_ticket 18079]]).
-- We are thinking what to do about [our XMPP server going away](https://lists.autistici.org/message/20210103.080648.5fc23403.en.html). More information also at [[!tails_ticket 17956]].
+- We are moving all our repositories to our own gitlab instance. Thanks [Immerda.ch](https://www.immerda.ch/) for your support with git-tails.immerda.ch during all these years!
+- We are moving our blueprints section to gitlab as well ([[!tails_ticket 18079]]).
+- We are thinking what to do about our XMPP server going away. More information also at [[!tails_ticket 17956]].
 
 Translations
 ============

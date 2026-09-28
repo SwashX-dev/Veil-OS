@@ -128,14 +128,10 @@ On-going discussions
 ====================
 
 - We asked for comments on a proposal for a "People" page on our website that
-  would be both trustworthy, human, and respect our pseudonyms:
-
-  <https://lists.autistici.org/message/20190720.142700.203814ca.en.html>
+  would be both trustworthy, human, and respect our pseudonyms.
 
 - We asked for comments on the proposal to use *Tails Installer* to backup the
-  persistent volume:
-
-  <http://lists.autistici.org/message/20190723.163900.7bfc4f4a.en.html>
+  persistent volume.
 
 Translations
 ============
