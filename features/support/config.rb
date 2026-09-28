@@ -122,7 +122,6 @@ SERVICES_ALLOWED_FOR_LIVE_USER =
     [IPAddr.new('127.0.0.1'),  9040],
     [IPAddr.new('127.0.0.1'),  9050],
   ].freeze
-# OpenDNS
 SOME_DNS_SERVER = '1.1.1.1'.freeze
 RTL_LANGUAGES = ['Arabic', 'Persian'].freeze
 VM_XML_PATH = "#{Dir.pwd}/features/domains".freeze
