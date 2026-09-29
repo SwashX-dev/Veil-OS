@@ -927,6 +927,8 @@ Build the final images
 Expected time: 30-45 minutes depending on your computer and the available
 Jenkins workers.
 
+1. If building on another machine: ensure the build machine's Git tree is on the tag.
+
 1. Build the final images:
 
        rake build
@@ -952,6 +954,9 @@ Jenkins workers.
 
 1. Set the `MATCHING_JENKINS_IMAGES_BUILD_ID` environment variable to the ID of
    the Jenkins build.
+
+1. If you've built the images on another machine: copy the build artifacts from
+   the build machine to `$ARTIFACTS` on your main computer.
 
 1. Compare the new build manifest with the one from the previous,
    almost-final build:
@@ -1098,10 +1103,26 @@ Prepare incremental upgrades
 
 Reference: [[design documentation|contribute/design/upgrades]]
 
+## If you build IUKs on another machine
+
+- Copy `~/.config/tails/release_management/current.yml` to your build machine.
+
+- If your build machine lacks access to the `puppet-control` repository:
+  1. synchronize an up-to-date clone of that repository from your main machine
+     to your build machine
+  2. on your build machine, point `PUPPET_TAILS_REMOTE` to that local clone
+     (`file:///path/to/puppet-control/.git`)
+
+- Ensure `$ISOS_GIT` is up-to-date on your build machine.
+
+- On your build machine, move the build artifacts to the
+  `$ISOS/tails-amd64-$VERSION/` directory.
+
 Sanity checks
 -------------
 
-Check that you have the correct version of `squashfs-tools-ng` and `libsquashfs1` installed:
+On the machine you'll use to build IUKs,
+check that you have the correct version of `squashfs-tools-ng` and `libsquashfs1` installed:
 
     [ "$(dpkg-query --showformat '${Version}\n' --show squashfs-tools-ng)" \
       = 1.3.2-1 \
@@ -1113,7 +1134,8 @@ Check that you have the correct version of `squashfs-tools-ng` and `libsquashfs1
 Build the Incremental Upgrade Kits locally
 ------------------------------------------
 
-Verify there's enough free disk space in `$IUKS_DIR`:
+On the machine you'll use to build IUKs,
+verify there's enough free disk space in `$IUKS_DIR`:
 
     N_IUKS="$(echo ${IUK_SOURCE_VERSIONS:?} | wc -w)"
     MIN_DISK_SPACE=$((N_IUKS * 1000))
@@ -1176,6 +1198,9 @@ you can follow the next steps:
 
 3. If you expect you will have to do some manual testing yourself and you have a spare computer, you can prepare a USB
    stick and start testing.
+
+If you've built IUKs on another machine, once they have been built,
+copy `to_$VERSION.sha256sum` to `$IUKS_DIR/` your main computer.
 
 ISO history
 -----------
@@ -1428,6 +1453,19 @@ Prepare upgrade-description files
            --release_checkout="${RELEASE_CHECKOUT:?}" \
            --major_release="${MAJOR_RELEASE:?}" \
            --channel="${DIST:?}"
+
+1. If you've prepared the upgrade-description files on another machine,
+   copy them to your main machine.
+
+   To do so, adjust and run this command:
+
+       rsync \
+          buildbox:tails/release/checkout/wiki/src/upgrade/ \
+          ./wiki/src/upgrade/ \
+          -rv \
+          --include "*/" \
+          --include 'upgrades.yml' \
+          --exclude='*'
 
 1. Create an armoured detached signature for each created or modified
    upgrade-description file.
