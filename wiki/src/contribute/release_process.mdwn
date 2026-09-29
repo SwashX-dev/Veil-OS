@@ -220,9 +220,13 @@ be delegated to them.
 
 ### Released security updates
 
-For each recent
-[Debian Security Advisory (DSA)](https://www.debian.org/security/#DSAS)
-that applies to a package we ship in our images:
+Check recent Debian Security Advisory (DSA) using these 2 sources (sometimes
+1 of them is lagging behind by hours):
+
+ - https://www.debian.org/security/#DSAS
+ - https://lists.debian.org/debian-security-announce/
+
+For each recent DSA that applies to a package we ship in our images:
 check that the latest build from the release branch has the update.
 
 If an update is missing, most likely it's a race condition and the next build
