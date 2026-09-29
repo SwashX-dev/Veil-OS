@@ -1260,11 +1260,6 @@ Build the Incremental Upgrade Kits on Jenkins
 5. Wait until the `build_IUKs` build completes successfully.
    It should take 15-30 minutes.
 
-   If you have a fast computer, you'll be waiting for Jenkins to be done, while
-   your CPU is idle. Consider starting the [automated test
-   suite](#run-automated-tests) in the meanwhile to optimize this: running it
-   does not depend on any of the IUK-related steps.
-
 <a id="reproducibility-sanity-check-iuk"></a>
 
 Verify that Jenkins reproduced your IUKs
