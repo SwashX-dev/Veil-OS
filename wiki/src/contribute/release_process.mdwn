@@ -51,7 +51,6 @@ process:
 
    - Building the final image
    - Building IUKs
-   - Running the automated test suite
 
 Prepare your checklist
 ======================
@@ -1655,52 +1654,6 @@ Let's be sure that this happens via
 If, at a later stage of the process, you realize Mirrorbits is still not
 "noticing" that mirrors are up-to-date, restart the Mirrorbits service again.
 
-<a id="run-automated-tests"></a>
-
-Run the automated test suite
-===============================
-
-This is not a required step: check the manual testers pad and see if anyone
-volunteered for that. But if no one did, start the automated test suite. The
-sooner, the better.
-
-You probably already know how to do that, but keep this in mind:
-
- - you *need* to use the `--old-iso` option
-
- - you probably want to specify `--tmpdir` to point to a non-volatile directory.
-   The default lives in `/tmp/`, which might lead to unpleasant surprises if,
-   for whatever reasons, you need to turn off your computer.
-
- - if you are running this and going AFK for long time (ie: overnight) you might want to
-   keep your CPU busy by rerunning failed scenarios. See the "Automatically re-run failures" section.
-
- - if the following conditions are met:
-
-    - you are making out an emergency release *OR* you still feel the need to make the release as soon as
-      possible for security reasons
-
-    - *and* you are *not* running test overnight, so skipping tests will reduce the lead time
-
-    - *then*, feel free to skip testing `@not_release_blocker`, setting
-      `what=(--tag ~@not_release_blocker)` in the following example.
-
-Automatically re-run failures
---------------------------------
-
-The file `test-rerun.sh` will help you rerunning the test suite automatically, which avoids wasting CPU.
-
-```sh
-cp bin/test-rerun.sh ../
-```
-
-Tweak it: the `tmpdir` might especially need some customization based on your directory structure.
-
-```sh
-export VERSION ISOS PREVIOUS_STABLE_VERSION
-../test-rerun.sh
-```
-
 Public testing
 ==============
 
@@ -1748,9 +1701,6 @@ Lead the internal manual testing to conclusion
 
 1. Fill the gaps and make sure that the automated and manual test
    suites are done in due time.
-
-1. If you were the one running the [automated test suite](#run-automated-tests),
-   check its results.
 
 1. Triage test results, reproduce bugs as
    needed, decide what the next step is and make sure it happens: add to known
