@@ -972,10 +972,9 @@ Verify that Jenkins reproduced your images:
     (
     set -eu
     cd "${ARTIFACTS:?}"
-    url="https://nightly.tails.net/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
-    curl --fail "$url" > SHA512SUMS-jenkins.txt
-    grep --perl-regexp '[.]img|iso' SHA512SUMS-jenkins.txt | sha512sum -c -
-    rm SHA512SUMS-jenkins.txt
+    curl --fail "https://nightly.tails.net/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum" \
+       | grep --perl-regexp '[.]img|iso' \
+       | sha512sum -c -
     )
 
 ### If the ISO and USB images hashes match
