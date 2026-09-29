@@ -14,35 +14,7 @@ Pre-requisites
 Install dependencies needed to generate IUKs, UDFs, and to run the test suite
 =============================================================================
 
-    (
-    cat $(git rev-parse --show-toplevel)/config/chroot_local-packageslists/tails-iuk.list \
-       | grep -E -v '^#' \
-       | xargs sudo apt --yes install && \
-    sudo apt install \
-       libdist-zilla-plugin-test-notabs-perl \
-       libdist-zilla-plugin-test-perl-critic-perl \
-       libdist-zilla-app-command-authordebs-perl \
-       libtest-lwp-useragent-perl && \
-    sudo apt update && \
-    cd "$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/iuk" && \
-    dzil authordebs --install && \
-    sudo apt install \
-       libarchive-tools \
-       libdevice-cdio-perl \
-       dosfstools \
-       faketime \
-       gdisk \
-       genisoimage \
-       gnutls-bin \
-       kpartx \
-       libdata-dumper-concise-perl \
-       libdatetime-perl \
-       libfile-copy-recursive-perl \
-       nginx \
-       python3-xattr \
-       squashfs-tools-ng=1.3.2-1 \
-       syslinux
-    )
+    "$(git rev-parse --show-toplevel)"/bin/install-iuk-build-deps
 
 Run the test suite
 ==================

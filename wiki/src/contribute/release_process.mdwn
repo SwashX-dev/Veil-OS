@@ -108,13 +108,9 @@ installed:
 
 * `apt install oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
 
-* `perl5lib` dependencies:
+* `./bin/install-perl5lib-build-deps`
 
-     RELEASE_CHECKOUT=. ./bin/rm-pager wiki/src/contribute/release_process/perl5lib.mdwn
-
-* packages needed to build IUKs:
-
-    RELEASE_CHECKOUT=. ./bin/rm-pager wiki/src/contribute/release_process/tails-iuk.mdwn
+* `./bin/install-iuk-build-deps`
 
 * `ikiwiki` from Debian testing (Forky) or newer
 
