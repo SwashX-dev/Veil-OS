@@ -9,13 +9,14 @@
 # Mohammad Shariful Islam <toha.aug29@gmail.com>, 2020
 # emma peel <emma.peel@riseup.net>, 2025, 2026.
 # joardermitali <joardermitali@proton.me>, 2025.
+# Rumi <jindostar-rumi@protonmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-08-21 00:17+0000\n"
-"Last-Translator: emma peel <emma.peel@riseup.net>\n"
+"PO-Revision-Date: 2026-09-22 05:51+0000\n"
+"Last-Translator: Rumi <jindostar-rumi@protonmail.com>\n"
 "Language-Team: Bengali <https://hosted.weblate.org/projects/tor/tails-gui/bn/"
 ">\n"
 "Language: bn\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1282,12 +1283,14 @@ msgid "%(parent_size)s %(vendor)s %(model)s device (%(device)s)"
 msgstr "%(parent_size)s %(vendor)s %(model)s device (%(device)s)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:786
-#, fuzzy
 msgid ""
 "\n"
 "\n"
 "The Persistent Storage on this USB stick will be lost."
-msgstr "আপনার স্থায়ী তথ্য মুছে ফেলা হবে।"
+msgstr ""
+"\n"
+"\n"
+"আপনার স্থায়ী তথ্য মুছে ফেলা হবে।"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:788
 msgid "Delete Persistent Storage and Reinstall"

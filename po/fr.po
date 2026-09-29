@@ -51,13 +51,14 @@
 # Ætheri0us <aetheri0us@users.noreply.hosted.weblate.org>, 2026.
 # niiitnek <bouisquentin@gmail.com>, 2026.
 # OrthoScrapper <orthoscrapper.fantasize442@passinbox.com>, 2026.
+# Kaelvar <kaelvar@technotrement.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-08-09 19:52+0000\n"
-"Last-Translator: OrthoScrapper <orthoscrapper.fantasize442@passinbox.com>\n"
+"PO-Revision-Date: 2026-09-24 16:51+0000\n"
+"Last-Translator: emma peel <emma.peel@riseup.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/tor/tails-gui/fr/"
 ">\n"
 "Language: fr\n"
@@ -66,7 +67,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
 "1000000 == 0 ? 1 : 2;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -776,10 +777,9 @@ msgid "GNOME Software"
 msgstr "Logiciel GNOME"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
-#, fuzzy
 msgid "GNOME Software can only start once Tor has bootstrapped."
 msgstr ""
-"GNOME Software ne peut démarrer qu'une fois que Tor a terminé son amorçage."
+"GNOME Logiciels ne peut démarrer qu’une fois que Tor a terminé son amorçage."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -1925,9 +1925,8 @@ msgstr ""
 "sont donc désactivées."
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:28
-#, fuzzy
 msgid "Secure Boot Update Needed"
-msgstr "Mise à jour du Démarrage Sécurisé requise"
+msgstr "Mise à jour du démarrage sécurisé nécessaire"
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:30
 msgid ""
@@ -2011,14 +2010,14 @@ msgstr "Autres régions"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:369
 msgid "_Use a bridge that you already know"
-msgstr "_Utiliser un pont que vous connaissez déjà"
+msgstr "_Utiliser un bridge que vous connaissez déjà"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:411
 msgid ""
 "To save your bridge, <a href=\"doc/persistent_storage\">unlock your "
 "Persistent Storage</a>."
 msgstr ""
-"Pour sauvegarder votre pont, <a href=\"doc/"
+"Pour sauvegarder votre bridge, <a href=\"doc/"
 "persistent_storage\">déverrouillez votre stockage persistant</a>."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:418
@@ -2026,7 +2025,7 @@ msgid ""
 "To save your bridge, <a href=\"doc/persistent_storage\">create a Persistent "
 "Storage</a> on your Tails USB stick."
 msgstr ""
-"Pour sauvegarder votre pont, <a href=\"doc/persistent_storage\">créez un "
+"Pour sauvegarder votre bridge, <a href=\"doc/persistent_storage\">créez un "
 "stockage persistant</a> sur votre clé USB Tails."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:438
@@ -2039,7 +2038,7 @@ msgid ""
 "You need to configure a WebTunnel or an obfs4 bridge to hide that you are "
 "using Tor"
 msgstr ""
-"Vous devez utiliser un pont WebTunnel ou obfs4 pour dissimuler le fait que "
+"Vous devez utiliser un bridge WebTunnel ou obfs4 pour dissimuler le fait que "
 "vous utilisez Tor"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:514
@@ -2070,28 +2069,28 @@ msgstr "Synchronisation de l’horloge système…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:726
 msgid "Asking for a Tor bridge based on your region…"
-msgstr "Demander un pont Tor selon votre région…"
+msgstr "Demander un bridge Tor selon votre région…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:774
 msgid "Connecting to Tor without bridges…"
-msgstr "Connexion à Tor sans ponts…"
+msgstr "Connexion à Tor sans bridges…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:781
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:813
 msgid "Connecting to Tor with default bridges…"
-msgstr "Connexion à Tor avec les ponts par défaut…"
+msgstr "Connexion à Tor avec les bridges par défaut…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:789
 msgid "Connecting to Tor with a bridge based on your region…"
-msgstr "Se connecter à Tor avec un pont selon votre région…"
+msgstr "Se connecter à Tor avec un bridge selon votre région…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:796
 msgid "Connecting to Tor with a custom bridge…"
-msgstr "Connexion à Tor avec un pont personnalisé…"
+msgstr "Connexion à Tor avec un bridge personnalisé…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:914
 msgid "Connected to Tor successfully with bridges"
-msgstr "Connecté à Tor avec succès avec des ponts"
+msgstr "Connecté à Tor avec succès avec des bridges"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:916
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2340
@@ -2127,7 +2126,7 @@ msgstr "Mandataire <b>{proxy}</b>"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1323
 #, python-brace-format
 msgid "Scanned {bridge_type} bridge: <b>{bridge_info}</b>."
-msgstr "Scannée {bridge_type} pont : <b>{bridge_info}</b>."
+msgstr "Scannée {bridge_type} bridge : <b>{bridge_info}</b>."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:1408
 msgid "Are you sure you want to lose progress?"
@@ -3355,7 +3354,7 @@ msgstr "Pont Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:376
 msgid "Activate Tor Bridge"
-msgstr "Activer un pont Tor"
+msgstr "Activer un bridge Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:403
 msgid "Applications"
@@ -3745,7 +3744,7 @@ msgstr "Conteneur TrueCrypt/VeraCrypt"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:82
 msgid "Configure a Tor bridge"
-msgstr "Configurer un pont Tor"
+msgstr "Configurer un bridge Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:106
 msgid ""
@@ -3754,20 +3753,21 @@ msgid ""
 "\n"
 "You can use <i>obfs4</i> and <i>WebTunnel</i> bridges in Tails.\n"
 msgstr ""
-"Les ponts sont des relais Tor secrets. Utilisez un pont comme premier "
+"Les bridges sont des relais Tor secrets. Utilisez un bridge comme premier "
 "relais Tor si l’accès à Tor est bloqué là où vous êtes.\n"
 "\n"
-"Vous pouvez utiliser des ponts <i>obfs4</i> et <i>WebTunnel</i> dans Tails.\n"
+"Vous pouvez utiliser des bridges <i>obfs4</i> et <i>WebTunnel</i> dans "
+"Tails.\n"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:126
 msgid "<a href=\"doc/anonymous_internet/tor\">Learn more about Tor bridges</a>"
 msgstr ""
-"<a href=\"doc/anonymous_internet/tor\">En apprendre davantage sur les ponts "
-"Tor</a>"
+"<a href=\"doc/anonymous_internet/tor\">En apprendre davantage sur les "
+"bridges Tor</a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:161
 msgid "Use a _default bridge"
-msgstr "Utiliser un pont par _défaut"
+msgstr "Utiliser un bridge par _défaut"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:184
 msgid "obfs4 (recommended)"
@@ -3783,13 +3783,12 @@ msgid "None"
 msgstr "Aucune"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:242
-#, fuzzy
 msgid "Ask for a bridge based on your _region"
-msgstr "_Demandez un pont Tor par courriel"
+msgstr "Demander un bridge en fonction de votre _région"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
 msgid "_Ask for a bridge by email"
-msgstr "_Demandez un pont par courriel"
+msgstr "_Demandez un bridge par courriel"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
 msgid ""
@@ -3807,7 +3806,7 @@ msgstr "Scanner un code _QR"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:434
 msgid "_Enter a bridge that you already know"
-msgstr "_Saisir un pont que vous connaissez déjà"
+msgstr "_Saisir un bridge que vous connaissez déjà"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:460
 msgid "Bridge"
@@ -3819,11 +3818,11 @@ msgstr "obfs4 ou webtunnel…"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:546
 msgid "Save bridge to _Persistent Storage"
-msgstr "Enregistrer le pont dans le stockage _persistant"
+msgstr "Enregistrer le bridge dans le stockage _persistant"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:571
 msgid "Save bridge to Persistent Storage"
-msgstr "Enregistrer le pont dans le stockage persistant"
+msgstr "Enregistrer le bridge dans le stockage persistant"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:711
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1462
@@ -3841,61 +3840,63 @@ msgstr "Il semblerait que ce réseau local bloque l'accès à Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:811
 msgid "Error connecting to Tor with this bridge"
-msgstr "Erreur de connexion à Tor avec ce pont"
+msgstr "Erreur de connexion à Tor avec ce bridge"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:827
 msgid ""
 "Either this Tor bridge is not working or your network is blocking access to "
 "it."
 msgstr ""
+"Soit ce bridge Tor ne fonctionne pas, soit votre réseau en bloque l’accès."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:856
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:930
 msgid "Try configuring another bridge."
-msgstr "Essayez de configurer un autre pont."
+msgstr "Essayez de configurer un autre bridge."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:884
 msgid "Error connecting to Tor with default bridges"
-msgstr "Erreur de connexion à Tor avec les ponts par défaut"
+msgstr "Erreur de connexion à Tor avec les bridges par défaut"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:900
 msgid "Your network is blocking access to Tor and the default bridges."
-msgstr "Votre réseau bloque l'accès à Tor et aux ponts par défaut."
+msgstr "Votre réseau bloque l'accès à Tor et aux bridges par défaut."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:916
 msgid "Bridge: <b>default bridges</b>"
-msgstr "Pont : <b>ponts par défaut</b>"
+msgstr "Pont : <b>bridges par défaut</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:958
 msgid "Error connecting to Tor with bridges"
-msgstr "Erreur lors de la connexion à Tor avec des ponts"
+msgstr "Erreur lors de la connexion à Tor avec des bridges"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:974
 msgid "None of the bridges recommended for this region worked."
-msgstr ""
+msgstr "Aucun des bridges recommandés pour cette région n’a fonctionné."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:990
 msgid "Try another region or getting a bridge by mail."
-msgstr ""
+msgstr "Essayez une autre région ou demandez un bridge par courriel."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1018
 msgid "Error asking for a bridge"
-msgstr "Erreur lors de la demande d'un pont"
+msgstr "Erreur lors de la demande d'un bridge"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1034
 msgid "Tails failed to ask for a bridge based on your region."
-msgstr ""
+msgstr "Tails n’a pas réussi à demander un bridge en fonction de votre région."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1050
 msgid ""
 "Please, <a href=\"support/talk\">report this error</a> and try asking for a "
 "bridge by email."
 msgstr ""
+"Veuillez <a href=\"support/talk\">signaler cette erreur</a> et essayer de "
+"demander un bridge par courriel."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1087
-#, fuzzy
 msgid "Open _details"
-msgstr "Ouvrir Tails Cloner"
+msgstr "Ouvrir les _détails"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1142
 msgid "• Wrong clock"
@@ -3954,14 +3955,14 @@ msgid ""
 "connections to Tor are blocked, for example in some countries, by some "
 "public networks, or by some parental controls."
 msgstr ""
-"Les ponts Tor sont des relais Tor secrets. Utilisez un pont comme premier "
-"relais Tor si les connexions à Tor sont bloquées, par exemple dans certains "
-"pays, par certains réseaux publics, ou par certains contrôles parentaux."
+"Les bridges Tor sont des relais Tor secrets. Utilisez un bridge comme "
+"premier relais Tor si les connexions à Tor sont bloquées, par exemple dans "
+"certains pays, par certains réseaux publics, ou par certains contrôles "
+"parentaux."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1410
-#, fuzzy
 msgid "Configure a Tor _Bridge"
-msgstr "Configurer un pont Tor"
+msgstr "Configurer un _bridge Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1449
 msgid ""
@@ -4017,7 +4018,7 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1646
 msgid "Configure a Tor _bridge"
-msgstr "Configurer un _pont Tor"
+msgstr "Configurer un _bridge Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1692
 msgid ""
@@ -4029,11 +4030,12 @@ msgid ""
 "Tails will autodetect whether you need a bridge to connect to Tor from your "
 "local network."
 msgstr ""
-"Les ponts Tor sont des relais Tor secrets. Utilisez un pont comme premier "
-"relais Tor si les connexions à Tor sont bloquées, par exemple dans certains "
-"pays, par certains réseaux publics ou encore par des contrôles parentaux.\n"
+"Les bridges Tor sont des relais Tor secrets. Utilisez un bridge comme "
+"premier relais Tor si les connexions à Tor sont bloquées, par exemple dans "
+"certains pays, par certains réseaux publics ou encore par des contrôles "
+"parentaux.\n"
 "\n"
-"Choisissez cette option si vous savez déjà que vous avez besoin d’un pont. "
+"Choisissez cette option si vous savez déjà que vous avez besoin d’un bridge. "
 "Autrement, Tails détectera automatiquement si vous en avez besoin pour vous "
 "connecter à Tor depuis votre réseau local."
 
@@ -4062,15 +4064,15 @@ msgid ""
 "yet, if you connect from a public Wi-Fi network, or if you are in the "
 "Eastern Hemisphere."
 msgstr ""
-"Tails ne se connectera à Tor qu'après avoir configuré un pont Tor. Les ponts "
-"sont des relais Tor secrets qui cachent le fait que vous vous connectez à "
-"Tor.\n"
+"Tails ne se connectera à Tor qu'après avoir configuré un bridge Tor. Les "
+"bridges sont des relais Tor secrets qui cachent le fait que vous vous "
+"connectez à Tor.\n"
 "\n"
 "Notre équipe fait de son mieux pour vous aider à vous connecter à Tor en "
-"utilisant les types de ponts Tor les plus discrets.\n"
+"utilisant les types de bridges Tor les plus discrets.\n"
 "\n"
 "Vous devrez effectuer une configuration supplémentaire si vous ne connaissez "
-"pas encore de ponts Tor, si vous vous connectez à partir d'un réseau Wi-Fi "
+"pas encore de bridges Tor, si vous vous connectez à partir d'un réseau Wi-Fi "
 "public, ou si vous êtes dans l'hémisphère Est."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1847
@@ -4162,7 +4164,7 @@ msgstr "Vous pouvez vous connecter à Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2234
 msgid "Failed to connect to Tor without bridges."
-msgstr "Échec de connexion à Tor sans ponts."
+msgstr "Échec de connexion à Tor sans bridges."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2250
 msgid "This local network is blocking access to Tor."
@@ -4301,787 +4303,3 @@ msgstr "décembre"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Horloge"
-
-#~ msgid "Suspend"
-#~ msgstr "Mettre en veille"
-
-#~ msgid "Restart"
-#~ msgstr "Redémarrer"
-
-#~ msgid "Power Off"
-#~ msgstr "Éteindre"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "L’adresse du pont est malformée"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "La mise en place d'un pont est nécessaire si vous cherchez à cacher le "
-#~ "fait que vous utilisez Tor"
-
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "Pour obtenir un pont, envoyez un courriel vide à "
-#~ "<tt>bridges@torproject.org</tt> à partir d'une adresse électronique Gmail "
-#~ "ou Riseup avec votre téléphone et scannez le code QR qui est joint à la "
-#~ "réponse automatique."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Scanner le code QR"
-
-#~ msgid "Documentation"
-#~ msgstr "Documentation"
-
-#~ msgid ""
-#~ "Authentication is required to start a Root Console. Enter the "
-#~ "administration password that you set up in the Welcome Screen."
-#~ msgstr ""
-#~ "Une authentification est nécessaire pour démarrer une console "
-#~ "d'administration. Entrez le mot de passe d'administration que vous avez "
-#~ "défini dans l'écran de bienvenue."
-
-#~ msgid ""
-#~ "For better security, no administration password is set up in Tails by "
-#~ "default. To start a Root Console, restart Tails and set up an "
-#~ "administration password in the Welcome Screen."
-#~ msgstr ""
-#~ "Pour plus de sécurité, aucun mot de passe d'administration n'est "
-#~ "configuré par défaut dans Tails. Pour démarrer une console "
-#~ "d'administration, redémarrez Tails et configurez un mot de passe "
-#~ "d'administration dans l'écran de bienvenue."
-
-#~ msgid "Root Console"
-#~ msgstr "Console d'administration"
-
-#~ msgid "Opens a console as the root user"
-#~ msgstr "Ouvre une console avec les droits d'administration"
-
-#~ msgid "admin"
-#~ msgstr "admin"
-
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr ""
-#~ "Vous devez vous authentifier pour lancer une console d'administration."
-
-#~ msgid "_Network Connection"
-#~ msgstr "Connexion _réseau"
-
-#~ msgid "Obsolete"
-#~ msgstr "Désuet"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Vous devez migrer vos clés OpenPGP"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i> 78 remplace désormais l’extension <i>Enigmail</i> par "
-#~ "une prise en charge intégrée du chiffrement OpenPGP. Afin de continuer à "
-#~ "utiliser vos clés OpenPGP dans <i>Thunderbird</i>, veuillez suivre nos "
-#~ "instructions de migration."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "_Ouvrir les instructions de migration"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_Migrer ultérieurement"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "Dans Tails 4.19 (juin 2021), nous avons remplacé ce paramètre "
-#~ "supplémentaire par un assistant de connexion à Tor intégré au bureau.\n"
-#~ "\n"
-#~ "Il vous sera demandé si vous voulez utiliser des ponts Tor lors de votre "
-#~ "connexion à Tor après avoir démarré Tails.\n"
-#~ "\n"
-#~ "Si vous voulez travailler hors ligne, activez le mode hors ligne dans les "
-#~ "paramètres supplémentaires."
-
-#~ msgid "Technical details to include"
-#~ msgstr "Détails techniques à inclure"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Terminal superutilisateur"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "obfs4 ..."
-#~ msgstr "obfs4 ..."
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Ouvrir le moniteur du réseau"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Pour obtenir les renseignements de débogage, exécutez la commande "
-#~ "suivante : sudo tails-debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Ouvrir Circuits onion"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Démarrage du Navigateur non sécurisé…"
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Cela peut prendre du temps, veuillez être patient."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Réinitialiser la connexion à Tor"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Erreur de mise à jour de la clé de signature"
-
-#~ msgid ""
-#~ "Something went wrong when starting your Tails USB stick for the first "
-#~ "time: resizing the system partition failed"
-#~ msgstr ""
-#~ "Un problème s'est produit lors du premier démarrage de votre clé USB "
-#~ "Tails : échec du redimensionnement de la partition système"
-
-#~ msgid ""
-#~ "It will be impossible to create a Persistent Storage or apply automatic "
-#~ "upgrades."
-#~ msgstr ""
-#~ "Il sera impossible de créer un stockage persistant ou d'appliquer des "
-#~ "mises à jour automatiques."
-
-#~ msgid ""
-#~ "Try to follow our instructions on <a href=\"%INSTALLPAGE%\">installing "
-#~ "Tails on a USB stick</a> again or use a different USB stick."
-#~ msgstr ""
-#~ "Essayez de suivre nos instructions sur <a href=\"%INSTALLPAGE%"
-#~ "\">l'installation de Tails sur une clé USB</a> à nouveau ou utilisez une "
-#~ "autre clé USB."
-
-#~ msgid ""
-#~ "If you have already tried this, please send us an error report to help us "
-#~ "solve this issue."
-#~ msgstr ""
-#~ "Si vous avez déjà essayé, veuillez nous envoyer un rapport d'erreur en "
-#~ "anglais, pour nous aider à résoudre ce problème."
-
-#~ msgid ""
-#~ "Tails protects your wallet.\n"
-#~ "\n"
-#~ "Help us keep your bitcoins safe!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">How we spend our money.</a>"
-#~ msgstr ""
-#~ "Tails protège votre portefeuille.\n"
-#~ "\n"
-#~ "Aidez-nous à garder vos bitcoins en sécurité !\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">Comment nous dépensons votre argent.</a>"
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "Créer"
-
-#, sh-format
-#~ msgid ""
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "Vous préférerez peut-être redémarrer Tails et désactiver l’anonymisation "
-#~ "de l’adresse MAC."
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Le relevé de bogue n’a pas pu être envoyé, probablement à cause de "
-#~ "problèmes de réseau. Veuillez essayer de vous reconnecter au réseau et de "
-#~ "recliquer sur envoyer.\n"
-#~ "\n"
-#~ "Si cela ne fonctionne pas, l’on vous proposera d’enregistrer le relevé de "
-#~ "bogue."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Impossible d’enregistrer %s."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Le relevé de bogue n’a pas pu être envoyé, probablement à cause de "
-#~ "problèmes de réseau.\n"
-#~ "\n"
-#~ "Pour contourner le problème, vous pouvez enregistrer le relevé de bogue "
-#~ "sous forme de fichier sur une clé USB et essayer de nous l’envoyer à %s à "
-#~ "partir de votre compte de courriel en utilisant un autre système. Prenez "
-#~ "note que votre relevé de bogue ne sera pas anonyme de cette façon, à "
-#~ "moins que vous ne preniez des précautions supplémentaires (p. ex. en "
-#~ "utilisant Tor avec un compte de courriel jetable).\n"
-#~ "\n"
-#~ "Voulez-vous enregistrer le relevé de bogue dans un fichier ?"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr ""
-#~ "Cette phrase de passe ne permet pas de déverrouiller le stockage chiffré."
-
-#~ msgid "_Passphrase"
-#~ msgstr "_Phrase de passe"
-
-#~ msgid "Resizing System Partition Failed"
-#~ msgstr "Échec du redimensionnement de la partition système"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "Échec d’exécution de chroot."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Échec de configuration du navigateur."
-
-#, sh-format
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "L’anonymisation de l’adresse MAC a échoué pour la carte réseau "
-#~ "${nic_name} (${nic}) ; elle est donc temporairement désactivée.\n"
-#~ "\n"
-#~ "Vous préférerez peut-être redémarrer Tails et désactiver l’anonymisation "
-#~ "de l’adresse MAC."
-
-#~ msgid "Language & Region"
-#~ msgstr "Langue et région"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Certaines partitions du périphérique cible %(device)s sont montées. Elles "
-#~ "seront démontées avant de lancer le processus d’installation."
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "Saisie de unmount_device pour « %(device)s »"
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "Démontage des systèmes de fichiers montés sur « %(device)s »"
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "Démontage de « %(udi)s » sur « %(device)s »"
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Signaler une erreur"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "Vous avez activé le mode Hors ligne dans l’écran de bienvenue."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "Il est impossible de se connecter à Tor en mode Hors ligne."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "Pour se connecter à Tor et à Internet, redémarrez Tails après avoir "
-#~ "désactivé le mode Hors ligne."
-
-#~ msgid "Lock screen"
-#~ msgstr "Verrouiller l’écran"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Renseignements de compilation :\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "non disponible"
-
-#~ msgid ""
-#~ "End this year by giving the gift of privacy.\n"
-#~ "\n"
-#~ "Contribute to our annual fundraiser today!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Why donate "
-#~ "to Tails?</a>"
-#~ msgstr ""
-#~ "Terminez cette année en offrant le cadeau de la vie privée.\n"
-#~ "\n"
-#~ "Contribuez à notre collecte de fonds annuelle dès aujourd'hui !\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Pourquoi "
-#~ "donner à Tails ?</a>"
-
-#, fuzzy
-#~| msgid ""
-#~| "Tails needs donations to keep everybody free and safe online.\n"
-#~| "\n"
-#~| "Every bit helps in our fight against surveillance and censorship!\n"
-#~| "\n"
-#~| "<a href=\"file:///usr/share/doc/tails/website/"
-#~| "donate.en.html#expenses\">How we spend our money.</a>"
-#~ msgid ""
-#~ "Our annual fundraiser is live!\n"
-#~ "\n"
-#~ "Keep everybody free and safe online with a gift to Tails.\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Why donate "
-#~ "to Tails?</a>"
-#~ msgstr ""
-#~ "Tails a besoin de dons pour assurer la liberté et la sécurité de tous en "
-#~ "ligne.\n"
-#~ "\n"
-#~ "Chaque centime nous aide dans notre lutte contre la surveillance et la "
-#~ "censure !\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">Comment nous dépensons votre argent.</a>"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Nom du logiciel concerné"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Étapes exactes pour reproduire l’erreur"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Résultat observé et description de l’erreur"
-
-#~ msgid "Desired result"
-#~ msgstr "Résultat souhaité"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Envoyez votre rétroaction dans un courriel chiffré."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr ""
-#~ "Tous droits réservés © 2009 à 2018 Les développeurs de Tails "
-#~ "(tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Les développeurs de Tails <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "crédits aux traducteurs"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Tous droits réservés © 2009 à 2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack – Envoyez vos retours dans un courriel chiffré\n"
-#~ "Tous droits réservés © 2009 à 2018 Les développeurs de Tails "
-#~ "<tails@boum.org>\n"
-#~ "\n"
-#~ "Ce programme est un logiciel libre ; vous pouvez le redistribuer ou le "
-#~ "modifier suivant les conditions de la licence publique générale GNU telle "
-#~ "que publiée par la « Free Software Foundation » ; soit la version 3 de la "
-#~ "licence, soit (au choix) toute version ultérieure.\n"
-#~ "\n"
-#~ "Ce programme est distribué dans l’espoir d’être utile, mais SANS AUCUNE "
-#~ "GARANTIE ; sans même la garantie implicite de COMMERCIALISATION ou "
-#~ "D’ADAPTATION À UN USAGE PARTICULIER. Voir la licence publique générale "
-#~ "GNU pour plus de précisions.\n"
-#~ "\n"
-#~ "Vous devriez avoir reçu un exemplaire de la licence publique générale GNU "
-#~ "avec ce programme. Sinon, voir <https://www.gnu.org/licenses/"
-#~ "licenses.fr.html>.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Aide :"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Adresse courriel (si vous souhaitez une réponse de notre part)"
-
-#~ msgid "Unlock"
-#~ msgstr "Déverrouiller"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "_Stockage persistant chiffré"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr ""
-#~ "Saisissez votre phrase de passe pour déverrouiller le stockage persistant"
-
-#~ msgid "_Delete..."
-#~ msgstr "_Suppression..."
-
-#~ msgid "_Change Passphrase..."
-#~ msgstr "_Modifier la phrase de passe..."
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Aidez-nous à corriger votre bogue.</h1>\n"
-#~ "<p>Lisez <a href=\"%s\">nos instructions de signalement de bogue</a>.</"
-#~ "p>\n"
-#~ "<p><strong>N’incluez pas plus de renseignements personnels que nécessaire."
-#~ "</strong></p>\n"
-#~ "<h2>Nous donner une adresse courriel :</h2>\n"
-#~ "<p>\n"
-#~ "En nous donnant une adresse courriel, vous nous permettez de vous "
-#~ "contacter pour clarifier le problème. Cela est nécessaire pour la vaste "
-#~ "majorité des relevés que nous recevons, car la plupart des relevés sont "
-#~ "inutiles sans coordonnées de contact. D’un autre côté, cela donne une "
-#~ "occasion aux écoutes électroniques indiscrètes, telles que votre "
-#~ "fournisseur de service Internet ou de courriel, de confirmer que vous "
-#~ "utilisez Tails.\n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>Impossible de choisir un serveur de téléchargement.</b>\n"
-#~ "\n"
-#~ "Cela ne devrait pas arriver. Veuillez signaler un bogue."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Erreur de sélection d’un serveur de téléchargement"
-
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "The Amnesic Incognito Live System"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Lancer le Navigateur non sécurisé ?"
-
-#~ msgid ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-#~ msgstr ""
-#~ "Ce navigateur n'est pas anonyme et les sites Web que vous visitez peuvent "
-#~ "voir votre véritable adresse IP. \\n\\nN'utilisez le navigateur non "
-#~ "sécurisé que pour vous connecter à un réseau, puis fermez-le."
-
-#~ msgid "Enabled"
-#~ msgstr "Activé"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "Échec de live-persist avec le code de retour {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cryptsetup a échoué avec le code de retour {returncode} :\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "Échec de live-persist avec le code de retour {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "umount a échoué avec le code de retour {returncode} :\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Assistant de persistance – Création du volume persistant"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "A {size} persistent volume will be created on the <b>{vendor} {model}</b> "
-#~ "device. Data on this volume will be stored in an encrypted form protected "
-#~ "by a passphrase."
-#~ msgstr ""
-#~ "Un volume persistant de {size} sera créé sur le périphérique <b>{vendor} "
-#~ "{model}</b>. Les données stockées sur ce périphérique seront chiffrées et "
-#~ "protégées par une phrase de passe."
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>Attention :</b> L’utilisation de la persistance a des conséquences qui "
-#~ "doivent être bien comprises. Tails ne peut pas vous aider si vous "
-#~ "l’utilisez mal. Consultez la page <i>Persistance chiffrée</i> de la "
-#~ "documentation de Tails pour en apprendre davantage."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "La phrase de passe ne peut pas être vide"
-
-#~ msgid "Failed"
-#~ msgstr "Échec"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Montage de la partition persistante de Tails."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "La partition persistante de Tails sera montée."
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Les droits du volume persistant seront corrigés."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "Création de la configuration par défaut de la persistance."
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "La configuration par défaut de la persistance sera créée."
-
-#~ msgid "Creating..."
-#~ msgstr "Création…"
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Création du volume persistant…"
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Assistant de persistance – Configuration du volume persistant"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "Indiquez les fichiers à enregistrer dans le volume persistant"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The selected files will be stored in the encrypted partition {partition} "
-#~ "({size}), on the <b>{vendor} {model}</b> device."
-#~ msgstr ""
-#~ "Les fichiers sélectionnés seront stockés dans la partition chiffrée "
-#~ "{partition} ({size}) sur le périphérique <b>{vendor} {model}</b>."
-
-#~ msgid "Saving..."
-#~ msgstr "Enregistrement…"
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Enregistrement de la configuration de la persistance…"
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Assistant de persistance – Suppression du volume persistant"
-
-#~ msgid "Your persistent data will be deleted."
-#~ msgstr "Vos données persistantes seront supprimées."
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "Le volume persistant {partition} ({size}) du périphérique <b>{vendor} "
-#~ "{model}</b> sera supprimé."
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "Suppression du volume persistant…"
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "Conserver les fichiers stockés dans le répertoire `Persistant’"
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Langue, mot de passe d’administration et paramètres supplémentaires"
-
-#~ msgid "Save the last bridge that you used to connect to Tor"
-#~ msgstr ""
-#~ "Enregistrer le dernier pont que vous avez utilisé pour vous connecter à "
-#~ "Tor"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Marque-pages enregistrés dans le Navigateur Tor"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Configuration des périphériques du réseau et connexions"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "Logiciels installés lors du démarrage de Tails"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Courriels, flux de Thunderbird et clés OpenPGP"
-
-#~ msgid "OpenPGP keys in GnuPG and Kleopatra"
-#~ msgstr "clé OpenPGP dans GnuPG et Kleopatra"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Client Bitcoin"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Profils Pidgin et trousseau OTR"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "Clés, configuration et hôtes connus SSH"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Configurer le volume persistant de Tails"
-
-#~ msgid "Device already has a persistent volume."
-#~ msgstr "Le périphérique comprend déjà un volume persistant."
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "Le périphérique n’a pas assez d’espace non alloué."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr "Le périphérique n’a pas de volume persistant."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Impossible de supprimer le volume persistant pendant qu’il est utilisé. "
-#~ "Vous devriez redémarrer Tails sans persistance."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "Le volume persistant n’est pas déverrouillé."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Le volume persistant n’est pas monté."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "Le volume persistant n’est pas accessible en lecture. Problèmes de droits "
-#~ "ou de propriété ?"
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "Le volume persistant n’est pas accessible en écriture."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Tails s’exécute à partir d’un périphérique non USB, non SDIO."
-
-#~ msgid "Device is optical."
-#~ msgstr "Le périphérique est optique."
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr ""
-#~ "Le périphérique n’a pas été créé en utilisant une image USB ou le "
-#~ "programme d’installation de Tails."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Assistant de persistance – Terminé"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "Toute modification que vous avez effectuée ne prendra effet qu’après le "
-#~ "redémarrage de Tails."
-
-#~ msgid "Tails is configuring your Persistent Storage. Please wait..."
-#~ msgstr ""
-#~ "Tails configure votre espace de stockage persistant. Merci de patienter"
-
-#~ msgid ""
-#~ "\\n\\nTo always enable the Unsafe Browser, turn on the Welcome Screen "
-#~ "feature of the Persistent Storage."
-#~ msgstr ""
-#~ "\\n\\nPour que le Navigateur non sécurisé soit toujours activé, activez "
-#~ "la fonction espace de stockage persistant de l’écran de bienvenue."
-
-#~ msgid "Delete the persistent volume and its content"
-#~ msgstr "Supprimer le volume persistant et son contenu"
-
-#~ msgid "Configure persistent volume"
-#~ msgstr "Configurer le volume persistant"
-
-#~ msgid "image"
-#~ msgstr "image"
-
-#~ msgid "heading"
-#~ msgstr "en-tête"
-
-#~ msgid "_Request a new bridge"
-#~ msgstr "_Demander un nouveau pont"
-
-#~ msgid "toggle-button"
-#~ msgstr "bouton-à-bascule"
-
-#~ msgid ""
-#~ "To request new Tor bridges, you can also:\n"
-#~ "\n"
-#~ "            1. Send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address.\n"
-#~ "\n"
-#~ "              2. Type below one of the bridges that you received by email."
-#~ msgstr ""
-#~ "Pour demander de nouveaux ponts Tor, vous pouvez aussi :\n"
-#~ "\n"
-#~ "            1. Envoyer un courriel vide à <tt>bridges@torproject.org</tt> "
-#~ "d’une adresse courriel Gmail ou Riseup.\n"
-#~ "\n"
-#~ "             2. Saisir ci-dessous un des ponts que vous avez reçus par "
-#~ "courriel."

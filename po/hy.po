@@ -5,13 +5,14 @@
 # Translators:
 # At protom <atprotom@gmail.com>, 2021-2022
 # Hrach Mkrtchyan <mhrach87@gmail.com>, 2018
+# Rumi <jindostar-rumi@protonmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-08-05 11:02+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-09-22 05:51+0000\n"
+"Last-Translator: Rumi <jindostar-rumi@protonmail.com>\n"
 "Language-Team: Armenian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "hy/>\n"
 "Language: hy\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1266,12 +1267,14 @@ msgid "%(parent_size)s %(vendor)s %(model)s device (%(device)s)"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:786
-#, fuzzy
 msgid ""
 "\n"
 "\n"
 "The Persistent Storage on this USB stick will be lost."
-msgstr "Ջնջել հաստատակամ պահուստը և վերատեղադրել"
+msgstr ""
+"\n"
+"\n"
+"Ջնջել հաստատակամ պահուստը և վերատեղադրել."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:788
 msgid "Delete Persistent Storage and Reinstall"
@@ -3715,7 +3718,6 @@ msgid ""
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1979
-#, fuzzy
 msgid ""
 "\n"
 "<a href=\"doc/anonymous_internet/no-wifi\">\n"
@@ -3723,8 +3725,11 @@ msgid ""
 "</a>\n"
 "                "
 msgstr ""
-"<a href=\"doc/anonymous_internet/tor\">Իմանալ ավելին Tails-ը Tor-ի հետ "
-"կապվելու մասին</a>"
+"\n"
+"<a href=\"doc/anonymous_internet/tor\">\n"
+"Իմանալ ավելին Tails-ը Tor-ի հետ կապվելու մասին.\n"
+"</a>\n"
+"                "
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2007
 msgid "Connect to a local network"
@@ -3901,216 +3906,3 @@ msgstr "Դեկտեմբեր"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Ժամացույց"
-
-#~ msgid "Suspend"
-#~ msgstr "Կախակայել"
-
-#~ msgid "Restart"
-#~ msgstr "Վերսկսել"
-
-#~ msgid "Power Off"
-#~ msgstr "Անջատել"
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Ծրել QR ծածկագիրը"
-
-#~ msgid "Documentation"
-#~ msgstr "Ուղեցույցներ"
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Ցանցի միացում"
-
-#~ msgid "Obsolete"
-#~ msgstr "Հնացած"
-
-#~ msgid "Technical details to include"
-#~ msgstr "Ներառվող տեխնիկական մանրամասներ"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#, fuzzy
-#~ msgid "obfs4 ..."
-#~ msgstr "obfs4 ..."
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Բացել Onion շղթաներ"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Անապահով դիտարկիչի սկսում..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Սա կարող է երկար տևել, խնդրում ենք համբերատար լինել:"
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Վերադնել Tor միացումը"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Բանալիի ստորագրման թարմացման սխալ"
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "Ստեղծել"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Սխալի զեկույցը չստացվեց ուղարկել, կարծես թե ցանցի խնդիրներ պատճառով: "
-#~ "Խնդրում ենք վերամիանալ ցանցին և սեղմել «Ուղարկել»-ը նորից:\n"
-#~ "\n"
-#~ "Եթե դա էլ չաշխատի՝ Ձեզ կառաջարկվի պահպանել սխալի զեկույցը:"
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Չստացվեց պահպանել %s-ը:"
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Սխալի զեկույցը չստացվեց ուղարկել, հավանական է ցանցային խնդիրների "
-#~ "պատճառով:\n"
-#~ "\n"
-#~ "Որպես այլ միջոց՝ կարող եք պահպանել սխալի զեկույցը USB սկավառակում և "
-#~ "փորձել ուղարկել Ձեր էլ. հասցեից մեզ %s հասցեով՝ մեկ այլ համակարգից "
-#~ "օգտվելով: Նշենք, որ այդպես վարվելիս Ձեր սխալի զեկույցն այլևս անանուն չի "
-#~ "լինի քանի դեռ ինքներդ քայլեր չեք ձեռնարկել դրա համար (օր.՝ օգտագործելով "
-#~ "Tor-ից ժամանակավոր էլ. հասցեով):\n"
-#~ "\n"
-#~ "Ուզու՞մ եք պահպանել սխալի զեկույցը ֆայլի վրա:"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "Հնարավոր չէ ապակողպել գաղտնագրված պահեստարանը այս գաղտնադարձածքով:"
-
-#~ msgid "_Passphrase"
-#~ msgstr "_Գաղտնադարձվածք"
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Դիտարկիչի կարգվարումը ձախողվեց:"
-
-#~ msgid "Language & Region"
-#~ msgstr "Լեզու և տեղանք"
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Զեկուցել սխալի մասին"
-
-#~ msgid "Lock screen"
-#~ msgstr "Արգելքի էկրան"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Հավաքումի տեղեկություն՝\n"
-#~ "%s"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Ախտահարված ծրագրի անունը"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Սխալմունքը ստանալու կոնկրետ քայլերը"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Վերջնական ադյունքը և սխալի նկարագրությունը"
-
-#~ msgid "Desired result"
-#~ msgstr "Նախընտրելի արդյունք"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Ուղարկեք կարծիքը կոդավորված էլ. նամակով:"
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Copyright © 2009-2018 Tails-ի մշակողներ (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Tails-ի մշակողներ <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "թարգմանչի-տվալներ"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Copyright © 2009-2018 tails@boum.org"
-
-#~ msgid "Help:"
-#~ msgstr "Օգնություն՝"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Էլեկտրոնային հասցե (եթե մեզանից պատասխան եք ցանկանում)"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "Գաղտնագրված _հաստատակամ պահեստարան"
-
-#, fuzzy
-#~ msgid "_Delete..."
-#~ msgstr "Ջնջում..."
-
-#, fuzzy
-#~ msgid "_Change Passphrase..."
-#~ msgstr "Ցույց տալ գաղտնադարձվածքը"
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Սխալ ներբեռնման սերվերը ընտրելու ժամանակ"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Գործարկե՞ լ անապահով դիտարկիչը:"
-
-#~ msgid "Enabled"
-#~ msgstr "Կարողացված"
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "Գաղտնադարձվածքը չի կարող դատարկ լինել"
-
-#~ msgid "Failed"
-#~ msgstr "Ձախողվեց"
-
-#~ msgid "Creating..."
-#~ msgstr "Ստեղծում... "
-
-#~ msgid "Saving..."
-#~ msgstr "Պահպանում..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Պահպանվում է հաստատակամության կարգավորումները..."
-
-#~ msgid "Your persistent data will be deleted."
-#~ msgstr "Ձեր հաստատակամ տվյալները կջնջվեն:"
-
-#~ msgid "Save the last bridge that you used to connect to Tor"
-#~ msgstr "Պահպանիր Tor-ին միանալուց օգտագործված վերջին կամուրջը"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Էջանիշները պահպանված են Tor դիտարկիչում"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Ցանցային սարքավորումների և միացումների կարգավորումներ"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "Tails-ի սկսման ժամանակ տեղադրված ծրագրային ապահովումները"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "Ձեր կատարած փոփոխությունները ուժի մեջ կմտնեն միայն Tails-ի վերսկսումից "
-#~ "հետո:"
-
-#~ msgid "_Request a new bridge"
-#~ msgstr "_Պահանջել նոր կամուրջ"

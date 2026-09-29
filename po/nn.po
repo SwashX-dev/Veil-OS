@@ -7,13 +7,14 @@
 # Bjørn I., 2020
 # Finn Brudal <finnbrudal@yahoo.com>, 2016
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
+# Rumi <jindostar-rumi@protonmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-08-05 11:02+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-09-22 05:52+0000\n"
+"Last-Translator: Rumi <jindostar-rumi@protonmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://hosted.weblate.org/projects/tor/"
 "tails-gui/nn/>\n"
 "Language: nn\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1266,12 +1267,14 @@ msgid "%(parent_size)s %(vendor)s %(model)s device (%(device)s)"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:786
-#, fuzzy
 msgid ""
 "\n"
 "\n"
 "The Persistent Storage on this USB stick will be lost."
-msgstr "Dei varige dataa dine vert sletta."
+msgstr ""
+"\n"
+"\n"
+"Dei varige dataa dine vert sletta."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:788
 msgid "Delete Persistent Storage and Reinstall"
@@ -3859,179 +3862,3 @@ msgstr "Desember"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Klokke"
-
-#~ msgid "Restart"
-#~ msgstr "Umstart"
-
-#~ msgid "Power Off"
-#~ msgstr "Slå av"
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Skann QR-kode"
-
-#~ msgid "Documentation"
-#~ msgstr "Dokumentasjon"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr "For å starte ein Root Terminal, må du stadfeste identiteten."
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "For feilskingsinformasjonn, utfør følgjande kommando: sudo tails-"
-#~ "debugging-info"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Startar den Utrygge Nettlesaren..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Dette kan taka eit bel, so ver venleg og ver tolmodig."
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "Lag"
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Klarte ikkje å lagra %s."
-
-#, fuzzy
-#~ msgid "_Passphrase"
-#~ msgstr "Passord:"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "Kunde ikkje setja upp chroot."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Kunde ikkje setja upp nettlesaren."
-
-#~ msgid "Language & Region"
-#~ msgstr "Språk og region"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Nokre inndelingar på måleinheiti %(device)s er monterte. Dei vil verte "
-#~ "avmontera fyre innstalleringsgangen tek til."
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Rapporter feil"
-
-#~ msgid "Lock screen"
-#~ msgstr "Låseskjerm"
-
-#~ msgid "translator-credits"
-#~ msgstr "Omsettarar"
-
-#~ msgid "Unlock"
-#~ msgstr "Fjern blokkering"
-
-#, fuzzy
-#~ msgid "_Delete..."
-#~ msgstr "Slettar "
-
-#, fuzzy
-#~ msgid "_Change Passphrase..."
-#~ msgstr "Vis passord"
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Hjelp oss med å ordna insektet ditt!</h1>\n"
-#~ "<p>Les <a href=\"%s\">insektsinnmeldingsrettleiingane våre</a>.</p>\n"
-#~ "<p><strong>Ikkje tak med fleire personlege upplysingar enn\n"
-#~ "kva som er naudsynt!</strong></p>\n"
-#~ "<h2>Um å gjeva oss ei e-postadressa</h2>\n"
-#~ "<p>\n"
-#~ "Å gjeva oss ei e-postadressa lèt oss setja oss i samband med deg for å "
-#~ "fenga klårleik i vansken. Dette trengst for det store fleirtalet av "
-#~ "meldingane me mottek då dei fleste meldingar utan nokon "
-#~ "sambandsupplysingar er unyttuge. På den andre sida gjev det òg "
-#~ "tjuvlyttarar soleis som e-post- eller internettåtbjodaren din eit høve åt "
-#~ "å stadfesta at du nyttar Halar.\n"
-#~ "</p>\n"
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Feil ved val av nedlastingstenar"
-
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "Det gløymske, incognito direktesystemet"
-
-#, fuzzy
-#~ msgid ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-#~ msgstr ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-
-#~ msgid "Enabled"
-#~ msgstr "Aktivert"
-
-#~ msgid "Failed"
-#~ msgstr "Feila"
-
-#~ msgid "Creating..."
-#~ msgstr "Opprettar …"
-
-#~ msgid "Saving..."
-#~ msgstr "Lagrar "
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Lagrar varig oppsett"
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "Hald filer lagra i «Persistent»-mappa"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Bokmerke lagra i Tor-nettlesaren"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Bitcoin-klient"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."
-#~ msgstr ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."
