@@ -910,7 +910,7 @@ Create tagged snapshots of upstream APT repositories:
 
 Note:
 
-  - This command takes 5-15 minutes
+  - This command takes a few minutes.
 
   - It's expected that the packages that were pulled from our
     [[custom APT repository|APT_repository/custom]] are
