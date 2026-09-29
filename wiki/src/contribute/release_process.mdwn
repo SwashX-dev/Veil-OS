@@ -1604,8 +1604,7 @@ section) is completed.
 
 Finally, move the IUKs in place with proper
 ownership and permissions and update the time in `project/trace` file
-on our rsync server and on the live website (even for a release
-candidate):
+on our rsync server and on the live website:
 
     ./bin/publish-iuks
 
