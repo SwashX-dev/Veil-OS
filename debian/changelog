@@ -1,4 +1,4 @@
-tails (7.14) UNRELEASED; urgency=medium
+tails (7.14) unstable; urgency=medium
 
   * Update Linux to 6.12.111 (DSA 6528-1)
 
@@ -120,7 +120,7 @@ tails (7.14) UNRELEASED; urgency=medium
       - Use rm-pager when the environment isn't set yet, too
       - rm-pager: reads file from release checkout
 
- -- Tails developers <foundations@tails.net>  Tue, 29 Sep 2026 10:32:32 +0000
+ -- Tails developers <foundations@tails.net>  Tue, 29 Sep 2026 11:24:39 +0000
 
 tails (7.13) unstable; urgency=medium
 
