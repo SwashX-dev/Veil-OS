@@ -794,8 +794,6 @@ Feel free to skip this section when preparing an emergency release.
 
 1. Clean up the new sort file:
 
-   Run this command:
-
        ./bin/clean-squashfs-sort-file config/binary_rootfs/squashfs.sort
 
 1. Inspect the diff:
