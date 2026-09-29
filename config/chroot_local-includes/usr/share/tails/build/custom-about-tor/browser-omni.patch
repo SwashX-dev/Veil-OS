@@ -19,7 +19,7 @@ index 8449722c3b0308139f23fc6c4d598e2510db6cc8..9d6a97e61b460b4b8ee4971901e589dc
    }
  
 diff --git a/browser/components/abouttor/content/aboutTor.css b/browser/components/abouttor/content/aboutTor.css
-index 28e3a260b7b4b074c41259ba54c28663d80ab0f8..08b3ba8fc588a4dfc4d7080ddf43b78d58673cb4 100644
+index 49ee48e2493b01542402fbdf860f8ff42c44b360..a20cf1b9377e76ef7fefed77324f6643747ba6e8 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.css
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.css
 @@ -12,6 +12,7 @@ body {
@@ -30,7 +30,7 @@ index 28e3a260b7b4b074c41259ba54c28663d80ab0f8..08b3ba8fc588a4dfc4d7080ddf43b78d
      "message message message" auto
      "survey survey survey" auto
      /* End space: unfilled.
-@@ -520,3 +521,29 @@ body.show-yec h1 {
+@@ -516,3 +517,29 @@ body.show-yec h1 {
      --in-content-button-background-active: var(--yec-button-background-active);
    }
  }
@@ -61,10 +61,10 @@ index 28e3a260b7b4b074c41259ba54c28663d80ab0f8..08b3ba8fc588a4dfc4d7080ddf43b78d
 +  padding-inline-start: 0;
 +}
 diff --git a/browser/components/abouttor/content/aboutTor.html b/browser/components/abouttor/content/aboutTor.html
-index 23e8a54defa863560d19b39fa9f82238d556dad7..53367c673d8a7ac70a1ddef8ad051341bdc4371f 100644
+index bc9ecd33ab5f20296a4f2c3efd0936ea17a8eb64..62e3dc90db02fe13aa91c97513276ce1a7fa02ec 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.html
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.html
-@@ -105,7 +105,7 @@
+@@ -108,7 +108,7 @@
          data-l10n-attrs="label"
        ></moz-toggle>
      </form>
@@ -73,7 +73,7 @@ index 23e8a54defa863560d19b39fa9f82238d556dad7..53367c673d8a7ac70a1ddef8ad051341
        <img
          class="message-emoji"
          alt=""
-@@ -132,7 +132,7 @@
+@@ -135,7 +135,7 @@
          ></a>
        </span>
      </p>
@@ -82,7 +82,7 @@ index 23e8a54defa863560d19b39fa9f82238d556dad7..53367c673d8a7ac70a1ddef8ad051341
        <img
          class="message-emoji"
          alt=""
-@@ -146,7 +146,7 @@
+@@ -149,7 +149,7 @@
          ></a>
        </span>
      </p>
@@ -91,7 +91,7 @@ index 23e8a54defa863560d19b39fa9f82238d556dad7..53367c673d8a7ac70a1ddef8ad051341
        <img
          class="message-emoji"
          alt=""
-@@ -160,6 +160,41 @@
+@@ -163,6 +163,41 @@
          ></a>
        </span>
      </p>
@@ -124,7 +124,7 @@ index 23e8a54defa863560d19b39fa9f82238d556dad7..53367c673d8a7ac70a1ddef8ad051341
 +        <span data-l10n-id="tails-release-notes">
 +          <a
 +            data-l10n-name="tails-release-notes-link"
-+            href="https://tails.net/news/version_7.13"
++            href="https://tails.net/news/version_7.14"
 +            target="_blank"
 +          ></a>
 +        </span>
@@ -134,7 +134,7 @@ index 23e8a54defa863560d19b39fa9f82238d556dad7..53367c673d8a7ac70a1ddef8ad051341
      <article id="survey" class="tor-home-box" aria-labelledby="survey-heading">
        <img
 diff --git a/browser/components/abouttor/content/aboutTor.js b/browser/components/abouttor/content/aboutTor.js
-index 8b718027d0b4219037ae3b5f6551dba40c150dd6..7d7ee8f4bebf7410c5104d66293948af3b1c6ddf 100644
+index 0371ee023933d0fb560751d9be9a1abe804acaac..5ecca2c35a3d328246784af9fd901034290afbe9 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.js
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.js
 @@ -85,6 +85,7 @@ const MessageArea = {
@@ -206,7 +206,7 @@ index 8b718027d0b4219037ae3b5f6551dba40c150dd6..7d7ee8f4bebf7410c5104d66293948af
          "shown-message"
        );
      }
-@@ -574,11 +592,20 @@ window.addEventListener("InitialData", event => {
+@@ -575,11 +593,20 @@ window.addEventListener("InitialData", event => {
      surveyDismissVersion,
      appLocale,
      dismissYEC,
