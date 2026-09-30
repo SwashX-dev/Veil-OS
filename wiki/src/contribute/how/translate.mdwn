@@ -40,18 +40,10 @@ Please focus on translating and maintaining the
 
 Currently, there are several active **language teams**:
 
-* [[Catalan|translate/team/ca]]
 * [[Chinese (Simplified)|translate/team/zh]]
-* [[Farsi|translate/team/fa]]
-* [[French|translate/team/fr]]
 * [[German|translate/team/de]]
 * [[Portuguese|translate/team/pt]]
 * [[Italian|translate/team/it]]
-* [[Spanish|translate/team/es]]
-
-Other teams are being set up:
-
-* Turkish
 
 If your language is not listed here, read the documentation
 to [[add a new language|translate/team/new]].
