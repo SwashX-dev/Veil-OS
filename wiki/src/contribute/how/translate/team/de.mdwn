@@ -16,5 +16,5 @@ For words not in these lists it is helpful to see
 how they are translated (or not translated) in Wikipedia.
 
 Often, we simply discuss on the [[mailing list for
-translators|https://www.autistici.org/mailman/listinfo/tails-l10n/]] if
+translators|https://lists.torproject.org/mailman3/postorius/lists/tails-l10n.lists.torproject.org/]] if
 unsure which term applies best.
