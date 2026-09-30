@@ -1,0 +1,42 @@
+[[!meta title="Tails 7.14"]]
+[[!meta date="Wed, 30 Sep 2026 00:00:00 +0000"]]
+[[!pagetemplate template="news.tmpl"]]
+[[!tag announce]]
+
+<h1 id="changes">Changes and updates</h1>
+
+- Update *Tor Browser* to [15.0.24](https://blog.torproject.org/new-release-tor-browser-15024/).
+
+- Update the *Tor* client to 0.4.9.13.
+
+- Update the *Linux* kernel to 6.12.111.
+
+<h1 id="fixes">Fixed problems</h1>
+
+- Fix the default keyboard input method when starting a session in Korean.
+  ([[!tails_ticket 21779]])
+
+<h1 id="get">Get Tails 7.14</h1>
+
+## To upgrade your Tails USB stick and keep your Persistent Storage
+
+- Automatic upgrades are available from Tails 7.0 or later to 7.14.
+
+- If you cannot do an automatic upgrade or if Tails fails to start after an
+  automatic upgrade, please try to do a [[manual upgrade|doc/upgrade/#manual]].
+
+## To install Tails 7.14 on a new USB stick
+
+Follow our [[installation instructions|install]].
+
+<div class="caution"><p>The Persistent Storage on the USB stick will be lost if
+you install instead of upgrading.</p></div>
+
+## To download only
+
+If you don't need installation or upgrade instructions, you can download
+Tails 7.14 directly:
+
+- [[For USB sticks (USB image)|install/download]]
+
+- [[For DVDs and virtual machines (ISO image)|install/download-iso]]

@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-09-11 10:51+0000\n"
+"PO-Revision-Date: 2026-09-17 13:51+0000\n"
 "Last-Translator: Joan Montané <jmontane@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/tor/tails-gui/ca/"
 ">\n"
@@ -1643,7 +1643,6 @@ msgstr "Bloca la pantalla"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
-#, fuzzy
 msgid "Tails"
 msgstr "Tails"
 

@@ -38,8 +38,8 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-08-18 13:51+0000\n"
-"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"PO-Revision-Date: 2026-09-16 17:39+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/tor/tails-gui/el/"
 ">\n"
 "Language: el\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -2972,6 +2972,7 @@ msgid "Send feedback via encrypted e-mail"
 msgstr "Αποστολή σχόλιων μέσω κρυπτογραφημένου email"
 
 #: ../config/chroot_local-includes/usr/share/applications/whisperback.desktop.in.h:3
+#, fuzzy
 msgid "feedback;bug;report;tails;error;"
 msgstr "ανατροφοδότηση;πρόβλημα;αναφορά;tails;σφάλμα"
 
