@@ -46,10 +46,6 @@ Currently, there are several active **language teams**:
 * [[Portuguese|translate/team/pt]]
 * [[Italian|translate/team/it]]
 
-Other teams are being set up:
-
-* Turkish
-
 If your language is not listed here, read the documentation
 to [[add a new language|translate/team/new]].
 
