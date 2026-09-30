@@ -41,7 +41,6 @@ Please focus on translating and maintaining the
 Currently, there are several active **language teams**:
 
 * [[Chinese (Simplified)|translate/team/zh]]
-* [[French|translate/team/fr]]
 * [[German|translate/team/de]]
 * [[Portuguese|translate/team/pt]]
 * [[Italian|translate/team/it]]
