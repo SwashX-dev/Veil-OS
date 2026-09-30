@@ -73,8 +73,8 @@ Feature: Browsing the web using the Tor Browser
   Scenario: The Tor Browser's "New identity" feature works as expected
     Given I have started Tails from DVD and logged in and the network is connected
     When I start the Tor Browser
-    When I open the address "https://example.com/" in the Tor Browser
-    Then Tor Browser displays a "Example Domain" heading on the "Example Domain" page
+    And I open the Tails homepage in the Tor Browser
+    Then the Tor Browser loads the Tails homepage
     And the Tor Browser has 2 tabs open
     When I request a new identity in Tor Browser
     Then the Tor Browser loads about:tor
