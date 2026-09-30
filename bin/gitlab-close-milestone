@@ -1,0 +1,141 @@
+#!/usr/bin/python3
+import argparse
+import logging
+import sys
+from pathlib import Path
+from typing import Any
+
+import sh
+from ruamel.yaml import YAML
+
+LOG_FORMAT = "%(asctime)-15s %(levelname)s %(message)s"
+logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
+log = logging.getLogger(__name__)
+
+
+class MilestoneNotFound(Exception):
+    def __init__(self, expected_title):
+        super().__init__(f"Milestone {expected_title} not found.")
+
+
+def yaml_parser() -> YAML:
+    yaml = YAML()
+    yaml.preserve_quotes = True
+    yaml.indent(mapping=2, sequence=4, offset=2)
+    return yaml
+
+
+def read_yaml(yaml_path: Path) -> Any:
+    yaml = yaml_parser()
+    with open(yaml_path, encoding="utf-8") as f:
+        return yaml.load(f)
+
+
+def write_yaml(yaml_path: Path, data: Any) -> None:
+    yaml = yaml_parser()
+    with open(yaml_path, "w", encoding="utf-8") as f:
+        yaml.dump(data, f)
+
+
+def close_milestone(data: dict[str, Any], version: str) -> dict[str, Any]:
+    expected_title = f"Tails_{version}"
+    milestones = data.get(".tails-milestones", {}).get("milestones", [])
+
+    for milestone in milestones:
+        if isinstance(milestone, dict) and milestone.get("title") == expected_title:
+            initial_state = milestone.get("state")
+
+            if initial_state != "active":
+                log.warning(
+                    "Milestone '%s' initial state was '%s' (expected 'active').",
+                    expected_title,
+                    initial_state,
+                )
+
+            milestone["state"] = "closed"
+            log.info(
+                "Updated '%s' state to 'closed'.",
+                expected_title,
+            )
+            return data
+
+    log.error("Milestone with title '%s' not found.", expected_title)
+    raise MilestoneNotFound(expected_title)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Update a Tails milestone state to 'closed' in a YAML file.",
+    )
+    parser.add_argument(
+        "--gitlab-config-checkout",
+        type=Path,
+        help="Path to the gitlab-config checkout directory",
+    )
+    parser.add_argument(
+        "--yaml-file",
+        type=Path,
+        help="Path to the YAML file relative to the gitlab-config checkout",
+    )
+    parser.add_argument(
+        "--create-mr",
+        action="store_true",
+        default=False,
+        help="Create a GitLab merge request for the changes",
+    )
+    parser.add_argument(
+        "--version",
+        type=str,
+        help="Version string (e.g., 7.14, 3.0~rc1, 4.0.1)",
+    )
+    parser.add_argument(
+        "--tag",
+        type=str,
+        help="Tag string to use in the branch name (required if --create-mr is passed)",
+    )
+
+    args = parser.parse_args()
+
+    if not args.gitlab_config_checkout:
+        parser.error("--gitlab-config-checkout is required.")
+    if not args.gitlab_config_checkout.is_dir():
+        parser.error(
+            f"--gitlab-config-checkout directory '{args.gitlab_config_checkout}' does not exist."
+        )
+
+    if args.create_mr and not args.tag:
+        parser.error("--tag is required when --create-mr is specified.")
+
+    args.yaml_file = args.gitlab_config_checkout / args.yaml_file
+    if not args.yaml_file.is_file():
+        log.error("File '%s' does not exist.", args.yaml_file)
+        sys.exit(1)
+
+    if args.create_mr:
+        git = sh.git.bake(_cwd=args.gitlab_config_checkout)
+        git.fetch("--all")
+        git.checkout("-b", f"close-{args.tag}", "origin/master")
+
+    write_yaml(
+        args.yaml_file,
+        close_milestone(
+            read_yaml(args.yaml_file),
+            args.version,
+        ),
+    )
+
+    if args.create_mr:
+        git.commit("-m", f"Close {args.version}", args.yaml_file)
+        git.push(
+            "--set-upstream",
+            "-o",
+            "merge_request.create",
+            "-o",
+            f"merge_request.title=Close Tails {args.version}",
+            "origin",
+            "HEAD",
+        )
+
+
+if __name__ == "__main__":
+    main()
