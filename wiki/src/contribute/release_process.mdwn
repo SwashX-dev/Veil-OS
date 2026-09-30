@@ -1699,8 +1699,8 @@ Lead the internal manual testing to conclusion
           echo ${TEST_IUK_SOURCE_VERSIONS:?}
 
 
-1. Fill the gaps and make sure that the automated and manual test
-   suites are done in due time.
+1. Fill the gaps and make sure that the manual test
+   suite is done in due time.
 
 1. Triage test results, reproduce bugs as
    needed, decide what the next step is and make sure it happens: add to known
