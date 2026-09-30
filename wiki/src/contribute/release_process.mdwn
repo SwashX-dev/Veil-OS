@@ -2003,30 +2003,6 @@ fully refreshed. To do so, first wait for the
 [GitLab CI pipeline](https://gitlab.tails.net/tails/tails/-/pipelines/?ref=master)
 triggered by the automatic merge of `$WEBSITE_RELEASE_BRANCH` to build and deploy the website.
 
-And then:
-
-### If you are publishing a final release
-
-Check:
-
-    [ "${DIST:?}" = stable ]
-
-wait until all these conditions are met:
- - <https://tails.net/news/> includes the release notes
- - <https://tails.net/news/index.de.html> includes the release notes
- - <https://tails.net/torrents/files/> includes the files
-   for the new release
-
-### If you are publishing a RC
-
-Check:
-
-    [ "${DIST:?}" = alpha ]
-
-wait until the call for testing is live:
-
-    "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://tails.net/news/test_${TAG:?}/"
-
 X.com
 -----
 
