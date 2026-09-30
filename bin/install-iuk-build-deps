@@ -11,7 +11,13 @@ sudo apt install \
     libdist-zilla-app-command-authordebs-perl \
     libtest-lwp-useragent-perl
 
+# The previous `apt install` installs `apt-file` (by way of transitive
+# dependencies), which configures APT to download additional APT
+# lists, which are needed by `dzil authordebs --install`. To honor
+# this updated APT configuration and download these APT lists, we need
+# to run `apt update`:
 sudo apt update
+
 cd "$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/iuk"
 dzil authordebs --install
 
