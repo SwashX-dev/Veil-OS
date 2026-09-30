@@ -2172,10 +2172,11 @@ Check that you are indeed preparing a final release:
    for the last release:
 
        (
-       cd "${RELEASE_CHECKOUT}" && \
-       git checkout stable && \
+       set -eu -o pipefail
+       cd "${RELEASE_CHECKOUT}"
+       git checkout stable
        dch --newversion "${NEXT_STABLE_CHANGELOG_VERSION:?}" \
-           "Dummy entry for next release." && \
+           "Dummy entry for next release."
        git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_STABLE_CHANGELOG_VERSION:?}."
        )
@@ -2198,10 +2199,11 @@ Check that you are indeed preparing a final release:
    If this is not the case yet, run:
 
        (
-       cd "${RELEASE_CHECKOUT}" && \
-       git checkout devel && \
+       set -eu -o pipefail
+       cd "${RELEASE_CHECKOUT}"
+       git checkout devel
        dch --newversion "${NEXT_PLANNED_MAJOR_VERSION:?}" \
-           "Dummy entry for next release." && \
+           "Dummy entry for next release."
        git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_PLANNED_MAJOR_VERSION:?}."
        )
@@ -2212,8 +2214,9 @@ Check that you are indeed preparing a final release:
    Look carefully at the output of this command:
 
        (
-       cd "${RELEASE_CHECKOUT:?}" && \
-       git checkout stable && \
+       set -eu -o pipefail
+       cd "${RELEASE_CHECKOUT:?}"
+       git checkout stable
        ./bin/apt-snapshots-expiry
        )
 
