@@ -139,7 +139,8 @@ class Config:
         data = {}
         for config_file in self.config_files:
             log.debug("Loading %s", config_file)
-            data.update(yaml.safe_load(open(config_file)))
+            with open(config_file) as cf:
+                data.update(yaml.safe_load(cf))
         return data
 
     def detect_stage(self) -> str | None:
