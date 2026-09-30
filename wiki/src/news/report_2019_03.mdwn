@@ -75,9 +75,9 @@ User experience
   the help from Simply Secure.
   ([[!tails_ticket 16536]])
 
-- We analyzed the [success metrics of *Additional Software* and the
+- We analyzed the success metrics of *Additional Software* and the
   integration of
-  *VeraCrypt*](https://lists.autistici.org/message/20190326.173900.138d9b45.en.html):
+  *VeraCrypt*:
 
   - Both features probably participated in getting our boot stats to
     increase again (20% more since September 2019).
@@ -88,8 +88,8 @@ User experience
   Results are good but we expected more. We need to improve how we let
   the world know about new features.
 
-- We analyzed the [success metrics for USB
-  images](https://lists.autistici.org/message/20190331.183400.d3d2350c.en.html):
+- We analyzed the success metrics for USB
+  images:
 
   - The percentage of people using Tails from macOS at least doubled
     since 3.12.
@@ -156,9 +156,9 @@ Past events
 On-going discussions
 ====================
 
-- We started a [discussion about possible security implications that
+- We started a discussion about possible security implications that
   would arise from shipping the code of the Verification Extension in
-  our website instead](http://lists.autistici.org/message/20190320.132313.7c24cc99.en.html).
+  our website instead.
 
 Translations
 ============

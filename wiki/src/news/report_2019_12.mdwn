@@ -35,8 +35,8 @@ The following changes were introduced in Tails 4.1:
 Code
 ====
 
-* We [published a first
-  alpha](https://lists.autistici.org/message/20191221.150827.105ba267.en.html)
+* We published a first
+  alpha
   with Secure Boot support, which will remove a major blocker for less
   tech-savvy users to adopt Tails.
 

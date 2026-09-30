@@ -14,8 +14,8 @@ Analyzing results of usability tests
 
 We analyzed the results of the usability tests we did in São Paulo:
 
- - [first-time use](https://lists.autistici.org/message/20221012.181235.a673efeb.en.html)
- - [Tor Connection](https://lists.autistici.org/message/20221012.140611.7e58f067.en.html)
+ - first-time use
+ - Tor Connection
 
 Then we prioritized the issues identified there and planned to fix
 a bunch of them in the next few months.

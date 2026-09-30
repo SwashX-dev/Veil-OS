@@ -1,8 +1,132 @@
-tails (7.14) UNRELEASED; urgency=medium
+tails (7.15) UNRELEASED; urgency=medium
 
   * Dummy entry for next release.
 
- -- anonym <anonym@torproject.org>  Wed, 16 Sep 2026 11:06:38 +0200
+ -- intrigeri <intrigeri@debian.org>  Wed, 30 Sep 2026 09:23:47 +0000
+
+tails (7.14) unstable; urgency=medium
+
+  * Update Linux to 6.12.111 (DSA 6528-1)
+
+  * Update custom flatpak package to 1.16.6-1~deb13u3 (DSA 6524-1)
+    (tails/tails!3315)
+
+    Closes issues:
+      - Update custom flatpak package to 1.16.6-1~deb13u3 (DSA 6524-1)
+        (tails/tails#21796)
+
+    Commits:
+      - Enable the 21796-flatpak-dsa-6524 APT overlay (refs: #21796).
+
+  * Upgrade to Tor Browser 15.0.24 based on Firefox ESR 140.17 (tails/tails!3314)
+
+    Closes issues:
+      - Upgrade to Tor Browser 15.0.24 based on Firefox ESR 140.17 (tails/tails#21781)
+      - Refresh about:tor patches for Tails 7.14 (tails/tails#21782)
+
+    Commits:
+      - Upgrade Tor Browser to 15.0.24-build1 (refs: tails#21781)
+      - CI: run all tests for 21781-tor-browser-15.0.24
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.17.0esr-15.0-1-build4
+
+  * Upgrade the Tor client to 0.4.9.13 (tails/tails!3310)
+
+    Closes issues:
+      - Upgrade to tor 0.4.9.13 (tails/tails#21790)
+
+    Commits:
+      - Upgrade tor to 0.4.9.13
+      - Set this branch to run all tests
+
+  * Update release process & GitLab CI after migration of apt.lizard and www.lizard
+    to mtl-libvirt-01 (tails/tails!3308)
+
+    Commits:
+      - Update reference to Gitolite repo
+      - Update ISO history remote setup
+      - Update another occurrence of apt.lizard
+      - Update webserver name
+      - update release process after migration of apt.lizard to mtl-libvirt-01
+        (tpo/tpa/tails-sysadmin#18218)
+
+  * Remove mentions of boum.org that are worth updating (tails/tails!3272)
+
+    Closes issues:
+      - Remove dependency on boum.org (tails/tails#21323)
+
+    Commits:
+      - Ruff format
+      - Fix Ruff I001 and COM812
+      - Remove obsolete "type: ignore"
+      - Ruff format
+      - Release process: modernize hostname
+      - Remove unnecessary and hard to maintain detail
+      - Test suite: modernize test Git repo URL
+      - Remove obsolete check
+
+  * Test suite: switch "some" DNS server to Cloudflare's (tails/tails!3307)
+
+    Closes issues:
+      - Test suite: step `I do a TCP DNS lookup of "torproject.org"` sometimes fails
+        since move to MTL (tails/tails#21751)
+
+    Commits:
+      - Test suite: drop obsolete comment
+      - Test suite: switch "some" DNS server to Cloudflare's
+
+  * Design doc: triage links to closed issues (tails/tails!3305)
+
+    Commits:
+      - closed-issues-linked-from-website: allow pointing to research done in #21549
+      - Design doc: don't link to closed issue
+      - Design doc: remove obsolete caveat
+
+  * Fix process for local automated test suite (tails/tails!3299)
+
+    Commits:
+      - Be even more explicit about versions
+      - Fix label name
+      - Be explicit about which version to test
+
+  * Fix default input method for Korean (tails/tails!3294)
+
+    Closes issues:
+      - Default Korean "ko" input method does not work (tails/tails#21779)
+
+    Commits:
+      - Update comment
+      - shfmt
+      - Korean: default to ibus' Hangul rather than misleading "kr" xkb
+
+  * import-translations: fix importing Onion Circuits translations from Weblate
+    (tails/tails!3292)
+
+    Commits:
+      - import-translations: add shell guardrail
+      - shfmt
+      - import-translations: update expected PO files name for Onion Circuits
+      - import-translations: update the branch where Onion Circuits translations live
+
+  * Test suite: attempt to get backtrace from 'chutney configure' when it hangs,
+    take 2 (tails/tails!3288)
+
+    Commits:
+      - Test suite: send SIGINT to Chutney python process, not shell
+
+  * Post-7.12 doc updates (tails/tails!3238)
+
+    Commits:
+      - TAILS_RM_PAGER defaults to xdg-open
+      - explicitly checkout the right branch and set the right pwd
+      - add a tag to the pad
+      - fix IUKs verification
+      - Cancel Jenkins jobs before reaching the point where this is useful
+      - highlight what could be easy to assume
+      - Use rm-pager when the environment isn't set yet, too
+      - rm-pager: reads file from release checkout
+
+ -- Tails developers <foundations@tails.net>  Tue, 29 Sep 2026 11:24:39 +0000
 
 tails (7.13) unstable; urgency=medium
 

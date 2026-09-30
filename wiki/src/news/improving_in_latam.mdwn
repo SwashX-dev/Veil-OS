@@ -50,11 +50,11 @@ and connect to the Tor network easily.
 Details:
 
 - Usability tests of first-time use in Mexico ([[!tails_ticket 18074]])
-  * [Summary of findings](https://gitlab.tails.net/tails/tails/-/issues/18074#note_210738)
+  * [Summary of findings](https://gitlab.tails.net/tails/tails/-/work_items/18074)
   * [Detailed findings](https://gitlab.tails.net/tails/ux/-/raw/master/first-time/rainbow_table_installation_2021_08_Mexico.fods?inline=false)
 
 - Usability tests of first-time use in Brazil ([[!tails_ticket 18784]])
-  * [Summary of findings](https://lists.autistici.org/message/20221012.181235.a673efeb.en.html)
+  * [Summary of findings](https://gitlab.tails.net/tails/tails/-/work_items/18784)
   * [Detailed findings](https://gitlab.tails.net/tails/ux/-/blob/master/first-time/rainbow_table_installation_2022_08_Sao_Paulo.fods?inline=false)
 
 ### Tor Connection
@@ -76,7 +76,7 @@ better why connecting to Tor fails, to make it easier to configure a Tor
 bridge, and to make it easier to sign in to a network using a captive portal.
 
 - Usability tests of Tor Connection ([[!tails_ticket 18762]])
-  * [Summary of findings](https://lists.autistici.org/message/20221012.140611.7e58f067.en.html)
+  * [Summary of findings](https://gitlab.tails.net/tails/tails/-/work_items/18762)
   * [Detailed findings](https://gitlab.tails.net/tails/ux/-/raw/master/network/rainbow_table_tor_connection_2022_08_Sao_Paulo.ods?inline=false)
 
 ### Persistent Storage
@@ -90,7 +90,7 @@ Storage and that their data (eg. Wi-Fi password) is stored on creation were
 huge improvements compared to the old Persistent Storage.
 
 - March 2023: Usability tests of the new Persistent Storage ([[!tails_ticket 18648]])
-  * [Summary of findings](https://lists.autistici.org/message/20230510.091842.23ed75ba.en.html)
+  * [Summary of findings](https://gitlab.tails.net/tails/tails/-/work_items/18648)
   * [Detailed findings](https://gitlab.tails.net/tails/ux/-/raw/master/persistent%20storage/rainbow_table_persistent_storage_2023_03_Ecuador.fods?inline=false)
 
 Trainings

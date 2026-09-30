@@ -60,7 +60,7 @@ your data is processed and stored.
   findings, for example:
 
   * A list of [usability issues and possible solutions](https://gitlab.tails.net/tails/ux/-/raw/master/first-time/rainbow_table_installation_2021_08_Mexico.fods?inline=false)
-  * A summary of the [most important findings](https://lists.autistici.org/message/20211217.014522.68cdc460.en.html)
+  * A summary of the [most important findings](https://gitlab.tails.net/tails/tails/-/work_items/18074#note_210738)
 
 - Your name or any personal information that could identify you directly is
   never published in any report from the research. If we need to refer to your

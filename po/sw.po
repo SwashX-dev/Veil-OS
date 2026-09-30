@@ -7,13 +7,14 @@
 # Ziri Issa, 2022
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 # emma peel <emma.peel@riseup.net>, 2025, 2026.
+# Rumi <jindostar-rumi@protonmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-04-03 09:12+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-09-22 05:51+0000\n"
+"Last-Translator: Rumi <jindostar-rumi@protonmail.com>\n"
 "Language-Team: Swahili <https://hosted.weblate.org/projects/tor/tails-gui/sw/"
 ">\n"
 "Language: sw\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -3975,7 +3976,6 @@ msgid ""
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1979
-#, fuzzy
 msgid ""
 "\n"
 "<a href=\"doc/anonymous_internet/no-wifi\">\n"
@@ -3983,8 +3983,11 @@ msgid ""
 "</a>\n"
 "                "
 msgstr ""
-"<a href=\"doc/anonymous_internet/tor\">Jifunze zaidi namna Tails inaungana "
-"na Tor</a>"
+"\n"
+"<a href=\"doc/anonymous_internet/no-wifi\">\n"
+"Jifunze zaidi namna Tails inaungana na Tor\n"
+"</a>\n"
+"                "
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2007
 msgid "Connect to a local network"
@@ -4161,411 +4164,3 @@ msgstr "Disemba"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Saa"
-
-#~ msgid "Suspend"
-#~ msgstr "Kusimamisha"
-
-#~ msgid "Restart"
-#~ msgstr "Anzisha tena"
-
-#~ msgid "Power Off"
-#~ msgstr "Zima umeme"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "Anwani ya Bridge imeharibika"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "Mpangilio wa bridge unahitajika kama unataka kutojulikana kama unatumia "
-#~ "Tor"
-
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "Kupata bridge, tuma barua pepe tupu kwenda <tt>bridges@torproject.org</"
-#~ "tt> kutoka katika anwani za barua pepe za Gmail au Riseup na simu yako na "
-#~ "kagua QR code iliyoambatanishwa katika majibu yako."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Kagua QR Code"
-
-#~ msgid "Documentation"
-#~ msgstr "Kuhifadhi kumbukumbu"
-
-#, fuzzy
-#~| msgid ""
-#~| "Opens a terminal as the root user, using gksu to ask for the password"
-#~ msgid "Opens a console as the root user"
-#~ msgstr ""
-#~ "Fungua termianal kama mtumiaji mkuu, kwa kutumia gksu kupata nenosiri"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr "Kuanza terminal kuu, inahitaji uthibitisho."
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Mawasiliano ya mtandao"
-
-#~ msgid "Obsolete"
-#~ msgstr "Iliyopitwa na wakati"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Unahitaji kuhamisha alama zako za kipeke za OpenPGP"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> itasaidia "
-#~ "usimbwaji wa OpenPGP. Kuendelea kutumia alama zako za kipekee za OpenPGP "
-#~ "katika <i>Thunderbird</i>, fuata maelekezo yetu ya kuhamisha."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "_Fungua maelekezo ya kuhamisha"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_Hamisha baadae"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "Tunabadili hii mipangilio iliyoongezwa katika Tails 4.19 (Juni 2021) na a "
-#~ "Msaada wa kuunganishwa na Tor iliyounganishwa katika kompyuta za mezani.\n"
-#~ "\n"
-#~ "Utaulizwa kama unataka kutumia Tor bridges unapojiunganisha na Torbaada "
-#~ "ya kuanaza kutumia Tails.\n"
-#~ "\n"
-#~ "Kama unataka kutmia bila mtandao, wezesha mfumo bila mtandao katika "
-#~ "mipangilio ya ziada."
-
-#~ msgid "Technical details to include"
-#~ msgstr "Taarifa za kiufundi za kujumuisha"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Root Terminal"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "obfs4 ..."
-#~ msgstr "obfs4 ..."
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Usimamizi wa mtandao wa wazi"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Kwa taarifa za utatuzi, fuata hatua zifuatazo: sudo tails-debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "ungua sakiti ya onion"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Kuanza Unsafe Browser..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Hii inaweza chukua muda kidogo, tafadhali kuwa na uvumilivu."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Rekebisha mawasiliano ya Tor"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Dposari wakati unasasisha alama za kipekee husika"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Taarifa ya tatizo inaweza isitumwe, inaweza kuwa kutokana na matatizo ya "
-#~ "mtandao. Tfadhali jaribu kuunganisha mtandao na tuma tena\n"
-#~ "\n"
-#~ "Kama haitasaidia, utaambiwa uhifadhi taarifa ya tatizo."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Haiwezi kuhifadhi %s."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Taarifa ya tatizo haiwezi kutumwa, inaweza sababishwa na matatizo ya "
-#~ "mtandao.\n"
-#~ "\n"
-#~ "Unaweza kuhifadhi taarifa ya tatizo kama faili katika fashi na kujaribu "
-#~ "kututumia kupitia %s frkutoka katika emaili yako kwa kutumia mfumo "
-#~ "mwingine. Zingatia utumaji wa barua pepe yako kwa njia hii hautakuwa wa "
-#~ "kificho mpaka utakapochukua hatua za ziada (mfano. tumia Tor na akaunti "
-#~ "ya barua pepe ya kutupa).\n"
-#~ "\n"
-#~ "Je unataka kuhifadhi taarifa ya tatizo katika faili?"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "Haiwezi kufungua hifadhi iliyosimbwa kwa njia hii."
-
-#, fuzzy
-#~ msgid "_Passphrase"
-#~ msgstr "Nenosiri:"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "Imeshindwa kuweka mpangilio wa utendaji."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Usanidi wa kivinjari umeshindikana."
-
-#, fuzzy, sh-format
-#~| msgid ""
-#~| "MAC address anonymization failed for network card ${nic_name} (${nic}) "
-#~| "so it is temporarily disabled.\n"
-#~| "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "Anwani ya MAC isiyojulikana imeshindwa katika kadi ya mtandao ${nic_name} "
-#~ "(${nic}) imeondolewa kwa muda.\n"
-#~ "unaweza kuwasha tena mfumo wako wa Tails kisha ondoa kutojulikana kwa "
-#~ "anwani ya MAC."
-
-#~ msgid "Language & Region"
-#~ msgstr "Lugha na Mkoa"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Baadhi ya vipengele vya kifaa kusudiwa %(device)s vimeunganishwa. "
-#~ "vitatengeneshwa kabla ya kuanza hatua za kusanikisha."
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "Kuingiza ukusanyaji wa mafaili katika kifaat_kwa \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "Toa mfumo wa kukusanya mafaili yaliyokusanywa katika \"%(device)s\""
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr ""
-#~ "tenganisha mafaili yaliyokusanywa sehemu moja \"%(udi)s\" katika "
-#~ "\"%(device)s\""
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Toa taarifa ya dosari"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr ""
-#~ "Umeweka mfumo wa kutotumia mtandao katika kioo cha kamera ya wavuti."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "Haiwezekani kuunganishwa katika Tor bila mtandao."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr "Ili kuunganisha Tor na mtandao, anza upya Tails bila mtandao."
-
-#~ msgid "Lock screen"
-#~ msgstr "Kufunga skrini"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Unda taarifa\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "haipatikani"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Majina yalio athiriwa na softi wea"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Hatua iliyo thibitika kuzalisha makosa"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Maelezo halisi ya makosa"
-
-#~ msgid "Desired result"
-#~ msgstr "Matokeo pendwa"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Tuma mrejesho katika barua pepe iliyosimbwa."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Hatimiliki © 2009-2018 watengenezaji wa Tails (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Watengenezaji wa Tails <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "shukurani-watafsiri"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Hatimiliki© 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack - hutuma mrejesho kwa barua pepe iliyosimbwa\n"
-#~ "Hatimiliki(C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "Programu hiis  ya bure; unaweza kusambaza  na/au kuiboresha\n"
-#~ "chini ya  utaratibu wa GNU General Public  leseni kama ilivyochapishwa "
-#~ "na\n"
-#~ "the Free Software Foundation; labda   toleo la 3 la leseni, au (kwa\n"
-#~ " chaguo lako) toleo lolote lijalo.\n"
-#~ "\n"
-#~ "Programu hii  inasambazwa kwa   matumaini ya kuwa ita  kuwa na manufaa, "
-#~ "lakini\n"
-#~ "BILA   DHAMANA  YOYOTE;   bila  hata   dhamana  inayo   ashiria  \n"
-#~ "KUKUBALIKA NA WATUMIAJI  au KUFAA  KWA  LENGO FULANI.   Angalia   GNU\n"
-#~ "General Public License kwa taarifa zaidi.\n"
-#~ ".\n"
-#~ "Unatakiwa kupokea nakala ya GNU General Public License\n"
-#~ "pamoja na programu hii.  kama sivyo, angalia <http://www.gnu.org/licenses/"
-#~ ">.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Saidia:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Barua pepe (kama unataka jibu toka kwetu)"
-
-#~ msgid "Unlock"
-#~ msgstr "Fungua"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "_Hifadhi ya kudumu iliyosimbwa"
-
-#~ msgid "_Delete..."
-#~ msgstr "_Futa..."
-
-#~ msgid "_Change Passphrase..."
-#~ msgstr "_Badili nenosiri..."
-
-#~ msgid "Enabled"
-#~ msgstr "Kuwezesha"
-
-#~ msgid "Failed"
-#~ msgstr "Imeshindwa"
-
-#~ msgid "Saving..."
-#~ msgstr "Kuokoa..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Kuokoa usanidi wa kuendelea..."
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Wizadi yenye kuendelea -Sauti ya  kuendelea kufutwa"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "Sauti yenye kuendelea {kizigeu} ({saizi}), kwenye <b>{muuzaji} {mfano}</"
-#~ "b> kifaa, kitafutwa."
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "Weka faili kwa kuhifadhi kwenye `Persistent' saraka"
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Lugha, utawala wa nywila, na mpamgilio wa nyongeza"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Ngurumo ya baruapepe, mlisho, na fungua funguo ya PGP "
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Mteja wa Bitkoin"
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "Kifaa hakina nafasi isiyotengwa zaidi."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr "Kifaa hakina sauti yenye kuendelea."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Haiwezi kufuta sauti yenye kuendelea wakati inatumika. Unatakiwa "
-#~ "kuanzisha Tails bila kuendelea."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Sauti yenye kuendelea haiko vyema."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr "Sauti ya kuendelea haiwezi kusomeka. ruhusa au matatizo ya mmiliki?"
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "Sauti inayoendelea haijaandikwa."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Tails inakimbia kutoka kwenye sio-USB / sio kifaa cha SDIO."
-
-#~ msgid "Device is optical."
-#~ msgstr "Kifaa ni macho."
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr ""
-#~ "Kifaa hakijaeza kuunda kutumia picha ya USB au Kisakinishi cha Tails."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Kuendelea kwa wizadi - Kumeisha"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "Mabadiliko yeyote ambayo umeyafanya itapelekea kuathiri baada ya "
-#~ "kuanzisha Tails."

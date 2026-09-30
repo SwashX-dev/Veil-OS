@@ -257,7 +257,7 @@ that exists in canonical.
 aka "production"**
 
 After updating the Integration repository, we push the changes back to
-Canonical aka puppet-git.lizard. After this, the Canonical repository has
+Canonical aka git.mtl-libvirt-01. After this, the Canonical repository has
 everything integrated from Weblate.
 
 On the side of the canonical Git repository, a Gitolite hook
