@@ -5,7 +5,7 @@
 # How to join the Chinese translation team?
 
 New contributors should first subscribe to the [[mailing list for
-translators|https://www.autistici.org/mailman/listinfo/tails-l10n/]] and
+translators|https://lists.torproject.org/mailman3/postorius/lists/tails-l10n.lists.torproject.org/]] and
 introduce themselves to the Chinese team on the list.
 
 We currently work in both Simplified and Traditional Chinese and use
