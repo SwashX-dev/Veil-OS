@@ -11,7 +11,7 @@ from pathlib import Path
 
 import yaml
 from voluptuous import Any, Schema
-from voluptuous.error import MultipleInvalid, Invalid
+from voluptuous.error import Invalid, MultipleInvalid
 from voluptuous.validators import (
     And,
     Date,
