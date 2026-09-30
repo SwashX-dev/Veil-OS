@@ -45,6 +45,7 @@ STAGE_SCHEMA = {
         "isos_git": IsDir(),
         "isos": IsDir(),
         "artifacts": IsDir(),
+        "gitlab_config_checkout": IsDir(),
         "master_checkout": IsDir(),
         "release_checkout": IsDir(),
         "tor_blog_checkout": IsDir(),

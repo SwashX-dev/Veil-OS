@@ -105,7 +105,7 @@ Packages
 Ensure the system(s) you will use for the release process have these packages
 installed:
 
-* `apt install oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
+* `apt install oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-ruamel.yaml python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
 
 * `./bin/install-perl5lib-build-deps`
 
@@ -1961,17 +1961,24 @@ Skip this part if preparing a release candidate:
            --token "$(bin/gitlab-api-token TailsRM)"
        )
 
-3. Finally, submit a MR against
-   [tails/gitlab-config](https://gitlab.tails.net/tails/gitlab-config)
-   to close the just-released
-   [milestone](https://gitlab.tails.net/groups/tails/-/milestones). See
-   this as an example:
-   [tails/gitlab-config!18](https://gitlab.tails.net/tails/gitlab-config/-/merge_requests/18/diffs)
-   
-   You may use [Gitlab web interface to create the
-   MR](https://gitlab.tails.net/tails/gitlab-config/-/edit/master/main.yml).
+2. Prepare a Merge Request that closes the just-released
+   [milestone](https://gitlab.tails.net/groups/tails/-/milestones):
 
-   Make another Tails Team member the *Reviewer*.
+       (
+       set -eu -o pipefail
+       cd "${GITLAB_CONFIG_CHECKOUT}"
+       git fetch --all
+       git checkout -b "close-${TAG}" origin/master
+       "${RELEASE_CHECKOUT:?}"/bin/gitlab-close-milestone tails.yml "$VERSION"
+       git commit -m "Close ${VERSION}" tails.yml
+       git push \
+           --set-upstream \
+           -o merge_request.create \
+           -o merge_request.title="Close Tails ${VERSION}" \
+           origin HEAD
+       )
+
+   Then make another Tails Team member the *Reviewer* of that MR.
 
 ### Issues linked from the website
 
