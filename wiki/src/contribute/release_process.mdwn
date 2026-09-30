@@ -2391,11 +2391,13 @@ Check that you are indeed preparing a RC:
            ~/.config/tails/release_management/old/${VERSION:?}.yml.disabled
        )
 
-1. Delete your local copy of the IUKs
+1. Delete your local copy of the IUKs:
 
        rm -f "${IUKS_DIR:?}/"Tails_amd64_*_to_${VERSION:?}.iuk "${IUKS_HASHES:?}"
 
-1. Delete logs
+   If you've built them on another machine, do it there too.
+
+1. Delete IUK build logs on the machine where you've built IUKs:
 
        rm -f /var/tmp/wrap_tails_create_iuks*.log
 
