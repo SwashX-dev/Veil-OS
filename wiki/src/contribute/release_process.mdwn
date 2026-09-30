@@ -1922,9 +1922,7 @@ Sanity checks
 Push
 ----
 
-Push the last commits and set the website release branch to auto-merge.
-This will make the release go live on our website once all required checks
-complete successfully:
+Push the last commits:
 
     (
     set -eu -o pipefail
@@ -1939,6 +1937,8 @@ complete successfully:
 
 Mark the merge request for `$WEBSITE_RELEASE_BRANCH` as ready and set
 it to auto-merge.
+This will make the release go live on our website once all required checks
+complete successfully
 
 Close the "Write release notes" ticket manually since
 `Closes:` statements are not sufficient when updating `master`.
