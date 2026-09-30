@@ -2033,13 +2033,16 @@ deployment". Check if everything looks good.
     to open a menu where you will see "deploy-prod ▶️", then click on the ▶️ to
     deploy.
 
-Amnesia news
-------------
+tails-news@
+-----------
 
-[Log in](https://lists.torproject.org/mailman3/postorius/lists/tails-news.lists.torproject.org/)
-and accept the release announcement (it's been automatically sent
-to `tails-news@` every half hour and is stuck in the
-moderation queue).
+The release announcement is automatically sent to `tails-news@` every half hour.
+
+Once that message is held in the moderation queue, let it through to the mailing
+list, using 1 of these 2 techniques:
+
+ - [listadmin3](https://github.com/u1f35c/listadmin3)
+ - [web interface](https://lists.torproject.org/mailman3/postorius/lists/tails-news.lists.torproject.org/held_messages)
 
 Prepare for the next development cycle
 ======================================
