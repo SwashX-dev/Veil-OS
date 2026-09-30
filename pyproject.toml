@@ -43,6 +43,8 @@ extend-exclude = [
     "tmp",
     "wiki/src",
 ]
+
+[tool.ruff.lint]
 extend-select = [
     # Derived from the flake8-builtins linter
     "A",
@@ -137,7 +139,7 @@ extend-ignore = [
     "TD007",
 ]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = [
     "tailsgreeter",
     "tailslib",

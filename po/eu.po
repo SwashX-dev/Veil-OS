@@ -12,13 +12,14 @@
 # Radiation Gamma, 2019
 # emma peel <emma.peel@riseup.net>, 2026.
 # BereneFoundation <Berenefoundation@proton.me>, 2026.
+# Rumi <jindostar-rumi@protonmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-08-07 16:51+0000\n"
-"Last-Translator: BereneFoundation <Berenefoundation@proton.me>\n"
+"PO-Revision-Date: 2026-09-22 05:51+0000\n"
+"Last-Translator: Rumi <jindostar-rumi@protonmail.com>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/tor/tails-gui/eu/"
 ">\n"
 "Language: eu\n"
@@ -26,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1379,12 +1380,14 @@ msgid "%(parent_size)s %(vendor)s %(model)s device (%(device)s)"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:786
-#, fuzzy
 msgid ""
 "\n"
 "\n"
 "The Persistent Storage on this USB stick will be lost."
-msgstr "Zure datu iraunkorrak ezabatuko dira."
+msgstr ""
+"\n"
+"\n"
+"Zure datu iraunkorrak ezabatuko dira."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:788
 msgid "Delete Persistent Storage and Reinstall"
@@ -3998,286 +4001,3 @@ msgstr "Abendua"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Erlojua"
-
-#~ msgid "Suspend"
-#~ msgstr "Eseki"
-
-#~ msgid "Restart"
-#~ msgstr "Berrabiarazi"
-
-#~ msgid "Power Off"
-#~ msgstr "Itzali"
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Eskaneatu QR kodea"
-
-#~ msgid "Documentation"
-#~ msgstr "Dokumentazioa"
-
-#~ msgid "_Network Connection"
-#~ msgstr "_Sare Konexioa"
-
-#~ msgid "Obsolete"
-#~ msgstr "Zaharkitua"
-
-#~ msgid "Technical details to include"
-#~ msgstr "Sartzeko xehetasun teknikoak"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#, python-brace-format
-#~ msgid ""
-#~ "<b>Shape the future of Tails, today.</b>\n"
-#~ "\n"
-#~ "Contribute to <a href=\"{url}\">our ongoing fundraiser</a>!"
-#~ msgstr ""
-#~ "<b>Eraiki Tails-en etorkizuna, gaur.</b>\n"
-#~ "\n"
-#~ "Ekarpena egin hemen <a href=\"{url}\">gure diru bilketa kanpaina</a>!"
-
-#, python-brace-format
-#~ msgid ""
-#~ "<b>Your donations help us innovate and stay independent.</b>\n"
-#~ "\n"
-#~ "Support <a href=\"{url}\">our ongoing fundraiser</a>!"
-#~ msgstr ""
-#~ "<b>Donazioek berrikuntzak proposatzen eta independenteak izaten "
-#~ "jarraitzen laguntzen gaituzte.</b>\n"
-#~ "\n"
-#~ "Babestu <a href=\"{url}\">gure diru bilketa</a>!"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Arazketa informazioa lortzeko, exekutatu komando hau: sudo tails-"
-#~ "debugging-info"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Nabigatzaile ez segurua abiatzen..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Honek debora behar dezake, izan pazientzia."
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Errore bat gertatu da sinatzeko gakoa eguneratzean"
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "Sortu"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Akats txostena ezin izan da bidali, ziurrenik sare arazoengatik. Mesedez "
-#~ "saiatu sarera berriz konektatzen eta sakatu bidali berriz.\n"
-#~ "\n"
-#~ "Ez badu funtzionatzen, akats txostena gordetzea eskainiko zaizu."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "Ezin izan da %s gorde."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Akats txostena ezin izan da bidali, ziurrenik sare arazoengatik.\n"
-#~ "\n"
-#~ "Lan-inguru bezala akats txostena fitxategi bat bezala USB batean gorde "
-#~ "dezakezu eta guri %s ra bidaltzen saiatu zure email kontutik beste "
-#~ "sistema bat erabiliz. Jakin ezazu zure akats txostena ez dela anonimoa "
-#~ "izango zure kontu beste pausu batzuk ematen ez badituzu (adib. Tor "
-#~ "erabili aldi baterako email kontu batekin).\n"
-#~ "\n"
-#~ "Akats txostena fitxategi batean gorde nahi duzu?"
-
-#, fuzzy
-#~ msgid "_Passphrase"
-#~ msgstr "Pasahitza"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "Huts egin du chroot ezartzean."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "Huts egin du nabigatzailea konfiguratzean."
-
-#~ msgid "Language & Region"
-#~ msgstr "Hizkuntza eta eskualdea"
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "Errore baten berri eman"
-
-#~ msgid "Lock screen"
-#~ msgstr "Blokeo-pantaila"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Konpilazioari buruzko informazioa:\n"
-#~ "%s"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Eragina izan duen softwarearen izena"
-
-#~ msgid "Desired result"
-#~ msgstr "Nahi zen emaitza"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Atzeraelikadura enkriptatutako email batean bidali."
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Tails garatzaileak <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "itzultzaile-kredituak"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Copyright © 2009-2018 tails@boum.org"
-
-#~ msgid "Help:"
-#~ msgstr "Laguntza:"
-
-#~ msgid "Unlock"
-#~ msgstr "Desblokeatu"
-
-#, fuzzy
-#~ msgid "_Delete..."
-#~ msgstr "Ezabatzen..."
-
-#, fuzzy
-#~ msgid "_Change Passphrase..."
-#~ msgstr "Erakutsi Sar-esaldia"
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Errore bat gertatu da jeitsiera zerbitzaria aukeratzean"
-
-#, fuzzy
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "The Amnesic Incognito Live System"
-
-#, fuzzy
-#~ msgid ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-#~ msgstr ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-
-#~ msgid "Enabled"
-#~ msgstr "Gaituta"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Iraunkortasun morroia - Euskarri iraunkorren sorkuntza"
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "Pasahitza ezin da hutsik egon"
-
-#~ msgid "Failed"
-#~ msgstr "Huts egin du"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Tailsen partizio iraunkorra montatzen."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "Tailsen partizio iraunkorra muntatu egingo da."
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Bolumen iraunkorreko baimenak zuzenduko dira."
-
-#~ msgid "Creating..."
-#~ msgstr "Sortzen..."
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Iraunkortasun morroia - Euskarri iraunkorren konfigurazioa"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr " Bolumen iraunkorra gorde izango den fitxategia zehaztu"
-
-#~ msgid "Saving..."
-#~ msgstr "Gordetzen..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Iraunkortasun konfigurazioa gordetzen..."
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Iraunkortasun morroia - Euskarri iraunkorren ezabatzea"
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "Mantendu fitxategiak `Iraunkorra' direktorioan"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Tor Navigatzailean gorde dira laster markak"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Sare gailu eta konexioen konfigurazioa"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Pidgin profilak eta OTR gako sorta"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "SSh gakoak, konfigurazioa eta ostalari ezagunak"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Konfiguratu Tailsen bolumen iraunkorra"
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "Ezin da bolumen iraunkorra ezabatu erabilia izaten ari den bitartean. "
-#~ "Tails iraunkortasunik gabe berrabiarazi beharko zenuke."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "Bolumen iraunkorra desblokeatuta dago."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Bolumen iraunkorra ez dago muntatuta."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr "Bolumen iraunkorra ezin da irakurri. Baimen edo jabetza arazoak?"
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Iraunkortasun morroia - Amaituta"
-
-#~ msgid ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."
-#~ msgstr ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."

@@ -237,10 +237,6 @@ Per-app caveats
 - OnionCircuits:
   - Initially confined with AppArmor primarily for onion-grater, not needed
     anymore as long as we use network namespaces for that.
-  - The AppArmor sandbox is currently ineffective due to D-Bus session access,
-    which indirectly also grants dconf access; the app should automatically lose
-    these in Tails 8.0 (Forky), after which we will
-    [[!tails_ticket 21632 desc="reconsider this topic"]].
 
 - OnionShare:
   - Initially confined with AppArmor primarily for onion-grater, security
@@ -267,7 +263,6 @@ Per-app caveats
 - Unsafe Browser: see [[design/Unsafe_Browser]].
 
 - Everything else: other apps generally run unconfined, which is a problem as well.
-  We have ideas to fix that ([[!tails_ticket 21525]]).
 
 Using alias rules to avoid modifying profiles
 ---------------------------------------------
