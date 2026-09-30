@@ -142,7 +142,7 @@ class Config:
             data.update(yaml.safe_load(open(config_file)))
         return data
 
-    def detect_stage(self) -> None | str:
+    def detect_stage(self) -> str | None:
         last_good_stage = None
 
         for stage in STAGES:
