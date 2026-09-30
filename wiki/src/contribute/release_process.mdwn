@@ -1964,19 +1964,12 @@ Skip this part if preparing a release candidate:
 2. Prepare a Merge Request that closes the just-released
    [milestone](https://gitlab.tails.net/groups/tails/-/milestones):
 
-       (
-       set -eu -o pipefail
-       cd "${GITLAB_CONFIG_CHECKOUT}"
-       git fetch --all
-       git checkout -b "close-${TAG}" origin/master
-       "${RELEASE_CHECKOUT:?}"/bin/gitlab-close-milestone tails.yml "$VERSION"
-       git commit -m "Close ${VERSION}" tails.yml
-       git push \
-           --set-upstream \
-           -o merge_request.create \
-           -o merge_request.title="Close Tails ${VERSION}" \
-           origin HEAD
-       )
+       "${RELEASE_CHECKOUT:?}"/bin/gitlab-close-milestone \
+           --create-mr \
+           --gitlab-config-checkout "${GITLAB_CONFIG_CHECKOUT}" \
+           --yaml-file tails.yml
+           --tag `$TAG` \
+           --version `$VERSION`
 
    Then make another Tails Team member the *Reviewer* of that MR.
 

@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import sh
 from ruamel.yaml import YAML
 
 LOG_FORMAT = "%(asctime)-15s %(levelname)s %(message)s"
@@ -67,21 +68,53 @@ def main() -> None:
         description="Update a Tails milestone state to 'closed' in a YAML file.",
     )
     parser.add_argument(
-        "yaml_file",
+        "--gitlab-config-checkout",
         type=Path,
-        help="Path to the YAML file",
+        help="Path to the gitlab-config checkout directory",
     )
     parser.add_argument(
-        "version",
+        "--yaml-file",
+        type=Path,
+        help="Path to the YAML file relative to the gitlab-config checkout",
+    )
+    parser.add_argument(
+        "--create-mr",
+        action="store_true",
+        default=False,
+        help="Create a GitLab merge request for the changes",
+    )
+    parser.add_argument(
+        "--version",
         type=str,
         help="Version string (e.g., 7.14, 3.0~rc1, 4.0.1)",
+    )
+    parser.add_argument(
+        "--tag",
+        type=str,
+        help="Tag string to use in the branch name (required if --create-mr is passed)",
     )
 
     args = parser.parse_args()
 
+    if not args.gitlab_config_checkout:
+        parser.error("--gitlab-config-checkout is required.")
+    if not args.gitlab_config_checkout.is_dir():
+        parser.error(
+            f"--gitlab-config-checkout directory '{args.gitlab_config_checkout}' does not exist."
+        )
+
+    if args.create_mr and not args.tag:
+        parser.error("--tag is required when --create-mr is specified.")
+
+    args.yaml_file = args.gitlab_config_checkout / args.yaml_file
     if not args.yaml_file.is_file():
         log.error("File '%s' does not exist.", args.yaml_file)
         sys.exit(1)
+
+    if args.create_mr:
+        git = sh.git.bake(_cwd=args.gitlab_config_checkout)
+        git.fetch("--all")
+        git.checkout("-b", f"close-{args.tag}", "origin/master")
 
     write_yaml(
         args.yaml_file,
@@ -90,6 +123,18 @@ def main() -> None:
             args.version,
         ),
     )
+
+    if args.create_mr:
+        git.commit("-m", f"Close {args.version}", args.yaml_file)
+        git.push(
+            "--set-upstream",
+            "-o",
+            "merge_request.create",
+            "-o",
+            f"merge_request.title=Close Tails {args.version}",
+            "origin",
+            "HEAD",
+        )
 
 
 if __name__ == "__main__":
