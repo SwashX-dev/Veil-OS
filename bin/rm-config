@@ -172,7 +172,7 @@ class Config:
         release_branch = "testing" if self.data["major_release"] == 1 else "stable"
         iuks_dir = Path(self.data["iuks_dir"])
         iuks_dir.mkdir(parents=True, exist_ok=True)
-        iuk_hashes = Path(iuks_dir) / ("to_%s.sha256sum" % version)
+        iuk_hashes = Path(iuks_dir) / (f"to_{version}.sha256sum")
         iuk_source_versions = (
             subprocess.check_output(
                 [git_repo_root() / "bin/iuk-source-versions", version],
@@ -206,7 +206,7 @@ class Config:
             "release_branch": release_branch,
             "tag": tag,
             "previous_tag": self.data["previous_version"].replace("~", "-"),
-            "website_release_branch": "web/release-%s" % tag,
+            "website_release_branch": f"web/release-{tag}",
             "iuk_source_versions": " ".join(iuk_source_versions),
             "test_iuk_source_versions": " ".join(test_iuk_source_versions),
             "iuks_dir": str(iuks_dir),
@@ -283,7 +283,7 @@ def generate_boilerplate(stage: str):
     else:
         write_mode = "a"
     with open(
-        git_repo_root() / ("config/release_management/templates/%s.yml" % stage),
+        git_repo_root() / (f"config/release_management/templates/{stage}.yml"),
     ) as src, open(
         Path(xdg_config_home) / "tails/release_management/current.yml",
         write_mode,
