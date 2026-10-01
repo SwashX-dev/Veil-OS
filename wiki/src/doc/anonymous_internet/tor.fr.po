@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2026-03-26 08:18+0100\n"
 "PO-Revision-Date: 2026-09-27 20:56+0000\n"
-"Last-Translator: delata limance <kasbarianberge@systemli.org>\n"
+"Last-Translator: Kaelvar <kaelvar@users.noreply.translate.tails.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -132,7 +132,7 @@ msgstr "Pour se connecter au réseau Tor :"
 #. type: Bullet: '1. '
 msgid "[[Connect to a local network|networkmanager]], wired, Wi-Fi, or mobile."
 msgstr ""
-"[[Se connecter au réseau local|networkmanager]], filaire, Wi-Fi ou mobile."
+"[[Se connecter à un réseau local|networkmanager]], filaire, Wi-Fi ou mobile."
 
 #. type: Bullet: '2. '
 msgid ""
@@ -418,8 +418,8 @@ msgid ""
 "You might need to go unnoticed if using Tor could look suspicious to someone "
 "who monitors your Internet connection."
 msgstr ""
-"Vous pourriez vouloir passer inaperçu si l'utilisation de Tor peut sembler "
-"suspecte à quiconque surveillerait votre connexion Internet."
+"Vous pourriez avoir besoin de passer inaperçu si l'utilisation de Tor peut "
+"sembler suspecte à quiconque surveillerait votre connexion Internet."
 
 #. type: Plain text
 msgid ""
@@ -493,8 +493,8 @@ msgid ""
 "Storage."
 msgstr ""
 "Pour sauvegarder le dernier pont Tor qui s'est connecté à Tor avec succès, "
-"activez la fonctionnalité du volume persistant [[Pont Tor|persistent_storage/"
-"configure#bridge]]."
+"activez la fonctionnalité [[Pont Tor|persistent_storage/configure#bridge]] "
+"du stockage persistant."
 
 #. type: Plain text
 #, fuzzy, no-wrap
@@ -521,7 +521,7 @@ msgstr "<h1 id=\"status\">Visualiser l'état de Tor</h1>\n"
 #. type: Plain text
 msgid "The status of Tor appears as an onion icon in the notification area:"
 msgstr ""
-"L'état de Tor apparaît sous la forme d'un icône d'oignon dans la zone de "
+"L'état de Tor apparaît sous la forme d'une icône d'oignon dans la zone de "
 "notification :"
 
 #. type: Bullet: '  - '
