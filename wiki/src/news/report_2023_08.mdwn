@@ -14,7 +14,7 @@ Highlights
 
 - We published our [recommendations for hardware to run Tails](https://tails.net/doc/about/requirements/). 
 
-- We interviewed journalists, activists, and digital security trainers to better understand their communication needs. We want to speak to more such folks, especially if they are working in African and Asian contexts. If you are reading this, or know of anyone who fits, sajolida would love to hear from you. He's at <sajolida@pimienta.org>.
+- We interviewed journalists, activists, and digital security trainers to better understand their communication needs. We want to speak to more such folks, especially if they are working in African and Asian contexts. If you are reading this, or know of anyone who fits, sajolida would love to hear from you. He's at <sajolida@torproject.org>.
 
 - And internally too, we are working on better communication and collaboration tools. We are trying to make working on Tails a bit friendlier for those who don't suffer from command line addiction. 
 

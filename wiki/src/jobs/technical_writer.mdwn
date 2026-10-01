@@ -123,7 +123,7 @@ Additionally, we would love it if you have:
 How to apply
 ============
 
-Send an email to <sajolida@pimienta.org>.
+Send an email to <sajolida@torproject.org>.
 
 <style>
 .apply-cover-letter, .apply-contributions { display: none; }

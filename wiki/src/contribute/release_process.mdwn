@@ -51,7 +51,6 @@ process:
 
    - Building the final image
    - Building IUKs
-   - Running the automated test suite
 
 Prepare your checklist
 ======================
@@ -106,15 +105,11 @@ Packages
 Ensure the system(s) you will use for the release process have these packages
 installed:
 
-* `apt install oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
+* `apt install oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-ruamel.yaml python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
 
-* `perl5lib` dependencies:
+* `./bin/install-perl5lib-build-deps`
 
-     RELEASE_CHECKOUT=. ./bin/rm-pager wiki/src/contribute/release_process/perl5lib.mdwn
-
-* packages needed to build IUKs:
-
-    RELEASE_CHECKOUT=. ./bin/rm-pager wiki/src/contribute/release_process/tails-iuk.mdwn
+* `./bin/install-iuk-build-deps`
 
 * `ikiwiki` from Debian testing (Forky) or newer
 
@@ -224,9 +219,13 @@ be delegated to them.
 
 ### Released security updates
 
-For each recent
-[Debian Security Advisory (DSA)](https://www.debian.org/security/#DSAS)
-that applies to a package we ship in our images:
+Check recent Debian Security Advisory (DSA) using these 2 sources (sometimes
+1 of them is lagging behind by hours):
+
+ - https://www.debian.org/security/#DSAS
+ - https://lists.debian.org/debian-security-announce/
+
+For each recent DSA that applies to a package we ship in our images:
 check that the latest build from the release branch has the update.
 
 If an update is missing, most likely it's a race condition and the next build
@@ -798,8 +797,6 @@ Feel free to skip this section when preparing an emergency release.
 
 1. Clean up the new sort file:
 
-   Run this command:
-
        ./bin/clean-squashfs-sort-file config/binary_rootfs/squashfs.sort
 
 1. Inspect the diff:
@@ -912,7 +909,7 @@ Create tagged snapshots of upstream APT repositories:
 
 Note:
 
-  - This command takes 5-15 minutes
+  - This command takes a few minutes.
 
   - It's expected that the packages that were pulled from our
     [[custom APT repository|APT_repository/custom]] are
@@ -928,6 +925,8 @@ Build the final images
 
 Expected time: 30-45 minutes depending on your computer and the available
 Jenkins workers.
+
+1. If building on another machine: ensure the build machine's Git tree is on the tag.
 
 1. Build the final images:
 
@@ -955,6 +954,9 @@ Jenkins workers.
 1. Set the `MATCHING_JENKINS_IMAGES_BUILD_ID` environment variable to the ID of
    the Jenkins build.
 
+1. If you've built the images on another machine: copy the build artifacts from
+   the build machine to `$ARTIFACTS` on your main computer.
+
 1. Compare the new build manifest with the one from the previous,
    almost-final build:
 
@@ -974,10 +976,9 @@ Verify that Jenkins reproduced your images:
     (
     set -eu
     cd "${ARTIFACTS:?}"
-    url="https://nightly.tails.net/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum"
-    curl --fail "$url" > SHA512SUMS-jenkins.txt
-    grep --perl-regexp '[.]img|iso' SHA512SUMS-jenkins.txt | sha512sum -c -
-    rm SHA512SUMS-jenkins.txt
+    curl --fail "https://nightly.tails.net/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-build-artifacts.shasum" \
+       | grep --perl-regexp '[.]img|iso' \
+       | sha512sum -c -
     )
 
 ### If the ISO and USB images hashes match
@@ -1101,10 +1102,26 @@ Prepare incremental upgrades
 
 Reference: [[design documentation|contribute/design/upgrades]]
 
+## If you build IUKs on another machine
+
+- Copy `~/.config/tails/release_management/current.yml` to your build machine.
+
+- If your build machine lacks access to the `puppet-control` repository:
+  1. synchronize an up-to-date clone of that repository from your main machine
+     to your build machine
+  2. on your build machine, point `PUPPET_TAILS_REMOTE` to that local clone
+     (`file:///path/to/puppet-control/.git`)
+
+- Ensure `$ISOS_GIT` is up-to-date on your build machine.
+
+- On your build machine, move the build artifacts to the
+  `$ISOS/tails-amd64-$VERSION/` directory.
+
 Sanity checks
 -------------
 
-Check that you have the correct version of `squashfs-tools-ng` and `libsquashfs1` installed:
+On the machine you'll use to build IUKs,
+check that you have the correct version of `squashfs-tools-ng` and `libsquashfs1` installed:
 
     [ "$(dpkg-query --showformat '${Version}\n' --show squashfs-tools-ng)" \
       = 1.3.2-1 \
@@ -1116,7 +1133,8 @@ Check that you have the correct version of `squashfs-tools-ng` and `libsquashfs1
 Build the Incremental Upgrade Kits locally
 ------------------------------------------
 
-Verify there's enough free disk space in `$IUKS_DIR`:
+On the machine you'll use to build IUKs,
+verify there's enough free disk space in `$IUKS_DIR`:
 
     N_IUKS="$(echo ${IUK_SOURCE_VERSIONS:?} | wc -w)"
     MIN_DISK_SPACE=$((N_IUKS * 1000))
@@ -1179,6 +1197,9 @@ you can follow the next steps:
 
 3. If you expect you will have to do some manual testing yourself and you have a spare computer, you can prepare a USB
    stick and start testing.
+
+If you've built IUKs on another machine, once they have been built,
+copy `to_$VERSION.sha256sum` to `$IUKS_DIR/` your main computer.
 
 ISO history
 -----------
@@ -1261,13 +1282,7 @@ Build the Incremental Upgrade Kits on Jenkins
           eval $(./bin/rm-config generate-environment --stage built-iuks)
 
 5. Wait until the `build_IUKs` build completes successfully.
-   It should take about 15 minutes for each member of
-   the `$IUK_SOURCE_VERSIONS` list, distributed across `isoworkerN` workers.
-
-   If you have a fast computer, you'll be waiting for Jenkins to be done, while
-   your CPU is idle. Consider starting the [automated test
-   suite](#run-automated-tests) in the meanwhile to optimize this: running it
-   does not depend on any of the IUK-related steps.
+   It should take 15-30 minutes.
 
 <a id="reproducibility-sanity-check-iuk"></a>
 
@@ -1437,6 +1452,19 @@ Prepare upgrade-description files
            --release_checkout="${RELEASE_CHECKOUT:?}" \
            --major_release="${MAJOR_RELEASE:?}" \
            --channel="${DIST:?}"
+
+1. If you've prepared the upgrade-description files on another machine,
+   copy them to your main machine.
+
+   To do so, adjust and run this command:
+
+       rsync \
+          buildbox:tails/release/checkout/wiki/src/upgrade/ \
+          ./wiki/src/upgrade/ \
+          -rv \
+          --include "*/" \
+          --include 'upgrades.yml' \
+          --exclude='*'
 
 1. Create an armoured detached signature for each created or modified
    upgrade-description file.
@@ -1613,8 +1641,7 @@ section) is completed.
 
 Finally, move the IUKs in place with proper
 ownership and permissions and update the time in `project/trace` file
-on our rsync server and on the live website (even for a release
-candidate):
+on our rsync server and on the live website:
 
     ./bin/publish-iuks
 
@@ -1626,52 +1653,6 @@ Let's be sure that this happens via
 
 If, at a later stage of the process, you realize Mirrorbits is still not
 "noticing" that mirrors are up-to-date, restart the Mirrorbits service again.
-
-<a id="run-automated-tests"></a>
-
-Run the automated test suite
-===============================
-
-This is not a required step: check the manual testers pad and see if anyone
-volunteered for that. But if no one did, start the automated test suite. The
-sooner, the better.
-
-You probably already know how to do that, but keep this in mind:
-
- - you *need* to use the `--old-iso` option
-
- - you probably want to specify `--tmpdir` to point to a non-volatile directory.
-   The default lives in `/tmp/`, which might lead to unpleasant surprises if,
-   for whatever reasons, you need to turn off your computer.
-
- - if you are running this and going AFK for long time (ie: overnight) you might want to
-   keep your CPU busy by rerunning failed scenarios. See the "Automatically re-run failures" section.
-
- - if the following conditions are met:
-
-    - you are making out an emergency release *OR* you still feel the need to make the release as soon as
-      possible for security reasons
-
-    - *and* you are *not* running test overnight, so skipping tests will reduce the lead time
-
-    - *then*, feel free to skip testing `@not_release_blocker`, setting
-      `what=(--tag ~@not_release_blocker)` in the following example.
-
-Automatically re-run failures
---------------------------------
-
-The file `test-rerun.sh` will help you rerunning the test suite automatically, which avoids wasting CPU.
-
-```sh
-cp bin/test-rerun.sh ../
-```
-
-Tweak it: the `tmpdir` might especially need some customization based on your directory structure.
-
-```sh
-export VERSION ISOS PREVIOUS_STABLE_VERSION
-../test-rerun.sh
-```
 
 Public testing
 ==============
@@ -1718,11 +1699,8 @@ Lead the internal manual testing to conclusion
           echo ${TEST_IUK_SOURCE_VERSIONS:?}
 
 
-1. Fill the gaps and make sure that the automated and manual test
-   suites are done in due time.
-
-1. If you were the one running the [automated test suite](#run-automated-tests),
-   check its results.
+1. Fill the gaps and make sure that the manual test
+   suite is done in due time.
 
 1. Triage test results, reproduce bugs as
    needed, decide what the next step is and make sure it happens: add to known
@@ -1944,9 +1922,7 @@ Sanity checks
 Push
 ----
 
-Push the last commits and set the website release branch to auto-merge.
-This will make the release go live on our website once all required checks
-complete successfully:
+Push the last commits:
 
     (
     set -eu -o pipefail
@@ -1961,6 +1937,8 @@ complete successfully:
 
 Mark the merge request for `$WEBSITE_RELEASE_BRANCH` as ready and set
 it to auto-merge.
+This will make the release go live on our website once all required checks
+complete successfully
 
 Close the "Write release notes" ticket manually since
 `Closes:` statements are not sufficient when updating `master`.
@@ -1983,17 +1961,17 @@ Skip this part if preparing a release candidate:
            --token "$(bin/gitlab-api-token TailsRM)"
        )
 
-3. Finally, submit a MR against
-   [tails/gitlab-config](https://gitlab.tails.net/tails/gitlab-config)
-   to close the just-released
-   [milestone](https://gitlab.tails.net/groups/tails/-/milestones). See
-   this as an example:
-   [tails/gitlab-config!18](https://gitlab.tails.net/tails/gitlab-config/-/merge_requests/18/diffs)
-   
-   You may use [Gitlab web interface to create the
-   MR](https://gitlab.tails.net/tails/gitlab-config/-/edit/master/main.yml).
+2. Prepare a Merge Request that closes the just-released
+   [milestone](https://gitlab.tails.net/groups/tails/-/milestones):
 
-   Make another Tails Team member the *Reviewer*.
+       "${RELEASE_CHECKOUT:?}"/bin/gitlab-close-milestone \
+           --create-mr \
+           --gitlab-config-checkout "${GITLAB_CONFIG_CHECKOUT}" \
+           --yaml-file tails.yml
+           --tag `$TAG` \
+           --version `$VERSION`
+
+   Then make another Tails Team member the *Reviewer* of that MR.
 
 ### Issues linked from the website
 
@@ -2017,30 +1995,6 @@ Wait for the release to be fully published, that is for the website to have been
 fully refreshed. To do so, first wait for the
 [GitLab CI pipeline](https://gitlab.tails.net/tails/tails/-/pipelines/?ref=master)
 triggered by the automatic merge of `$WEBSITE_RELEASE_BRANCH` to build and deploy the website.
-
-And then:
-
-### If you are publishing a final release
-
-Check:
-
-    [ "${DIST:?}" = stable ]
-
-wait until all these conditions are met:
- - <https://tails.net/news/> includes the release notes
- - <https://tails.net/news/index.de.html> includes the release notes
- - <https://tails.net/torrents/files/> includes the files
-   for the new release
-
-### If you are publishing a RC
-
-Check:
-
-    [ "${DIST:?}" = alpha ]
-
-wait until the call for testing is live:
-
-    "${RELEASE_CHECKOUT:?}"/bin/rm-open-link "https://tails.net/news/test_${TAG:?}/"
 
 X.com
 -----
@@ -2072,13 +2026,16 @@ deployment". Check if everything looks good.
     to open a menu where you will see "deploy-prod ▶️", then click on the ▶️ to
     deploy.
 
-Amnesia news
-------------
+tails-news@
+-----------
 
-[Log in](https://lists.torproject.org/mailman3/postorius/lists/tails-news.lists.torproject.org/)
-and accept the release announcement (it's been automatically sent
-to `tails-news@` every half hour and is stuck in the
-moderation queue).
+The release announcement is automatically sent to `tails-news@` every half hour.
+
+Once that message is held in the moderation queue, let it through to the mailing
+list, using 1 of these 2 techniques:
+
+ - [listadmin3](https://github.com/u1f35c/listadmin3)
+ - [web interface](https://lists.torproject.org/mailman3/postorius/lists/tails-news.lists.torproject.org/held_messages)
 
 Prepare for the next development cycle
 ======================================
@@ -2208,10 +2165,11 @@ Check that you are indeed preparing a final release:
    for the last release:
 
        (
-       cd "${RELEASE_CHECKOUT}" && \
-       git checkout stable && \
+       set -eu -o pipefail
+       cd "${RELEASE_CHECKOUT}"
+       git checkout stable
        dch --newversion "${NEXT_STABLE_CHANGELOG_VERSION:?}" \
-           "Dummy entry for next release." && \
+           "Dummy entry for next release."
        git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_STABLE_CHANGELOG_VERSION:?}."
        )
@@ -2234,10 +2192,11 @@ Check that you are indeed preparing a final release:
    If this is not the case yet, run:
 
        (
-       cd "${RELEASE_CHECKOUT}" && \
-       git checkout devel && \
+       set -eu -o pipefail
+       cd "${RELEASE_CHECKOUT}"
+       git checkout devel
        dch --newversion "${NEXT_PLANNED_MAJOR_VERSION:?}" \
-           "Dummy entry for next release." && \
+           "Dummy entry for next release."
        git commit debian/changelog \
            -m "Add dummy changelog entry for ${NEXT_PLANNED_MAJOR_VERSION:?}."
        )
@@ -2248,8 +2207,9 @@ Check that you are indeed preparing a final release:
    Look carefully at the output of this command:
 
        (
-       cd "${RELEASE_CHECKOUT:?}" && \
-       git checkout stable && \
+       set -eu -o pipefail
+       cd "${RELEASE_CHECKOUT:?}"
+       git checkout stable
        ./bin/apt-snapshots-expiry
        )
 
@@ -2424,11 +2384,13 @@ Check that you are indeed preparing a RC:
            ~/.config/tails/release_management/old/${VERSION:?}.yml.disabled
        )
 
-1. Delete your local copy of the IUKs
+1. Delete your local copy of the IUKs:
 
        rm -f "${IUKS_DIR:?}/"Tails_amd64_*_to_${VERSION:?}.iuk "${IUKS_HASHES:?}"
 
-1. Delete logs
+   If you've built them on another machine, do it there too.
+
+1. Delete IUK build logs on the machine where you've built IUKs:
 
        rm -f /var/tmp/wrap_tails_create_iuks*.log
 
