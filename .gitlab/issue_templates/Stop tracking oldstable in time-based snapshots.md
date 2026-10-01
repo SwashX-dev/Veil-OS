@@ -25,4 +25,4 @@ drawbacks:
 
 /label ~"Tails Team"
 /label ~"To Do"
-/label ~"Infrastructure"
+/label ~"C:Infrastructure"
