@@ -2,6 +2,7 @@
 
 set -e
 set -u
+set -o pipefail
 
 IGNORED_TAGS="7.3"
 
@@ -27,10 +28,36 @@ member() {
 RELEASING_VERSION="$1"
 RELEASING_MAJOR_VERSION=$(major_version "$RELEASING_VERSION")
 
+tags_reachable_from_most_recent_tag_on() {
+    REF="$1"
+    MOST_RECENT_TAG_ON_REF=$(git describe --abbrev=0 "$REF")
+    git tag --merged "$MOST_RECENT_TAG_ON_REF"
+}
+
 tags() {
     # While a simple "git tag" might seem equally effective, it will misbehave
     # if you have third-party remotes that have tags. See tails#21295
-    git ls-remote --tags origin | grep --perl-regexp --only-matching '\trefs/tags/\K[0-9][^^]*$'
+    #
+    # We could use "git ls-remote --tags origin" but in some RM setup
+    # (build machine without access to the tails/tails project while
+    # it's internal due to DDoS) this would breaks.
+    #
+    # So we instead use this slightly contrived method: list the union
+    # of all tags that are reachable from the most recent tag on each
+    # relevant branch.
+    #
+    # We check both:
+    #
+    #  - stable: when we're not using the testing branch, stable is
+    #    the only place where all tags are reachable, because testing
+    #    is lagging behind;
+    #
+    #  - testing: when we're using the testing branch, it usually has
+    #    some tags that are not reachable from stable yet.
+    (
+        tags_reachable_from_most_recent_tag_on origin/stable
+        tags_reachable_from_most_recent_tag_on origin/testing
+    ) | sort --unique
 }
 
 (
