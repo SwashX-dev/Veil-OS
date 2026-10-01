@@ -13,6 +13,7 @@
 * [ ] Verify we don't use oldstable anywhere else anymore
 * [ ] [other blockers]
 * [ ] https://tails.net/contribute/APT_repository/time-based_snapshots/#stop-tracking-a-distribution
+* [ ] Schedule next round: create a new related issue using the *Stop tracking oldstable in time-based snapshots* issue template
 
 # Why
 
