@@ -50,17 +50,14 @@ def chutney_configure_with_timeout
   # because it will kill the thread and subprocess immediately. We use
   # this rather convoluted way to do a timeout so we can rejoin the
   # thread to the main thread and raise any exception it had there.
-  # Also note that we run it as a process group so we can kill it more
-  # easily later since $cmd_helper_process.pid will be a PID of a
-  # shell process, not the Chutney python process.
-  t = Thread.new { chutney_cmd('configure', popen_opts: { pgroup: true }) }
+  t = Thread.new { chutney_cmd('configure') }
   begin
     try_for(60) { !$cmd_helper_process.nil? && $cmd_helper_process.closed? }
   rescue Timeout::Error
     # This will raise a KeyboardInterrupt in Chutney that will produce
     # a backtrace which hopefully gives a good indication where it's
     # stuck at.
-    Process.kill('-INT', $cmd_helper_process.pid)
+    Process.kill('INT', $cmd_helper_process.pid)
   end
   t.join
 end
