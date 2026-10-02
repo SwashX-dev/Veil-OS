@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-06-13 14:17+0200\n"
-"PO-Revision-Date: 2024-05-16 19:46+0000\n"
-"Last-Translator: Chre <tor@renaudineau.org>\n"
+"PO-Revision-Date: 2026-09-27 20:56+0000\n"
+"Last-Translator: Kaelvar <kaelvar@users.noreply.translate.tails.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.3\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -75,8 +75,7 @@ msgstr "<a href=\"http://baidu.com/\" target=\"_blank\"/>Baidu</a>"
 
 #. type: Bullet: '1. '
 msgid "If you are redirected to a captive portal, sign in to the network."
-msgstr ""
-"Si vous êtes redirigé vers le portail captif, connectez vous au réseau."
+msgstr "Si vous êtes redirigé vers un portail captif, connectez-vous au réseau."
 
 #. type: Plain text
 #, no-wrap
@@ -87,8 +86,9 @@ msgid ""
 "   <span class=\"doc\">the <i>Unsafe Browser</i></span>\n"
 "   and try connecting to the Tor network again.\n"
 msgstr ""
-"   Si vous n'êtes pas redirigé vers un portail captif et que le site web s'affiche,\n"
-"   cela signifique que vous êtes déjà connecté à Internet. Fermer\n"
+"   Si vous n'êtes pas redirigé vers un portail captif et que le site web "
+"s'affiche,\n"
+"   cela signifie que vous êtes déjà connecté à Internet. Fermer\n"
 "   <span class=\"warning\">ce navigateur</span>\n"
 "   <span class=\"doc\">le <i>Navigateur non sécurisé</i></span>\n"
 "   et essayer de se connecter au réseau Tor à nouveau.\n"
@@ -131,7 +131,9 @@ msgstr "   </div>\n"
 #. type: Plain text
 #, no-wrap
 msgid "   You can use *Tor Browser* or any other application as usual.\n"
-msgstr "   Vous pouvez utiliser le *Navigateur Tor* ou tout autre application comme d'habitude.\n"
+msgstr ""
+"   Vous pouvez utiliser le *Navigateur Tor* ou toute autre application comme "
+"d'habitude.\n"
 
 #, no-wrap
 #~ msgid "   <!-- Clarify this after #18382 and #5785. -->\n"
