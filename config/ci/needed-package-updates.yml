@@ -21,3 +21,5 @@ ignore:
   general:
     - tor
     - live-boot
+instructions:
+  gnome-software: 'See https://tails.net/contribute/release_process/gnome-software/'
