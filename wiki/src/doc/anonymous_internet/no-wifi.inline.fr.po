@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2026-07-22 09:36+0200\n"
-"PO-Revision-Date: 2026-08-07 06:56+0000\n"
-"Last-Translator: xin <xin@riseup.net>\n"
+"PO-Revision-Date: 2026-09-27 20:56+0000\n"
+"Last-Translator: Kaelvar <kaelvar@users.noreply.translate.tails.net>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -166,7 +166,7 @@ msgstr "Acheter un adaptateur Wi-Fi USB qui fonctionne dans Tails :"
 
 #. type: Bullet: '  - '
 msgid "Panda Wireless Ultra ($25)"
-msgstr "Panda Wireless Ultra (25$)"
+msgstr "Panda Wireless Ultra (25 $)"
 
 #. type: Plain text
 #, no-wrap
@@ -175,7 +175,7 @@ msgstr "    [[Acheter sur Amazon|https://www.amazon.com/d/B00762YNMG]]\n"
 
 #. type: Bullet: '  - '
 msgid "ThinkPenguin TPE-N150USB ($64)"
-msgstr "ThinkPenguin TPE-N150USB (64$)"
+msgstr "ThinkPenguin TPE-N150USB (64 $)"
 
 #. type: Plain text
 #, no-wrap
