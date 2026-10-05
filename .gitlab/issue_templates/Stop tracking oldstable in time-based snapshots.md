@@ -1,7 +1,8 @@
 # When creating this issue
 
 * [ ] Set the milestone to the upcoming N.0 release, where we'll update to Debian `$CODENAME`
-* [ ] Set the title to *Stop tracking $DIST in time-based snapshots*, with `$DIST` being the codename for the version of Debian that Tails N.0 will upgrade *from*; at the time you're creating this issue, `$DIST` is probably the current Debian *stable*; and at the time we'll do the work, `$DIST` will probably have be Debian *olstable*
+* [ ] Set the title to `Stop tracking $DIST in time-based snapshots`, with `$DIST` being the codename for the version of Debian that Tails N.0 will upgrade *from*; at the time you're creating this issue, `$DIST` is probably the current Debian *stable*; and at the time we'll do the work, `$DIST` will probably have be Debian *olstable*
+* [ ] Delete this section
 
 # How
 
@@ -12,6 +13,7 @@
 * [ ] Verify we don't use oldstable anywhere else anymore
 * [ ] [other blockers]
 * [ ] https://tails.net/contribute/APT_repository/time-based_snapshots/#stop-tracking-a-distribution
+* [ ] Schedule next round: create a new related issue using the *Stop tracking oldstable in time-based snapshots* issue template
 
 # Why
 
@@ -24,4 +26,4 @@ drawbacks:
 
 /label ~"Tails Team"
 /label ~"To Do"
-/label ~"Infrastructure"
+/label ~"C:Infrastructure"
