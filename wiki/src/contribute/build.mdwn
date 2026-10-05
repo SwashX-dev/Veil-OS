@@ -61,7 +61,7 @@ To build Tails you need:
    [[stable branch|contribute/git#main-repo]], execute the
    following commands:
 
-        git clone https://gitlab.tails.net/tails/tails.git && \
+        git clone git://git.tails.net/tails.git && \
         cd tails && \
         git checkout stable && \
         git submodule update --init
