@@ -94,8 +94,7 @@ useful, such as automated code reformatting, run in your local clone:g ap
 
 ### Branches
 
-Tails development uses several branches modeled a bit like the
-Debian development process. Here they are.
+Tails development uses several branches. Here they are.
 
 <a id="master_branch"></a>
 
