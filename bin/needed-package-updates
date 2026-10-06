@@ -121,9 +121,12 @@ class UDD:
 
     def _request(self, packages: Sequence[str]) -> dict[str, dict[str, UDDPackageRow]]:
         ret: dict[str, dict[str, UDDPackageRow]] = collections.defaultdict(dict)
-        with psycopg2.connect(
-            "postgresql://udd-mirror:udd-mirror@udd-mirror.debian.net/udd",
-        ) as conn, conn.cursor() as curs:
+        with (
+            psycopg2.connect(
+                "postgresql://udd-mirror:udd-mirror@udd-mirror.debian.net/udd",
+            ) as conn,
+            conn.cursor() as curs,
+        ):
             archs = ("all", "amd64")
             components = ("main", "contrib", "non-free", "non-free-firmware")
             pkgs = tuple(packages)
