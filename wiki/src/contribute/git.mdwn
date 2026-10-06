@@ -94,15 +94,14 @@ useful, such as automated code reformatting, run in your local clone:g ap
 
 ### Branches
 
-Tails development uses several branches modeled a bit like the
-Debian development process. Here they are.
+Tails development uses several branches. Here they are.
 
 <a id="master_branch"></a>
 
 #### master
 
 The `master` branch is mostly used to build the website. It is
-merged into `devel` and `stable` from time to time.
+regularly and automatically merged into `devel` and `stable`.
 We merge into `master`:
 
 - [[Documentation improvements|contribute/how/documentation]] that
@@ -117,12 +116,8 @@ We merge into `master`:
 
 #### stable
 
-The `stable` branch is intended to contain:
-
-- the state of the code tagged for the last stable release
-- fixes for security or important bugs.
-
-Its purpose is to prepare bugfix releases.
+The `stable` branch is intended to contain changes that do *not* need to go
+through a release candidate. They will be included in our next stable release.
 
 #### testing
 
@@ -131,8 +126,7 @@ point of the development process, the `devel` branch code is merged
 into `testing`, frozen, and endures careful testing and bug-fixing
 until this branch is considered good enough to become a stable
 release. The `testing` branch is then merged into the `stable` and
-`master` ones, images built and shipped and we go back to code shiny
-new stuff in the `devel` branch.
+`master` ones, images built and shipped.
 
 Please note that the `testing` branch generally has not been granted
 the same testing and attention as code that has made it into a
@@ -149,19 +143,16 @@ from it will be merged into testing and then into a real release.
 Please note that the `devel` branch can be broken, have awful security
 problems and so on. No guarantee, blablabla.
 
-The `master` branch is merged into `devel` from time to time.
-
 #### Topic branches
 
 We generally use topic branches called `NNNNN-*`, with "NNNNN" being the main
 issue addressed by the branch. Once ready, a topic branch is
 merged (with `--no-ff`) into the appropriate branch (generally
 `devel`). Until it has been merged, a topic branch's history may be
-rewritten, e.g. it may be rebased on top of `devel`.
+rewritten, e.g. it may be rebased on top of its target branch (usually `stable`).
 
-Unless there are good reasons to do otherwise, bugfix branches must be
-forked off the stable branch, while feature branches
-should be forked off the devel branch.
+Unless there are good reasons to do otherwise, branches must be
+forked off the stable branch.
 
 If you intend to work on a branch not really meant to be proposed to a
 merge at first, like an experimenting branch that you still want to push
