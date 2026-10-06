@@ -3,7 +3,7 @@
 set -eu
 set -x
 
-error () {
+error() {
     echo "error: ${*}" >&2
     exit 1
 }
@@ -16,10 +16,10 @@ MESSAGE="$1"
 
 TRACE_TIME=$(date +%s)
 
-echo "${TRACE_TIME:?}" \
-    | ssh rsync.mtl-libvirt-01 sudo tee /srv/rsync/tails/tails/project/trace
+echo "${TRACE_TIME:?}" |
+    ssh rsync.mtl-libvirt-01 sudo tee /srv/rsync/tails/tails/project/trace
 
-echo "${TRACE_TIME:?}" > "${MASTER_CHECKOUT:?}/wiki/src/inc/trace"
+echo "${TRACE_TIME:?}" >"${MASTER_CHECKOUT:?}/wiki/src/inc/trace"
 (
     set -eux
     cd "${MASTER_CHECKOUT:?}"

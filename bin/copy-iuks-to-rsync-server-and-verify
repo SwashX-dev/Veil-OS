@@ -72,7 +72,7 @@ def main():
     if args.debug:
         logging.basicConfig(level=logging.DEBUG, format=LOG_FORMAT)
     elif args.quiet:
-        logging.basicConfig(level=logging.WARN, format=LOG_FORMAT)
+        logging.basicConfig(level=logging.WARNING, format=LOG_FORMAT)
     else:
         logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
 
@@ -270,7 +270,7 @@ class CopyAndVerify:
                     "wget",
                     "--quiet",
                     "--no-clobber",
-                    "--directory-prefix=%s" % destdir,
+                    f"--directory-prefix={destdir}",
                     iuk_url,
                 ],
                 skip_if_dry_run=True,
@@ -283,10 +283,7 @@ class CopyAndVerify:
                 [
                     "ssh",
                     desthost,
-                    "cd '{d}' && sha256sum --check --strict '{f}'".format(
-                        d=iuks_dir,
-                        f=Path(hashes_file).name,
-                    ),
+                    f"cd '{iuks_dir}' && sha256sum --check --strict '{Path(hashes_file).name}'",
                 ],
             )
         except subprocess.CalledProcessError:
