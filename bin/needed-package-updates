@@ -146,9 +146,11 @@ class UDD:
                 row = UDDPackageRow(*r)
                 row.version = Version(row.version)
                 row.source_version = Version(row.source_version)
-                if row.release in ret[row.package]:
-                    if ret[row.package][row.release].version > row.version:
-                        continue
+                if (
+                    row.release in ret[row.package]
+                    and ret[row.package][row.release].version > row.version
+                ):
+                    continue
                 ret[row.package][row.release] = row
         return ret
 
@@ -313,12 +315,10 @@ def check_build_manifest(
     def _is_ignored(issue):
         if issue.source in general_ignore:
             return True
-        if (
+        return (
             str(issue.suite_source_version)
             == tmp_ignore.get(issue.source, {"version": None})["version"]
-        ):
-            return True
-        return False
+        )
 
     if not verbose:
         issues = list(itertools.filterfalse(_is_ignored, issues))
