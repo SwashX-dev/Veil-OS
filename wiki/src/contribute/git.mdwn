@@ -101,7 +101,7 @@ Tails development uses several branches. Here they are.
 #### master
 
 The `master` branch is mostly used to build the website. It is
-merged into `devel` and `stable` from time to time.
+regularly and automatically merged into `devel` and `stable`.
 We merge into `master`:
 
 - [[Documentation improvements|contribute/how/documentation]] that
@@ -147,8 +147,6 @@ from it will be merged into testing and then into a real release.
 
 Please note that the `devel` branch can be broken, have awful security
 problems and so on. No guarantee, blablabla.
-
-The `master` branch is merged into `devel` from time to time.
 
 #### Topic branches
 
