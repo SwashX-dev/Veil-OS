@@ -24,7 +24,7 @@ this requirement slightly for practical purposes. :)
 
 5. The attacker can push to tails.git but cannot force-push
 
-6. The attacker has write access to rsync.lizard
+6. The attacker has write access to rsync.mtl-libvirt-01
 
 7. An attacker publishing a compromised Tails needs to update the image description file,
    UDFs and/or detached signatures to our website, and possibly replace

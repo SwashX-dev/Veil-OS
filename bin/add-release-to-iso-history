@@ -30,17 +30,17 @@ while [ $# -gt 0 ]; do
 done
 
 # shellcheck disable=SC2029
-ssh misc.lizard mkdir -p "tails-amd64-${VERSION:?}"
+ssh misc.mtl-libvirt-01 mkdir -p "tails-amd64-${VERSION:?}"
 
 scp "${ISOS:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}."{apt-sources,build-manifest,buildlog,packages,iso.sig,img.sig} \
-    "misc.lizard:tails-amd64-${VERSION:?}"
+    "misc.mtl-libvirt-01:tails-amd64-${VERSION:?}"
 
-ssh misc.lizard gpg --import <"wiki/src/tails-signing.key"
+ssh misc.mtl-libvirt-01 gpg --import <"wiki/src/tails-signing.key"
 
 echo "Downloading"
 
 # shellcheck disable=SC2087
-ssh misc.lizard <<EOF
+ssh misc.mtl-libvirt-01 <<EOF
    (
     set -eu
     cd tails-amd64-${VERSION:?}
@@ -55,7 +55,7 @@ EOF
 echo "Doing git annex things"
 
 # shellcheck disable=SC2087
-ssh misc.lizard <<EOF
+ssh misc.mtl-libvirt-01 <<EOF
    ( [ -d isos ] || git clone gitolite@git.mtl-libvirt-01:isos.git ) && \
    (
     set -eux
