@@ -46,7 +46,7 @@ The words
 
 * **Metadata Anonymisation Toolkit**: tool to clean metadata from
   plenty of document formats, see
-  [[MAT's website|https://0xacab.org/jvoisin/mat2]]
+  [[MAT's website|https://github.com/jvoisin/mat2]]
 
 * **monthly reports**: published in the [[news]] once a month
 
