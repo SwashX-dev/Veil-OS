@@ -288,10 +288,6 @@ msgstr ""
 #~ msgstr "Recomendado por"
 
 #, fuzzy
-#~| msgid ""
-#~| "[[!pagetemplate template=\"topbar.tmpl\"]] [[!meta title=\"Home\"]] [[!"
-#~| "meta stylesheet=\"staging/home\" rel=\"stylesheet\" title=\"\"]] [[!meta "
-#~| "robots=\"noindex\"]]"
 #~ msgid ""
 #~ "[[!meta title=\"Home\"]] [[!meta stylesheet=\"staging/home\" "
 #~ "rel=\"stylesheet\" title=\"\"]] [[!meta robots=\"noindex\"]]"
