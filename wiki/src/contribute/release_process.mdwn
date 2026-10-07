@@ -743,6 +743,9 @@ Collect the almost-final build artifacts
 
 2. Keep the resulting build artifacts until the end of this release process.
 
+   If you use multiple machines during the release process: copy the
+   `.build-manifest` to the other machines.
+
 3. Record where the manifest of needed packages is stored:
 
    1. To update the `~/.config/tails/release_management/current.yml` template
