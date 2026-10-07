@@ -4,7 +4,7 @@ set -eu
 set -x
 
 # shellcheck disable=SC2087
-ssh rsync.lizard <<-EOF
+ssh rsync.mtl-libvirt-01 <<-EOF
 	sudo chown root:rsync_tails /srv/tmp/Tails_amd64_*_to_${VERSION:?}.iuk && \
 	sudo chmod u=rwX,go=rX /srv/tmp/Tails_amd64_*_to_${VERSION:?}.iuk && \
 	sudo mv /srv/tmp/Tails_amd64_*_to_${VERSION:?}.iuk \
@@ -14,4 +14,4 @@ EOF
 "$(dirname "$0")"/update-trace-time \
     "Updating trace file after uploading the IUKs for ${VERSION:?}."
 
-ssh rsync.lizard rm -f "/srv/tmp/to_${VERSION:?}.sha256sum"
+ssh rsync.mtl-libvirt-01 rm -f "/srv/tmp/to_${VERSION:?}.sha256sum"
