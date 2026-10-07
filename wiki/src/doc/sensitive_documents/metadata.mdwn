@@ -86,7 +86,7 @@ Removing metadata from the command line
 =======================================
 
 *Metadata Cleaner* is a graphical interface for
-[*mat2*](https://0xacab.org/jvoisin/mat2).
+[*mat2*](https://github.com/jvoisin/mat2).
 
 You can also use *mat2* directly on the command line:
 
