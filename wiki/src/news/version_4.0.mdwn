@@ -49,7 +49,7 @@ upgrade as soon as possible.
 
 <a id="mat"></a>
 
-- Update *MAT* from 0.6.1 to [0.8.0](https://0xacab.org/jvoisin/mat2/blob/master/CHANGELOG.md)
+- Update *MAT* from 0.6.1 to 0.8.0.
 
   *MAT* has no graphical interface of its own anymore.
 
