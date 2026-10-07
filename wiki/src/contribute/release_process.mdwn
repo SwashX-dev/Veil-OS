@@ -1291,7 +1291,7 @@ Verify that Jenkins reproduced your IUKs
 
 ### Compare the IUKs
 
-#### If the network between `rsync.lizard` and Jenkins is still very slow
+#### If the network between `rsync.mtl-libvirt-01` and Jenkins is still very slow
 
 The "normal" command we had in place is really slow nowadays. The snippet that
 follows is much faster. However, it's not as smart, so it can only handle cases
@@ -1349,7 +1349,7 @@ If the last command failed:
    Else, if the parameters where correct, then follow the next steps.
 
 3. Leave the IUKs built by Jenkins where they already are
-   (in `rsync.lizard:/srv/tmp`): at least in some
+   (in `rsync.mtl-libvirt-01:/srv/tmp`): at least in some
    cases, this will speed up uploading your own IUKs later by a 500+ factor,
    thanks to `rsync --partial --inplace`.
 
@@ -1565,7 +1565,7 @@ are preparing:
 
  - first check that it's not going to remove anything we want to keep:
 
-       ssh rsync.lizard /bin/sh -c \
+       ssh rsync.mtl-libvirt-01 /bin/sh -c \
            \"find /srv/rsync/tails/tails/alpha/iuk/v2  \
                   /srv/rsync/tails/tails/stable/iuk/v2 \
                   -type f \
@@ -1578,7 +1578,7 @@ are preparing:
 
  - then actually delete the files:
 
-       ssh rsync.lizard /bin/sh -c \
+       ssh rsync.mtl-libvirt-01 /bin/sh -c \
            \"find /srv/rsync/tails/tails/alpha/iuk/v2  \
                   /srv/rsync/tails/tails/stable/iuk/v2 \
                   -type f \
@@ -1605,19 +1605,19 @@ then upload the IUKs you've built to our rsync server
     for source_version in $(echo ${IUK_SOURCE_VERSIONS:?}); do
        rsync --partial --inplace --progress -v \
           "${IUKS_DIR:?}/Tails_amd64_${source_version:?}_to_${VERSION:?}.iuk" \
-          rsync.lizard:/srv/tmp/
+          rsync.mtl-libvirt-01:/srv/tmp/
     done
 
 While waiting for the IUKs to be uploaded, you can proceed with the next steps.
 
 Upload the ISO and USB image signatures to our rsync server:
 
-    scp "${ISO_PATH:?}.sig" "${IMG_PATH:?}.sig" rsync.lizard:
+    scp "${ISO_PATH:?}.sig" "${IMG_PATH:?}.sig" rsync.mtl-libvirt-01:
 
-If the network between `rsync.lizard` and Jenkins is still very slow,
+If the network between `rsync.mtl-libvirt-01` and Jenkins is still very slow,
 then copy images from your own computer, which is often faster:
 
-    rsync -vhL --partial --progress --inplace "${IMG_PATH}" "${ISO_PATH}" rsync.lizard:
+    rsync -vhL --partial --progress --inplace "${IMG_PATH}" "${ISO_PATH}" rsync.mtl-libvirt-01:
 
 … then pass `--skip-downloading-images` to the `copy-images-to-rsync-server-and-verify`
 command below.
@@ -1649,7 +1649,7 @@ As tracked on [[!tails_ticket 19396]], it might well be
 that Mirrorbits will miss this update.
 Let's be sure that this happens via
 
-    ssh rsync.lizard sudo systemctl restart mirrorbits.service
+    ssh rsync.mtl-libvirt-01 sudo systemctl restart mirrorbits.service
 
 If, at a later stage of the process, you realize Mirrorbits is still not
 "noticing" that mirrors are up-to-date, restart the Mirrorbits service again.
@@ -2049,14 +2049,14 @@ Check that you are indeed preparing a final release:
 1. If you just released a new stable release, remove the previous
    stable release from our rsync server:
 
-       ssh rsync.lizard sudo rm -rf /srv/rsync/tails/tails/stable/tails-amd64-${PREVIOUS_STABLE_VERSION:?}/
+       ssh rsync.mtl-libvirt-01 sudo rm -rf /srv/rsync/tails/tails/stable/tails-amd64-${PREVIOUS_STABLE_VERSION:?}/
 
 1. Remove any remaining RC for the just-published release from
-   `rsync.lizard:/srv/rsync/tails/tails/alpha/`.
+   `rsync.mtl-libvirt-01:/srv/rsync/tails/tails/alpha/`.
 
     1. Check if there is anything:
 
-           ssh rsync.lizard find /srv/rsync/tails/tails/alpha/ -type f
+           ssh rsync.mtl-libvirt-01 find /srv/rsync/tails/tails/alpha/ -type f
 
     2. Decide what to do!
 
@@ -2065,7 +2065,7 @@ Check that you are indeed preparing a final release:
 
    - first check that it's not going to remove anything we want to keep:
 
-         ssh rsync.lizard /bin/sh -c \
+         ssh rsync.mtl-libvirt-01 /bin/sh -c \
              \"find /srv/rsync/tails/tails/alpha/iuk/v2  \
                     /srv/rsync/tails/tails/stable/iuk/v2 \
                     -type f -name '*.iuk' \
@@ -2078,7 +2078,7 @@ Check that you are indeed preparing a final release:
 
    - then actually delete the files:
 
-         ssh rsync.lizard /bin/sh -c \
+         ssh rsync.mtl-libvirt-01 /bin/sh -c \
              \"find /srv/rsync/tails/tails/alpha/iuk/v2  \
                     /srv/rsync/tails/tails/stable/iuk/v2 \
                     -type f -name '*.iuk' \
@@ -2091,7 +2091,7 @@ Check that you are indeed preparing a final release:
 
 1. Check how much space our mirrors need:
 
-       ssh rsync.lizard du -sh /srv/rsync/tails
+       ssh rsync.mtl-libvirt-01 du -sh /srv/rsync/tails
 
    Compare it to the minimum disk space we ask of our mirror operators
    (80 GiB) and determine if any further action is needed to either
