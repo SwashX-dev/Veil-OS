@@ -21,7 +21,7 @@ Terminology used in this document
 
 - Production server: the server that hosts our website
 
-- translate.lizard: the VM that hosts our Weblate web interface, the
+- translate.mtl-libvirt-01: the VM that hosts our Weblate web interface, the
   corresponding Git repositories, as well as the [staging website](https://staging.tails.net/).
 
 Setup and integration with our infrastructure
@@ -121,7 +121,7 @@ merged — in a safe place. This happens in an integration repository:
 
     ~weblate/repositories/integration
 
-On the VM (translate.lizard), a third repository is used for the staging
+On the VM (translate.mtl-libvirt-01), a third repository is used for the staging
 website:
 
     ~weblate/repositories/vcs/staging

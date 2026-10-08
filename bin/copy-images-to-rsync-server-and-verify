@@ -35,23 +35,23 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-ssh rsync.lizard gpg --import <wiki/src/tails-signing.key
+ssh rsync.mtl-libvirt-01 gpg --import <wiki/src/tails-signing.key
 
 # shellcheck disable=SC2087
-[ "$DOWNLOAD_IMAGES" = no ] || ssh rsync.lizard <<EOF
+[ "$DOWNLOAD_IMAGES" = no ] || ssh rsync.mtl-libvirt-01 <<EOF
    wget --continue --progress=dot:giga \
       "https://nightly.tails.net/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-amd64-${VERSION:?}.iso" \
       "https://nightly.tails.net/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/tails-amd64-${VERSION:?}.img"
 EOF
 
 # shellcheck disable=SC2087
-ssh rsync.lizard <<EOF
+ssh rsync.mtl-libvirt-01 <<EOF
    gpg --verify tails-amd64-${VERSION:?}.iso{.sig,} && \
    gpg --verify tails-amd64-${VERSION:?}.img{.sig,}
 EOF
 
 # shellcheck disable=SC2087
-ssh rsync.lizard <<EOF
+ssh rsync.mtl-libvirt-01 <<EOF
   sudo install -o root -g rsync_tails -m 0755 -d \
      /srv/rsync/tails/tails/${DIST:?}/tails-amd64-${VERSION:?} && \
   sudo chown root:rsync_tails tails-amd64-${VERSION:?}.{iso,img}* && \
