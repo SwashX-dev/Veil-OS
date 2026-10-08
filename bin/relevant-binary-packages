@@ -21,6 +21,11 @@ BASE_URL = "https://tails.net/torrents/files/"
 logger = logging.getLogger(__name__)
 
 
+class BuildManifestNotFound(Exception):
+    def __init__(self, base_url):
+        super().__init__(f"Could not find any .build-manifest files at {base_url}")
+
+
 def get_cache_dir() -> Path:
     """Return the base path to the cache directory adhering to the XDG spec."""
     xdg_cache = os.environ.get("XDG_CACHE_HOME")
@@ -48,7 +53,7 @@ def get_manifest_filenames() -> list[str]:
     # Find all occurrences of .build-manifest files
     matches = re.findall(r'href="([^"]+\.build-manifest)"', resp.text)
     if not matches:
-        raise RuntimeError(f"Could not find any .build-manifest files at {BASE_URL}")
+        raise BuildManifestNotFound(BASE_URL)
 
     return matches
 
@@ -95,7 +100,10 @@ def main() -> None:
     )
     parser.add_argument("source_package", help="Name of the Debian source package")
     parser.add_argument(
-        "-d", "--debug", action="store_true", help="Enable debug logging"
+        "-d",
+        "--debug",
+        action="store_true",
+        help="Enable debug logging",
     )
     args = parser.parse_args()
 
@@ -115,7 +123,7 @@ def main() -> None:
         print("=" * len(filename))
 
         for pkg in sorted(
-            rmadison_binaries.intersection(binaries_in_build_manifest(filename))
+            rmadison_binaries.intersection(binaries_in_build_manifest(filename)),
         ):
             print(pkg)
 
