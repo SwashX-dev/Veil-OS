@@ -10,6 +10,7 @@ import os
 import re
 import shutil
 import subprocess
+import urllib
 from pathlib import Path
 from typing import Any
 
@@ -55,7 +56,7 @@ def get_manifest_filenames() -> list[str]:
 
 def fetch_manifest_binaries(filename: str) -> set[str]:
     """Load a specific Tails build manifest and return a set of binary packages."""
-    manifest_url = f"{BASE_URL.rstrip('/')}/{filename}"
+    manifest_url = urllib.parse.urljoin(BASE_URL, filename)
     cache_file = get_cache_dir() / "tails" / filename
 
     if cache_file.exists():
