@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Finds binary packages built from a Debian source package that are also
-listed in the Tails build manifests.
+Lists binary packages built from a Debian source package that are also
+listed in build manifests of current Tails releases.
 """
 
 import argparse
@@ -110,7 +110,8 @@ def get_rmadison_binaries(source_pkg: str) -> set[str]:
 def main() -> None:
     """Main execution entry point."""
     parser = argparse.ArgumentParser(
-        description="List binary packages from a source package in Tails manifests."
+        description="Lists binary packages built from a Debian source package that are also"
+        "listed in build manifests of current Tails releases.",
     )
     parser.add_argument("source_package", help="Name of the Debian source package")
     parser.add_argument(
