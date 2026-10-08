@@ -8,7 +8,6 @@ import argparse
 import logging
 import os
 import re
-import shutil
 import subprocess
 import urllib
 from pathlib import Path
@@ -54,58 +53,38 @@ def get_manifest_filenames() -> list[str]:
     return matches
 
 
-def fetch_manifest_binaries(filename: str) -> set[str]:
-    """Load a specific Tails build manifest and return a set of binary packages."""
+def binaries_in_build_manifest(filename: str) -> set[str]:
+    """Load a specific Tails build manifest and return its set of binary packages."""
     manifest_url = urllib.parse.urljoin(BASE_URL, filename)
     cache_file = get_cache_dir() / "tails" / filename
 
     if cache_file.exists():
-        try:
-            data: dict[str, Any] = (
-                yaml.safe_load(cache_file.read_text(encoding="utf-8")) or {}
-            )
-        except yaml.YAMLError:
-            data = _download_and_cache(manifest_url, cache_file)
+        data: dict[str, Any] = yaml.safe_load(cache_file.read_text(encoding="utf-8"))
     else:
         data = _download_and_cache(manifest_url, cache_file)
 
     binaries: set[str] = set()
-    packages_section = data.get("packages", {})
-    if isinstance(packages_section, dict):
-        binary_section = packages_section.get("binary", [])
-        if isinstance(binary_section, list):
-            for item in binary_section:
-                if isinstance(item, dict) and "package" in item:
-                    binaries.add(str(item["package"]))
+    for item in data.get("packages", {}).get("binary", []):
+        binaries.add(str(item["package"]))
 
     return binaries
 
 
 def get_rmadison_binaries(source_pkg: str) -> set[str]:
     """Get binary packages for a source package using rmadison."""
-    if not shutil.which("rmadison"):
-        raise RuntimeError("The 'rmadison' command is not installed or not in PATH.")
+    result = subprocess.check_output(
+        [
+            "/bin/rmadison",
+            "-a",
+            "amd64,all",
+            "--source-and-binary",
+            "--suite=stable",
+            source_pkg,
+        ],
+        text=True,
+    )
 
-    cmd = [
-        "rmadison",
-        "-a",
-        "amd64,all",
-        "--source-and-binary",
-        "--suite=stable",
-        source_pkg,
-    ]
-
-    result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-
-    binaries: set[str] = set()
-    for line in result.stdout.splitlines():
-        parts = line.split("|")
-        if parts:
-            pkg_name = parts[0].strip()
-            if pkg_name:
-                binaries.add(pkg_name)
-
-    return binaries
+    return {line.split("|")[0].strip() for line in result.splitlines()}
 
 
 def main() -> None:
@@ -135,10 +114,9 @@ def main() -> None:
         print(filename)
         print("=" * len(filename))
 
-        manifest_binaries = fetch_manifest_binaries(filename)
-        matched_binaries = sorted(rmadison_binaries.intersection(manifest_binaries))
-
-        for pkg in matched_binaries:
+        for pkg in sorted(
+            rmadison_binaries.intersection(binaries_in_build_manifest(filename))
+        ):
             print(pkg)
 
 
