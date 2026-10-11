@@ -9,18 +9,19 @@ HOWTO
 2. Add id="yec-banner" to top element.
 3. Replace <img> with Ikiwiki directives.
 4. Replace <button> by <div>.
-5. Download fonts from bootstrap.css in Web Developer Tools.
-6. Start with the smallest breakpoint at 760px.
-7. Copy CSS from F12 for all elements
-8. Add filter on #yec-banner for rules that are too generic.
-9. Add CSS for 768px and 99px breakpoints.
-10. Add localization.
+5. Use id="banner-close-button" to fix close button with cookie in lib/local.js.
+6. Download fonts from bootstrap.css in Web Developer Tools.
+7. Start with the smallest breakpoint at 760px.
+8. Copy CSS from F12 for all elements
+9. Add filter on #yec-banner for rules that are too generic.
+10. Add CSS for 768px and 99px breakpoints.
+11. Add localization.
 
 -->
 
 <div id="yec-banner" class="banner">
-  <input id="trigger" type="checkbox" title="Close banner" />
-  <label for="trigger" class="banner-close text-white">
+  <input id="banner-close-button" type="checkbox" title="Close banner" />
+  <label for="banner-close-button" class="banner-close text-white">
     <div class="d-flex">
       [[!img nav/year-end/x-dark.png link="no" class="img-svg" alt=""]]
     </div>

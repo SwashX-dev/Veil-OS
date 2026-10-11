@@ -1,3 +1,15 @@
+/* Close button */
+
+#yec-banner #banner-close-button {
+  display: none;
+}
+
+#yec-banner:has(#banner-close-button:checked) {
+  display: none;
+}
+
+/* Yearly style */
+
 @font-face {
   font-family:"SpaceGrotesk";
   src:url("year-end/SpaceGrotesk.woff2") format("woff2")
