@@ -1,8 +1,155 @@
 tails (7.15) UNRELEASED; urgency=medium
 
-  * Dummy entry for next release.
+  * update VM names after migration away from lizard (tpo/tpa/tails-sysadmin#18218)
+    (tails/tails!3356)
 
- -- intrigeri <intrigeri@debian.org>  Wed, 30 Sep 2026 09:23:47 +0000
+    Commits:
+      - lint
+      - update VM names after migration away from lizard (tpo/tpa/tails-sysadmin#18218)
+
+  * Upgrade the Tor client to 0.4.9.14 (tails/tails!3367)
+
+    Closes issues:
+      - Upgrade to tor 0.4.9.14 (tails/tails#21824)
+
+    Commits:
+      - Upgrade tor to 0.4.9.14
+      - Set this branch to run all tests
+
+  * Test suite: stop using example.com (tails/tails!3320)
+
+    Closes issues:
+      - Test suite: scenario `The Tor Browser's "New identity" feature works as
+        expected` is broken due to changes in https://example.com/ (tails/tails#21798)
+
+    Commits:
+      - Test suite: stop using example.com
+
+  * Delete obsolete and confusing X.Org configuration files (tails/tails!3355)
+
+    Closes issues:
+      - Delete obsolete and confusing X.Org configuration files (tails/tails#21812)
+
+    Commits:
+      - Remove obsolete X.Org configuration for the QXL driver
+      - Remove obsolete workaround
+      - Delete obsolete and confusing X.Org configuration file
+
+  * needed-package-updates: only consider configured APT sources (tails/tails!3353)
+
+    Closes issues:
+      - needed-package-updates seems to ignore updates in unstable but not in testing
+        (tails/tails#21816)
+
+    Commits:
+      - Lint
+      - Ruff format
+      - needed-package-updates: only consider configured APT sources
+
+  * Bump debian APT snapshot to upgrade firmware-sof, firmware-nonfree
+    (tails/tails!3352)
+
+    Closes issues:
+      - needed-package-updates:  firmware-sof 2025.12.2-2 → 2026.09.1-1
+        (tails/tails#21811)
+      - needed-package-updates: firmware-nonfree 20260810-1 → 20260916-1
+        (tails/tails#21820)
+
+    Commits:
+      - Bump debian APT snapshot to upgrade firmware-sof, firmware-nonfree
+
+  * Fix issue template (tails/tails!3337)
+
+    Commits:
+      - Recurse!
+      - Fix rendering on GitLab
+      - Fix label name
+      - Add missing step
+
+  * Add issue template to stop tracking oldstable in time-based snapshots
+    (tails/tails!3335)
+
+    Commits:
+      - Add issue template to stop tracking oldstable in time-based snapshots
+
+  * iuk-source-versions: support build machine without access to tails/tails
+    (tails/tails!3330)
+
+    Closes issues:
+      - Release process: better support building images and IUK from a different
+        machine (tails/tails#21756)
+
+    Commits:
+      - Fix IUK source versions when working on the testing branch
+      - Add shell guardrail
+      - iuk-source-versions: support build machine without access to tails/tails
+
+  * Update Chutney to get fix for `configure` getting stuck (tails/tails!3329)
+
+    Closes issues:
+      - Test suite: chutney getting stuck at configuring nodes (tails/tails#21769)
+
+    Commits:
+      - Revert "Test suite: attempt to get backtrace from 'chutney configure' when it
+        hangs"
+      - Revert "Test suite: send SIGINT to Chutney python process, not shell"
+      - Chutney: update to current upstream at ae3a33c63a10ab29453225242c9c5985e6f2cf1c
+
+  * Release schedule announcement: remove details (tails/tails!3327)
+
+    Commits:
+      - Release schedule announcement: remove details
+
+  * APT: switch back to Debian's default Fastly-backed CDN (tails/tails!3326)
+
+    Commits:
+      - Test suite: update expected APT source
+      - Revert "APT: use https://cloudfront.debian.net/ instead of Fastly"
+
+  * Release process improvements prepared during 7.14 (tails/tails!3322)
+
+    Commits:
+      - Move MR creation to Python script
+      - Explain why `apt update` cannot be run earlier
+      - Update phrasing
+      - Better support building IUKs on a different machine
+      - Release process: convert a few shell snippets to our new style
+      - Release process: revamp tails-news@ section
+      - ruff format
+      - Fix Ruff SIM115
+      - Fix Ruff RUF036
+      - Fix Ruff UP031
+      - Fix Ruff I001
+      - Release process: remove useless checks
+      - Release process: automate closing the just-released milestone
+      - Release process: move explanation where it now belongs
+      - Remove useless cat (shellcheck)
+      - shfmt
+      - Release process: remove obsolete bits about running the automated test suite
+      - Release process: better support building images and IUK from a different
+        machine
+      - Release process: remove unnecessary detail
+      - Release process: remove obsolete conditional
+      - Release process: update expected duration
+      - Release process: make script a bit more idempotent
+      - Release process: workaround "rm: error closing file" problem
+      - Release process: update time estimate
+      - Release process: protect against DSA page lagging behind
+      - Release process: remove extraneous instruction
+      - Update sajolida's email address
+      - Extract code snippet to script to make release process smoother
+
+  * Test suite: add back JSON::PRETTY_STATE_PROTOTYPE with monkeypatch
+    (tails/tails!3321)
+
+    Closes issues:
+      - Test suite: stable's cucumber needs JSON::PRETTY_STATE_PROTOTYPE which is
+        removed in Sid's ruby-json (tails/tails#21799)
+
+    Commits:
+      - Test suite: add back JSON::PRETTY_STATE_PROTOTYPE with monkeypatch
+
+ -- Tails developers <foundations@tails.net>  Mon, 12 Oct 2026 09:23:26 +0000
 
 tails (7.14) unstable; urgency=medium
 
