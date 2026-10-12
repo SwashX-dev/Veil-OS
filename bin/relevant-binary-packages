@@ -32,7 +32,7 @@ def get_cache_dir() -> Path:
     return Path(xdg_cache) if xdg_cache else Path.home() / ".cache"
 
 
-def _download_and_cache(manifest_url: str, cache_file: Path) -> dict[str, Any]:
+def download_and_cache(manifest_url: str, cache_file: Path) -> dict[str, Any]:
     """Download the YAML manifest and cache it locally."""
     logger.debug("Downloading manifest from %s...", manifest_url)
     resp = requests.get(manifest_url, timeout=15)
@@ -66,7 +66,7 @@ def binaries_in_build_manifest(filename: str) -> set[str]:
     if cache_file.exists():
         data: dict[str, Any] = yaml.safe_load(cache_file.read_text(encoding="utf-8"))
     else:
-        data = _download_and_cache(manifest_url, cache_file)
+        data = download_and_cache(manifest_url, cache_file)
 
     binaries: set[str] = set()
     for item in data.get("packages", {}).get("binary", []):
