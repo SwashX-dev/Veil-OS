@@ -1490,11 +1490,6 @@ div#highlight p {
   font-size: var(--font-size-h3);
 }
 
-#footer-columns #made-by img {
-  width: 50px;
-  filter: invert(1);
-}
-
 /* RTL support */
 
 html[dir="rtl"] ol,
