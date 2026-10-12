@@ -47,7 +47,7 @@ def download_and_cache(manifest_url: str, cache_file: Path) -> dict[str, Any]:
 
 def get_manifest_filenames() -> list[str]:
     """Fetch the index page and return a list of all build manifest filenames."""
-    resp = requests.get(BASE_URL, timeout=10)
+    resp = requests.get(BASE_URL, timeout=15)
     resp.raise_for_status()
 
     # Find links to .build-manifest files
