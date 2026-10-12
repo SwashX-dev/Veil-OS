@@ -71,7 +71,7 @@ def binaries_in_build_manifest(filename: str) -> set[str]:
     return {str(item["package"]) for item in data.get("packages", {}).get("binary", [])}
 
 
-def get_rmadison_binaries(source_pkg: str) -> set[str]:
+def binaries_built_from_source_package(source_pkg: str) -> set[str]:
     """Return the set of binary packages built from a given source package."""
     result = subprocess.check_output(
         [
@@ -108,7 +108,7 @@ def main() -> None:
         format="%(levelname)s: %(message)s",
     )
 
-    rmadison_binaries = get_rmadison_binaries(args.source_package)
+    binaries_built_from_source = binaries_built_from_source_package(args.source_package)
     manifest_filenames = get_manifest_filenames()
 
     for idx, filename in enumerate(manifest_filenames):
@@ -119,7 +119,7 @@ def main() -> None:
         print("=" * len(filename))
 
         for pkg in sorted(
-            rmadison_binaries.intersection(binaries_in_build_manifest(filename)),
+            binaries_built_from_source.intersection(binaries_in_build_manifest(filename)),
         ):
             print(pkg)
 
