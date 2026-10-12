@@ -117,6 +117,7 @@ def main() -> None:
 
         print(filename)
         print("=" * len(filename))
+        print()
 
         for pkg in sorted(
             binaries_built_from_source.intersection(binaries_in_build_manifest(filename)),
