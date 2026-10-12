@@ -510,7 +510,16 @@ Given /^the Tor Browser (?:has started|starts)$/ do
     # We can't use Dogtail here: this step must support many languages
     # and using Dogtail would require maintaining a list of translations
     # for the "Stop" and "Reload" buttons.
-    @screen.wait_vanish(browser_info[:browser_stop_button_image], 120)
+    #
+    # With the default sensitivity, a "X" close button added to the
+    # content of the web page, e.g. as part of a donation campaign, is
+    # found, so we never detect that the stop button vanishes. To fix
+    # this, we increase sensitivity.
+    @screen.wait_vanish(
+      browser_info[:browser_stop_button_image],
+      120,
+      sensitivity: 0.99
+    )
     if RTL_LANGUAGES.include?($language)
       @screen.wait(browser_info[:browser_reload_button_image_rtl], 120)
     else
