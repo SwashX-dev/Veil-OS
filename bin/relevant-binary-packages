@@ -68,11 +68,8 @@ def binaries_in_build_manifest(filename: str) -> set[str]:
     else:
         data = download_and_cache(manifest_url, cache_file)
 
-    binaries: set[str] = set()
-    for item in data.get("packages", {}).get("binary", []):
-        binaries.add(str(item["package"]))
+    return {str(item["package"]) for item in data.get("packages", {}).get("binary", [])}
 
-    return binaries
 
 def get_rmadison_binaries(source_pkg: str) -> set[str]:
     """Return the set of binary packages built from a given source package."""
