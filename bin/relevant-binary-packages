@@ -33,8 +33,8 @@ def get_cache_dir() -> Path:
 
 
 def download_and_cache(manifest_url: str, cache_file: Path) -> dict[str, Any]:
-    """Download the YAML manifest and cache it locally."""
-    logger.debug("Downloading manifest from %s...", manifest_url)
+    """Download the build manifest and cache it locally."""
+    logger.debug("Downloading build manifest from %s...", manifest_url)
     resp = requests.get(manifest_url, timeout=15)
     resp.raise_for_status()
 
@@ -50,7 +50,7 @@ def get_manifest_filenames() -> list[str]:
     resp = requests.get(BASE_URL, timeout=10)
     resp.raise_for_status()
 
-    # Find all occurrences of .build-manifest files
+    # Find links to .build-manifest files
     matches = re.findall(r'href="([^"]+\.build-manifest)"', resp.text)
     if not matches:
         raise BuildManifestNotFound(BASE_URL)
@@ -59,7 +59,7 @@ def get_manifest_filenames() -> list[str]:
 
 
 def binaries_in_build_manifest(filename: str) -> set[str]:
-    """Load a specific Tails build manifest and return its set of binary packages."""
+    """Download a Tails build manifest and return its set of binary packages."""
     manifest_url = urllib.parse.urljoin(BASE_URL, filename)
     cache_file = get_cache_dir() / "tails" / filename
 
@@ -74,9 +74,8 @@ def binaries_in_build_manifest(filename: str) -> set[str]:
 
     return binaries
 
-
 def get_rmadison_binaries(source_pkg: str) -> set[str]:
-    """Get binary packages for a source package using rmadison."""
+    """Return the set of binary packages built from a given source package."""
     result = subprocess.check_output(
         [
             "/bin/rmadison",
@@ -95,10 +94,10 @@ def get_rmadison_binaries(source_pkg: str) -> set[str]:
 def main() -> None:
     """Main execution entry point."""
     parser = argparse.ArgumentParser(
-        description="Lists binary packages built from a Debian source package that are also"
-        "listed in build manifests of current Tails releases.",
+        description="Lists binary packages built from a Debian source package, that are also"
+        "listed in the build manifest of any current Tails release.",
     )
-    parser.add_argument("source_package", help="Name of the Debian source package")
+    parser.add_argument("source_package", help="Name of the considered Debian source package")
     parser.add_argument(
         "-d",
         "--debug",
