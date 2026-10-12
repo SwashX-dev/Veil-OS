@@ -94,7 +94,10 @@ def main() -> None:
         description="Lists binary packages built from a Debian source package, that are also"
         "listed in the build manifest of any current Tails release.",
     )
-    parser.add_argument("source_package", help="Name of the considered Debian source package")
+    parser.add_argument(
+        "source_package",
+        help="Name of the considered Debian source package",
+    )
     parser.add_argument(
         "-d",
         "--debug",
@@ -120,7 +123,9 @@ def main() -> None:
         print()
 
         for pkg in sorted(
-            binaries_built_from_source.intersection(binaries_in_build_manifest(filename)),
+            binaries_built_from_source.intersection(
+                binaries_in_build_manifest(filename)
+            ),
         ):
             print(pkg)
 
