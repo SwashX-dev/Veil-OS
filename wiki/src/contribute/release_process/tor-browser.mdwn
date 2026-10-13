@@ -87,6 +87,7 @@ To check if the desired version is available:
                 then
                     echo FOUND
                     notify-send "Release dir" 'found'
+                    break
                 fi
                 sleep 10m
             done
