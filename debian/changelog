@@ -1,5 +1,19 @@
 tails (7.15) UNRELEASED; urgency=medium
 
+  * Upgrade to Tor Browser 15.0.25-build1 (tails/tails!3375)
+
+    Closes issues:
+      - Upgrade Tor Browser in Tails 7.15 (tails/tails#21805)
+      - Refresh `about:tor` patches for Tails 7.15 (tails/tails#21806)
+
+    Commits:
+      - Upgrade Tor Browser to 15.0.25-build2 (refs: tails#21805)
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.17.0esr-15.0-1-build5
+      - Upgrade Tor Browser to 15.0.25-build1 (refs: tails#21805)
+      - Terminate loop
+      - CI: run all tests for 21805-tor-browser-15.0.25
+
   * update VM names after migration away from lizard (tpo/tpa/tails-sysadmin#18218)
     (tails/tails!3356)
 
@@ -149,7 +163,7 @@ tails (7.15) UNRELEASED; urgency=medium
     Commits:
       - Test suite: add back JSON::PRETTY_STATE_PROTOTYPE with monkeypatch
 
- -- Tails developers <foundations@tails.net>  Mon, 12 Oct 2026 09:23:26 +0000
+ -- Tails developers <foundations@tails.net>  Tue, 13 Oct 2026 07:38:31 +0000
 
 tails (7.14) unstable; urgency=medium
 
