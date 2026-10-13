@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-10-11 17:24+0200\n"
+"POT-Creation-Date: 2026-10-13 08:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,8 @@ msgstr ""
 
 #. type: Content of: <div><label>
 msgid ""
-"<input id=\"trigger\" type=\"checkbox\" title=\"Close banner\" /> <label "
-"for=\"trigger\" class=\"banner-close text-white\">"
+"<input id=\"banner-close-button\" type=\"checkbox\" title=\"Close banner\" /"
+"> <label for=\"banner-close-button\" class=\"banner-close text-white\">"
 msgstr ""
 
 #. type: Content of: <div><label><div>
