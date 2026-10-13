@@ -1,1 +1,1 @@
-https://torbrowser-archive.tails.net/15.0.24/
+https://torbrowser-archive.tails.net/15.0.25-build2/

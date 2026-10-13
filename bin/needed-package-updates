@@ -23,7 +23,6 @@ from datetime import UTC, datetime
 from email.utils import parsedate_to_datetime
 
 import debian.debian_support
-import distro_info  # type: ignore[import]
 import psycopg2
 import requests
 import yaml
@@ -122,9 +121,12 @@ class UDD:
 
     def _request(self, packages: Sequence[str]) -> dict[str, dict[str, UDDPackageRow]]:
         ret: dict[str, dict[str, UDDPackageRow]] = collections.defaultdict(dict)
-        with psycopg2.connect(
-            "postgresql://udd-mirror:udd-mirror@udd-mirror.debian.net/udd",
-        ) as conn, conn.cursor() as curs:
+        with (
+            psycopg2.connect(
+                "postgresql://udd-mirror:udd-mirror@udd-mirror.debian.net/udd",
+            ) as conn,
+            conn.cursor() as curs,
+        ):
             archs = ("all", "amd64")
             components = ("main", "contrib", "non-free", "non-free-firmware")
             pkgs = tuple(packages)
@@ -144,9 +146,11 @@ class UDD:
                 row = UDDPackageRow(*r)
                 row.version = Version(row.version)
                 row.source_version = Version(row.source_version)
-                if row.release in ret[row.package]:
-                    if ret[row.package][row.release].version > row.version:
-                        continue
+                if (
+                    row.release in ret[row.package]
+                    and ret[row.package][row.release].version > row.version
+                ):
+                    continue
                 ret[row.package][row.release] = row
         return ret
 
@@ -311,12 +315,10 @@ def check_build_manifest(
     def _is_ignored(issue):
         if issue.source in general_ignore:
             return True
-        if (
+        return (
             str(issue.suite_source_version)
             == tmp_ignore.get(issue.source, {"version": None})["version"]
-        ):
-            return True
-        return False
+        )
 
     if not verbose:
         issues = list(itertools.filterfalse(_is_ignored, issues))
@@ -368,27 +370,28 @@ def check_build_manifest(
     return False
 
 
-def get_suites(min_codename: str) -> list:
+def get_suites(configured_apt_sources: str) -> list:
     suites = []
-    ddi = distro_info.DebianDistroInfo()
-    ddi_s = ddi.supported()
-    codename_pos = ddi_s.index(min_codename)
-    testing = ddi.testing()
-    for suite in ddi_s[codename_pos:]:
-        if suite in (testing, "sid", "experimental"):
-            suites.append(suite)
+
+    for apt_source in configured_apt_sources:
+        if apt_source in ("sid"):
+            suites.append(apt_source)
         else:
             # We always want to make sure that we have the stable-security
             # version installed, if available.
             # The rest of the list follows the Debian package flow.
             suites.extend(
                 [
-                    f"{suite}-security",
-                    suite,
-                    f"{suite}-updates",
-                    f"{suite}-backports",
+                    f"{apt_source}-security",
+                    apt_source,
+                    f"{apt_source}-updates",
+                    f"{apt_source}-backports",
                 ],
             )
+
+    # It would be hard to detect if we forgot to add experimental to
+    # the configuration, so let's always monitor it: this does not harm.
+    suites.append("experimental")
 
     return suites
 
@@ -433,7 +436,7 @@ def main():
 
     config = yaml.safe_load(args.config)
 
-    suites = tuple(get_suites(config.get("distribution")))
+    suites = tuple(get_suites(config.get("configured_apt_sources")))
 
     if args.file:
         build_manifest = yaml.safe_load(args.file)

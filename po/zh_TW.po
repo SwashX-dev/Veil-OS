@@ -33,7 +33,7 @@ msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-09-22 21:51+0000\n"
+"PO-Revision-Date: 2026-10-07 04:51+0000\n"
 "Last-Translator: Toomore Chiang <toomore0929@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/tor/tails-gui/zh_Hant/>\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -276,7 +276,7 @@ msgstr "感謝您讓網路更安全！"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:191
 msgid "Persistence is disabled for Electrum"
-msgstr "永久停用 Electrum"
+msgstr "Electrum 的永久性儲存功能已停用"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:193
 msgid ""
@@ -290,11 +290,11 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/local/bin/electrum:195
 msgid "Do you want to start Electrum anyway?"
-msgstr "您想要啟用 Electrum 嗎？"
+msgstr "您仍要啟動 Electrum 嗎？"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:201
 msgid "_Launch"
-msgstr "_啟動器"
+msgstr "_啟動"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:202
 msgid "_Exit"
@@ -857,13 +857,13 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:866
 msgid "Start Tails and open the Persistent Storage settings to find out more."
-msgstr "無法解鎖永久性儲存，請重開 Tails 與回報錯誤。"
+msgstr "啟動 Tails 並開啟永久性儲存設定以了解更多資訊。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:896
 msgid ""
 "Your Persistent Storage is unlocked. Its content will be available until you "
 "shut down Tails."
-msgstr "您的永久性儲存裝置已被解鎖，請重新啟動 Tails 系統以便將它再次鎖定。"
+msgstr "您的永久性儲存已解鎖，其內容在您關閉 Tails 前都可使用。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:911
 msgid "Incorrect passphrase. Please try again."
@@ -926,7 +926,7 @@ msgstr "由於檔案系統錯誤，無法解鎖持久性儲存。"
 msgid ""
 "Failed to upgrade the Persistent Storage. Please start Tails and send an "
 "error report."
-msgstr "無法啟用永久性儲存，請重開 Tails 與回報錯誤。"
+msgstr "無法升級永久性儲存。請啟動 Tails 並回報錯誤。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:983
 msgid ""
@@ -952,7 +952,7 @@ msgstr "解鎖永久性儲存出錯: {}"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
 #, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
-msgstr "解鎖永久性儲存出錯: {}"
+msgstr "升級永久性儲存時出錯: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:176
 #, python-brace-format
@@ -1245,7 +1245,7 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:550
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:180
 msgid "Clone the current Persistent Storage"
-msgstr "在未開啟永久性儲存情況下繼續"
+msgstr "複製目前的永久性儲存"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:553
 msgid ""
@@ -1443,7 +1443,7 @@ msgstr "重新命名"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:27
 msgid "Keep current name"
-msgstr "保持目前的時間"
+msgstr "保留目前的名稱"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:29
 msgid "Rename Password Database?"
@@ -1724,7 +1724,7 @@ msgstr "您的有線介面卡之一的 MAC 位址匿名化失敗，因此將暫�
 #: config/chroot_local-includes/usr/local/lib/tails-spoof-mac:71
 #, sh-format
 msgid "Wired Network Disabled"
-msgstr "有線電視網已停用"
+msgstr "有線網路已停用"
 
 #: config/chroot_local-includes/usr/local/lib/tails-spoof-mac:72
 #, sh-format
@@ -1812,7 +1812,7 @@ msgstr "警告: 偵測到虛擬機器！"
 
 #: config/chroot_local-includes/usr/local/lib/tails-virt-notify-user:26
 msgid "Warning: non-free virtual machine detected!"
-msgstr "警告：偵測到此虛擬機器是由非自由軟體 !"
+msgstr "警告：偵測到非自由的虛擬機器！"
 
 #: config/chroot_local-includes/usr/local/lib/tails-virt-notify-user:28
 msgid ""
@@ -1886,7 +1886,7 @@ msgstr "無法掃描行動條碼，請增加光源或更靠近攝影鏡頭。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:588
 msgid "Invalid QR code. Try sending another email and scanning again."
-msgstr "無效的行動條碼，請試著寄送到其它電子郵件然後再掃瞄。"
+msgstr "無效的 QR code。請試著再寄一次電子郵件，然後重新掃描。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:649
 msgid "Synchronizing the system's clock…"
@@ -2020,7 +2020,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps/device.py:367
 msgid "Creating a partition for the Persistent Storage..."
-msgstr "修正永久性磁碟區的存取權限。"
+msgstr "正在為永久性儲存建立分割區..."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps/device.py:389
 msgid ""
@@ -2080,7 +2080,7 @@ msgstr "永久性儲存"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:56
 msgid "Failed to start the Persistent Storage service"
-msgstr "無法調置您的永久儲存"
+msgstr "無法啟動永久性儲存服務"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:80
 msgid "Could not find the WhisperBack application"
@@ -2117,7 +2117,7 @@ msgstr "該功能的資料仍然保存。"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
 #, python-brace-format
 msgid "Error activating feature {}"
-msgstr "啟用永久性儲存時出錯: {}"
+msgstr "啟用功能 {} 時出錯"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:299
 msgid "An error occurred while activating the feature."
@@ -2136,7 +2136,7 @@ msgstr "詳細說明"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
 #, python-brace-format
 msgid "Error deactivating feature {}"
-msgstr "停用永久性儲存時出錯: {}"
+msgstr "停用功能 {} 時出錯"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:348
 msgid "An error occurred while deactivating the feature."
@@ -2308,7 +2308,7 @@ msgstr "請稍等"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:270
 msgid "Not enough memory to create Persistent Storage"
-msgstr "沒有足夠的用於創建持久性儲存的空間"
+msgstr "記憶體不足，無法建立永久性儲存"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:277
 msgid "Failed to create Persistent Storage"
@@ -2720,7 +2720,7 @@ msgstr "安裝、複製、升級 Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
 msgid "install;clone;upgrade;manual"
-msgstr "安裝、複製、升級、手動"
+msgstr "安裝;複製;升級;手動"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2
 msgid "Connect Tails to the Tor network"
@@ -3045,12 +3045,11 @@ msgid ""
 "<a href=\"doc/persistent_storage/backup\">Learn how to make a backup of your "
 "Persistent Storage.</a>"
 msgstr ""
-"永久儲存已解鎖。\n"
+"您的永久性儲存已解鎖。\n"
 "\n"
-"Its content is available until you shut down Tails.\n"
+"其內容在您關閉 Tails 之前都可使用。\n"
 "\n"
-"<a href=\"doc/persistent_storage/backup\">Learn how to make a backup of your "
-"Persistent Storage.</a>"
+"<a href=\"doc/persistent_storage/backup\">了解如何備份您的永久性儲存。</a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:91
 msgid ""
@@ -3386,7 +3385,7 @@ msgstr "選擇密碼"
 
 #: ../config/chroot_local-includes/usr/share/tails-installer/passphrase_dialog.ui.in:30
 msgid "Choose the passphrase for the cloned Persistent Storage."
-msgstr "請選擇一個通關密語來保護永久性磁碟區。"
+msgstr "請選擇複製後的永久性儲存所使用的通關密語。"
 
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:281
 msgid "Target USB stick:"
@@ -3686,8 +3685,8 @@ msgid ""
 "connections to Tor are blocked, for example in some countries, by some "
 "public networks, or by some parental controls."
 msgstr ""
-"Tor 橋接是為隱密的 Tor 中繼器。有些情況 Tor 連線會受到屏蔽，例如某些極權國"
-"家、公共網路或家長控制，此時可利用橋接器作為 Tor 第一個 入口中繼。"
+"Tor 橋接是隱密的 Tor 中繼。如果連線到 Tor 受到封鎖，例如在某些國家、某些公共"
+"網路，或受到某些家長控制時，可以使用橋接作為第一個 Tor 中繼。"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1410
 msgid "Configure a Tor _Bridge"
@@ -3753,11 +3752,11 @@ msgid ""
 "Tails will autodetect whether you need a bridge to connect to Tor from your "
 "local network."
 msgstr ""
-"Tor 橋接是為隱密的 Tor 中繼器。有些情況 Tor 連線會受到屏蔽，例如某些極權國"
-"家、公共網路或家長控制，此時可利用橋接器作為 Tor 第一個 入口中繼。\n"
+"Tor 橋接是隱密的 Tor 中繼。如果連線到 Tor 受到封鎖，例如在某些國家、某些公共"
+"網路或家長控制下，可以使用橋接作為第一個 Tor 中繼。\n"
 "\n"
-"如果知道需橋接器，請挑選這個選項。否則 Tails 會自動進行偵測來判斷您在本地網路"
-"是否需要透過橋接來連上 Tor。"
+"如果您已經知道需要橋接，請選擇這個選項。否則 Tails 會自動偵測您在本地網路是否"
+"需要透過橋接才能連上 Tor。"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1734
 msgid "<b>_Hide to my local network that I'm connecting to Tor</b>"

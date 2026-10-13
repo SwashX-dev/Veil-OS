@@ -19,7 +19,6 @@ openssh-server
 ovmf
 pry
 python3-debian
-python3-distro-info
 python3-opencv
 python3-paramiko
 python3-pil
