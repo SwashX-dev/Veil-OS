@@ -1,4 +1,4 @@
-tails (7.15) UNRELEASED; urgency=medium
+tails (7.15) unstable; urgency=medium
 
   * Upgrade to Tor Browser 15.0.25-build2 (tails/tails!3375)
 
@@ -163,7 +163,7 @@ tails (7.15) UNRELEASED; urgency=medium
     Commits:
       - Test suite: add back JSON::PRETTY_STATE_PROTOTYPE with monkeypatch
 
- -- Tails developers <foundations@tails.net>  Tue, 13 Oct 2026 07:38:31 +0000
+ -- Tails developers <foundations@tails.net>  Tue, 13 Oct 2026 10:52:34 +0200
 
 tails (7.14) unstable; urgency=medium
 
