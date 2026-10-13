@@ -390,6 +390,6 @@ global_sidebars:
   - /nav/skip
   - "*"
 
-#  - year-end
-#  - /nav/year-end
-#  - "*"
+  - year-end
+  - /nav/year-end
+  - "*"
