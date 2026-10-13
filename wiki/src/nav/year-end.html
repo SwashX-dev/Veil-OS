@@ -1,18 +1,53 @@
-<div id="yec-banner" data-bs-theme="dark" class="position-relative px-3 py-32 p-md-40 toggled toggle-d-block">
-  <div class="d-flex container-fluid justify-content-center flex-md-row-reverse flex-wrap flex-md-nowrap gap-md-4 gap-lg-40">
-    <div class="d-flex mb-3 mb-md-0">
-      [[!img lib/yec/globe-chain-burst.svg id="yec-illo" class="my-auto" alt="A wireframe globe breaking out of chains"]]
+<!--
+
+We use the sidebar2 plugin through ikiwiki.setup to add and remove the YEC
+banner, because it makes it easier to toggle by anyone.
+
+HOWTO
+
+1. Copy HTML from staging website.
+2. Add id="yec-banner" to top element.
+3. Replace <img> with Ikiwiki directives.
+4. Replace <button> by <div>.
+5. Use id="banner-close-button" to fix close button with cookie in lib/local.js.
+6. Download fonts from bootstrap.css in Web Developer Tools.
+7. Start with the smallest breakpoint at 760px.
+8. Copy CSS from F12 for all elements
+9. Add filter on #yec-banner for rules that are too generic.
+10. Add CSS for 768px and 99px breakpoints.
+11. Add localization.
+
+-->
+
+<div id="yec-banner" class="banner">
+  <input id="banner-close-button" type="checkbox" title="Close banner" />
+  <label for="banner-close-button" class="banner-close text-white">
+    <div class="d-flex">
+      [[!img nav/year-end/x-dark.png link="no" class="img-svg" alt=""]]
     </div>
-    <div>
-      <p class="heading mb-3 text-center text-md-start">
-        Free the internet
-      </p>
-      <p>
-        Support tools that break the chains of censorship and surveillance. <span class="text-secondary fw-bold">Donate to the Tor Project today.</span>
-      </p>
-      <a class="btn btn-secondary px-3 py-13 mt-md-3 rounded-1 fs-tiny fw-bold w-100 w-md-auto" href="https://www.torproject.org/donate/donate-2025-banner-ts">Donate now [[!img lib/yec/heart.svg link="no" alt="" class="align-text-bottom ms-2"]]</a>
+  </label>
+  <span class="eoy-sr-only text-black">Close banner</span>
+  <div id="banner-header">
+    <div class="banner-content">
+      <div class="banner-content-spacer d-flex justify-content-center">
+        <div class="banner-content-container">
+          <div class="banner-main-graphics">
+            [[!img nav/year-end/bulb-illo-yec.svg link="no" class="yec-illo img-svg" alt="Illustration of a dark pink hand reaching to turn on a dark pink light bulb on a light green background. The light bulb vaguely resembles an onion with greens coming out of the top. There are playful bolts coming out of the bulb, and a green heart on the sleeve of the shirt."]]
+          </div>
+          <div id="banner-text-container" class="d-flex flex-wrap text-left">
+            <div id="banner-text">
+              <h1>Tor: powered by you</h1>
+              <p>Unlike Big Tech, Tor doesn&#39;t sell your data to make money. Instead, 6,490 donors every year keep Tor strong. Join the movement with a donation today!</p>
+            </div>
+            <div id="yec-donate-button-container">
+              <a class="btn" id="yec-donate-button" href="https://www.torproject.org/donate/yec2026-tails-banner-en">
+                <span>Donate now</span>
+                [[!img nav/year-end/arrow_up_right.svg link="no" class="donate-arrow img-svg" alt=""]]
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <label tabindex="0" id="banner-close-label" for="banner-close-button" class="cursor-pointer position-absolute" data-controller="label" data-action="keydown-&gt;label#keydown"></label>
-  <input type="checkbox" id="banner-close-button"></input>
 </div>
