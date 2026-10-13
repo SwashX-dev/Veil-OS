@@ -1,3 +1,9 @@
+tails (7.16) UNRELEASED; urgency=medium
+
+  * Dummy entry for next release.
+
+ -- anonym <anonym@torproject.org>  Tue, 13 Oct 2026 19:25:18 +0200
+
 tails (7.15) unstable; urgency=medium
 
   * Upgrade to Tor Browser 15.0.25-build2 (tails/tails!3375)
