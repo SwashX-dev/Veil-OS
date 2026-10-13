@@ -1,6 +1,6 @@
 tails (7.15) UNRELEASED; urgency=medium
 
-  * Upgrade to Tor Browser 15.0.25-build1 (tails/tails!3375)
+  * Upgrade to Tor Browser 15.0.25-build2 (tails/tails!3375)
 
     Closes issues:
       - Upgrade Tor Browser in Tails 7.15 (tails/tails#21805)
