@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3 -I
 """
 Lists binary packages built from a Debian source package that are also
 listed in build manifests of current Tails releases.
