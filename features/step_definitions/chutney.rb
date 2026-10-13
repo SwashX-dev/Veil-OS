@@ -41,30 +41,6 @@ def chutney_cmd(cmd, *args, **opts)
   cmd_helper([chutney_script, '--data-dir', CHUTNEY_DATA_DIR, cmd, *args], **opts)
 end
 
-# Since updating chutney (tails!3126) we have occasionally seen
-# `chutney configure` getting stuck forever (tails#21769) so let's set
-# a reasonable timeout.
-def chutney_configure_with_timeout
-  $cmd_helper_process = nil
-  # Note that we cannot simply run this in a Timeout.timeout block,
-  # because it will kill the thread and subprocess immediately. We use
-  # this rather convoluted way to do a timeout so we can rejoin the
-  # thread to the main thread and raise any exception it had there.
-  # Also note that we run it as a process group so we can kill it more
-  # easily later since $cmd_helper_process.pid will be a PID of a
-  # shell process, not the Chutney python process.
-  t = Thread.new { chutney_cmd('configure', popen_opts: { pgroup: true }) }
-  begin
-    try_for(60) { !$cmd_helper_process.nil? && $cmd_helper_process.closed? }
-  rescue Timeout::Error
-    # This will raise a KeyboardInterrupt in Chutney that will produce
-    # a backtrace which hopefully gives a good indication where it's
-    # stuck at.
-    Process.kill('-INT', $cmd_helper_process.pid)
-  end
-  t.join
-end
-
 def chutney_data_dir_cleanup
   if File.directory?(CHUTNEY_DATA_DIR)
     FileUtils.rm_r(CHUTNEY_DATA_DIR)
@@ -158,7 +134,7 @@ def initialize_chutney
       '--net-from-script-path', CHUTNEY_NETWORK_DEFINITION,
       '--listen-address', $vmnet.bridge_ip_address.to_s
     )
-    chutney_configure_with_timeout
+    chutney_cmd('configure')
     chutney_disable_info_level_logging
   end
   begin

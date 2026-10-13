@@ -7,6 +7,8 @@ isos: FIXME
 iuks_dir: FIXME
 # The directory where build artifacts (e.g. the `.packages` file) land.
 artifacts: FIXME
+# A checkout of the main branch of the `tails/gitlab-config` Git repository.
+gitlab_config_checkout: FIXME
 # A checkout of the `master` branch of the main Tails Git repository.
 master_checkout: FIXME
 # The checkout of the branch of the main Tails Git repository

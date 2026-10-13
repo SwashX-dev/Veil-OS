@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-19 18:39+0000\n"
+"POT-Creation-Date: 2026-10-12 08:25+0000\n"
 "PO-Revision-Date: 2025-12-05 23:29+0000\n"
 "Last-Translator: la_r_go* <largo@tracciabi.li>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,12 +22,16 @@ msgid "[[!meta robots=\"noindex\"]]"
 msgstr "[[!meta robots=\"noindex\"]]"
 
 #. type: Content of: <div><section>
+#, fuzzy
+#| msgid ""
+#| "<a href=\"https://www.torproject.org/\">[[!img tor.png alt=\"Tor "
+#| "Project\" link=\"no\"]]</a>"
 msgid ""
-"<a href=\"https://www.torproject.org/\">[[!img tor.png alt=\"Tor Project\" "
-"link=\"no\"]]</a>"
+"<a href=\"https://www.torproject.org/\">[[!img tor.png link=\"no\" "
+"class=\"svg\" alt=\"Tor Project\"]]</a>"
 msgstr ""
-"<a href=\"https://www.torproject.org/it/\">[[!img tor.png alt=\"Tor Project\""
-" link=\"no\"]]</a>"
+"<a href=\"https://www.torproject.org/it/\">[[!img tor.png alt=\"Tor "
+"Project\" link=\"no\"]]</a>"
 
 #. type: Content of: <div><section><p>
 msgid ""
@@ -46,9 +50,8 @@ msgid ""
 "Tor Project and Tails <a href=\"https://blog.torproject.org/tor-tails-join-"
 "forces/\">joined forces</a> in 2024."
 msgstr ""
-"Tor Project e Tails <a href="
-"\"https://blog.torproject.org/tor-tails-join-forces/\">hanno unito le forze</"
-"a> nel 2024."
+"Tor Project e Tails <a href=\"https://blog.torproject.org/tor-tails-join-"
+"forces/\">hanno unito le forze</a> nel 2024."
 
 #. type: Content of: <div><section>
 msgid ""

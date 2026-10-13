@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
-"POT-Creation-Date: 2026-07-30 11:31+0000\n"
+"POT-Creation-Date: 2026-10-08 09:41+0000\n"
 "PO-Revision-Date: 2026-04-06 12:18+0000\n"
 "Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: None\n"
@@ -120,7 +120,7 @@ msgstr "Encapçalament de nivell 2"
 #. type: Plain text
 #, fuzzy
 #| msgid "Another test!!!!"
-msgid "Another test!!!!"
+msgid "Another test!!"
 msgstr "Una altra prova!"
 
 #. type: Title ###

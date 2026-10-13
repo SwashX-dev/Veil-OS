@@ -122,7 +122,7 @@ Changes since Tails 2.5 are:
          is not present.
     - Port boot-profile to python3 (Closes:
       [[!tails_ticket 10083]]). Thanks to heartsucker
-      <heartsucker@autistici.org> for the patch!
+      for the patch!
     - Include /proc/cmdline and the content of persistent APT sources
       in WhisperBack bug reports. (Closes: [[!tails_ticket 11675]],
       [[!tails_ticket 11635]])

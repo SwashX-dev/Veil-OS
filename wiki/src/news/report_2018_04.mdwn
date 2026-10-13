@@ -18,7 +18,7 @@ Code
 * We kept working with upstream to be able to [support VeraCrypt in
   GNOME](https://github.com/storaged-project/udisks/pull/495).
 
-* [MAT2](https://0xacab.org/jvoisin/mat2) is being developed. Lots of
+* MAT2 is being developed. Lots of
   improvements, will come with support for new formats (torrents!) and
   more.
 

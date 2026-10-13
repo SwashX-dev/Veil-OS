@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-09-02 08:03+0000\n"
+"POT-Creation-Date: 2026-10-12 08:25+0000\n"
 "PO-Revision-Date: 2025-09-18 15:11+0000\n"
 "Last-Translator: drebs <drebs@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -229,7 +229,9 @@ msgstr ""
 "fa-gitlab\"></i></a>"
 
 #. type: Content of: <div>
-msgid "[[!img lib/tor-black.png link=\"no\" class=\"svg\" alt=\"\"]]"
+#, fuzzy
+#| msgid "[[!img lib/tor-black.png link=\"no\" class=\"svg\" alt=\"\"]]"
+msgid "[[!img lib/tor.png link=\"no\" class=\"svg\" alt=\"\"]]"
 msgstr "[[!img lib/tor-black.png link=\"no\" class=\"svg\" alt=\"\"]]"
 
 #. type: Content of: <div><p>

@@ -1,5 +1,9 @@
 ---
-distribution: trixie
+configured_apt_sources:
+  # Order matters: specify sources from oldest to newest.
+  # No need to specify experimental.
+  - trixie
+  - sid
 ignore:
   temporary:
     carl9170fw:

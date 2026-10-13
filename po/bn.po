@@ -10,13 +10,15 @@
 # emma peel <emma.peel@riseup.net>, 2025, 2026.
 # joardermitali <joardermitali@proton.me>, 2025.
 # Rumi <jindostar-rumi@protonmail.com>, 2026.
+# Automatic translation add-on <noreply-addon-autotranslate@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-09-22 05:51+0000\n"
-"Last-Translator: Rumi <jindostar-rumi@protonmail.com>\n"
+"PO-Revision-Date: 2026-10-08 00:51+0000\n"
+"Last-Translator: Automatic translation add-on <noreply-addon-"
+"autotranslate@weblate.org>\n"
 "Language-Team: Bengali <https://hosted.weblate.org/projects/tor/tails-gui/bn/"
 ">\n"
 "Language: bn\n"
@@ -24,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -1158,9 +1160,8 @@ msgstr "Tails ইনস্টলেশন ব্যর্থ হয়েছে!
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:341
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:1
-#, fuzzy
 msgid "Tails Cloner"
-msgstr "Tails ইনস্টলার"
+msgstr "টেইলস ক্লোনার"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:393
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:164

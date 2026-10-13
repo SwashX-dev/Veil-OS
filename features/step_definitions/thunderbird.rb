@@ -239,7 +239,7 @@ def thunderbird_non_suspicious_connections
     # database (mailnews.auto_config_url pref)
     'live.thunderbird.net',
     # Used to install Thunderbird in the first place
-    'cloudfront.debian.net',
+    'cdn-fastly.deb.debian.org',
     'deb.tails.net',
     'deb.torproject.org',
     # Used by GNOME Software that is running in the background
