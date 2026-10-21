@@ -1970,9 +1970,9 @@ Skip this part if preparing a release candidate:
        "${RELEASE_CHECKOUT:?}"/bin/gitlab-close-milestone \
            --create-mr \
            --gitlab-config-checkout "${GITLAB_CONFIG_CHECKOUT}" \
-           --yaml-file tails.yml
-           --tag `$TAG` \
-           --version `$VERSION`
+           --yaml-file tails.yml \
+           --tag "${TAG}" \
+           --version "${VERSION}"
 
    Then make another Tails Team member the *Reviewer* of that MR.
 
