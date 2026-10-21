@@ -105,11 +105,7 @@ Packages
 Ensure the system(s) you will use for the release process have these packages
 installed:
 
-* `apt install oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-ruamel.yaml python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv`
-
-* `./bin/install-perl5lib-build-deps`
-
-* `./bin/install-iuk-build-deps`
+* `sudo apt install oathtool gitlab-cli guess-concurrency j2cli intltool jq tidy libnotify-bin podman pwgen python3-bs4 python3-debian python3-git python3-gitlab python3-jinja2 python3-html2text python3-ruamel.yaml python3-sh python3-toml python3-voluptuous moreutils wl-clipboard rename i18nspector sqopv && ./bin/install-perl5lib-build-deps && ./bin/install-iuk-build-deps`
 
 * `ikiwiki` from Debian testing (Forky) or newer
 
