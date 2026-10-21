@@ -1,8 +1,20 @@
-tails (7.16) UNRELEASED; urgency=medium
+tails (7.15.1) UNRELEASED; urgency=medium
 
-  * Dummy entry for next release.
+  * Upgrade ca-certificates to 20250419+deb13u1 (DSA-6572-1)
 
- -- anonym <anonym@torproject.org>  Tue, 13 Oct 2026 19:25:18 +0200
+  * Upgrade to Tor Browser 15.0.26 (tails/tails!3379)
+
+    Closes issues:
+      - Upgrade to Tor Browser 15.0.26 (tails/tails#21834)
+
+    Commits:
+      - Fetch Tor Browser from our own archive
+      - Upgrade Tor Browser to 15.0.26-build1 (refs: tails#21834)
+      - CI: run all tests for 21834-tor-browser-15.0.26
+
+  * Upgrade Linux to 6.12.113-1
+
+ -- Tails developers <foundations@tails.net>  Wed, 21 Oct 2026 17:11:23 +0000
 
 tails (7.15) unstable; urgency=medium
 
