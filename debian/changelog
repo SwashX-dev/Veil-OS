@@ -1,4 +1,4 @@
-tails (7.15.1) UNRELEASED; urgency=medium
+tails (7.15.1) unstable; urgency=medium
 
   * Upgrade ca-certificates to 20250419+deb13u1 (DSA-6572-1)
 
@@ -14,7 +14,7 @@ tails (7.15.1) UNRELEASED; urgency=medium
 
   * Upgrade Linux to 6.12.113-1
 
- -- Tails developers <foundations@tails.net>  Wed, 21 Oct 2026 17:11:23 +0000
+ -- Tails developers <foundations@tails.net>  Thu, 22 Oct 2026 08:20:32 +0000
 
 tails (7.15) unstable; urgency=medium
 
