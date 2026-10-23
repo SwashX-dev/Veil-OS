@@ -1,3 +1,9 @@
+tails (7.16) UNRELEASED; urgency=medium
+
+  * Dummy entry for next release.
+
+ -- intrigeri <intrigeri@debian.org>  Fri, 23 Oct 2026 11:44:33 +0000
+
 tails (7.15.1) unstable; urgency=medium
 
   * Upgrade ca-certificates to 20250419+deb13u1 (DSA-6572-1)
