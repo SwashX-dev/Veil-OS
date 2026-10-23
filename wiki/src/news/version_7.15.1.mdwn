@@ -30,8 +30,6 @@ authority.
 
   <p>We are not aware of this attack being used by exit nodes so far.</p>
 
-  </p>
-
   </div>
 
 - Update the certificate authorities to block all eMudhra certificates in other
