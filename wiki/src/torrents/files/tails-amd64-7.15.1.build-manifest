@@ -3,7 +3,7 @@ origin_references:
   debian:
     reference: '2026100602'
   debian-security:
-    reference: '2026101301'
+    reference: '2026102202'
   torproject:
     reference: '2026100802'
 packages:
@@ -166,7 +166,7 @@ packages:
     version: 1.0.8-6
   - arch: all
     package: ca-certificates
-    version: '20250419'
+    version: 20250419+deb13u1
   - arch: amd64
     package: cdrdao
     version: 1:1.2.5-2
@@ -274,7 +274,7 @@ packages:
     version: 2.4.10-3+deb13u2
   - arch: amd64
     package: curl
-    version: 8.14.1-2+deb13u5
+    version: 8.14.1-2+deb13u7
   - arch: amd64
     package: dash
     version: 0.5.12-12
@@ -1738,10 +1738,10 @@ packages:
     version: 2.4.10-3+deb13u2
   - arch: amd64
     package: libcurl3t64-gnutls
-    version: 8.14.1-2+deb13u5
+    version: 8.14.1-2+deb13u7
   - arch: amd64
     package: libcurl4t64
-    version: 8.14.1-2+deb13u5
+    version: 8.14.1-2+deb13u7
   - arch: amd64
     package: libdaemon0
     version: 0.14-7.1+b3
@@ -1999,7 +1999,7 @@ packages:
     version: 0.28.5+dfsg-1
   - arch: amd64
     package: libexpat1
-    version: 2.8.3-1~deb13u1
+    version: 2.9.0-1~deb13u1
   - arch: all
     package: libexporter-tiny-perl
     version: 1.006002-1
@@ -2716,10 +2716,10 @@ packages:
     version: 1.22-4+b2
   - arch: amd64
     package: libjxl-gdk-pixbuf
-    version: 0.11.2-0.1~deb13u2
+    version: 0.11.2-0.1~deb13u3
   - arch: amd64
     package: libjxl0.11
-    version: 0.11.2-0.1~deb13u2
+    version: 0.11.2-0.1~deb13u3
   - arch: amd64
     package: libk5crypto3
     version: 1.21.3-5+deb13u1
@@ -4917,26 +4917,26 @@ packages:
     package: linux-base
     version: 4.12.1
   - arch: amd64
-    package: linux-headers-6.12.111+deb13-amd64
-    version: 6.12.111-1
+    package: linux-headers-6.12.113+deb13-amd64
+    version: 6.12.113-1
   - arch: all
-    package: linux-headers-6.12.111+deb13-common
-    version: 6.12.111-1
+    package: linux-headers-6.12.113+deb13-common
+    version: 6.12.113-1
   - arch: amd64
     package: linux-headers-amd64
-    version: 6.12.111-1
+    version: 6.12.113-1
   - arch: amd64
-    package: linux-image-6.12.111+deb13-amd64
-    version: 6.12.111-1
+    package: linux-image-6.12.113+deb13-amd64
+    version: 6.12.113-1
   - arch: amd64
     package: linux-image-amd64
-    version: 6.12.111-1
+    version: 6.12.113-1
   - arch: amd64
-    package: linux-kbuild-6.12.111+deb13
-    version: 6.12.111-1
+    package: linux-kbuild-6.12.113+deb13
+    version: 6.12.113-1
   - arch: all
     package: linux-libc-dev
-    version: 6.12.111-1
+    version: 6.12.113-1
   - arch: all
     package: linux-sysctl-defaults
     version: 4.12.1

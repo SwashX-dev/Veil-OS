@@ -39,7 +39,7 @@ bsdutils	1:2.41.5-0+deb13u1
 bubblewrap	0.12.0-1~deb13u1
 busybox	1:1.37.0-6+b9
 bzip2	1.0.8-6
-ca-certificates	20250419
+ca-certificates	20250419+deb13u1
 cdrdao	1:1.2.5-2
 celluloid	0.28-2
 coinor-libcbc3.1:amd64	2.10.12+ds-1
@@ -74,7 +74,7 @@ cups-ipp-utils	2.4.10-3+deb13u2
 cups-pk-helper	0.2.6-2.1
 cups-ppdc	2.4.10-3+deb13u2
 cups-server-common	2.4.10-3+deb13u2
-curl	8.14.1-2+deb13u5
+curl	8.14.1-2+deb13u7
 dash	0.5.12-12
 dbus	1.16.2-2
 dbus-bin	1.16.2-2
@@ -509,8 +509,8 @@ libcue2:amd64	2.2.1-4.1+b2
 libcups2t64:amd64	2.4.10-3+deb13u2
 libcupsfilters1t64:amd64	1.28.17-6+deb13u1
 libcupsimage2t64:amd64	2.4.10-3+deb13u2
-libcurl3t64-gnutls:amd64	8.14.1-2+deb13u5
-libcurl4t64:amd64	8.14.1-2+deb13u5
+libcurl3t64-gnutls:amd64	8.14.1-2+deb13u7
+libcurl4t64:amd64	8.14.1-2+deb13u7
 libdaemon0:amd64	0.14-7.1+b3
 libdata-optlist-perl	0.114-1
 libdata-perl-perl	0.002011-2
@@ -588,7 +588,7 @@ libexempi8:amd64	2.6.6-2
 libexif12:amd64	0.6.25-1+deb13u1
 libexiv2-28:amd64	0.28.5+dfsg-1
 libexiv2-data	0.28.5+dfsg-1
-libexpat1:amd64	2.8.3-1~deb13u1
+libexpat1:amd64	2.9.0-1~deb13u1
 libexporter-tiny-perl	1.006002-1
 libext2fs2t64:amd64	1.47.2-3+b12
 libexttextcat-2.0-0:amd64	3.4.7-1+b1
@@ -813,8 +813,8 @@ libjson-glib-1.0-0:amd64	1.10.6+ds-2
 libjson-glib-1.0-common	1.10.6+ds-2
 libjson-maybexs-perl	1.004008-1
 libjte2:amd64	1.22-4+b2
-libjxl-gdk-pixbuf:amd64	0.11.2-0.1~deb13u2
-libjxl0.11:amd64	0.11.2-0.1~deb13u2
+libjxl-gdk-pixbuf:amd64	0.11.2-0.1~deb13u3
+libjxl0.11:amd64	0.11.2-0.1~deb13u3
 libk5crypto3:amd64	1.21.3-5+deb13u1
 libkeyutils1:amd64	1.6.3-6
 libkf6archive-data	6.13.0-2
@@ -1491,8 +1491,8 @@ libzvbi0t64:amd64	0.2.44-1
 libzxcvbn0:amd64	2.5+dfsg-2+b2
 libzxing3:amd64	2.3.0-4
 linux-base	4.12.1
-linux-image-6.12.111+deb13-amd64	6.12.111-1
-linux-image-amd64	6.12.111-1
+linux-image-6.12.113+deb13-amd64	6.12.113-1
+linux-image-amd64	6.12.113-1
 linux-sysctl-defaults	4.12.1
 live-boot	1:20170112
 live-boot-initramfs-tools	1:20170112
