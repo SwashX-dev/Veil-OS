@@ -1198,7 +1198,7 @@ you can follow the next steps:
    stick and start testing.
 
 If you've built IUKs on another machine, once they have been built,
-copy `to_$VERSION.sha256sum` to `$IUKS_DIR/` your main computer.
+copy `to_$VERSION.sha256sum` to `$IUKS_DIR/` on your main computer.
 
 ISO history
 -----------
