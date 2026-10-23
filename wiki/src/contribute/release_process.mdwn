@@ -1604,14 +1604,6 @@ Upload the ISO and USB image signatures to our rsync server:
 
     scp "${ISO_PATH:?}.sig" "${IMG_PATH:?}.sig" rsync.mtl-libvirt-01:
 
-If the network between `rsync.mtl-libvirt-01` and Jenkins is still very slow,
-then copy images from your own computer, which is often faster:
-
-    rsync -vhL --partial --progress --inplace "${IMG_PATH}" "${ISO_PATH}" rsync.mtl-libvirt-01:
-
-… then pass `--skip-downloading-images` to the `copy-images-to-rsync-server-and-verify`
-command below.
-
 Copy the ISO and USB images to our rsync server:
 
     (
