@@ -1364,6 +1364,9 @@ If the last command failed:
 Prepare upgrade-description files
 ---------------------------------
 
+1. If needed, copy the IUKs to `$IUKS_DIR` on the machine where you're going to
+   prepare the upgrade-description files.
+
 1. Prepare upgrade-description files (see the [[upgrade-description
    files
    specification|contribute/design/upgrades#upgrade-description-files]]
