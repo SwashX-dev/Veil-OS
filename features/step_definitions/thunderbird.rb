@@ -121,19 +121,8 @@ Then /^the autoconfiguration wizard found only secure settings$/ do
   end
 end
 
-def wait_for_thunderbird_progress_bar_to_vanish
-  try_for(120) do
-    thunderbird_main.child(roleName: 'status bar', retry: false)
-                    .child(roleName: 'progress bar', retry: false)
-    false
-  rescue StandardError
-    true
-  end
-end
-
 When /^I fetch my email$/ do
   thunderbird_main.button('Get Messages').press
-  wait_for_thunderbird_progress_bar_to_vanish
 end
 
 When /^I accept the (?:autoconfiguration wizard's|manual) configuration$/ do
