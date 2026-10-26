@@ -79,7 +79,7 @@ def binaries_built_from_source_package(source_pkg: str) -> set[str]:
             "-a",
             "amd64,all",
             "--source-and-binary",
-            "--suite=stable",
+            "--suite=trixie",
             source_pkg,
         ],
         text=True,
