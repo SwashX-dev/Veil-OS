@@ -1,6 +1,30 @@
-tails (7.15) UNRELEASED; urgency=medium
+tails (7.16) UNRELEASED; urgency=medium
 
-  * Upgrade to Tor Browser 15.0.25-build1 (tails/tails!3375)
+  * Dummy entry for next release.
+
+ -- intrigeri <intrigeri@debian.org>  Fri, 23 Oct 2026 11:44:33 +0000
+
+tails (7.15.1) unstable; urgency=medium
+
+  * Upgrade ca-certificates to 20250419+deb13u1 (DSA-6572-1)
+
+  * Upgrade to Tor Browser 15.0.26 (tails/tails!3379)
+
+    Closes issues:
+      - Upgrade to Tor Browser 15.0.26 (tails/tails#21834)
+
+    Commits:
+      - Fetch Tor Browser from our own archive
+      - Upgrade Tor Browser to 15.0.26-build1 (refs: tails#21834)
+      - CI: run all tests for 21834-tor-browser-15.0.26
+
+  * Upgrade Linux to 6.12.113-1
+
+ -- Tails developers <foundations@tails.net>  Thu, 22 Oct 2026 08:20:32 +0000
+
+tails (7.15) unstable; urgency=medium
+
+  * Upgrade to Tor Browser 15.0.25-build2 (tails/tails!3375)
 
     Closes issues:
       - Upgrade Tor Browser in Tails 7.15 (tails/tails#21805)
@@ -163,7 +187,7 @@ tails (7.15) UNRELEASED; urgency=medium
     Commits:
       - Test suite: add back JSON::PRETTY_STATE_PROTOTYPE with monkeypatch
 
- -- Tails developers <foundations@tails.net>  Tue, 13 Oct 2026 07:38:31 +0000
+ -- Tails developers <foundations@tails.net>  Tue, 13 Oct 2026 10:52:34 +0200
 
 tails (7.14) unstable; urgency=medium
 

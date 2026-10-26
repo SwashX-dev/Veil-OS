@@ -4,17 +4,17 @@ channel: stable
 initial-install-version: 7.4.1
 product-name: Tails
 upgrades:
-- details-url: https://tails.net/news/version_7.14/
+- details-url: https://tails.net/news/version_7.15.1/
   type: major
   upgrade-paths:
   - target-files:
-    - sha256: a49ab6a82d03449f3f77b0c5cfe9a8b19d9eaf10b2177f35ffaca4a13bfdec54
-      size: 1868761088
-      url: https://download.tails.net/tails/stable/tails-amd64-7.14/tails-amd64-7.14.iso
+    - sha256: f0e68387ebe327808c0a037886f804f7b2268ae8c66a677e3a6c6241d764e3c7
+      size: 1879707648
+      url: https://download.tails.net/tails/stable/tails-amd64-7.15.1/tails-amd64-7.15.1.iso
     type: full
   - target-files:
-    - sha256: a2c1449c1765076cc10e73feba3520f3e65c7ec84e5c84f28763d580a7a7a3ab
-      size: 1064095744
-      url: https://download.tails.net/tails/stable/iuk/v2/Tails_amd64_7.4.1_to_7.14.iuk
+    - sha256: a720275943541c4b4f4910b2c268f9e2f9038a92890bcc1d362fabbb0f77c90e
+      size: 1076948992
+      url: https://download.tails.net/tails/stable/iuk/v2/Tails_amd64_7.4.1_to_7.15.1.iuk
     type: incremental
-  version: '7.14'
+  version: 7.15.1
