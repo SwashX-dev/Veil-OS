@@ -92,7 +92,6 @@ When /^I enter my email credentials into the autoconfiguration wizard$/ do
   address = $config['Thunderbird']['address']
   name = address.split('@').first
   hostname = address.split('@').last
-  password = $config['Thunderbird']['password']
 
   # These tricks are needed because on Jenkins, the hostname of the test email
   # server resolves to a RFC 1918 address (sysadmin#18044), which tor would not allow
@@ -100,16 +99,16 @@ When /^I enter my email credentials into the autoconfiguration wizard$/ do
   # out of it.
   allow_connecting_to_possibly_rfc1918_host(hostname)
 
-  thunderbird_wizard.child('Your full name', roleName: 'entry').grabFocus
+  thunderbird_wizard.child('Full name*', roleName: 'entry').grabFocus
   @screen.paste(name)
-  thunderbird_wizard.child('Email address',
+  thunderbird_wizard.child('Email address*',
                            roleName: 'entry').grabFocus
   @screen.paste(address)
-  thunderbird_wizard.child('Password', roleName: 'password text').grabFocus
-  @screen.paste(password)
   thunderbird_wizard.button('Continue').press
-  # This button is shown if and only if a configuration has been found
-  try_for(120) { thunderbird_wizard.button('Done') }
+  # This heading is shown if and only if a configuration has been found
+  try_for(120) do
+    thunderbird_wizard.child('Connect your email settings', roleName: 'heading')
+  end
 end
 
 Then /^the autoconfiguration wizard's choice for the (incoming|outgoing) server is secure (.+)$/ do |type, protocol|
@@ -136,20 +135,16 @@ When /^I fetch my email$/ do
 end
 
 When /^I accept the (?:autoconfiguration wizard's|manual) configuration$/ do
-  thunderbird_wizard.button('Done').press
+  thunderbird_wizard.button('Continue').press
+end
 
-  # The password check can fail due to bad Tor circuits.
-  retry_tor do
-    try_for(120) do
-      # Spam the button, even if it is disabled (while it is still
-      # testing the password).
-      thunderbird_wizard.button('Finish').press
-      false
-    rescue StandardError
-      true
-    end
-    true
-  end
+When /^I enter my password and finalize the email account setup$/ do
+  thunderbird_wizard.child('Password*', roleName: 'password text').grabFocus
+  @screen.paste($config['Thunderbird']['password'])
+  thunderbird_wizard.button('Continue').press
+  thunderbird_wizard.child('Sync your calendars and address books', roleName: 'heading')
+  thunderbird_wizard.button('Skip').press
+  thunderbird_wizard.button('Finish').press
 
   # The account isn't fully created before we fetch our mail. For
   # instance, if we'd try to send an email before this, yet another

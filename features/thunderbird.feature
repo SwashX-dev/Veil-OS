@@ -22,6 +22,7 @@ Feature: Thunderbird email client
     Then the autoconfiguration wizard's choice for the incoming server is secure IMAP
     And the autoconfiguration wizard's choice for the outgoing server is secure SMTP
     When I accept the autoconfiguration wizard's configuration
+    And I enter my password and finalize the email account setup
     And I send an email to myself
     And I fetch my email
     Then I can find the email I sent to myself in my inbox
