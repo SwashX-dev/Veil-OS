@@ -193,8 +193,6 @@ Then(/^the screen keyboard works in Thunderbird$/) do
   case $language
   when 'Arabic'
     thunderbird_x = 'ThunderbirdXRTL.png'
-  when 'Chinese'
-    thunderbird_x = 'ThunderbirdXChinese.png'
   when 'Persian'
     osk_key = 'ScreenKeyboardKeyPersian.png'
     thunderbird_x = 'ThunderbirdXPersian.png'
@@ -204,9 +202,7 @@ Then(/^the screen keyboard works in Thunderbird$/) do
   @screen.wait('ThunderbirdTextEntry.png', 20).click
   @screen.wait('ScreenKeyboard.png', 20)
   @screen.wait(osk_key, 20).click
-  # In Russian and Turkish the text is displayed one pixel off
-  # since Thunderbird 128, so use a slightly lower sensitivity.
-  @screen.wait(thunderbird_x, 20, sensitivity: 0.8)
+  @screen.wait(thunderbird_x, 20)
 end
 
 def thunderbird_non_suspicious_connections
