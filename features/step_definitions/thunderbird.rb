@@ -7,7 +7,14 @@ def thunderbird_main
 end
 
 def thunderbird_wizard
-  thunderbird_app.child('Account Setup - Mozilla Thunderbird', roleName: 'frame')
+  # Unfortunately the wizard has no title set and its contents (that
+  # is visible to Dogtail, which doesn't include the "Account Hub"
+  # header for some reason) change completely between steps, except
+  # for some generic links in the footer, e.g. "Privacy Policy".
+  thunderbird_main.children(roleName: 'dialog', recursive: false)
+                  .find do |dialog|
+    dialog.child('Privacy Policy', roleName: 'list item')
+  end
 end
 
 def thunderbird_inbox
