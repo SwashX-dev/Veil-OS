@@ -11,7 +11,7 @@ Feature: Thunderbird email client
     Then I am prompted to setup an email account
 
   Scenario: No add-ons are installed
-    Given I cancel setting up an email account
+    Given I minimize the autoconfiguration wizard
     When I open Thunderbird's Add-ons Manager
     And I open the Extensions tab
     Then I see that no add-ons are enabled in Thunderbird

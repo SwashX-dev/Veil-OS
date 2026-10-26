@@ -52,9 +52,8 @@ Then /^I am prompted to setup an email account$/ do
   thunderbird_wizard
 end
 
-Then /^I cancel setting up an email account$/ do
-  thunderbird_wizard.button('Cancel').press
-  thunderbird_wizard.button('Exit Setup').press
+Then /^I minimize the autoconfiguration wizard$/ do
+  thunderbird_wizard.button('Minimize').press
 end
 
 Then /^I open Thunderbird's Add-ons Manager$/ do
