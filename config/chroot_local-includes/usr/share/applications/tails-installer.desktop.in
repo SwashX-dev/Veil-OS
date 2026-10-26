@@ -2,9 +2,9 @@
 Type=Application
 _Name=Tails Cloner
 _Comment=Install, clone, upgrade Tails
-_Keywords=install;clone;upgrade;manual
+_Keywords=install;clone;upgrade;manual;backup
 Icon=tails-installer.svg
 Exec=/usr/local/bin/tails-installer
 Terminal=false
 Categories=System;Utility;
-Keywords=Tails;Install;Upgrade;Update;Copy;Clone;Installer;USB;Installation;
+Keywords=Tails;Install;Upgrade;Update;Copy;Clone;Installer;USB;Installation;backup
