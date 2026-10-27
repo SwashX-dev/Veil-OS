@@ -133,11 +133,19 @@ When /^I enter my password and finalize the email account setup$/ do
   thunderbird_wizard.child('Password*', roleName: 'password text').grabFocus
   @screen.paste($config['Thunderbird']['password'])
   thunderbird_wizard.button('Continue').press
+  # Strangely, sometimes the wizard skips the step to sync calendars
+  # and address books.
   try_for(120) do
-    thunderbird_wizard.child('Sync your calendars and address books',
-                             roleName: 'heading')
+    if thunderbird_wizard.child?('Sync your calendars and address books',
+                                 roleName: 'heading')
+      thunderbird_wizard.button('Skip').press
+      true
+    elsif thunderbird_wizard.child?('Finish', roleName: 'button')
+      true
+    else
+      false
+    end
   end
-  thunderbird_wizard.button('Skip').press
   thunderbird_wizard.button('Finish').press
 end
 
