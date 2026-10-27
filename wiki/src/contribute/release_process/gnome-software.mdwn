@@ -23,7 +23,7 @@ Let's say GNOME Software 51.1-1 hits Debian unstable, then set:
 And derive these:
 
     VERSION="${DEBIAN_TAG#*/}"~bpo13+0tails1
-    GNOME_SOFTWARE_BRANCH="backport-${DEBIAN_TAG:?}"
+    GNOME_SOFTWARE_BRANCH="tails/backport-${DEBIAN_TAG:?}"
     TAILS_BRANCH="${TAILS_ISSUE:?}-gnome-software-${DEBIAN_TAG#*/}-backport"
 
 ## Check for new Adwaita usage
