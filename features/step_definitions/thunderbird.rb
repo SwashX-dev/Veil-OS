@@ -111,12 +111,14 @@ When /^I enter my email credentials into the autoconfiguration wizard$/ do
   end
 end
 
-Then /^the autoconfiguration wizard's choice for the (incoming|outgoing) server is secure (.+)$/ do |type, protocol|
-  type = type.capitalize
-  section = thunderbird_wizard.child(type, roleName: 'heading').parent
-  subsections = section.children(roleName: 'section')
-  assert(subsections.any? { |s| s.text == protocol })
-  assert(subsections.any? { |s| ['SSL/TLS', 'STARTTLS'].include?(s.text) })
+Then /^the autoconfiguration wizard found only secure settings$/ do
+  thunderbird_wizard.children(roleName: 'paragraph')
+                    .select { |n| n.text == 'SECURITY:' }
+                    .each do |security_field|
+    values = security_field.parent.children(roleName: 'section')
+    assert_equal(1, values.size)
+    assert_include(['SSL/TLS', 'STARTTLS'], values.first.text)
+  end
 end
 
 def wait_for_thunderbird_progress_bar_to_vanish

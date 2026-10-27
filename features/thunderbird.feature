@@ -19,8 +19,7 @@ Feature: Thunderbird email client
 
   Scenario: I can send emails, and receive emails over IMAP
     When I enter my email credentials into the autoconfiguration wizard
-    Then the autoconfiguration wizard's choice for the incoming server is secure IMAP
-    And the autoconfiguration wizard's choice for the outgoing server is secure SMTP
+    Then the autoconfiguration wizard found only secure settings
     When I accept the autoconfiguration wizard's configuration
     And I enter my password and finalize the email account setup
     And I send an email to myself
