@@ -55,10 +55,10 @@ Then prepare the release:
 
     (
     set -eu -o pipefail
-    gbp dch --new-version="${VERSION:?}" --distribution="${TAILS_BRANCH:?}" --ignore-branch
+    gbp dch --new-version="${VERSION:?}" --distribution="${TAILS_BRANCH:?}" --debian-branch="${GNOME_SOFTWARE_BRANCH:?}"
     dch --append "Rebuild for Trixie"
     git commit -m "releasing package gnome-software version ${VERSION}" debian/changelog
-    gbp buildpackage --git-tag-only --git-sign-tags --git-ignore-branch
+    gbp buildpackage --git-tag-only --git-sign-tags --git-debian-branch="${GNOME_SOFTWARE_BRANCH:?}"
     git show
     )
 
@@ -66,7 +66,7 @@ Then prepare the release:
 
 For instance, if you use `pbuilder`:
 
-    gbp buildpackage --git-ignore-branch --git-pbuilder --git-arch=amd64 --git-dist=trixie
+    gbp buildpackage --git-debian-branch="${GNOME_SOFTWARE_BRANCH:?}" --git-pbuilder --git-arch=amd64 --git-dist=trixie
 
 # Publish packaging branch
 
