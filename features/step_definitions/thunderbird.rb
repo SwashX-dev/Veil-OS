@@ -133,7 +133,10 @@ When /^I enter my password and finalize the email account setup$/ do
   thunderbird_wizard.child('Password*', roleName: 'password text').grabFocus
   @screen.paste($config['Thunderbird']['password'])
   thunderbird_wizard.button('Continue').press
-  thunderbird_wizard.child('Sync your calendars and address books', roleName: 'heading')
+  try_for(120) do
+    thunderbird_wizard.child('Sync your calendars and address books',
+                             roleName: 'heading')
+  end
   thunderbird_wizard.button('Skip').press
   thunderbird_wizard.button('Finish').press
 end
