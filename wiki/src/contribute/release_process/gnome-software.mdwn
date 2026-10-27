@@ -86,6 +86,18 @@ For instance, if you use `pbuilder`:
     git fetch origin
     git checkout -b "${TAILS_BRANCH:?}" origin/stable
     bin/add-APT-overlay --enable
+    )
+
+Then update the value `ignore.temporary.gnome-software.version` in
+`config/ci/needed-package-updates.yml` to the version we just
+backported, as outputted by:
+
+    echo "${DEBIAN_TAG#*/}"
+
+Next, publish the branch:
+
+    (
+    set -eu -o pipefail
     git push \
         --set-upstream \
         -o merge_request.create \
