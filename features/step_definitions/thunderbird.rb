@@ -190,7 +190,6 @@ Then /^I can find the email I sent to myself in my inbox$/ do
 end
 
 Then(/^the screen keyboard works in Thunderbird$/) do
-  step 'I start Thunderbird'
   osk_key = 'ScreenKeyboardKeyX.png'
   thunderbird_x = 'ThunderbirdX.png'
   case $language
@@ -200,10 +199,18 @@ Then(/^the screen keyboard works in Thunderbird$/) do
     osk_key = 'ScreenKeyboardKeyPersian.png'
     thunderbird_x = 'ThunderbirdXPersian.png'
   end
-  # We have to click to activate the screen keyboard (#19101),
-  # but we cannot do it with Dogtail so we have to use a picture.
-  @screen.wait('ThunderbirdTextEntry.png', 20).click
-  @screen.wait('ScreenKeyboard.png', 20)
+  # We have to click to activate the screen keyboard (#19101), but we
+  # cannot do it with Dogtail so we have to use a picture.
+  # Furthermore, since Thunderbird 153 clicking the text entry no
+  # longer reliably opens the screen keyboard, and sometimes when
+  # clicking it it turns "red" as if the input is invalid (empty in
+  # this case) and the easiest workaround is to just restart
+  # Thunderbird and try again.
+  retry_action(5, recovery_proc: proc { @screen.press('alt', 'f4') }) do
+    step 'I start Thunderbird'
+    @screen.wait('ThunderbirdTextEntry.png', 20).click
+    @screen.wait('ScreenKeyboard.png', 20)
+  end
   @screen.wait(osk_key, 20).click
   @screen.wait(thunderbird_x, 20)
 end
