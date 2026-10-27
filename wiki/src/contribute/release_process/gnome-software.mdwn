@@ -62,16 +62,13 @@ Then prepare the release:
     git show
     )
 
-# Build
+# Build Debian packages
 
 For instance, if you use `pbuilder`:
 
     gbp buildpackage --git-ignore-branch --git-pbuilder --git-arch=amd64 --git-dist=trixie
 
-Before uploading the packages, remember to create `${TAILS_BRANCH}` in
-`tails.git` so the required APT suite is created.
-
-# Publish
+# Publish packaging branch
 
     git push \
         --set-upstream \
@@ -80,3 +77,27 @@ Before uploading the packages, remember to create `${TAILS_BRANCH}` in
         -o merge_request.target=tails/trixie \
         -o merge_request.title="Draft: Backport ${DEBIAN_TAG}" \
         origin "${GNOME_SOFTWARE_BRANCH:?}"
+
+# Prepare Tails branch
+
+    (
+    set -eu -o pipefail
+    cd "${TAILS_GIT_REPO:?}"
+    git fetch origin
+    git checkout -b "${TAILS_BRANCH:?}" origin/stable
+    bin/add-APT-overlay --enable
+    git push \
+        --set-upstream \
+        -o merge_request.create \
+        -o merge_request.draft \
+        -o merge_request.target=stable \
+        -o merge_request.title="Draft: Install GNOME Software ${VERSION:?}" \
+        origin "${TAILS_BRANCH:?}"
+    bin/add-APT-overlay --wait
+    )
+
+# Upload Debian packages
+
+Once the APT suite is ready (when the previous command finishes) you
+can upload the packages using `dput` or `dupload` (see [[this
+document|contribute/APT_repository/custom]] for setup instructions).
