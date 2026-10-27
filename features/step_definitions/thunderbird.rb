@@ -147,20 +147,6 @@ When /^I enter my password and finalize the email account setup$/ do
   thunderbird_wizard.child('Sync your calendars and address books', roleName: 'heading')
   thunderbird_wizard.button('Skip').press
   thunderbird_wizard.button('Finish').press
-
-  # The account isn't fully created before we fetch our mail. For
-  # instance, if we'd try to send an email before this, yet another
-  # wizard will start, indicating (incorrectly) that we do not have an
-  # account set up yet. Normally we disable automatic fetching of email,
-  # and thus here we would immediately call "step 'I fetch my email'",
-  # but Thunderbird 68 will fetch email immediately for a newly created
-  # account despite our prefs (#17222), so here we first wait for this
-  # operation to complete. But that initial fetch is incomplete,
-  # e.g. only the INBOX folder is listed, so after that we fetch
-  # email manually: otherwise Thunderbird does not know about the "Sent"
-  # directory yet and sending email will fail when copying messages there.
-  wait_for_thunderbird_progress_bar_to_vanish
-  step 'I fetch my email'
 end
 
 When /^I select the autoconfiguration wizard's IMAP choice$/ do
