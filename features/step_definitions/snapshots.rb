@@ -167,6 +167,7 @@ unless defined? CHECKPOINTS
           'the network is plugged',
           'Tor is ready',
           'all notifications have disappeared',
+          'GNOME Software has fetched the Flathub appstream',
           'available upgrades have been checked',
         ],
       },
