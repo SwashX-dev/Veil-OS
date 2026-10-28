@@ -17,9 +17,7 @@ git add "config/ci/per_branch/${DEBIAN_BRANCH}.toml"
 git commit -m "Set this branch to run all tests"
 
 # Update the `debian` APT snapshot for the Tails image
-auto/scripts/apt-snapshots-serials get-latest debian |
-    cut -d' ' -f2 \
-        >config/APT_snapshots.d/debian/serial
+auto/scripts/apt-snapshots-serials freeze debian
 git commit \
     -m "Bump 'debian' APT snapshot to upgrade to Trixie ${POINT_RELEASE_VERSION}" \
     config/APT_snapshots.d/debian/serial
