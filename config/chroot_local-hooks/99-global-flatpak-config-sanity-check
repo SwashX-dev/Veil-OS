@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -eu -o pipefail
+
+echo "Checking that we don't do unexpected stuff in /etc/flatpak"
+
+if [ "$(ls /etc/flatpak/)" != "installations.d" ]; then
+    echo "Unexpected files in /etc/flatpak/:" >&2
+    # shellcheck disable=SC2010
+    ls -1 /etc/flatpak/ | grep --line-regexp --invert-match "installations.d" >&2
+    echo \
+        "This directory is hidden from GNOME Software by " \
+        "config/chroot_local-includes/usr/lib/systemd/user/gnome-software.service.d/hide-tails-installation.conf. " \
+        "Please make sure the new files are safe to ignore and add them to " \
+        "the check above, or otherwise figure out what to do." >&2
+    exit 1
+fi

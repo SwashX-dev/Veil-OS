@@ -230,13 +230,18 @@ class NewVersionIssue:
     suite: str
     suite_version: Version
     suite_source_version: Version
+    instruction: str
 
     def __str__(self):
         binaries = getattr(self, "log_binaries", None)
         if binaries:
             binaries = ", ".join(binaries)
-            return f"{self.source}[{binaries}] ({self.version}) to Debian {self.suite} ({self.suite_source_version})"
-        return f"{self.source} ({self.version}) to Debian {self.suite} ({self.suite_source_version})"
+            res = f"{self.source}[{binaries}] ({self.version}) to Debian {self.suite} ({self.suite_source_version})"
+        else:
+            res = f"{self.source} ({self.version}) to Debian {self.suite} ({self.suite_source_version})"
+        if self.instruction:
+            res += f". INSTRUCTION: {self.instruction}"
+        return res
 
     def tails_fork(self):
         return re.search("tails[0-9]+$", str(self.version)) is not None
@@ -246,7 +251,9 @@ def get_udd(package_dict: dict[str, Version], suites: tuple[str]) -> UDD:
     return UDD(package_dict.keys(), suites)  # type: ignore[arg-type]
 
 
-def get_issues(udd: UDD, package_dict: dict[str, Version]) -> Iterator[NewVersionIssue]:
+def get_issues(
+    udd: UDD, package_dict: dict[str, Version], instructions: dict[str, str]
+) -> Iterator[NewVersionIssue]:
     """Get a issue list of updateable packages."""
     for package, version in package_dict.items():
         striped_version = strip_tails_version(str(version))
@@ -260,13 +267,15 @@ def get_issues(udd: UDD, package_dict: dict[str, Version]) -> Iterator[NewVersio
             continue
 
         if striped_version < suite_version:
+            source = udd.source(package, suite)
             issue = NewVersionIssue(
                 package,
-                udd.source(package, suite),
+                source,
                 version,
                 suite,
                 suite_version,
                 udd.source_version(package, suite),
+                instructions.get(source, None),
             )
             if issue.tails_fork() and striped_version >= issue.suite_source_version:
                 continue
@@ -282,6 +291,7 @@ def check_build_manifest(
     ignore = config.get("ignore", {})
     general_ignore = ignore.get("general", [])
     tmp_ignore = ignore.get("temporary", {})
+    instructions = config.get("instructions", {})
 
     pkg_dict: dict[str, Version] = {}
     for pkg in build_manifest["packages"]["binary"]:
@@ -310,7 +320,7 @@ def check_build_manifest(
 
     udd = get_udd(pkg_dict, suites)
 
-    issues = list(get_issues(udd, pkg_dict))
+    issues = list(get_issues(udd, pkg_dict, instructions))
 
     def _is_ignored(issue):
         if issue.source in general_ignore:

@@ -1,0 +1,115 @@
+[[!meta title="Upgrading the GNOME Software backport"]]
+
+[[!toc levels=2]]
+
+# First time setup
+
+    git clone git@gitlab-ssh.tails.net:tails/gnome-software
+    cd gnome-software
+    git remote add debian-upstream https://salsa.debian.org/gnome-team/gnome-software.git
+
+# Import new version
+
+First make sure your checkout is up-to-date:
+
+    git fetch origin
+    git fetch debian-upstream
+
+Let's say GNOME Software 51.1-1 hits Debian unstable, then set:
+
+    DEBIAN_TAG=debian/51.1-1
+    TAILS_ISSUE=12345
+
+And derive these:
+
+    VERSION="${DEBIAN_TAG#*/}"~bpo13+0tails1
+    GNOME_SOFTWARE_BRANCH="tails/backport-${DEBIAN_TAG:?}"
+    TAILS_BRANCH="${TAILS_ISSUE:?}-gnome-software-${DEBIAN_TAG#*/}-backport"
+
+## Check for new Adwaita usage
+
+GNOME Software 51 depends on `libadwaita` >= 1.8~alpha, but Trixie
+only has 1.7.6, and we don't want to backport a higher
+version. Therefore we have to monitor any changes we introduce with
+new version for new usage of `libadwaita`, and make sure it still
+works. As an example of something that does *not* work, but which we
+considers acceptable, [commit
+657bc3aa](https://gitlab.tails.net/tails/gnome-software/-/commit/657bc3aaa2a6a44bd3768abae3edfb53979ab6bb)
+introduces
+[AdwShortcutsSection](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1.8/class.ShortcutsSection.html)
+which requires `libadwaita` >= 1.8, so in our backport this dialog
+doesn't work. For details, see [this
+thread](https://gitlab.tails.net/tails/gnome-software/-/merge_requests/1#note_291825).
+
+    git log -p -GAdw origin/tails/trixie.."${DEBIAN_TAG:?}" -- src
+
+## Prepare new release
+
+    git checkout -b "${GNOME_SOFTWARE_BRANCH:?}" origin/tails/trixie
+    git merge "${DEBIAN_TAG:?}"
+
+You likely will have to deal with merge conflicts in
+`debian/changelog`.
+
+Then prepare the release:
+
+    (
+    set -eu -o pipefail
+    gbp dch --new-version="${VERSION:?}" --distribution="${TAILS_BRANCH:?}" --debian-branch="${GNOME_SOFTWARE_BRANCH:?}"
+    dch --append "Rebuild for Trixie"
+    git commit -m "releasing package gnome-software version ${VERSION}" debian/changelog
+    gbp buildpackage --git-tag-only --git-sign-tags --git-debian-branch="${GNOME_SOFTWARE_BRANCH:?}"
+    git show
+    )
+
+# Build Debian packages
+
+For instance, if you use `pbuilder`:
+
+    gbp buildpackage --git-debian-branch="${GNOME_SOFTWARE_BRANCH:?}" --git-pbuilder --git-arch=amd64 --git-dist=trixie
+
+# Publish packaging branch
+
+    git push \
+        --set-upstream \
+        -o merge_request.create \
+        -o merge_request.draft \
+        -o merge_request.target=tails/trixie \
+        -o merge_request.title="Draft: Backport ${DEBIAN_TAG}" \
+        origin "${GNOME_SOFTWARE_BRANCH:?}"
+
+# Prepare Tails branch
+
+    (
+    set -eu -o pipefail
+    cd "${TAILS_GIT_REPO:?}"
+    git fetch origin
+    git checkout -b "${TAILS_BRANCH:?}" origin/stable
+    bin/add-APT-overlay --enable
+    )
+
+Then update the value `ignore.temporary.gnome-software.version` in
+`config/ci/needed-package-updates.yml` to the version we just
+backported, as outputted by:
+
+    echo "${DEBIAN_TAG#*/}"
+
+Next, publish the branch:
+
+    (
+    set -eu -o pipefail
+    git push \
+        --set-upstream \
+        -o merge_request.create \
+        -o merge_request.draft \
+        -o merge_request.target=stable \
+        -o merge_request.title="Draft: Install GNOME Software ${VERSION:?}" \
+        origin "${TAILS_BRANCH:?}"
+    bin/add-APT-overlay --wait
+    )
+
+# Upload Debian packages
+
+Once the APT suite is ready (when the previous command finishes) you
+can upload the packages using `dput` or `dupload` (see [[this
+document|contribute/APT_repository/custom]] for setup instructions).
