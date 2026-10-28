@@ -1847,8 +1847,8 @@ end
 # commands its executes.
 def systemd_journal(message, options: [], matches: [], regexp: false, user: nil)
   # Below we'll quote this string with apostrophes when passed to the
-  # shell, so let's escape: ' → \'
-  message.gsub!("'", "\\\\'")
+  # shell, so we apply this quoting trick to appease the shell.
+  message.gsub!("'", "'\"'\"'")
   # We avoid modifying the caller's data
   final_options = options.clone
   final_matches = matches.clone
