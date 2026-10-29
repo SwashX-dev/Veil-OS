@@ -186,7 +186,7 @@ To change the security level:
 
 1. Select **Settings** in the **Security level** menu.
 
-1. In the **Security Level** settings, select **Change**.
+1. In the **Security level** settings, select **Change security level**.
 
 1. Select a new security level.
 
