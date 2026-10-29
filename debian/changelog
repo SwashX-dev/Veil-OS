@@ -1,8 +1,145 @@
 tails (7.16) UNRELEASED; urgency=medium
 
-  * Dummy entry for next release.
+  * Bump APT snapshots for Vagrant box (tails/tails!3386)
 
- -- intrigeri <intrigeri@debian.org>  Fri, 23 Oct 2026 11:44:33 +0000
+    Closes issues:
+      - Update tails-builder's APT snapshots (tails/tails#21838)
+
+    Commits:
+      - Bump APT snapshots for Vagrant box
+
+  * Test suite: adapt to Thunderbird 153 (tails/tails!3389)
+
+    Closes issues:
+      - Upgrade to Thunderbird 153 (tails/tails#21319)
+
+    Commits:
+      - Test suite: handle that step is sometimes skipped in Thunderbird's autoconfig
+        wizard
+      - Test suite: retry when screen keyboard fails to appear
+      - Test suite: wait longer for the password to be checked
+      - Test suite: adapt localization scenarios to Thunderbird 153
+      - Test suite: drop wait_for_thunderbird_progress_bar_to_vanish()
+      - Test suite: drop obsolete workaround
+      - Test suite: adapt autoconfig SSL/TLS check for Thunderbird 153
+      - Test suite: adapt to account wizard step split in Thunderbird 153
+      - Test suite: adapt to Thunderbird 153 account wizard not being closeable
+      - Test suite: adapt how we find the account wizard in Thunderbird 153
+
+  * Release process: post-7.15.1 improvements (tails/tails!3384)
+
+    Commits:
+      - Release process: remove obsolete workaround
+      - Release process: better support using the build machine *only* to build images
+        & IUKs
+      - Release process: add missing word
+      - Release process: remove obsolete workaround
+      - Release process: merge commands into 1
+
+  * Make Tails Cloner findable by searching for "backup" in the Overview
+    (tails/tails!3380)
+
+    Commits:
+      - Make Tails Cloner findable by searching for "backup" in the Overview
+
+  * Add script to list relevant binary packages from an input source package
+    (tails/tails!3368)
+
+    Commits:
+      - relevant-binary-packages: track base codename rather than "stable"
+      - relevant-binary-packages: sort build manifests
+      - relevant-binary-packages: use Python in isolated mode
+      - Improve formatting
+      - ruff format
+      - Improve formatting of output
+      - Make function and variable names higher level
+      - Simplify code
+      - Make requests.get timeout consistent
+      - Improve phrasing of comments and user-facing strings
+      - Drop not-very-meaningful "_" function name prefix
+      - Use our standard Python 3 shebang
+      - Lint
+      - Simplify
+      - Use higher-level tool to build URL
+      - Improve docstrings
+      - Add script to list relevant binary packages from an input source package
+
+  * Install GNOME Software 51.0-1~bpo13+0tails1 (tails/tails!3338)
+
+    Commits:
+      - Sanity check that we don't hide unintentional stuff in /etc/flatpak from GNOME
+        Software
+      - Add comment explaining reason for systemd unit override
+      - Use explicit branch name instead of --*ignore-branch
+      - Update needed-package-updates.yml to not complain about our gnome-software
+        backports
+      - Improve instructions for how to backport new versions of GNOME Software
+      - Let's stick to our namespace for branches in the gnome-software packaging repo
+      - Update comment
+      - Add instructions for how to backport new versions of GNOME Software
+      - Hide 'tails' Flatpak installation from GNOME Software
+      - CI: add custom instruction for when gnome-software needs an update
+      - bin/needed-package-updates: make it possible to add custom instructions
+      - CI: ignore gnome-software 51.0-1
+      - Add new expected custom packages for the GNOME Software backport
+      - Stop deleting file that no longer is present in GNOME Software
+      - Remove included files we now get from the GNOME Software backport
+      - Enable the 21569-fix-gnome-software-notifications APT overlay
+
+  * Upgrade to Tor Browser 16.0 based on Firefox ESR 153 (tails/tails!3054)
+
+    Closes issues:
+      - Integrate Tor Browser 16.0 alpha based on Firefox 151+ (tails/tails#21317)
+      - Upgrade to Tor Browser 16.0 stable based on Firefox ESR 153 (tails/tails#21318)
+      - Update fake Flatpak's D-Bus permissions to match Tor Browser
+        (tails/tails#21412)
+
+    Commits:
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-153.6.0esr-16.0-1-build3
+      - Upgrade Tor Browser to 16.0-build1 (refs: tails#21318)
+      - Fetch Tor Browser from our own archive
+      - Upgrade Tor Browser to 16.0a14-build2 (refs: tails#21317)
+      - Test suite: update expected image
+      - Fetch Tor Browser from our own archive
+      - Upgrade Tor Browser to 16.0a13 (refs: tails#21317)
+      - Fetch Tor Browser from our own archive
+      - Upgrade Tor Browser to 16.0a12 (refs: tails#21318)
+      - Untabify
+      - Remove obsolete "&&"
+      - Use new style for embedded shell snippets
+      - Fetch Tor Browser from our own archive
+      - Upgrade Tor Browser to 16.0a11-build1 (refs: tails#21318)
+      - Upgrade Tor Browser to 16.0a10 (refs: tails#21318)
+      - Upgrade Tor Browser to 16.0a9-build1 (refs: tails#21318)
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-140.13.0esr-15.0-1-build1
+      - Convert to extended regexps
+      - Tor Browser: refresh custom about:tor patches with updated script
+      - Test suite: adjust to Tor Browser 16.0a8-build1
+      - Upgrade Tor Browser to 16.0a8-build1 (refs: tails#21318)
+      - Unsafe Browser: stop setting legacy pref
+      - Unsafe Browser: don't manually set prefs that TOR_TRANSPROXY=1 implies
+      - Adjust Unsafe Browser environment for Tor Browser 16.0
+      - Test suite: update to Tor Browser 16.0 UI
+      - Test suite: update expected images for Tor Browser 16.0
+      - Test suite: dogtail-ify to avoid updating this image for the 11th time
+      - Test suite: remove duplicate code
+      - Disable new Firefox UI that does not add value in an amnesic-by-default OS
+      - Fix typo
+      - Tor Browser: refresh custom about:tor patches with updated script
+      - Update about:tor patches generation for Tor Browser 16.0a7
+      - Refresh omni.ja patch against Tor Browser 16.0a7
+      - Update fake Flatpak's D-Bus permissions to match Tor Browser
+      - Upgrade Tor Browser to 16.0a7
+      - Fix spelling of "Flatpak"
+      - Improve notification phrasing
+      - Fix SC2145
+      - shfmt
+      - Move code from website page to dedicated script
+      - CI: run all tests for 21318-tor-browser-16.0
+
+ -- Tails developers <foundations@tails.net>  Thu, 29 Oct 2026 12:04:19 +0000
 
 tails (7.15.1) unstable; urgency=medium
 
