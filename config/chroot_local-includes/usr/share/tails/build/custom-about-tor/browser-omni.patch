@@ -1,8 +1,8 @@
 diff --git a/browser/components/abouttor/content/aboutTor.css b/browser/components/abouttor/content/aboutTor.css
-index 49ee48e2493b01542402fbdf860f8ff42c44b360..a20cf1b9377e76ef7fefed77324f6643747ba6e8 100644
+index ef65562145d257120473e59516802a314964a2d8..ddb66e32718cbb897423269204120e7ff473b357 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.css
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.css
-@@ -12,6 +12,7 @@ body {
+@@ -11,6 +11,7 @@ body {
      "heading heading heading" auto
      "tor-check tor-check tor-check" auto
      ". form ." min-content
@@ -10,8 +10,8 @@ index 49ee48e2493b01542402fbdf860f8ff42c44b360..a20cf1b9377e76ef7fefed77324f6643
      "message message message" auto
      "survey survey survey" auto
      /* End space: unfilled.
-@@ -516,3 +517,29 @@ body.show-yec h1 {
-     --in-content-button-background-active: var(--yec-button-background-active);
+@@ -507,3 +508,29 @@ body.show-yec h1 {
+     --button-background-color-active: var(--yec-button-background-active);
    }
  }
 +
@@ -41,7 +41,7 @@ index 49ee48e2493b01542402fbdf860f8ff42c44b360..a20cf1b9377e76ef7fefed77324f6643
 +  padding-inline-start: 0;
 +}
 diff --git a/browser/components/abouttor/content/aboutTor.html b/browser/components/abouttor/content/aboutTor.html
-index f83631bda9478036576d4d2cae2fb2a2797b32d9..afd595180d7332ce1df1f7fa4f34d91ff1da8585 100644
+index f83631bda9478036576d4d2cae2fb2a2797b32d9..40767d0c3d84ea49c83ee2f13a125b922af29ae0 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.html
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.html
 @@ -108,7 +108,7 @@
@@ -104,7 +104,7 @@ index f83631bda9478036576d4d2cae2fb2a2797b32d9..afd595180d7332ce1df1f7fa4f34d91f
 +        <span data-l10n-id="tails-release-notes">
 +          <a
 +            data-l10n-name="tails-release-notes-link"
-+            href="https://tails.net/news/version_7.15"
++            href="https://tails.net/news/version_7.16"
 +            target="_blank"
 +          ></a>
 +        </span>

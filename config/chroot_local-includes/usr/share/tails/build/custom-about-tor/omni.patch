@@ -1,8 +1,8 @@
 diff --git a/browser/components/abouttor/AboutTorParent.sys.mjs b/browser/components/abouttor/AboutTorParent.sys.mjs
-index 8449722c3b0308139f23fc6c4d598e2510db6cc8..9d6a97e61b460b4b8ee4971901e589dc75107bdf 100644
+index c4cd95db84c531d9491770fd40634f85664e3829..0eb1cb8a9bc43a34cf9150bed6248828a0382a5d 100644
 --- a/moz-src/browser/components/abouttor/AboutTorParent.sys.mjs
 +++ b/moz-src/browser/components/abouttor/AboutTorParent.sys.mjs
-@@ -10,6 +10,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
+@@ -11,6 +11,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
  const initializedActors = new Set();
  const onionizePref = "torbrowser.homepage.search.onionize";
  const surveyDismissVersionPref = "torbrowser.homepage.survey.dismiss_version";
@@ -10,7 +10,7 @@ index 8449722c3b0308139f23fc6c4d598e2510db6cc8..9d6a97e61b460b4b8ee4971901e589dc
  
  /**
   * Actor parent class for the about:tor page.
-@@ -69,6 +70,7 @@ export class AboutTorParent extends JSWindowActorParent {
+@@ -70,6 +71,7 @@ export class AboutTorParent extends JSWindowActorParent {
        ),
        appLocale,
        dismissYEC: AboutTorParent.#dismissYEC,
@@ -19,13 +19,13 @@ index 8449722c3b0308139f23fc6c4d598e2510db6cc8..9d6a97e61b460b4b8ee4971901e589dc
    }
  
 diff -Naur a/localization/en-US/toolkit/global/tor-browser.ftl b/localization/en-US/toolkit/global/tor-browser.ftl
---- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-07-23 11:50:27.141253869 +0200
-+++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-07-23 11:50:27.149253652 +0200
-@@ -28,6 +28,11 @@
+--- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-10-29 10:50:05.775259121 +0100
++++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-10-29 10:50:05.779259115 +0100
+@@ -57,6 +57,11 @@
  tor-browser-home-message-testing = This is an unstable version of Tor Browser for testing new features. <a data-l10n-name="learn-more-link">Learn more</a>
  
  
-+tails-release-notes = You are running Tails 7.10. <a data-l10n-name="tails-release-notes-link">See what’s new</a>
++tails-release-notes = You are running Tails 7.16. <a data-l10n-name="tails-release-notes-link">See what’s new</a>
 +
 +tails-newsletter = Get the latest <a data-l10n-name="tails-newsletter-link">Tails news</a> or <a data-l10n-name="news-link">Tor news</a> straight to your inbox.
 +
