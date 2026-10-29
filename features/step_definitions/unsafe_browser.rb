@@ -15,7 +15,7 @@ Then /^the Unsafe Browser has no bookmarks$/ do
   bookmarks_frame = @unsafe_browser.child('Library', roleName: 'frame')
   bookmarks_frame.child('Import and Backup', roleName: 'menu').click
   bookmarks_frame.child('Backup…', roleName: 'menu item').click
-  file_chooser = @unsafe_browser.child('Bookmarks backup filename',
+  file_chooser = @unsafe_browser.child('Bookmarks backup filename - Library',
                                        roleName: 'file chooser')
   path = "/home/#{info[:user]}/Downloads/bookmarks.json"
   file_chooser.child(roleName: 'text').text = path

@@ -1,8 +1,3 @@
-// Disable proxying in the chroot
-user_pref("extensions.torbutton.use_nontor_proxy", true);
-user_pref("network.proxy.type", 0);
-user_pref("network.proxy.socks_remote_dns", false);
-
 // Tor Browser disables DNS resolution via this pref to plug a class
 // of DNS leaks, so we have to re-enable it. For details, see:
 // * https://gitlab.torproject.org/legacy/trac/-/issues/5741

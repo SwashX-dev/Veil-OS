@@ -1,28 +1,8 @@
-diff --git a/browser/components/abouttor/AboutTorParent.sys.mjs b/browser/components/abouttor/AboutTorParent.sys.mjs
-index 8449722c3b0308139f23fc6c4d598e2510db6cc8..9d6a97e61b460b4b8ee4971901e589dc75107bdf 100644
---- a/actors/AboutTorParent.sys.mjs
-+++ b/actors/AboutTorParent.sys.mjs
-@@ -10,6 +10,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
- const initializedActors = new Set();
- const onionizePref = "torbrowser.homepage.search.onionize";
- const surveyDismissVersionPref = "torbrowser.homepage.survey.dismiss_version";
-+const tailsPref = "torbrowser.running_in_tails";
- 
- /**
-  * Actor parent class for the about:tor page.
-@@ -69,6 +70,7 @@ export class AboutTorParent extends JSWindowActorParent {
-       ),
-       appLocale,
-       dismissYEC: AboutTorParent.#dismissYEC,
-+      isTails: Services.prefs.getBoolPref(tailsPref, false),
-     };
-   }
- 
 diff --git a/browser/components/abouttor/content/aboutTor.css b/browser/components/abouttor/content/aboutTor.css
-index 49ee48e2493b01542402fbdf860f8ff42c44b360..a20cf1b9377e76ef7fefed77324f6643747ba6e8 100644
+index ef65562145d257120473e59516802a314964a2d8..ddb66e32718cbb897423269204120e7ff473b357 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.css
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.css
-@@ -12,6 +12,7 @@ body {
+@@ -11,6 +11,7 @@ body {
      "heading heading heading" auto
      "tor-check tor-check tor-check" auto
      ". form ." min-content
@@ -30,8 +10,8 @@ index 49ee48e2493b01542402fbdf860f8ff42c44b360..a20cf1b9377e76ef7fefed77324f6643
      "message message message" auto
      "survey survey survey" auto
      /* End space: unfilled.
-@@ -516,3 +517,29 @@ body.show-yec h1 {
-     --in-content-button-background-active: var(--yec-button-background-active);
+@@ -507,3 +508,29 @@ body.show-yec h1 {
+     --button-background-color-active: var(--yec-button-background-active);
    }
  }
 +
@@ -61,7 +41,7 @@ index 49ee48e2493b01542402fbdf860f8ff42c44b360..a20cf1b9377e76ef7fefed77324f6643
 +  padding-inline-start: 0;
 +}
 diff --git a/browser/components/abouttor/content/aboutTor.html b/browser/components/abouttor/content/aboutTor.html
-index f83631bda9478036576d4d2cae2fb2a2797b32d9..afd595180d7332ce1df1f7fa4f34d91ff1da8585 100644
+index f83631bda9478036576d4d2cae2fb2a2797b32d9..40767d0c3d84ea49c83ee2f13a125b922af29ae0 100644
 --- a/chrome/browser/content/browser/abouttor/aboutTor.html
 +++ b/chrome/browser/content/browser/abouttor/aboutTor.html
 @@ -108,7 +108,7 @@
@@ -124,7 +104,7 @@ index f83631bda9478036576d4d2cae2fb2a2797b32d9..afd595180d7332ce1df1f7fa4f34d91f
 +        <span data-l10n-id="tails-release-notes">
 +          <a
 +            data-l10n-name="tails-release-notes-link"
-+            href="https://tails.net/news/version_7.15.1"
++            href="https://tails.net/news/version_7.16"
 +            target="_blank"
 +          ></a>
 +        </span>
