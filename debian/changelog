@@ -1,4 +1,4 @@
-tails (7.16) UNRELEASED; urgency=medium
+tails (7.16) unstable; urgency=medium
 
   * Bump APT snapshots for Vagrant box (tails/tails!3386)
 
@@ -150,7 +150,7 @@ tails (7.16) UNRELEASED; urgency=medium
       - Move code from website page to dedicated script
       - CI: run all tests for 21318-tor-browser-16.0
 
- -- Tails developers <foundations@tails.net>  Thu, 29 Oct 2026 12:37:04 +0000
+ -- Tails developers <foundations@tails.net>  Thu, 29 Oct 2026 13:47:39 +0100
 
 tails (7.15.1) unstable; urgency=medium
 
