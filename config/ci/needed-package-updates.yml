@@ -9,6 +9,9 @@ ignore:
     carl9170fw:
       version: "1.9.9-690-gc6e7ab0-0.3"
       reason: "Irrelevant changes, see #21732"
+    gnome-software:
+      version: "51.0-1"
+      reason: "We are backporting this version to Trixie"
     open-ath9k-htc-firmware:
       version: "1.4.0-110-ge888634+dfsg1-0.4"
       reason: "Irrelevant changes, see #21409"
@@ -18,3 +21,5 @@ ignore:
   general:
     - tor
     - live-boot
+instructions:
+  gnome-software: 'See https://tails.net/contribute/release_process/gnome-software/'

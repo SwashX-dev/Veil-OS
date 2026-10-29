@@ -75,10 +75,6 @@ ln -s /usr/local/bin/flatpak /usr/bin/flatpak
 dpkg-divert --add --rename --divert /usr/local/lib/gnome-software /usr/bin/gnome-software
 ln -s /usr/local/bin/gnome-software /usr/bin/gnome-software
 
-# Don't autostart GNOME Software, we only want it to start after Tor
-# has bootstrapped.
-rm /etc/xdg/autostart/org.gnome.Software.desktop
-
 # We drop DBusActivatable so that the Exec directive is not ignored,
 # because we want it to start our wrapper.
 sed -i '/^DBusActivatable=/d' /usr/share/applications/org.gnome.Software.desktop
