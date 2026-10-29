@@ -171,9 +171,9 @@ won't have to download it again.
 Using additional software
 =========================
 
-Once installed, applications that don't use the network usually work
+Once installed, applications usually work
 out of the box.
-However, Tails has some differences in terms of
+However, Tails has some limitations in terms of
 additional configuration and network access.
 
 Additional configuration
@@ -187,54 +187,23 @@ Each application handles its configuration very differently, so we cannot give
 general instructions on which files have to be saved using the Dotfiles
 features.
 
-Network access
---------------
+<h2 id="network">Network access</h2>
 
-Tails only allows connections to the Tor network. Additional software that uses
-the Internet must be configured to go through the Tor network otherwise, their
-connections are blocked by default for added security.
+Additional software automatically uses the Tor network to connect to the
+Internet, even if you have not configured it to do so.
 
-To make an application use the Tor network, you can either:
-
-- Configure the application to use Tor as a proxy with the following parameters:
-
-  * Type: SOCKS5
-  * Host: 127.0.0.1
-  * Port: 9050
-
-  For example, to use *Mumble* in Tails, you can configure Tor as proxy in the
-  network configuration of *Mumble*:
-
-  [[!img mumble.png class="screenshot" alt="Network configuration of Mumble with proxy settings"]]
-
-- Open the application using `torsocks` on the command line.
-
-  Execute the following command in a *Console*. Replace
-  <span class="command-placeholder">application</span> with the command line
-  of the application that you want to open.
-
-  <p class="command-template">torsocks <span class="command-placeholder">application</span></p>
-
-  For example, to use *Mumble* in Tails, you can also execute the following
-  command:
-
-  <p class="command">torsocks mumble</p>
-
-### Technical networking considerations
+Still, note that:
 
 - Only TCP connections can go through the Tor network.
 
-- UDP connections, for example in many VoIP applications, and ICMP connections,
+  UDP connections, for example in many VoIP applications, and ICMP connections,
   for example in the `ping` utility, cannot go through the Tor network and are
   blocked in Tails.
 
-- DNS requests go through the Tor network if the application uses the system
-  configuration otherwise, DNS requests will fail to resolve.
+- Tails blocks IPv6 connections.
 
-- IPv6 connections are blocked in Tails.
-
-- The default Tor port in Tails (9050) forces the use of different Tor circuits
-  for each different destination IP and port, also called "*stream isolation*".
+- The default Tor port in Tails (9040) forces the use of different Tor circuits
+  for each destination IP and port, a feature called *stream isolation*.
 
 Checking your list of additional software
 =========================================
