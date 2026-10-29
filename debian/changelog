@@ -8,6 +8,15 @@ tails (7.16) UNRELEASED; urgency=medium
     Commits:
       - Bump APT snapshots for Vagrant box
 
+  * Upgrade the Tor client to 0.4.9.15 (tails/tails!3397)
+
+    Closes issues:
+      - Upgrade to tor 0.4.9.15 (tails/tails#21858)
+
+    Commits:
+      - Upgrade tor to 0.4.9.15
+      - Set this branch to run all tests
+
   * Test suite: adapt to Thunderbird 153 (tails/tails!3389)
 
     Closes issues:
@@ -141,7 +150,7 @@ tails (7.16) UNRELEASED; urgency=medium
       - Move code from website page to dedicated script
       - CI: run all tests for 21318-tor-browser-16.0
 
- -- Tails developers <foundations@tails.net>  Thu, 29 Oct 2026 12:04:19 +0000
+ -- Tails developers <foundations@tails.net>  Thu, 29 Oct 2026 12:37:04 +0000
 
 tails (7.15.1) unstable; urgency=medium
 
