@@ -93,6 +93,8 @@ tails (7.16) UNRELEASED; urgency=medium
       - Upgrade to Tor Browser 16.0 stable based on Firefox ESR 153 (tails/tails#21318)
       - Update fake Flatpak's D-Bus permissions to match Tor Browser
         (tails/tails#21412)
+      - Upgrade Tor Browser for Tails 7.16 (tails/tails#21829)
+      - Refresh about:tor patches for Tails 7.16 (tails/tails#21830)
 
     Commits:
       - Tor Browser: refresh custom about:tor patches onto tor-
