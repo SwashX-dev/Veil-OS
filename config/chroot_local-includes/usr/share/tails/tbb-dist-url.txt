@@ -1,1 +1,1 @@
-https://torbrowser-archive.tails.net/16.0a14-build2/
+https://torbrowser-archive.tails.net/16.0-build1/
