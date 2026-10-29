@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-15 10:51+0200\n"
+"POT-Creation-Date: 2026-10-29 12:25+0100\n"
 "PO-Revision-Date: 2026-08-05 20:01+0000\n"
 "Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
 "memory@weblate.org>\n"
@@ -2855,7 +2855,8 @@ msgid "Install, clone, upgrade Tails"
 msgstr "Встановіть, клонуйте, оновіть Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
-msgid "install;clone;upgrade;manual"
+#, fuzzy
+msgid "install;clone;upgrade;manual;backup"
 msgstr "встановити; клонувати; оновити; посібник"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2

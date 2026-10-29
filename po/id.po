@@ -26,13 +26,15 @@
 # emma peel <emma.peel@riseup.net>, 2025, 2026.
 # Arif Budiman <arifpedia@gmail.com>, 2026.
 # penerjemahtor <penerjemahtor@proton.me>, 2026.
+# d0r1t0s-NuanceCollective <d0r1t0s-nuancecollective@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-09-16 23:51+0000\n"
-"Last-Translator: penerjemahtor <penerjemahtor@proton.me>\n"
+"POT-Creation-Date: 2026-10-29 12:25+0100\n"
+"PO-Revision-Date: 2026-10-28 13:51+0000\n"
+"Last-Translator: d0r1t0s-NuanceCollective <d0r1t0s-"
+"nuancecollective@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "id/>\n"
 "Language: id\n"
@@ -40,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -2849,7 +2851,8 @@ msgid "Install, clone, upgrade Tails"
 msgstr "Pasang, kloning, tingkatkan Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
-msgid "install;clone;upgrade;manual"
+#, fuzzy
+msgid "install;clone;upgrade;manual;backup"
 msgstr "Pasang, klon, dan upgrade Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2
@@ -3362,7 +3365,7 @@ msgstr "Aktifkan Dotfiles"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:795
 msgid "Custom"
-msgstr "Khusus"
+msgstr "Ubah suaian"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:814
 msgid ""

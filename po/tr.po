@@ -38,13 +38,14 @@
 # axolot <berkantgzr@protonmail.com>, 2026.
 # o <dumanyasirmete@gmail.com>, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
+# Kaya Zeren <kayazeren@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-09-28 11:22+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-10-29 12:25+0100\n"
+"PO-Revision-Date: 2026-10-28 17:51+0000\n"
+"Last-Translator: Kaya Zeren <kayazeren@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/tor/tails-gui/tr/"
 ">\n"
 "Language: tr\n"
@@ -52,7 +53,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -735,12 +736,11 @@ msgstr "Güncelleme kurulurken sorun çıktı"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr "GNOME Masaüstü Ortamı"
+msgstr "GNOME yazılımı"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
-msgstr ""
-"GNOME Masaüstü Ortamı ancak Tor başarıyla bağlandığında başlatılabilir."
+msgstr "GNOME yazılımı yalnızca Tor bağlantısı kurulduğunda başlatılabilir."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -2865,7 +2865,8 @@ msgid "Install, clone, upgrade Tails"
 msgstr "Tails sistemini kur, kopyala, yükselt"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
-msgid "install;clone;upgrade;manual"
+#, fuzzy
+msgid "install;clone;upgrade;manual;backup"
 msgstr "yükle;çoğalt;yükselt;rehber"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2
@@ -3363,9 +3364,8 @@ msgid "Flatpak"
 msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
-#, fuzzy
 msgid "Activate Flatpak"
-msgstr "Flatpak'i aktif et."
+msgstr "Flatpak kullanılsın"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:729
 msgid "Dotfiles"
