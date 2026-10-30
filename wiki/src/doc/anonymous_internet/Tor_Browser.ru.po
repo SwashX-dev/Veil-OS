@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-11-12 12:16+0100\n"
+"POT-Creation-Date: 2026-10-30 09:11+0100\n"
 "PO-Revision-Date: 2025-12-08 09:29+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -419,8 +419,7 @@ msgid ""
 "<i>Tor Browser</i> design document</a>.</p>\n"
 msgstr ""
 "<p>Чтобы лучше понять работу <i>Tor Browser</i>,\n"
-"например, с JavaScript и куки-файлами, см. <a href="
-"\"https://2019.www.torproject.org/projects/torbrowser/design/\">\n"
+"например, с JavaScript и куки-файлами, см. <a href=\"https://2019.www.torproject.org/projects/torbrowser/design/\">\n"
 "описание <i>Tor Browser</i> </a>.</p>\n"
 
 #. type: Plain text
@@ -473,7 +472,7 @@ msgid "Select **Settings** in the **Security level** menu."
 msgstr ""
 
 #. type: Bullet: '1. '
-msgid "In the **Security Level** settings, select **Change**."
+msgid "In the **Security level** settings, select **Change security level**."
 msgstr ""
 
 #. type: Bullet: '1. '
@@ -515,10 +514,8 @@ msgid ""
 "gets broken by automatic updates of\n"
 "<i>Tor Browser</i>.</p>\n"
 msgstr ""
-"<p>Это сообщение значит, что функция автоматического обновления <i>Tor "
-"Browser</i> отключена. В Tails это сделано\n"
-"намеренно, для уверенности, что ни одна функция безопасности или настройка "
-"не пострадает из-за автоматических обновлений <i>Tor Browser</i>.</p>\n"
+"<p>Это сообщение значит, что функция автоматического обновления <i>Tor Browser</i> отключена. В Tails это сделано\n"
+"намеренно, для уверенности, что ни одна функция безопасности или настройка не пострадает из-за автоматических обновлений <i>Tor Browser</i>.</p>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -715,6 +712,23 @@ msgstr ""
 "добавляет серые поля в окно браузера при изменении его размера. Веб-страница "
 "максимально приближена к желаемым параметрам, но фактический размер окна при "
 "этом не раскрывается."
+
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid ""
+#| "To switch to a new identity, choose\n"
+#| "<span class=\"menuchoice\">\n"
+#| "  <span class=\"guimenu\">[[!img lib/open-menu.png alt=\"\" class=symbolic link=no]]</span>&nbsp;▸\n"
+#| "  <span class=\"guimenuitem\">New Identity</span></span>.\n"
+msgid ""
+"To configure letterboxing, choose [[!img lib/open-menu.png alt=\"Open\n"
+"Application Menu\" class=\"symbolic\" link=\"no\"]]&nbsp;▸ **Settings**&nbsp;▸\n"
+"**Appearance**&nbsp;▸ **Letterboxing**.\n"
+msgstr ""
+"Чтобы сменить личность, выберите\n"
+"<span class=\"menuchoice\">\n"
+"  <span class=\"guimenu\">[[!img lib/open-menu.png alt=\"\" class=symbolic link=no]]</span>&nbsp;▸\n"
+"  <span class=\"guimenuitem\">Новая личность</span></span>.\n"
 
 #, no-wrap
 #~ msgid ""
