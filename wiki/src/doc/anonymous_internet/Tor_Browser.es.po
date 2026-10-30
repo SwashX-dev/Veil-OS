@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-11-12 12:16+0100\n"
+"POT-Creation-Date: 2026-10-30 09:11+0100\n"
 "PO-Revision-Date: 2026-03-26 15:22+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: Spanish <http://translate.tails.net/projects/tails/"
@@ -401,8 +401,7 @@ msgid ""
 msgstr ""
 "<p>Para entender mejor el comportamiento del <i>Navegador Tor</i>,\n"
 "por ejemplo en lo que respecta al JavaScript y a las cookies, puedes\n"
-"consultar el <a href="
-"\"https://2019.www.torproject.org/projects/torbrowser/design/\">\n"
+"consultar el <a href=\"https://2019.www.torproject.org/projects/torbrowser/design/\">\n"
 "documento de diseño del <i>Navegador Tor</i></a>.</p>\n"
 
 #. type: Plain text
@@ -458,7 +457,7 @@ msgid "Select **Settings** in the **Security level** menu."
 msgstr ""
 
 #. type: Bullet: '1. '
-msgid "In the **Security Level** settings, select **Change**."
+msgid "In the **Security level** settings, select **Change security level**."
 msgstr ""
 
 #. type: Bullet: '1. '
@@ -686,6 +685,23 @@ msgid ""
 "as possible to the desired size without revealing the actual size of the "
 "window."
 msgstr ""
+
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid ""
+#| "To switch to a new identity, choose\n"
+#| "<span class=\"menuchoice\">\n"
+#| "  <span class=\"guimenu\">[[!img lib/open-menu.png alt=\"\" class=symbolic link=no]]</span>&nbsp;▸\n"
+#| "  <span class=\"guimenuitem\">New Identity</span></span>.\n"
+msgid ""
+"To configure letterboxing, choose [[!img lib/open-menu.png alt=\"Open\n"
+"Application Menu\" class=\"symbolic\" link=\"no\"]]&nbsp;▸ **Settings**&nbsp;▸\n"
+"**Appearance**&nbsp;▸ **Letterboxing**.\n"
+msgstr ""
+"Para cambiar a una nueva idenetidad, elige\n"
+"<span class=\"menuchoice\">\n"
+"  <span class=\"guimenu\">[[!img lib/open-menu.png alt=\"\" class=symbolic link=no]]</span>&nbsp;\n"
+"  <span class=\"guimenuitem\">Nueva identidad</span></span>.\n"
 
 #, fuzzy, no-wrap
 #~ msgid ""

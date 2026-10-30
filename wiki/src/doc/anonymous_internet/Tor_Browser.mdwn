@@ -186,7 +186,7 @@ To change the security level:
 
 1. Select **Settings** in the **Security level** menu.
 
-1. In the **Security Level** settings, select **Change**.
+1. In the **Security level** settings, select **Change security level**.
 
 1. Select a new security level.
 
@@ -282,3 +282,7 @@ The letterboxing feature of *Tor Browser* works
 by adding gray margins to the browser window when the window is resized. The
 webpage remains as close as possible to the desired size without revealing the
 actual size of the window.
+
+To configure letterboxing, choose [[!img lib/open-menu.png alt="Open
+Application Menu" class="symbolic" link="no"]]&nbsp;▸ **Settings**&nbsp;▸
+**Appearance**&nbsp;▸ **Letterboxing**.
