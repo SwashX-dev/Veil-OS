@@ -3,9 +3,9 @@ origin_references:
   debian:
     reference: '2026100602'
   debian-security:
-    reference: '2026102202'
+    reference: '2026102902'
   torproject:
-    reference: '2026100802'
+    reference: '2026102901'
 packages:
   binary:
   - arch: amd64
@@ -115,13 +115,13 @@ packages:
     version: 0.6.5
   - arch: amd64
     package: bind9-dnsutils
-    version: 1:9.20.29-1~deb13u1
+    version: 1:9.20.30-1~deb13u1
   - arch: amd64
     package: bind9-host
-    version: 1:9.20.29-1~deb13u1
+    version: 1:9.20.30-1~deb13u1
   - arch: amd64
     package: bind9-libs
-    version: 1:9.20.29-1~deb13u1
+    version: 1:9.20.30-1~deb13u1
   - arch: amd64
     package: bindfs
     version: 1.14.7-1.1+b1
@@ -760,7 +760,7 @@ packages:
     version: 1.5.32-2
   - arch: amd64
     package: gir1.2-javascriptcoregtk-4.1
-    version: 2.54.0-1~deb13u2
+    version: 2.54.0-1~deb13u3
   - arch: amd64
     package: gir1.2-mutter-16
     version: 48.7-0+deb13u1
@@ -796,7 +796,7 @@ packages:
     version: 1.90.9-1
   - arch: amd64
     package: gir1.2-webkit2-4.1
-    version: 2.54.0-1~deb13u2
+    version: 2.54.0-1~deb13u3
   - arch: amd64
     package: gir1.2-wnck-3.0
     version: 43.2-1
@@ -895,13 +895,13 @@ packages:
     version: 48.7-0+deb13u2
   - arch: all
     package: gnome-software-common
-    version: 48.3-2
+    version: 51.0-1~bpo13+0tails1
   - arch: amd64
     package: gnome-software-plugin-flatpak
-    version: 48.3-2
+    version: 51.0-1~bpo13+0tails1
   - arch: amd64
     package: gnome-software
-    version: 48.3-2
+    version: 51.0-1~bpo13+0tails1
   - arch: all
     package: gnome-sound-recorder
     version: 43~beta-4
@@ -1036,10 +1036,10 @@ packages:
     version: 9.65+ds-1.1
   - arch: amd64
     package: heif-gdk-pixbuf
-    version: 1.23.4-1~deb13u1
+    version: 1.23.6-2~deb13u1
   - arch: amd64
     package: heif-thumbnailer
-    version: 1.23.4-1~deb13u1
+    version: 1.23.6-2~deb13u1
   - arch: all
     package: hicolor-icon-theme
     version: 0.18-2
@@ -1465,7 +1465,7 @@ packages:
     version: 6.7-3.1+deb13u3
   - arch: amd64
     package: libbrotli1
-    version: 1.1.0-2+b7
+    version: 1.1.0-2+deb13u1
   - arch: amd64
     package: libbs2b0
     version: 3.1.0+dfsg-8+b1
@@ -2491,13 +2491,13 @@ packages:
     version: 0.052-1
   - arch: amd64
     package: libheif-plugin-dav1d
-    version: 1.23.4-1~deb13u1
+    version: 1.23.6-2~deb13u1
   - arch: amd64
     package: libheif-plugin-libde265
-    version: 1.23.4-1~deb13u1
+    version: 1.23.6-2~deb13u1
   - arch: amd64
     package: libheif1
-    version: 1.23.4-1~deb13u1
+    version: 1.23.6-2~deb13u1
   - arch: amd64
     package: libhidapi-hidraw0
     version: 0.14.0-1+b2
@@ -2668,7 +2668,7 @@ packages:
     version: 2.14-2+b3
   - arch: amd64
     package: libjavascriptcoregtk-4.1-0
-    version: 2.54.0-1~deb13u2
+    version: 2.54.0-1~deb13u3
   - arch: amd64
     package: libjbig0
     version: 2.1-6.1+b2
@@ -4570,7 +4570,7 @@ packages:
     version: 2:4.22.11+dfsg-0+deb13u1
   - arch: amd64
     package: libwebkit2gtk-4.1-0
-    version: 2.54.0-1~deb13u2
+    version: 2.54.0-1~deb13u3
   - arch: amd64
     package: libwebp7
     version: 1.5.0-0.1
@@ -5923,16 +5923,16 @@ packages:
     version: 5.5.0-1+b1
   - arch: amd64
     package: thunderbird
-    version: 1:140.17.0esr-1~deb13u1
+    version: 1:153.5.1esr-1~deb13u2
   - arch: amd64
     package: tinysparql
     version: 3.8.2-7
   - arch: all
     package: tor-geoipdb
-    version: 0.4.9.14-1~d13.trixie+1
+    version: 0.4.9.15-1~d13.trixie+1
   - arch: amd64
     package: tor
-    version: 0.4.9.14-1~d13.trixie+1
+    version: 0.4.9.15-1~d13.trixie+1
   - arch: all
     package: torsocks
     version: 2.5.0-1+deb13u1
