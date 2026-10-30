@@ -1,3 +1,9 @@
+tails (7.17) UNRELEASED; urgency=medium
+
+  * Dummy entry for next release.
+
+ -- anonym <anonym@torproject.org>  Fri, 30 Oct 2026 09:41:08 +0100
+
 tails (7.16) unstable; urgency=medium
 
   * Bump APT snapshots for Vagrant box (tails/tails!3386)
