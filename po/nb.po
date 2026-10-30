@@ -28,8 +28,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-15 10:51+0200\n"
-"PO-Revision-Date: 2026-10-20 03:51+0000\n"
+"POT-Creation-Date: 2026-10-29 12:25+0100\n"
+"PO-Revision-Date: 2026-10-24 05:51+0000\n"
 "Last-Translator: Telaneo <telaneo@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/tor/"
 "tails-gui/nb/>\n"
@@ -361,7 +361,7 @@ msgstr[1] "{count} sekunder"
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/DownloadProgress.pm:139
 #, perl-brace-format
 msgid "#{time} left — {downloaded} of {size} ({speed}/sec)\n"
-msgstr ""
+msgstr "#{time} igjen — {downloaded} av {size} ({speed}/sek)\n"
 
 #. Translators: KB is the short form for kilobyte
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Role/FormatByte.pm:32
@@ -2688,7 +2688,7 @@ msgid "Install, clone, upgrade Tails"
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
-msgid "install;clone;upgrade;manual"
+msgid "install;clone;upgrade;manual;backup"
 msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2

@@ -1,0 +1,134 @@
+#!/usr/bin/python3 -I
+"""
+Lists binary packages built from a Debian source package that are also
+listed in build manifests of current Tails releases.
+"""
+
+import argparse
+import logging
+import os
+import re
+import subprocess
+import urllib
+from pathlib import Path
+from typing import Any
+
+import requests
+import yaml
+
+BASE_URL = "https://tails.net/torrents/files/"
+
+logger = logging.getLogger(__name__)
+
+
+class BuildManifestNotFound(Exception):
+    def __init__(self, base_url):
+        super().__init__(f"Could not find any .build-manifest files at {base_url}")
+
+
+def get_cache_dir() -> Path:
+    """Return the base path to the cache directory adhering to the XDG spec."""
+    xdg_cache = os.environ.get("XDG_CACHE_HOME")
+    return Path(xdg_cache) if xdg_cache else Path.home() / ".cache"
+
+
+def download_and_cache(manifest_url: str, cache_file: Path) -> dict[str, Any]:
+    """Download the build manifest and cache it locally."""
+    logger.debug("Downloading build manifest from %s...", manifest_url)
+    resp = requests.get(manifest_url, timeout=15)
+    resp.raise_for_status()
+
+    cache_file.parent.mkdir(parents=True, exist_ok=True)
+    cache_file.write_text(resp.text, encoding="utf-8")
+
+    data: dict[str, Any] = yaml.safe_load(resp.text)
+    return data or {}
+
+
+def get_manifest_filenames() -> list[str]:
+    """Fetch the index page and return a list of all build manifest filenames."""
+    resp = requests.get(BASE_URL, timeout=15)
+    resp.raise_for_status()
+
+    # Find links to .build-manifest files
+    matches = sorted(re.findall(r'href="([^"]+\.build-manifest)"', resp.text))
+    if not matches:
+        raise BuildManifestNotFound(BASE_URL)
+
+    return matches
+
+
+def binaries_in_build_manifest(filename: str) -> set[str]:
+    """Download a Tails build manifest and return its set of binary packages."""
+    manifest_url = urllib.parse.urljoin(BASE_URL, filename)
+    cache_file = get_cache_dir() / "tails" / filename
+
+    if cache_file.exists():
+        data: dict[str, Any] = yaml.safe_load(cache_file.read_text(encoding="utf-8"))
+    else:
+        data = download_and_cache(manifest_url, cache_file)
+
+    return {str(item["package"]) for item in data.get("packages", {}).get("binary", [])}
+
+
+def binaries_built_from_source_package(source_pkg: str) -> set[str]:
+    """Return the set of binary packages built from a given source package."""
+    result = subprocess.check_output(
+        [
+            "/bin/rmadison",
+            "-a",
+            "amd64,all",
+            "--source-and-binary",
+            "--suite=trixie",
+            source_pkg,
+        ],
+        text=True,
+    )
+
+    return {line.split("|")[0].strip() for line in result.splitlines()}
+
+
+def main() -> None:
+    """Main execution entry point."""
+    parser = argparse.ArgumentParser(
+        description="Lists binary packages built from a Debian source package, "
+        "that are also listed in the build manifest of any current Tails release.",
+    )
+    parser.add_argument(
+        "source_package",
+        help="Name of the considered Debian source package",
+    )
+    parser.add_argument(
+        "-d",
+        "--debug",
+        action="store_true",
+        help="Enable debug logging",
+    )
+    args = parser.parse_args()
+
+    logging.basicConfig(
+        level=logging.DEBUG if args.debug else logging.WARNING,
+        format="%(levelname)s: %(message)s",
+    )
+
+    binaries_built_from_source = binaries_built_from_source_package(args.source_package)
+    manifest_filenames = get_manifest_filenames()
+
+    for idx, filename in enumerate(manifest_filenames):
+        if idx > 0:
+            print()
+
+        print(filename)
+        print("=" * len(filename))
+        print()
+
+        for pkg in sorted(
+            binaries_built_from_source.intersection(
+                binaries_in_build_manifest(filename)
+            ),
+        ):
+            print(pkg)
+
+
+if __name__ == "__main__":
+    main()

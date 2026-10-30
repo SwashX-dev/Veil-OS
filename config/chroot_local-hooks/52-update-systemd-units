@@ -56,7 +56,7 @@ systemctl --global enable tails-start-system-gnome-session-target.service
 systemctl --global enable tails-post-greeter-docs.service
 systemctl --global enable tails-post-greeter-whisperback.service
 
-# Enable user unit file that was imported from Debian Forky
+# Enable other user unit files we want that are not enabled by default
 systemctl --global enable gnome-software.service
 
 # This causes the proxies to run during the whole session, instead of

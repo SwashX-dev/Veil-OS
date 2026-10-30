@@ -7,7 +7,14 @@ def thunderbird_main
 end
 
 def thunderbird_wizard
-  thunderbird_app.child('Account Setup - Mozilla Thunderbird', roleName: 'frame')
+  # Unfortunately the wizard has no title set and its contents (that
+  # is visible to Dogtail, which doesn't include the "Account Hub"
+  # header for some reason) change completely between steps, except
+  # for some generic links in the footer, e.g. "Privacy Policy".
+  thunderbird_main.children(roleName: 'dialog', recursive: false)
+                  .find do |dialog|
+    dialog.child('Privacy Policy', roleName: 'list item')
+  end
 end
 
 def thunderbird_inbox
@@ -45,9 +52,8 @@ Then /^I am prompted to setup an email account$/ do
   thunderbird_wizard
 end
 
-Then /^I cancel setting up an email account$/ do
-  thunderbird_wizard.button('Cancel').press
-  thunderbird_wizard.button('Exit Setup').press
+Then /^I minimize the autoconfiguration wizard$/ do
+  thunderbird_wizard.button('Minimize').press
 end
 
 Then /^I open Thunderbird's Add-ons Manager$/ do
@@ -86,7 +92,6 @@ When /^I enter my email credentials into the autoconfiguration wizard$/ do
   address = $config['Thunderbird']['address']
   name = address.split('@').first
   hostname = address.split('@').last
-  password = $config['Thunderbird']['password']
 
   # These tricks are needed because on Jenkins, the hostname of the test email
   # server resolves to a RFC 1918 address (sysadmin#18044), which tor would not allow
@@ -94,70 +99,54 @@ When /^I enter my email credentials into the autoconfiguration wizard$/ do
   # out of it.
   allow_connecting_to_possibly_rfc1918_host(hostname)
 
-  thunderbird_wizard.child('Your full name', roleName: 'entry').grabFocus
+  thunderbird_wizard.child('Full name*', roleName: 'entry').grabFocus
   @screen.paste(name)
-  thunderbird_wizard.child('Email address',
+  thunderbird_wizard.child('Email address*',
                            roleName: 'entry').grabFocus
   @screen.paste(address)
-  thunderbird_wizard.child('Password', roleName: 'password text').grabFocus
-  @screen.paste(password)
   thunderbird_wizard.button('Continue').press
-  # This button is shown if and only if a configuration has been found
-  try_for(120) { thunderbird_wizard.button('Done') }
-end
-
-Then /^the autoconfiguration wizard's choice for the (incoming|outgoing) server is secure (.+)$/ do |type, protocol|
-  type = type.capitalize
-  section = thunderbird_wizard.child(type, roleName: 'heading').parent
-  subsections = section.children(roleName: 'section')
-  assert(subsections.any? { |s| s.text == protocol })
-  assert(subsections.any? { |s| ['SSL/TLS', 'STARTTLS'].include?(s.text) })
-end
-
-def wait_for_thunderbird_progress_bar_to_vanish
+  # This heading is shown if and only if a configuration has been found
   try_for(120) do
-    thunderbird_main.child(roleName: 'status bar', retry: false)
-                    .child(roleName: 'progress bar', retry: false)
-    false
-  rescue StandardError
-    true
+    thunderbird_wizard.child('Connect your email settings', roleName: 'heading')
+  end
+end
+
+Then /^the autoconfiguration wizard found only secure settings$/ do
+  thunderbird_wizard.children(roleName: 'paragraph')
+                    .select { |n| n.text == 'SECURITY:' }
+                    .each do |security_field|
+    values = security_field.parent.children(roleName: 'section')
+    assert_equal(1, values.size)
+    assert_include(['SSL/TLS', 'STARTTLS'], values.first.text)
   end
 end
 
 When /^I fetch my email$/ do
   thunderbird_main.button('Get Messages').press
-  wait_for_thunderbird_progress_bar_to_vanish
 end
 
 When /^I accept the (?:autoconfiguration wizard's|manual) configuration$/ do
-  thunderbird_wizard.button('Done').press
+  thunderbird_wizard.button('Continue').press
+end
 
-  # The password check can fail due to bad Tor circuits.
-  retry_tor do
-    try_for(120) do
-      # Spam the button, even if it is disabled (while it is still
-      # testing the password).
-      thunderbird_wizard.button('Finish').press
-      false
-    rescue StandardError
+When /^I enter my password and finalize the email account setup$/ do
+  thunderbird_wizard.child('Password*', roleName: 'password text').grabFocus
+  @screen.paste($config['Thunderbird']['password'])
+  thunderbird_wizard.button('Continue').press
+  # Strangely, sometimes the wizard skips the step to sync calendars
+  # and address books.
+  try_for(120) do
+    if thunderbird_wizard.child?('Sync your calendars and address books',
+                                 roleName: 'heading')
+      thunderbird_wizard.button('Skip').press
       true
+    elsif thunderbird_wizard.child?('Finish', roleName: 'button')
+      true
+    else
+      false
     end
-    true
   end
-
-  # The account isn't fully created before we fetch our mail. For
-  # instance, if we'd try to send an email before this, yet another
-  # wizard will start, indicating (incorrectly) that we do not have an
-  # account set up yet. Normally we disable automatic fetching of email,
-  # and thus here we would immediately call "step 'I fetch my email'",
-  # but Thunderbird 68 will fetch email immediately for a newly created
-  # account despite our prefs (#17222), so here we first wait for this
-  # operation to complete. But that initial fetch is incomplete,
-  # e.g. only the INBOX folder is listed, so after that we fetch
-  # email manually: otherwise Thunderbird does not know about the "Sent"
-  # directory yet and sending email will fail when copying messages there.
-  wait_for_thunderbird_progress_bar_to_vanish
-  step 'I fetch my email'
+  thunderbird_wizard.button('Finish').press
 end
 
 When /^I select the autoconfiguration wizard's IMAP choice$/ do
@@ -209,26 +198,29 @@ Then /^I can find the email I sent to myself in my inbox$/ do
 end
 
 Then(/^the screen keyboard works in Thunderbird$/) do
-  step 'I start Thunderbird'
   osk_key = 'ScreenKeyboardKeyX.png'
   thunderbird_x = 'ThunderbirdX.png'
   case $language
   when 'Arabic'
     thunderbird_x = 'ThunderbirdXRTL.png'
-  when 'Chinese'
-    thunderbird_x = 'ThunderbirdXChinese.png'
   when 'Persian'
     osk_key = 'ScreenKeyboardKeyPersian.png'
     thunderbird_x = 'ThunderbirdXPersian.png'
   end
-  # We have to click to activate the screen keyboard (#19101),
-  # but we cannot do it with Dogtail so we have to use a picture.
-  @screen.wait('ThunderbirdTextEntry.png', 20).click
-  @screen.wait('ScreenKeyboard.png', 20)
+  # We have to click to activate the screen keyboard (#19101), but we
+  # cannot do it with Dogtail so we have to use a picture.
+  # Furthermore, since Thunderbird 153 clicking the text entry no
+  # longer reliably opens the screen keyboard, and sometimes when
+  # clicking it it turns "red" as if the input is invalid (empty in
+  # this case) and the easiest workaround is to just restart
+  # Thunderbird and try again.
+  retry_action(5, recovery_proc: proc { @screen.press('alt', 'f4') }) do
+    step 'I start Thunderbird'
+    @screen.wait('ThunderbirdTextEntry.png', 20).click
+    @screen.wait('ScreenKeyboard.png', 20)
+  end
   @screen.wait(osk_key, 20).click
-  # In Russian and Turkish the text is displayed one pixel off
-  # since Thunderbird 128, so use a slightly lower sensitivity.
-  @screen.wait(thunderbird_x, 20, sensitivity: 0.8)
+  @screen.wait(thunderbird_x, 20)
 end
 
 def thunderbird_non_suspicious_connections

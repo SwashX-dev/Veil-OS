@@ -42,24 +42,21 @@ def browser_save_page_as(*args, **opts)
     roleName:    'button'
   ).press
   browser.child(
-    name:     'Save page as\u2026',
+    name:     'Save Page As\u2026',
     roleName: 'button'
   ).press
   desktop_portal_save_as(*args, **opts)
 end
 
 def browser_url_entry
-  # Unfortunately the Dogtail nodes' names are also translated, so for
-  # non-English we have to use a less efficient and (potentially) less
-  # future-proof way to find the URL entry.
-  if $language.empty? # English
-    browser.child('Navigation', roleName: 'tool bar')
-           .child(roleName: 'entry')
-  else
-    browser.children(roleName: 'tool bar')
-           .find { |n| n.child?(roleName: 'entry', retry: false) }
-           .child(roleName: 'entry')
-  end
+  # Unfortunately the Dogtail nodes' names are also translated, so we
+  # can't filter the tool bar widgets based on the expected name
+  # ("Navigation" in English). Thankfully we have other heuristics.
+  browser.children(roleName: 'tool bar')
+         .find { |tool_bar| tool_bar.child?(roleName: 'panel', retry: false) }
+         .child(roleName: 'panel')
+         .children(roleName: 'combo box')
+         .find { |c| c.children.empty? }
 end
 
 # Get the URL that is currently opened in Tor Browser. If
@@ -80,13 +77,6 @@ end
 
 def set_browser_url(url)
   browser_url_entry.grabFocus
-  try_for(10) do
-    focused = browser.focused_child
-    # Just matching against any entry could be racy if some other
-    # entry had focus when calling this step, but address bar is
-    # probably the only entry inside a tool bar.
-    focused.roleName == 'entry' && focused.parent.parent.parent.roleName == 'tool bar'
-  end
   # We're retrying to workaround #19237.
   #
   # Dogtail's .text= would be a simpler and more robust workaround,
@@ -635,7 +625,8 @@ end
 
 Given /^the Tor Browser has a bookmark to eff.org$/ do
   @screen.press('alt', 'b')
-  @screen.wait('TorBrowserEFFBookmark.png', 10)
+  browser.child('Bookmarks', roleName: 'menu')
+         .child('https://www.eff.org/', roleName: 'menu item')
 end
 
 When /^I can print the current page as "([^"]+[.]pdf)" to the (.*) directory$/ do |output_file, target_dir|

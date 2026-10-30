@@ -48,7 +48,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-15 10:51+0200\n"
+"POT-Creation-Date: 2026-10-29 12:25+0100\n"
 "PO-Revision-Date: 2026-09-21 07:51+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/tor/tails-gui/fa/"
@@ -2882,7 +2882,7 @@ msgstr "نصب، کلون‌کردن، ارتقا Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
 #, fuzzy
-msgid "install;clone;upgrade;manual"
+msgid "install;clone;upgrade;manual;backup"
 msgstr "نصب، کلون‌کردن، ارتقا Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2

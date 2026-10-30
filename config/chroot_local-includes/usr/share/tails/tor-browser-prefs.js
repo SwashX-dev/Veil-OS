@@ -26,6 +26,13 @@ pref("layout.spellcheckDefault", 0);
 pref("network.dns.disableIPv6", true);
 pref("security.warn_submit_insecure", true);
 
+// Hide the "Files stay on your device" UI that offers to delete
+// downloads after exiting PBM, and disable that feature: in Tails,
+// users already have to opt-in to download files to a persistent
+// location, no need to ask once again.
+pref("browser.download.deletePrivate", false);
+pref("browser.download.deletePrivate.chosen", true);
+
 // Without setting this, the Download Management page will not update
 // the progress being made.
 pref("browser.download.panel.shown", true);

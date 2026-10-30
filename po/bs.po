@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-22 09:20+0200\n"
+"POT-Creation-Date: 2026-10-29 12:25+0100\n"
 "PO-Revision-Date: 2026-07-04 13:01+0000\n"
 "Last-Translator: pacavarn <nahadster@gmail.com>\n"
 "Language-Team: Bosnian <https://hosted.weblate.org/projects/tor/tails-gui/bs/"
@@ -2829,7 +2829,8 @@ msgid "Install, clone, upgrade Tails"
 msgstr "Instaliraj, kloniraj, nadogradi Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
-msgid "install;clone;upgrade;manual"
+#, fuzzy
+msgid "install;clone;upgrade;manual;backup"
 msgstr "instaliraj;kloniraj;nadogradi;priručnik"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2

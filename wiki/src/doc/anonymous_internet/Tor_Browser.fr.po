@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-11-12 12:16+0100\n"
+"POT-Creation-Date: 2026-10-30 09:11+0100\n"
 "PO-Revision-Date: 2026-03-29 14:22+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: Tails translators <tails@boum.org>\n"
@@ -473,15 +473,17 @@ msgid ""
 "Select the [[!img security-level.png link=\"no\" class=\"symbolic\"]] icon "
 "on the right of the address bar."
 msgstr ""
-"Cliquez sur l'icône [[!img security-level.png link=\"no\" class=\"symbolic\"]"
-"] à droite de la barre d'adresse."
+"Cliquez sur l'icône [[!img security-level.png link=\"no\" "
+"class=\"symbolic\"]] à droite de la barre d'adresse."
 
 #. type: Bullet: '1. '
 msgid "Select **Settings** in the **Security level** menu."
 msgstr "Sélectionnez **Paramètres** dans le menu **Niveau de sécurité**."
 
 #. type: Bullet: '1. '
-msgid "In the **Security Level** settings, select **Change**."
+#, fuzzy
+#| msgid "In the **Security Level** settings, select **Change**."
+msgid "In the **Security level** settings, select **Change security level**."
 msgstr "Dans les paramètres **Niveau de sécurité**, sélectionnez **Modifier**."
 
 #. type: Bullet: '1. '
@@ -495,9 +497,7 @@ msgstr "Sélectionnez **Save and restart** pour appliquer le changement."
 #. type: Plain text
 #, no-wrap
 msgid "   All windows and tabs will be closed when restarting.\n"
-msgstr ""
-"   Toutes les fenêtres et tous les onglets seront fermés lors du redémarrage."
-"\n"
+msgstr "   Toutes les fenêtres et tous les onglets seront fermés lors du redémarrage.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -715,6 +715,19 @@ msgstr ""
 "des marges grises à la fenêtre du navigateur lorsqu'elle est redimensionnée. "
 "La page web reste la plus proche possible de la taille voulue sans révéler "
 "la taille réelle de la fenêtre."
+
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid ""
+#| "To switch to a new identity, choose [[!img lib/open-menu.png alt=\"Open Application Menu\"\n"
+#| "class=\"symbolic\" link=\"no\"]]&nbsp;▸ **New identity**.\n"
+msgid ""
+"To configure letterboxing, choose [[!img lib/open-menu.png alt=\"Open\n"
+"Application Menu\" class=\"symbolic\" link=\"no\"]]&nbsp;▸ **Settings**&nbsp;▸\n"
+"**Appearance**&nbsp;▸ **Letterboxing**.\n"
+msgstr ""
+"Pour passer à une nouvelle identité, choisissez [[!img lib/open-menu.png alt=\"Ouvrir le menu de l’application\"\n"
+"class=\"symbolic\" link=\"no\"]]&nbsp;▸ **Nouvelle identité**.\n"
 
 #~ msgid "[Tor FAQ: HTTPS](https://support.torproject.org/https/)"
 #~ msgstr "[FAQ de Tor : HTTPS](https://support.torproject.org/fr/https/)"
