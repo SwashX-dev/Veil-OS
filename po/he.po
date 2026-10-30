@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-15 10:51+0200\n"
+"POT-Creation-Date: 2026-10-29 12:25+0100\n"
 "PO-Revision-Date: 2026-10-03 00:31+0000\n"
 "Last-Translator: Idan <idan062@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/tor/tails-gui/he/"
@@ -2763,7 +2763,8 @@ msgid "Install, clone, upgrade Tails"
 msgstr "התקן, שבט או שדרג את Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
-msgid "install;clone;upgrade;manual"
+#, fuzzy
+msgid "install;clone;upgrade;manual;backup"
 msgstr "התקנה;שכפול;שדרוג;ידני;install;clone;upgrade;manual"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2

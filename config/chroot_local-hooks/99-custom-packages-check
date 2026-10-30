@@ -12,6 +12,9 @@ TAILS_PACKAGES="
 apparmor
 apparmor-profiles
 flatpak
+gnome-software
+gnome-software-common
+gnome-software-plugin-flatpak
 libapparmor1
 libflatpak0
 "
