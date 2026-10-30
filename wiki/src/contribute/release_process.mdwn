@@ -824,7 +824,8 @@ after you went through the *Freeze* section:
 
 2. Read everything until this section, looking for steps that have been
    invalidated by the actions done out-of-order. For example, you might need to
-   update the changelog again. Take note of every such step, keeping it mind
+   update the changelog or to rebuild the almost-final build artifacts again.
+   Take note of every such step, keeping it mind
    that redoing 1 step may in turn invalidate some other subsequent steps.
 
 3. Redo the steps that were invalidated.
