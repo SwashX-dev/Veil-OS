@@ -857,8 +857,7 @@ msgid ""
 "   Unfortunately, this reveals some membership information to these two\n"
 "   people.\n"
 msgstr ""
-"   Malheureusement, cela révèle certaines informations sur la composition du "
-"groupe à ces deux\n"
+"   Malheureusement, cela révèle certaines informations sur la composition du groupe à ces deux\n"
 "   personnes.\n"
 
 #. type: Bullet: '1. '

@@ -26,8 +26,7 @@ msgstr "[[!meta title=\"Pourquoi Tails installe-t-il Thunderbird en tant que log
 #. type: Plain text
 #, no-wrap
 msgid "*Thunderbird* is no longer included by default since Tails 7.8 (May 2026).\n"
-msgstr ""
-"*Thunderbird* n’est plus inclus par défaut depuis Tails 7.8 (mai 2026).\n"
+msgstr "*Thunderbird* n’est plus inclus par défaut depuis Tails 7.8 (mai 2026).\n"
 
 #. type: Plain text
 msgid ""
@@ -66,11 +65,6 @@ msgstr ""
 
 #. type: Plain text
 #, fuzzy
-#| msgid ""
-#| "Tails also tries to install as additional software the language package "
-#| "that corresponds to the language of your first session with Tails 7.5 or "
-#| "later. To use *Thunderbird* in another language, see how to [[use "
-#| "*Thunderbird* in another language|thunderbird#language]]."
 msgid ""
 "Tails also tries to install as additional software the language package that "
 "corresponds to the language of your first session with Tails 7.5 or later, "

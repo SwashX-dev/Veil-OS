@@ -36,8 +36,8 @@ msgid ""
 "To learn how to use *Feather* in Tails, see the [Feather Wallet "
 "Documentation](https://docs.featherwallet.org/)."
 msgstr ""
-"Pour apprendre comment utiliser *Feather* dans Tails, consultez la ["
-"documentation Feather Wallet](https://docs.featherwallet.org/) (en anglais)."
+"Pour apprendre comment utiliser *Feather* dans Tails, consultez la "
+"[documentation Feather Wallet](https://docs.featherwallet.org/) (en anglais)."
 
 #. type: Plain text
 #, no-wrap
@@ -66,10 +66,8 @@ msgid ""
 "undiscovered.</p>\n"
 msgstr ""
 "<p>Puisque <i>Feather</i> n'est pas inclus dans Debian, il ne reçoit pas le\n"
-"même [[haut niveau d'examen|doc/about/trust/#trust_debian]] que les "
-"logiciels dans Debian.\n"
-"Il est donc beaucoup plus probable qu'un problème de sécurité dans <i>"
-"Feather</i> reste\n"
+"même [[haut niveau d'examen|doc/about/trust/#trust_debian]] que les logiciels dans Debian.\n"
+"Il est donc beaucoup plus probable qu'un problème de sécurité dans <i>Feather</i> reste\n"
 "non découvert.</p>\n"
 
 #. type: Plain text

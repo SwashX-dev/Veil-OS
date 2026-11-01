@@ -49,9 +49,7 @@ msgstr "<div class=\"bug\">\n"
 #. type: Plain text
 #, no-wrap
 msgid "<p>The tutorial linked above is outdated since Tails 5.0 (May 2022). See [[!tails_ticket 19104]].</p>\n"
-msgstr ""
-"<p>Le tutoriel en lien au dessus est dépassé depuis Tails 5.0 (mai 2022). "
-"Voir [[!tails_ticket 19104]].</p>\n"
+msgstr "<p>Le tutoriel en lien au dessus est dépassé depuis Tails 5.0 (mai 2022). Voir [[!tails_ticket 19104]].</p>\n"
 
 #. type: Plain text
 #, no-wrap

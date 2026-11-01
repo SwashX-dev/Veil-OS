@@ -28,8 +28,8 @@ msgid ""
 "For chatting and instant messaging, Tails includes the *[Pidgin Instant "
 "Messenger](https://pidgin.im/)*."
 msgstr ""
-"Pour dialoguer et envoyer des messages instantanés, Tails fournit la *"
-"[Messagerie Instantanée Pidgin](https://pidgin.im/)*."
+"Pour dialoguer et envoyer des messages instantanés, Tails fournit la "
+"*[Messagerie Instantanée Pidgin](https://pidgin.im/)*."
 
 #. type: Plain text
 #, no-wrap
@@ -67,11 +67,11 @@ msgid ""
 "desc=\"IRC\"]] or [[!wikipedia XMPP]] (also known as Jabber) servers. You "
 "can have several accounts connected at the same time."
 msgstr ""
-"Vous pouvez utiliser *Pidgin* pour vous connecter à des serveurs "
-"[[!wikipedia_fr Internet_Relay_Chat desc=\"IRC\"]] ou "
-"[[!wikipedia_fr Extensible_Messaging_and_Presence_Protocol desc=\"XMPP\"]] ("
-"aussi connu sous le nom de Jabber). Vous pouvez utiliser simultanément "
-"plusieurs comptes différents."
+"Vous pouvez utiliser *Pidgin* pour vous connecter à des serveurs [[!"
+"wikipedia_fr Internet_Relay_Chat desc=\"IRC\"]] ou [[!wikipedia_fr "
+"Extensible_Messaging_and_Presence_Protocol desc=\"XMPP\"]] (aussi connu sous "
+"le nom de Jabber). Vous pouvez utiliser simultanément plusieurs comptes "
+"différents."
 
 #. type: Plain text
 msgid ""
@@ -125,9 +125,7 @@ msgstr "**Authentification**"
 #. type: Plain text
 #, no-wrap
 msgid "  You are assured the correspondent is who you think it is.\n"
-msgstr ""
-"  Vous avez la garantie que votre correspondant est la personne que vous "
-"croyez.\n"
+msgstr "  Vous avez la garantie que votre correspondant est la personne que vous croyez.\n"
 
 #. type: Bullet: '- '
 msgid "**Deniability**"

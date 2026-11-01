@@ -305,9 +305,7 @@ msgstr "Si votre ordinateur utilise *SYSLINUX* :"
 #. type: Plain text
 #, no-wrap
 msgid "     <p class=\"command\">gnome-text-editor admin:/usr/lib/live/mount/medium/syslinux/live64.cfg</p>\n"
-msgstr ""
-"     <p class=\"command\">gnome-text-editor admin:/usr/lib/live/mount/medium/"
-"syslinux/live64.cfg</p>\n"
+msgstr "     <p class=\"command\">gnome-text-editor admin:/usr/lib/live/mount/medium/syslinux/live64.cfg</p>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -326,9 +324,7 @@ msgstr "Si votre ordinateur utilise *GRUB* :"
 #. type: Plain text
 #, no-wrap
 msgid "     <p class=\"command\">gnome-text-editor admin:/usr/lib/live/mount/medium/EFI/debian/grub.cfg</p>\n"
-msgstr ""
-"     <p class=\"command\">gnome-text-editor admin:/usr/lib/live/mount/medium/"
-"EFI/debian/grub.cfg</p>\n"
+msgstr "     <p class=\"command\">gnome-text-editor admin:/usr/lib/live/mount/medium/EFI/debian/grub.cfg</p>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -336,8 +332,7 @@ msgid ""
 "     The section `menuentry 'Tails 6.11'` corresponds to the default boot\n"
 "     options.\n"
 msgstr ""
-"     La section `menuentry 'Tails 6.11'` correspond aux options de "
-"démarrage\n"
+"     La section `menuentry 'Tails 6.11'` correspond aux options de démarrage\n"
 "     par défaut.\n"
 
 #. type: Plain text

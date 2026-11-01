@@ -70,8 +70,7 @@ msgstr "<div class=\"note\">\n"
 #. type: Plain text
 #, no-wrap
 msgid "<p>The following instructions have been tested on Debian 13 (Trixie).</p>\n"
-msgstr ""
-"<p>Les instructions suivantes ont été testées avec Debian 13 (Trixie).</p>\n"
+msgstr "<p>Les instructions suivantes ont été testées avec Debian 13 (Trixie).</p>\n"
 
 #. type: Title =
 #, no-wrap
@@ -610,10 +609,8 @@ msgid ""
 "   the best results. If they don't perform well for you, try every\n"
 "   other video device model.\n"
 msgstr ""
-"   Démarrez avec les périphériques vidéo *Virtio* et *QXL* : ils donnent "
-"généralement\n"
-"   les meilleurs résultats. S'ils ne marchent pas bien pour vous, essayez "
-"tous les\n"
+"   Démarrez avec les périphériques vidéo *Virtio* et *QXL* : ils donnent généralement\n"
+"   les meilleurs résultats. S'ils ne marchent pas bien pour vous, essayez tous les\n"
 "   autres modèles de périphérique vidéo.\n"
 
 #. type: Bullet: '3. '

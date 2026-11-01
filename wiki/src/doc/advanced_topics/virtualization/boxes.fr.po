@@ -47,8 +47,7 @@ msgstr "<div class=\"note\">\n"
 #. type: Plain text
 #, no-wrap
 msgid "<p>The following instructions have been tested on Debian 13 (Trixie).</p>\n"
-msgstr ""
-"<p>Les instructions suivantes ont été testées avec Debian 13 (Trixie).</p>\n"
+msgstr "<p>Les instructions suivantes ont été testées avec Debian 13 (Trixie).</p>\n"
 
 #. type: Plain text
 #, no-wrap

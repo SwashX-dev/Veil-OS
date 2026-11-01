@@ -83,8 +83,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "*Thunderbird* is no longer included by default since Tails 7.8 (May 2026).\n"
-msgstr ""
-"*Thunderbird* n’est plus inclus par défaut depuis Tails 7.8 (mai 2026).\n"
+msgstr "*Thunderbird* n’est plus inclus par défaut depuis Tails 7.8 (mai 2026).\n"
 
 #. type: Plain text
 #, fuzzy
@@ -919,8 +918,7 @@ msgid ""
 "  Choose **Security**&nbsp;▸ **Key Assistant** to see the keys of the\n"
 "  receipts and solve any issue.\n"
 msgstr ""
-"  Choisissez **Sécurité**&nbsp;▸ **Assistant de clés** pour voir les clés "
-"des\n"
+"  Choisissez **Sécurité**&nbsp;▸ **Assistant de clés** pour voir les clés des\n"
 "  destinataires et résoudre tout problème.\n"
 
 #. type: Bullet: '- '
