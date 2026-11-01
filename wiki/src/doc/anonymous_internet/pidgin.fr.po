@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2025-09-17 11:40+0200\n"
-"PO-Revision-Date: 2025-09-21 10:19+0000\n"
-"Last-Translator: Chre <tor@renaudineau.org>\n"
+"PO-Revision-Date: 2026-11-01 15:47+0000\n"
+"Last-Translator: Kaelvar <kaelvar@users.noreply.translate.tails.net>\n"
 "Language-Team: Tails translators <tails@boum.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -125,7 +125,9 @@ msgstr "**Authentification**"
 #. type: Plain text
 #, no-wrap
 msgid "  You are assured the correspondent is who you think it is.\n"
-msgstr "  Vous avez la garantie que votre correspondant est la personne que vous croyez..\n"
+msgstr ""
+"  Vous avez la garantie que votre correspondant est la personne que vous "
+"croyez.\n"
 
 #. type: Bullet: '- '
 msgid "**Deniability**"
