@@ -1,3 +1,14 @@
+When /^GNOME Software has fetched the Flathub appstream$/ do
+  try_for(60) do
+    systemd_journal_includes?(
+      'libostree pull from .flathub. for appstream2/x86_64 complete.*',
+      options: ['--unit=gnome-software.service'],
+      user:    LIVE_USER,
+      regexp:  true
+    )
+  end
+end
+
 When /^I start GNOME Software$/ do
   @gnome_software = launch_gnome_software
   # Wait until it is done "Refreshing Data"
