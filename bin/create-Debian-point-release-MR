@@ -1,0 +1,47 @@
+#!/bin/sh
+
+set -eu
+set -o pipefail
+
+WORK_ITEM="$1"
+POINT_RELEASE_VERSION="$2"
+
+DEBIAN_BRANCH="${WORK_ITEM}-Debian-${POINT_RELEASE_VERSION}"
+
+# Checkout a branch on which CI will run all tests
+git fetch origin
+git checkout -b "${DEBIAN_BRANCH}" origin/stable
+echo -e "[test]\nforce_all_tests = true" \
+    >"config/ci/per_branch/${DEBIAN_BRANCH}.toml"
+git add "config/ci/per_branch/${DEBIAN_BRANCH}.toml"
+git commit -m "Set this branch to run all tests"
+
+# Update the `debian` APT snapshot for the Tails image
+auto/scripts/apt-snapshots-serials freeze debian
+git commit \
+    -m "Bump 'debian' APT snapshot to upgrade to Trixie ${POINT_RELEASE_VERSION}" \
+    config/APT_snapshots.d/debian/serial
+
+# Update all APT snapshots for tails-builder (we don't have any other
+# process to regularly do that so we piggy-back on the Debian point
+# release update to do it)
+(
+    set -eu -o pipefail
+    cd vagrant/definitions/tails-builder
+    ../../../auto/scripts/apt-snapshots-serials freeze --freeze-debian-security
+    git commit \
+        -m "Bump APT snapshots for Vagrant build box" \
+        config/APT_snapshots.d/*/serial
+)
+
+# Bump the expiration date for all snapshots (including those that we
+# haven't updated but that's not a big deal)
+./bin/bump-APT-snapshots-expiration-date 183
+
+# Push this new branch to our CI, creating a draft merge request
+git push \
+    -o merge_request.create \
+    -o merge_request.draft \
+    -o merge_request.title="Upgrade to Trixie ${POINT_RELEASE_VERSION}" \
+    --set-upstream \
+    origin "${DEBIAN_BRANCH}"
