@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-03-27 10:22+0000\n"
+"POT-Creation-Date: 2026-11-02 09:57+0000\n"
 "PO-Revision-Date: 2026-08-23 18:56+0000\n"
 "Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: \n"
@@ -271,12 +271,16 @@ msgid "To prevent mistakes:"
 msgstr "Para evitar errores:"
 
 #. type: Content of: <section><div><ul><li>
+#, fuzzy
+#| msgid ""
+#| "[[Installing additional software|doc/persistent_storage/"
+#| "additional_software]]"
 msgid ""
-"Applications are blocked automatically if they try to connect to the "
-"Internet without Tor."
+"All connections to the Internet go through the Tor network, even if you "
+"install [[additional software|doc/persistent_storage/"
+"additional_software#network]]."
 msgstr ""
-"Las aplicaciones son bloqueadas automáticamente si intentan conectarse a "
-"Internet sin Tor."
+"[[Instalar software adicional|doc/persistent_storage/additional_software]]"
 
 #. type: Content of: <section><div><ul><li>
 msgid "Everything in the Persistent Storage is encrypted automatically."
@@ -590,6 +594,13 @@ msgstr "[[Contacto|doc/about/contact]]"
 #. type: Content of: <div>
 msgid "[[Install Tails|install]]"
 msgstr "[[Instalar Tails|install]]"
+
+#~ msgid ""
+#~ "Applications are blocked automatically if they try to connect to the "
+#~ "Internet without Tor."
+#~ msgstr ""
+#~ "Las aplicaciones son bloqueadas automáticamente si intentan conectarse a "
+#~ "Internet sin Tor."
 
 #~ msgid "[[Contribute|contribute]]"
 #~ msgstr "[[Colabora|contribute]]"

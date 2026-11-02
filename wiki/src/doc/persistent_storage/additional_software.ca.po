@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-07-22 09:36+0200\n"
+"POT-Creation-Date: 2026-11-02 09:57+0000\n"
 "PO-Revision-Date: 2026-01-23 15:29+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -496,10 +496,14 @@ msgid "Using additional software"
 msgstr "Ús de programari addicional"
 
 #. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "Once installed, applications that don't use the network usually work out "
+#| "of the box.  However, Tails has some differences in terms of additional "
+#| "configuration and network access."
 msgid ""
-"Once installed, applications that don't use the network usually work out of "
-"the box.  However, Tails has some differences in terms of additional "
-"configuration and network access."
+"Once installed, applications usually work out of the box.  However, Tails "
+"has some limitations in terms of additional configuration and network access."
 msgstr ""
 "Un cop instal·lades, les aplicacions que no utilitzen la xarxa solen "
 "funcionar de manera immediata. Tanmateix, Tails té algunes diferències pel "
@@ -530,120 +534,20 @@ msgstr ""
 "manera que no podem donar instruccions generals sobre quins fitxers s'han de "
 "desar mitjançant les funcions de Dotfiles."
 
-#. type: Title -
-#, no-wrap
-msgid "Network access"
-msgstr "Accés a la xarxa"
-
-#. type: Plain text
-#, fuzzy
-#| msgid ""
-#| "Tails only allows connections to the Tor network. Additional software "
-#| "that uses the Internet must be configured to go through the Tor network "
-#| "otherwise, their connections are blocked by default for security."
-msgid ""
-"Tails only allows connections to the Tor network. Additional software that "
-"uses the Internet must be configured to go through the Tor network "
-"otherwise, their connections are blocked by default for added security."
-msgstr ""
-"Tails només permet connexions a la xarxa Tor. El Programari Addicional que "
-"utilitza Internet s'ha de configurar per passar per la xarxa Tor, en cas "
-"contrari, les seves connexions restaran bloquejades per defecte per motius "
-"de seguretat."
-
-#. type: Plain text
-msgid "To make an application use the Tor network, you can either:"
-msgstr "Per fer que una aplicació utilitzi la xarxa Tor, podeu:"
-
-#. type: Bullet: '- '
-#, fuzzy
-#| msgid ""
-#| "A. Configure the application to use Tor as a proxy with the following "
-#| "parameters:"
-msgid ""
-"Configure the application to use Tor as a proxy with the following "
-"parameters:"
-msgstr ""
-"A. Configurar l'aplicació perquè utilitzi Tor com a servidor intermediari "
-"amb els paràmetres següents:"
-
-#. type: Bullet: '  * '
-msgid "Type: SOCKS5"
-msgstr "Tipus: SOCKS5"
-
-#. type: Bullet: '  * '
-msgid "Host: 127.0.0.1"
-msgstr "Amfitrió: 127.0.0.1"
-
-#. type: Bullet: '  * '
-msgid "Port: 9050"
-msgstr "Port: 9050"
-
-#. type: Plain text
-#, fuzzy, no-wrap
-#| msgid ""
-#| "   For example, to use *Mumble* in Tails, you can configure Tor as proxy in the\n"
-#| "   network configuration of *Mumble*:\n"
-msgid ""
-"  For example, to use *Mumble* in Tails, you can configure Tor as proxy in the\n"
-"  network configuration of *Mumble*:\n"
-msgstr ""
-"   Per exemple, per utilitzar *Mumble* a Tails, podeu configurar Tor com a servidor intermediari\n"
-"   a la configuració de xarxa de *Mumble*:\n"
-
-#. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "   [[!img mumble.png link=\"no\" alt=\"Network configuration of Mumble with proxy settings\"]]\n"
-msgid "  [[!img mumble.png class=\"screenshot\" alt=\"Network configuration of Mumble with proxy settings\"]]\n"
-msgstr "   [[!img mumble.png link=\"no\" alt=\"Configuració de xarxa de Mumble amb la configuració del servidor intermediari\"]]\n"
-
-#. type: Bullet: '- '
-#, fuzzy
-#| msgid "B. Run the application using `torsocks` on the command line."
-msgid "Open the application using `torsocks` on the command line."
-msgstr "B. Executar l'aplicació utilitzant `torsocks` a la línia d'ordres."
-
-#. type: Plain text
-#, fuzzy, no-wrap
-#| msgid ""
-#| "   Execute the following command in a *Terminal*. Replace <span\n"
-#| "   class=\"command-placeholder\">application</span> with the command line of the\n"
-#| "   application that you want to run:\n"
-msgid ""
-"  Execute the following command in a *Console*. Replace\n"
-"  <span class=\"command-placeholder\">application</span> with the command line\n"
-"  of the application that you want to open.\n"
-msgstr ""
-"   Executeu l'ordre següent en un *Terminal*. Substituïu <span class=\"command-placeholder\">aplicació</span> amb la línia d'ordres de\n"
-"   l'aplicació que voleu executar:\n"
-
-#. type: Plain text
-#, fuzzy, no-wrap
-#| msgid "   <p class=\"command-template\">torsocks <span class=\"command-placeholder\">application</span></p>\n"
-msgid "  <p class=\"command-template\">torsocks <span class=\"command-placeholder\">application</span></p>\n"
-msgstr "   <p class=\"command-template\">torsocks <span class=\"command-placeholder\">aplicació</span></p>\n"
-
-#. type: Plain text
-#, fuzzy, no-wrap
-#| msgid ""
-#| "   For example, to use *Mumble* in Tails, you can also execute the following\n"
-#| "   command:\n"
-msgid ""
-"  For example, to use *Mumble* in Tails, you can also execute the following\n"
-"  command:\n"
-msgstr ""
-"   Per exemple, per utilitzar *Mumble* a Tails, també podeu executar l'ordre\n"
-"   següent:\n"
-
 #. type: Plain text
 #, no-wrap
-msgid "  <p class=\"command\">torsocks mumble</p>\n"
-msgstr "  <p class=\"command\">torsocks mumble</p>\n"
+msgid "<h2 id=\"network\">Network access</h2>\n"
+msgstr ""
 
-#. type: Title ###
-#, no-wrap
-msgid "Technical networking considerations"
-msgstr "Consideracions tècniques de xarxa"
+#. type: Plain text
+msgid ""
+"Additional software automatically uses the Tor network to connect to the "
+"Internet, even if you have not configured it to do so."
+msgstr ""
+
+#. type: Plain text
+msgid "Still, note that:"
+msgstr ""
 
 #. type: Bullet: '- '
 #, fuzzy
@@ -651,36 +555,28 @@ msgstr "Consideracions tècniques de xarxa"
 msgid "Only TCP connections can go through the Tor network."
 msgstr "- Només les connexions TCP poden passar per la xarxa Tor."
 
-#. type: Bullet: '- '
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "UDP connections, for example in many VoIP applications, and ICMP connections, for example in the `ping` utility, cannot go through the Tor network and are blocked in Tails."
 msgid ""
-"UDP connections, for example in many VoIP applications, and ICMP "
-"connections, for example in the `ping` utility, cannot go through the Tor "
-"network and are blocked in Tails."
-msgstr ""
-"Les connexions UDP, per exemple en moltes aplicacions VoIP, i les connexions "
-"ICMP, per exemple a la utilitat `ping`, no poden passar per la xarxa Tor i "
-"es bloquegen a Tails."
+"  UDP connections, for example in many VoIP applications, and ICMP connections,\n"
+"  for example in the `ping` utility, cannot go through the Tor network and are\n"
+"  blocked in Tails.\n"
+msgstr "Les connexions UDP, per exemple en moltes aplicacions VoIP, i les connexions ICMP, per exemple a la utilitat `ping`, no poden passar per la xarxa Tor i es bloquegen a Tails."
 
 #. type: Bullet: '- '
-msgid ""
-"DNS requests go through the Tor network if the application uses the system "
-"configuration otherwise, DNS requests will fail to resolve."
+msgid "Tails blocks IPv6 connections."
 msgstr ""
-"Les sol·licituds de DNS passen per la xarxa Tor si l'aplicació utilitza la "
-"configuració del sistema, en cas contrari, les sol·licituds de DNS no es "
-"resoldran."
 
 #. type: Bullet: '- '
 #, fuzzy
-#| msgid "- IPv6 connections are blocked in Tails."
-msgid "IPv6 connections are blocked in Tails."
-msgstr "- Les connexions IPv6 estan bloquejades a Tails."
-
-#. type: Bullet: '- '
+#| msgid ""
+#| "The default Tor port in Tails (9050) forces the use of different Tor "
+#| "circuits for each different destination IP and port, also called "
+#| "\"*stream isolation*\"."
 msgid ""
-"The default Tor port in Tails (9050) forces the use of different Tor "
-"circuits for each different destination IP and port, also called \"*stream "
-"isolation*\"."
+"Additional software will use different Tor circuits for each destination IP "
+"and port, a feature called *stream isolation*."
 msgstr ""
 "El port de Tor predeterminat a Tails (9050) obliga a utilitzar diferents "
 "circuits de Tor per a cada IP i port de destinació diferents, també anomenat "
@@ -1017,6 +913,119 @@ msgstr "   <p class=\"command\">sudo chmod 644 /live/persistence/TailsData_unloc
 #. type: Bullet: '1. '
 msgid "Restart Tails to apply the changes."
 msgstr "Reinicieu Tails per aplicar els canvis."
+
+#, no-wrap
+#~ msgid "Network access"
+#~ msgstr "Accés a la xarxa"
+
+#, fuzzy
+#~| msgid ""
+#~| "Tails only allows connections to the Tor network. Additional software "
+#~| "that uses the Internet must be configured to go through the Tor network "
+#~| "otherwise, their connections are blocked by default for security."
+#~ msgid ""
+#~ "Tails only allows connections to the Tor network. Additional software "
+#~ "that uses the Internet must be configured to go through the Tor network "
+#~ "otherwise, their connections are blocked by default for added security."
+#~ msgstr ""
+#~ "Tails només permet connexions a la xarxa Tor. El Programari Addicional "
+#~ "que utilitza Internet s'ha de configurar per passar per la xarxa Tor, en "
+#~ "cas contrari, les seves connexions restaran bloquejades per defecte per "
+#~ "motius de seguretat."
+
+#~ msgid "To make an application use the Tor network, you can either:"
+#~ msgstr "Per fer que una aplicació utilitzi la xarxa Tor, podeu:"
+
+#, fuzzy
+#~| msgid ""
+#~| "A. Configure the application to use Tor as a proxy with the following "
+#~| "parameters:"
+#~ msgid ""
+#~ "Configure the application to use Tor as a proxy with the following "
+#~ "parameters:"
+#~ msgstr ""
+#~ "A. Configurar l'aplicació perquè utilitzi Tor com a servidor intermediari "
+#~ "amb els paràmetres següents:"
+
+#~ msgid "Type: SOCKS5"
+#~ msgstr "Tipus: SOCKS5"
+
+#~ msgid "Host: 127.0.0.1"
+#~ msgstr "Amfitrió: 127.0.0.1"
+
+#~ msgid "Port: 9050"
+#~ msgstr "Port: 9050"
+
+#, fuzzy, no-wrap
+#~| msgid ""
+#~| "   For example, to use *Mumble* in Tails, you can configure Tor as proxy in the\n"
+#~| "   network configuration of *Mumble*:\n"
+#~ msgid ""
+#~ "  For example, to use *Mumble* in Tails, you can configure Tor as proxy in the\n"
+#~ "  network configuration of *Mumble*:\n"
+#~ msgstr ""
+#~ "   Per exemple, per utilitzar *Mumble* a Tails, podeu configurar Tor com a servidor intermediari\n"
+#~ "   a la configuració de xarxa de *Mumble*:\n"
+
+#, fuzzy, no-wrap
+#~| msgid "   [[!img mumble.png link=\"no\" alt=\"Network configuration of Mumble with proxy settings\"]]\n"
+#~ msgid "  [[!img mumble.png class=\"screenshot\" alt=\"Network configuration of Mumble with proxy settings\"]]\n"
+#~ msgstr "   [[!img mumble.png link=\"no\" alt=\"Configuració de xarxa de Mumble amb la configuració del servidor intermediari\"]]\n"
+
+#, fuzzy
+#~| msgid "B. Run the application using `torsocks` on the command line."
+#~ msgid "Open the application using `torsocks` on the command line."
+#~ msgstr "B. Executar l'aplicació utilitzant `torsocks` a la línia d'ordres."
+
+#, fuzzy, no-wrap
+#~| msgid ""
+#~| "   Execute the following command in a *Terminal*. Replace <span\n"
+#~| "   class=\"command-placeholder\">application</span> with the command line of the\n"
+#~| "   application that you want to run:\n"
+#~ msgid ""
+#~ "  Execute the following command in a *Console*. Replace\n"
+#~ "  <span class=\"command-placeholder\">application</span> with the command line\n"
+#~ "  of the application that you want to open.\n"
+#~ msgstr ""
+#~ "   Executeu l'ordre següent en un *Terminal*. Substituïu <span class=\"command-placeholder\">aplicació</span> amb la línia d'ordres de\n"
+#~ "   l'aplicació que voleu executar:\n"
+
+#, fuzzy, no-wrap
+#~| msgid "   <p class=\"command-template\">torsocks <span class=\"command-placeholder\">application</span></p>\n"
+#~ msgid "  <p class=\"command-template\">torsocks <span class=\"command-placeholder\">application</span></p>\n"
+#~ msgstr "   <p class=\"command-template\">torsocks <span class=\"command-placeholder\">aplicació</span></p>\n"
+
+#, fuzzy, no-wrap
+#~| msgid ""
+#~| "   For example, to use *Mumble* in Tails, you can also execute the following\n"
+#~| "   command:\n"
+#~ msgid ""
+#~ "  For example, to use *Mumble* in Tails, you can also execute the following\n"
+#~ "  command:\n"
+#~ msgstr ""
+#~ "   Per exemple, per utilitzar *Mumble* a Tails, també podeu executar l'ordre\n"
+#~ "   següent:\n"
+
+#, no-wrap
+#~ msgid "  <p class=\"command\">torsocks mumble</p>\n"
+#~ msgstr "  <p class=\"command\">torsocks mumble</p>\n"
+
+#, no-wrap
+#~ msgid "Technical networking considerations"
+#~ msgstr "Consideracions tècniques de xarxa"
+
+#~ msgid ""
+#~ "DNS requests go through the Tor network if the application uses the "
+#~ "system configuration otherwise, DNS requests will fail to resolve."
+#~ msgstr ""
+#~ "Les sol·licituds de DNS passen per la xarxa Tor si l'aplicació utilitza "
+#~ "la configuració del sistema, en cas contrari, les sol·licituds de DNS no "
+#~ "es resoldran."
+
+#, fuzzy
+#~| msgid "- IPv6 connections are blocked in Tails."
+#~ msgid "IPv6 connections are blocked in Tails."
+#~ msgstr "- Les connexions IPv6 estan bloquejades a Tails."
 
 #~ msgid ""
 #~ "*Thunderbird* language package: <code>thunderbird-l10n-<span "
