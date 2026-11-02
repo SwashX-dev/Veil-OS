@@ -10,8 +10,8 @@
 
 1. Set environment variables:
 
-        WORK_ITEM=1234
-        POINT_RELEASE_VERSION=42.1
+        WORK_ITEM=FIXME
+        POINT_RELEASE_VERSION=FIXME
 
 2. Create the MR:
 
