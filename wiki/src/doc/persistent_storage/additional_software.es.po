@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-07-22 09:36+0200\n"
+"POT-Creation-Date: 2026-11-02 09:57+0000\n"
 "PO-Revision-Date: 2026-09-09 04:56+0000\n"
 "Last-Translator: cacu <cacukin@cryptolab.net>\n"
 "Language-Team: Spanish <http://translate.tails.net/projects/tails/"
@@ -383,9 +383,8 @@ msgstr "Instalar software adicional\n"
 
 #. type: Plain text
 msgid ""
-"Once installed, applications that don't use the network usually work out of "
-"the box.  However, Tails has some differences in terms of additional "
-"configuration and network access."
+"Once installed, applications usually work out of the box.  However, Tails "
+"has some limitations in terms of additional configuration and network access."
 msgstr ""
 
 #. type: Title -
@@ -407,112 +406,41 @@ msgid ""
 "features."
 msgstr ""
 
-#. type: Title -
+#. type: Plain text
 #, no-wrap
-msgid "Network access"
+msgid "<h2 id=\"network\">Network access</h2>\n"
 msgstr ""
 
 #. type: Plain text
 msgid ""
-"Tails only allows connections to the Tor network. Additional software that "
-"uses the Internet must be configured to go through the Tor network "
-"otherwise, their connections are blocked by default for added security."
+"Additional software automatically uses the Tor network to connect to the "
+"Internet, even if you have not configured it to do so."
 msgstr ""
 
 #. type: Plain text
-msgid "To make an application use the Tor network, you can either:"
-msgstr ""
-
-#. type: Bullet: '- '
-msgid ""
-"Configure the application to use Tor as a proxy with the following "
-"parameters:"
-msgstr ""
-
-#. type: Bullet: '  * '
-msgid "Type: SOCKS5"
-msgstr ""
-
-#. type: Bullet: '  * '
-msgid "Host: 127.0.0.1"
-msgstr ""
-
-#. type: Bullet: '  * '
-msgid "Port: 9050"
-msgstr ""
-
-#. type: Plain text
-#, no-wrap
-msgid ""
-"  For example, to use *Mumble* in Tails, you can configure Tor as proxy in the\n"
-"  network configuration of *Mumble*:\n"
-msgstr ""
-
-#. type: Plain text
-#, no-wrap
-msgid "  [[!img mumble.png class=\"screenshot\" alt=\"Network configuration of Mumble with proxy settings\"]]\n"
-msgstr ""
-
-#. type: Bullet: '- '
-msgid "Open the application using `torsocks` on the command line."
-msgstr ""
-
-#. type: Plain text
-#, no-wrap
-msgid ""
-"  Execute the following command in a *Console*. Replace\n"
-"  <span class=\"command-placeholder\">application</span> with the command line\n"
-"  of the application that you want to open.\n"
-msgstr ""
-
-#. type: Plain text
-#, no-wrap
-msgid "  <p class=\"command-template\">torsocks <span class=\"command-placeholder\">application</span></p>\n"
-msgstr ""
-
-#. type: Plain text
-#, no-wrap
-msgid ""
-"  For example, to use *Mumble* in Tails, you can also execute the following\n"
-"  command:\n"
-msgstr ""
-
-#. type: Plain text
-#, no-wrap
-msgid "  <p class=\"command\">torsocks mumble</p>\n"
-msgstr "  <p class=\"command\">torsocks mumble</p>\n"
-
-#. type: Title ###
-#, no-wrap
-msgid "Technical networking considerations"
+msgid "Still, note that:"
 msgstr ""
 
 #. type: Bullet: '- '
 msgid "Only TCP connections can go through the Tor network."
 msgstr ""
 
-#. type: Bullet: '- '
+#. type: Plain text
+#, no-wrap
 msgid ""
-"UDP connections, for example in many VoIP applications, and ICMP "
-"connections, for example in the `ping` utility, cannot go through the Tor "
-"network and are blocked in Tails."
+"  UDP connections, for example in many VoIP applications, and ICMP connections,\n"
+"  for example in the `ping` utility, cannot go through the Tor network and are\n"
+"  blocked in Tails.\n"
+msgstr ""
+
+#. type: Bullet: '- '
+msgid "Tails blocks IPv6 connections."
 msgstr ""
 
 #. type: Bullet: '- '
 msgid ""
-"DNS requests go through the Tor network if the application uses the system "
-"configuration otherwise, DNS requests will fail to resolve."
-msgstr ""
-
-#. type: Bullet: '- '
-msgid "IPv6 connections are blocked in Tails."
-msgstr ""
-
-#. type: Bullet: '- '
-msgid ""
-"The default Tor port in Tails (9050) forces the use of different Tor "
-"circuits for each different destination IP and port, also called \"*stream "
-"isolation*\"."
+"Additional software will use different Tor circuits for each destination IP "
+"and port, a feature called *stream isolation*."
 msgstr ""
 
 #. type: Title =
@@ -763,6 +691,10 @@ msgstr "   <p class=\"command\">sudo chmod 644 /live/persistence/TailsData_unloc
 #. type: Bullet: '1. '
 msgid "Restart Tails to apply the changes."
 msgstr "Reinicia Tails para aplicar los cambios."
+
+#, no-wrap
+#~ msgid "  <p class=\"command\">torsocks mumble</p>\n"
+#~ msgstr "  <p class=\"command\">torsocks mumble</p>\n"
 
 #, no-wrap
 #~ msgid ""

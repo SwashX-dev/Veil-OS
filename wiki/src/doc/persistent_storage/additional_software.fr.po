@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-07-22 09:36+0200\n"
+"POT-Creation-Date: 2026-11-02 09:57+0000\n"
 "PO-Revision-Date: 2026-05-21 15:22+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: Tails translators <tails@boum.org>\n"
@@ -441,10 +441,14 @@ msgid "Using additional software"
 msgstr "Utiliser des logiciels supplémentaires"
 
 #. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "Once installed, applications that don't use the network usually work out "
+#| "of the box.  However, Tails has some differences in terms of additional "
+#| "configuration and network access."
 msgid ""
-"Once installed, applications that don't use the network usually work out of "
-"the box.  However, Tails has some differences in terms of additional "
-"configuration and network access."
+"Once installed, applications usually work out of the box.  However, Tails "
+"has some limitations in terms of additional configuration and network access."
 msgstr ""
 "Une fois installées, les applications qui n'utilisent pas le réseau "
 "fonctionnent généralement directement. Cependant, Tails présente quelques "
@@ -475,137 +479,47 @@ msgstr ""
 "pourquoi nous ne pouvons pas donner d'instructions générales sur les "
 "fichiers qui doivent être sauvegardés avec les fonctionnalités Dotfiles."
 
-#. type: Title -
+#. type: Plain text
 #, no-wrap
-msgid "Network access"
-msgstr "Accès au réseau"
+msgid "<h2 id=\"network\">Network access</h2>\n"
+msgstr ""
 
 #. type: Plain text
-#, fuzzy
-#| msgid ""
-#| "Tails only allows connections to the Tor network. Additional software "
-#| "that uses the Internet must be configured to go through the Tor network "
-#| "otherwise, their connections are blocked by default for security."
 msgid ""
-"Tails only allows connections to the Tor network. Additional software that "
-"uses the Internet must be configured to go through the Tor network "
-"otherwise, their connections are blocked by default for added security."
+"Additional software automatically uses the Tor network to connect to the "
+"Internet, even if you have not configured it to do so."
 msgstr ""
-"Tails autorise uniquement les connexions au réseau Tor. Les logiciels "
-"supplémentaires qui utilisent Internet doivent être configurés pour passer "
-"par le réseau Tor, dans le cas contraire leurs connexions sont bloquées par "
-"défaut pour des raisons de sécurité."
 
 #. type: Plain text
-msgid "To make an application use the Tor network, you can either:"
-msgstr "Pour faire qu'une application utilise le réseau Tor, vous pouvez :"
-
-#. type: Bullet: '- '
-msgid ""
-"Configure the application to use Tor as a proxy with the following "
-"parameters:"
+msgid "Still, note that:"
 msgstr ""
-"Soit configurer l'application pour qu'elle utilise Tor comme proxy avec les "
-"paramètres suivants :"
-
-#. type: Bullet: '  * '
-msgid "Type: SOCKS5"
-msgstr "Type : SOCKS5"
-
-#. type: Bullet: '  * '
-msgid "Host: 127.0.0.1"
-msgstr "Hôte : 127.0.0.1"
-
-#. type: Bullet: '  * '
-msgid "Port: 9050"
-msgstr "Port : 9050"
-
-#. type: Plain text
-#, no-wrap
-msgid ""
-"  For example, to use *Mumble* in Tails, you can configure Tor as proxy in the\n"
-"  network configuration of *Mumble*:\n"
-msgstr ""
-"  Par exemple, pour utiliser *Mumble* dans Tails, vous pouvez configurer Tor comme proxy dans la\n"
-"  configuration réseau de *Mumble* :\n"
-
-#. type: Plain text
-#, no-wrap
-msgid "  [[!img mumble.png class=\"screenshot\" alt=\"Network configuration of Mumble with proxy settings\"]]\n"
-msgstr "  [[!img mumble.png class=\"screenshot\" alt=\"Configuration réseau de Mumble avec les paramètres de proxy\"]]\n"
-
-#. type: Bullet: '- '
-msgid "Open the application using `torsocks` on the command line."
-msgstr ""
-"Soit lancer l'application en ligne de commande en utilisant `torsocks`."
-
-#. type: Plain text
-#, no-wrap
-msgid ""
-"  Execute the following command in a *Console*. Replace\n"
-"  <span class=\"command-placeholder\">application</span> with the command line\n"
-"  of the application that you want to open.\n"
-msgstr ""
-"  Exécutez la commande suivante dans une *Console*. Remplacez\n"
-"  <span class=\"command-placeholder\">application</span> par la ligne de commande de\n"
-"  l'application que vous voulez ouvrir.\n"
-
-#. type: Plain text
-#, no-wrap
-msgid "  <p class=\"command-template\">torsocks <span class=\"command-placeholder\">application</span></p>\n"
-msgstr "  <p class=\"command-template\">torsocks <span class=\"command-placeholder\">application</span></p>\n"
-
-#. type: Plain text
-#, no-wrap
-msgid ""
-"  For example, to use *Mumble* in Tails, you can also execute the following\n"
-"  command:\n"
-msgstr ""
-"  Par exemple, pour utiliser *Mumble* dans Tails, vous pouvez aussi exécuter la commande\n"
-"  suivante :\n"
-
-#. type: Plain text
-#, no-wrap
-msgid "  <p class=\"command\">torsocks mumble</p>\n"
-msgstr "  <p class=\"command\">torsocks mumble</p>\n"
-
-#. type: Title ###
-#, no-wrap
-msgid "Technical networking considerations"
-msgstr "Considérations techniques concernant la mise en réseau"
 
 #. type: Bullet: '- '
 msgid "Only TCP connections can go through the Tor network."
 msgstr "Seules les connexions TCP peuvent passer par le réseau Tor."
 
-#. type: Bullet: '- '
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "UDP connections, for example in many VoIP applications, and ICMP connections, for example in the `ping` utility, cannot go through the Tor network and are blocked in Tails."
 msgid ""
-"UDP connections, for example in many VoIP applications, and ICMP "
-"connections, for example in the `ping` utility, cannot go through the Tor "
-"network and are blocked in Tails."
+"  UDP connections, for example in many VoIP applications, and ICMP connections,\n"
+"  for example in the `ping` utility, cannot go through the Tor network and are\n"
+"  blocked in Tails.\n"
+msgstr "Les connexions UDP, par exemple dans de nombreuses applications de voix sur IP (VoIP), et les connexions ICMP, par exemple dans l'utilitaire `ping`, ne peuvent pas passer par le réseau Tor et seront bloquées dans Tails."
+
+#. type: Bullet: '- '
+msgid "Tails blocks IPv6 connections."
 msgstr ""
-"Les connexions UDP, par exemple dans de nombreuses applications de voix sur "
-"IP (VoIP), et les connexions ICMP, par exemple dans l'utilitaire `ping`, ne "
-"peuvent pas passer par le réseau Tor et seront bloquées dans Tails."
 
 #. type: Bullet: '- '
+#, fuzzy
+#| msgid ""
+#| "The default Tor port in Tails (9050) forces the use of different Tor "
+#| "circuits for each different destination IP and port, also called "
+#| "\"*stream isolation*\"."
 msgid ""
-"DNS requests go through the Tor network if the application uses the system "
-"configuration otherwise, DNS requests will fail to resolve."
-msgstr ""
-"Les requêtes DNS passent par le réseau Tor si l'application utilise la "
-"configuration du système, dans le cas contraire les requêtes DNS ne seront "
-"pas résolues."
-
-#. type: Bullet: '- '
-msgid "IPv6 connections are blocked in Tails."
-msgstr "Les connexions IPv6 sont bloquées dans Tails."
-
-#. type: Bullet: '- '
-msgid ""
-"The default Tor port in Tails (9050) forces the use of different Tor "
-"circuits for each different destination IP and port, also called \"*stream "
-"isolation*\"."
+"Additional software will use different Tor circuits for each destination IP "
+"and port, a feature called *stream isolation*."
 msgstr ""
 "Le port de Tor par défaut dans Tails (9050) force l'utilisation de circuits "
 "Tor différents pour chaque IP et port de destination différents, aussi "
@@ -877,6 +791,101 @@ msgstr "   <p class=\"command\">sudo chmod 644 /live/persistence/TailsData_unloc
 #. type: Bullet: '1. '
 msgid "Restart Tails to apply the changes."
 msgstr "Redémarrez Tails pour appliquer les changements."
+
+#, no-wrap
+#~ msgid "Network access"
+#~ msgstr "Accès au réseau"
+
+#, fuzzy
+#~| msgid ""
+#~| "Tails only allows connections to the Tor network. Additional software "
+#~| "that uses the Internet must be configured to go through the Tor network "
+#~| "otherwise, their connections are blocked by default for security."
+#~ msgid ""
+#~ "Tails only allows connections to the Tor network. Additional software "
+#~ "that uses the Internet must be configured to go through the Tor network "
+#~ "otherwise, their connections are blocked by default for added security."
+#~ msgstr ""
+#~ "Tails autorise uniquement les connexions au réseau Tor. Les logiciels "
+#~ "supplémentaires qui utilisent Internet doivent être configurés pour "
+#~ "passer par le réseau Tor, dans le cas contraire leurs connexions sont "
+#~ "bloquées par défaut pour des raisons de sécurité."
+
+#~ msgid "To make an application use the Tor network, you can either:"
+#~ msgstr "Pour faire qu'une application utilise le réseau Tor, vous pouvez :"
+
+#~ msgid ""
+#~ "Configure the application to use Tor as a proxy with the following "
+#~ "parameters:"
+#~ msgstr ""
+#~ "Soit configurer l'application pour qu'elle utilise Tor comme proxy avec "
+#~ "les paramètres suivants :"
+
+#~ msgid "Type: SOCKS5"
+#~ msgstr "Type : SOCKS5"
+
+#~ msgid "Host: 127.0.0.1"
+#~ msgstr "Hôte : 127.0.0.1"
+
+#~ msgid "Port: 9050"
+#~ msgstr "Port : 9050"
+
+#, no-wrap
+#~ msgid ""
+#~ "  For example, to use *Mumble* in Tails, you can configure Tor as proxy in the\n"
+#~ "  network configuration of *Mumble*:\n"
+#~ msgstr ""
+#~ "  Par exemple, pour utiliser *Mumble* dans Tails, vous pouvez configurer Tor comme proxy dans la\n"
+#~ "  configuration réseau de *Mumble* :\n"
+
+#, no-wrap
+#~ msgid "  [[!img mumble.png class=\"screenshot\" alt=\"Network configuration of Mumble with proxy settings\"]]\n"
+#~ msgstr "  [[!img mumble.png class=\"screenshot\" alt=\"Configuration réseau de Mumble avec les paramètres de proxy\"]]\n"
+
+#~ msgid "Open the application using `torsocks` on the command line."
+#~ msgstr ""
+#~ "Soit lancer l'application en ligne de commande en utilisant `torsocks`."
+
+#, no-wrap
+#~ msgid ""
+#~ "  Execute the following command in a *Console*. Replace\n"
+#~ "  <span class=\"command-placeholder\">application</span> with the command line\n"
+#~ "  of the application that you want to open.\n"
+#~ msgstr ""
+#~ "  Exécutez la commande suivante dans une *Console*. Remplacez\n"
+#~ "  <span class=\"command-placeholder\">application</span> par la ligne de commande de\n"
+#~ "  l'application que vous voulez ouvrir.\n"
+
+#, no-wrap
+#~ msgid "  <p class=\"command-template\">torsocks <span class=\"command-placeholder\">application</span></p>\n"
+#~ msgstr "  <p class=\"command-template\">torsocks <span class=\"command-placeholder\">application</span></p>\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "  For example, to use *Mumble* in Tails, you can also execute the following\n"
+#~ "  command:\n"
+#~ msgstr ""
+#~ "  Par exemple, pour utiliser *Mumble* dans Tails, vous pouvez aussi exécuter la commande\n"
+#~ "  suivante :\n"
+
+#, no-wrap
+#~ msgid "  <p class=\"command\">torsocks mumble</p>\n"
+#~ msgstr "  <p class=\"command\">torsocks mumble</p>\n"
+
+#, no-wrap
+#~ msgid "Technical networking considerations"
+#~ msgstr "Considérations techniques concernant la mise en réseau"
+
+#~ msgid ""
+#~ "DNS requests go through the Tor network if the application uses the "
+#~ "system configuration otherwise, DNS requests will fail to resolve."
+#~ msgstr ""
+#~ "Les requêtes DNS passent par le réseau Tor si l'application utilise la "
+#~ "configuration du système, dans le cas contraire les requêtes DNS ne "
+#~ "seront pas résolues."
+
+#~ msgid "IPv6 connections are blocked in Tails."
+#~ msgstr "Les connexions IPv6 sont bloquées dans Tails."
 
 #~ msgid ""
 #~ "*Thunderbird* language package: <code>thunderbird-l10n-<span "

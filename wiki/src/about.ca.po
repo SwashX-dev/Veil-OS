@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-03-27 10:22+0000\n"
+"POT-Creation-Date: 2026-11-02 09:57+0000\n"
 "PO-Revision-Date: 2026-07-23 11:56+0000\n"
 "Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -255,7 +255,8 @@ msgstr "<i>Thunderbird</i>, per a correus electrònics encriptats"
 
 #. type: Content of: <section><div><ul><li>
 msgid "<i>GNOME Secrets</i>, to create and store strong passwords"
-msgstr "<i>Secrets del GNOME</i>, per crear i emmagatzemar contrasenyes segures"
+msgstr ""
+"<i>Secrets del GNOME</i>, per crear i emmagatzemar contrasenyes segures"
 
 #. type: Content of: <section><div><ul><li>
 msgid "<i>LibreOffice</i>, an office suite"
@@ -280,12 +281,17 @@ msgid "To prevent mistakes:"
 msgstr "Per evitar errors:"
 
 #. type: Content of: <section><div><ul><li>
+#, fuzzy
+#| msgid ""
+#| "[[Installing additional software|doc/persistent_storage/"
+#| "additional_software]]"
 msgid ""
-"Applications are blocked automatically if they try to connect to the "
-"Internet without Tor."
+"All connections to the Internet go through the Tor network, even if you "
+"install [[additional software|doc/persistent_storage/"
+"additional_software#network]]."
 msgstr ""
-"Les aplicacions es bloquegen automàticament si intenten connectar-se a "
-"Internet sense Tor."
+"[[Instal·lació de programari addicional|doc/persistent_storage/"
+"additional_software]]"
 
 #. type: Content of: <section><div><ul><li>
 msgid "Everything in the Persistent Storage is encrypted automatically."
@@ -605,6 +611,13 @@ msgstr "[[Contacte|doc/about/contact]]"
 #. type: Content of: <div>
 msgid "[[Install Tails|install]]"
 msgstr "[[Instal·lar Tails|install]]"
+
+#~ msgid ""
+#~ "Applications are blocked automatically if they try to connect to the "
+#~ "Internet without Tor."
+#~ msgstr ""
+#~ "Les aplicacions es bloquegen automàticament si intenten connectar-se a "
+#~ "Internet sense Tor."
 
 #~ msgid "[[Contribute|contribute]]"
 #~ msgstr "[[Contribuir|contribute]]"
