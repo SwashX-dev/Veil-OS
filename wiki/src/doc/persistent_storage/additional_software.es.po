@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tails\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-11-02 09:57+0000\n"
+"POT-Creation-Date: 2026-11-03 10:02+0000\n"
 "PO-Revision-Date: 2026-09-09 04:56+0000\n"
 "Last-Translator: cacu <cacukin@cryptolab.net>\n"
 "Language-Team: Spanish <http://translate.tails.net/projects/tails/"
@@ -439,8 +439,8 @@ msgstr ""
 
 #. type: Bullet: '- '
 msgid ""
-"Additional software will use different Tor circuits for each destination IP "
-"and port, a feature called *stream isolation*."
+"Additional software uses different Tor circuits for each destination IP and "
+"port, a feature called *stream isolation*."
 msgstr ""
 
 #. type: Title =
