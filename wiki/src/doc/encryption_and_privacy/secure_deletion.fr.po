@@ -136,9 +136,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "<p>Simple data recovery tools can recover these other copies.</p>\n"
-msgstr ""
-"<p>Des outils simples de récupération de données peuvent récupérer ces "
-"autres copies.</p>\n"
+msgstr "<p>Des outils simples de récupération de données peuvent récupérer ces autres copies.</p>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -273,8 +271,7 @@ msgid ""
 "<p>Take into account that you could be forced or tricked to give out your\n"
 "passphrase.</p>\n"
 msgstr ""
-"<p>Prenez en compte que l'on pourrait vous forcer à donner votre phrase de "
-"passe\n"
+"<p>Prenez en compte que l'on pourrait vous forcer à donner votre phrase de passe\n"
 "ou vous la faire donner par ruse.</p>\n"
 
 #. type: Plain text
@@ -345,8 +342,8 @@ msgid ""
 "Disk**."
 msgstr ""
 "Cliquez sur le bouton [[!img lib/view-more.png alt=\"Options du disque\" "
-"class=\"symbolic\" link=\"no\"]] dans la barre de titre et choisissez **"
-"Formater le disque**."
+"class=\"symbolic\" link=\"no\"]] dans la barre de titre et choisissez "
+"**Formater le disque**."
 
 #. type: Bullet: '1. '
 msgid "In the **Format Disk** dialog:"

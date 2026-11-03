@@ -250,9 +250,7 @@ msgstr "Exécutez la commande suivante dans une *Console*."
 #. type: Plain text
 #, no-wrap
 msgid "   <p class=\"command\">sudo rsync -PaSHAXv --del /live/persistence/TailsData_unlocked/ /media/amnesia/TailsData</p>\n"
-msgstr ""
-"   <p class=\"command\">sudo rsync -PaSHAXv --del /live/persistence/"
-"TailsData_unlocked/ /media/amnesia/TailsData</p>\n"
+msgstr "   <p class=\"command\">sudo rsync -PaSHAXv --del /live/persistence/TailsData_unlocked/ /media/amnesia/TailsData</p>\n"
 
 #. type: Plain text
 #, no-wrap

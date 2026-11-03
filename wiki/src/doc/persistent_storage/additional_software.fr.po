@@ -267,8 +267,7 @@ msgid ""
 "Replace <span class=\"command-placeholder\">lang</span> with the code for your\n"
 "language. For example, `vi` for Vietnamese.\n"
 msgstr ""
-"Remplacez <span class=\"command-placeholder\">lang</span> par le code de "
-"votre\n"
+"Remplacez <span class=\"command-placeholder\">lang</span> par le code de votre\n"
 "langue. Par exemple, `vi` pour le vietnamien.\n"
 
 #. type: Plain text
@@ -443,10 +442,6 @@ msgstr "Utiliser des logiciels supplémentaires"
 
 #. type: Plain text
 #, fuzzy
-#| msgid ""
-#| "Once installed, applications that don't use the network usually work out "
-#| "of the box.  However, Tails has some differences in terms of additional "
-#| "configuration and network access."
 msgid ""
 "Once installed, applications usually work out of the box.  However, Tails "
 "has some limitations in terms of additional configuration and network access."
@@ -501,7 +496,6 @@ msgstr "Seules les connexions TCP peuvent passer par le réseau Tor."
 
 #. type: Plain text
 #, fuzzy, no-wrap
-#| msgid "UDP connections, for example in many VoIP applications, and ICMP connections, for example in the `ping` utility, cannot go through the Tor network and are blocked in Tails."
 msgid ""
 "  UDP connections, for example in many VoIP applications, and ICMP connections,\n"
 "  for example in the `ping` utility, cannot go through the Tor network and are\n"
@@ -514,10 +508,6 @@ msgstr ""
 
 #. type: Bullet: '- '
 #, fuzzy
-#| msgid ""
-#| "The default Tor port in Tails (9050) forces the use of different Tor "
-#| "circuits for each different destination IP and port, also called "
-#| "\"*stream isolation*\"."
 msgid ""
 "Additional software uses different Tor circuits for each destination IP and "
 "port, a feature called *stream isolation*."
@@ -798,10 +788,6 @@ msgstr "Redémarrez Tails pour appliquer les changements."
 #~ msgstr "Accès au réseau"
 
 #, fuzzy
-#~| msgid ""
-#~| "Tails only allows connections to the Tor network. Additional software "
-#~| "that uses the Internet must be configured to go through the Tor network "
-#~| "otherwise, their connections are blocked by default for security."
 #~ msgid ""
 #~ "Tails only allows connections to the Tor network. Additional software "
 #~ "that uses the Internet must be configured to go through the Tor network "
@@ -973,7 +959,6 @@ msgstr "Redémarrez Tails pour appliquer les changements."
 #~ "administration_password]] au démarrage de Tails."
 
 #, fuzzy, no-wrap
-#~| msgid "Spell-checking dictionaries"
 #~ msgid "Spell checking dictionaries"
 #~ msgstr "Dictionnaires correcteurs d'orthographe"
 
