@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
 "POT-Creation-Date: 2025-10-02 10:14+0000\n"
-"PO-Revision-Date: 2025-12-07 18:29+0000\n"
-"Last-Translator: xin <xin@riseup.net>\n"
+"PO-Revision-Date: 2026-11-03 20:47+0000\n"
+"Last-Translator: Kaelvar <kaelvar@users.noreply.translate.tails.net>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -76,10 +76,8 @@ msgid ""
 "<p>To create new <i>VeraCrypt</i> volumes, do so outside of Tails. See\n"
 "[[VeraCrypt: Beginner's Tutorial|https://veracrypt.io/en/Beginner%27s%20Tutorial.html]].</p>\n"
 msgstr ""
-"<p>La création de nouveaux volumes <i>VeraCrypt</i> se fait en dehors de "
-"Tails. Voir\n"
-"[[VeraCrypt: Beginner's Tutorial|https://veracrypt.io/en/"
-"Beginner%27s%20Tutorial.html]] (en anglais).</p>\n"
+"<p>La création de nouveaux volumes <i>VeraCrypt</i> se fait en dehors de Tails. Voir\n"
+"[[VeraCrypt: Beginner's Tutorial|https://veracrypt.io/en/Beginner%27s%20Tutorial.html]] (en anglais).</p>\n"
 
 #. type: Plain text
 #, no-wrap
@@ -101,8 +99,8 @@ msgid ""
 "With *VeraCrypt* you can store your files encrypted in two different kinds "
 "of *volumes*:"
 msgstr ""
-"Avec *VeraCrypt* vous pouvez stocker vos fichiers dans deux types de "
-"*volumes* différents :"
+"Avec *VeraCrypt* vous pouvez stocker vos fichiers chiffrés dans deux types "
+"de *volumes* différents :"
 
 #. type: Plain text
 #, no-wrap
@@ -157,7 +155,7 @@ msgstr ""
 "<div class=\"text\">\n"
 "<p>Généralement, les périphériques (clés USB et disques durs) ont une seule partition qui fait\n"
 "leur taille entière. De cette façon, vous pouvez par exemple chiffrer la totalité d'une clé USB.\n"
-"Mais les périphériques peuvent également êtres découpés en plusieurs partitions.\n"
+"Mais les périphériques peuvent également être découpés en plusieurs partitions.\n"
 "</div>\n"
 "</div>\n"
 
@@ -207,7 +205,7 @@ msgid ""
 "**PIM**: a number that is needed if it was specified when creating the "
 "*VeraCrypt* volume."
 msgstr ""
-"**PIM** : un nombre qui est nécessaire si il a été spécifié lors de la "
+"**PIM** : un nombre qui est nécessaire s'il a été spécifié lors de la "
 "création du volume *VeraCrypt*."
 
 #. type: Plain text
@@ -337,9 +335,9 @@ msgid ""
 "Choose **[[!img lib/open-menu.png link=\"no\" class=\"symbolic\" "
 "alt=\"\"]]&nbsp;▸ Attach Disk Image** from the top navigation bar."
 msgstr ""
-"Choisissez **"
-"[[!img lib/open-menu.png link=\"no\" class=\"symbolic\" alt=\"\"]]&nbsp;▸ "
-"Attacher l’image disque** dans la barre de navigation en haut."
+"Choisissez **[[!img lib/open-menu.png link=\"no\" class=\"symbolic\" "
+"alt=\"\"]]&nbsp;▸ Attacher l’image disque** dans la barre de navigation en "
+"haut."
 
 #. type: Bullet: '1. '
 msgid "In the **Select Disk Image to Attach** dialog:"
@@ -397,9 +395,7 @@ msgstr "Sélectionnez **Annuler**."
 #. type: Plain text
 #, no-wrap
 msgid "   It is impossible to use keyfiles with this first dialog.\n"
-msgstr ""
-"   Il est impossible d'utiliser des fichiers clés avec cette première "
-"fenêtre.\n"
+msgstr "   Il est impossible d'utiliser des fichiers clés avec cette première fenêtre.\n"
 
 #. type: Bullet: '1. '
 msgid ""
@@ -475,9 +471,9 @@ msgid ""
 "Click the [[!img lib/unlock.png alt=\"Unlock selected encrypted partition\" "
 "class=\"symbolic\" link=\"no\"]] button in the right pane."
 msgstr ""
-"Cliquez sur le bouton [[!img lib/unlock.png alt="
-"\"Déverrouiller la partition chiffrée sélectionnée\" class=\"symbolic\" link="
-"\"no\"]] dans le panneau de droite."
+"Cliquez sur le bouton [[!img lib/unlock.png alt=\"Déverrouiller la partition "
+"chiffrée sélectionnée\" class=\"symbolic\" link=\"no\"]] dans le panneau de "
+"droite."
 
 #. type: Bullet: '1. '
 msgid "Select the file system that appears below the unlocked volume."
@@ -490,9 +486,9 @@ msgid ""
 "Click the [[!img lib/media-playback-start.png alt=\"Mount selected "
 "partition\" class=\"symbolic\" link=\"no\"]] button to mount the volume."
 msgstr ""
-"Cliquez sur le bouton [[!img lib/media-playback-start.png alt="
-"\"Monter la partition sélectionnée\" class=\"symbolic\" link=\"no\"]] pour "
-"monter le volume."
+"Cliquez sur le bouton [[!img lib/media-playback-start.png alt=\"Monter la "
+"partition sélectionnée\" class=\"symbolic\" link=\"no\"]] pour monter le "
+"volume."
 
 #. type: Bullet: '1. '
 msgid ""
@@ -554,13 +550,6 @@ msgstr ""
 #~ msgstr "Introduction à *VeraCrypt*"
 
 #, fuzzy
-#~| msgid ""
-#~| "1. Choose\n"
-#~| "   <span class=\"menuchoice\">\n"
-#~| "     **Applications**&nbsp;▸\n"
-#~| "     **Utilities**&nbsp;▸\n"
-#~| "     <span class=\"guisubmenuitem\">Disks</span></span>\n"
-#~| "   to start the *Disks* utility.\n"
 #~ msgid ""
 #~ "Choose <span class=\"menuchoice\">Applications&nbsp;▸ Utilities&nbsp;▸ "
 #~ "Disks</span> to start the *Disks* utility."
@@ -628,7 +617,6 @@ msgstr ""
 #~ "correspondant à votre fichier conteneur."
 
 #, fuzzy, no-wrap
-#~| msgid "  [[!img eject-container.png link=\"no\" alt=\"\"]]\n"
 #~ msgid "  [[!img eject.png link=\"no\" alt=\"\"]]\n"
 #~ msgstr "  [[!img eject-container.png link=\"no\" alt=\"\"]]\n"
 

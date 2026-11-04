@@ -202,7 +202,7 @@ Still, note that:
 
 - Tails blocks IPv6 connections.
 
-- Additional software will use different Tor circuits
+- Additional software uses different Tor circuits
   for each destination IP and port, a feature called *stream isolation*.
 
 Checking your list of additional software
