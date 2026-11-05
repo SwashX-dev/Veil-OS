@@ -1,0 +1,2 @@
+-e [test]
+force_all_tests = true
