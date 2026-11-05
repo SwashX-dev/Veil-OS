@@ -11,7 +11,7 @@ DEBIAN_BRANCH="${WORK_ITEM}-Debian-${POINT_RELEASE_VERSION}"
 # Checkout a branch on which CI will run all tests
 git fetch origin
 git checkout -b "${DEBIAN_BRANCH}" origin/stable
-echo -e "[test]\nforce_all_tests = true" \
+printf "[test]\nforce_all_tests = true" \
     >"config/ci/per_branch/${DEBIAN_BRANCH}.toml"
 git add "config/ci/per_branch/${DEBIAN_BRANCH}.toml"
 git commit -m "Set this branch to run all tests"
