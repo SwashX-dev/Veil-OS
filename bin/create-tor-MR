@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -eu
+set -o pipefail
+
+TOR_WORK_ITEM="$1"
+TOR_VERSION="$2"
+
+TOR_BRANCH="${TOR_WORK_ITEM}-tor-${TOR_VERSION}"
+
+# Checkout a branch on which CI will run all tests
+git fetch origin
+git checkout -b "${TOR_BRANCH}" origin/stable
+printf "[test]\nforce_all_tests = true" \
+    >"config/ci/per_branch/${TOR_BRANCH}.toml"
+git add "config/ci/per_branch/${TOR_BRANCH}.toml"
+git commit -m "Set this branch to run all tests"
+
+# Update the `torproject` APT snapshot
+auto/scripts/apt-snapshots-serials freeze torproject
+git commit \
+    -m "Upgrade tor to ${TOR_VERSION:?}" \
+    config/APT_snapshots.d/torproject/serial
+
+# Bump the expiration date for the snapshot of the `torproject`
+# archive that the branch is using
+ssh reprepro-time-based-snapshots@incoming.deb.tails.net \
+    tails-bump-apt-snapshot-valid-until \
+    torproject \
+    "$(cat config/APT_snapshots.d/torproject/serial)" \
+    180
+
+# Push this new branch to our CI, creating a draft merge request
+git push \
+    -o merge_request.create \
+    -o merge_request.draft \
+    -o merge_request.title="Upgrade the Tor client to ${TOR_VERSION}" \
+    --set-upstream \
+    origin "${TOR_BRANCH:?}"
