@@ -77,7 +77,7 @@ upgrade as soon as possible.
 
 - Upgrade most other software, for example:
 
-  - *Audacity* from 2.1.2 to [2.2.2](https://wiki.audacityteam.org/wiki/Audacity_Versions#whatsnew)
+  - *Audacity* from 2.1.2 to 2.2.2
 
   - *GIMP* from 2.8.18 to [2.10.8](https://docs.gimp.org/2.10/en/gimp-introduction-whats-new.html)
 
