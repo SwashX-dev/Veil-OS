@@ -20,10 +20,6 @@ To open *Electrum*, choose
 To learn how to use *Electrum*, read the
 [*Electrum* documentation](https://electrum.readthedocs.io/).
 
-For an explanation of how Bitcoin works in simple terms, read
-[The In-Depth Guide to Bitcoin That Won’t Leave You
-Frustrated](https://www.vpnmentor.com/blog/ultimate-guide-bitcoin/).
-
 <div class="caution">
 
 <p>Bitcoin is <a href="https://bitcoin.org/en/faq#is-bitcoin-anonymous">not

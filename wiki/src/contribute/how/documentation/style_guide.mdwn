@@ -40,8 +40,8 @@ Related online resources
   should be short enough and bold mixes up with other GUI formatting.
 
 - [Wikipedia](https://en.wikipedia.org/) and
-  [Webopedia](http://www.webopedia.com),
-  [WhatIs](https://www.techtarget.com/whatis/) can be used as terminology websites
+  [Webopedia](http://www.webopedia.com)
+  can be used as terminology websites
   for technical terms.
 
 Style and usage
