@@ -145,7 +145,7 @@ This is recommended by
 ### `spec_store_bypass_disable=on`
 
 Unconditionally disable the Speculative Store Bypass (SSB) on affected 
-CPUs (see for example <https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/SpectreAndMeltdown/MitigationControls#CVE-2018-3639>).
+CPUs.
 
 The default is `prctl` which means that SSB is enabled by default and
 can be disabled by a process via `prctl`. That's the default because
