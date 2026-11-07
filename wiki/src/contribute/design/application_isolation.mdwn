@@ -394,8 +394,8 @@ Using rewrite rules to avoid modifying profiles
 -----------------------------------------------
 
 Other than alias rules, another option to avoid modifying profiles
-would be to use [rewrite
-rules](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#Alias_and_rewrite_rules).
+would be to use rewrite
+rules.
 They're basically the same as alias rules, except that it doesn't
 duplicate rules, so no conflicting rules are generated.
 

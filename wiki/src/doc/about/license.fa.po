@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-09-09 08:36+0000\n"
+"POT-Creation-Date: 2026-11-06 14:22+0000\n"
 "PO-Revision-Date: 2015-10-21 10:59+0000\n"
 "Last-Translator: sprint5 <translation5@451f.org>\n"
 "Language-Team: Persian <http://weblate.451f.org:8889/projects/tails/license/"
@@ -119,47 +119,47 @@ msgid "Copyright:"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Andreas Nilsson <nisses.mail@home.se>"
+msgid "2002-2008 Andreas Nilsson"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Hylke Bons <h.bons@student.rug.nl>"
+msgid "2002-2008 Hylke Bons"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Jakub Steiner <jimmac@novell.com>"
+msgid "2002-2008 Jakub Steiner"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Josef Vybíral <cornelius@vybiral.info>"
+msgid "2002-2008 Josef Vybíral"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Lapo Calamandrei <calamandrei@gmail.com>"
+msgid "2002-2008 Lapo Calamandrei"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Luca Ferretti <elle.uca@libero.it>"
+msgid "2002-2008 Luca Ferretti"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Ricardo González <rick@jinlabs.com>"
+msgid "2002-2008 Ricardo González"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Riccardo Buzzotta <raozuzu@yahoo.it>"
+msgid "2002-2008 Riccardo Buzzotta"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Rodney Dawes <dobey@novell.com>"
+msgid "2002-2008 Rodney Dawes"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Tuomas Kuosmanen <tigert@gimp.org>"
+msgid "2002-2008 Tuomas Kuosmanen"
 msgstr ""
 
 #. type: Bullet: '    - '
-msgid "2002-2008 Ulisse Perusin <uli.peru@gmail.com>"
+msgid "2002-2008 Ulisse Perusin"
 msgstr ""
 
 #. type: Bullet: '- '

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2025-10-02 09:34+0000\n"
+"POT-Creation-Date: 2026-11-06 14:22+0000\n"
 "PO-Revision-Date: 2024-05-05 10:51+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,13 +63,6 @@ msgstr ""
 msgid ""
 "To learn how to use *Electrum*, read the [*Electrum* documentation](https://"
 "electrum.readthedocs.io/)."
-msgstr ""
-
-#. type: Plain text
-msgid ""
-"For an explanation of how Bitcoin works in simple terms, read [The In-Depth "
-"Guide to Bitcoin That Won’t Leave You Frustrated](https://www.vpnmentor.com/"
-"blog/ultimate-guide-bitcoin/)."
 msgstr ""
 
 #. type: Plain text

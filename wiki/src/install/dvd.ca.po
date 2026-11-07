@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-03-18 09:17+0000\n"
+"POT-Creation-Date: 2026-11-06 14:22+0000\n"
 "PO-Revision-Date: 2026-04-06 12:18+0000\n"
 "Last-Translator: victor dargallo <victordargallo@disroot.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,39 +80,34 @@ msgstr "[[!inline pages=\"install/inc/steps/verify.inline.ca\" raw=\"yes\" sort=
 
 #. type: Plain text
 #, no-wrap
-msgid "<h1 class=\"step\">Continue installing or upgrading Tails</h1>\n"
-msgstr "<h1 class=\"step\">Continueu instal·lant o actualitzant Tails</h1>\n"
-
-#. type: Plain text
-msgid "For detailed instructions, refer to the Ubuntu documentation:"
-msgstr ""
-"Per obtenir instruccions detallades, consulteu la documentació d'Ubuntu:"
-
-#. type: Bullet: '- '
-msgid ""
-"[Burning from Windows](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Windows)"
-msgstr ""
-"[Enregistrar des de Windows](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Windows) (en anglès)"
-
-#. type: Bullet: '- '
-msgid ""
-"[Burning from Ubuntu](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Ubuntu)"
-msgstr ""
-"[Enregistrar des d'Ubuntu](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Ubuntu) (en anglès)"
-
-#. type: Bullet: '- '
-msgid ""
-"[Burning from macOS](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Mac_OS_X)"
-msgstr ""
-"[Enregistrar des de macOS](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Mac_OS_X) (en anglès)"
-
-#. type: Plain text
-#, no-wrap
 msgid "[[!inline pages=\"install/inc/steps/warnings.inline\" raw=\"yes\" sort=\"age\"]]\n"
 msgstr "[[!inline pages=\"install/inc/steps/warnings.inline.ca\" raw=\"yes\" sort=\"age\"]]\n"
+
+#, no-wrap
+#~ msgid "<h1 class=\"step\">Continue installing or upgrading Tails</h1>\n"
+#~ msgstr "<h1 class=\"step\">Continueu instal·lant o actualitzant Tails</h1>\n"
+
+#~ msgid "For detailed instructions, refer to the Ubuntu documentation:"
+#~ msgstr ""
+#~ "Per obtenir instruccions detallades, consulteu la documentació d'Ubuntu:"
+
+#~ msgid ""
+#~ "[Burning from Windows](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Windows)"
+#~ msgstr ""
+#~ "[Enregistrar des de Windows](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Windows) (en anglès)"
+
+#~ msgid ""
+#~ "[Burning from Ubuntu](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Ubuntu)"
+#~ msgstr ""
+#~ "[Enregistrar des d'Ubuntu](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Ubuntu) (en anglès)"
+
+#~ msgid ""
+#~ "[Burning from macOS](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Mac_OS_X)"
+#~ msgstr ""
+#~ "[Enregistrar des de macOS](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Mac_OS_X) (en anglès)"

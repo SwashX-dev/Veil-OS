@@ -39,17 +39,17 @@ Debian packages and is neither modified nor recompiled by Tails.
   - [[!tails_gitweb config/chroot_local-includes/usr/share/tails/persistent-storage/icons/tps-WelcomeScreen.png]]
   - license: GPL-2+
   - Copyright:
-    - 2002-2008 Andreas Nilsson <nisses.mail@home.se>
-    - 2002-2008 Hylke Bons <h.bons@student.rug.nl>
-    - 2002-2008 Jakub Steiner <jimmac@novell.com>
-    - 2002-2008 Josef Vybíral <cornelius@vybiral.info>
-    - 2002-2008 Lapo Calamandrei <calamandrei@gmail.com>
-    - 2002-2008 Luca Ferretti <elle.uca@libero.it>
-    - 2002-2008 Ricardo González <rick@jinlabs.com>
-    - 2002-2008 Riccardo Buzzotta <raozuzu@yahoo.it>
-    - 2002-2008 Rodney Dawes <dobey@novell.com>
-    - 2002-2008 Tuomas Kuosmanen <tigert@gimp.org>
-    - 2002-2008 Ulisse Perusin <uli.peru@gmail.com>
+    - 2002-2008 Andreas Nilsson
+    - 2002-2008 Hylke Bons
+    - 2002-2008 Jakub Steiner
+    - 2002-2008 Josef Vybíral
+    - 2002-2008 Lapo Calamandrei
+    - 2002-2008 Luca Ferretti
+    - 2002-2008 Ricardo González
+    - 2002-2008 Riccardo Buzzotta
+    - 2002-2008 Rodney Dawes
+    - 2002-2008 Tuomas Kuosmanen
+    - 2002-2008 Ulisse Perusin
 
 - Forge JS library
   - license: <details><summary>New BSD License (3-clause)</summary><pre>

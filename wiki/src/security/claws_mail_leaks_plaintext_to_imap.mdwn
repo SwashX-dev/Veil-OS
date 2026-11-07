@@ -66,9 +66,9 @@ protocol.
     better suited if you access emails from Tails only and store them in
     the persistent volume.
 
-To know more, see also this Yahoo! Help page on [comparing the
+To know more, see also this Yahoo! Help page on comparing the
 differences between POP and
-IMAP](https://help.yahoo.com/kb/mail-for-desktop/compare-differences-pop-imap-sln3769.html).
+IMAP.
 
 POP is not affected at all by this security problem. When using POP,
 only encrypted emails are sent to the server. So consider switching to

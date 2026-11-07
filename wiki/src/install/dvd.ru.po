@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: tails-l10n@boum.org\n"
-"POT-Creation-Date: 2026-03-18 09:17+0000\n"
+"POT-Creation-Date: 2026-11-06 14:22+0000\n"
 "PO-Revision-Date: 2024-04-30 13:48+0000\n"
 "Last-Translator: xin <xin@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,50 +82,41 @@ msgstr "[[!inline pages=\"install/inc/steps/verify.inline.ru\" raw=\"yes\" sort=
 
 #. type: Plain text
 #, no-wrap
-msgid "<h1 class=\"step\">Continue installing or upgrading Tails</h1>\n"
-msgstr ""
-
-#. type: Plain text
-msgid "For detailed instructions, refer to the Ubuntu documentation:"
-msgstr "Подробнее см. документацию по Ubuntu:"
-
-#. type: Bullet: '- '
-#, fuzzy
-#| msgid ""
-#| "[Burning from Windows](https://help.ubuntu.com/community/"
-#| "BurningIsoHowto#Burning_from_Windows)"
-msgid ""
-"[Burning from Windows](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Windows)"
-msgstr ""
-"[Запись из Windows](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Windows)"
-
-#. type: Bullet: '- '
-#, fuzzy
-#| msgid ""
-#| "[Burning from Ubuntu](https://help.ubuntu.com/community/"
-#| "BurningIsoHowto#Burning_from_Ubuntu)"
-msgid ""
-"[Burning from Ubuntu](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Ubuntu)"
-msgstr ""
-"[Запись из Ubuntu](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Ubuntu)"
-
-#. type: Bullet: '- '
-#, fuzzy
-#| msgid ""
-#| "[Burning from macOS](https://help.ubuntu.com/community/"
-#| "BurningIsoHowto#Burning_from_Mac_OS_X)"
-msgid ""
-"[Burning from macOS](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Mac_OS_X)"
-msgstr ""
-"[Запись из macOS](https://help.ubuntu.com/community/"
-"BurningIsoHowto#Burning_from_Mac_OS_X)"
-
-#. type: Plain text
-#, no-wrap
 msgid "[[!inline pages=\"install/inc/steps/warnings.inline\" raw=\"yes\" sort=\"age\"]]\n"
 msgstr "[[!inline pages=\"install/inc/steps/warnings.inline.ru\" raw=\"yes\" sort=\"age\"]]\n"
+
+#~ msgid "For detailed instructions, refer to the Ubuntu documentation:"
+#~ msgstr "Подробнее см. документацию по Ubuntu:"
+
+#, fuzzy
+#~| msgid ""
+#~| "[Burning from Windows](https://help.ubuntu.com/community/"
+#~| "BurningIsoHowto#Burning_from_Windows)"
+#~ msgid ""
+#~ "[Burning from Windows](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Windows)"
+#~ msgstr ""
+#~ "[Запись из Windows](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Windows)"
+
+#, fuzzy
+#~| msgid ""
+#~| "[Burning from Ubuntu](https://help.ubuntu.com/community/"
+#~| "BurningIsoHowto#Burning_from_Ubuntu)"
+#~ msgid ""
+#~ "[Burning from Ubuntu](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Ubuntu)"
+#~ msgstr ""
+#~ "[Запись из Ubuntu](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Ubuntu)"
+
+#, fuzzy
+#~| msgid ""
+#~| "[Burning from macOS](https://help.ubuntu.com/community/"
+#~| "BurningIsoHowto#Burning_from_Mac_OS_X)"
+#~ msgid ""
+#~ "[Burning from macOS](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Mac_OS_X)"
+#~ msgstr ""
+#~ "[Запись из macOS](https://help.ubuntu.com/community/"
+#~ "BurningIsoHowto#Burning_from_Mac_OS_X)"
