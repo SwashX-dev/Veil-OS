@@ -28,13 +28,14 @@
 # hugoalh <hugoalh@users.noreply.hosted.weblate.org>, 2026.
 # emma peel <emma.peel@riseup.net>, 2026.
 # Toomore Chiang <toomore0929@gmail.com>, 2026.
+# Toomore Chiang <toomore@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 12:25+0100\n"
-"PO-Revision-Date: 2026-10-07 04:51+0000\n"
-"Last-Translator: Toomore Chiang <toomore0929@gmail.com>\n"
+"POT-Creation-Date: 2026-11-10 13:38+0100\n"
+"PO-Revision-Date: 2026-11-09 04:51+0000\n"
+"Last-Translator: Toomore Chiang <toomore@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/tor/tails-gui/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -42,7 +43,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -945,12 +946,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "正在升級持久性存儲。這可能需要一段時間…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "解鎖永久性儲存出錯: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "升級永久性儲存時出錯: {}"
 
@@ -960,12 +959,10 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "無法啟動持久性儲存的某些功能：{features}。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "啟用永久性儲存時出錯: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "修復持久性儲存檔案系統時無法中止：{}"
 
@@ -2115,7 +2112,6 @@ msgstr "該功能的資料仍然保存。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "啟用功能 {} 時出錯"
 
@@ -2134,7 +2130,6 @@ msgstr "詳細說明"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "停用功能 {} 時出錯"
 
@@ -2143,7 +2138,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "停用該功能時發生錯誤。"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2159,12 +2153,10 @@ msgid "_Delete Data"
 msgstr "_刪除資料"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "在刪除功能的資料時發生錯誤：{}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "刪除功能 {} 的資料時發生錯誤。"
 
@@ -3216,7 +3208,7 @@ msgstr "啟用 Dotfiles"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:795
 msgid "Custom"
-msgstr "自定義"
+msgstr "自訂"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:814
 msgid ""
@@ -3782,8 +3774,8 @@ msgid ""
 "yet, if you connect from a public Wi-Fi network, or if you are in the "
 "Eastern Hemisphere."
 msgstr ""
-"只有在配置了 Tor 網橋後，Tails 才會連接到 Tor。 橋接器是秘密的 Tor 中繼，可以"
-"隱藏您正在連接到 Tor 的資訊。\n"
+"只有在配置了 Tor 橋接器後，Tails 才會連接到 Tor。 橋接器是秘密的 Tor 中繼，可"
+"以隱藏您正在連接到 Tor 的資訊。\n"
 "\n"
 "我們的團隊正在盡最大努力幫助您使用最謹慎類型的 Tor 橋接器連接到 Tor。\n"
 "\n"

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 12:25+0100\n"
+"POT-Creation-Date: 2026-11-10 13:38+0100\n"
 "PO-Revision-Date: 2026-09-22 05:51+0000\n"
 "Last-Translator: Rumi <jindostar-rumi@protonmail.com>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/tor/tails-gui/da/"
@@ -962,12 +962,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Oprettelse af dit vedvarende lager mislykkedes."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Krypteret _vedvarende lager"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Krypteret _vedvarende lager"
 
@@ -977,12 +977,12 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "Kunne ikke konfigurere dit vedvarende lager"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error activating Persistent Storage: {}"
 msgstr "Opret vedvarende lager"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Kunne ikke konfigurere dit vedvarende lager"
 
@@ -2166,7 +2166,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error activating feature {}"
 msgstr "Opret vedvarende lager"
 
@@ -2186,7 +2186,7 @@ msgstr "Detaljer"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error deactivating feature {}"
 msgstr "Opret vedvarende lager"
 
@@ -2196,7 +2196,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Opret vedvarende lager"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2210,12 +2209,10 @@ msgid "_Delete Data"
 msgstr "Slet"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 
