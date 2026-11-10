@@ -19,13 +19,13 @@ index c4cd95db84c531d9491770fd40634f85664e3829..0eb1cb8a9bc43a34cf9150bed6248828
    }
  
 diff -Naur a/localization/en-US/toolkit/global/tor-browser.ftl b/localization/en-US/toolkit/global/tor-browser.ftl
---- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-10-29 10:50:05.775259121 +0100
-+++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-10-29 10:50:05.779259115 +0100
+--- a/localization/en-US/toolkit/global/tor-browser.ftl	2026-11-05 17:54:36.850695744 +0100
++++ b/localization/en-US/toolkit/global/tor-browser.ftl	2026-11-05 17:54:36.850695744 +0100
 @@ -57,6 +57,11 @@
  tor-browser-home-message-testing = This is an unstable version of Tor Browser for testing new features. <a data-l10n-name="learn-more-link">Learn more</a>
  
  
-+tails-release-notes = You are running Tails 7.16. <a data-l10n-name="tails-release-notes-link">See what’s new</a>
++tails-release-notes = You are running Tails 7.17. <a data-l10n-name="tails-release-notes-link">See what’s new</a>
 +
 +tails-newsletter = Get the latest <a data-l10n-name="tails-newsletter-link">Tails news</a> or <a data-l10n-name="news-link">Tor news</a> straight to your inbox.
 +
