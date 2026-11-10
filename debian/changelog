@@ -1,8 +1,77 @@
 tails (7.17) UNRELEASED; urgency=medium
 
-  * Dummy entry for next release.
+  * Upgrade Linux to 6.12.116-1
 
- -- anonym <anonym@torproject.org>  Fri, 30 Oct 2026 09:41:08 +0100
+  * Upgrade to Tor Browser 16.0.1 based on Firefox ESR 153.7 (tails/tails!3428)
+
+    Closes issues:
+      - Upgrade to Tor Browser `$TOR_BROWSER_VERSION` based on Firefox ESR `153.7 `
+        (tails/tails#21900)
+
+    Commits:
+      - Fetch Tor Browser from our own archive
+      - Upgrade Tor Browser to 16.0.1-build1 (refs: tails#21900)
+      - CI: run all tests for 21900-tor-browser-16.0.1
+
+  * Tor Browser: refresh custom about:tor patches onto tor-
+    browser-153.6.0esr-16.0-1-build3 (tails/tails!3425)
+
+    Closes issues:
+      - Refresh `about:tor` patches for Tails 7.17 (tails/tails#21901)
+
+    Commits:
+      - Tor Browser: refresh custom about:tor patches onto tor-
+        browser-153.6.0esr-16.0-1-build3
+
+  * Upgrade the Tor client to 0.4.9.16 (tails/tails!3423)
+
+    Closes issues:
+      - Upgrade to tor 0.4.9.16 (tails/tails#21899)
+
+    Commits:
+      - Don't output "-e" in config file
+      - Fix config file syntax
+      - Streamline upgrading tor
+      - Upgrade tor to 0.4.9.16
+      - Set this branch to run all tests
+
+  * Give newly-patched Tor Browser files a stable mtime too (tails/tails!3415)
+
+    Closes issues:
+      - Tails images are not reproducible since the Tor Browser 16.0 MR was merged
+        (tails/tails#21882)
+
+    Commits:
+      - set the right mtime for files which we weren't changing earlier
+
+  * Bump debian APT snapshot to upgrade firmware-sof (tails/tails!3419)
+
+    Closes issues:
+      - needed-package-updates: firmware-sof 2026.09.1-1 → 2026.09.2-1
+        (tails/tails#21866)
+
+    Commits:
+      - Bump debian APT snapshot to upgrade firmware-sof
+
+  * Test suite: wait for Flatpak has fetched the appstream before saving snapshot
+    (tails/tails!3395)
+
+    Commits:
+      - Test suite: wait for Flatpak has fetched the appstream before saving snapshot
+      - Test suite: replace quote escaping that's not working with hideous quoting hack
+      - Test suite: allow running systemd_journal*() for other users
+
+  * Automate Debian point release updates (tails/tails!3391)
+
+    Closes issues:
+      - Regularly update tails-builder's APT snapshots (tails/tails#21839)
+
+    Commits:
+      - Don't use plausible looking but incorrect example inputs
+      - Don't reinvent this wheel
+      - Automate Debian point release updates
+
+ -- Tails developers <foundations@tails.net>  Tue, 10 Nov 2026 13:11:19 +0000
 
 tails (7.16) unstable; urgency=medium
 
