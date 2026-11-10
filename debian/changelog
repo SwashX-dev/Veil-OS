@@ -1,4 +1,4 @@
-tails (7.17) UNRELEASED; urgency=medium
+tails (7.17) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.116-1
 
@@ -71,7 +71,7 @@ tails (7.17) UNRELEASED; urgency=medium
       - Don't reinvent this wheel
       - Automate Debian point release updates
 
- -- Tails developers <foundations@tails.net>  Tue, 10 Nov 2026 13:11:19 +0000
+ -- Tails developers <foundations@tails.net>  Tue, 10 Nov 2026 15:22:35 +0100
 
 tails (7.16) unstable; urgency=medium
 
