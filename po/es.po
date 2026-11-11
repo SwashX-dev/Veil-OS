@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 12:25+0100\n"
+"POT-Creation-Date: 2026-11-10 13:38+0100\n"
 "PO-Revision-Date: 2026-10-09 16:51+0000\n"
 "Last-Translator: eulalio <eulalio@disroot.org>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/tor/tails-gui/es/"
@@ -1020,12 +1020,10 @@ msgstr ""
 "Actualizando el almacenamiento persistente. Esto puede tomar un tiempo…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Error al desbloquear Almacenamiento Persistente: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Error al actualizar el Almacenamiento Persistente: {}"
 
@@ -1037,12 +1035,10 @@ msgstr ""
 "Persistente: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Error al activar Almacenamiento Persistente: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "No se pudo abortar al reparar el sistema de archivos de almacenamiento "
@@ -2255,7 +2251,6 @@ msgstr "Los datos de esta funcionalidad todavía están guardados."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Se ha producido un error activando la función {}"
 
@@ -2274,7 +2269,6 @@ msgstr "Detalles"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Se ha producido un error desactivando la función {}"
 
@@ -2283,7 +2277,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Se produjo un error al desactivar la función."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2301,12 +2294,10 @@ msgid "_Delete Data"
 msgstr "_Eliminar los datos"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Error al borrar los datos de la función {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Se produjo un error al eliminar los datos de la característica {} ."
 

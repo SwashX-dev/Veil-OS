@@ -31,8 +31,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 12:25+0100\n"
-"PO-Revision-Date: 2026-10-28 13:51+0000\n"
+"POT-Creation-Date: 2026-11-10 13:38+0100\n"
+"PO-Revision-Date: 2026-11-04 11:51+0000\n"
 "Last-Translator: d0r1t0s-NuanceCollective <d0r1t0s-"
 "nuancecollective@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/tor/tails-gui/"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.11.dev0\n"
+"X-Generator: Weblate 2026.11.1.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -996,12 +996,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Meningkatkan Penyimpanan Persisten. Ini mungkin memerlukan waktu…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Kesalahan membuka kunci Penyimpanan Persisten: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Kesalahan meningkatkan Penyimpanan Persisten: {}"
 
@@ -1011,12 +1009,10 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "Gagal mengaktifkan beberapa fitur Penyimpanan Persisten: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Kesalahan mengaktifkan Penyimpanan Persisten: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "Gagal membatalkan saat memperbaiki sistem berkas Penyimpanan Persisten: {}"
@@ -1245,7 +1241,7 @@ msgstr "Instalasi Tails gagal!"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:341
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:1
 msgid "Tails Cloner"
-msgstr "Installer untuk Tails"
+msgstr "Tails Cloner"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/gui.py:393
 #: ../config/chroot_local-includes/usr/share/tails-installer/tails-installer.ui.in:164
@@ -1616,7 +1612,6 @@ msgstr "Kunci Layar"
 
 #: config/chroot_local-includes/usr/local/bin/tails-about:27
 #: ../config/chroot_local-includes/usr/share/desktop-directories/Tails.directory.in.h:1
-#, fuzzy
 msgid "Tails"
 msgstr "Tails"
 
@@ -2224,7 +2219,6 @@ msgstr "Data fitur ini masih tersimpan."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Kesalahan mengaktifkan fitur {}"
 
@@ -2243,7 +2237,6 @@ msgstr "Rincian"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Kesalahan menonaktifkan fitur {}"
 
@@ -2252,7 +2245,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Terjadi kesalahan saat menonaktifkan fitur."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2269,12 +2261,10 @@ msgid "_Delete Data"
 msgstr "_Hapus Data"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Kesalahan menghapus data fitur {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Terjadi kesalahan saat menghapus data fitur {}."
 
@@ -2672,7 +2662,7 @@ msgstr ""
 #: ../config/chroot_local-includes/usr/share/applications/unsafe-browser.desktop.in.h:1
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:498
 msgid "Unsafe Browser"
-msgstr "Unsafe Browser"
+msgstr "Peramban Tidak Aman"
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:100
 msgid ""

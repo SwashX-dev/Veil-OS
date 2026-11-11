@@ -48,7 +48,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 12:25+0100\n"
+"POT-Creation-Date: 2026-11-10 13:38+0100\n"
 "PO-Revision-Date: 2026-09-21 07:51+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/tor/tails-gui/fa/"
@@ -1019,12 +1019,11 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "درحال ارتقادادن ذخیره‌سازی ماندگار. ممکن است کمی زمان‌بر باشد…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "خطا در قفل‌گشایی ذخیره‌سازی ماندگار: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "ذخیره دائمی رمزگذاری شده: {}"
 
@@ -1034,12 +1033,12 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "فعال‌سازی برخی قابلیت‌های ذخیره‌سازی ماندگار ناموفق بود{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error activating Persistent Storage: {}"
 msgstr "ایجاد ذخیره‌سازی مداوم: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "عدم موفقیت در پیکربندی ذخیره‌ساز دائم"
 
@@ -2254,7 +2253,7 @@ msgstr "داده‌های این قابلیت همچنان ذخیره‌شده �
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error activating feature {}"
 msgstr "ایجاد ذخیره‌سازی مداوم: {}"
 
@@ -2273,7 +2272,7 @@ msgstr "جزئیات"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, fuzzy, python-brace-format
+#, fuzzy
 msgid "Error deactivating feature {}"
 msgstr "ایجاد ذخیره‌سازی مداوم: {}"
 
@@ -2282,7 +2281,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "هنگام غیرفعال‌سازی قابلیت، خطایی رخ داد."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2298,12 +2296,10 @@ msgid "_Delete Data"
 msgstr "_حذف داده‌ها"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "خطا در حذف داده‌های قابلیت {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "هنگام حذف داده‌های قابلیت {}، خطایی رخ داد."
 

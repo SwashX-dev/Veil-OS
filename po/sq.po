@@ -10,13 +10,14 @@
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # emma peel <emma.peel@riseup.net>, 2026.
 # Sergio Granadoz <granadozsergio42@gmail.com>, 2026.
+# Besnik Bleta <besnik_b@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 12:25+0100\n"
-"PO-Revision-Date: 2026-08-14 15:51+0000\n"
-"Last-Translator: emma peel <emma.peel@riseup.net>\n"
+"POT-Creation-Date: 2026-11-10 13:38+0100\n"
+"PO-Revision-Date: 2026-11-09 19:51+0000\n"
+"Last-Translator: Besnik Bleta <besnik_b@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Albanian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "sq/>\n"
 "Language: sq\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -985,12 +986,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Po përditësohet Depozitë e Qëndrueshme. Kjo mund zgjasë ca…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Gabim në shkyçje Depozite të Qëndrueshme: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Gabim në përmirësim Depozite të Qëndrueshme: {}"
 
@@ -1002,12 +1001,10 @@ msgstr ""
 "{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Gabim në aktivizim Depozite të Qëndrueshme: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "S’u arrit të ndërpritej, teksa riparohej sistemi i kartelave të Depozitës së "
@@ -1854,7 +1851,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:28
 msgid "Secure Boot Update Needed"
-msgstr ""
+msgstr "Lypset Përditësim Nisjeje të Siguruar"
 
 #: config/chroot_local-includes/usr/local/lib/tails-uefi-ca-notify-user:30
 msgid ""
@@ -1862,6 +1859,10 @@ msgid ""
 "Apply all available updates from your regular operating system to update to "
 "the latest Secure Boot certificates of Microsoft."
 msgstr ""
+"Në njëfarë pike në të ardhmen, Tails s’do të niset më në këtë kompjuter. Që "
+"të përditësohet me dëshmitë më të reja Microsoft për Nisje të Siguruar, "
+"aplikoni krejt përditësimet e gatshme që nga sistemi juaj i rregullt "
+"operativ."
 
 #: config/chroot_local-includes/usr/local/bin/tails-upgrade-frontend-wrapper:37
 #, python-brace-format
@@ -2221,7 +2222,6 @@ msgstr "Të dhënat e kësaj veçorie janë ende të ruajtura."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Gabim gjatë aktivizimit të veçorisë {}"
 
@@ -2240,7 +2240,6 @@ msgstr "Hollësi"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Gabim gjatë çaktivizimit të veçorisë {}"
 
@@ -2249,7 +2248,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Ndodhi një gabim gjatë çaktivizimit të veçorisë."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2267,12 +2265,10 @@ msgid "_Delete Data"
 msgstr "_Fshini të Dhëna"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Gabim në fshirje të dhënash veçorie {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Ndodhi një gabim në fshirjen e të dhënave veçorie {}."
 
@@ -3443,7 +3439,6 @@ msgid "_Create Persistent Storage"
 msgstr "_Krijo Depozitë të Qëndrueshme"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:56
-#, fuzzy
 msgid ""
 "Everything you do disappears automatically when you shut down Tails.\n"
 "\n"
@@ -3468,8 +3463,8 @@ msgstr ""
 "• Faqerojtësit e shfletuesit tuaj\n"
 "• …\n"
 "\n"
-"<a href=\"doc/persistence_storage\">Mësoni më tepër mbi Depon e Qëndrueshme</"
-"a>"
+"<a href=\"doc/persistence_storage\">Mësoni më tepër mbi Depon e Qëndrueshme."
+"</a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/welcome_view.ui.in:93
 msgid ""
@@ -3691,9 +3686,8 @@ msgid "None"
 msgstr "Asnjë"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:242
-#, fuzzy
 msgid "Ask for a bridge based on your _region"
-msgstr "Kërkoni një urë Tor bazuar në _rajonin tuaj"
+msgstr "Kërkoni një urë bazuar në _rajonin tuaj"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
 msgid "_Ask for a bridge by email"
@@ -4205,772 +4199,3 @@ msgstr "Dhjetor"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "Sahat"
-
-#~ msgid "Suspend"
-#~ msgstr "Pezulloje"
-
-#~ msgid "Restart"
-#~ msgstr "Rinise"
-
-#~ msgid "Power Off"
-#~ msgstr "Fike"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "Adresë ure e keqformuar"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "Është e nevojshme ujdisja e një ure, nëse doni të fshihni faktin se po "
-#~ "përdorni Tor-in"
-
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "Që të merrni një urë, dërgoni një email të zbrazët te "
-#~ "<tt>bridges@torproject.org</tt>, që nga një adresë email Gmail ose Riseup "
-#~ "me telefonin tuaj dhe skanoni kodin QR që i bashkëngjitet përgjigjes së "
-#~ "automatizuar."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "Skanoni Kod QR"
-
-#~ msgid "Documentation"
-#~ msgstr "Dokumentim"
-
-#, fuzzy
-#~| msgid ""
-#~| "Opens a terminal as the root user, using gksu to ask for the password"
-#~ msgid "Opens a console as the root user"
-#~ msgstr ""
-#~ "Hap një terminal si përdoruesi rrënjë, duke përdorur gksu për të pyetur "
-#~ "për fjalëkalimin"
-
-#, fuzzy
-#~| msgid "To start a Root Terminal, you need to authenticate."
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr "Që të nisni Terminal Rrënje, lypset të bëni mirëfilltësimin."
-
-#~ msgid "_Network Connection"
-#~ msgstr "Lidhje Në _Rrjet"
-
-#~ msgid "Obsolete"
-#~ msgstr "E vjetruar"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "Lypset të migroni kyçet tuaj OpenPGP"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i> 78 tani zëvendëson zgjerimin <i>Enigmail</i> me "
-#~ "mekanizëm të brendshëm për fshehtëzim OpenPGP. Që të vazhdoni të përdorni "
-#~ "kyçet tuaj OpenPGP në <i>Thunderbird</i>, ndiqni udhëzimet tona të "
-#~ "migrimit."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "Udhëzime Migrimi _OpenPGP"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_Migrojini Më Vonë"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "E zëvendësuam këtë rregullim shtesë në Tails 4.19 (qershor 2021) me një "
-#~ "asistent Lidhjesh Tor të integruar në desktop.\n"
-#~ "\n"
-#~ "Do të pyeteni nëse doni të përdoren ura Tor, kur lidheni me Tor-in pas "
-#~ "nisjes së Tails-it.\n"
-#~ "\n"
-#~ " Nëse doni të punoni i palidhur, aktivizoni Mënyrën I Palidhur, te "
-#~ "rregullimet shtesë."
-
-#~ msgid "Technical details to include"
-#~ msgstr "Hollësi teknike për t’u përfshirë"
-
-#~ msgid "Root Terminal"
-#~ msgstr "Terminal Rrënje"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "obfs4 ..."
-#~ msgstr "obfs4 …"
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "Hap Mbikëqyrje Rrjeti"
-
-#, python-brace-format
-#~ msgid ""
-#~ "<b>Shape the future of Tails, today.</b>\n"
-#~ "\n"
-#~ "Contribute to <a href=\"{url}\">our ongoing fundraiser</a>!"
-#~ msgstr ""
-#~ "<b>Jepini formë të ardhmes së Tails-it, që sot.</b>\n"
-#~ "\n"
-#~ "Jepni kontribut te <a href=\"{url}\">mbledhja e fondeve për ne</a>!"
-
-#, python-brace-format
-#~ msgid ""
-#~ "<b>Your donations help us innovate and stay independent.</b>\n"
-#~ "\n"
-#~ "Support <a href=\"{url}\">our ongoing fundraiser</a>!"
-#~ msgstr ""
-#~ "<b>Dhurimet tuaja na ndihmojnë të prodhojmë risi dhe të mbesim të pavarur."
-#~ "</b>\n"
-#~ "\n"
-#~ "Mbështetn <a href=\"{url}\">mbledhjen e fondeve për ne</a>!"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "Për të dhëna diagnostikimi, ekzekutoni urdhrin vijues: sudo tails-"
-#~ "debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Qarqe Onion të Hapët"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "Po niset Shfletuesi i Pasigurt…"
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "Kjo mund zgjasë ca, ndaj, ju lutemi, bëni durim."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Rikthe Lidhjen Tor te Parazgjedhjet"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "Gabim teksa përditësohej kyçi i nënshkrimeve"
-
-#~ msgid ""
-#~ "Something went wrong when starting your Tails USB stick for the first "
-#~ "time: resizing the system partition failed"
-#~ msgstr ""
-#~ "Diç shkoi ters, teksa nisej diskthi juaj USB Tails për herë të parë: "
-#~ "dështoi ripërmasimi i pjesës së sistemit"
-
-#~ msgid ""
-#~ "It will be impossible to create a Persistent Storage or apply automatic "
-#~ "upgrades."
-#~ msgstr ""
-#~ "Do të jetë e pamundur të krijohet një Depozitë e Qëndrueshme, ose të "
-#~ "aplikohen përmirësime të automatizuara."
-
-#~ msgid ""
-#~ "Try to follow our instructions on <a href=\"%INSTALLPAGE%\">installing "
-#~ "Tails on a USB stick</a> again or use a different USB stick."
-#~ msgstr ""
-#~ "Provoni të ndiqni udhëzimet tona mbi <a href=\"%INSTALLPAGE%\">instalimin "
-#~ "e Tails-it në një diskth USB</a>sërish, ose përdorni një diskth USB "
-#~ "tjetër."
-
-#~ msgid ""
-#~ "If you have already tried this, please send us an error report to help us "
-#~ "solve this issue."
-#~ msgstr ""
-#~ "Nëse e keni provuar këtë tashmë, dërgonani një njoftim gabimi, për të na "
-#~ "ndihmuar ta zgjidhim këtë problem."
-
-#~ msgid ""
-#~ "Tails protects your wallet.\n"
-#~ "\n"
-#~ "Help us keep your bitcoins safe!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">How we spend our money.</a>"
-#~ msgstr ""
-#~ "Tails mbron kuletën tuaj.\n"
-#~ "\n"
-#~ "Ndihmonani t’i mbajmë të parrezik bitkoinët tuaj!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">Si i shpenzojmë paratë.</a>"
-
-#~ msgid "Create Backup"
-#~ msgstr "Krijo Kopjeruajtje"
-
-#, sh-format
-#~ msgid ""
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "Mund të parapëlqenit të rinisni Tails-in dhe të çaktivizoni anonimizim "
-#~ "adresash MAC."
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Njoftimi i të metës s’u dërgua dot, me gjasë për shkak problemesh rrjeti. "
-#~ "Ju lutemi, provoni të rilidheni me rrjetin dhe të riklikoni “Dërgo”.\n"
-#~ "\n"
-#~ "Nëse kjo s’bën punë, do t’ju ofrohet që ta ruani njoftimin e të metës."
-
-#, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "S’arrihet të ruhet %s."
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "Njoftimi i të metës s’u dërgua dot, me gjasë për shkak problemesh "
-#~ "rrjeti.\n"
-#~ "\n"
-#~ "Si një zgjidhje e përkohshme, mund ta ruani njoftimin e të metës në një "
-#~ "kartelë në një diskth USB dhe të provoni të na e dërgoni te %s, prej "
-#~ "llogarisë tuaj email, duke përdorur një tjetër sistem. Kini parasysh se, "
-#~ "kur bëni kështu, njoftimi juaj i të metës s’do të jetë anonim, veç në "
-#~ "ndërmarrshi ju vetë hapa të mëtejshëm (p.sh., duke përdorur Tor-in me një "
-#~ "llogari email njëpërdorimshe).\n"
-#~ "\n"
-#~ "Doni të ruhet te një kartelë njoftimi i të metës?"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "Me këtë frazëkalim nuk shkyçet dot depozitë e fshehtëzuar."
-
-#~ msgid "_Passphrase"
-#~ msgstr "_Frazëkalim"
-
-#~ msgid "Resizing System Partition Failed"
-#~ msgstr "Ripërmasimi i Pjesës së Sistemit Dështoi"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "S’u arrit të formësohej chroot-i."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "S’u arri të formësohej shfletuesi."
-
-#, sh-format
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "Anonimizimi i adresës MAC dështoi për kartën e rrjetit ${nic_name} "
-#~ "(${nic}), ndaj është çaktivizuar përkohësisht.\n"
-#~ "\n"
-#~ "Mund të doni ta nisni Tails-in dhe të çaktivizoni anonimizim adresash MAC."
-
-#~ msgid "Language & Region"
-#~ msgstr "Gjuhë & Zonë"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "Disa pjesë të pajisjes së synuar %(device)s janë të montuara. Ato do të "
-#~ "çmontohen, përpara se të nisë procesi i instalimit."
-
-#, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "Po jepet unmount_device për “%(device)s”"
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "Po çmontohen sisteme kartelash të montuar te “%(device)s”"
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "Po çmontohet “%(udi)s” te “%(device)s”"
-
-#~ msgid "Report an Error"
-#~ msgstr "Raportoni një Gabim"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "Keni aktivizuar Mënyrën “I palidhur” te Skena e Mirëseardhjes."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr ""
-#~ "Është e pamundur të lidhet me Tor-in, teksa gjendet nën Mënyrën “I "
-#~ "palidhur”."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "Që të lidhet me Tor-in dhe Internetin, riniseni Tails-in pa Mënyrën “I "
-#~ "palidhur”."
-
-#~ msgid "Lock screen"
-#~ msgstr "Kyçe ekranin"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Të dhëna montimi:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "jo i passhëm"
-
-#, fuzzy
-#~| msgid ""
-#~| "Tails needs donations to keep everybody free and safe online.\n"
-#~| "\n"
-#~| "Every bit helps in our fight against surveillance and censorship!\n"
-#~| "\n"
-#~| "<a href=\"file:///usr/share/doc/tails/website/"
-#~| "donate.en.html#expenses\">How we spend our money.</a>"
-#~ msgid ""
-#~ "Our annual fundraiser is live!\n"
-#~ "\n"
-#~ "Keep everybody free and safe online with a gift to Tails.\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/donate.en.html\">Why donate "
-#~ "to Tails?</a>"
-#~ msgstr ""
-#~ "Tails ka nevojë për dhurime, që të mbajë këdo të lirë dhe të parrezik në "
-#~ "internet.\n"
-#~ "\n"
-#~ "Çdo thërrime ndihmon në betejën tonë kundër survejimit dhe censurimit!\n"
-#~ "\n"
-#~ "<a href=\"file:///usr/share/doc/tails/website/"
-#~ "donate.en.html#expenses\">Si i shpenzojmë paratë.</a>"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "Emër i software-it të prekur"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "Hapa të përpiktë për riprodhimin e gabimit"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "Përfundimi faktik dhe përshkrimi i gabimit"
-
-#~ msgid "Desired result"
-#~ msgstr "Përfundimi i dëshiruar"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "Dërgoni përshtypje me një email të fshehtëzuar."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr "Të drejta kopjimi © 2009-2018 Zhilluesit e Tails (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Zhvilluesit e Tails <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "kredite përkthyesi"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "Të drejta kopjimi © 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack - Dërgoni përshtypje përmes një email-i të fshehtëzuar\n"
-#~ "Të drejta kopjimi (C) 2009-2018 Zhvilluesit e Tails <tails@boum.org>\n"
-#~ "\n"
-#~ "Ky program është software i lirë; mund ta rishpërndani dhe/ose ndryshoni\n"
-#~ "sipas kushteve të licencës GNU General Public  License, siç botohet nga\n"
-#~ "the Free Software Foundation; ose versioni 3 i Licencës, ose (në "
-#~ "dëshirën\n"
-#~ "tuaj) çfarëdo versioni të mëvonshëm.\n"
-#~ "\n"
-#~ "Ky program shpërndahet me shpresën se do të jetë i dobishëm, por\n"
-#~ "PA ASNJË GARANCI;   pas as garancinë e nënkuptuar për\n"
-#~ "TREGTUESHMËRI  apo TË QENËT I PËRSHTATSHËM PËR NJË QËLLIM TË CAKTUAR.\n"
-#~ "Për më tepër hollësi, shihni GNU General Public License.\n"
-#~ "\n"
-#~ "Duhet të keni marrë një kopje të licencës GNU General Public License\n"
-#~ "tok me këtë program.  Nëse jo, shihni <http://www.gnu.org/licenses/>.\n"
-
-#~ msgid "Help:"
-#~ msgstr "Ndihmë:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "Adresë email (nëse doni një përgjigje nga ne)"
-
-#~ msgid "Unlock"
-#~ msgstr "Shkyçe"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "Depozitë e _Qëndrueshme e Fshehtëzuar"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr "Që të shkyçet depozita e qëndrueshme, jepni frazëkalimin tuaj"
-
-#~ msgid "_Delete..."
-#~ msgstr "_Fshije…"
-
-#~ msgid "_Change Passphrase..."
-#~ msgstr "_Ndryshoni Frazëkalimin…"
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>Ndihmonani të ndreqim të metën tuaj!</h1>\n"
-#~ "<p>Lexoni <a href=\"%s\">udhëzimet tona mbi raportim të metash</a>.</p>\n"
-#~ "<p><strong>Mos përfshini më shumë të dhëna personale se sa\n"
-#~ "duhet!</strong></p>\n"
-#~ "<h2>Rreth dhënies nesh të një adrese email</h2>\n"
-#~ "<p>\n"
-#~ "Dhënia nesh e një adrese email na lejon të lidheni me ju për të "
-#~ "qartësuar\n"
-#~ "problemin. Kjo është e nevojshme për shumicën e raporteve që marrim, "
-#~ "ngaqë\n"
-#~ "shumica e raporteve pa hollësi kontakti, janë pa dobi. Më anë tjetër, "
-#~ "kjo\n"
-#~ "gjë u jep një mundësi përgjuesve, bie fjala furnizuesit tuaj të "
-#~ "shërbimit\n"
-#~ "email apo Internet, të binden se po përdorni Tails.\n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>S’u gjet shërbyes shkarkimi.</b>\n"
-#~ "\n"
-#~ "Kjo s’duhej të ndodhte. Ju lutemi, njoftoni një të metë."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "Gabim teksa zgjidhej shërbyes shkarkimi"
-
-#, fuzzy
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "The Amnesic Incognito Live System"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "Të niset Shfletuesi i Pasigurt?"
-
-#~ msgid ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-#~ msgstr ""
-#~ "Shfletuesi Jo i Sigurt s’është anonim dhe sajtet që vizitoni mund të "
-#~ "shohin adresën tuaj të njëmendtë IP.\\n\\nPërdoreni Shfletuesin Jo të "
-#~ "Sigurt vetëm për të bërë hyrjen te një rrjet, mandej mbylleni."
-
-#~ msgid "Enabled"
-#~ msgstr "E aktivizuar"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist dështoi me kod përgjigjeje {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cryptsetup dështoi me kod përgjigjeje {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist dështoi me kod përgjigjeje {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "umount dështoi me kod përgjigjeje {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr "Ndihmës instalimi të përhershëm - Krijim vëllimi të qëndrueshëm"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "A {size} persistent volume will be created on the <b>{vendor} {model}</b> "
-#~ "device. Data on this volume will be stored in an encrypted form protected "
-#~ "by a passphrase."
-#~ msgstr ""
-#~ "Te pajisja<b> {vendor} {model}</b> do të krijohet një vëllim i "
-#~ "qëndrueshëm prej {size}. Të dhënat në këtë vëllim do të depozitohen në "
-#~ "një formë të fshehtëzuar të mbrojtur me një frazëkalim."
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>Kujdes!</b> Përdorimi i depozitave të qëndrueshme ka pasoja që duhen "
-#~ "kuptuar mirë. Tails s’mund t’ju ndihmojë, nëse i përdorni gabim! Për të "
-#~ "mësuar më tepër, shihni faqen <i>Encrypted persistence</i> të "
-#~ "dokumentimit të Tails."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "Frazëkalimi s’mund të jetë i zbrazët"
-
-#~ msgid "Failed"
-#~ msgstr "Dështoi"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Po montohet ndarje Tails e qëndrueshme."
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "Ndarja Tails e qëndrueshme do të montohet."
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "Lejet e vëllimit të qëndrueshëm do të ndreqen."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "Krijim formësimi parazgjedhje qëndrueshmërie."
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "Formësimi parazgjedhje për qëndrueshmërinë do të krijohet."
-
-#~ msgid "Creating..."
-#~ msgstr "Po krijohet…"
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "Po krijohet vëllimi i qëndrueshëm…"
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "Ndihmës instalimi të përhershëm - Formësim vëllimi të qëndrueshëm"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "Përcaktoni kartelat që do të ruhen në vëllimin e qëndrueshëm"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The selected files will be stored in the encrypted partition {partition} "
-#~ "({size}), on the <b>{vendor} {model}</b> device."
-#~ msgstr ""
-#~ "Kartelat e përzgjedhura do të depozitohen në ndarjen e fshehtëzuar "
-#~ "{partition} ({size}), në pajisjen <b>{vendor} {model}</b>."
-
-#~ msgid "Saving..."
-#~ msgstr "Po ruhet…"
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "Po ruhet formësimi i qëndrueshmërisë…"
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "Ndihmës instalimi të përhershëm - Fshirje vëllimi të qëndrueshëm"
-
-#~ msgid "Your persistent data will be deleted."
-#~ msgstr "Të dhënat tuaja të qëndrueshme do të fshihen."
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "Vëllimi i qëndrueshëm {partition} ({size}), në pajisjen <b>{vendor} "
-#~ "{model} </b>, do të fshihet."
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "Po fshihet vëllimi i qëndrueshëm…"
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr " Mbaji kartelat të depozituara te drejtoria `Persistent'"
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "Rregullime gjuhe, fjalëkalimi administrimi dhe të tjera"
-
-#~ msgid "Save the last bridge that you used to connect to Tor"
-#~ msgstr "Ruani urën e fundit që përdorët për t’u lidhur në Tor"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Faqerojtës të ruajtur në Shfletuesin Tor"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "Formësim pajisjesh dhe lidhjesh rrjeti"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "Software i instaluar kur niset Tails"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Email-e Thunderbird, prurje dhe kyçe OpenPGP"
-
-#~ msgid "OpenPGP keys in GnuPG and Kleopatra"
-#~ msgstr "Kyçe OpenPGP në GnuPG dhe Kleopatra"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Klient Bitcoin"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Profile Pidgin dhe vargje kyçesh OTR"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "Kyçe, formësim dhe strehë të njohura SSH"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Ujdisni vëllim të qëndrueshëm Tails"
-
-#~ msgid "Device already has a persistent volume."
-#~ msgstr "Pajisja  ka tashmë një vëllim të qëndrueshëm."
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "Pajisja s’ka hapësirë të pazënë të mjaftueshme."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr "Pajisja s’ka vëllim të qëndrueshëm."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "S'mund të fshihet vëllimi i qëndrueshëm, kur është në përdorim. Duhet ta "
-#~ "rinisni Tails pa qëndrueshmëri."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "Vëllimi i qëndrueshëm nuk është shkyçur."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "Vëllimi i qëndrueshëm s’është montuar."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "Vëllimi i qëndrueshëm është i palexueshëm. Probleme me lejet ose "
-#~ "pronësinë?"
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "Vëllimi i qëndrueshëm s’është i shkrueshëm."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Tails po xhirohet që prej pajisjeje jo-USB / jo-SDIO."
-
-#~ msgid "Device is optical."
-#~ msgstr "Pajisja është optike."
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr ""
-#~ "Pajisja s’qe krijuar duke përdorur një pamje USB ose Instaluesin e Tails."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "Ndihmës instalimi të përhershëm - Përfundoi"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "Çfarëdo ndryshimesh që bëtë, do të hyjnë në fuqi pas rinisjes së Tails."
-
-#~ msgid "Tails is configuring your Persistent Storage. Please wait..."
-#~ msgstr "Tails po formëson Depozitën tuaj të Qëndrueshme. Ju lutemi, prisni…"
-
-#~ msgid ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."
-#~ msgstr ""
-#~ "Përdoreni Shfletuesin Jo të Sigurt vetëm për të bërë hyrjen në një rrjet, "
-#~ "mandej mbylleni.\\n\\n Shfletuesi Jo i Sigurt është i çaktivizuar, si "
-#~ "parazgjedhje, për siguri.\\n\\nQë të <a href='file:///usr/share/doc/tails/"
-#~ "website/doc/anonymous_internet/unsafe_browser.en.html#use'>përdorni "
-#~ "Shfletuesin Jo të Sigurt</a>, rinisni Tails dhe aktivizoni Shfletuesin Jo "
-#~ "të Sigurt te rregullimet shtesë të Skenës së Mirëseardhjes."
-
-#~ msgid ""
-#~ "\\n\\nTo always enable the Unsafe Browser, turn on the Welcome Screen "
-#~ "feature of the Persistent Storage."
-#~ msgstr ""
-#~ "\\n\\nPër ta aktivizuar përgjithmonë Shfletuesin Jo të Sigurt, "
-#~ "aktivizojeni te veçoria Depozitë e Qëndrueshme, te Skena e Mirëseardhjes."
-
-#~ msgid "Delete the persistent volume and its content"
-#~ msgstr "Fshi vëllimin e qëndrueshëm dhe lëndën e tij"
-
-#~ msgid "Configure persistent volume"
-#~ msgstr "Formësoni vëllim të qëndrueshëm"
-
-#~ msgid "image"
-#~ msgstr "figurë"
-
-#~ msgid "heading"
-#~ msgstr "krye"
-
-#~ msgid "_Request a new bridge"
-#~ msgstr "_Kërkoni një urë të re"
-
-#~ msgid ""
-#~ "To request new Tor bridges, you can also:\n"
-#~ "\n"
-#~ "            1. Send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address.\n"
-#~ "\n"
-#~ "              2. Type below one of the bridges that you received by email."
-#~ msgstr ""
-#~ "Që të kërkoni ura të reja Tor, mundeni edhe të:\n"
-#~ "\n"
-#~ "            1. Dërgoni një email të zbrazët te bridges@torproject.org që "
-#~ "nga një adresë email Gmail ose Riseup.\n"
-#~ "\n"
-#~ "              2. Të shtypni më poshtë një nga urat që morët me email."

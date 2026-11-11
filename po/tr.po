@@ -39,13 +39,15 @@
 # o <dumanyasirmete@gmail.com>, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # Kaya Zeren <kayazeren@users.noreply.hosted.weblate.org>, 2026.
+# Kaya ZEREN <aykiri-nuancecollective@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 12:25+0100\n"
-"PO-Revision-Date: 2026-10-28 17:51+0000\n"
-"Last-Translator: Kaya Zeren <kayazeren@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2026-11-10 13:38+0100\n"
+"PO-Revision-Date: 2026-11-06 06:51+0000\n"
+"Last-Translator: Kaya ZEREN <aykiri-"
+"nuancecollective@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/tor/tails-gui/tr/"
 ">\n"
 "Language: tr\n"
@@ -53,7 +55,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.11.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -415,9 +417,8 @@ msgid ""
 msgstr ""
 "<b>İmzalama anahtarı güncellenirken bir sorun çıktı.</b>\\n\\n\\<b>Bu durum "
 "sitemizde bir güncelleme olup olmadığının belirlenmesini engeller.</"
-"b>\\n\\nGüncellemeleri denetlemek için ağ bağlantınızı gözden geçirin ve "
-"Tails sistemini yeniden başlatın.\\n\\nSorun sürerse el ile güncellemeyi "
-"deneyin."
+"b>\\n\\nGüncellemeleri denetlemek için ağ bağlantınızı denetleyin ve Tails "
+"sistemini yeniden başlatın.\\n\\nSorun sürerse el ile güncellemeyi deneyin."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:309
 msgid "Error while downloading the signing key"
@@ -769,7 +770,7 @@ msgstr "Çevrim dışı _kip"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:276
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:399
 msgid "Enable networking (default)"
-msgstr "Ağ kullanılsın (varsayılan)"
+msgstr "Ağ kullanılsın (öntanımlı)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:278
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:445
@@ -782,7 +783,7 @@ msgstr "_Unsafe  Browser"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:348
 msgid "Enabled (default)"
-msgstr "Etkinleştirilmiş (varsayılan)"
+msgstr "Etkinleştirilmiş (öntanımlı)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:350
 msgid "Disabled"
@@ -790,7 +791,7 @@ msgstr "Devre dışı"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:419
 msgid "On (default)"
-msgstr "Açık (varsayılan)"
+msgstr "Açık (öntanımlı)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:421
 msgid "On"
@@ -802,7 +803,7 @@ msgstr "Kapalı"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:425
 msgid "Off (default)"
-msgstr "Kapalı (varsayılan)"
+msgstr "Kapalı (öntanımlı)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:181
 msgid "Persistent Storage Still Locked"
@@ -1011,12 +1012,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Kalıcı depolama birimi yükseltiliyor. Bu işlem biraz zaman alabilir…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Kalıcı depolama biriminin kilidi açılırken sorun çıktı: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Kalıcı depolama birimi yükseltilirken sorun çıktı: {}"
 
@@ -1027,12 +1026,10 @@ msgstr ""
 "Kalıcı depolama biriminizin bazı özellikleri yapılandırılamadı: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Kalıcı depolama birimi etkinleştirilirken sorun çıktı: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Kalıcı depolama birimi dosya sistemi onarımı iptal edilemedi: {}"
 
@@ -2015,7 +2012,7 @@ msgstr "Köprü kullanmadan Tor bağlantısı kuruluyor…"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:781
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:813
 msgid "Connecting to Tor with default bridges…"
-msgstr "Varsayılan köprüler kullanılarak Tor bağlantısı kuruluyor…"
+msgstr "Öntanımlı köprüler kullanılarak Tor bağlantısı kuruluyor…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:789
 msgid "Connecting to Tor with a bridge based on your region…"
@@ -2238,7 +2235,6 @@ msgstr "Bu özelliğin verileri hala kayıtlı."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "{} özelliği etkinleştirilirken sorun çıktı"
 
@@ -2257,7 +2253,6 @@ msgstr "Ayrıntılar"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "{} özelliği etkisizleştirilirken sorun çıktı"
 
@@ -2266,7 +2261,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Özellik etkisizleştirilirken bir sorun çıktı."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2283,12 +2277,10 @@ msgid "_Delete Data"
 msgstr "_Verileri sil"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "{} özelliğinin verileri silinirken sorun çıktı"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "{} özelliğinin verileri silinirken bir sorun çıktı."
 
@@ -2814,7 +2806,7 @@ msgid ""
 "default. To run the Synaptic Package Manager, restart Tails and set up an "
 "administration password in the Welcome Screen."
 msgstr ""
-"Daha iyi güvenlik sağlamak için, Tails üzerinde varsayılan olarak herhangi "
+"Daha iyi güvenlik sağlamak için, Tails üzerinde öntanımlı olarak herhangi "
 "bir yönetim parolası ayarlanmaz. Synaptic paket yöneticisini çalıştırmak "
 "için Tails sistemini yeniden başlatın ve karşılama ekranından bir yönetim "
 "parolası ayarlayın."
@@ -2996,7 +2988,7 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:244
 msgid "Anonymize all MAC addresses (default)"
-msgstr "Tüm MAC adresleri anonimleştirilsin (varsayılan)"
+msgstr "Tüm MAC adresleri anonimleştirilsin (öntanımlı)"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:290
 msgid "Don't anonymize MAC addresses"
@@ -3038,7 +3030,7 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:560
 msgid "Enable the Unsafe Browser (default)"
-msgstr "Unsafe Browser kullanılsın (varsayılan)"
+msgstr "Unsafe Browser kullanılsın (öntanımlı)"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:606
 msgid "Disable the Unsafe Browser"
@@ -3058,7 +3050,7 @@ msgstr "Dil ve biçimler"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:167
 msgid "Default Settings"
-msgstr "Varsayılan ayarlar"
+msgstr "Öntanımlı ayarlar"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:217
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:238
@@ -3138,7 +3130,7 @@ msgid ""
 "The default settings are safe in most situations. To add a custom setting, "
 "press the \"+\" button below."
 msgstr ""
-"Çoğu durum için varsayılan ayarları kullanmak güvenlidir. Özel bir ayar "
+"Çoğu durum için öntanımlı ayarları kullanmak güvenlidir. Özel bir ayar "
 "eklemek için aşağıdaki \"+\" düğmesine tıklayın."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:877
@@ -3691,7 +3683,7 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:161
 msgid "Use a _default bridge"
-msgstr "_Varsayılan köprülerden biri kullanılsın"
+msgstr "Öntanımlı köprülerden _biri kullanılsın"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:184
 msgid "obfs4 (recommended)"
@@ -3781,15 +3773,15 @@ msgstr "Başka bir köprü yapılandırmayı deneyin."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:884
 msgid "Error connecting to Tor with default bridges"
-msgstr "Varsayılan köprüler ile Tor ağına bağlanırken bir sorun çıktı"
+msgstr "Öntanımlı köprüler ile Tor ağına bağlanırken bir sorun çıktı"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:900
 msgid "Your network is blocking access to Tor and the default bridges."
-msgstr "Ağınız Tor ağına ve varsayılan köprülere bağlanmanızı engelliyor."
+msgstr "Ağınız Tor ağına ve öntanımlı köprülere bağlanmanızı engelliyor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:916
 msgid "Bridge: <b>default bridges</b>"
-msgstr "Köprü: <b>Varsayılan köprüler</b>"
+msgstr "Köprü: <b>Öntanımlı köprüler</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:958
 msgid "Error connecting to Tor with bridges"

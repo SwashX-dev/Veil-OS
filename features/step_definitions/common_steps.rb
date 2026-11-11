@@ -1845,10 +1845,10 @@ end
 # In many cases this is superior to a naive "journalctl | grep", which
 # will find itself because tails-autotest-remote-shell logs the
 # commands its executes.
-def systemd_journal(message, options: [], matches: [], regexp: false)
+def systemd_journal(message, options: [], matches: [], regexp: false, user: nil)
   # Below we'll quote this string with apostrophes when passed to the
-  # shell, so let's escape: ' → \'
-  message.gsub!("'", "\\\\'")
+  # shell, so we apply this quoting trick to appease the shell.
+  message.gsub!("'", "'\"'\"'")
   # We avoid modifying the caller's data
   final_options = options.clone
   final_matches = matches.clone
@@ -1857,11 +1857,15 @@ def systemd_journal(message, options: [], matches: [], regexp: false)
   else
     final_matches.append("MESSAGE='#{message}'")
   end
+  # rubocop:disable Style/StringConcatenation
   $vm.execute(
-    'journalctl --boot --output=cat ' \
+    'journalctl --boot --output=cat ' + \
+    (user.nil? ? '--system ' : '--user ') + \
     "#{final_options.join(' ')} " \
-    "#{final_matches.join(' ')}"
+    "#{final_matches.join(' ')}",
+    user: user.nil? ? 'root' : user \
   ).stdout
+  # rubocop:enable Style/StringConcatenation
 end
 
 def systemd_journal_includes?(*args, **opts)

@@ -10,13 +10,14 @@
 # emma peel <emma.peel@riseup.net>, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2026.
+# Alan <alan.g12r@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 12:25+0100\n"
-"PO-Revision-Date: 2026-07-12 20:01+0000\n"
-"Last-Translator: Alan <georgianization@outlook.com>\n"
+"POT-Creation-Date: 2026-11-10 13:38+0100\n"
+"PO-Revision-Date: 2026-11-01 10:51+0000\n"
+"Last-Translator: Alan <alan.g12r@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/tor/tails-gui/"
 "ka/>\n"
 "Language: ka\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/additional_software.py:242
 #, python-brace-format
@@ -978,12 +979,10 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "ახლდება მუდმივი საცავი. გარკვეულ დროს გასტანს…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "შეცდომა მუდმივი საცავის გახსნისას: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "შეცდომა მუდმივი საცავის განახლებისას: {}"
 
@@ -995,12 +994,10 @@ msgstr ""
 "{features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "შეცდომა მუდმივი საცავის ამოქმედებისას: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "ვერ მოხერხდა მუდმივი მეხსიერების საფაილო სისტემის გასწორება: {}"
 
@@ -2205,7 +2202,6 @@ msgstr "ამ შესაძლებლობის მონაცემე�
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "შეცდომა შესაძლებლობის ამოქმედებისას {}"
 
@@ -2224,7 +2220,6 @@ msgstr "დეტალები"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "შეცდომა შესაძლებლობის გაუქმებისას {}"
 
@@ -2233,7 +2228,6 @@ msgid "An error occurred while deactivating the feature."
 msgstr "შეცდომა წარმოიშვა ამ შესაძლებლობის გაუქმებისას."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
-#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2250,12 +2244,10 @@ msgid "_Delete Data"
 msgstr "მონაცემების _წაშლა"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
-#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "შეცდომა მონაცემების წაშლისას შესაძლებლობისთვის {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
-#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "შეცდომა წარმოიშვა მონაცემების წაშლისას შესაძლებლობისთვის {}."
 
@@ -3342,7 +3334,7 @@ msgstr "Dotfiles-ის ამოქმედება"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:795
 msgid "Custom"
-msgstr "მითითებული"
+msgstr "მორგებული"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:814
 msgid ""
@@ -4168,692 +4160,3 @@ msgstr "დეკემბერი"
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:368
 msgid "Clock"
 msgstr "საათი"
-
-#~ msgid "Suspend"
-#~ msgstr "გადადება"
-
-#~ msgid "Restart"
-#~ msgstr "ხელახლა გაშვება"
-
-#~ msgid "Power Off"
-#~ msgstr "გათიშვა"
-
-#~ msgid "Bridge address malformed"
-#~ msgstr "ხიდის მისამართი გაუმართავია"
-
-#~ msgid ""
-#~ "Setting a bridge is needed if you want to hide that you are using Tor"
-#~ msgstr ""
-#~ "ხიდის გამართვა მაშინაა საჭირო, როცა გსურთ დამალოთ, რომ Tor-ით სარგებლობთ"
-
-#~ msgid ""
-#~ "To get a bridge, send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address with your phone and scan the QR code "
-#~ "that is attached to the automatic reply."
-#~ msgstr ""
-#~ "ახალი ხიდის მოთხოვნისთვის გაგზავნოთ ცარიელი წერილი ელფოსტაზე "
-#~ "<tt>bridges@torproject.org</tt> Gmail- ან Riseup-მისამართიდან ტელეფონის "
-#~ "გამოყენებით და წააკითხეთ ავტომატურ პასუხს თანდართული QR-კოდი."
-
-#~ msgid "Scan QR Code"
-#~ msgstr "QR-კოდის წაკითხვა"
-
-#~ msgid "Documentation"
-#~ msgstr "მასალები"
-
-#~ msgid ""
-#~ "Authentication is required to start a Root Console. Enter the "
-#~ "administration password that you set up in the Welcome Screen."
-#~ msgstr ""
-#~ "დამოწმებაა საჭირო, ძირეული ბრძანებების არე რომ გაიხსნას. მიუთითეთ "
-#~ "მმართველის პაროლი, საწყისი ეკრანიდან რომ დააყენეთ."
-
-#~ msgid ""
-#~ "For better security, no administration password is set up in Tails by "
-#~ "default. To start a Root Console, restart Tails and set up an "
-#~ "administration password in the Welcome Screen."
-#~ msgstr ""
-#~ "გაუმჯობესებული უსაფრთხოებისთვის ნაგულისხმევად მმართველის პაროლით არაა "
-#~ "Tails. ძირეული ბრძანებების არე რომ გაიხსნას, ხელახლა გაუშვით Tails და "
-#~ "დააყენეთ მმართველის პაროლი საწყისი ეკრანიდან."
-
-#~ msgid "Root Console"
-#~ msgstr "ძირეული ბრძანებები"
-
-#~ msgid "Opens a console as the root user"
-#~ msgstr "გახსნის ბრძანებების შესაყვანს ძირეული მომხმარებლით"
-
-#~ msgid "admin"
-#~ msgstr "ხელმძღვანელი"
-
-#~ msgid "To start a Root Console, you need to authenticate."
-#~ msgstr "ძირეული ბრძანებების გასაშვებად საჭირო იქნება დამოწმება."
-
-#~ msgid "_Network Connection"
-#~ msgstr "_ქსელთან კავშირი"
-
-#~ msgid "Obsolete"
-#~ msgstr "მოძველებული"
-
-#~ msgid "You need to migrate your OpenPGP keys"
-#~ msgstr "დაგჭირდებათ თქვენი OpenPGP-გასაღებების გადატანა"
-
-#~ msgid ""
-#~ "<i>Thunderbird</i> 78 now replaces the <i>Enigmail</i> extension with "
-#~ "built-in support for OpenPGP encryption. To continue using your OpenPGP "
-#~ "keys in <i>Thunderbird</i>, follow our migration instructions."
-#~ msgstr ""
-#~ "<i>Thunderbird</i> 78 ახლა უკვე ანაცვლებს გაფართოებას <i>Enigmail</i> "
-#~ "ჩაშენებული OpenPGP- დაშიფვრის მხარდაჭერით. თუ გსურთ განაგრძოთ OpenPGP-"
-#~ "გასაღებების გამოყენება <i>Thunderbird</i>-ში, მიჰყევით ჩვენს მითითებებს "
-#~ "გადასატანად."
-
-#~ msgid "_Open Migration Instructions"
-#~ msgstr "_გადატანის მითითებების გახსნა"
-
-#~ msgid "_Migrate Later"
-#~ msgstr "_გადატანა მოგვიანებით"
-
-#~ msgid ""
-#~ "We replaced this additional setting in Tails 4.19 (June 2021) with a Tor "
-#~ "Connection assistant integrated in the desktop.\n"
-#~ "\n"
-#~ "You will be asked whether you want to use Tor bridges when connecting to "
-#~ "Tor after starting Tails.\n"
-#~ "\n"
-#~ "If you want to work offline, enable the Offline Mode in the additional "
-#~ "settings."
-#~ msgstr ""
-#~ "დამატებითი პარამეტრები Tails 4.19 (ივნისი, 2021) გამოშვებაში ჩანაცვლდა "
-#~ "Tor-კავშირის მეგზურით, რომელიც ჩაშენებულია სამუშაო ეკრანზე\n"
-#~ "\n"
-#~ "თავად შეგეკითხებათ, გსურთ თუ არა Tor-ხიდების გამოყენება, როცა Tor-ს "
-#~ "დაუკავშირდებით Tails-ის გაშვების შემდგომ.\n"
-#~ "\n"
-#~ "თუ გსურთ კავშირის გარეშე მუშაობა, ჩართეთ კავშირგარეშე რეჟიმი, დამატებითი "
-#~ "პარამეტრებიდან."
-
-#~ msgid "Technical details to include"
-#~ msgstr "ტექნიკური მონაცემების დასართავად"
-
-#~ msgid "Root Terminal"
-#~ msgstr "ტერმინალი ძირეული უფლებებით"
-
-#~ msgid "meek"
-#~ msgstr "meek"
-
-#~ msgid "obfs4 ..."
-#~ msgstr "obfs4 ..."
-
-#~ msgid "Open Network Monitor"
-#~ msgstr "ქსელის შემმოწმებლის გახსნა"
-
-#~ msgid ""
-#~ "For debugging information, execute the following command: sudo tails-"
-#~ "debugging-info"
-#~ msgstr ""
-#~ "გამართვისთვის საჭირო ინფორმაციისთვის, გაუშვით შემდეგი ბრძანება: sudo "
-#~ "tails-debugging-info"
-
-#~ msgid "Open Onion Circuits"
-#~ msgstr "Onion-წრედების გახსნა"
-
-#~ msgid "Starting the Unsafe Browser..."
-#~ msgstr "ეშვება დაუცველი ბრაუზერი..."
-
-#~ msgid "This may take a while, so please be patient."
-#~ msgstr "შესაძლოა გარკვეულ ხანს გასტანოს, გთხოვთ მოითმინოთ."
-
-#~ msgid "Reset Tor Connection"
-#~ msgstr "Tor-კავშირების ჩამოყრა"
-
-#~ msgid "Error while updating the signing key"
-#~ msgstr "შეცდომა ხელმოწერის კოდის განახლებისას"
-
-#, fuzzy
-#~| msgid "Create"
-#~ msgid "Create Backup"
-#~ msgstr "შექმნა"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "The bug report could not be sent, likely due to network problems. Please "
-#~ "try to reconnect to the network and click send again.\n"
-#~ "\n"
-#~ "If it does not work, you will be offered to save the bug report."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "ხარვეზის მოხსენება ვერ ხერხდება, სავარაუდოდ ქსელთან პრობლემების გამო. "
-#~ "გთხოვთ სცადოთ ხელახლა დაკავშირება და დააწკაპოთ ხელახლა გაგზავნას.\n"
-#~ "\n"
-#~ "თუ არ იმუშავებს, შესაძლებლობა გექნებათ შეინახოთ ეს მოხსენება."
-
-#, fuzzy, python-format
-#~ msgid "Unable to save %s."
-#~ msgstr "%s ვერ ინახება"
-
-#, python-format
-#~ msgid ""
-#~ "The bug report could not be sent, likely due to network problems.\n"
-#~ "\n"
-#~ "As a work-around you can save the bug report as a file on a USB drive and "
-#~ "try to send it to us at %s from your email account using another system. "
-#~ "Note that your bug report will not be anonymous when doing so unless you "
-#~ "take further steps yourself (e.g. using Tor with a throw-away email "
-#~ "account).\n"
-#~ "\n"
-#~ "Do you want to save the bug report to a file?"
-#~ msgstr ""
-#~ "ხარვეზის მოხსენება ვერ გაიგზავნა, სავარაუდოდ ქსელის შეფერხებების გამო.\n"
-#~ "\n"
-#~ "სანაცვლოდ, შეგიძლიათ შეინახოთ მოხსენება ფაილის სახით USB-მეხსიერებაზე და "
-#~ "გამოგვიგზავნოთ %s ელფოსტაზე, სხვა სისტემიდან. გაითვალისწინეთ, რომ ასეთ "
-#~ "შემთხვევაში შესაძლოა თქვენი ვინაობა გამჟღავნდეს, თუ სათანადო ზომებს არ "
-#~ "მიიღებთ (მაგ. Tor-ით დროებითი ელფოსტის შექმნა).\n"
-#~ "\n"
-#~ "გსურთ მოხსენების შენახვა ფაილის სახით?"
-
-#~ msgid "Cannot unlock encrypted storage with this passphrase."
-#~ msgstr "დაშიფრული საცავის ამ პაროლით გახსნა ვერ ხერხდება."
-
-#, fuzzy
-#~ msgid "_Passphrase"
-#~ msgstr "პაროლი:"
-
-#~ msgid "Failed to setup chroot."
-#~ msgstr "ვერ ხერხდება chroot-ის გამართვა."
-
-#~ msgid "Failed to configure browser."
-#~ msgstr "ბრაუზერის გამართვა ვერ მოხერხდა."
-
-#, fuzzy, sh-format
-#~| msgid ""
-#~| "MAC address anonymization failed for network card ${nic_name} (${nic}) "
-#~| "so it is temporarily disabled.\n"
-#~| "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgid ""
-#~ "MAC address anonymization failed for network card ${nic_name} (${nic}) so "
-#~ "it is temporarily disabled.\n"
-#~ "\n"
-#~ "You might prefer to restart Tails and disable MAC address anonymization."
-#~ msgstr ""
-#~ "MAC-მისამართის გაუმხელობა ვერ მოხერხდა ქსელის დაფაზე ${nic_name} (${nic}) "
-#~ "ასე რომ, დროებით გათიშულია.\n"
-#~ "ალბათ უმჯობესია, ახლიდან გაუშვათ Tails და გათიშოთ MAC-მისამართის "
-#~ "გაუმხელობა."
-
-#~ msgid "Language & Region"
-#~ msgstr "ენა და რეგიონი"
-
-#, python-format
-#~ msgid ""
-#~ "Some partitions of the target device %(device)s are mounted. They will be "
-#~ "unmounted before starting the installation process."
-#~ msgstr ""
-#~ "მოცემული %(device)s მოწყობილობის მეხსიერების ზოგიერთი დანაყოფი "
-#~ "მიერთებულია. დაყენების დაწყებამდე მოხდება მათი გამოერთება."
-
-#, fuzzy, python-format
-#~ msgid "Entering unmount_device for \"%(device)s\""
-#~ msgstr "იხსნება მიუერთებელი მოწყობილობა – „%(device)s“"
-
-#, python-format
-#~ msgid "Unmounting mounted filesystems on \"%(device)s\""
-#~ msgstr "მიერთებლი საფაილო სისტემის გამოერთება – „%(device)s“"
-
-#, python-format
-#~ msgid "Unmounting \"%(udi)s\" on \"%(device)s\""
-#~ msgstr "„%(udi)s“ გამოერთდება მოწყობილობაზე „%(device)s“"
-
-#, fuzzy
-#~| msgid "Report an error"
-#~ msgid "Report an Error"
-#~ msgstr "შეცდომის მოხსენება"
-
-#~ msgid "You turned on Offline Mode in the Welcome Screen."
-#~ msgstr "თქვენ კავშირგარეშე რეჟიმი ჩართეთ, მისალმების ეკრანზე."
-
-#~ msgid "It is impossible to connect to Tor in Offline Mode."
-#~ msgstr "Tor-თან დაკავშირება შეუძლებელია კავშირგარეშე რეჟიმში."
-
-#~ msgid ""
-#~ "To connect to Tor and the Internet, restart Tails without Offline Mode."
-#~ msgstr ""
-#~ "Tor-თან და ინტერნეტთან კავშირისთვის, ხელახლა გაუშვით Tails კავშირგარეშე "
-#~ "რეჟიმის გარეშე."
-
-#~ msgid "Lock screen"
-#~ msgstr "ჩამკეტი ეკრანი"
-
-#, python-format
-#~ msgid ""
-#~ "Build information:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "ანაწყობის მონაცემები:\n"
-#~ "%s"
-
-#~ msgid "not available"
-#~ msgstr "არაა ხელმისაწვდომი"
-
-#~ msgid "Name of the affected software"
-#~ msgstr "ზემოქმედების ქვეშ მოქცეული პროგრამის დასახელება"
-
-#~ msgid "Exact steps to reproduce the error"
-#~ msgstr "ზუსტი ნაბიჯები შეცდომის წარმოსადგენად"
-
-#~ msgid "Actual result and description of the error"
-#~ msgstr "მოცემული შედეგი და შეცდომის აღწერა"
-
-#~ msgid "Desired result"
-#~ msgstr "სასურველი შედეგი"
-
-#~ msgid "Send feedback in an encrypted mail."
-#~ msgstr "გამოხმაურების გაგზავნა დაშიფრული ფოსტით."
-
-#~ msgid "Copyright © 2009-2018 Tails developers (tails@boum.org)"
-#~ msgstr ""
-#~ "ყველა უფლება დაცულია © 2009-2018 Tails-ის შემმუშავლებლები (tails@boum.org)"
-
-#~ msgid "Tails developers <tails@boum.org>"
-#~ msgstr "Tails-ის შემმუშავლებლები <tails@boum.org>"
-
-#~ msgid "translator-credits"
-#~ msgstr "თარგმნის-მონაწილეები"
-
-#~ msgid "Copyright © 2009-2018 tails@boum.org"
-#~ msgstr "ყველა უფლება დაცულია © 2009-2018 tails@boum.org"
-
-#~ msgid ""
-#~ "WhisperBack - Send feedback in an encrypted mail\n"
-#~ "Copyright (C) 2009-2018 Tails developers <tails@boum.org>\n"
-#~ "\n"
-#~ "This program is  free software; you can redistribute  it and/or modify\n"
-#~ "it under the  terms of the GNU General Public  License as published by\n"
-#~ "the Free Software Foundation; either  version 3 of the License, or (at\n"
-#~ "your option) any later version.\n"
-#~ "\n"
-#~ "This program  is distributed in the  hope that it will  be useful, but\n"
-#~ "WITHOUT   ANY  WARRANTY;   without  even   the  implied   warranty  of\n"
-#~ "MERCHANTABILITY  or FITNESS  FOR A  PARTICULAR PURPOSE.   See  the GNU\n"
-#~ "General Public License for more details.\n"
-#~ "\n"
-#~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-#~ msgstr ""
-#~ "WhisperBack - გამოხმაურების გაგზავნა დაშიფრული ფოსტით\n"
-#~ "ყველა უფლება დაცულია (C) 2009-2018 Tails-ის შემმუშავებლები "
-#~ "<tails@boum.org>\n"
-#~ "\n"
-#~ "ეს თავისუფალი პროგრამული უზრუნველყოფაა; შეგიძლიათ მისი გავრცელება და/ან "
-#~ "გარდაქმნა\n"
-#~ "GNU General Public-ის ლიცენზიით, დადგენილი Free Software Foundation-ის "
-#~ "მიერ; ლიცენზიის როგორც მე-3, აგრეთვე\n"
-#~ "(სურვილისამებრ) ნებისმიერი უფრო ახალი ვერსიით.\n"
-#~ "\n"
-#~ "ეს პროგრამა ვრცელდება იმ მიზნით, რომ სასარგებლო იქნება, თუმცა\n"
-#~ "პირობისა და შედეგებზე ყოველგვარი პასუხისმგებლობის გარეშე; \n"
-#~ "მათ შორის ნაგულისხმევი პირობისა და პასუხისმგებლობის გარეშე, რომ იქნება "
-#~ "ღირებული ან გამოსადეგი ცალკეული დანიშნულებისთვის.    იხილეთ GNU\n"
-#~ "General Public-ის ლიცენზია, დამატებით ინფორმაციისთვის.\n"
-#~ "\n"
-#~ "თქვენ ასევე გადმოგეცემათ ასლი GNU General Public-ის ლიცენზიის\n"
-#~ "პროგრამასთან ერთად. თუ ასე არაა, იხილეთ <http://www.gnu.org/licenses/>.\n"
-
-#~ msgid "Help:"
-#~ msgstr "დახმარება:"
-
-#~ msgid "Email address (if you want an answer from us)"
-#~ msgstr "ელფოსტის მისამართი (თუ გსურთ ჩვენგან პასუხის მიღება)"
-
-#~ msgid "Unlock"
-#~ msgstr "გახსნა"
-
-#~ msgid "Encrypted _Persistent Storage"
-#~ msgstr "დაშიფრული _მუდმივი მეხსიერება"
-
-#~ msgid "Enter your passphrase to unlock the persistent storage"
-#~ msgstr "შეიყვანეთ თქვენი პაროლი მუდმივი მეხიერების გასახსნელად"
-
-#, fuzzy
-#~ msgid "_Delete..."
-#~ msgstr "იშლება"
-
-#, fuzzy
-#~ msgid "_Change Passphrase..."
-#~ msgstr "პაროლის ჩვენება"
-
-#, python-format
-#~ msgid ""
-#~ "<h1>Help us fix your bug!</h1>\n"
-#~ "<p>Read <a href=\"%s\">our bug reporting instructions</a>.</p>\n"
-#~ "<p><strong>Do not include more personal information than\n"
-#~ "needed!</strong></p>\n"
-#~ "<h2>About giving us an email address</h2>\n"
-#~ "<p>\n"
-#~ "Giving us an email address allows us to contact you to clarify the "
-#~ "problem. This\n"
-#~ "is needed for the vast majority of the reports we receive as most "
-#~ "reports\n"
-#~ "without any contact information are useless. On the other hand it also "
-#~ "provides\n"
-#~ "an opportunity for eavesdroppers, like your email or Internet provider, "
-#~ "to\n"
-#~ "confirm that you are using Tails.\n"
-#~ "</p>\n"
-#~ msgstr ""
-#~ "<h1>დაგვეხმარეთ ხარვეზების აღმოფხვრაში!</h1>\n"
-#~ "<p>წაიკითხეთ<a href=\"%s\">ჩვენი მითითებები ხარვეზების მოხსენებაზე</a>.</"
-#~ "p>\n"
-#~ "<p><strong>მოხსენებას ნუ დაურთავთ ზედმეტ პირად ინფორმაციას!</strong></p>\n"
-#~ "<h2>ელსფოსტის მოწოდების თაობაზე</h2>\n"
-#~ "<p>\n"
-#~ "ელფოსტის მისამართის მოწოდებით, საშუალება მოგვეცემა დაგიკავშირდეთ\n"
-#~ "ხარვეზში უკეთ გასარკვევად. ეს საჭიროა უმეტეს შემთხვევაში ხარვეზების\n"
-#~ "მოხსენებისას, რადგან გამოხმაურების შესაძლებლობის გარეშე, ბევრი მოხსენება\n"
-#~ "უბრალოდ გამოუსადეგარია. მეორე მხრივ, არსებობს საფრთხეც, რომ შესაძლო\n"
-#~ "მიმყურადებლებს, მაგალითად თქვენი ელფოსტის ან ინტერნეტმომსახურების\n"
-#~ "მომწოდებლებს, შეეძლებათ დაადასტურონ, რომ ნამდვილად სარგებლობთ Tails-ით.\n"
-#~ "</p>\n"
-
-#~ msgid ""
-#~ "<b>Could not choose a download server.</b>\n"
-#~ "\n"
-#~ "This should not happen. Please report a bug."
-#~ msgstr ""
-#~ "<b>ვერ ხერხდება ჩამოტვირთვის სერვერის არჩევა.</b>\n"
-#~ "\n"
-#~ "წესით, ეს ასე არ უნდა მომხდარიყო. გთხოვთ, მოგვახსენოთ ხარვეზის შესახებ."
-
-#~ msgid "Error while choosing a download server"
-#~ msgstr "შეცდომა, ჩამოტვირთვის სერვერის არჩევისას"
-
-#~ msgid "The Amnesic Incognito Live System"
-#~ msgstr "ვინაობის დაფარვის და დავიწყების პირდაპირი სისტემა"
-
-#~ msgid "Launch the Unsafe Browser?"
-#~ msgstr "გაეშვას დაუცველი ბრაუზერი?"
-
-#~ msgid ""
-#~ "The Unsafe Browser is not anonymous and the websites that you visit can "
-#~ "see your real IP address.\\n\\nOnly use the Unsafe Browser to sign in to "
-#~ "a network, then close it."
-#~ msgstr ""
-#~ "დაუცველი ბრაუზერი არ ფარავს ვინაობას და საიტი, რომელსაც ეწვევით, იხილავს "
-#~ "თქვენს ნამდვილ IP-მისამართს.\\n\\nდაუცველი ბრაუზერი მხოლოდ ქსელში "
-#~ "შესასვლელად გამოიყენეთ, შემდეგ კი დახურეთ."
-
-#~ msgid "Enabled"
-#~ msgstr "ჩართული"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist არ მუშაობს, შეცდომის კოდია {returncode}:\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "cryptsetup failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "cryptsetup არ მუშაობს, შეცდომის კოდია {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "live-persist failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "live-persist არ მუშაობს, შეცდომის კოდია {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#, python-brace-format
-#~ msgid ""
-#~ "umount failed with return code {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-#~ msgstr ""
-#~ "umount არ მუშაობს, შეცდომის კოდია {returncode}:\n"
-#~ "{stdout}\n"
-#~ "{stderr}"
-
-#~ msgid "Persistence wizard - Persistent volume creation"
-#~ msgstr " მუდმივი საცავის შექმნის მეგზური"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "A {size} persistent volume will be created on the <b>{vendor} {model}</b> "
-#~ "device. Data on this volume will be stored in an encrypted form protected "
-#~ "by a passphrase."
-#~ msgstr ""
-#~ " {size} მუდმივი მეხსიერების დანაყოფი შეიქმნება <b>{vendor} {model}</b> "
-#~ "მოწყობილობაზე. მონაცემები ამ დანაყოფზე შეინახება დაშიფრულად პაროლის "
-#~ "მეშვეობით."
-
-#~ msgid ""
-#~ "<b>Beware!</b> Using persistence has consequences that must be well "
-#~ "understood. Tails can't help you if you use it wrong! See the "
-#~ "<i>Encrypted persistence</i> page of the Tails documentation to learn "
-#~ "more."
-#~ msgstr ""
-#~ "<b>გაითვალისწინეთ!</b> მუდმივი მეხსიერების საცავის გამოყენებას თან ახლავს "
-#~ "გარკვეული საკითხები, რომლებიც კარგად უნდა იყოს გააზრებული. Tails ვერ "
-#~ "დაგეხმარებათ, თუ მას არასწორად გამოიყენებთ! იხილეთ <i>მუდმივი მეხსიერების "
-#~ "დაშიფვრის</i> შესახებ გვერდი Tails-ის დამხმარე მასალებში, დაწვრილებითი "
-#~ "ინფორმაციისთვის."
-
-#~ msgid "Passphrase can't be empty"
-#~ msgstr "პაროლი ვერ იქნება ცარიელი"
-
-#~ msgid "Failed"
-#~ msgstr "ვერ მოხერხდა"
-
-#~ msgid "Mounting Tails persistence partition."
-#~ msgstr "Tails-ის მუდმივი საცავის მიერთება"
-
-#~ msgid "The Tails persistence partition will be mounted."
-#~ msgstr "Tails-ის მუდმივი საცავი იქნება მიერთებული."
-
-#~ msgid "The permissions of the persistent volume will be corrected."
-#~ msgstr "მუდმივი საცავის ნებართვები გაიმართება."
-
-#~ msgid "Creating default persistence configuration."
-#~ msgstr "იქმნება მუდმივი საცავის ნაგულისხმევი პარამეტრები."
-
-#~ msgid "The default persistence configuration will be created."
-#~ msgstr "მუდმივი საცავის ნაგულისხმევი პარამეტრები შეიქმნება."
-
-#~ msgid "Creating..."
-#~ msgstr "იქმნება..."
-
-#~ msgid "Creating the persistent volume..."
-#~ msgstr "იქმნება მუდმივი საცავი..."
-
-#~ msgid "Persistence wizard - Persistent volume configuration"
-#~ msgstr "მუდმივი საცავის გამართვის მეგზური"
-
-#~ msgid "Specify the files that will be saved in the persistent volume"
-#~ msgstr "ფაილების განსაზღვრა, რომელიც მუდმივ საცავზე შეინახება"
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The selected files will be stored in the encrypted partition {partition} "
-#~ "({size}), on the <b>{vendor} {model}</b> device."
-#~ msgstr ""
-#~ "მითითებული ფაილები შეინახება დაშიფრულ დანაყოფზე {partition} ({size}), "
-#~ "მოწყობილობა <b>{vendor} {model}</b>."
-
-#~ msgid "Saving..."
-#~ msgstr "ინახება..."
-
-#~ msgid "Saving persistence configuration..."
-#~ msgstr "ინახება მუდმივი საცავის პარამეტრები"
-
-#~ msgid "Persistence wizard - Persistent volume deletion"
-#~ msgstr "მუდმივი საცავის წაშლის მეგზური"
-
-#~ msgid "Your persistent data will be deleted."
-#~ msgstr "მუდმივ მეხსიერებაზე შენახული მონაცემები წაიშლება."
-
-#, perl-brace-format
-#~ msgid ""
-#~ "The persistent volume {partition} ({size}), on the <b>{vendor} {model}</"
-#~ "b> device, will be deleted."
-#~ msgstr ""
-#~ "მუდმივი მეხსიერების დანაყოფი {partition} ({size}), მოწყობილობაზე "
-#~ "<b>{vendor} {model}</b>, წაიშლება."
-
-#~ msgid "Deleting the persistent volume..."
-#~ msgstr "მუდმივი საცავის იშლება..."
-
-#~ msgid "Keep files stored in the `Persistent' directory"
-#~ msgstr "მუდმივი მეხსიერების საქაღალდეში შენახული ფაილების დატოვება"
-
-#~ msgid "Language, administration password, and additional settings"
-#~ msgstr "ენა, მართვის პაროლი და დამატებითი პარამეტრები"
-
-#~ msgid "Save the last bridge that you used to connect to Tor"
-#~ msgstr "ბოლოს გამოყენებული ხიდის დამახსოვრება Tor-თან კავშირისთვის"
-
-#~ msgid "Bookmarks saved in the Tor Browser"
-#~ msgstr "Tor-ბრაუზერში შენახული სანიშნები"
-
-#~ msgid "Configuration of network devices and connections"
-#~ msgstr "ქსელის მოწყობილობებისა და კავშირების გამართვა"
-
-#~ msgid "Software installed when starting Tails"
-#~ msgstr "პროგრამა დაყენებულია Tails-ის გაშვებამდე"
-
-#~ msgid "Thunderbird emails, feeds, and OpenPGP keys"
-#~ msgstr "Thunderbird-ის ელფოსტები, არხები და OpenPGP-გასაღებები"
-
-#~ msgid "Bitcoin Client"
-#~ msgstr "Bitcoin-კლიენტი"
-
-#~ msgid "Pidgin"
-#~ msgstr "Pidgin"
-
-#~ msgid "Pidgin profiles and OTR keyring"
-#~ msgstr "Pidgin-პროფილები და OTR-გასაღები"
-
-#~ msgid "SSH keys, configuration and known hosts"
-#~ msgstr "SSH-გასაღებები, გამართვა და ცნობილი მისამართები"
-
-#~ msgid "Setup Tails persistent volume"
-#~ msgstr "Tails-ის მუდმივი მეხსიერების გამართვა"
-
-#~ msgid "Device already has a persistent volume."
-#~ msgstr "მოწყობილობას უკვე გააჩნია მუდმივი მეხსიერების დანაყოფი."
-
-#~ msgid "Device has not enough unallocated space."
-#~ msgstr "მოწყობილობაზე არაა საკმარისი თავისუფალი ადგილი."
-
-#~ msgid "Device has no persistent volume."
-#~ msgstr "მოწყობილობას არ გააჩნია მუდმივი მეხსიერების დანაყოფი."
-
-#~ msgid ""
-#~ "Cannot delete the persistent volume while in use. You should restart "
-#~ "Tails without persistence."
-#~ msgstr ""
-#~ "შეუძლებელია მუდმივი მეხსიერების დანაყოფის წაშლა, როდესაც გამოიყენება. "
-#~ "ხელახლა უნდა გაუშვათ Tails მუდმივი მეხსიერების გარეშე."
-
-#~ msgid "Persistence volume is not unlocked."
-#~ msgstr "მუდმივი მეხსიერების დანაყოფი არაა გახსნილი."
-
-#~ msgid "Persistence volume is not mounted."
-#~ msgstr "მუდმივი მეხსიერების დანაყოფი არაა მიერთებული."
-
-#~ msgid ""
-#~ "Persistence volume is not readable. Permissions or ownership problems?"
-#~ msgstr ""
-#~ "მუდმივი მეხსიერების დანაყოფი არ იკითხება. ნებართვებს ან მფლობელობას ეხება "
-#~ "საქმე?"
-
-#~ msgid "Persistence volume is not writable."
-#~ msgstr "მუდმივი მეხსიერების დანაყოფს არ აქვს ჩაწერის შესაძლებლობა."
-
-#~ msgid "Tails is running from non-USB / non-SDIO device."
-#~ msgstr "Tails გაშვებულია USB / SDIO-ს არ მქონე მოწყობილობიდან."
-
-#~ msgid "Device is optical."
-#~ msgstr "მოწყობილობა ოპტიკურია."
-
-#~ msgid "Device was not created using a USB image or Tails Installer."
-#~ msgstr ""
-#~ "მოწყობილობა არაა შექმნილი USB-ასლით ან Tails-ის დასაყენებელი პროგრამით."
-
-#~ msgid "Persistence wizard - Finished"
-#~ msgstr "მუდმივი მეხსიერების მეგზური - დასრულებულია"
-
-#~ msgid ""
-#~ "Any changes you have made will only take effect after restarting Tails."
-#~ msgstr ""
-#~ "ნებისმიერი ცვლილება, მხოლოდ Tails-ის ხელახლა გაშვების შემდგომ აისახება."
-
-#~ msgid "Tails is configuring your Persistent Storage. Please wait..."
-#~ msgstr "Tails გამართავს თქვენს მუდმივ მეხსიერებას, გთხოვთ მოითმინოთ..."
-
-#~ msgid ""
-#~ "Only use the Unsafe Browser to sign in to a network, then close it."
-#~ "\\n\\nThe Unsafe Browser is disabled by default for security.\\n\\nTo <a "
-#~ "href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>use the Unsafe Browser</a>, restart Tails and "
-#~ "enable the Unsafe Browser in the additional settings of the Welcome "
-#~ "Screen."
-#~ msgstr ""
-#~ "დაუცველი ბრაუზერი მხოლოდ ქსელში შესასვლელად გამოიყენეთ, შემდეგ კი დახურეთ."
-#~ "\\n\\nდაუცველი ბრაუზერი ნაგულისხმევად გამორთულია უსაფრთხოებისთვის."
-#~ "\\n\\n<a href='file:///usr/share/doc/tails/website/doc/anonymous_internet/"
-#~ "unsafe_browser.en.html#use'>მის გამოსაყენებლად</a> ხელახლა უნდა გაუშვათ "
-#~ "Tails და მისალმების ეკრანის დამატებითი პარამეტრებიდან ჩართოთ დაუცველი "
-#~ "ბრაუზერი."
-
-#~ msgid ""
-#~ "\\n\\nTo always enable the Unsafe Browser, turn on the Welcome Screen "
-#~ "feature of the Persistent Storage."
-#~ msgstr ""
-#~ "\\n\\nდაუცველი ბრაუზერის ყოველ ჯერზე გამოსაყენებლად, ჩართეთ მისალმების "
-#~ "ეკრანის შესაძლებლობა მუდმივი მეხსიერების."
-
-#~ msgid "Delete the persistent volume and its content"
-#~ msgstr "მუდმივი საცავის წაშლა შიგთავსიანად"
-
-#~ msgid "Configure persistent volume"
-#~ msgstr "მუდმივი საცავის გამართვა"
-
-#~ msgid "image"
-#~ msgstr "სურათი"
-
-#~ msgid "heading"
-#~ msgstr "დასახელება"
-
-#~ msgid "_Request a new bridge"
-#~ msgstr "_ახალი ხიდის მოთხოვნა"
-
-#~ msgid "toggle-button"
-#~ msgstr "გადართვის ღილაკი"
-
-#~ msgid ""
-#~ "To request new Tor bridges, you can also:\n"
-#~ "\n"
-#~ "            1. Send an empty email to <tt>bridges@torproject.org</tt> "
-#~ "from a Gmail or Riseup email address.\n"
-#~ "\n"
-#~ "              2. Type below one of the bridges that you received by email."
-#~ msgstr ""
-#~ "ახალი Tor-ხიდების მოთხოვნისთვის, ასევე შეგიძლიათ:\n"
-#~ "\n"
-#~ "            1. გაგზავნოთ ცარიელი წერილი ელფოსტაზე "
-#~ "<tt>bridges@torproject.org</tt> Gmail ან Riseup მისამართიდან.\n"
-#~ "\n"
-#~ "              2. აკრიფოთ, ელფოსტით მიღებული რომელიმე ხიდის მონაცემები."
