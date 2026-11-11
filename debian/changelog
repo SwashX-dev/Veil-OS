@@ -1,3 +1,9 @@
+tails (7.18) UNRELEASED; urgency=medium
+
+  * Dummy entry for next release.
+
+ -- boyska <boyska@riseup.net>  Wed, 11 Nov 2026 12:58:39 +0100
+
 tails (7.17) unstable; urgency=medium
 
   * Upgrade Linux to 6.12.116-1
