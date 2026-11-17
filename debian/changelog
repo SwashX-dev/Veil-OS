@@ -1,4 +1,4 @@
-tails (7.17.1) UNRELEASED; urgency=medium
+tails (7.17.1) unstable; urgency=medium
 
   * Temporarily stop installing uBlock Origin (tails/tails!3448)
 
@@ -19,7 +19,7 @@ tails (7.17.1) UNRELEASED; urgency=medium
     Commits:
       - Update APT snapshot for the "debian" archive to 2026111602
 
- -- Tails developers <foundations@tails.net>  Tue, 17 Nov 2026 09:28:54 +0000
+ -- Tails developers <foundations@tails.net>  Tue, 17 Nov 2026 09:38:37 +0000
 
 tails (7.17) unstable; urgency=medium
 
