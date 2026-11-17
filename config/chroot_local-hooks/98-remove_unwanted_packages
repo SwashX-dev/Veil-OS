@@ -24,7 +24,6 @@ for package in \
     '^binutils*' \
     build-essential \
     debhelper \
-    dh-autoreconf \
     dpkg-dev \
     fakeroot \
     gcc \
@@ -45,7 +44,6 @@ done
 for package in \
     dhcpcd \
     dhcpcd-base \
-    m4 \
     nfs-common \
     texinfo; do
     packages_to_purge="${packages_to_purge} ${package}"
@@ -65,10 +63,12 @@ packages_to_purge="${packages_to_purge} ifupdown"
 ### Remove unwanted packages that might, or might not,
 ### have been installed during the build.
 for package in \
+    dh-autoreconf \
     gcc-7 \
     libgcc-7-dev \
     libmoox-late-perl \
     libsub-handlesvia-perl \
+    m4 \
     procmail; do
     if is_package_installed "${package}"; then
         packages_to_purge="${packages_to_purge} ${package}"
