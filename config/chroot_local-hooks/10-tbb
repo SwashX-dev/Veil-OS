@@ -416,7 +416,6 @@ hide_tor_donation_campaign "${TBB_INSTALL}" "${TBB_TIMESTAMP}"
 extract_default_bridges "${TBB_INSTALL}"
 extract_moat_targets "${TBB_INSTALL}"
 extract_moat_countries "${TBB_INSTALL}"
-install_debian_extensions "${TBB_INSTALL}" "${TBB_TIMESTAMP}"
 disable_update_checks "${TBB_INSTALL}"
 strip_nondeterminism "${TBB_INSTALL}" "${TBB_TIMESTAMP}"
 
