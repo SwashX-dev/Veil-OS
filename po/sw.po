@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-10 13:38+0100\n"
+"POT-Creation-Date: 2026-11-17 10:16+0100\n"
 "PO-Revision-Date: 2026-10-28 08:51+0000\n"
 "Last-Translator: Meave Akinyi <meave-"
 "nuancecollective@users.noreply.hosted.weblate.org>\n"
@@ -973,11 +973,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Utengenezaji wa persistent storage yako umeshindikana."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
+#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Dosari katika kufungulia Persistent Storage: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Dosari katika kufungulia Persistent Storage: {}"
 
@@ -987,11 +988,12 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr "Imeshindwa kusanidi Persistent Storage yako"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
+#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Dosari katika kuhifadhi Persistent Storage: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Imeshindwa kusanidi Persistent Storage yako"
 
@@ -2184,7 +2186,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Dosari katika kuhifadhi Persistent Storage: {}"
 
@@ -2204,7 +2206,7 @@ msgstr "Details"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Dosari katika kuhifadhi Persistent Storage: {}"
 
@@ -2214,6 +2216,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Dosari katika kuhifadhi Persistent Storage: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2227,10 +2230,12 @@ msgid "_Delete Data"
 msgstr "futa"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 

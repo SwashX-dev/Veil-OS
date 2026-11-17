@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-10 13:38+0100\n"
+"POT-Creation-Date: 2026-11-17 10:16+0100\n"
 "PO-Revision-Date: 2026-07-11 19:01+0000\n"
 "Last-Translator: 109247019824 "
 "<109247019824@users.noreply.hosted.weblate.org>\n"
@@ -988,10 +988,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Обновяване на постоянното хранилище. Ще отнеме известно време…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
+#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Грешка при отключване на постоянното хранилище:{}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
+#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Грешка при обновяване на постоянното хранилище:{}"
 
@@ -1002,10 +1004,12 @@ msgstr ""
 "Не са включени някои от възможностите на постоянното хранилище: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
+#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Грешка при включване на постоянното хранилище: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
+#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr ""
 "Прекъсването на поправката на файловата система на постоянното хранилище е "
@@ -2218,6 +2222,7 @@ msgstr "Информацията на тази възможност все ощ�
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
+#, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Грешка при включване на възможността {}"
 
@@ -2236,6 +2241,7 @@ msgstr "Подробности"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
+#, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Грешка при изключване на възможността {}"
 
@@ -2244,6 +2250,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Възникна грешка при изключване на възможност."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2261,10 +2268,12 @@ msgid "_Delete Data"
 msgstr "_Премахване на информация"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr "Грешка при премахване на данните на възможността {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr "Възникна грешка при премахване на данните на възможността {}."
 

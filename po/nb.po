@@ -29,10 +29,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-10 13:38+0100\n"
-"PO-Revision-Date: 2026-11-08 17:51+0000\n"
-"Last-Translator: anexcellentusername "
-"<anexcellentusername@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2026-11-17 10:16+0100\n"
+"PO-Revision-Date: 2026-11-12 01:51+0000\n"
+"Last-Translator: Telaneo <telaneo@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/tor/"
 "tails-gui/nb/>\n"
 "Language: nb\n"
@@ -250,6 +249,10 @@ msgid ""
 "Every bit helps in our fight against surveillance and censorship!\n"
 "\n"
 msgstr ""
+"Tails trenger donasjoner for å la alle være frie og trygge på nett.\n"
+"\n"
+"Enhver krone hjelper oss i vår kamp mot overvåking og sensurering!\n"
+"\n"
 
 #: config/chroot_local-includes/usr/local/bin/electrum:72
 msgid ""
@@ -290,6 +293,10 @@ msgid ""
 "It is strongly recommended to only run Electrum when its persistence feature "
 "is activated."
 msgstr ""
+"Når du starter Tails-systemet på nytt kommer Electrums data til å forsvinne, "
+"inkl. din Bitcoin-lommebok.\n"
+"Vi anbefaler på det sterkeste å kun kjøre Electrum når den er konfigurert "
+"til å lagre dataene sine vedvarende."
 
 #: config/chroot_local-includes/usr/local/bin/electrum:195
 msgid "Do you want to start Electrum anyway?"
@@ -384,21 +391,16 @@ msgid "bytes"
 msgstr "bytes"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:295
-#, fuzzy
 msgid ""
 "<b>An error occurred while updating the signing key.</b>\\n\\n<b>This "
 "prevents determining whether an upgrade is available from our website.</"
 "b>\\n\\nCheck your network connection and restart Tails.\\n\\nIf the problem "
 "persists, try doing a manual upgrade."
 msgstr ""
-"<b>Kunne ikke avgjøre hvorvidt en oppgradering er tilgjengelig fra vår "
-"nettside.</b>\n"
-"\n"
-"Sjekk nettverksforbindelsen din, start Tails på nytt og forsøk å oppgradere "
-"igjen. \n"
-"\n"
-"Hvis problemet vedvarer, se file:///usr/share/doc/tails/website/doc/upgrade/"
-"error/check.en.html"
+"<b>En feil oppsto under oppdatering av signeringsnøkkelen.</b>\\n\\n<b>Dette "
+"gjør det ikke mulig å avgjøre om en oppdatering er tilgjengelig fra "
+"nettsiden vår..</b>\\n\\nKontroller nettverkstilkoblingen din og start Tails "
+"på nytt.\\n\\nHvis problemet vedvarer, prøv å oppgradere manuelt."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:309
 msgid "Error while downloading the signing key"
@@ -409,7 +411,6 @@ msgid "Error while checking for upgrades"
 msgstr "Feil under søk etter tilgjengelige oppgraderinger"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:344
-#, fuzzy
 msgid ""
 "<b>Could not determine whether an upgrade is available from our website.</"
 "b>\n"
@@ -421,11 +422,9 @@ msgstr ""
 "<b>Kunne ikke avgjøre hvorvidt en oppgradering er tilgjengelig fra vår "
 "nettside.</b>\n"
 "\n"
-"Sjekk nettverksforbindelsen din, start Tails på nytt og forsøk å oppgradere "
-"igjen. \n"
+"Sjekk nettverksforbindelsen din og start Tails på nytt. \n"
 "\n"
-"Hvis problemet vedvarer, se file:///usr/share/doc/tails/website/doc/upgrade/"
-"error/check.en.html"
+"Hvis problemet vedvarer, se prøv å oppgradere manuelt."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:359
 msgid "no automatic upgrade is available from our website for this version"
@@ -480,6 +479,9 @@ msgid ""
 "The available incremental upgrade requires {space_needed} of free space on "
 "Tails system partition,  but only {free_space} is available."
 msgstr ""
+"Den tilgjengelige gradvise oppgradingen trenger {space_needed} ledig "
+"lagringsplas på Tails' systempartisjon, men bare {free_space} er "
+"tilgjengelig."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:462
 #, perl-brace-format
@@ -487,6 +489,8 @@ msgid ""
 "The available incremental upgrade requires {memory_needed} of free memory, "
 "but only {free_memory} is available."
 msgstr ""
+"Den tilgjengelige gradvise oppgradringen trenger {memory_needed} ledig "
+"minne, men bare {free_memory} er tilgjengelig."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:473
 msgid ""
@@ -586,15 +590,12 @@ msgid "Downloading the upgrade to {name} {version}..."
 msgstr "Laster ned oppgraderingen til {name} {version}..."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:711
-#, fuzzy
 msgid ""
 "<b>The upgrade could not be downloaded.</b>\\n\\nCheck your network "
 "connection, and restart Tails to try upgrading again."
 msgstr ""
 "<b>Oppgraderingen kunne ikke lastes ned.</b>\\n\\nSjekk "
 "nettverksforbindelsen din, start Tails på nytt og prøv å oppgradere igjen."
-"\\n\\nHvis problemet vedvarer, se file:///usr/share/doc/tails/website/doc/"
-"upgrade/error/download.en.html"
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:714
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:729
@@ -607,6 +608,8 @@ msgid ""
 "Output file '{output_file}' does not exist, but tails-iuk-get-target-file "
 "did not complain. Please report a bug."
 msgstr ""
+"Utmatingsfilen «{output_file}» eksisterer ikke, men tails-iuk-get-target-"
+"file klagde ikke. Send inn en feilrapport."
 
 #: config/chroot_local-includes/usr/src/iuk/lib/Tails/IUK/Frontend.pm:740
 msgid "Error while creating temporary downloading directory"
@@ -723,11 +726,11 @@ msgstr "Feil under installasjon av oppgraderingen"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:13
 msgid "GNOME Software"
-msgstr ""
+msgstr "GNOME Software"
 
 #: config/chroot_local-includes/usr/local/bin/gnome-software:14
 msgid "GNOME Software can only start once Tor has bootstrapped."
-msgstr ""
+msgstr "GNOME Software kan bare starte når Tor har koblet til nettverket."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/add_settings_dialog.py:32
 msgid "Additional Settings"
@@ -751,7 +754,7 @@ msgstr "Anonymisering av _MAC-adresse"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:267
 msgid "_Offline Mode"
-msgstr ""
+msgstr "_Offlinemodus"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:276
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:399
@@ -768,9 +771,8 @@ msgid "_Unsafe Browser"
 msgstr "_Usikker nettleser"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:348
-#, fuzzy
 msgid "Enabled (default)"
-msgstr "På (forvalg)"
+msgstr "Aktivert (standard)"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/additional_settings.py:350
 msgid "Disabled"
@@ -806,9 +808,8 @@ msgid "Start Without Persistent Storage"
 msgstr "Start uten vedvarende lagring"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:193
-#, fuzzy
 msgid "Language and Keyboard layout"
-msgstr "_Språk- og tastaturoppsett"
+msgstr "Språk- og tastaturoppsett"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:195
 msgid ""
@@ -842,18 +843,16 @@ msgid "Unlocking…"
 msgstr "Låser opp…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:490
-#, fuzzy
 msgid "Checking the file system…"
-msgstr "Verifiserer filsystem…"
+msgstr "Verifiserer filsystemet…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:523
 msgid "Repairing the File System"
 msgstr "Reparerer filsystemet..."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:524
-#, fuzzy
 msgid "This might take a long time..."
-msgstr "Dette kan kan ta en stund…"
+msgstr "Dette kan ta en stund…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:542
 msgid "Failed to repair the file system of your Persistent Storage."
@@ -896,32 +895,35 @@ msgstr ""
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:866
 msgid "Start Tails and open the Persistent Storage settings to find out more."
 msgstr ""
+"Start Tails og åpne innstillingene for varig lagringsplass for å finne ut av "
+"mer."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:896
-#, fuzzy
 msgid ""
 "Your Persistent Storage is unlocked. Its content will be available until you "
 "shut down Tails."
 msgstr ""
-"Ditt vedvarende lager er låst opp. En omstart av Tails vil låse det igjen."
+"Din varige lagringsplass er låst opp. En omstart av Tails vil låse det igjen."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:911
 msgid "Incorrect passphrase. Please try again."
-msgstr ""
+msgstr "Passfrasen stemmer ikke. Prøv igjen."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:922
 msgid ""
 "Error reading data from your Persistent Storage. The hardware of your USB "
 "stick is probably failing."
 msgstr ""
+"Kunne ikke lese data fra den vedvarende lagringen. Det er mulig at det er "
+"maskinvarefeil på minnepennen din."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:924
 msgid "Start Tails to learn how to recover your data."
-msgstr ""
+msgstr "Start Tails for å lære om hvordan man gjenoppretter dataene."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:935
 msgid "File System Errors"
-msgstr ""
+msgstr "Filsystemfeil"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:937
 msgid ""
@@ -936,6 +938,16 @@ msgid ""
 "If you don't have a backup, we recommend that you create a partition image "
 "of your Persistent Storage first."
 msgstr ""
+"Det har blitt oppdaget feil i den vedvarende lagringens filsystem.\n"
+"\n"
+"Tails kan prøve å fikse disse feilene, men det kan hende at noen av dataene "
+"dine kommer til å forsvinne og at det kan ta en stund.\n"
+"\n"
+"Om du har en oppdatert sikkerhetskopi av den vedvarende lagringen, anbefaler "
+"vi at du forsøker å reparere filsystemet.\n"
+"\n"
+"Dersom du ikke har en sikkerhetskopi, anbefaler vi at du først tar en "
+"avbildning av den vedvarende lagringen."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/ui/main_window.py:946
 msgid "Repair File System"
@@ -987,10 +999,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "Oppgraderer den vedvarende lagringen. Dette kan ta en stund…"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
+#, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "Noe gikk galt ved opplåsingen av den vedvarende lagringen: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
+#, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "Noe gikk galt ved oppgraderingen av den vedvarende lagringen: {}"
 
@@ -1001,10 +1015,12 @@ msgstr ""
 "Kunne ikke aktivere noen funksjoner av den vedvarende lagringen: {features}."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
+#, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "Noe gikk galt ved aktiveringen av den vedvarende lagringen: {}"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
+#, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "Kunne ikke avbryte repareringen av den vedvarende lagringen: {}"
 
@@ -1434,6 +1450,9 @@ msgid ""
 "%(out)s\n"
 "%(err)s"
 msgstr ""
+"En feil oppsto under kjøring av `%(cmd)s`.\n"
+"%(out)s\n"
+"%(err)s"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/source.py:70
 #, python-format
@@ -1456,6 +1475,8 @@ msgid ""
 "There was a problem executing `%(cmd)s`.%(out)s\n"
 "%(err)s"
 msgstr ""
+"En feil oppsto under kjøring av `%(cmd)s`.%(out)s\n"
+"%(err)s"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tails_installer/utils.py:144
 msgid "Could not open device for writing."
@@ -1483,7 +1504,7 @@ msgstr "Behold nåværende navn"
 
 #: config/chroot_local-includes/usr/local/bin/secrets:29
 msgid "Rename Password Database?"
-msgstr ""
+msgstr "Bytt navn på passorddatabasen?"
 
 #: config/chroot_local-includes/usr/local/bin/replace-su-with-sudo:19
 msgid "su is disabled. Please use sudo instead."
@@ -1491,7 +1512,7 @@ msgstr "su er avslått. vær vennelig og bruk sudo istedet."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:3
 msgid "Error Reading Data from Tails USB Stick"
-msgstr ""
+msgstr "En feil oppsto under lesing av data fra Tails-USB-minnepinnen"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-ioerrors:4
 msgid "The hardware of your USB stick is probably failing."
@@ -1543,9 +1564,8 @@ msgid "Open Tails Cloner"
 msgstr "Åpne Tails-kloneren"
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:42
-#, fuzzy
 msgid "Creation of Persistent Storage has been disabled."
-msgstr "Opprettelse av din vedvarende lagring feilet"
+msgstr "Opprettelse av varig lagringplass har blitt deaktivert."
 
 #: config/chroot_local-includes/usr/local/lib/tails-report-disk-partitioning-errors:44
 msgid ""
@@ -1614,6 +1634,8 @@ msgid ""
 "Remove {package} from your additional software? This will stop installing "
 "the package automatically."
 msgstr ""
+"Fjern {package} fra din tilleggsprogramvare? Dette vil hindre pakken fra å "
+"installeres automatisk."
 
 #. Translators: Don't translate {pkg}, it's a placeholder and will be replaced.
 #: config/chroot_local-includes/usr/local/bin/tails-additional-software-config:127
@@ -1900,7 +1922,7 @@ msgstr "Andre regioner"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:369
 msgid "_Use a bridge that you already know"
-msgstr ""
+msgstr "_Bruk en bro du allerede kjenner til"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tca/ui/main_window.py:411
 msgid ""
@@ -2080,10 +2102,12 @@ msgid ""
 "Initializing the LUKS encryption... The computer might stop responding for a "
 "few seconds."
 msgstr ""
+"Initialiserer kryptering med LUKS... Det kan hende at datamaskinen ikke "
+"reagerer for noen sekunder."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps/device.py:420
 msgid "Unlocking the encryption..."
-msgstr ""
+msgstr "Låser opp krypteringen..."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps/device.py:428
 #, fuzzy
@@ -2107,12 +2131,19 @@ msgid ""
 "doesn't work, restart Tails and try deleting the Persistent Storage without "
 "unlocking it."
 msgstr ""
+"Kan ikke avmontere den vedvarende lagringen fordi det er fremdeles en "
+"prosess som bruker den. Lukk alle apper som du tror kan fremdeles ta den i "
+"bruk og prøv på nytt. Om det ikke duger, bør du starte Tails-systemet på "
+"nytt og prøve å slette den vedvarende lagringen uten å låse den opp."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps/device.py:737
 msgid ""
 "Not enough memory to change the passphrase of the Persistent Storage. Try "
 "again after closing some applications or rebooting."
 msgstr ""
+"Det er ikke nok ledig minne for å endre på passfrasen til den vedvarende "
+"lagringen. Prøv igjen etter å ha lukket noen apper eller å ha tatt en "
+"omstart."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps/configuration/binding.py:411
 #, python-brace-format
@@ -2120,6 +2151,9 @@ msgid ""
 "Can't unmount target {target}, some process is still using it. Please close "
 "all applications that could be accessing the target and try again."
 msgstr ""
+"Kan ikke avmontere målenheten {target} fordi en prosess bruker den "
+"fremdeles. Lukk alle apper som du tror kan bruke denne enheten og prøv på "
+"nytt."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:30
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/window.py:50
@@ -2135,7 +2169,7 @@ msgstr "Omstart av systemet feilet"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/application.py:80
 msgid "Could not find the WhisperBack application"
-msgstr ""
+msgstr "Kan ikke finne WhisperBack-appen"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:96
 #, fuzzy
@@ -2147,7 +2181,7 @@ msgstr "Slett"
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:102
 #, python-brace-format
 msgid "Delete {feature} data"
-msgstr ""
+msgstr "Slett {feature} data"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:124
 #, fuzzy
@@ -2156,11 +2190,11 @@ msgstr "Dotfiler"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:180
 msgid "Activation failed. Try again or delete data."
-msgstr ""
+msgstr "Aktivering mislyktes. Prøv på nytt eller slett data."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:182
 msgid "Activation failed. Try again."
-msgstr ""
+msgstr "Aktivering mislyktes. Prøv på nytt."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:184
 msgid "The data of this feature is still saved."
@@ -2168,7 +2202,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating feature {}"
 msgstr "Opprett vedvarende lagring"
 
@@ -2188,7 +2222,7 @@ msgstr "Detaljer"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "Opprett vedvarende lagring"
 
@@ -2198,6 +2232,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "Opprett vedvarende lagring"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2211,10 +2246,12 @@ msgid "_Delete Data"
 msgstr "Slett"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 
@@ -2566,7 +2603,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:52
 msgid "To use the Unsafe Browser, restart Tails."
-msgstr ""
+msgstr "Du må starte Tails på nytt for å bruke den usikre nettleseren."
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:55
 msgid "_Restart"
@@ -2576,7 +2613,7 @@ msgstr "_Omstart"
 msgid ""
 "Do you really want to restart Tails now?\\n\\nAll your current work will be "
 "lost."
-msgstr ""
+msgstr "Vil du starte Tails på nytt?\\n\\nAll ulagrede arbeid vil gå tapt."
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:58
 msgid "Restart Now"
@@ -2584,7 +2621,7 @@ msgstr "Utfør omstart nå"
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:63
 msgid "Failed to restart the system."
-msgstr ""
+msgstr "Kunne ikke starte systemet på nytt."
 
 #: config/chroot_local-includes/usr/local/sbin/unsafe-browser:71
 msgid "Shutting down the Unsafe Browser..."
@@ -2674,6 +2711,9 @@ msgid ""
 "\n"
 "Make sure that you are connected to Tor and click send again."
 msgstr ""
+"\n"
+"\n"
+"Bekreft at du er koblet til Tor-nettverket og trykk Send-knappen på nytt."
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/whisperBack/gui.py:241
 msgid "Your message has been sent."
@@ -2708,6 +2748,10 @@ msgid ""
 "It is impossible to connect to Tor in Offline Mode.\n"
 "To connect to Tor and the Internet, restart Tails without Offline Mode."
 msgstr ""
+"Offlinemodus var skrudd på i velkomstskjermen.\n"
+"Det er umulig å koble til Tor-nettverket i offlinemodus.\n"
+"For å koble på Tor og Internettet må du starte Tails på nytt med "
+"offlinemodus deaktivert."
 
 #: config/chroot_local-includes/usr/local/lib/polkit-policy-change-message:65
 msgid ""
@@ -2746,7 +2790,7 @@ msgstr "Lær hvordan du bruker Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-documentation.desktop.in.h:3
 msgid "learn"
-msgstr ""
+msgstr "lær"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-about.desktop.in.h:2
 msgid "Learn more about Tails"
@@ -2764,19 +2808,20 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-backup.desktop.in.h:3
 msgid "backup"
-msgstr ""
+msgstr "sikkerhetskopi"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:2
 msgid "Install, clone, upgrade Tails"
-msgstr ""
+msgstr "Installer, klon, oppgrader Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tails-installer.desktop.in.h:3
+#, fuzzy
 msgid "install;clone;upgrade;manual;backup"
-msgstr ""
+msgstr "Installer, klon, oppgrader Tails"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:2
 msgid "Connect Tails to the Tor network"
-msgstr ""
+msgstr "Koble Tails til Tor-nettverket"
 
 #: ../config/chroot_local-includes/usr/share/applications/tca.desktop.in.h:3
 msgid "connect;tor;network"
@@ -2887,7 +2932,7 @@ msgstr "Skru av"
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:186
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:873
 msgid "MAC Address Anonymization"
-msgstr ""
+msgstr "Anonymisering av MAC-adresse"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:202
 msgid ""
@@ -2896,14 +2941,18 @@ msgid ""
 "generally safer as it helps you hide your geographical location. But it "
 "might also create connectivity problems or look suspicious."
 msgstr ""
+"Anonymisering av MAC-adresse gjemmer serienummeret av nettverksgrensesnittet "
+"ditt (om det skulle være trådløst eller kablet). Å anonymisere MAC-adressen "
+"gjør deg tryggere siden den kan gjemme din geografiske posisjon, men det kan "
+"forårsake tilkoblingsproblemer eller få deg til å se mistenkelig ut."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:244
 msgid "Anonymize all MAC addresses (default)"
-msgstr ""
+msgstr "Anonymiser alle MAC-adresser (forvalgt)"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:290
 msgid "Don't anonymize MAC addresses"
-msgstr ""
+msgstr "Ikke anonymiser MAC-adresser"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:343
 msgid "Offline Mode"
@@ -2914,6 +2963,8 @@ msgid ""
 "If you want to work completely offline, you can disable all networking for "
 "increased security."
 msgstr ""
+"Du kan skru av all nettverksfunksjonalitet for å forbedre sikkerheten din "
+"dersom du har tenkt til å jobbe uten nett (offline)."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:514
 msgid ""
@@ -2927,6 +2978,15 @@ msgid ""
 "The Unsafe Browser is not anonymous and can deanonymize you. Use it only to "
 "sign in to networks."
 msgstr ""
+"Den usikre nettleseren lar deg logge inn på et nettverk med en "
+"påloggingsportal (captive portal).\n"
+"\n"
+"En påloggingsportal er en nettside som vises før du kan nå Internettet. "
+"Påloggingsportaler bruker å kreve at enten logger inn på nettverket eller å "
+"skrive inn opplysninger som en e-postadresse.\n"
+"\n"
+"Den usikre nettleseren er ikke anonym og kan avsløre deg. Den må kun brukes "
+"for å logge seg på nettverk."
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/additional_settings.ui.in:560
 #, fuzzy
@@ -2949,7 +3009,7 @@ msgstr "Velkommen til Tails!"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:131
 msgid "Language and Formats"
-msgstr ""
+msgstr "Språk og formater"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:167
 msgid "Default Settings"
@@ -2990,7 +3050,7 @@ msgstr "Bekreft passordsekvens:"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:478
 msgid "Unlock Encryption"
-msgstr ""
+msgstr "Lås opp kryptering"
 
 #: ../config/chroot_local-includes/usr/share/tails/greeter/main.ui.in:545
 #, fuzzy
@@ -3078,7 +3138,7 @@ msgstr "_Lukk"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/fail_view.ui.in:31
 msgid "Oh no! Something has gone wrong."
-msgstr ""
+msgstr "Oi sann! Her har noe gått galt."
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/fail_view.ui.in:45
 msgid ""
@@ -3121,7 +3181,7 @@ msgstr "Slett vedvarende lagring"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:137
 msgid "A folder where you can save your documents."
-msgstr ""
+msgstr "En mappe der du kan lagre dokumentene dine."
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:162
 #, fuzzy
@@ -3174,7 +3234,7 @@ msgstr "Nettverkstilkoblinger"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:360
 msgid "Tor Bridge"
-msgstr ""
+msgstr "Tor-bro"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:376
 #, fuzzy
@@ -3212,7 +3272,7 @@ msgstr "Thunderbird"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:505
 msgid "Activate Thunderbird Email Client"
-msgstr ""
+msgstr "Aktiver e-postklienten Thunderbird"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:518
 msgid "GnuPG"
@@ -3224,15 +3284,15 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:535
 msgid "Activate GnuPG"
-msgstr ""
+msgstr "Aktiver GnuPG"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:548
 msgid "Pidgin Internet Messenger"
-msgstr ""
+msgstr "Chatteapplikasjonen Pidgin"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:564
 msgid "Activate Pidgin Internet Messenger"
-msgstr ""
+msgstr "Aktiver chatteapplikasjonen Pidgin"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:577
 msgid "SSH Client"
@@ -3266,7 +3326,7 @@ msgstr "Tilleggsprogramvare"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:700
 msgid "Flatpak"
-msgstr ""
+msgstr "Flatpak"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:716
 #, fuzzy
@@ -3279,7 +3339,7 @@ msgstr "Dotfiler"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:730
 msgid "Symlink every file in the Dotfiles folder into the Home folder."
-msgstr ""
+msgstr "Lag en symbolsk lenke for hver fil i Dotfiles-mappen til hjemmemappen."
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in:763
 #, fuzzy
@@ -3318,14 +3378,16 @@ msgid ""
 "Choose the passphrase that you will use to unlock the encryption of your "
 "Persistent Storage and all its data."
 msgstr ""
+"Velg passordfrasen du ønsker å bruke for å låse opp krypteringen av den "
+"vedvarende lagringen og dens data."
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/passphrase_view.ui.in:80
 msgid "We recommend a long passphrase of 5 to 7 random words."
-msgstr ""
+msgstr "Vi anbefaler å ha en lang passordfrase av 5 til 7 tilfeldige ord."
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/passphrase_view.ui.in:92
 msgid " For example:"
-msgstr ""
+msgstr " For eksempel:"
 
 #: ../config/chroot_local-includes/usr/share/tails/persistent-storage/passphrase_view.ui.in:175
 #: ../config/chroot_local-includes/usr/share/tails-installer/passphrase_dialog.ui.in:46
@@ -3475,13 +3537,15 @@ msgstr "Sammendrag"
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:294
 msgid "What were you trying to achieve?"
-msgstr ""
+msgstr "Hva var det du ønsket å oppnå?"
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:340
 msgid ""
 "<b>What happened instead?</b>\n"
 "Describe the error with as many details as possible."
 msgstr ""
+"<b>Hva skjedde istedenfor?</b>\n"
+"Beskriv feilen med så mange detaljer som mulig."
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:385
 msgid ""
@@ -3490,6 +3554,10 @@ msgid ""
 "happen again.\n"
 "Otherwise, we won't be able to troubleshoot and solve it."
 msgstr ""
+"<b>Hva gjorde du for å forårsake feilen?</b>\n"
+"Forklar de nøyaktige skrittene som var årsaken til feilen slik at vi kan "
+"prøve å forårsake feilen på vår ende.\n"
+"Ellers kan vi ikke feilsøke og løse feilen."
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:427
 #, fuzzy
@@ -3501,6 +3569,9 @@ msgid ""
 "<b>Email address</b>\n"
 "So we can answer you or ask for more details."
 msgstr ""
+"<b>E-postadresse</b>\n"
+"Oppgi din e-postadresse slik at vi kan gi deg et svar eller stille "
+"oppfølgingsspørsmål."
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:480
 #, fuzzy
@@ -3512,6 +3583,8 @@ msgid ""
 "Even if we are not able to reply to every report, we analyze all reports to "
 "improve Tails."
 msgstr ""
+"Selv om at vi ikke kan svare på enhver rapport, analyserer vi alle "
+"rapportene slik at vi kan forbedre Tails."
 
 #: ../config/chroot_local-includes/usr/share/whisperback/whisperback.ui.in:520
 msgid "Description"
@@ -3557,14 +3630,18 @@ msgid ""
 "\n"
 "You can use <i>obfs4</i> and <i>WebTunnel</i> bridges in Tails.\n"
 msgstr ""
+"Broer er hemmelige Tor-reléer. Du kan bruke en bro som din første Tor-relé "
+"dersom å nå Tor er blokkert der du befinner deg.\n"
+"\n"
+"Du kan bruke <i>obs4</i> og <i>WebTunnel</i>-broene i Tails.\n"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:126
 msgid "<a href=\"doc/anonymous_internet/tor\">Learn more about Tor bridges</a>"
-msgstr ""
+msgstr "<a href=\"doc/anonymous_internet/tor\">Lær deg mer om Tor-broer</a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:161
 msgid "Use a _default bridge"
-msgstr ""
+msgstr "Bruk en _forvalgt bro"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:184
 msgid "obfs4 (recommended)"
@@ -3581,11 +3658,11 @@ msgstr "Ingen"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:242
 msgid "Ask for a bridge based on your _region"
-msgstr ""
+msgstr "Forespør en bro basert utifra din _region"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:301
 msgid "_Ask for a bridge by email"
-msgstr ""
+msgstr "_Spør etter en bro via epost"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:320
 msgid ""
@@ -3593,14 +3670,17 @@ msgid ""
 "Riseup email address with your phone and scan the QR code that is attached "
 "to the automatic reply."
 msgstr ""
+"Send en tom e-post til <tt>bridges@torproject.org</tt> fra en Gmail eller "
+"Riseup-epostadresse med telefonen din og skann QR-koden som er vedlagt i det "
+"automatiske svaret."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:333
 msgid "Scan _QR code"
-msgstr ""
+msgstr "Skann _QR-kode"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:434
 msgid "_Enter a bridge that you already know"
-msgstr ""
+msgstr "Skriv _inn en bro du allerede kjenner til"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:460
 msgid "Bridge"
@@ -3608,21 +3688,21 @@ msgstr "Bro"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:473
 msgid "obfs4 or webtunnel…"
-msgstr ""
+msgstr "obs4 eller webtunnel…"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:546
 msgid "Save bridge to _Persistent Storage"
-msgstr ""
+msgstr "Lagre broa til den _vedvarende lagringen"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:571
 msgid "Save bridge to Persistent Storage"
-msgstr ""
+msgstr "Lagre broen i den vedvarende lagringen"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:711
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1462
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1859
 msgid "_Connect to Tor"
-msgstr ""
+msgstr "_Koble til Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:763
 msgid "Error connecting to Tor"
@@ -3630,7 +3710,7 @@ msgstr "Feil ved tilkobling til Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:783
 msgid "This local network seems to be blocking access to Tor."
-msgstr ""
+msgstr "Det virker som at det lokale nettverket blokkerer tilgang til Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:811
 #, fuzzy
@@ -3642,11 +3722,13 @@ msgid ""
 "Either this Tor bridge is not working or your network is blocking access to "
 "it."
 msgstr ""
+"Enten fungerer ikke Tor-broa ellers så blokkerer nettverket ditt tilgang til "
+"den."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:856
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:930
 msgid "Try configuring another bridge."
-msgstr ""
+msgstr "Prøv å konfigurer en annen bro."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:884
 #, fuzzy
@@ -3655,11 +3737,11 @@ msgstr "Feil ved tilkobling til Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:900
 msgid "Your network is blocking access to Tor and the default bridges."
-msgstr ""
+msgstr "Nettverket ditt blokkerer tilgang til Tor og de forvalgte broene."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:916
 msgid "Bridge: <b>default bridges</b>"
-msgstr ""
+msgstr "Bro: <b>forvalgte broer</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:958
 #, fuzzy
@@ -3668,11 +3750,11 @@ msgstr "Feil ved tilkobling til Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:974
 msgid "None of the bridges recommended for this region worked."
-msgstr ""
+msgstr "Ingen av broene som er anbefalt for denne regionen virker."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:990
 msgid "Try another region or getting a bridge by mail."
-msgstr ""
+msgstr "Prøv broer i en annen region eller finn en via e-post."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1018
 #, fuzzy
@@ -3681,13 +3763,15 @@ msgstr "Feil under søk etter tilgjengelige oppgraderinger"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1034
 msgid "Tails failed to ask for a bridge based on your region."
-msgstr ""
+msgstr "Tails kunne ikke etterspørre en bro utifra regionen din."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1050
 msgid ""
 "Please, <a href=\"support/talk\">report this error</a> and try asking for a "
 "bridge by email."
 msgstr ""
+"<a href=\"support/talk\">Rapporter denne feilen</a> og prøv å etterspørre en "
+"bro via e-post."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1087
 #, fuzzy
@@ -3696,43 +3780,47 @@ msgstr "Tails-installasjonskandidat"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1142
 msgid "• Wrong clock"
-msgstr ""
+msgstr "• Feilstilt klokke"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1162
 msgid "Your clock and time zone need to be correct to connect to Tor."
-msgstr ""
+msgstr "Klokken og tidssonen må være stilt inn ordentlig for å koble til Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1175
 msgid "Fix _Clock"
-msgstr ""
+msgstr "Still _klokken"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1213
 msgid "• Public network"
-msgstr ""
+msgstr "• Offentlig nettverk"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1233
 msgid ""
 "If you are in a shop, hotel, or airport, you might need to sign in to the "
 "local network using the Unsafe Browser."
 msgstr ""
+"Om du er i en butikk, hotell eller på en lufthavn, kan det hende at du må "
+"logge inn på det lokale nettverket ved å bruke den usikre nettleseren."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1246
 msgid "Try _Signing in to the Network"
-msgstr ""
+msgstr "Logg _inn på nettverket"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1285
 msgid "• Local proxy"
-msgstr ""
+msgstr "• Lokal mellomserver"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1305
 msgid ""
 "If you are on a corporate or university network, you might need to configure "
 "a local proxy."
 msgstr ""
+"Dersom du er på et nettverk driftet av en bedrift eller et universitet kan "
+"det hende at du må konfigurere en mellomserver."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1335
 msgid "Configure a Local _Proxy"
-msgstr ""
+msgstr "Konfigurer en _mellomserver"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1374
 #, fuzzy
@@ -3745,6 +3833,9 @@ msgid ""
 "connections to Tor are blocked, for example in some countries, by some "
 "public networks, or by some parental controls."
 msgstr ""
+"Tor-broer er hemmelige Tor-reléer. Bruk en bro som den første Tor-reléen "
+"dersom tilkoblinger til Tor er blokkert. Visse land, noen offentlige "
+"nettverk og foreldrekontroll kan være hindre for å få tilgang til Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1410
 #, fuzzy
@@ -3756,12 +3847,14 @@ msgid ""
 "<a href=\"doc/anonymous_internet/tor/troubleshoot\">Troubleshooting "
 "connecting to Tor</a>"
 msgstr ""
+"<a href=\"doc/anonymous_internet/tor/troubleshoot\">Feilsøk Tor-tilkobling</"
+"a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1494
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1902
 msgid ""
 "Everything you do on the Internet from Tails goes through the Tor network."
-msgstr ""
+msgstr "Alt du gjør på internett fra Tails går gjennom Tor-nettverket."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1508
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1917
@@ -3770,16 +3863,22 @@ msgid ""
 "Tor relays are servers operated by different organizations and volunteers "
 "around the world."
 msgstr ""
+"Tor kypterer og anonymiserer tilkoblingen din ved å rute den gjennom tre "
+"reléer.\n"
+"Tor-reléer er servere som driftes av forskjellige organisasjoner og "
+"frivillige rundt om i verdenen."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1544
 msgid "<b>Connect to Tor _automatically</b>"
-msgstr ""
+msgstr "<b>Koble til Tor _automatisk</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1594
 msgid ""
 "We recommend connecting to Tor automatically if you are on a public Wi-Fi "
 "network or if many people in your country use Tor to circumvent censorship."
 msgstr ""
+"Det er anbefalt å automatisk koble til To dersom du er på et offentlig Wi-Fi-"
+"nettverk eller hvis mange i landet ditt bruker Tor for å omgå sensurering."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1612
 msgid ""
@@ -3788,10 +3887,15 @@ msgid ""
 "Someone monitoring your Internet connection could identify these attempts as "
 "coming from a Tails user."
 msgstr ""
+"Tails kommer til å forsøke å koble til Tor med flere metoder helt til det "
+"lykkes.\n"
+"\n"
+"Noen som overvåker Internett-tilkoblingen din kan se at disse forsøkene "
+"stammer fra en Tails-bruker."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1646
 msgid "Configure a Tor _bridge"
-msgstr ""
+msgstr "Konfigurer en Tor-_bro"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1692
 msgid ""
@@ -3803,16 +3907,25 @@ msgid ""
 "Tails will autodetect whether you need a bridge to connect to Tor from your "
 "local network."
 msgstr ""
+"Tor-broer er hemmelige Tor-reléer. Bruk en bro som den første Tor-reléen "
+"dersom tilkoblinger til Tor er blokkert. Visse land, noen offentlige "
+"nettverk og foreldrekontroll kan være hindre for å få tilgang til Tor.\n"
+"\n"
+"Velg dette valget om du allerede vet at du trenger en bro. Ellers kommer "
+"Tails til å automatisk oppdage om du krever en bro for å koble til Tor fra "
+"ditt lokale nettverk."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1734
 msgid "<b>_Hide to my local network that I'm connecting to Tor</b>"
-msgstr ""
+msgstr "<b>_Skjul til det lokale nettverket at jeg kobler til Tor</b>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1784
 msgid ""
 "You might need to go unnoticed if using Tor could look suspicious to someone "
 "who monitors your Internet connection."
 msgstr ""
+"Det kan hende at du må skjule aktiviteten din dersom bruk av Tor kan virke "
+"mistenksom til noen som overvåker internett-tilkoblingen din."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1802
 msgid ""
@@ -3826,12 +3939,23 @@ msgid ""
 "yet, if you connect from a public Wi-Fi network, or if you are in the "
 "Eastern Hemisphere."
 msgstr ""
+"Tails kommer kun til å koble til Tor etter du har konfigurert en Tor-bro. "
+"Broer er hemmelige Tor-reléer som skjuler at du kobler deg på Tor.\n"
+"\n"
+"Vi prøver så godt vi kan å tilrettelegge for Tor-tilkoblinger med de mest "
+"diskrete Tor-brotypene.\n"
+"\n"
+"Du må gjøre noe manuell konfigurasjon dersom du ikke kjenner til noen Tor-"
+"broer ennå, om du kobler deg på via et offentlig Wi-Fi-nettverk, eller hvis "
+"du befinner deg på den østlige halvkulen."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1847
 msgid ""
 "<a href=\"doc/anonymous_internet/tor\">Learn more about how Tails connects "
 "to Tor</a>"
 msgstr ""
+"<a href=\"doc/anonymous_internet/tor\">Les mer om hvordan Tails kobler til "
+"Tor</a>"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:1937
 msgid "No Wi-Fi hardware detected"
@@ -3863,7 +3987,7 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2007
 msgid "Connect to a local network"
-msgstr ""
+msgstr "Koble på et lokalt nettverk"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2024
 msgid ""
@@ -3877,27 +4001,27 @@ msgstr ""
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2087
 msgid "Testing Internet access…"
-msgstr ""
+msgstr "Sjekker Internett-tilgang…"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2127
 msgid "You have access to the Internet"
-msgstr ""
+msgstr "Du har Internett-tilgang"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2161
 msgid "Testing access to Tor…"
-msgstr ""
+msgstr "Sjekker Tor-tilgang…"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2204
 msgid "You can connect to Tor"
-msgstr ""
+msgstr "Du kan koble deg på Tor"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2234
 msgid "Failed to connect to Tor without bridges."
-msgstr ""
+msgstr "Klarte ikke å koble på Tor uten broer."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2250
 msgid "This local network is blocking access to Tor."
-msgstr ""
+msgstr "Det lokale nettverket blokkerer tilgang til Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2282
 msgid "Connecting to Tor…"
@@ -3909,7 +4033,7 @@ msgstr "Start Tor-nettleseren"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2446
 msgid "Configure a Local Proxy"
-msgstr ""
+msgstr "Konfigurer en mellomserver"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2472
 msgid "Proxy Type"
@@ -3917,7 +4041,7 @@ msgstr "Mellomtjener-type"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2489
 msgid "No proxy"
-msgstr ""
+msgstr "Ingen mellomserver"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2490
 msgid "SOCKS 4"
@@ -3949,11 +4073,11 @@ msgstr "Port"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/main.ui.in:2687
 msgid "_Save Proxy Settings"
-msgstr ""
+msgstr "_Lagre mellomserver-innstillinger"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:7
 msgid "Tor Connection - Fix Clock"
-msgstr ""
+msgstr "Tor-tilkobling - Still klokken"
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:76
 msgid ""
@@ -3961,6 +4085,9 @@ msgid ""
 "never be sent over the network and will only be used to fix your clock and "
 "connect to Tor."
 msgstr ""
+"Tidssonen kan ikke brukes for å identifisere eller lokalisere deg. Tidssonen "
+"sendes ikke over nettverket og vil kun bli brukt for å stille inn klokken "
+"slik at du kan koble deg på Tor."
 
 #: ../config/chroot_local-includes/usr/share/tails/tca/time-dialog.ui.in:142
 msgid "Time zone"

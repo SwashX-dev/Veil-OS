@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tor Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-10 13:38+0100\n"
+"POT-Creation-Date: 2026-11-17 10:16+0100\n"
 "PO-Revision-Date: 2026-10-08 00:51+0000\n"
 "Last-Translator: Automatic translation add-on <noreply-addon-"
 "autotranslate@weblate.org>\n"
@@ -923,12 +923,12 @@ msgid "Upgrading the Persistent Storage. This might take a while…"
 msgstr "আপনার একরোখা ভাণ্ডার তৈরি করা ব্যর্থ হয়েছে ।"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:125
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error unlocking Persistent Storage: {}"
 msgstr "এনক্রিপ্ট করা _Persistent Storage"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:150
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error upgrading Persistent Storage: {}"
 msgstr "এনক্রিপ্ট করা _Persistent Storage"
 
@@ -938,12 +938,12 @@ msgid "Failed to activate some features of the Persistent Storage: {features}."
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:181
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating Persistent Storage: {}"
 msgstr "অবিরাম স্টোরেজ তৈরি করুন"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tailsgreeter/settings/persistence.py:202
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Failed to abort when repairing Persistent Storage filesystem: {}"
 msgstr "সিস্টেম পুনরায় আরম্ভ করতে ব্যর্থ হয়েছে"
 
@@ -2066,7 +2066,7 @@ msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:291
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:298
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error activating feature {}"
 msgstr "অবিরাম স্টোরেজ তৈরি করুন"
 
@@ -2086,7 +2086,7 @@ msgstr "বিস্তারিত"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:340
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:347
-#, fuzzy
+#, fuzzy, python-brace-format
 msgid "Error deactivating feature {}"
 msgstr "অবিরাম স্টোরেজ তৈরি করুন"
 
@@ -2096,6 +2096,7 @@ msgid "An error occurred while deactivating the feature."
 msgstr "অবিরাম স্টোরেজ তৈরি করুন"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:368
+#, python-brace-format
 msgid ""
 "Delete all the data of the {} feature that is saved in the Persistent "
 "Storage?\n"
@@ -2109,10 +2110,12 @@ msgid "_Delete Data"
 msgstr "মুছুন"
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:409
+#, python-brace-format
 msgid "Error deleting data of feature {}"
 msgstr ""
 
 #: config/chroot_local-includes/usr/lib/python3/dist-packages/tps_frontend/feature.py:410
+#, python-brace-format
 msgid "An error occurred while deleting the data of feature {}."
 msgstr ""
 
