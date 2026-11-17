@@ -1,8 +1,25 @@
-tails (7.18) UNRELEASED; urgency=medium
+tails (7.17.1) UNRELEASED; urgency=medium
 
-  * Dummy entry for next release.
+  * Temporarily stop installing uBlock Origin (tails/tails!3448)
 
- -- boyska <boyska@riseup.net>  Wed, 11 Nov 2026 12:58:39 +0100
+    Closes issues:
+      - Universal XSS in uBlock Origin (GHSA-cmqw-9r2w-6wv2) (tails/tails#21917)
+
+    Commits:
+      - Temporarily stop installing uBlock Origin
+
+  * Upgrade Linux to 6.12.117-1 (DSA 6628-1, tails/tails#21913)
+
+  * Update APT snapshot for the "debian" archive to 2026111602 (tails/tails!3443)
+
+    Closes issues:
+      - needed-package-updates: electrum, libdatetime-timezone-perl, firmware-nonfree
+        (tails/tails#21910)
+
+    Commits:
+      - Update APT snapshot for the "debian" archive to 2026111602
+
+ -- Tails developers <foundations@tails.net>  Tue, 17 Nov 2026 09:28:54 +0000
 
 tails (7.17) unstable; urgency=medium
 
