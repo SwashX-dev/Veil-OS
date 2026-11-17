@@ -176,18 +176,6 @@ Only perform this test for a final, stable release.
 Tor Browser
 ===========
 
-Miscellaneous functionality
----------------------------
-
-* Test if _uBlock_ works:
-
-  - The _uBlock_ icon must be visible.
-
-  - Visit a website that normally displays ads, such as
-    <https://www.nytimes.com/>. The ads should not be displayed and
-    the uBlock icon should display a strictly positive number of
-    blocked elements.
-
 Security and fingerprinting
 ---------------------------
 
