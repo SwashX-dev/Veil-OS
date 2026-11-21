@@ -2,6 +2,12 @@
 
 Upstream Tails changes are in `Changelog` / `debian/changelog`.
 
+## 1.1.1 (2026-11-21)
+
+- Fix: the compositor is restarted (software rendering, lock restored, notification)
+  instead of shutting the machine down when it stops after startup. See
+  `docs/veil/release-notes/v1.1.1.md`.
+
 ## 0.1.0-alpha.1 (2026-11-21)
 
 Based on Tails 7.17.1 (signed tag, commit a95f1e8).

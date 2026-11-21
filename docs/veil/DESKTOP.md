@@ -45,10 +45,23 @@ selectable for the live user.
 Veil retries an early compositor exit once with Pixman software rendering.
 The UEFI boot entry **Veil OS (Software Rendering)** sets
 `veil.software-rendering` to force Pixman. The fallback still requires
-a working Wayland-compatible display device. If the compositor exits after
-the session has registered, Veil requests a normal shutdown. This avoids
-starting an unlocked desktop after a compositor crash while the screen
-was locked. Applications in RAM may lose unsaved work.
+a working Wayland-compatible display device.
+
+If the compositor is lost after the session has registered (a crash, or a
+GPU or display fault), `veil-session` restarts it with Pixman instead of
+ending the session. Windows that were open are gone, because Wayland clients
+exit with their compositor, and a notification explains what happened. The
+screen lock survives: while the compositor runs, `veil-session` records
+whether swaylock is active, and if the compositor is lost while it was, the
+new session starts `veil-lock` before it starts anything else. Only six
+compositor losses within five minutes make Veil request a normal shutdown,
+because no usable desktop can be provided then. A logout or shutdown
+(SIGTERM) is never treated as a crash. The cause of each loss (exit status
+or signal) is written to the journal as `Veil: compositor ...`.
+
+Version 1.1.0 instead shut the machine down on every such loss, which looked
+like a random black screen followed by power-off. The underlying reason that
+the compositor stops on some hardware is not yet known.
 
 ## Known limitations
 

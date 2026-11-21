@@ -9,6 +9,19 @@ abort_startup() {
 }
 trap abort_startup EXIT
 
+# After a compositor restart: processes that are not Wayland clients survive
+# the old compositor and would be duplicated by this script.
+restarted="${VEIL_COMPOSITOR_RESTARTS:-}"
+if [ -n "$restarted" ]; then
+    pkill -u "$(id -u)" -f '/usr/local/lib/veil/veil-(panel-status|session-manager-shim|autostart)( |$)' || true
+fi
+
+# If the screen was locked when the compositor was lost, lock the new
+# session before anything else is started.
+if [ -n "${VEIL_RELOCK:-}" ]; then
+    /usr/local/bin/veil-lock || echo "Veil: could not restore the screen lock" >&2
+fi
+
 # Make the Wayland session visible to systemd --user and D-Bus activation,
 # then let Tails' session units run exactly as they do under GNOME.
 [ -n "${DISPLAY:-}" ] || export DISPLAY=:0
@@ -18,8 +31,11 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY 
 
 # Register the working Wayland session from its own logind session.
 # GDM uses this to mark the display managed and finish greeter handoff.
-busctl --system --timeout=5 call org.gnome.DisplayManager \
-    /org/gnome/DisplayManager/Manager org.gnome.DisplayManager.Manager RegisterSession 'a{sv}' 0
+# GDM only accepts the registration once per session.
+if [ -z "$restarted" ]; then
+    busctl --system --timeout=5 call org.gnome.DisplayManager \
+        /org/gnome/DisplayManager/Manager org.gnome.DisplayManager.Manager RegisterSession 'a{sv}' 0
+fi
 touch "$VEIL_SESSION_STATE/ready"
 trap - EXIT
 
@@ -40,3 +56,12 @@ xfce4-panel --disable-wm-check &
 nm-applet --indicator &
 /usr/local/lib/veil/veil-session-manager-shim &
 /usr/local/lib/veil/veil-autostart &
+
+if [ -n "$restarted" ]; then
+    (
+        sleep 4
+        notify-send --app-name="Veil OS" --icon=dialog-warning \
+            "The display server was restarted" \
+            "It stopped unexpectedly (${VEIL_COMPOSITOR_LOSS:-unknown}). Open windows were closed. Software rendering is now used. ${VEIL_RELOCK:+The screen is locked. }Details are in the system journal (veil-session)."
+    ) &
+fi

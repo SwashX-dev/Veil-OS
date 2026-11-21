@@ -51,18 +51,75 @@ XAUTHORITY="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/veil-xauthority"
 : >"$XAUTHORITY"
 export XAUTHORITY
 
-# Keep GDM's session alive while retrying a failed renderer initialization.
-# After the desktop is ready, losing the compositor also loses any Wayland
-# screen lock. End the live session through the normal shutdown path.
+# This script supervises labwc for the whole live session. GDM keeps the
+# session (and hides its greeter) for as long as this script runs.
+#
+#  * Startup failure: retry once with the Pixman (software) renderer.
+#  * Loss of the compositor after startup (a crash, a GPU or display fault):
+#    restart it with Pixman, keep the screen locked if it was locked, and tell
+#    the user. Windows that were open are gone (Wayland clients exit with their
+#    compositor), so nothing from them can be shown on the new desktop.
+#  * Only after repeated losses in a short time is the machine shut down
+#    through the normal path, because no usable desktop can be provided.
 VEIL_SESSION_STATE="$(mktemp -d "${XDG_RUNTIME_DIR:?}/veil-session.XXXXXX")" || exit 1
 export VEIL_SESSION_STATE
 trap 'rmdir "$VEIL_SESSION_STATE" 2>/dev/null || true' EXIT
 
+LOG="$VEIL_SESSION_STATE/compositor.log"
+MAX_LOSSES=6
+LOSS_WINDOW=300
+
+alive() {
+    [ -r "/proc/$1/stat" ] && ! grep -q '^[0-9]* (.*) Z ' "/proc/$1/stat" 2>/dev/null
+}
+
+# Mirror "a screen lock is active" into $VEIL_SESSION_STATE/locked while the
+# compositor lives. The marker is only ever removed when swaylock is absent AND
+# the compositor was still alive afterwards, so a lock that disappeared because
+# the compositor died is never forgotten.
+track_lock() {
+    pid=$1
+    uid=$(id -u)
+    while alive "$pid"; do
+        if pgrep -u "$uid" -x swaylock >/dev/null 2>&1; then
+            : >"$VEIL_SESSION_STATE/locked"
+        elif alive "$pid"; then
+            rm -f "$VEIL_SESSION_STATE/locked"
+        fi
+        sleep 0.5
+    done
+}
+
 run_compositor() {
-    /usr/bin/labwc --startup /usr/local/lib/veil/veil-desktop-start &
+    /usr/bin/labwc --startup /usr/local/lib/veil/veil-desktop-start 2>>"$LOG" &
     compositor=$!
+    track_lock "$compositor" &
     trap 'kill "$compositor" 2>/dev/null; wait "$compositor"; exit 0' HUP INT TERM
     wait "$compositor"
+}
+
+describe_exit() {
+    if [ "$1" -gt 128 ]; then
+        printf 'killed by signal %s' "$(kill -l $(($1 - 128)) 2>/dev/null || echo "$(($1 - 128))")"
+    else
+        printf 'exited with status %s' "$1"
+    fi
+}
+
+system_stopping() {
+    case "$(systemctl is-system-running 2>/dev/null)" in stopping) return 0 ;; esac
+    return 1
+}
+
+give_up() {
+    echo "Veil: the compositor keeps failing ($MAX_LOSSES losses within ${LOSS_WINDOW}s), shutting down" >&2
+    systemctl --no-block poweroff || exit 1
+    # Retain the GDM session until logind terminates it so that a VT switch
+    # does not expose the greeter in the middle of teardown.
+    sleep infinity &
+    compositor=$!
+    wait "$compositor"
+    exit 0
 }
 
 case " $(cat /proc/cmdline) " in
@@ -76,17 +133,50 @@ if [ ! -e "$VEIL_SESSION_STATE/ready" ] && [ "${WLR_RENDERER:-}" != pixman ]; th
     run_compositor
     status=$?
 fi
-
-if [ -e "$VEIL_SESSION_STATE/ready" ]; then
-    rm -f "$VEIL_SESSION_STATE/ready"
-    echo "Veil: compositor exited after session registration ($status), shutting down" >&2
-    systemctl --no-block poweroff || exit 1
-    # Retain the GDM session until logind terminates it so that a VT switch
-    # does not expose the greeter in the middle of teardown.
-    sleep infinity &
-    compositor=$!
-    wait "$compositor"
-else
+if [ ! -e "$VEIL_SESSION_STATE/ready" ]; then
+    tail -n 40 "$LOG" >&2 2>/dev/null
     echo "Veil: compositor startup failed ($status); see the GDM journal" >&2
     exit 1
 fi
+
+losses=""
+restarts=0
+while :; do
+    rm -f "$VEIL_SESSION_STATE/ready"
+    # SIGTERM is how logind/systemd end the session on shutdown: not a crash.
+    if [ "$status" = 143 ] || system_stopping; then
+        exit 0
+    fi
+    reason="$(describe_exit "$status")"
+    echo "Veil: compositor $reason after the session was ready" >&2
+    tail -n 40 "$LOG" >&2 2>/dev/null
+    : >"$LOG"
+
+    now=$(date +%s)
+    recent=""
+    count=0
+    for t in $losses; do
+        if [ $((now - t)) -lt "$LOSS_WINDOW" ]; then
+            recent="$recent $t"
+            count=$((count + 1))
+        fi
+    done
+    losses="$recent $now"
+    if [ $((count + 1)) -ge "$MAX_LOSSES" ]; then
+        give_up
+    fi
+
+    restarts=$((restarts + 1))
+    export VEIL_COMPOSITOR_RESTARTS="$restarts"
+    export VEIL_COMPOSITOR_LOSS="$reason"
+    export WLR_RENDERER=pixman
+    if [ -e "$VEIL_SESSION_STATE/locked" ]; then
+        export VEIL_RELOCK=1
+    else
+        unset VEIL_RELOCK
+    fi
+    echo "Veil: restarting the compositor with Pixman (restart $restarts, locked: ${VEIL_RELOCK:-0})" >&2
+    sleep 1
+    run_compositor
+    status=$?
+done
