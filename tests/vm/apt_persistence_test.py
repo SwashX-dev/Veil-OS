@@ -26,6 +26,8 @@ EXTRA = 'veil-vm-test-extra'
 APT = '/usr/local/bin/apt'
 CHECK = "dpkg-query -W -f='${Status}'"
 CLI = 'veil packages persistent'
+APT_UPDATE = ("/usr/bin/apt-get -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/veil-vm-test.list "
+              "-o Dir::Etc::sourceparts=- -o APT::Update::Error-Mode=any update")
 
 def check(name, res, code=0, contains=None):
     rc, out, err = res
@@ -45,7 +47,7 @@ def wait(rs, command, limit=90):
         time.sleep(1)
     raise RuntimeError((command, result))
 
-def boot(num, unlock=False):
+def boot(num, unlock=False, login=True):
     vm = veilvm.VM(str(copy), str(work/f'boot{num}'), firmware='uefi', memory='4096', network=False,
                   kernel=kernel, initrd=initrd, cmdline=cmdline + ' autotest_never_use_this_option',
                   snapshot=False)
@@ -58,13 +60,16 @@ def boot(num, unlock=False):
              "echo 'deb [signed-by=/usr/share/keyrings/veil-vm-fixture.gpg] http://127.0.0.1:18765/ ./' "
              "> /etc/apt/sources.list.d/veil-vm-test.list"))
         if unlock:
+            wait(rs, "test -s /tmp/gdm-env")
             ok, evidence = unlock_in_greeter(vm, 'Welcome to Veil OS')
             check(f'{num}.unlock', (0 if ok else 1, evidence, ''))
             wait(rs, f'mountpoint -q {PERSIST}')
-        start = time.monotonic()
-        veilvm.login_via_greeter(rs, start_without_persistence=(num == 4))
-        check(f'{num}.xfce-ready', wait(rs, 'pgrep -u amnesia -x xfce4-panel && ! pgrep -x gnome-shell && pgrep -u amnesia -x labwc'))
-        print(f'{num}.greeter-to-desktop-seconds={time.monotonic()-start:.1f}', flush=True)
+        if login:
+            start = time.monotonic()
+            veilvm.login_via_greeter(rs)
+            session = 'pgrep -u amnesia -x xfce4-panel && ! pgrep -x gnome-shell && pgrep -u amnesia -x labwc'
+            check(f'{num}.xfce-ready', wait(rs, session))
+            print(f'{num}.greeter-to-desktop-seconds={time.monotonic()-start:.1f}', flush=True)
         return vm
     except BaseException:
         vm.stop(30)
@@ -80,9 +85,9 @@ def test_interrupted_transactions(rs):
               rs.sh(f"touch {hold} && systemd-run --unit={unit} {APT} {action} {pkg} -Pr -y"))
         wait(rs, f"test -e {entered}")
         check(f"1.interrupt-{action}", rs.sh(f"systemctl stop {unit} && rm {hold}"))
-        _rc, out, _ = rs.sh(f"{CLI} list")
+        rc, out, err = rs.sh(f"{CLI} list")
         check(f"1.registration-after-interrupted-{action}",
-              (0 if (pkg in out.splitlines()) == should_exist else 1, out, ""))
+              (0 if rc == 0 and (pkg in out.splitlines()) == should_exist else 1, out, err))
         check(f"1.repair-after-interrupted-{action}", rs.sh(f"{CLI} repair", timeout=90))
         check(f"1.retry-{action}", rs.sh(f"{APT} {action} {pkg} -Pr -y", timeout=90),
               0, "saved and verified")
@@ -106,8 +111,13 @@ def run_tests():
         check('1.fixture-loopback', rs.sh('iptables -I OUTPUT 1 -o lo -d 127.0.0.1 '
                                          '-p tcp --dport 18765 -j ACCEPT'))
         wait(rs, 'curl --noproxy "*" --silent --fail http://127.0.0.1:18765/InRelease >/dev/null')
-        check('1.signed-apt-index', rs.sh('/usr/bin/apt-get -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/veil-vm-test.list '
-                                         '-o Dir::Etc::sourceparts=- -o APT::Update::Error-Mode=any update', timeout=60), 0, 'InRelease')
+        check('1.signed-apt-index', rs.sh(APT_UPDATE, timeout=60), 0, 'InRelease')
+        fixture_pkg = f"/tmp/fixture/{EXTRA}.deb"
+        check("1.tamper-fixture", rs.sh(f"cp {fixture_pkg} /tmp/original.deb && "
+              f"printf X | dd of={fixture_pkg} bs=1 conv=notrunc status=none"))
+        check("1.package-hash-enforced", rs.sh(f"{APT} install {EXTRA} -Pr -y"), 100, "Hash Sum mismatch")
+        check("1.invalid-package-not-registered", rs.sh(f'list=$({CLI} list) && test -z "$list"'))
+        check("1.restore-fixture", rs.sh(f"mv /tmp/original.deb {fixture_pkg}"))
         test_interrupted_transactions(rs)
         check('1.temporary-install', rs.sh(f'{APT} install -y {EXTRA}'), 0, 'Setting up')
         check('1.temporary-install-not-registered', rs.sh(f'list=$({CLI} list) && test -z "$list"'), 0)
@@ -115,6 +125,10 @@ def run_tests():
         check('1.persistent-install', rs.sh(f'{APT} install {ROOT} -Pr -y', timeout=90), 0, 'saved and verified')
         check('1.registration-visible-to-user', rs.sh(f'{CLI} list', user='amnesia'), 0, ROOT)
         check('1.dependency-protected', rs.sh(f'{APT} remove {DEP} -Pr -y'), 1, 'would also remove')
+        check("1.publish-updated-fixture", rs.sh(
+            "cp /tmp/fixture/upgrade/* /tmp/fixture/ && " + APT_UPDATE, timeout=75))
+        check("1.upgrade-persistent", rs.sh(f"{APT} install {ROOT} -Pr -y", timeout=90), 0, "saved and verified")
+        check("1.upgraded-version", rs.sh(f"/usr/bin/dpkg-query -W {ROOT}"), 0, "2.0")
         check('1.temporary-removal-of-registered', rs.sh(f'{APT} remove -y {ROOT}'), 0, 'Removing')
         check('1.registration-preserved', rs.sh(f'{CLI} list'), 0, ROOT)
         check('1.archive-cached', rs.sh(f'ls /var/cache/apt/archives/{ROOT}_*.deb /var/cache/apt/archives/{DEP}_*.deb'))
@@ -125,6 +139,7 @@ def run_tests():
     rs = vm.rs
     try:
         check('2.cached-offline-restore', wait(rs, f'{CHECK} {ROOT} | grep -q "install ok installed"'))
+        check("2.upgraded-version-restored", rs.sh(f"/usr/bin/dpkg-query -W {ROOT}"), 0, "2.0")
         check('2.dependency-restored', rs.sh(f'{CHECK} {DEP}'), 0, 'install ok installed')
         check('2.temporary-package-gone', rs.sh(f'{CHECK} {EXTRA}'), 1)
         check('2.verify-registration', rs.sh(f'{CLI} verify'), 0, 'immutable image')
@@ -144,9 +159,10 @@ def run_tests():
     finally:
         vm.stop(180)
         print('3.shutdown:', vm.proc.returncode, flush=True)
-    vm = boot(4)
+    vm = boot(4, login=False)
     rs = vm.rs
     try:
+        wait(rs, '/usr/local/lib/tpscli is-created && ! /usr/local/lib/tpscli is-unlocked')
         check('4.locked-storage-rejected', rs.sh(f'{APT} install {ROOT} -Pr -y'), 1, 'is locked')
     finally:
         vm.stop(180)

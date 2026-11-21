@@ -30,11 +30,17 @@ data and explicit approval for the identified device.
 
 - All 41 Veil unit tests passed. Both changed Nix bundles resolved against
   the pinned nixpkgs input, and a dry run found their package closures in
-  the configured binary cache.
+  the configured binary cache. On the build host, AIDE initialized and
+  checked a local baseline, ClamAV matched a fixture using a local
+  signature, Bulk Extractor found a synthetic artifact, ExifTool read
+  wallpaper metadata, and OpenSCAP reported its supported schemas.
 - In a QEMU boot with Pixman, GDM handed off to XFCE. Super+T opened the
   terminal, Super+E opened Files, XFCE owned the StatusNotifier watcher,
   the session accepted a desktop notification, and Package Center
   opened. Forced loss of labwc ended the VM with QEMU exit status 0.
+  A separate normal-rendering run clicked Package Center's Refresh list
+  control, changed the virtual output scale and restored it, and
+  launched Sound Settings.
 - The offline APT fixture used a signed package index and a short-lived
   loopback repository on an isolated VM. Installing and removing a
   temporary package left no registration. Removing a registered package
@@ -44,6 +50,11 @@ data and explicit approval for the identified device.
   and registration absent, while preserving the installed dependency.
   The next unlocked boot did not restore the package. A malformed
   registration was rejected without replacing the file.
+- Stopping APT during a fixture package's post-install and pre-removal
+  scripts preserved the prior registry in both cases. `repair` followed
+  by a retry completed each transaction. APT rejected a tampered
+  archive before installation, and the registered fixture upgraded
+  from version 1.0 to 2.0.
 - A boot with locked storage accepted the Welcome Screen's explicit
   **Start Without Persistent Storage** choice. Persistent installation
   then failed with instructions to unlock the volume.
@@ -63,8 +74,14 @@ Persistent package transactions have the same root authority as Debian
 APT. Optional Nix tools run under the live user and have no automatic
 service installation in this change.
 
-Clean boot testing still needs to exercise Tor Connection, Tor Browser,
-DNS and IPv6 leak prevention, firewall behavior and Agent inference.
-Physical GPU/display behavior, idle locking, desktop icons, complete
-settings coverage and the full requested toolkit matrix remain separate
+A networked source-overlay boot started Tor Connection and Tor Browser,
+bootstrapped Tor, and confirmed a Tor exit for the live user's traffic.
+Direct UDP DNS and IPv6 probes failed as intended, and stopping Tor
+blocked the live user's Internet access. Network Guard reported zero
+failing checks and a warning about the Tails LAN policy, which allows
+local-network traffic outside Tor.
+
+These tests need to be repeated against the clean image. Physical GPU
+and display behavior, idle locking, desktop icons, complete settings
+coverage, Agent inference and the full toolkit matrix remain separate
 validation items.
