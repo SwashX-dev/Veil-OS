@@ -9,7 +9,9 @@
       "imhex",
       "jadx",
       "apktool",
-      "upx"
+      "upx",
+      "binutils",
+      "checksec"
     ]
   },
   "web-appsec": {
@@ -39,7 +41,8 @@
       "binwalk",
       "yara",
       "chainsaw",
-      "osquery"
+      "osquery",
+      "unhide"
     ]
   },
   "network-ids": {

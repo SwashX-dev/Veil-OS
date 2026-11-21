@@ -102,12 +102,12 @@
   {
    "name": "checksec",
    "category": "vulnerability-assessment",
-   "source": "base",
+   "source": "nix:bundle:reverse-engineering",
    "network_policy": "none",
    "privacy": "compatible",
    "mode": "user",
    "description": "Binary hardening checker",
-   "notes": ""
+   "notes": "Needs binutils, which Tails removes from the image: install bundle:reverse-engineering."
   },
   {
    "name": "yara",
@@ -128,26 +128,6 @@
    "mode": "root",
    "description": "System hardening audit",
    "notes": ""
-  },
-  {
-   "name": "chkrootkit",
-   "category": "incident-response",
-   "source": "base",
-   "network_policy": "none",
-   "privacy": "compatible",
-   "mode": "root",
-   "description": "Rootkit scanner",
-   "notes": ""
-  },
-  {
-   "name": "rkhunter",
-   "category": "incident-response",
-   "source": "base",
-   "network_policy": "none",
-   "privacy": "compatible",
-   "mode": "root",
-   "description": "Rootkit hunter",
-   "notes": "Do not run --update/--propupd online without reason; database updates go through Tor."
   },
   {
    "name": "aircrack-ng",
@@ -608,6 +588,26 @@
    "mode": "user",
    "description": "Local LLM server",
    "notes": "Veil Agent runs it in a no-network sandbox; `ollama pull` itself needs network and Tor."
+  },
+  {
+   "name": "binutils",
+   "category": "reverse-engineering",
+   "source": "nix:bundle:reverse-engineering",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "objdump, readelf, nm, strings",
+   "notes": "Tails purges the toolchain from the image; the Nix bundle provides it on demand."
+  },
+  {
+   "name": "unhide",
+   "category": "incident-response",
+   "source": "nix:bundle:forensics",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "root",
+   "description": "Find hidden processes and ports (rootkit hunting)",
+   "notes": "rkhunter and chkrootkit are unavailable: they depend on binutils, which Tails removes."
   }
  ],
  "privacy_status": {

@@ -9,7 +9,11 @@ set -eu
 
 echo "Veil: configuring single-user Nix"
 
-install -d -o 1000 -g 1000 -m 0755 /nix
+# /nix/store and /nix/var/nix must exist: otherwise Nix's store
+# auto-detection silently falls back to a per-user chroot store
+# (~/.local/share/nix/root) that is only visible inside Nix's own mount
+# namespace, and `nix profile install` fails.
+install -d -o 1000 -g 1000 -m 0755 /nix /nix/store /nix/var /nix/var/nix
 # Make sure no daemon/socket units sneak in through dependencies.
 for unit in nix-daemon.service nix-daemon.socket; do
     if [ -e "/lib/systemd/system/${unit}" ] || [ -e "/usr/lib/systemd/system/${unit}" ]; then

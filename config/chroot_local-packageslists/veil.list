@@ -43,6 +43,9 @@ bubblewrap
 ## transparently routed through Tor by the unchanged Tails firewall)
 nix-bin
 
+## Lightweight security tools (base image). Tools that depend on binutils
+## (checksec, rkhunter, chkrootkit) are not listed: Tails deliberately purges
+## the toolchain from the image (98-remove_unwanted_packages).
 ## Lightweight security tools (base image). Network policy and privacy
 ## status for each tool is documented in /usr/share/veil/tools.json.
 nmap
@@ -54,11 +57,8 @@ socat
 gdb
 strace
 ltrace
-checksec
 yara
 lynis
-chkrootkit
-rkhunter
 aircrack-ng
 age
 binwalk

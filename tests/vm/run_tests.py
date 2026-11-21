@@ -204,19 +204,21 @@ def run_session_checks(vm, veil):
 
 @guard("3.amnesia", "Amnesia")
 def run_amnesia_checks(vm):
-    rc, out = sh(vm, "findmnt -no SOURCE,FSTYPE,OPTIONS /; echo ---; findmnt -no FSTYPE /run/live/overlay; "
+    rc, out = sh(vm, "findmnt -no SOURCE,FSTYPE,OPTIONS /; echo ---; findmnt -rno FSTYPE,TARGET | grep -E 'live/(mount/)?overlay'; "
                      "echo ---; cat /proc/swaps; echo ---; findmnt -lno SOURCE,TARGET | grep -E '^/dev/(sd|nvme|vd|hd)' || true; "
                      "echo ---; lsblk -dno NAME,TRAN,RM,SIZE")
     parts = out.split("---")
     overlay = "overlay" in parts[0] and "tmpfs" in parts[1]
-    no_swap = len([ln for ln in parts[2].strip().splitlines()[1:] if ln.strip()]) == 0
+    swaps = [ln for ln in parts[2].strip().splitlines()[1:] if ln.strip()]
+    no_swap = all(ln.split()[0].startswith("/dev/zram") for ln in swaps)
     record("3.ram_overlay", "Root filesystem is an overlay whose writable layer is tmpfs (RAM)", overlay, out)
-    record("3.no_swap", "No swap in use", no_swap, parts[2])
+    record("3.no_swap", "No swap on disk (zram, i.e. compressed RAM, only)", no_swap, parts[2])
     mounted = [ln for ln in parts[3].strip().splitlines() if ln and "/run/live/medium" not in ln
                and "/lib/live" not in ln]
     record("4.internal_disk_not_mounted", "Internal disk is not mounted automatically", not mounted, parts[3] + parts[4])
-    rc, out = sh(vm, "test -d /var/log/journal && ls /var/log/journal | wc -l || echo none; journalctl --header | grep -m1 -i 'file path'")
-    record("3.volatile_logs", "Journal is volatile (in /run)", "/run/log/journal" in out, out)
+    rc, out = sh(vm, "journalctl --header | grep -m1 -i 'file path'; findmnt -no FSTYPE -T /var/log/journal")
+    record("3.volatile_logs", "Journal lives in RAM (/run, or /var/log on the tmpfs-backed overlay)",
+           "/run/log/journal" in out or (overlay and "overlay" in out), out)
 
 
 @guard("5.network", "Network")
@@ -234,7 +236,13 @@ def run_network_checks(vm, veil):
     record("5.tor_bootstrap", "Tor connects and bootstraps to 100%", ok, "bootstrap flag present" if ok else "timeout")
     if not ok:
         return
-    rc, out = amnesia(vm, "curl -sS -m 60 https://check.torproject.org/api/ip")
+    out = ""
+    for _attempt in range(4):  # a single exit relay can fail; Tor retries on a new circuit
+        rc, o = amnesia(vm, "curl -sS -m 60 https://check.torproject.org/api/ip")
+        out += o + "\n"
+        if '"IsTor":true' in o.replace(" ", ""):
+            break
+        time.sleep(10)
     record("5.tor_routing", "Live user's web traffic exits through Tor (check.torproject.org)",
            '"IsTor":true' in out.replace(" ", ""), out)
     rc, out = amnesia(vm, "getent hosts example.com; echo rc=$?; "
@@ -288,7 +296,7 @@ def run_veil_checks(vm, out_dir, a):
            rc == 0 and "version" in out, out)
 
     rc, out = amnesia(vm, "veil tools | head -5; veil tools nmap; for t in nmap tshark tcpdump gdb yara lynis "
-                          "aircrack-ng age binwalk john sqlmap checksec; do command -v $t >/dev/null && echo \"$t ok\" "
+                          "aircrack-ng age binwalk john sqlmap strace ltrace socat ngrep; do command -v $t >/dev/null && echo \"$t ok\" "
                           "|| echo \"$t MISSING\"; done; nmap --version | head -1; yara --version")
     record("13.tools_base", "Base security tools present and runnable", "MISSING" not in out and rc == 0, out)
 
@@ -300,9 +308,8 @@ def run_veil_checks(vm, out_dir, a):
     record("13.lab_raw_scan", "Offline lab: raw SYN scan of a lab target works, no Internet",
            "8080/tcp open" in out and "NO-INTERNET" in out, out)
 
-    rc, out = amnesia(vm, "nix --version && NIX_REMOTE= nix --extra-experimental-features 'nix-command flakes' "
-                          "profile install nixpkgs#hello 2>&1 | tail -3; ~/.local/state/nix/profile/bin/hello; "
-                          "veil list", timeout=1800)
+    rc, out = amnesia(vm, "nix --version && veil install hello 2>&1 | tail -3; ~/.local/state/nix/profile/bin/hello; "
+                          "veil list; ls -d /nix/store/*-hello-* | head -1", timeout=1800)
     record("14.nix_install_over_tor", "Nix installs a package (signed binary cache) as the live user, through Tor",
            "Hello, world!" in out, out)
     rc, out = amnesia(vm, "veil search ghidra")
