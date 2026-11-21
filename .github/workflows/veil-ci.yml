@@ -55,5 +55,9 @@ jobs:
             config/chroot_local-includes/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/*.xml \
             config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in
       - name: Secret scan (no keys or tokens committed)
+        # Excluded: the scanner's own pattern files, and two UPSTREAM Tails
+        # files that carry the dummy SSH key used by the Tails test suite.
         run: |
-          ! git grep -nE '(ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (OPENSSH|RSA|EC|PGP) PRIVATE KEY-----)' -- . ':!tests/veil/test_veil.py'
+          ! git grep -nE '(ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (OPENSSH|RSA|EC|PGP) PRIVATE KEY-----)' -- . \
+            ':!tests/veil/test_veil.py' ':!.github/workflows/veil-ci.yml' \
+            ':!features/config/defaults.yml' ':!wiki/src/contribute/release_process/test/usage.mdwn'
