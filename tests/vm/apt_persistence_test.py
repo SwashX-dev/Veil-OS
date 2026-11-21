@@ -98,7 +98,7 @@ def run_tests():
     rs = vm.rs
     try:
         check('1.no-persistence', rs.sh(f'{APT} install {ROOT} -Pr -y'), 1, 'Create encrypted Persistent Storage')
-        check('1.create-luks', rs.sh('gdbus call --system --dest org.boum.tails.PersistentStorage '
+        check('1.create-luks', rs.sh('gdbus call --timeout 150 --system --dest org.boum.tails.PersistentStorage '
               '--object-path /org/boum/tails/PersistentStorage --method org.boum.tails.PersistentStorage.Create '
               + shlex.quote(PASS), timeout=180))
         check('1.active-feature', wait(rs, '/usr/local/lib/tpscli is-active AdditionalSoftware'))
