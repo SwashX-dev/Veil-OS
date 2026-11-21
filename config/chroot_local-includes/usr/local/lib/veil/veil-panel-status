@@ -1,31 +1,37 @@
 #!/usr/bin/python3 -I
-"""Panel indicator (xfce4-genmon-plugin): Tor and privacy status at a glance.
+"""Panel status indicator: Tor and privacy state at a glance.
 
-Cheap, unprivileged checks only; click opens Veil Network Guard for the
-full audit. Shows no IP address, MAC address or circuit information.
+xfce4-panel cannot host external plugins (genmon, systray) on Wayland, so
+this daemon rewrites the panel launcher item
+~/.config/xfce4/panel/launcher-5/veil-status.desktop (icon, label, tooltip)
+whenever the state changes; the launcher plugin watches its item files.
+Clicking it opens Veil Network Guard.
+
+Cheap, unprivileged checks only. Shows no IP address, MAC address or
+circuit information.
+
+  veil-panel-status            run as a daemon (default)
+  veil-panel-status --once     print the current state as JSON and exit
+  veil-panel-status --write    write the launcher item once and exit
 """
 
-import html
+import json
 import os
 import subprocess
+import sys
+import time
 from pathlib import Path
 
 TOR_DONE = Path("/run/tor-has-bootstrapped/done")
+ITEM = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config")) / "xfce4/panel/launcher-5/veil-status.desktop"
 
 
 def tor_state():
     if TOR_DONE.exists():
         return "on"
     try:
-        r = subprocess.run(["systemctl", "is-active", "--quiet", "tails-tor-has-bootstrapped.target"],
-                           timeout=2, check=False)
-        if r.returncode == 0:
-            return "on"
-    except (OSError, subprocess.TimeoutExpired):
-        pass
-    try:
         out = subprocess.run(["nmcli", "-t", "-f", "STATE", "general"], capture_output=True, text=True,
-                             timeout=2, check=False).stdout.strip()
+                             timeout=3, check=False).stdout.strip()
     except (OSError, subprocess.TimeoutExpired):
         out = ""
     return "connecting" if out.startswith("connected") else "offline"
@@ -40,28 +46,55 @@ def persistence():
     return os.path.ismount("/live/persistence/TailsData_unlocked")
 
 
-def main():
+def state():
     t = tor_state()
-    color = {"on": "#4fd1c5", "connecting": "#e0b45c", "offline": "#6c6a78"}[t]
-    label = {"on": "TOR", "connecting": "TOR…", "offline": "OFFLINE"}[t]
-    parts = [f"<span foreground='{color}'>◆ {label}</span>"]
-    grants = agent_net_grants()
-    if grants:
-        parts.append("<span foreground='#e0b45c'>AGENT⇅</span>")
-    if persistence():
-        parts.append("<span foreground='#8b7cf6'>◼ PERSIST</span>")
+    g = agent_net_grants()
+    p = persistence()
+    icon = {"on": "veil-status-on", "connecting": "veil-status-wait", "offline": "veil-status-off"}[t]
+    if g:
+        icon = "veil-status-agent"
+    label = {"on": "Tor", "connecting": "Tor…", "offline": "Offline"}[t]
     tip = [
         {"on": "Tor is connected: Internet traffic goes through Tor.",
          "connecting": "Network up, Tor not ready: nothing leaves this computer except Tor itself.",
          "offline": "No network connection."}[t],
-        "Veil Agent: network granted to a session." if grants else "Veil Agent: offline.",
-        "Persistent Storage unlocked." if persistence() else "Amnesic session: nothing is kept after shutdown.",
+        "Veil Agent: network granted to a session." if g else "Veil Agent: offline.",
+        "Persistent Storage unlocked." if p else "Amnesic session: nothing is kept after shutdown.",
         "Click for a full privacy audit (Network Guard).",
     ]
-    print(f"<txt> {'  '.join(parts)} </txt>")
-    print("<tool>" + html.escape("\n".join(tip)) + "</tool>")
-    print("<txtclick>veil-network-guard</txtclick>")
+    return {"tor": t, "agent_network_grants": g, "persistence": p, "icon": icon, "label": label,
+            "tooltip": " ".join(tip)}
+
+
+def render(s):
+    return ("[Desktop Entry]\nType=Application\n"
+            f"Name={s['label']}\nComment={s['tooltip']}\n"
+            "Exec=veil-network-guard\n"
+            f"Icon={s['icon']}\n")
+
+
+def write(s):
+    ITEM.parent.mkdir(parents=True, exist_ok=True)
+    tmp = ITEM.with_suffix(".tmp")
+    tmp.write_text(render(s))
+    os.replace(tmp, ITEM)
+
+
+def main():
+    if "--once" in sys.argv:
+        print(json.dumps(state()))
+        return 0
+    if "--write" in sys.argv:
+        write(state())
+        return 0
+    last = None
+    while True:
+        s = state()
+        if s != last:
+            write(s)
+            last = s
+        time.sleep(4)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

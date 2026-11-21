@@ -26,10 +26,23 @@ if [ -r /var/lib/tails-user-session/keyboard ]; then
     export XKB_DEFAULT_OPTIONS="${XKBOPTIONS:-}"
 fi
 
+# GDM exports XDG_DATA_DIRS as "/usr/local/share/:/usr/share/". libxfce4util
+# silently skips entries with a trailing slash, so xfce4-panel would find no
+# plugins at all: normalize the list (and make sure the system dirs are there).
+normalize_dirs() {
+    printf '%s' "$1" | tr ':' '\n' | sed -e 's#/*$##' -e '/^$/d' | awk '!seen[$0]++' | paste -sd ':' -
+}
+XDG_DATA_DIRS="$(normalize_dirs "${XDG_DATA_DIRS:-/usr/local/share:/usr/share}")"
+case ":$XDG_DATA_DIRS:" in *:/usr/share:*) ;; *) XDG_DATA_DIRS="$XDG_DATA_DIRS:/usr/local/share:/usr/share" ;; esac
+
 # User-installed Nix packages (veil install ...).
 NIX_PROFILE="$HOME/.local/state/nix/profile"
 export PATH="$NIX_PROFILE/bin:$PATH"
-export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:$NIX_PROFILE/share"
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:$NIX_PROFILE/share"
+if [ -n "${XDG_CONFIG_DIRS:-}" ]; then
+    XDG_CONFIG_DIRS="$(normalize_dirs "$XDG_CONFIG_DIRS")"
+    export XDG_CONFIG_DIRS
+fi
 
 # Tails' dump-user-env (feeds root->user notifications) requires XAUTHORITY.
 # GNOME's mutter creates one for Xwayland; labwc's Xwayland needs none, so

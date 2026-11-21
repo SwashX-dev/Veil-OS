@@ -42,15 +42,19 @@ Many tools can't work over Tor: SYN or UDP scans, ARP and other LAN attacks,
 packet injection. **Veil never opens a non-Tor path for them.** Instead:
 
 ```sh
-veil lab up demo            # isolated user+net namespace
-veil lab shell demo         # a shell inside it: lab0 10.66.0.1 <-> lab1 10.66.0.2
-python3 -m http.server --bind 10.66.0.2 8080 &   # a target service
-nmap -sS -p 1-1000 10.66.0.2                       # raw-socket scan works here
+veil lab up demo                         # isolated user+net namespaces
+veil lab target demo -- python3 -m http.server --bind 10.66.0.2 8080 &   # target side (lab1)
+veil lab run demo -- nmap -sS -Pn -p 1-1000 10.66.0.2                     # scanner side (lab0)
+veil lab shell demo                      # interactive shell on the scanner side
 veil lab down demo
 ```
 
-Inside a lab you have root over the lab's own namespaces only, with
-`CAP_NET_RAW` and `CAP_NET_ADMIN`. There is no interface to the host, Tor, the
+The scanner side (`lab0`, 10.66.0.1) and the target side (`lab1`,
+10.66.0.2) are separate network namespaces joined by a veth pair, so traffic
+really crosses a link. Inside a lab you have root over the lab's own
+namespaces only, with `CAP_NET_RAW` and `CAP_NET_ADMIN`. Use `/usr/bin/curl`
+there: Tails' `curl` wrapper always goes through Tor's SOCKS port, which a
+lab cannot reach. There is no interface to the host, Tor, the
 LAN or the Internet.
 
 **Authorization:** only test systems you own or are explicitly authorized to

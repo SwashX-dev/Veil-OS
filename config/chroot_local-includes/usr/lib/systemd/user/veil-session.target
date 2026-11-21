@@ -6,4 +6,3 @@ After=graphical-session-pre.target
 # Same Tails session plumbing GNOME triggers via gnome-session.target /
 # gnome-session-wayland@gnome.target:
 Wants=tails-dump-user-env.service tails-start-system-gnome-session-target.service
-Wants=veil-update-check.service

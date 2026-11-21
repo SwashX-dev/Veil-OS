@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Wi-Fi & Network
+Comment=Connect to a network (Tor Connection starts once the network is up)
+Exec=veil-network-settings
+Icon=network-wireless-symbolic

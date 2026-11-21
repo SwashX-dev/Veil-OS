@@ -69,6 +69,23 @@ def wait_for(vm, cmd, timeout, user="root", interval=3):
     return False, ""
 
 
+SESSION_ENV = 'export $(systemctl --user show-environment | grep -E "^(WAYLAND_DISPLAY|XDG_RUNTIME_DIR)=" | xargs); '
+
+
+def session_screenshot(vm, name):
+    """Screenshot through the compositor (wlr-screencopy): QEMU's screendump
+    can return stale frames with labwc on virtio-gpu."""
+    out = Path(vm.workdir) / f"{name}.png"
+    try:
+        rc, _ = sh(vm, SESSION_ENV + f"grim /tmp/{name}.png", user="amnesia", timeout=60)
+        if rc == 0:
+            out.write_bytes(vm.rs.read_file(f"/tmp/{name}.png"))
+            return str(out)
+    except Exception:  # noqa: BLE001
+        pass
+    return vm.screenshot(name)
+
+
 def connect_tor(vm, timeout=420):
     """Enable Tor the way Tor Connection does (DisableNetwork=0) and wait for bootstrap."""
     code = ("from stem.control import Controller\n"
@@ -122,7 +139,7 @@ def main() -> int:
         record("boot.remote_shell", "Image boots (UEFI, USB) and the system reaches early userspace", True,
                f"remote shell up after {time.time() - t0:.1f}s")
 
-        ok, _ = wait_for(vm, "pgrep -f tails-greeter >/dev/null", 300)
+        ok, _ = wait_for(vm, "pgrep -f '[t]ails-greeter.py' >/dev/null", 300)
         t_greeter = time.time() - t0
         time.sleep(5)
         vm.screenshot("01-welcome-screen")
@@ -135,7 +152,7 @@ def main() -> int:
         ok, _ = wait_for(vm, f"pgrep -u amnesia -f '{sess_proc}' >/dev/null", 240)
         t_desktop = time.time() - t1
         time.sleep(8)
-        vm.screenshot("02-desktop")
+        session_screenshot(vm, "02-desktop") if veil else vm.screenshot("02-desktop")
         record("20.greeter_to_desktop", "Boot performance: Start → desktop ready", ok, f"{t_desktop:.1f}s",
                seconds=round(t_desktop, 1))
 
@@ -172,10 +189,14 @@ def run_session_checks(vm, veil):
                          "printf 'Xorg='; pgrep -c -x Xorg; ls /usr/bin/Xorg 2>&1 | tail -1")
         ok = all(f"{p}=0" not in out for p in ("labwc", "xfce4-panel", "swaybg")) and "Xorg=0" in out
         record("10.xfce_wayland", "XFCE panel on labwc (Wayland), no X.Org", ok, out)
-        rc, out = sh(vm, "systemctl --user -M amnesia@ is-active desktop.target veil-session.target "
-                         "tails-dump-user-env.service; systemctl is-active gnome-session.target")
-        record("10.tails_session_units", "Tails session units run in the Veil session",
-               out.split().count("active") >= 4, out)
+        rc, out = sh(vm, "systemctl --user -M amnesia@ is-active veil-session.target tails-dump-user-env.service "
+                         "tails-ibus-proxy.service tails-a11y-bus-proxy.service; systemctl is-active gnome-session.target; "
+                         "test -s /run/user/1000/user-env && echo user-env-ok")
+        record("10.tails_session_units", "Tails session plumbing works in the Veil session (user env, IBus/a11y proxies)",
+               out.split().count("active") >= 5 and "user-env-ok" in out, out)
+        rc, out = sh(vm, "for i in $(seq 1 30); do systemctl --user -M amnesia@ is-active --quiet tca.service && "
+                         "{ echo tca-active; break; }; sleep 2; done; systemctl --user -M amnesia@ is-active tca.service")
+        record("5.tor_connection_app", "Tor Connection (tca) starts in the Veil session", "tca-active" in out, out)
         rc, out = sh(vm, "ls /usr/share/wayland-sessions/; systemctl --user -M amnesia@ is-enabled tails-upgrade-frontend.service; true")
         record("10.only_veil_session", "Only the Veil session is installed; Tails upgrader masked",
                "veil.desktop" in out and "gnome.desktop" not in out and "masked" in out, out)
@@ -209,7 +230,7 @@ def run_network_checks(vm, veil):
     record("8.kill_switch_before_tor", "Before Tor connects, the live user cannot reach the Internet",
            "IsTor" not in out, out)
     ok, _ = connect_tor(vm)
-    vm.screenshot("03-tor-connected")
+    session_screenshot(vm, "03-tor-connected") if veil else vm.screenshot("03-tor-connected")
     record("5.tor_bootstrap", "Tor connects and bootstraps to 100%", ok, "bootstrap flag present" if ok else "timeout")
     if not ok:
         return
@@ -271,10 +292,10 @@ def run_veil_checks(vm, out_dir, a):
                           "|| echo \"$t MISSING\"; done; nmap --version | head -1; yara --version")
     record("13.tools_base", "Base security tools present and runnable", "MISSING" not in out and rc == 0, out)
 
-    rc, out = amnesia(vm, "veil lab up t && veil lab run t -- sh -c 'id -u; ip -o -4 addr show lab1; "
-                          "(python3 -m http.server --bind 10.66.0.2 8080 >/dev/null 2>&1 &); sleep 1; "
-                          "nmap -sS -Pn -p 8080 10.66.0.2 | grep 8080; "
-                          "curl -sS -m 5 https://example.com >/dev/null 2>&1 && echo INTERNET || echo NO-INTERNET'; "
+    rc, out = amnesia(vm, "veil lab up t >/dev/null && veil lab target t -- sh -c "
+                          "'python3 -m http.server --bind 10.66.0.2 8080 >/dev/null 2>&1 &'; sleep 2; "
+                          "veil lab run t -- sh -c 'id -u; nmap -sS -Pn -p 22,8080 10.66.0.2 | grep /tcp; "
+                          "/usr/bin/curl -sS -m 5 https://example.com >/dev/null 2>&1 && echo INTERNET || echo NO-INTERNET'; "
                           "veil lab down t", timeout=180)
     record("13.lab_raw_scan", "Offline lab: raw SYN scan of a lab target works, no Internet",
            "8080/tcp open" in out and "NO-INTERNET" in out, out)
@@ -315,18 +336,18 @@ def run_veil_checks(vm, out_dir, a):
 
 @guard("11.apps", "Applications")
 def run_app_checks(vm, veil):
-    env = "export $(cat /run/user/1000/tails-user-env 2>/dev/null | xargs) 2>/dev/null;"
-    apps = [("tor-browser", "firefox|torbrowser"), ("tails-persistent-storage", "tps-frontend|persistent")]
+    apps = [("tor-browser", "firefox.real|torbrowser"), ("tails-persistent-storage", "tps-frontend|persistent-storage")]
     if veil:
-        apps = [("veil-console", "veil.console|veil-console"), ("veil-network-guard", "veil-network-guard|NetworkGuard"),
-                ("veil-agent-gui", "veil-agent-gui|veil.agent.gui"), ("veil-package-center", "veil-package-center")] + apps
+        apps = [("veil-console", "veil.console|veil-console"), ("veil-network-guard", "veil-network-guard"),
+                ("veil-agent-gui", "veil-agent-gui"), ("veil-package-center", "veil-package-center")] + apps
     for i, (cmd, pat) in enumerate(apps):
-        vm.rs._call("sh_spawn", "amnesia", {}, cmd)
-        ok, _ = wait_for(vm, f"pgrep -u amnesia -f '{pat}' >/dev/null", 90)
-        time.sleep(6)
-        shot = vm.screenshot(f"1{i}-{cmd}")
+        unit = f"t-app-{i}"
+        sh(vm, f"systemd-run --user --unit={unit} {cmd}", user="amnesia", timeout=30)
+        ok, out = wait_for(vm, f"pgrep -u amnesia -f '{pat}' | grep -v pgrep >/dev/null", 90)
+        time.sleep(25 if cmd == "tor-browser" else 8)
+        shot = session_screenshot(vm, f"1{i}-{cmd}") if veil else vm.screenshot(f"1{i}-{cmd}")
         record(f"11.app.{cmd}", f"{cmd} starts in the session", ok, f"screenshot {os.path.basename(shot)}")
-        sh(vm, f"pkill -u amnesia -f '{pat}' || true")
+        sh(vm, f"systemctl --user stop {unit}; true", user="amnesia", timeout=60)
 
 
 if __name__ == "__main__":

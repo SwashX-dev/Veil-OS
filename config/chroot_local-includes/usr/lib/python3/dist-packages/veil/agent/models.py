@@ -142,13 +142,22 @@ def recommend(hw: dict | None = None) -> ModelSpec:
 
 
 def model_dir(create: bool = True) -> tuple[Path, bool]:
-    """Return (directory, persistent?)."""
+    """Return (directory, persistent?).
+
+    Without Persistent Storage, models go to ~/.local/share/veil/models: on
+    Veil/Tails the home directory lives on the RAM-backed root overlay, so it
+    is erased at shutdown, and unlike $XDG_RUNTIME_DIR (a tmpfs that logind
+    caps at 10% of RAM) it can hold multi-GB model files.
+    """
     p = common.persistent_state_dir("models") if create else None
     if p:
         return p, True
     if not create and common.persistence_unlocked():
         return common.PERSISTENT_DIR / ".veil" / "models", True
-    return common.amnesic_state_dir("models"), False
+    d = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local" / "share")) / "veil" / "models"
+    if create:
+        d.mkdir(parents=True, exist_ok=True, mode=0o700)
+    return d, False
 
 
 def local_models() -> list[dict]:

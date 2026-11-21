@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Privacy status
+Comment=Click for a full privacy audit (Network Guard)
+Exec=veil-network-guard
+Icon=veil-status-off

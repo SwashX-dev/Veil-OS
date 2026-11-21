@@ -61,16 +61,17 @@ keyboard layout from the Welcome Screen) → `labwc` → `/etc/xdg/labwc/autosta
 | Tails under GNOME | Veil OS |
 |---|---|
 | GNOME Shell session | labwc + XFCE panel (`veil.desktop`) |
-| `torstatus@tails.boum.org` extension | genmon panel indicator `veil-panel-status` + Network Guard |
+| `torstatus@tails.boum.org` extension | panel status item rewritten by `veil-panel-status` + Network Guard |
+| GNOME quick settings (Wi-Fi) | panel launcher → `veil-network-settings` (GNOME Settings Wi-Fi/Network panels, as in Tails) |
 | `status-menu-helper` (Lock / power) | panel power button → `veil-shutdown` (Lock / Restart / Shut Down) |
 | GNOME lock screen (`org.gnome.ScreenSaver`) | `tails-screen-locker` (unchanged password flow) → `veil-lock` (swaylock, ext-session-lock) |
 | GNOME Shell polkit agent | mate-polkit |
 | GNOME notifications | xfce4-notifyd (notification log disabled) |
 | `gnome-session.target` hooks | `veil-session.target` (+ `tails-spoof-mac` checks both) |
 | xdg-desktop-portal-gnome | xdg-desktop-portal-gtk / -wlr (`veil-portals.conf`) |
-| GNOME quick settings network | nm-applet (StatusNotifier in the panel tray) |
+| GNOME Shell's NetworkManager secret agent | nm-applet (runs without a tray; prompts for Wi-Fi passwords) |
 | `org.gnome.SessionManager` (Reboot/Shutdown, used by Persistent Storage) | `veil-session-manager-shim` (session bus, Veil session only) |
-| IBus daemon started by GNOME Shell (Tor Connection requires `tails-ibus-proxy`) | `org.freedesktop.IBus.session.generic.service` via a drop-in |
+| IBus daemon started by GNOME Shell (Tor Connection requires `tails-ibus-proxy`) | `ibus-daemon` started by the Veil autostart; drop-in makes `tails-ibus-proxy` wait for it (the generic IBus unit can't load: same BusName as the GNOME one) |
 | mutter Xwayland auth file (needed by `tails-dump-user-env`) | empty `XAUTHORITY` placeholder + exported `DISPLAY` |
 | Tails upgrader | masked; `veil-update-check` notifies about new Veil releases |
 | WhisperBack (reports to Tails) | hidden; Veil bugs go to GitHub issues |

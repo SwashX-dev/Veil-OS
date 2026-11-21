@@ -35,18 +35,22 @@ def check_root_overlay(mounts: list[dict]) -> Check:
     for opt in m.get("options", "").split(","):
         if opt.startswith("upperdir="):
             upper = opt.split("=", 1)[1]
+    # The upperdir path is recorded as seen from the initramfs (e.g.
+    # "/live/overlay//rw"); after switch_root live-boot moves that tmpfs to
+    # e.g. /usr/lib/live/mount/overlay. Match on the overlay directory name.
+    parts = [x for x in upper.split("/") if x]
+    base = parts[-2] if len(parts) >= 2 else ""
     upper_fs = ""
-    best = ""
     for mm in mounts:
-        t = mm["target"]
-        if upper.startswith(t.rstrip("/") + "/") and len(t) > len(best):
-            best, upper_fs = t, mm["fstype"]
+        t = mm["target"].rstrip("/")
+        if base and t.split("/")[-1] == base and "/live" in t:
+            upper_fs = mm["fstype"]
     ok = m.get("fstype") == "overlay" and upper_fs == "tmpfs"
     return Check("amnesia.ram_overlay", "Writable layer lives in RAM",
                  "pass" if ok else "fail",
                  "Root is an overlay over the read-only SquashFS; all writes go to tmpfs (RAM)" if ok
                  else f"Root fs={m.get('fstype')} upper={upper or '?'} on {upper_fs or '?'}",
-                 {"root_fstype": m.get("fstype"), "upper_fstype": upper_fs}, "amnesia")
+                 {"root_fstype": m.get("fstype"), "upper": upper, "upper_fstype": upper_fs}, "amnesia")
 
 
 def check_squashfs(mounts: list[dict]) -> Check:
@@ -58,8 +62,11 @@ def check_squashfs(mounts: list[dict]) -> Check:
 
 def check_swap(text: str) -> Check:
     lines = [ln for ln in text.splitlines()[1:] if ln.strip()]
-    return Check("amnesia.no_swap", "No swap in use", "pass" if not lines else "fail",
-                 "No swap device or file is active" if not lines else f"Active swap: {lines}",
+    disk = [ln for ln in lines if not ln.split()[0].startswith("/dev/zram")]
+    zram = [ln.split()[0] for ln in lines if ln.split()[0].startswith("/dev/zram")]
+    return Check("amnesia.no_swap", "No swap on disk", "pass" if not disk else "fail",
+                 ("No disk swap; " + (f"compressed RAM swap only ({', '.join(zram)})" if zram else "no swap at all"))
+                 if not disk else f"Disk swap active: {disk}",
                  {"swaps": lines}, "amnesia")
 
 
@@ -69,7 +76,8 @@ def check_internal_disks(mounts: list[dict]) -> Check:
         src, tgt = m["source"], m["target"]
         if not src.startswith("/dev/") or src.startswith(("/dev/loop", "/dev/mapper/TailsData")):
             continue
-        if tgt.startswith((BOOT_MEDIUM, "/run/live", "/lib/live", PERSISTENCE, "/live/persistence")):
+        if tgt.startswith((BOOT_MEDIUM, "/run/live", "/lib/live", "/usr/lib/live", PERSISTENCE,
+                           "/live/persistence")):
             continue
         flagged.append(f"{src} on {tgt}")
     return Check("amnesia.no_internal_mounts", "No internal disk is mounted",
@@ -79,14 +87,16 @@ def check_internal_disks(mounts: list[dict]) -> Check:
                  {"mounts": flagged}, "amnesia")
 
 
-def check_journal() -> Check:
+def check_journal(ram_root: bool = True) -> Check:
     persistent = Path("/var/log/journal")
-    is_persistent_dir = persistent.is_dir() and any(persistent.iterdir()) if persistent.exists() else False
+    on_disk_dir = persistent.is_dir()
+    if not on_disk_dir:
+        return Check("amnesia.volatile_logs", "System logs are volatile", "pass",
+                     "The journal is kept in /run/log/journal (RAM)", {}, "amnesia")
     return Check("amnesia.volatile_logs", "System logs are volatile",
-                 "pass" if not is_persistent_dir else "warn",
-                 "The journal is kept in RAM (/run/log/journal)" if not is_persistent_dir
-                 else "/var/log/journal exists (still in RAM on Veil, but check persistence settings)",
-                 {}, "amnesia")
+                 "pass" if ram_root else "warn",
+                 "/var/log/journal lives on the RAM-backed root overlay and is erased at shutdown" if ram_root
+                 else "/var/log/journal exists and the root filesystem is not RAM-backed", {}, "amnesia")
 
 
 def check_persistence() -> Check:
@@ -166,12 +176,13 @@ def run_all() -> list[Check]:
         swaps = Path("/proc/swaps").read_text()
     except OSError:
         swaps = ""
+    overlay = check_root_overlay(mounts)
     checks = [
-        check_root_overlay(mounts),
+        overlay,
         check_squashfs(mounts),
         check_swap(swaps),
         check_internal_disks(mounts),
-        check_journal(),
+        check_journal(overlay.status == "pass"),
         check_persistence(),
         check_sysctls(),
         check_apparmor(),

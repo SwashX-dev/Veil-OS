@@ -101,7 +101,31 @@ def _rules(tables: dict, table: str, chain: str) -> list[dict]:
             if r["rule"].startswith(f"-A {chain} ")]
 
 
-def evaluate_firewall(v4: dict, v6: dict) -> list[Check]:
+def uid_name_map(*tables: dict) -> dict[str, str]:
+    """Map numeric --uid-owner values found in the rules to user names."""
+    import pwd
+    out = {}
+    for t in tables:
+        for tab in t.values():
+            for r in tab.get("rules", []):
+                for m in re.finditer(r"--uid-owner (\d+)", r["rule"]):
+                    try:
+                        out[m.group(1)] = pwd.getpwuid(int(m.group(1))).pw_name
+                    except (KeyError, ValueError):
+                        pass
+    return out
+
+
+def _owner(rule: str, names: dict[str, str]) -> str | None:
+    m = re.search(r"--uid-owner (\S+)", rule)
+    if not m:
+        return None
+    return names.get(m.group(1), m.group(1))
+
+
+def evaluate_firewall(v4: dict, v6: dict, uid_names: dict[str, str] | None = None) -> list[Check]:
+    """iptables-save prints numeric UIDs for users; uid_names maps them back."""
+    names = uid_names or {}
     checks: list[Check] = []
     filt = v4.get("filter", {}).get("policies", {})
     filt6 = v6.get("filter", {}).get("policies", {})
@@ -137,8 +161,8 @@ def evaluate_firewall(v4: dict, v6: dict) -> list[Check]:
             continue
         if "--dport 9040" in rule and "127.0.0.1" in rule:
             continue  # amnesia -> local TransPort (Tor)
-        m = re.search(r"--uid-owner (\S+)", rule)
-        if m and (m.group(1) in EXPECTED_EGRESS_USERS | OPT_IN_EGRESS_USERS):
+        owner = _owner(rule, names)
+        if owner and owner in EXPECTED_EGRESS_USERS | OPT_IN_EGRESS_USERS:
             continue
         suspicious.append(rule)
     lan_rules = [r["rule"] for r in v4.get("filter", {}).get("rules", []) if r["rule"].startswith("-A lan ")]
@@ -172,17 +196,18 @@ def evaluate_firewall(v4: dict, v6: dict) -> list[Check]:
             rejected += r["counters"][0]
     checks.append(Check(
         "firewall.blocked_attempts", "Blocked outbound attempts since boot",
-        "info" if rejected == 0 else "warn",
+        "info",
         "No outbound packet has been rejected" if rejected == 0
-        else f"{rejected} outbound packet(s) were rejected (an app tried to bypass Tor; see journal 'Dropped outbound packet')",
+        else f"{rejected} outbound packet(s) were rejected and logged ('Dropped outbound packet' in the journal). "
+             "This includes Network Guard's own leak probes.",
         {"rejected_packets": rejected}, "firewall"))
 
     socks = {}
     for r in _rules(v4, "filter", "OUTPUT") + v4.get("filter", {}).get("rules", []):
         m_port = re.search(r"--dport (\d+)", r["rule"])
-        m_uid = re.search(r"--uid-owner (\S+)", r["rule"])
-        if m_port and m_uid and "-j ACCEPT" in r["rule"] and m_port.group(1) in ("9050", "9062", "9063"):
-            socks.setdefault(m_port.group(1), set()).add(m_uid.group(1))
+        owner = _owner(r["rule"], names)
+        if m_port and owner and "-j ACCEPT" in r["rule"] and m_port.group(1) in ("9050", "9062", "9063"):
+            socks.setdefault(m_port.group(1), set()).add(owner)
     checks.append(Check(
         "policy.socks_access", "Who may use Tor SOCKS ports",
         "info", "; ".join(f"{p}: {', '.join(sorted(u))}" for p, u in sorted(socks.items())) or "n/a",
@@ -209,17 +234,33 @@ def classify_peer(peer: str) -> str:
     return "internet"
 
 
-def evaluate_sockets(rows: list[dict]) -> list[Check]:
-    direct, lan, optin = [], [], []
+def _port(addr: str) -> str:
+    return addr.rsplit(":", 1)[-1] if ":" in addr else ""
+
+
+def evaluate_sockets(rows: list[dict], transproxy_users: set[str] | None = None) -> list[Check]:
+    """transproxy_users: users whose outgoing TCP the firewall REDIRECTs to
+    Tor's TransPort (ss still shows the original destination for those)."""
+    transproxy_users = transproxy_users or set()
+    direct, lan, optin, torified = [], [], [], 0
     for s in rows:
         kind = classify_peer(s.get("peer", ""))
         if kind in ("none", "loopback"):
             continue
-        user = s.get("user") or "?"
+        # ss omits "uid:" for root-owned sockets.
+        user = s.get("user") or "root"
+        # DHCP is how the computer gets an address on the local network; it
+        # is part of Tails' design (NetworkManager, as root, UDP 68 -> 67).
+        if s.get("proto") == "udp" and (_port(s.get("local", "")) == "68" or _port(s.get("peer", "")) == "67") \
+                and set(s.get("processes", [])) <= {"NetworkManager", "dhclient", "dhcpcd"}:
+            continue
         entry = {"user": user, "proto": s.get("proto"), "state": s.get("state"),
                  "processes": s.get("processes", [])}
         if kind == "internet":
             if user in EXPECTED_EGRESS_USERS:
+                continue
+            if s.get("proto") == "tcp" and user in transproxy_users:
+                torified += 1
                 continue
             (optin if user in OPT_IN_EGRESS_USERS else direct).append(entry)
         elif kind == "lan":
@@ -229,9 +270,10 @@ def evaluate_sockets(rows: list[dict]) -> list[Check]:
     checks = [Check(
         "connections.direct", "Unexpected direct Internet connections",
         "pass" if not direct else "fail",
-        "Only Tor holds connections to the Internet" if not direct
-        else f"{len(direct)} socket(s) talk to the Internet without Tor",
-        {"sockets": direct}, "connections")]
+        ("Only Tor holds connections to the Internet"
+         + (f"; {torified} app connection(s) transparently routed through Tor (TransPort)" if torified else ""))
+        if not direct else f"{len(direct)} socket(s) talk to the Internet without Tor",
+        {"sockets": direct, "transparently_torified": torified}, "connections")]
     if optin:
         checks.append(Check(
             "connections.unsafe_browser", "Unsafe Browser connections",
@@ -450,7 +492,7 @@ def run_all(active_probes: bool = True) -> list[Check]:
     if fw:
         v4 = parse_iptables_save(fw["ipv4"]["out"])
         v6 = parse_iptables_save(fw["ipv6"]["out"])
-        checks += evaluate_firewall(v4, v6)
+        checks += evaluate_firewall(v4, v6, uid_name_map(v4, v6))
     else:
         checks.append(Check("firewall.default_deny", "Firewall inspection", "skip",
                             "Root helper unavailable (not running on Veil OS?)", {}, "firewall"))
@@ -462,7 +504,15 @@ def run_all(active_probes: bool = True) -> list[Check]:
     checks += evaluate_tor(helper("tor"), common.tor_bootstrapped())
     socks = helper("sockets")
     if socks:
-        checks += evaluate_sockets(socks.get("sockets", []))
+        tp = set()
+        if fw:
+            names = uid_name_map(v4)
+            for r in _rules(v4, "nat", "OUTPUT"):
+                if "--to-ports 9040" in r["rule"] and "! -o lo" in r["rule"]:
+                    owner = _owner(r["rule"], names)
+                    if owner:
+                        tp.add(owner)
+        checks += evaluate_sockets(socks.get("sockets", []), tp)
     else:
         checks.append(Check("connections.direct", "Connection audit", "skip",
                             "Root helper unavailable", {}, "connections"))

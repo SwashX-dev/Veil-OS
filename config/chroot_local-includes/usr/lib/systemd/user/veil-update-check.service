@@ -8,3 +8,7 @@ Type=oneshot
 ExecStartPre=/bin/sh -c 'until test -e /run/tor-has-bootstrapped/done; do sleep 5; done'
 ExecStart=/usr/local/lib/veil/veil-update-notify
 TimeoutStartSec=infinity
+
+[Install]
+# Like Tails' own Tor-dependent checks (e.g. tails-security-check).
+WantedBy=desktop.target

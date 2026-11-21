@@ -6,8 +6,9 @@ namespace created by bubblewrap. Inside it the user has "root" with
 CAP_NET_RAW/CAP_NET_ADMIN over the lab's own network namespace only, and the
 lab gets a private veth pair:
 
-    lab0  10.66.0.1/24   (scanner side)
-    lab1  10.66.0.2/24   (target side: start services here)
+    lab0  10.66.0.1/24   scanner side (veil lab run / shell)
+    lab1  10.66.0.2/24   target side, in a nested network namespace
+                         (veil lab target NAME -- COMMAND starts services there)
 
 There is no interface connected to the host, so nothing in a lab can reach
 Tor, the LAN or the Internet, and the Tails firewall is never touched.
@@ -27,14 +28,18 @@ from veil import common, sandbox
 SETUP = r"""
 set -e
 ip link set lo up
-if ip link add lab0 type veth peer name lab1 2>/dev/null; then
-  ip addr add 10.66.0.1/24 dev lab0
-  ip addr add 10.66.0.2/24 dev lab1
-  ip link set lab0 up
-  ip link set lab1 up
-else
-  ip link add lab0 type dummy && ip addr add 10.66.0.1/24 dev lab0 && ip link set lab0 up || true
-fi
+# Target side lives in its own network namespace so traffic really crosses
+# the veth link (scanning an address of your own namespace goes via "lo").
+unshare --net sh -c 'ip link set lo up; exec sleep infinity' &
+TARGET_PID=$!
+sleep 0.3
+ip link add lab0 type veth peer name lab1
+ip link set lab1 netns "$TARGET_PID"
+ip addr add 10.66.0.1/24 dev lab0
+ip link set lab0 up
+nsenter -t "$TARGET_PID" -n sh -c 'ip addr add 10.66.0.2/24 dev lab1 && ip link set lab1 up'
+echo "$TARGET_PID" > "$VEIL_LAB_DIR/target.pid"
+mount -t sysfs sysfs /sys 2>/dev/null || true
 echo ready > "$VEIL_LAB_DIR/ready"
 exec sleep infinity
 """
@@ -66,7 +71,8 @@ def up(name: str = "default", workspace: str | None = None) -> dict:
     ws = os.path.realpath(os.path.expanduser(workspace or "~/Lab"))
     os.makedirs(ws, exist_ok=True)
     spec = sandbox.SandboxSpec(network=False, fake_root=True, writable=[ws, str(d)], unshare_pid=True,
-                               hostname=f"lab-{name}", extra_env={"VEIL_LAB_DIR": str(d)}, cwd=ws)
+                               hostname=f"lab-{name}", extra_env={"VEIL_LAB_DIR": str(d)}, cwd=ws,
+                               die_with_parent=False)
     proc = sandbox.popen(spec, ["sh", "-c", SETUP], stdout=subprocess.DEVNULL, stderr=open(d / "lab.log", "wb"),
                          start_new_session=True)
     for _ in range(100):
@@ -111,19 +117,23 @@ def labs() -> list[dict]:
     return out
 
 
-def enter_argv(name: str, command: list[str]) -> list[str]:
+def enter_argv(name: str, command: list[str], target: bool = False) -> list[str]:
+    """argv to run `command` in the lab's scanner side, or its target side."""
     info = _info(name) or up(name)
+    if target:
+        tpid = (_state() / name / "target.pid").read_text().strip()
+        command = ["nsenter", "-t", tpid, "-n", "--", *command]
     # Raw-socket tools need CAP_NET_RAW after exec. These capabilities only
     # apply to the lab's own user/network namespaces, never to the host.
     # bubblewrap denies setgroups(2) in unprivileged user namespaces, so we
     # keep our credentials and carry the lab-namespace capabilities into the
     # command as ambient capabilities (util-linux >= 2.38).
-    return ["nsenter", "-t", str(info["pid"]), "--user", "--net", "--mount", "--uts",
+    return ["nsenter", "-t", str(info["pid"]), "--user", "--net", "--mount", "--uts", "--pid",
             "--preserve-credentials", "--keep-caps", "--wd=" + info["workspace"], "--", *command]
 
 
-def run(name: str, command: str, timeout: float = 300) -> subprocess.CompletedProcess:
-    argv = enter_argv(name, ["sh", "-c", command])
+def run(name: str, command: str, timeout: float = 300, target: bool = False) -> subprocess.CompletedProcess:
+    argv = enter_argv(name, ["sh", "-c", command], target=target)
     try:
         return subprocess.run(argv, capture_output=True, text=True, timeout=timeout, check=False)
     except subprocess.TimeoutExpired as e:

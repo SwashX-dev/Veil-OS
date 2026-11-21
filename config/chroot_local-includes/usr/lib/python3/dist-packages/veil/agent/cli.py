@@ -66,7 +66,7 @@ def cmd_models(a) -> int:
         for m in extra:
             print(f"  {m['name']:<18} local file {common.human_bytes(m['size'])}  {m['file']}")
         d, persistent = models.model_dir(create=False)
-        print(dim(f"\n  Model directory: {d} ({'Persistent Storage, encrypted' if persistent else 'RAM, lost at shutdown'})"))
+        print(dim(f"\n  Model directory: {d} ({'Persistent Storage, encrypted' if persistent else 'RAM-backed home, erased at shutdown'})"))
         return 0
     if a.action == "recommend":
         hw = models.hardware()
@@ -80,7 +80,7 @@ def cmd_models(a) -> int:
             common.die("usage: veil agent models pull NAME")
 
         def consent(spec, dest, persistent):
-            where = "Persistent Storage (encrypted)" if persistent else "RAM (lost at shutdown — unlock Persistent Storage to keep it)"
+            where = "Persistent Storage (encrypted)" if persistent else "your RAM-backed home folder (erased at shutdown; unlock Persistent Storage to keep it)"
             return tty_confirm("download", f"Download {spec.title} ({common.human_bytes(spec.size)}, {spec.license}) "
                                            f"over Tor from huggingface.co\n  to {where}\n  SHA-256 {spec.sha256}")
         try:

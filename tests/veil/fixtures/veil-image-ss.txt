@@ -1,0 +1,10 @@
+udp ESTAB     0      0      10.0.2.15%eth0:68     10.0.2.2:67    users:(("NetworkManager",pid=16029,fd=26)) ino:25357 sk:1 cgroup:/system.slice/NetworkManager.service <->                               
+tcp LISTEN    0      5             0.0.0.0:951     0.0.0.0:*     users:(("onion-grater",pid=5301,fd=3))     ino:12055 sk:2 cgroup:/system.slice/onion-grater.service <->                                 
+tcp LISTEN    0      4096        127.0.0.1:9052    0.0.0.0:*     users:(("tor",pid=18316,fd=6))             ino:33176 sk:3 cgroup:/system.slice/system-tor.slice/tor@default.service <->                 
+tcp LISTEN    0      4096        127.0.0.1:631     0.0.0.0:*     users:(("cupsd",pid=6915,fd=6))            ino:16148 sk:4 cgroup:/system.slice/cups.service <->                                         
+tcp TIME-WAIT 0      0           127.0.0.1:37854 127.0.0.1:9052                                             timer:(timewait,30sec,0) ino:0 sk:5                                                          
+tcp ESTAB     0      0           127.0.0.1:9052  127.0.0.1:41118 users:(("tor",pid=18316,fd=11))            uid:106 ino:33312 sk:6 cgroup:/system.slice/system-tor.slice/tor@default.service <->         
+tcp ESTAB     0      0           127.0.0.1:9052  127.0.0.1:41100 users:(("tor",pid=18316,fd=10))            uid:106 ino:33228 sk:7 cgroup:/system.slice/system-tor.slice/tor@default.service <->         
+tcp TIME-WAIT 0      0           127.0.0.1:39624 127.0.0.1:9052                                             timer:(timewait,38sec,0) ino:0 sk:1001                                                       
+tcp ESTAB     0      0           127.0.0.1:41100 127.0.0.1:9052  users:(("tor_wait_until_",pid=18326,fd=3)) uid:106 ino:33227 sk:8 cgroup:/system.slice/tails-wait-until-tor-has-bootstrapped.service <->
+tcp ESTAB     0      0           127.0.0.1:41118 127.0.0.1:9052  users:(("tor-circuits-lo",pid=18352,fd=3)) ino:33311 sk:9 cgroup:/system.slice/tails-autotest-tor-circuits-log.service <->              

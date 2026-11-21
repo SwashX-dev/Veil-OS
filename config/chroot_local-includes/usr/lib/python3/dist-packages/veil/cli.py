@@ -144,10 +144,10 @@ def cmd_lab(a) -> int:
     elif a.action == "shell":
         argv = lab.enter_argv(a.name, [os.environ.get("SHELL", "/bin/bash")])
         os.execvp(argv[0], argv)
-    elif a.action == "run":
+    elif a.action in ("run", "target"):
         if not a.command:
-            common.die("usage: veil lab run NAME -- COMMAND...")
-        argv = lab.enter_argv(a.name, a.command)
+            common.die(f"usage: veil lab {a.action} NAME -- COMMAND...")
+        argv = lab.enter_argv(a.name, a.command, target=a.action == "target")
         os.execvp(argv[0], argv)
     return 0
 
@@ -208,7 +208,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("name", nargs="?")
     p.set_defaults(fn=cmd_tools)
     p = sub.add_parser("lab", help="offline lab namespaces for Tor-incompatible tools")
-    p.add_argument("action", choices=["up", "down", "list", "shell", "run"])
+    p.add_argument("action", choices=["up", "down", "list", "shell", "run", "target"])
     p.add_argument("name", nargs="?", default="default")
     p.add_argument("--workspace")
     p.add_argument("command", nargs=argparse.REMAINDER)

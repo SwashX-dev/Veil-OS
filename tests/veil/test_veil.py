@@ -230,6 +230,50 @@ class TestNetworkGuard(unittest.TestCase):
             os.unlink(f.name)
 
 
+class TestRealImageData(unittest.TestCase):
+    """Fixtures dumped from a booted Veil OS 0.1.0-alpha.1 image (QEMU)."""
+    NAMES = {"106": "debian-tor", "114": "clearnet", "116": "htp", "117": "tails-iuk-get-target-file",
+             "118": "tails-upgrade-frontend", "13": "proxy", "42": "_apt", "65534": "nobody"}
+
+    def test_firewall_real_rules_pass(self):
+        v4 = checks.parse_iptables_save((FIX / "veil-image-iptables-save.txt").read_text())
+        v6 = checks.parse_iptables_save((FIX / "veil-image-ip6tables-save.txt").read_text())
+        cs = {c.id: c for c in checks.evaluate_firewall(v4, v6, self.NAMES)}
+        for cid in ("firewall.default_deny", "firewall.final_reject", "firewall.kill_switch",
+                    "dns.redirect", "firewall.transproxy"):
+            self.assertEqual(cs[cid].status, "pass", (cid, cs[cid].detail, cs[cid].data))
+        # Without the UID map (numeric owners), the kill-switch check must not
+        # silently pass unknown owners.
+        cs = {c.id: c for c in checks.evaluate_firewall(v4, v6, {})}
+        self.assertEqual(cs["firewall.kill_switch"].status, "fail")
+
+    def test_real_mounts_and_swap(self):
+        m = audit.parse_mounts((FIX / "veil-image-mounts.txt").read_text())
+        self.assertEqual(audit.check_root_overlay(m).status, "pass")
+        self.assertEqual(audit.check_squashfs(m).status, "pass")
+        self.assertEqual(audit.check_internal_disks(m).status, "pass")
+        self.assertEqual(audit.check_swap((FIX / "veil-image-swaps.txt").read_text()).status, "pass")
+
+    def test_dhcp_and_root_sockets(self):
+        rows = [{"proto": "udp", "state": "ESTAB", "local": "10.0.2.15%eth0:68", "peer": "10.0.2.2:67",
+                 "user": None, "processes": ["NetworkManager"]}]
+        cs = {c.id: c for c in checks.evaluate_sockets(rows)}
+        self.assertEqual(cs["connections.lan"].status, "pass")
+        # The live user's TCP is REDIRECTed to Tor's TransPort: ss still shows
+        # the original peer. Seen in the image during a model download.
+        tp = [{"proto": "tcp", "state": "ESTAB", "local": "10.0.2.15:4001", "peer": "18.160.1.2:443",
+               "user": "amnesia", "processes": ["python3"]}]
+        cs = {c.id: c for c in checks.evaluate_sockets(tp, {"amnesia"})}
+        self.assertEqual(cs["connections.direct"].status, "pass")
+        self.assertEqual(cs["connections.direct"].data["transparently_torified"], 1)
+        cs = {c.id: c for c in checks.evaluate_sockets(tp, set())}
+        self.assertEqual(cs["connections.direct"].status, "fail")
+        rows.append({"proto": "tcp", "state": "ESTAB", "local": "10.0.2.15:4000", "peer": "8.8.8.8:443",
+                     "user": None, "processes": ["evil"]})
+        cs = {c.id: c for c in checks.evaluate_sockets(rows)}
+        self.assertEqual(cs["connections.direct"].status, "fail")
+
+
 # ------------------------------------------------------------------ audit
 class TestAudit(unittest.TestCase):
     MOUNTS = """\
@@ -395,6 +439,13 @@ class TestAgentLoop(unittest.TestCase):
         calls = loop.parse_fallback_tool_calls(
             'x <tool_call>{"name": "list_dir", "arguments": {"path": "/"}}</tool_call>')
         self.assertEqual(calls[0]["function"]["name"], "list_dir")
+        # Seen in the image with Qwen3-0.6B: a bare JSON call as the whole reply.
+        calls = loop.parse_fallback_tool_calls('{"name": "shell", "arguments": {"command": "id"}}')
+        self.assertEqual(json.loads(calls[0]["function"]["arguments"]), {"command": "id"})
+        calls = loop.parse_fallback_tool_calls('```json\n{"name": "shell", "arguments": {"command": "id"}}\n```')
+        self.assertEqual(calls[0]["function"]["name"], "shell")
+        self.assertEqual(loop.parse_fallback_tool_calls("The answer is 42."), [])
+        self.assertEqual(loop.parse_fallback_tool_calls('{"not": "a call"}'), [])
 
     def test_step_limit(self):
         be = FakeBackend([_call("system_info", {}) for _ in range(5)])

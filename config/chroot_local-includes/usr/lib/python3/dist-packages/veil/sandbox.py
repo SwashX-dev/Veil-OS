@@ -155,6 +155,8 @@ class SandboxSpec:
     # Paths re-exposed read-only after masking (e.g. a model file that lives
     # under $XDG_RUNTIME_DIR, which is hidden when /run is masked).
     readonly: list[str] = field(default_factory=list)
+    # Kill the sandbox when its parent exits (False for long-lived labs).
+    die_with_parent: bool = True
 
 
 class SandboxUnavailable(RuntimeError):
@@ -174,7 +176,7 @@ def build_argv(spec: SandboxSpec, command: list[str], seccomp_fd: int | None = N
     if not bwrap_available():
         raise SandboxUnavailable("bubblewrap (bwrap) is not installed")
     uid = os.getuid()
-    a: list[str] = [BWRAP, "--die-with-parent", "--new-session",
+    a: list[str] = [BWRAP, *(["--die-with-parent"] if spec.die_with_parent else []), "--new-session",
                     "--unshare-ipc", "--unshare-uts", "--unshare-cgroup-try",
                     "--hostname", spec.hostname]
     if not spec.network:
@@ -255,7 +257,12 @@ def _seccomp_fd(spec: SandboxSpec) -> int | None:
     if not spec.seccomp:
         return None
     syscalls = list(DENIED_SYSCALLS.values())
-    if not spec.fake_root:
+    if spec.fake_root:
+        # Labs may mount (e.g. their own sysfs) inside their private
+        # user+mount namespaces; this has no effect outside the lab.
+        syscalls = [n for n in syscalls
+                    if n not in (DENIED_SYSCALLS["mount"], DENIED_SYSCALLS["umount2"], DENIED_SYSCALLS["setns"])]
+    else:
         syscalls += list(DENIED_WITHOUT_FAKE_ROOT.values())
     prog = build_seccomp_filter(syscalls)
     fd = os.memfd_create("veil-seccomp", 0)

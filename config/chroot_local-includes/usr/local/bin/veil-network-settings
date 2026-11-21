@@ -1,0 +1,9 @@
+#!/bin/sh
+# Wi-Fi & network settings for the Veil session: the same GNOME Settings
+# panels Tails uses. gnome-control-center refuses to start unless the
+# desktop is GNOME, so set that for this process only.
+case "${1:-wifi}" in
+    wifi|network) panel="${1:-wifi}" ;;
+    *) panel=wifi ;;
+esac
+XDG_CURRENT_DESKTOP=GNOME exec gnome-control-center "${panel}"

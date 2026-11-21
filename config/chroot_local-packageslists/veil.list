@@ -5,11 +5,9 @@
 
 ## Desktop: XFCE 4.20 components on the labwc Wayland compositor.
 ## X.Org is intentionally NOT installed (same as upstream Tails).
+## Only internal panel plugins work under Wayland: no whiskermenu/genmon/systray.
 labwc
 xfce4-panel
-xfce4-whiskermenu-plugin
-xfce4-genmon-plugin
-xfce4-pulseaudio-plugin
 swaybg
 xfconf
 xfce4-notifyd

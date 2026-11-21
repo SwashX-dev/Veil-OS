@@ -27,7 +27,7 @@ if [ -e "${WB}" ]; then
 fi
 
 # Veil's own user units.
-systemctl --global enable veil-session.target 2>/dev/null || true
+systemctl --global enable veil-update-check.service
 
 # Icon cache for the Veil icons.
 if command -v gtk-update-icon-cache >/dev/null; then
@@ -35,7 +35,7 @@ if command -v gtk-update-icon-cache >/dev/null; then
 fi
 
 # Sanity checks: the pieces the session needs must be present.
-for f in /usr/bin/labwc /usr/bin/xfce4-panel /usr/bin/swaybg /usr/bin/swaylock \
+for f in /usr/bin/labwc /usr/bin/xfce4-panel /usr/bin/swaybg /usr/bin/swaylock /usr/bin/ibus-daemon \
          /usr/libexec/polkit-mate-authentication-agent-1 \
          /usr/share/wayland-sessions/veil.desktop; do
     [ -e "${f}" ] || { echo "Veil session: missing ${f}" >&2; exit 1; }

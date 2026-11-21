@@ -15,8 +15,9 @@ Rules:
 - Network access is {network}. Never try to work around a missing permission.
 - Prefer short tool calls over long plans. Resolve ordinary errors yourself (read the error, fix, retry once or twice).
 - Follow any output format the user requests exactly.
-Current permissions: {policy}
-Working directory: {cwd}"""
+- Use paths RELATIVE to the working directory (e.g. "hello.py"), unless the user gives an absolute path.
+Working directory: {cwd}
+{scope}"""
 
 MODES = {
     "direct": "Mode: DIRECT. Answer immediately and briefly. You have no tools in this mode.",
@@ -29,6 +30,10 @@ MODES = {
 }
 
 
-def system_prompt(mode: str, policy_desc: str, network: bool, cwd: str) -> str:
-    return (BASE.format(policy=policy_desc, network="GRANTED for this session" if network else "DENIED",
-                        cwd=cwd) + "\n\n" + MODES.get(mode, MODES["agent"]))
+def system_prompt(mode: str, policy_desc: str, network: bool, cwd: str, writable: list[str] | None = None) -> str:
+    if writable:
+        scope = "You may create and edit files only inside: " + ", ".join(writable) + "."
+    else:
+        scope = "You are in read-only mode: do not try to create or edit files."
+    return (BASE.format(network="GRANTED for this session" if network else "DENIED", cwd=cwd, scope=scope)
+            + "\n\n" + MODES.get(mode, MODES["agent"]))

@@ -30,19 +30,46 @@ def strip_think(text: str) -> str:
     return THINK_RE.sub("", text or "").strip()
 
 
+FENCE_RE = re.compile(r"^```(?:json)?\s*(.*?)\s*```$", re.DOTALL)
+
+
+def _as_call(obj, i: int) -> dict | None:
+    if not isinstance(obj, dict):
+        return None
+    name = obj.get("name")
+    args = obj.get("arguments", obj.get("parameters", {}))
+    if not isinstance(name, str) or not isinstance(args, dict):
+        return None
+    return {"id": f"fallback_{i}", "type": "function", "function": {"name": name, "arguments": json.dumps(args)}}
+
+
 def parse_fallback_tool_calls(content: str) -> list[dict]:
-    """Recover tool calls that a model emitted as text instead of structured calls."""
+    """Recover tool calls that a model emitted as text instead of structured calls:
+    <tool_call>{...}</tool_call> blocks, or a reply that is nothing but a JSON
+    call object (optionally in a ```json fence)."""
     calls = []
     for i, m in enumerate(TOOL_CALL_RE.finditer(content or "")):
         try:
-            obj = json.loads(m.group(1))
+            c = _as_call(json.loads(m.group(1)), i)
         except json.JSONDecodeError:
             continue
-        name = obj.get("name")
-        args = obj.get("arguments", obj.get("parameters", {}))
-        if name:
-            calls.append({"id": f"fallback_{i}", "type": "function",
-                          "function": {"name": name, "arguments": json.dumps(args)}})
+        if c:
+            calls.append(c)
+    if calls:
+        return calls
+    text = strip_think(content or "").strip()
+    fm = FENCE_RE.match(text)
+    if fm:
+        text = fm.group(1).strip()
+    if text.startswith(("{", "[")):
+        try:
+            obj = json.loads(text)
+        except json.JSONDecodeError:
+            return []
+        for i, o in enumerate(obj if isinstance(obj, list) else [obj]):
+            c = _as_call(o, i)
+            if c:
+                calls.append(c)
     return calls
 
 
@@ -82,7 +109,8 @@ class Agent:
     def _system(self) -> dict:
         cwd = self.policy.workspace or os.path.expanduser("~")
         return {"role": "system",
-                "content": prompts.system_prompt(self.mode, self.policy.describe(), self.policy.network, cwd)}
+                "content": prompts.system_prompt(self.mode, self.policy.describe(), self.policy.network, cwd,
+                                                 self.policy.writable_roots())}
 
     def _tool_schemas(self) -> list[dict]:
         return [t.schema() for t in tools.tools_for(self.policy.level, self.mode)]

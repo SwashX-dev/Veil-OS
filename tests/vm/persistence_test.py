@@ -39,7 +39,7 @@ def boot(img, out, name, kernel, initrd, cmd, memory):
     vm.rs.signal_ready()
     deadline = time.time() + 300
     while time.time() < deadline:
-        rc, _, _ = vm.rs.sh("pgrep -f tails-greeter >/dev/null")
+        rc, _, _ = vm.rs.sh("pgrep -f '[t]ails-greeter.py' >/dev/null")
         if rc == 0:
             break
         time.sleep(3)
@@ -48,17 +48,15 @@ def boot(img, out, name, kernel, initrd, cmd, memory):
 
 
 def unlock_in_greeter(vm, title):
-    code = f"""
-import time
-from dogtail.tree import root
-app = root.application({title!r})
-e = app.findChild(lambda n: n.roleName == 'password text', retry=True)
-e.text = {PASS!r}
-app.findChild(lambda n: n.roleName == 'button' and 'Unlock' in n.name, retry=True).doActionNamed('click')
-print('unlock-clicked')
+    body = f"""
+app = app_named({title!r})
+entry = wait_find(app, lambda n: n.get_role_name() == "password text")
+set_text(entry, {PASS!r})
+click(wait_find(app, by_role_name("button", "Unlock")))
+print("unlock-clicked")
 """
-    exc, out, err = vm.rs.py(code, user="Debian-gdm", timeout=180)
-    return exc is None and "unlock-clicked" in out, f"{exc} {out} {err}"
+    exc, out, err = veilvm.atspi_run(vm.rs, "Debian-gdm", body)
+    return exc is None and "unlock-clicked" in out, f"{exc} {out} {err[-800:]}"
 
 
 def main():

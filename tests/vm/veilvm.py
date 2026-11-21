@@ -55,6 +55,14 @@ class RemoteShell:
         self.path = path
         self.id = 0
 
+    def spawn(self, cmd: str, user: str = "amnesia") -> None:
+        """Start a command without waiting (the server sends no reply)."""
+        self.id += 1
+        s = socket.socket(socket.AF_UNIX)
+        s.connect(self.path)
+        s.sendall((json.dumps([self.id, "sh_spawn", user, {}, cmd]) + "\n").encode())
+        s.close()
+
     def _call(self, *args, timeout: float = 120):
         self.id += 1
         s = socket.socket(socket.AF_UNIX)
@@ -110,7 +118,17 @@ class RemoteShell:
         return rc, out, err
 
     def py(self, code: str, user: str = "amnesia", timeout: float = 120):
-        return self._call("python_execute", user, {}, code, timeout=timeout)
+        """Run Python code as `user`; returns (exception_or_None, stdout, stderr).
+
+        Uses sh_call rather than the remote shell's python_execute: the latter
+        feeds an InteractiveConsole, which in Debian trixie's Python 3.13.5
+        rejects the wrapper the server generates (dedent after try/except).
+        """
+        import base64 as _b64
+        b64 = _b64.b64encode(code.encode()).decode()
+        cmd = f"echo {b64} | base64 -d > /tmp/.veil-test-$$.py && python3 /tmp/.veil-test-$$.py; rc=$?; rm -f /tmp/.veil-test-$$.py; exit $rc"
+        rc, out, err = self.sh(cmd, user=user, timeout=timeout)
+        return (None if rc == 0 else f"exit {rc}: {err.strip().splitlines()[-1] if err.strip() else ''}"), out, err
 
     def read_file(self, path: str) -> bytes:
         (b64,) = self._call("file_read", path, timeout=60)
@@ -247,7 +265,9 @@ def extract_boot_files(iso: str, outdir: str) -> tuple[str, str, str]:
     m = re.search(r"--id 'live' \{.*?linux /live/vmlinuz (.*?)\n", cfg, re.S)
     cmd = m.group(1) if m else "boot=live config"
     cmd = re.sub(r"\s*FSUUID=\$\{rootuuid\}", "", cmd)
-    cmd = cmd.replace("initrd=/live/initrd.img", "").strip()
+    # Keep initrd=/live/initrd.img: Tails' initramfs-restore (memory erasure
+    # at shutdown) locates the initrd through it, as on a real GRUB boot.
+    cmd = cmd.strip()
     return str(out / "vmlinuz"), str(out / "initrd.img"), cmd
 
 
@@ -278,7 +298,9 @@ def extract_boot_files_from_img(img: str, outdir: str) -> tuple[str, str, str]:
     m = re.search(r"--id 'live' \{.*?linux /live/vmlinuz (.*?)\n", cfg, re.S)
     cmd = m.group(1) if m else "boot=live config"
     cmd = re.sub(r"\s*FSUUID=\$\{rootuuid\}", "", cmd)
-    cmd = cmd.replace("initrd=/live/initrd.img", "").strip()
+    # Keep initrd=/live/initrd.img: Tails' initramfs-restore (memory erasure
+    # at shutdown) locates the initrd through it, as on a real GRUB boot.
+    cmd = cmd.strip()
     return str(out / "vmlinuz"), str(out / "initrd.img"), cmd
 
 
@@ -286,36 +308,76 @@ def boot_files(image: str, iso: str | None, outdir: str) -> tuple[str, str, str]
     return extract_boot_files(iso, outdir) if iso else extract_boot_files_from_img(image, outdir)
 
 
-def login_via_greeter(rs: RemoteShell, title: str = "Welcome to Veil OS", button_re: str = "Start Veil OS",
-                      timeout: float = 240) -> None:
-    """Click the Welcome Screen's Start button using dogtail as Debian-gdm."""
-    code = f"""
-import re, time
-import dogtail.config
-dogtail.config.config.searchShowingOnly = True
-from dogtail.tree import root
-app = None
-for _ in range(60):
-    try:
-        app = root.application({title!r})
-        break
-    except Exception:
+ATSPI_LIB = r"""
+import gi, re, sys, time
+gi.require_version("Atspi", "2.0")
+from gi.repository import Atspi
+def app_named(name, timeout=120):
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        d = Atspi.get_desktop(0)
+        for i in range(d.get_child_count()):
+            a = d.get_child_at_index(i)
+            if a is not None and a.get_name() == name:
+                return a
         time.sleep(2)
-btn = app.findChild(lambda n: n.roleName == 'button' and re.search({button_re!r}, n.name.replace('_', '')), retry=True)
-btn.doActionNamed('click')
-print('clicked', btn.name)
+    raise RuntimeError("application not found: " + name)
+def find(node, pred, depth=0):
+    if node is None or depth > 60:
+        return None
+    try:
+        if pred(node):
+            return node
+        for i in range(node.get_child_count()):
+            r = find(node.get_child_at_index(i), pred, depth + 1)
+            if r is not None:
+                return r
+    except Exception:
+        return None
+    return None
+def wait_find(app, pred, timeout=60):
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        n = find(app, pred)
+        if n is not None:
+            return n
+        time.sleep(1)
+    raise RuntimeError("widget not found")
+def by_role_name(role, pattern):
+    rx = re.compile(pattern)
+    return lambda n: n.get_role_name() == role and rx.search((n.get_name() or "").replace("_", "")) is not None
+def click(node):
+    Atspi.Action.do_action(node, 0)
+def set_text(node, text):
+    Atspi.EditableText.set_text_contents(node, text)
+"""
+
+
+def atspi_run(rs: RemoteShell, user: str, body: str, timeout: float = 180):
+    """Run AT-SPI automation code (no dogtail/ponytail: works with any compositor)."""
+    return rs.py(ATSPI_LIB + "\n" + body, user=user, timeout=timeout)
+
+
+def login_via_greeter(rs: RemoteShell, title: str = "Welcome to Veil OS", button_re: str = "Start Veil OS",
+                      timeout: float = 300) -> None:
+    """Click the Welcome Screen's Start button through AT-SPI as Debian-gdm."""
+    body = f"""
+app = app_named({title!r})
+btn = wait_find(app, by_role_name("button", {button_re!r}))
+click(btn)
+print("clicked", btn.get_name())
 """
     deadline = time.time() + timeout
     last = None
     while time.time() < deadline:
         try:
-            exc, out, err = rs.py(code, user="Debian-gdm", timeout=180)
+            exc, out, err = atspi_run(rs, "Debian-gdm", body)
             if exc is None and "clicked" in out:
                 return
-            last = (exc, out, err)
+            last = (exc, out[-500:], err[-1500:])
         except (TimeoutError, RuntimeError, OSError) as e:
             last = e
-        time.sleep(3)
+        time.sleep(5)
     raise RuntimeError(f"could not click Start in the Welcome Screen: {last}")
 
 

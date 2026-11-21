@@ -3,25 +3,29 @@
 }
 
 /* ---- Veil OS Welcome Screen ---------------------------------------- */
-window, .background {
-  background-color: #0f0f13;
-  color: #e2e0ec;
+/* The greeter runs with the light Adwaita theme: set a complete dark
+   palette (backgrounds AND foregrounds) so nothing ends up dark-on-dark. */
+window, .background, dialog, messagedialog { background-color: #0f0f13; color: #e2e0ec; }
+headerbar, .titlebar { background: #121217; color: #e2e0ec; border-bottom: 1px solid #22222a; box-shadow: none; }
+label { color: #e2e0ec; }
+.dim-label, label.dim-label, .subtitle, label.subtitle { color: #9a97a8; }
+list, listbox, row, frame > border, scrolledwindow, viewport, textview, textview text, .view, iconview {
+  background-color: #15151b; color: #e2e0ec; border-color: #2c2a38;
 }
-headerbar, .titlebar {
-  background: #121217;
-  border-bottom: 1px solid #22222a;
-  box-shadow: none;
-}
-label.title, .dim-label { color: #cfc9f2; }
-list, row, .frame { background-color: #121217; border-color: #26262e; }
-row:hover { background-color: #17151f; }
-button.suggested-action {
-  background-image: none;
-  background-color: #5d4f9c;
-  border-color: #6d5fb0;
-  color: #ffffff;
-}
+row:hover { background-color: #1b1924; }
+row:selected, row:selected label { background-color: #3b3266; color: #ffffff; }
+button { background-image: none; background-color: #1d1d25; color: #e2e0ec; border-color: #2c2a38; box-shadow: none; text-shadow: none; }
+button:hover { background-color: #25232f; }
+button:disabled, button:disabled label { background-color: #15151b; color: #6c6a78; }
+button.suggested-action { background-color: #5d4f9c; border-color: #6d5fb0; color: #ffffff; }
 button.suggested-action:hover { background-color: #6b5cb0; }
+button.destructive-action { background-color: #6a2333; border-color: #873042; color: #ffffff; }
+entry { background-color: #0e0e12; color: #e2e0ec; border-color: #2c2a38; }
 entry:focus { border-color: #7c6bb0; box-shadow: inset 0 0 0 1px #7c6bb0; }
+switch { background-color: #2c2a38; border-color: #3a3846; }
 switch:checked { background-color: #5d4f9c; }
+switch slider { background-color: #cfc9f2; border-color: #3a3846; }
+infobar, infobar box { background-color: #1b1830; color: #e2e0ec; }
+popover, popover.background, popover contents, menu, .menu { background-color: #121217; color: #e2e0ec; }
+image { color: #cfc9f2; }
 link, *:link { color: #4fd1c5; }

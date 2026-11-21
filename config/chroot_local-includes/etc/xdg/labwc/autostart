@@ -1,4 +1,6 @@
 # Veil OS session startup (run by labwc once the compositor is up).
+# Nothing here may block: anything waiting for Tor must be started with
+# --no-block, otherwise Tor Connection itself would never start.
 
 # Make the Wayland session visible to systemd --user and D-Bus activation,
 # then let Tails' session units run exactly as they do under GNOME.
@@ -6,11 +8,22 @@
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY LANG XDG_CURRENT_DESKTOP \
     XDG_SESSION_TYPE XDG_SESSION_DESKTOP GDK_BACKEND QT_QPA_PLATFORM MOZ_ENABLE_WAYLAND \
     XKB_DEFAULT_LAYOUT XKB_DEFAULT_VARIANT PATH XDG_DATA_DIRS >/dev/null 2>&1
-systemctl --user start veil-session.target >/dev/null 2>&1
+
+# Under GNOME, GNOME Shell starts IBus; Tails' tails-ibus-proxy (required by
+# Tor Connection) needs it running.
+ibus-daemon --daemonize --replace --panel disable >/dev/null 2>&1
+
+systemctl --user --no-block start veil-session.target >/dev/null 2>&1
+
+# Panel status item must exist before the panel reads its launcher items.
+/usr/local/lib/veil/veil-panel-status --write >/dev/null 2>&1
+/usr/local/lib/veil/veil-panel-status >/dev/null 2>&1 &
 
 swaybg -m fill -i /usr/share/veil/backgrounds/veil-wallpaper.png >/dev/null 2>&1 &
 xfce4-panel --disable-wm-check >/dev/null 2>&1 &
 /usr/libexec/polkit-mate-authentication-agent-1 >/dev/null 2>&1 &
+# nm-applet acts as NetworkManager's secret agent (Wi-Fi passwords) even
+# without a tray to show its icon.
 nm-applet --indicator >/dev/null 2>&1 &
 /usr/local/lib/veil/veil-session-manager-shim >/dev/null 2>&1 &
 /usr/local/lib/veil/veil-autostart >/dev/null 2>&1 &
