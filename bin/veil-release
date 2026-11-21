@@ -46,5 +46,5 @@ fi
 NOTES="${ROOT}/docs/veil/release-notes/${TAG}.md"
 DRAFT="--draft"; [ "${PUBLISH}" = 1 ] && DRAFT=""
 # shellcheck disable=SC2086
-gh release create "${TAG}" ${DRAFT} --prerelease --title "Veil OS ${VERSION}" \
+gh release create "${TAG}" ${DRAFT} --verify-tag --prerelease --title "Veil OS ${VERSION}" \
     --notes-file "${NOTES}" --repo SwashX-dev/Veil-OS ${ASSETS}

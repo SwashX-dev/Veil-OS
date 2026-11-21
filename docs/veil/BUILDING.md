@@ -49,3 +49,13 @@ Notes from the reference build (rootless NixOS host, nested Debian VM):
 `bin/veil-release` computes `SHA256SUMS`, signs it with the Veil release key
 (`docs/veil/veil-release-key.asc`), and uploads to a GitHub Release with
 `gh`. See [VERIFY.md](VERIFY.md).
+
+The APT reboot regression uses a disposable USB image and a signed local
+repository with fixture packages. On Debian, generate that repository
+with `dpkg-deb`, `apt-ftparchive` (from `apt-utils`), and GnuPG:
+
+```sh
+tests/vm/make_apt_fixture.sh > /tmp/veil-apt-fixture.tar.gz
+python3 tests/vm/apt_persistence_test.py --img /path/to/veil-amd64-1.1.0.img \
+    --fixture /tmp/veil-apt-fixture.tar.gz --out /tmp/veil-apt-test
+```

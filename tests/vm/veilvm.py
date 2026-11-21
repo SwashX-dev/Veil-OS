@@ -359,12 +359,14 @@ def atspi_run(rs: RemoteShell, user: str, body: str, timeout: float = 180):
 
 
 def login_via_greeter(rs: RemoteShell, title: str = "Welcome to Veil OS", button_re: str = "Start Veil OS",
-                      timeout: float = 300) -> None:
+                      timeout: float = 300, *, start_without_persistence: bool = False) -> None:
     """Click the Welcome Screen's Start button through AT-SPI as Debian-gdm."""
     body = f"""
 app = app_named({title!r})
 btn = wait_find(app, by_role_name("button", {button_re!r}))
 click(btn)
+if {start_without_persistence!r}:
+    click(wait_find(app, by_role_name("button", "Start Without Persistent Storage")))
 print("clicked", btn.get_name())
 """
     deadline = time.time() + timeout

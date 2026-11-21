@@ -36,11 +36,11 @@ def check(name, res, code=0, contains=None):
     if not ok:
         raise RuntimeError(name)
 
-def wait(rs, command, expected=True, limit=90):
+def wait(rs, command, limit=90):
     deadline = time.monotonic()+limit
     while time.monotonic() < deadline:
         result = rs.sh(command, timeout=5)
-        if (result[0] == 0) == expected:
+        if result[0] == 0:
             return result
         time.sleep(1)
     raise RuntimeError((command, result))
@@ -62,13 +62,31 @@ def boot(num, unlock=False):
             check(f'{num}.unlock', (0 if ok else 1, evidence, ''))
             wait(rs, f'mountpoint -q {PERSIST}')
         start = time.monotonic()
-        veilvm.login_via_greeter(rs)
+        veilvm.login_via_greeter(rs, start_without_persistence=(num == 4))
         check(f'{num}.xfce-ready', wait(rs, 'pgrep -u amnesia -x xfce4-panel && ! pgrep -x gnome-shell && pgrep -u amnesia -x labwc'))
         print(f'{num}.greeter-to-desktop-seconds={time.monotonic()-start:.1f}', flush=True)
         return vm
     except BaseException:
         vm.stop(30)
         raise
+
+def test_interrupted_transactions(rs):
+    pkg = "veil-vm-test-interrupted"
+    for action, hook, should_exist in (("install", "postinst", False), ("remove", "prerm", True)):
+        unit = f"veil-apt-interrupted-{action}"
+        hold = f"/run/veil-apt-hold-{hook}"
+        entered = f"/run/veil-apt-entered-{hook}"
+        check(f"1.start-interrupted-{action}",
+              rs.sh(f"touch {hold} && systemd-run --unit={unit} {APT} {action} {pkg} -Pr -y"))
+        wait(rs, f"test -e {entered}")
+        check(f"1.interrupt-{action}", rs.sh(f"systemctl stop {unit} && rm {hold}"))
+        _rc, out, _ = rs.sh(f"{CLI} list")
+        check(f"1.registration-after-interrupted-{action}",
+              (0 if (pkg in out.splitlines()) == should_exist else 1, out, ""))
+        check(f"1.repair-after-interrupted-{action}", rs.sh(f"{CLI} repair", timeout=90))
+        check(f"1.retry-{action}", rs.sh(f"{APT} {action} {pkg} -Pr -y", timeout=90),
+              0, "saved and verified")
+
 
 def run_tests():
     vm = boot(1)
@@ -90,6 +108,7 @@ def run_tests():
         wait(rs, 'curl --noproxy "*" --silent --fail http://127.0.0.1:18765/InRelease >/dev/null')
         check('1.signed-apt-index', rs.sh('/usr/bin/apt-get -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/veil-vm-test.list '
                                          '-o Dir::Etc::sourceparts=- -o APT::Update::Error-Mode=any update', timeout=60), 0, 'InRelease')
+        test_interrupted_transactions(rs)
         check('1.temporary-install', rs.sh(f'{APT} install -y {EXTRA}'), 0, 'Setting up')
         check('1.temporary-install-not-registered', rs.sh(f'list=$({CLI} list) && test -z "$list"'), 0)
         check('1.temporary-remove', rs.sh(f'{APT} remove -y {EXTRA}'), 0, 'Removing')

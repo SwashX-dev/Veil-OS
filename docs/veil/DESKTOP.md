@@ -43,7 +43,8 @@ process as the dedicated greeter account. No GNOME desktop session is
 selectable for the live user.
 
 Veil retries an early compositor exit once with Pixman software rendering.
-The `veil.software-rendering` kernel option forces Pixman and still requires
+The UEFI boot entry **Veil OS (Software Rendering)** sets
+`veil.software-rendering` to force Pixman. The fallback still requires
 a working Wayland-compatible display device. If the compositor exits after
 the session has registered, Veil requests a normal shutdown. This avoids
 starting an unlocked desktop after a compositor crash while the screen

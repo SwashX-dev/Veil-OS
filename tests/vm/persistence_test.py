@@ -128,7 +128,7 @@ def main():
     # ---- Boot 3: no unlock
     vm = boot(str(work), out, "boot3", kernel, initrd, cmd, a.memory)
     try:
-        veilvm.login_via_greeter(vm.rs, title=a.title, button_re=a.button)
+        veilvm.login_via_greeter(vm.rs, title=a.title, button_re=a.button, start_without_persistence=True)
         time.sleep(15)
         rc, o, e = vm.rs.sh("ls /home/amnesia/Persistent 2>&1 | head -3; findmnt /live/persistence/TailsData_unlocked "
                             "|| echo NOT-UNLOCKED; test -e /nix/marker.txt && echo NIX-VISIBLE || echo NIX-HIDDEN")
