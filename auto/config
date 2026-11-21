@@ -158,15 +158,23 @@ install -d config/chroot_local-includes/etc/amnesia/
 install -d config/chroot_local-includes/etc/tails/
 
 # os-release
+# Veil OS: an unofficial derivative of Tails. The TAILS_* fields below are
+# kept unchanged so that Tails components (security check, Persistent
+# Storage, etc.) keep working against the Tails release Veil is based on.
+VEIL_VERSION="$(cat config/VEIL_VERSION)"
 cat >>config/chroot_local-includes/etc/os-release <<EOF
-NAME="Tails"
-ID="tails"
-ID_LIKE="debian"
-PRETTY_NAME="Tails"
+NAME="Veil OS"
+ID="veil"
+ID_LIKE="tails debian"
+PRETTY_NAME="Veil OS $VEIL_VERSION (based on Tails $TAILS_VERSION)"
 VERSION="$TAILS_VERSION"
-HOME_URL="https://tails.net/"
-SUPPORT_URL="https://tails.net/support/"
-BUG_REPORT_URL="https://tails.net/doc/first_steps/whisperback/"
+VEIL_VERSION="$VEIL_VERSION"
+VEIL_CHANNEL="alpha"
+VEIL_GIT_COMMIT="$GIT_COMMIT"
+HOME_URL="https://github.com/SwashX-dev/Veil-OS"
+SUPPORT_URL="https://github.com/SwashX-dev/Veil-OS/issues"
+BUG_REPORT_URL="https://github.com/SwashX-dev/Veil-OS/issues"
+UPSTREAM_HOME_URL="https://tails.net/"
 TAILS_DISTRIBUTION="$TAILS_DISTRIBUTION"
 TAILS_SOURCE_DATE_EPOCH="$SOURCE_DATE_EPOCH"
 TAILS_GIT_COMMIT="$GIT_COMMIT"

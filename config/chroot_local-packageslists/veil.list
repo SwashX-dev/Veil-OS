@@ -1,0 +1,70 @@
+# Veil OS additions on top of the Tails package set.
+# Every package here comes from the same pinned Debian/Tails APT snapshots
+# as the rest of the image. Heavy or non-Debian tools are NOT listed here:
+# they are opt-in Nix bundles (see /usr/share/veil/nix/flake.nix).
+
+## Desktop: XFCE 4.20 components on the labwc Wayland compositor.
+## X.Org is intentionally NOT installed (same as upstream Tails).
+labwc
+xfce4-panel
+xfce4-whiskermenu-plugin
+xfce4-genmon-plugin
+xfce4-pulseaudio-plugin
+xfdesktop4
+xfconf
+xfce4-notifyd
+xfce4-terminal
+xfce4-taskmanager
+mousepad
+ristretto
+elementary-xfce-icon-theme
+fonts-jetbrains-mono
+mate-polkit
+network-manager-applet
+swaylock
+swayidle
+grim
+slurp
+wl-clipboard
+wdisplays
+wlr-randr
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
+
+## Veil Console / Veil Agent GUI runtime (GTK3 + VTE via PyGObject)
+gir1.2-vte-2.91
+python3-psutil
+
+## Sandboxing used by Veil Agent and offline labs
+bubblewrap
+
+## Nix (single-user, runs as the amnesia user, so its traffic is
+## transparently routed through Tor by the unchanged Tails firewall)
+nix-bin
+
+## Lightweight security tools (base image). Network policy and privacy
+## status for each tool is documented in /usr/share/veil/tools.json.
+nmap
+tcpdump
+tshark
+wireshark
+ngrep
+socat
+gdb
+strace
+ltrace
+checksec
+yara
+lynis
+chkrootkit
+rkhunter
+aircrack-ng
+age
+binwalk
+sleuthkit
+foremost
+testdisk
+hashdeep
+ssdeep
+john
+sqlmap

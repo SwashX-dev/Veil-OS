@@ -30,6 +30,11 @@ mainloop = GLib.MainLoop()
 
 
 def lock_screen():
+    # Veil OS: the Veil session (labwc) has no org.gnome.ScreenSaver;
+    # lock it with swaylock through the ext-session-lock protocol.
+    if "Veil" in os.environ.get("XDG_CURRENT_DESKTOP", "").split(":"):
+        subprocess.run(["/usr/local/bin/veil-lock"], check=False)  # noqa: S603
+        sys.exit()
     # org.gnome.ScreenSaver.Lock() sometimes does not return, so we set a timeout of 5 seconds
     try:
         SessionBus().get("org.gnome.ScreenSaver").Lock(timeout=5)

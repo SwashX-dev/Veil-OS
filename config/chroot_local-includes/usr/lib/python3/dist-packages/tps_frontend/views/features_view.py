@@ -89,6 +89,14 @@ class Dotfiles(Feature):
     pass
 
 
+class VeilNix(Feature):  # Veil OS
+    pass
+
+
+class VeilDesktop(Feature):  # Veil OS
+    pass
+
+
 def get_feature_classes():
     return [
         g for g in globals().values() if inspect.isclass(g) and Feature in g.__bases__

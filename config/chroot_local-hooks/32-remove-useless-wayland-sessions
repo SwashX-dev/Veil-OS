@@ -11,7 +11,7 @@ echo "Remove Wayland sessions we don't use"
 # This script, combined with the logic in _updateLogout, will make sure this is the case.
 
 SESSION_PATH="/usr/share/wayland-sessions/"
-CORRECT_SESSION_FILE="gnome.desktop"
+CORRECT_SESSION_FILE="veil.desktop"  # Veil OS: XFCE on labwc (was gnome.desktop)
 
 # Delete every other file
 find "${SESSION_PATH}" -type f -name '*.desktop' -not -name "${CORRECT_SESSION_FILE}" -delete

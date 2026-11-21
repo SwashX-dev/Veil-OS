@@ -132,6 +132,28 @@ class SSHClient(Feature):
     conflicting_apps = (ConflictingApp(name="SSH", process_names=["ssh"]),)
 
 
+
+# Veil OS features. Same mechanism as the Tails features above: plain
+# bind mounts from the encrypted Persistent Storage.
+class VeilNix(Feature):
+    Id = "VeilNix"
+    translatable_name = "Nix Packages"
+    Bindings = (
+        Binding("veil-nix/store", "/nix"),
+        Binding("veil-nix/state", "/home/amnesia/.local/state/nix"),
+    )
+    conflicting_apps = (ConflictingApp(name="Nix", process_names=["nix"]),)
+
+
+class VeilDesktop(Feature):
+    Id = "VeilDesktop"
+    translatable_name = "Veil Desktop Settings"
+    Bindings = (
+        Binding("veil-desktop/xfce4", "/home/amnesia/.config/xfce4"),
+        Binding("veil-desktop/labwc", "/home/amnesia/.config/labwc"),
+        Binding("veil-desktop/veil", "/home/amnesia/.config/veil"),
+    )
+
 class Dotfiles(Feature):
     Id = "Dotfiles"
     translatable_name = "Dotfiles"

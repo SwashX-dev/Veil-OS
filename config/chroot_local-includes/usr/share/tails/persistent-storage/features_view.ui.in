@@ -599,6 +599,66 @@ Its content is available until you shut down Tails.
                                 </child>
                               </object>
                             </child>
+                            <child>
+                              <object class="HdyActionRow" id="veil_nix_row">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="title" translatable="yes">Nix Packages</property>
+                                <property name="subtitle" translatable="yes">Tools installed with veil install / Package Center</property>
+                                <property name="icon-name">veil-packages</property>
+                                <child>
+                                  <object class="GtkBox" id="veil_nix_box">
+                                    <property name="valign">center</property>
+                                    <property name="margin_start">6</property>
+                                    <property name="spacing">6</property>
+                                    <property name="visible">True</property>
+                                    <child>
+                                      <object class="GtkSwitch" id="veil_nix_switch">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">True</property>
+                                        <property name="halign">end</property>
+                                        <property name="valign">center</property>
+                                        <child internal-child="accessible">
+                                          <object class="AtkObject" id="veil_nix_switch-atkobject">
+                                            <property name="AtkObject::accessible-name" translatable="yes">Activate Nix Packages</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="HdyActionRow" id="veil_desktop_row">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="title" translatable="yes">Veil Desktop Settings</property>
+                                <property name="subtitle" translatable="yes">XFCE panel, compositor and Veil app settings</property>
+                                <property name="icon-name">preferences-desktop</property>
+                                <child>
+                                  <object class="GtkBox" id="veil_desktop_box">
+                                    <property name="valign">center</property>
+                                    <property name="margin_start">6</property>
+                                    <property name="spacing">6</property>
+                                    <property name="visible">True</property>
+                                    <child>
+                                      <object class="GtkSwitch" id="veil_desktop_switch">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">True</property>
+                                        <property name="halign">end</property>
+                                        <property name="valign">center</property>
+                                        <child internal-child="accessible">
+                                          <object class="AtkObject" id="veil_desktop_switch-atkobject">
+                                            <property name="AtkObject::accessible-name" translatable="yes">Activate Veil Desktop Settings</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
                             <accessibility>
                               <relation type="labelled-by" target="applications_label"/>
                             </accessibility>

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -eu
+
+# Veil OS: prepare single-user Nix for the live user (amnesia, UID 1000).
+# Nix never runs as root on Veil OS: no nix-daemon, no build users. All of
+# its downloads therefore originate from the live user and are routed
+# through Tor by the Tails firewall (unchanged).
+
+echo "Veil: configuring single-user Nix"
+
+install -d -o 1000 -g 1000 -m 0755 /nix
+# Make sure no daemon/socket units sneak in through dependencies.
+for unit in nix-daemon.service nix-daemon.socket; do
+    if [ -e "/lib/systemd/system/${unit}" ] || [ -e "/usr/lib/systemd/system/${unit}" ]; then
+        systemctl mask "${unit}"
+    fi
+done
+command -v nix >/dev/null || { echo "nix binary missing" >&2; exit 1; }

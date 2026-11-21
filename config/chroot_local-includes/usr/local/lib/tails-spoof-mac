@@ -39,7 +39,7 @@ stop_and_disable_NM() {
 }
 
 notify_live_user() {
-    if systemctl --user --machine="${LIVE_USERNAME}"@ is-active gnome-session.target; then
+    if systemctl --user --machine="${LIVE_USERNAME}"@ is-active gnome-session.target veil-session.target; then  # Veil OS
         /usr/local/lib/run-with-user-env /usr/local/lib/tails-report-mac-spoofing-failed "${1}" "${2}"
     else
         printf "%s\n%s" "${1}" "${2}" >"${MAC_SPOOFING_FAILED_STATE_FILE}"

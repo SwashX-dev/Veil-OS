@@ -1,0 +1,46 @@
+#!/bin/sh
+
+set -eu
+
+# Veil OS: user session = XFCE components on labwc (Wayland).
+# Runs after 32-remove-useless-wayland-sessions (which keeps only
+# veil.desktop) and adjusts Tails units that only exist for GNOME.
+
+echo "Veil: configuring the Veil desktop session"
+
+# No X11 sessions: X.Org is not installed (same as Tails).
+rm -f /usr/share/xsessions/*.desktop
+
+# The Tails automatic upgrader downloads Tails incremental upgrades, which
+# cannot be applied to a derivative: Veil checks its own releases instead
+# (veil-update-check.service, notify-only). The Tails security advisories
+# check (tails-security-check) stays enabled.
+systemctl --global mask tails-upgrade-frontend.service
+
+# WhisperBack e-mails error reports to the Tails developers. Reports about
+# Veil OS must not go to the Tails project: hide its launcher and its
+# post-Welcome-Screen prompt. Veil bugs go to the GitHub issue tracker.
+systemctl --global mask tails-post-greeter-whisperback.service
+WB=/usr/share/applications/whisperback.desktop
+if [ -e "${WB}" ]; then
+    sed -i -e '/^NoDisplay=/d' -e 's/^\[Desktop Entry\]$/[Desktop Entry]\nNoDisplay=true/' "${WB}"
+fi
+
+# Veil's own user units.
+systemctl --global enable veil-session.target 2>/dev/null || true
+
+# Icon cache for the Veil icons.
+if command -v gtk-update-icon-cache >/dev/null; then
+    gtk-update-icon-cache -f -t /usr/share/icons/hicolor || true
+fi
+
+# Sanity checks: the pieces the session needs must be present.
+for f in /usr/bin/labwc /usr/bin/xfce4-panel /usr/bin/swaybg /usr/bin/swaylock \
+         /usr/libexec/polkit-mate-authentication-agent-1 \
+         /usr/share/wayland-sessions/veil.desktop; do
+    [ -e "${f}" ] || { echo "Veil session: missing ${f}" >&2; exit 1; }
+done
+if [ -e /usr/share/wayland-sessions/gnome.desktop ]; then
+    echo "Veil session: gnome.desktop should have been removed" >&2
+    exit 1
+fi

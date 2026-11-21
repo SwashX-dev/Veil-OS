@@ -1,0 +1,67 @@
+#!/bin/sh
+
+set -eu
+
+# Veil OS: build llama.cpp (the default Veil Agent inference engine) from a
+# pinned, hash-verified upstream release tarball, following the same
+# download+verify pattern Tails uses for Tor Browser.
+#
+# - GGML_NATIVE=OFF + GGML_CPU_ALL_VARIANTS: portable binaries; the best CPU
+#   variant is chosen at runtime (no illegal-instruction crashes on old CPUs).
+# - GGML_VULKAN: optional GPU acceleration through the Mesa Vulkan drivers
+#   Tails already ships; falls back to CPU when no usable GPU is present.
+# - LLAMA_OPENSSL=OFF: the server cannot fetch anything over HTTPS. It also
+#   always runs inside an empty network namespace (see veil.agent.backend).
+# - LLAMA_USE_PREBUILT_UI=OFF / LLAMA_BUILD_UI=OFF: upstream would otherwise
+#   download unpinned web-UI assets from Hugging Face at build time. Veil
+#   Agent does not use the web UI (and runs llama-server with --no-webui).
+
+echo "Veil: building llama.cpp for Veil Agent"
+
+# Import download_file(), ensure_hook_dependency_is_installed()
+. /usr/local/lib/tails-shell-library/build.sh
+
+VERSION="b11946"
+SHA256="76ad58014a4ec1093ffe1fd8e23e263a1fe76fd1aa44e3db788ca0b6023a2b71"
+URL="https://github.com/ggml-org/llama.cpp/archive/refs/tags/${VERSION}.tar.gz"
+PREFIX="/usr/local/lib/veil/llama.cpp"
+
+ensure_hook_dependency_is_installed \
+    cmake make g++ pkgconf libvulkan-dev glslc spirv-headers
+
+WORKDIR="$(mktemp -d)"
+download_file "${URL}" "${WORKDIR}/llama.cpp.tar.gz"
+echo "${SHA256}  ${WORKDIR}/llama.cpp.tar.gz" | sha256sum --check --strict -
+tar -xzf "${WORKDIR}/llama.cpp.tar.gz" -C "${WORKDIR}"
+SRC="${WORKDIR}/llama.cpp-${VERSION}"
+
+PREFIX_MAP="-ffile-prefix-map=${WORKDIR}=/usr/src/veil"
+cmake -S "${SRC}" -B "${SRC}/build" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_C_FLAGS="${PREFIX_MAP}" -DCMAKE_CXX_FLAGS="${PREFIX_MAP}" \
+    -DGGML_NATIVE=OFF -DGGML_BACKEND_DL=ON -DGGML_CPU_ALL_VARIANTS=ON \
+    -DGGML_VULKAN=ON -DBUILD_SHARED_LIBS=ON \
+    -DLLAMA_OPENSSL=OFF -DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_EXAMPLES=OFF \
+    -DLLAMA_BUILD_UI=OFF -DLLAMA_USE_PREBUILT_UI=OFF \
+    -DLLAMA_BUILD_TOOLS=ON -DLLAMA_BUILD_SERVER=ON \
+    -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON -DCMAKE_INSTALL_RPATH='$ORIGIN'
+cmake --build "${SRC}/build" -j"$(nproc)" --target llama-server llama-cli
+
+install -d -m 755 "${PREFIX}/bin" "${PREFIX}/share/doc"
+# With GGML_BACKEND_DL, the executables and backend libraries live side by
+# side in build/bin and are found through $ORIGIN.
+for f in "${SRC}"/build/bin/llama-server "${SRC}"/build/bin/llama-cli; do
+    install -m 755 "${f}" "${PREFIX}/bin/"
+done
+find "${SRC}/build/bin" -maxdepth 1 -name 'lib*.so*' -exec cp -a {} "${PREFIX}/bin/" \;
+install -m 644 "${SRC}/LICENSE" "${PREFIX}/share/doc/LICENSE"
+echo "${VERSION} ${SHA256}" >"${PREFIX}/share/doc/SOURCE"
+strip --strip-unneeded "${PREFIX}"/bin/llama-* "${PREFIX}"/bin/lib*.so* 2>/dev/null || true
+
+# Smoke test: the binary must start and print its version.
+"${PREFIX}/bin/llama-server" --version 2>&1 | grep -q "version" \
+    || { echo "llama-server smoke test failed" >&2; exit 1; }
+ln -sf "${PREFIX}/bin/llama-server" /usr/local/bin/llama-server
+ln -sf "${PREFIX}/bin/llama-cli" /usr/local/bin/llama-cli
+
+rm -rf "${WORKDIR}"
