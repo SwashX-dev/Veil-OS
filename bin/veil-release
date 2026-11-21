@@ -37,6 +37,7 @@ done
 for f in veil-amd64-"${VERSION}".packages veil-amd64-"${VERSION}".build-manifest; do
     [ -e "${f}" ] && { sha256sum "${f}" >> SHA256SUMS; ASSETS="${ASSETS} ${f}"; }
 done
+cp "${ROOT}/docs/veil/veil-release-key.asc" . && ASSETS="${ASSETS} veil-release-key.asc"
 if [ -n "${KEY}" ]; then
     gpg --batch --yes --local-user "${KEY}" --armor --detach-sign --output SHA256SUMS.asc SHA256SUMS
     gpg --verify SHA256SUMS.asc SHA256SUMS
