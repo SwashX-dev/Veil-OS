@@ -37,7 +37,7 @@ jobs:
         run: python3 -m compileall -q config/chroot_local-includes/usr/lib/python3/dist-packages/veil
       - name: Shellcheck Veil hooks and scripts
         run: |
-          shellcheck -S warning config/chroot_local-hooks/5[7-9]-veil-* \
+          shellcheck -S warning config/chroot_local-hooks/*veil* \
             config/chroot_local-includes/usr/local/bin/veil-session \
             config/chroot_local-includes/usr/local/bin/veil-lock \
             config/chroot_local-includes/etc/profile.d/veil-nix.sh \

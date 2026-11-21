@@ -1,0 +1,43 @@
+#!/bin/sh
+
+set -eu
+
+# Veil OS: give system accounts created by Veil's additional packages fixed
+# IDs BEFORE Tails' 04-change-gids-and-uids runs, so they cannot collide with
+# the IDs Tails pins (e.g. tcpdump's group grabbed GID 105, reserved for
+# "input"). Veil uses the otherwise unused 170-189 range; the expected
+# entries are listed in /usr/share/tails/build/{passwd,group}.
+
+echo "Veil: pinning UIDs/GIDs of Veil-added system accounts"
+
+move_files() {
+    # move_files TYPE OLD NEW: re-own files, preserving setuid/setgid bits
+    type="$1"; old="$2"; new="$3"
+    if [ "${type}" = uid ]; then match="-uid"; cmd="chown"; else match="-gid"; cmd="chgrp"; fi
+    find / -wholename /proc -prune -o \( \! -type l "${match}" "${old}" -exec "${cmd}" "${new}" '{}' + \
+        \( -perm -6000 -exec chmod gu+s '{}' + -o -perm -4000 -exec chmod u+s '{}' + \
+           -o -perm -2000 -exec chmod g+s '{}' + \) \)
+}
+
+pin_group() {
+    name="$1"; new="$2"
+    old="$(getent group "${name}" | cut -d: -f3)"
+    [ -n "${old}" ] || return 0
+    [ "${old}" = "${new}" ] && return 0
+    echo "Changing GID for ${name} (${old} -> ${new})"
+    groupmod --gid "${new}" "${name}"
+    move_files gid "${old}" "${new}"
+}
+
+pin_user() {
+    name="$1"; new="$2"
+    old="$(getent passwd "${name}" | cut -d: -f3)"
+    [ -n "${old}" ] || return 0
+    [ "${old}" = "${new}" ] && return 0
+    echo "Changing UID for ${name} (${old} -> ${new})"
+    usermod --uid "${new}" "${name}"
+    move_files uid "${old}" "${new}"
+}
+
+pin_group tcpdump 170
+pin_user tcpdump 170

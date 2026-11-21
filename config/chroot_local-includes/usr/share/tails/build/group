@@ -41,6 +41,7 @@ systemd-network:x:103:
 crontab:x:108:
 input:x:105:
 sgx:x:160:
+tcpdump:x:170:
 clock:x:994:
 kvm:x:106:
 render:x:107:

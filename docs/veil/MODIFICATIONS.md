@@ -22,11 +22,14 @@ covers every **modified** upstream file.
 | `config/chroot_local-includes/usr/local/bin/tails-screen-locker` | In the Veil session, lock with `veil-lock` (swaylock) after Tails' unchanged password-setup flow | `org.gnome.ScreenSaver` doesn't exist outside GNOME Shell | The lock uses ext-session-lock (compositor-enforced) and PAM, as before |
 | `.../tailsgreeter/__init__.py`, `.../greeter/main.ui.in`, `.../greeter/greeter.css` | Window title "Welcome to Veil OS", button "Start Veil OS", dark Veil styling | Branding | None. Those two strings are no longer translated |
 | `.../tps/configuration/features.py`, `.../tps_frontend/views/features_view.py`, `.../persistent-storage/features_view.ui.in` | Two new Persistent Storage features: *Nix Packages*, *Veil Desktop Settings* | Optional encrypted persistence for Nix and desktop settings | Uses Tails' existing bind-mount mechanism (symlink-safe, inside LUKS) |
+| `config/chroot_local-includes/usr/share/tails/build/passwd`, `.../group` | Add `tcpdump:x:170:170` / `tcpdump:x:170:` | The `tcpdump` package creates a system account; Tails pins every UID/GID for upgrade stability and fails the build on unknown accounts. Veil pins its accounts in the unused 170–189 range (`03-veil-pin-uids-gids`) | None (stable, non-colliding IDs) |
 | `.gitignore` | Ignore the docs copied at build time | Hygiene | None |
 | `README.md` | Upstream README moved to `README.tails.md`, replaced by the Veil README | Clarity and attribution | None |
 
 ## Runtime changes made by Veil hooks (not file edits)
 
+- `03-veil-pin-uids-gids`: before Tails' `04-change-gids-and-uids`, moves
+  Veil-added system accounts (`tcpdump`) to fixed IDs in 170–189.
 - `57-veil-llama-cpp`: builds llama.cpp b11946 from a hash-pinned tarball
   into `/usr/local/lib/veil/llama.cpp`.
 - `58-veil-nix`: creates `/nix` owned by the live user (UID 1000) and masks
