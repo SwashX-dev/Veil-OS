@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+  <vendor>Veil OS</vendor>
+
+  <!-- Changing where Tor's traffic goes could reveal the real IP address to
+       a compromised application: always ask for the administration password. -->
+  <action id="org.veil.vpn.manage">
+    <description>Connect or disconnect the VPN before Tor</description>
+    <message>Authentication is required to change how Tor connects to the Internet</message>
+    <icon_name>network-vpn</icon_name>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_self</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/local/lib/veil/veil-vpn-helper</annotate>
+  </action>
+
+  <!-- Unblocking a camera or microphone needs the password; blocking does not
+       (see /etc/sudoers.d). -->
+  <action id="org.veil.device-guard">
+    <description>Allow or block cameras and microphones</description>
+    <message>Authentication is required to allow access to cameras or microphones</message>
+    <icon_name>camera-web</icon_name>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_self</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/local/lib/veil/veil-device-guard</annotate>
+  </action>
+</policyconfig>

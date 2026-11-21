@@ -68,3 +68,8 @@ hashdeep
 ssdeep
 john
 sqlmap
+
+# Privacy Center: VPN before Tor (WireGuard, e.g. Proton VPN configuration files)
+wireguard-tools
+# Veil Player (mpv; libmpv is already used by Celluloid)
+mpv

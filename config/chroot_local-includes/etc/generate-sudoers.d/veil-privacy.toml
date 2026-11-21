@@ -1,0 +1,28 @@
+# Veil Privacy Center: operations that only reduce what applications can do,
+# or only read state, run without a password. Unblocking devices and changing
+# the VPN go through pkexec and need the administration password.
+[[commands]]
+executable = "/usr/local/lib/veil/veil-device-guard"
+args = ["status"]
+allowed_user = "amnesia"
+
+[[commands]]
+executable = "/usr/local/lib/veil/veil-device-guard"
+args = ["block", "camera"]
+allowed_user = "amnesia"
+
+[[commands]]
+executable = "/usr/local/lib/veil/veil-device-guard"
+args = ["block", "microphone"]
+allowed_user = "amnesia"
+
+[[commands]]
+executable = "/usr/local/lib/veil/veil-vpn-helper"
+args = ["status"]
+allowed_user = "amnesia"
+
+# Crash diagnostics: redacted log lines about graphics, crashes and USB only.
+[[commands]]
+executable = "/usr/local/lib/veil/veil-diag-helper"
+args = ["report"]
+allowed_user = "amnesia"

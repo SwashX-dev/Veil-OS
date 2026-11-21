@@ -1,0 +1,113 @@
+#!/usr/bin/python3 -I
+"""Camera and microphone kill switches (root helper).
+
+    veil-device-guard status
+    veil-device-guard block  camera|microphone   (sudo, no password)
+    veil-device-guard allow  camera|microphone   (pkexec, admin password)
+
+Blocking installs a udev rule in /run (RAM) that gives the device nodes mode
+0000 without the "uaccess" tag, then strips the ACLs that logind had granted
+to the logged-in user. New attempts to open a camera or an audio capture
+device fail. A program that already has the device open keeps it until it
+closes it; audio servers close idle capture devices within seconds.
+"""
+
+import glob
+import json
+import os
+import stat
+import subprocess
+import sys
+from pathlib import Path
+
+RULES = Path("/run/udev/rules.d/71-veil-device-guard.rules")
+CLASSES = {
+    "camera": {
+        "rule": 'SUBSYSTEM=="video4linux", MODE="0000", TAG-="uaccess"',
+        "subsystem": "video4linux",
+        "nodes": ["/dev/video*", "/dev/v4l-subdev*"],
+    },
+    "microphone": {
+        "rule": 'SUBSYSTEM=="sound", KERNEL=="pcmC[0-9]*D[0-9]*c", MODE="0000", TAG-="uaccess"',
+        "subsystem": "sound",
+        "nodes": ["/dev/snd/pcmC*D*c"],
+    },
+}
+
+
+def blocked_classes() -> list[str]:
+    try:
+        text = RULES.read_text()
+    except FileNotFoundError:
+        return []
+    return [name for name, spec in CLASSES.items() if spec["rule"] in text.splitlines()]
+
+
+def write_rules(names: list[str]) -> None:
+    if not names:
+        RULES.unlink(missing_ok=True)
+        return
+    RULES.parent.mkdir(parents=True, exist_ok=True)
+    tmp = RULES.with_suffix(".tmp")
+    tmp.write_text("# Veil OS camera/microphone kill switches (RAM only)\n"
+                   + "".join(CLASSES[n]["rule"] + "\n" for n in sorted(names)))
+    os.chmod(tmp, 0o644)
+    os.replace(tmp, RULES)
+
+
+def nodes(name: str) -> list[str]:
+    found = []
+    for pattern in CLASSES[name]["nodes"]:
+        found += sorted(glob.glob(pattern))
+    return found
+
+
+def apply(name: str, blocked: bool) -> None:
+    subprocess.run(["udevadm", "control", "--reload"], check=True)
+    subprocess.run(["udevadm", "trigger", "--action=change", f"--subsystem-match={CLASSES[name]['subsystem']}"],
+                   check=True)
+    subprocess.run(["udevadm", "settle", "--timeout=10"], check=False)
+    if blocked:
+        # Remove ACLs that logind added for the active session, and enforce
+        # the mode even if udev has not processed the change yet.
+        for node in nodes(name):
+            subprocess.run(["setfacl", "-b", node], check=False)
+            os.chmod(node, 0)
+
+
+def status() -> dict:
+    blocked = blocked_classes()
+    result = {}
+    for name in CLASSES:
+        devices = []
+        for node in nodes(name):
+            st = os.stat(node)
+            devices.append({"node": node, "mode": oct(stat.S_IMODE(st.st_mode))})
+        result[name] = {"blocked": name in blocked, "devices": devices}
+    return result
+
+
+def main(argv: list[str]) -> int:
+    if os.geteuid() != 0:
+        print("veil-device-guard must run as root (sudo/pkexec)", file=sys.stderr)
+        return 2
+    if argv == ["status"]:
+        print(json.dumps(status(), sort_keys=True))
+        return 0
+    if len(argv) == 2 and argv[0] in ("block", "allow") and argv[1] in CLASSES:
+        action, name = argv
+        names = set(blocked_classes())
+        if action == "block":
+            names.add(name)
+        else:
+            names.discard(name)
+        write_rules(sorted(names))
+        apply(name, action == "block")
+        print(json.dumps(status()[name], sort_keys=True))
+        return 0
+    print("usage: veil-device-guard status | block|allow camera|microphone", file=sys.stderr)
+    return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

@@ -1,0 +1,8 @@
+[Unit]
+Description=Veil OS shutdown after repeated desktop failures
+DefaultDependencies=no
+RefuseManualStop=yes
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/lib/veil/veil-shutdown-reason session-failed

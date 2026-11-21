@@ -54,6 +54,11 @@ do_stop() {
 	/bin/systemctl --signal=9 kill gdm.service || true
 	/bin/loginctl --signal=9 kill-user Debian-gdm || true
 
+	# Veil OS: say why the computer is shutting down, so that a loose or
+	# failing USB stick is not mistaken for a desktop crash.
+	printf '\n\n\n    %s\n\n' "Veil OS: the boot USB stick was disconnected: emergency shutdown, erasing memory..." \
+		> /dev/tty0 2>/dev/null || true
+
 	# Finally, return to the initramfs and poweroff the system
 	/bin/systemctl --force poweroff
 }

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Veil Player
+GenericName=Sandboxed Video Player
+Comment=Play videos with no network access, with optional upscaling
+Exec=veil-player %F
+Icon=multimedia-video-player
+Categories=AudioVideo;Video;Player;
+MimeType=video/mp4;video/x-matroska;video/webm;video/ogg;video/x-msvideo;video/quicktime;video/mpeg;
+NoDisplay=false

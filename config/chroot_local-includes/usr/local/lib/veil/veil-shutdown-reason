@@ -1,0 +1,31 @@
+#!/bin/sh
+# Root: end the live session with a visible reason (systemd units
+# veil-emergency-shutdown.service and veil-session-failed.service).
+set -u
+say() {
+    for tty in /dev/tty0 /dev/console; do
+        if printf '\n\n\n    %s\n\n' "$1" >"$tty" 2>/dev/null; then
+            break
+        fi
+    done
+}
+case "${1:-}" in
+    emergency)
+        # Exactly like Tails' emergency shutdown (udev-watchdog-wrapper).
+        /bin/loginctl --signal=9 kill-user amnesia || true
+        /bin/systemctl stop gdm.service || true
+        /bin/systemctl --signal=9 kill gdm.service || true
+        /bin/loginctl --signal=9 kill-user Debian-gdm || true
+        say "Veil OS: emergency shutdown (Ctrl+Alt+Shift+Delete). Erasing memory..."
+        exec /bin/systemctl --force poweroff
+        ;;
+    session-failed)
+        say "Veil OS: the desktop stopped six times in five minutes, so the computer shuts down. Next time, choose 'Veil OS (Safe Graphics)' in the boot menu, and run 'veil diagnostics --save' after a desktop restart."
+        sleep 10
+        exec /bin/systemctl poweroff
+        ;;
+    *)
+        echo "usage: veil-shutdown-reason emergency|session-failed" >&2
+        exit 2
+        ;;
+esac

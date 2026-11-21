@@ -1,0 +1,15 @@
+#!/bin/sh
+# Idle lock (run by swayidle from veil-privacy-daemon).
+# Locks only when the live user has a password: locking without one would
+# leave no way to unlock the screen.
+set -u
+pgrep -u "$(id -u)" -x swaylock >/dev/null 2>&1 && exit 0
+if /bin/passwd --status 2>/dev/null | awk '{exit ($2 == "P") ? 0 : 1}'; then
+    exec /usr/local/bin/veil-lock
+fi
+flag="${XDG_RUNTIME_DIR:-/tmp}/veil-autolock-no-password"
+if [ ! -e "$flag" ]; then
+    : >"$flag"
+    notify-send --app-name="Veil OS" --icon=dialog-information "Automatic screen lock is not active" \
+        "Set a screen-lock password first: choose Lock Screen once (Super+L)." || true
+fi

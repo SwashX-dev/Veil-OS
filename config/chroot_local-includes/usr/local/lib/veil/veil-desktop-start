@@ -13,7 +13,7 @@ trap abort_startup EXIT
 # the old compositor and would be duplicated by this script.
 restarted="${VEIL_COMPOSITOR_RESTARTS:-}"
 if [ -n "$restarted" ]; then
-    pkill -u "$(id -u)" -f '/usr/local/lib/veil/veil-(panel-status|session-manager-shim|autostart)( |$)' || true
+    pkill -u "$(id -u)" -f '/usr/local/lib/veil/veil-(panel-status|session-manager-shim|autostart|privacy-daemon)( |$)' || true
 fi
 
 # If the screen was locked when the compositor was lost, lock the new
@@ -27,7 +27,12 @@ fi
 [ -n "${DISPLAY:-}" ] || export DISPLAY=:0
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY LANG XDG_CURRENT_DESKTOP \
     XDG_SESSION_TYPE XDG_SESSION_DESKTOP GDK_BACKEND QT_QPA_PLATFORM MOZ_ENABLE_WAYLAND \
-    XKB_DEFAULT_LAYOUT XKB_DEFAULT_VARIANT PATH XDG_DATA_DIRS
+    XKB_DEFAULT_LAYOUT XKB_DEFAULT_VARIANT PATH XDG_DATA_DIRS VEIL_SESSION_STATE
+# Safe graphics settings must reach D-Bus-activated and systemd-started apps.
+if [ -n "${VEIL_SAFE_GRAPHICS:-}" ]; then
+    dbus-update-activation-environment --systemd VEIL_SAFE_GRAPHICS LIBGL_ALWAYS_SOFTWARE GSK_RENDERER \
+        VK_LOADER_DRIVERS_SELECT
+fi
 
 # Register the working Wayland session from its own logind session.
 # GDM uses this to mark the display managed and finish greeter handoff.
@@ -56,12 +61,14 @@ xfce4-panel --disable-wm-check &
 nm-applet --indicator &
 /usr/local/lib/veil/veil-session-manager-shim &
 /usr/local/lib/veil/veil-autostart &
+# Idle lock, clipboard clearing, camera/microphone blocks, video presets.
+/usr/local/lib/veil/veil-privacy-daemon &
 
 if [ -n "$restarted" ]; then
     (
         sleep 4
         notify-send --app-name="Veil OS" --icon=dialog-warning \
             "The display server was restarted" \
-            "It stopped unexpectedly (${VEIL_COMPOSITOR_LOSS:-unknown}). Open windows were closed. Software rendering is now used. ${VEIL_RELOCK:+The screen is locked. }Details are in the system journal (veil-session)."
+            "It stopped unexpectedly (${VEIL_COMPOSITOR_LOSS:-unknown}). Open windows were closed. Software rendering is now used. ${VEIL_RELOCK:+The screen is locked. }To save a report, run: veil diagnostics --save"
     ) &
 fi

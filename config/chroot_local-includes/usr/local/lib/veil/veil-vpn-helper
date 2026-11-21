@@ -1,0 +1,218 @@
+#!/usr/bin/python3 -I
+"""VPN before Tor (root helper).
+
+    veil-vpn-helper up      < wireguard.conf   (pkexec, administration password)
+    veil-vpn-helper down                       (pkexec, administration password)
+    veil-vpn-helper status                     (sudo, no password, read-only)
+
+Only the debian-tor user (Tor itself) is routed through the WireGuard
+interface, by a uid routing rule. Three independent layers keep it
+fail-closed:
+
+  1. Routing: Tor's table has a blackhole default route, so if the
+     WireGuard interface disappears Tor's packets are dropped, not sent
+     directly.
+  2. Firewall (VEIL_VPN, before Tails' own rules): Tor may not send on any
+     interface other than WireGuard; nothing else may use WireGuard; the
+     only new outgoing packets accepted are WireGuard's own encrypted UDP to
+     the configured endpoint, recognised by a firewall mark that only root
+     can set.
+  3. The rules are registered as Tails session rules, so they come back
+     whenever Tails reloads its firewall.
+
+The private key is read from stdin and handed to `wg` on stdin. It is never
+written to disk, logged, or placed on a command line.
+"""
+
+import json
+import os
+import pwd
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+from veil import vpn
+
+IF = vpn.INTERFACE
+TABLE = str(vpn.TABLE)
+PRIO = str(vpn.RULE_PRIORITY)
+MARK = hex(vpn.FWMARK)
+STATE = Path("/run/veil-vpn/state.json")
+SESSION_RULES = Path("/var/lib/iptables/session-rules")
+IPT = ["iptables", "-w", "10"]
+CHAIN = "VEIL_VPN"
+
+
+class HelperError(RuntimeError):
+    pass
+
+
+def run(args, *, check=True, input=None):
+    r = subprocess.run(args, input=input, text=True, capture_output=True, check=False)
+    if check and r.returncode != 0:
+        raise HelperError(f"{' '.join(args[:4])}...: {r.stderr.strip() or r.returncode}")
+    return r
+
+
+def tor_uid() -> int:
+    return pwd.getpwnam("debian-tor").pw_uid
+
+
+def link_exists() -> bool:
+    return Path(f"/sys/class/net/{IF}").exists()
+
+
+def chain_rules(cfg: vpn.WireGuardConfig) -> list[list[str]]:
+    reject = ["-j", "REJECT", "--reject-with", "icmp-admin-prohibited"]
+    return [
+        ["-o", "lo", "-j", "RETURN"],
+        ["-o", IF, "-m", "owner", "--uid-owner", "debian-tor", "-j", "RETURN"],
+        ["-o", IF, *reject],
+        ["-m", "owner", "--uid-owner", "debian-tor", *reject],
+        ["-p", "udp", "-d", f"{cfg.endpoint_ip}/32", "--dport", str(cfg.endpoint_port),
+         "-m", "mark", "--mark", MARK, "-j", "ACCEPT"],
+        ["-j", "RETURN"],
+    ]
+
+
+def session_lines(cfg: vpn.WireGuardConfig) -> list[str]:
+    lines = [f"-N {CHAIN}"]
+    lines += [" ".join(["-A", CHAIN, *rule]) for rule in chain_rules(cfg)]
+    lines.append(f"-I OUTPUT 1 -j {CHAIN}")
+    return lines
+
+
+def write_session_rules(lines: list[str]) -> None:
+    """Replace Veil's lines in Tails' session-rules file, keeping others."""
+    try:
+        current = SESSION_RULES.read_text().splitlines()
+    except FileNotFoundError:
+        current = []
+    kept = [line for line in current if CHAIN not in line]
+    SESSION_RULES.parent.mkdir(parents=True, exist_ok=True)
+    tmp = SESSION_RULES.with_name(SESSION_RULES.name + ".veil-tmp")
+    tmp.write_text("".join(f"{line}\n" for line in kept + lines))
+    os.chmod(tmp, 0o600)
+    os.replace(tmp, SESSION_RULES)
+
+
+def firewall_up(cfg: vpn.WireGuardConfig) -> None:
+    run([*IPT, "-N", CHAIN], check=False)
+    run([*IPT, "-F", CHAIN])
+    for rule in chain_rules(cfg):
+        run([*IPT, "-A", CHAIN, *rule])
+    while run([*IPT, "-C", "OUTPUT", "-j", CHAIN], check=False).returncode == 0:
+        run([*IPT, "-D", "OUTPUT", "-j", CHAIN])
+    run([*IPT, "-I", "OUTPUT", "1", "-j", CHAIN])
+    write_session_rules(session_lines(cfg))
+
+
+def firewall_down() -> None:
+    write_session_rules([])
+    while run([*IPT, "-C", "OUTPUT", "-j", CHAIN], check=False).returncode == 0:
+        run([*IPT, "-D", "OUTPUT", "-j", CHAIN], check=False)
+    run([*IPT, "-F", CHAIN], check=False)
+    run([*IPT, "-X", CHAIN], check=False)
+
+
+def routing_up(cfg: vpn.WireGuardConfig) -> None:
+    uid = tor_uid()
+    run(["ip", "-4", "route", "replace", "blackhole", "default", "metric", "4096", "table", TABLE])
+    run(["ip", "-4", "route", "replace", "default", "dev", IF, "metric", "0", "table", TABLE])
+    while run(["ip", "-4", "rule", "del", "priority", PRIO], check=False).returncode == 0:
+        pass
+    run(["ip", "-4", "rule", "add", "priority", PRIO, "uidrange", f"{uid}-{uid}", "lookup", TABLE])
+    # Replies from the Internet arrive on WireGuard although the main table
+    # routes their source elsewhere: use loose reverse-path filtering there.
+    Path(f"/proc/sys/net/ipv4/conf/{IF}/rp_filter").write_text("2\n")
+    if Path("/proc/sys/net/ipv4/conf/all/rp_filter").read_text().strip() == "1":
+        Path("/proc/sys/net/ipv4/conf/all/rp_filter").write_text("2\n")
+
+
+def routing_down() -> None:
+    while run(["ip", "-4", "rule", "del", "priority", PRIO], check=False).returncode == 0:
+        pass
+    run(["ip", "-4", "route", "flush", "table", TABLE], check=False)
+
+
+def up() -> dict:
+    text = sys.stdin.read(vpn.MAX_CONFIG_BYTES + 1)
+    cfg = vpn.parse_config(text)
+    if link_exists() or STATE.exists():
+        down()
+    try:
+        run(["ip", "link", "add", IF, "type", "wireguard"])
+        run(["wg", "setconf", IF, "/dev/stdin"], input=cfg.setconf())
+        run(["ip", "-4", "address", "add", cfg.address, "dev", IF])
+        run(["ip", "link", "set", "dev", IF, "mtu", str(cfg.mtu), "up"])
+        # Firewall first, then routing: Tor can never reach a direct route
+        # in between, because its rule is added last.
+        firewall_up(cfg)
+        routing_up(cfg)
+    except Exception:
+        down()
+        raise
+    STATE.parent.mkdir(mode=0o755, exist_ok=True)
+    STATE.write_text(json.dumps({**cfg.summary(), "since": int(time.time())}) + "\n")
+    os.chmod(STATE, 0o644)
+    return status()
+
+
+def down() -> dict:
+    # Routing first: from now on Tor follows the main table again.
+    routing_down()
+    firewall_down()
+    if link_exists():
+        run(["ip", "link", "del", IF], check=False)
+    STATE.unlink(missing_ok=True)
+    return status()
+
+
+def status() -> dict:
+    result = {"active": link_exists(), "interface": IF}
+    try:
+        result.update({k: v for k, v in json.loads(STATE.read_text()).items() if k in ("endpoint", "address", "since")})
+    except (OSError, ValueError):
+        pass
+    if result["active"]:
+        r = run(["wg", "show", IF, "dump"], check=False)
+        lines = r.stdout.splitlines()
+        if len(lines) >= 2:
+            fields = lines[1].split("\t")
+            # public-key, preshared-key, endpoint, allowed-ips, latest-handshake, rx, tx, keepalive
+            if len(fields) >= 7:
+                handshake = int(fields[4] or 0)
+                result["latest_handshake_seconds_ago"] = int(time.time()) - handshake if handshake else None
+                result["rx_bytes"] = int(fields[5] or 0)
+                result["tx_bytes"] = int(fields[6] or 0)
+    rules = run(["ip", "-4", "rule", "show", "priority", PRIO], check=False).stdout
+    result["tor_routed_through_vpn"] = f"lookup {TABLE}" in rules
+    result["firewall"] = run([*IPT, "-C", "OUTPUT", "-j", CHAIN], check=False).returncode == 0
+    routes = run(["ip", "-4", "route", "show", "table", TABLE], check=False).stdout
+    result["blackhole_fallback"] = "blackhole default" in routes
+    return result
+
+
+def main(argv: list[str]) -> int:
+    if os.geteuid() != 0:
+        print(json.dumps({"error": "veil-vpn-helper must run as root (pkexec/sudo)"}))
+        return 2
+    try:
+        if argv == ["up"]:
+            print(json.dumps(up()))
+        elif argv == ["down"]:
+            print(json.dumps(down()))
+        elif argv == ["status"]:
+            print(json.dumps(status()))
+        else:
+            print(json.dumps({"error": "usage: veil-vpn-helper up|down|status"}))
+            return 2
+    except (vpn.ConfigError, HelperError) as exc:
+        print(json.dumps({"error": str(exc)}))
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

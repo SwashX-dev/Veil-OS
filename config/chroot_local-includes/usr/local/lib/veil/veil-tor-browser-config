@@ -1,0 +1,44 @@
+#!/usr/bin/python3 -I
+"""Apply the Privacy Center's Tor Browser security level to a new profile.
+
+Called by launch-tor-browser before every start. Only Tor Browser's own
+security levels are used, so Veil users stay in the same anonymity set as
+other Tor Browser users of that level.
+"""
+import os
+import sys
+from pathlib import Path
+
+from veil import privacy_settings
+
+MARK = "// Written by Veil OS"
+
+
+def main(argv):
+    if len(argv) != 1:
+        print("usage: veil-tor-browser-config PROFILE_DIR", file=sys.stderr)
+        return 2
+    profile = Path(argv[0])
+    if not profile.is_dir():
+        return 0
+    user_js = profile / "user.js"
+    try:
+        kept = [line for line in user_js.read_text().splitlines(keepends=True)
+                if MARK not in line and "browser.security_level." not in line]
+    except FileNotFoundError:
+        kept = []
+    level = privacy_settings.load()["tor_browser_security_level"]
+    text = "".join(kept)
+    if level != "standard":
+        text += privacy_settings.tor_browser_user_js(level)
+    if text:
+        fd = os.open(user_js, os.O_WRONLY | os.O_CREAT | os.O_TRUNC | os.O_NOFOLLOW, 0o600)
+        with os.fdopen(fd, "w") as f:
+            f.write(text)
+    else:
+        user_js.unlink(missing_ok=True)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

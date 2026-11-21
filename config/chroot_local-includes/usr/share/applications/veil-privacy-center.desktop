@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Privacy Center
+GenericName=Privacy Settings
+Comment=Tor Browser security level, screen lock, clipboard, camera and microphone, VPN before Tor, video upscaling
+Exec=veil-privacy-center
+Icon=security-high
+Categories=System;Security;Settings;
+Keywords=privacy;vpn;proton;wireguard;camera;microphone;clipboard;lock;tor;upscaling;

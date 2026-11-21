@@ -1,0 +1,18 @@
+#!/usr/bin/python3 -I
+"""Veil Player: mpv in a no-network sandbox, with the Privacy Center's upscaling preset."""
+import argparse
+import sys
+from pathlib import Path
+
+from veil import media, privacy_settings
+
+ap = argparse.ArgumentParser(prog="veil-player", description=__doc__)
+ap.add_argument("files", nargs="+", type=Path)
+ap.add_argument("--upscale", choices=privacy_settings.UPSCALING_MODES,
+                help="override the Privacy Center setting for this playback")
+a, extra = ap.parse_known_args()
+try:
+    sys.exit(media.play(a.files, a.upscale, extra))
+except (OSError, ValueError) as exc:
+    print(f"veil-player: {exc}", file=sys.stderr)
+    sys.exit(1)

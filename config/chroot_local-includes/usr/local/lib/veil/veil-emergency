@@ -1,0 +1,8 @@
+#!/bin/sh
+# Ctrl+Alt+Shift+Delete (labwc keybinding): emergency shutdown, if enabled in
+# the Privacy Center. Same sequence as Tails' shutdown on USB removal.
+if /usr/bin/python3 -I -c 'import sys
+from veil import privacy_settings
+sys.exit(0 if privacy_settings.load()["emergency_shutdown_hotkey"] else 1)'; then
+    exec systemctl start --no-block veil-emergency-shutdown.service
+fi

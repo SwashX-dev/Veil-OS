@@ -47,6 +47,9 @@ start_browser() {
     if [ ! -d "${PROFILE}" ]; then
         /usr/local/lib/generate-tor-browser-profile
     fi
+    # Veil OS: Tor Browser security level chosen in the Privacy Center
+    # (one of Tor Browser's own levels; no fingerprintable custom prefs).
+    /usr/local/lib/veil/veil-tor-browser-config "${PROFILE}" || true
 
     TMPDIR="${PROFILE}/tmp"
     if [ ! -d "$TMPDIR" ]; then

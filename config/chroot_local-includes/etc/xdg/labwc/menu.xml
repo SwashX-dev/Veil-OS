@@ -4,8 +4,10 @@
     <item label="Veil Console"><action name="Execute" command="veil-console" /></item>
     <item label="Veil Agent"><action name="Execute" command="veil-agent-gui" /></item>
     <item label="Network Guard"><action name="Execute" command="veil-network-guard" /></item>
+    <item label="Privacy Center"><action name="Execute" command="veil-privacy-center" /></item>
     <item label="Tor Browser"><action name="Execute" command="tor-browser" /></item>
     <item label="Files"><action name="Execute" command="nautilus --new-window" /></item>
+    <item label="Videos (Celluloid)"><action name="Execute" command="celluloid" /></item>
     <separator />
     <item label="Package Center"><action name="Execute" command="veil-package-center" /></item>
     <item label="Notifications"><action name="Execute" command="xfce4-notifyd-config" /></item>

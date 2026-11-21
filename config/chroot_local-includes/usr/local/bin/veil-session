@@ -113,7 +113,8 @@ system_stopping() {
 
 give_up() {
     echo "Veil: the compositor keeps failing ($MAX_LOSSES losses within ${LOSS_WINDOW}s), shutting down" >&2
-    systemctl --no-block poweroff || exit 1
+    # Shows the reason on screen before the normal shutdown.
+    systemctl start --no-block veil-session-failed.service || systemctl --no-block poweroff || exit 1
     # Retain the GDM session until logind terminates it so that a VT switch
     # does not expose the greeter in the middle of teardown.
     sleep infinity &
@@ -122,7 +123,31 @@ give_up() {
     exit 0
 }
 
-case " $(cat /proc/cmdline) " in
+# Safe graphics. NVIDIA GPUs are driven by nouveau (Tails ships no other
+# NVIDIA driver), which can hang or crash under GPU load, especially on recent
+# generations that depend on GSP firmware. A GPU fault there kills the
+# compositor (a black screen). Render the desktop (Pixman) and applications
+# (llvmpipe/lavapipe) in software instead, unless the user chose the
+# "veil.gpu-rendering" boot option. With "nomodeset" (the Safe Graphics boot
+# entry) there is no GPU driver at all.
+nouveau_in_use() {
+    for driver in /sys/class/drm/card[0-9]*/device/driver; do
+        [ -e "$driver" ] || continue
+        [ "$(basename "$(readlink -f "$driver")")" = nouveau ] && return 0
+    done
+    return 1
+}
+cmdline=" $(cat /proc/cmdline) "
+case "$cmdline" in
+    *" veil.gpu-rendering "*) ;;
+    *" nomodeset "*) export VEIL_SAFE_GRAPHICS=nomodeset ;;
+    *) nouveau_in_use && export VEIL_SAFE_GRAPHICS=nouveau ;;
+esac
+if [ -n "${VEIL_SAFE_GRAPHICS:-}" ]; then
+    export WLR_RENDERER=pixman LIBGL_ALWAYS_SOFTWARE=1 GSK_RENDERER=ngl VK_LOADER_DRIVERS_SELECT='*lvp*'
+    echo "Veil: safe graphics ($VEIL_SAFE_GRAPHICS): software rendering" >&2
+fi
+case "$cmdline" in
     *" veil.software-rendering "*) export WLR_RENDERER=pixman ;;
 esac
 run_compositor

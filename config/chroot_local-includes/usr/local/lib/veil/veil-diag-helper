@@ -1,0 +1,57 @@
+#!/usr/bin/python3 -I
+"""Read-only crash diagnostics for the live user (root helper, sudo NOPASSWD).
+
+    veil-diag-helper report
+
+Prints only log lines about graphics, the desktop session, crashes, memory
+pressure and USB disconnects from the current boot. Hardware addresses, IP
+addresses and USB serial numbers are redacted. Nothing is written anywhere.
+"""
+
+import re
+import subprocess
+import sys
+
+KERNEL_PATTERN = (r"drm|nouveau|amdgpu|radeon|i915|xe |nvidia|simpledrm|efifb|gsp|gpu|"
+                  r"segfault|general protection|Out of memory|oom-kill|oom_reaper|"
+                  r"usb .*disconnect|USB disconnect|reset (high|full|super)-speed|xhci|"
+                  r"I/O error|Buffer I/O|blk_update_request|EXT4-fs error|squashfs")
+SESSION_PATTERN = (r"Veil:|labwc|swaylock|wlroots|veil-session|xfce4-panel|gdm|gnome-shell|"
+                   r"core dump|dumped core|segfault|tails-shutdown-on-media-removal|udev-watchdog")
+MAX_LINES = 600
+
+REDACTIONS = [
+    (re.compile(r"\b([0-9a-fA-F]{2}[:-]){5}[0-9a-fA-F]{2}\b"), "xx:xx:xx:xx:xx:xx"),
+    (re.compile(r"\b(?!127\.0\.0\.1\b)(\d{1,3}\.){3}\d{1,3}\b"), "x.x.x.x"),
+    (re.compile(r"(?i)(serial(number)?[:=]\s*)\S+"), r"\1<redacted>"),
+]
+
+
+def redact(line: str) -> str:
+    for pattern, replacement in REDACTIONS:
+        line = pattern.sub(replacement, line)
+    return line
+
+
+def journal(args: list[str], pattern: str) -> list[str]:
+    r = subprocess.run(["journalctl", "--no-pager", "-o", "short-monotonic", "-b", *args,
+                        "--grep", pattern, "--case-sensitive=false"],
+                       capture_output=True, text=True, check=False, timeout=60)
+    lines = [redact(line) for line in r.stdout.splitlines() if "SerialNumber" not in line]
+    return lines[-MAX_LINES:]
+
+
+def main(argv: list[str]) -> int:
+    if argv != ["report"]:
+        print("usage: veil-diag-helper report", file=sys.stderr)
+        return 2
+    print("== Kernel: graphics, crashes, memory, USB ==")
+    print("\n".join(journal(["-k"], KERNEL_PATTERN)) or "(no matching kernel messages)")
+    print()
+    print("== Session: compositor, lock screen, GDM ==")
+    print("\n".join(journal([], SESSION_PATTERN)) or "(no matching session messages)")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

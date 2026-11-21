@@ -215,6 +215,38 @@ def evaluate_firewall(v4: dict, v6: dict, uid_names: dict[str, str] | None = Non
     return checks
 
 
+def evaluate_vpn(v4: dict, uid_names: dict[str, str] | None = None, state: dict | None = None) -> list[Check]:
+    """VPN before Tor must be fail-closed: Tor only through WireGuard, nothing else through it."""
+    names = uid_names or {}
+    out = _rules(v4, "filter", "OUTPUT")
+    chain = _rules(v4, "filter", "VEIL_VPN")
+    active = bool(state and state.get("active"))
+    if not active and not chain:
+        return [Check("vpn.before_tor", "VPN before Tor", "info",
+                      "Off: Tor connects directly (or through bridges)", {}, "firewall")]
+    problems = []
+    if not out or out[0]["rule"] != "-A OUTPUT -j VEIL_VPN":
+        problems.append("the VPN rules are not the first OUTPUT rule")
+    for r in chain:
+        rule = r["rule"]
+        if "-j ACCEPT" in rule and not ("-p udp" in rule and "--mark" in rule
+                                        and re.search(r"-d \d+\.\d+\.\d+\.\d+/32", rule)):
+            problems.append(f"unexpected ACCEPT rule: {rule}")
+    if not any(_owner(r["rule"], names) == "debian-tor" and "-j REJECT" in r["rule"] and " -o " not in r["rule"]
+               for r in chain):
+        problems.append("Tor is not blocked outside the VPN")
+    if active and not state.get("tor_routed_through_vpn"):
+        problems.append("Tor is not routed through the VPN")
+    if active and not state.get("blackhole_fallback"):
+        problems.append("no blackhole fallback route (Tor could go direct if the VPN interface vanished)")
+    if not active and chain:
+        problems.append("VPN rules are loaded but the VPN interface is missing: Tor cannot connect")
+    detail = (f"On: Tor connects only through the VPN ({state.get('endpoint', '?')})" if not problems
+              else "; ".join(problems))
+    return [Check("vpn.before_tor", "VPN before Tor (fail-closed)", "pass" if not problems else "fail",
+                  detail, {"state": state or {}}, "firewall")]
+
+
 def classify_peer(peer: str) -> str:
     """Return 'none', 'loopback', 'lan' or 'internet' for an ss peer string."""
     if peer in ("*", "0.0.0.0:*", "[::]:*", "*:*") or peer.endswith(":*"):
@@ -493,6 +525,11 @@ def run_all(active_probes: bool = True) -> list[Check]:
         v4 = parse_iptables_save(fw["ipv4"]["out"])
         v6 = parse_iptables_save(fw["ipv6"]["out"])
         checks += evaluate_firewall(v4, v6, uid_name_map(v4, v6))
+        vpn_state = None
+        if Path("/sys/class/net/wg-veil").exists() or _rules(v4, "filter", "VEIL_VPN"):
+            from veil import vpn
+            vpn_state = vpn.status()
+        checks += evaluate_vpn(v4, uid_name_map(v4), vpn_state)
     else:
         checks.append(Check("firewall.default_deny", "Firewall inspection", "skip",
                             "Root helper unavailable (not running on Veil OS?)", {}, "firewall"))
