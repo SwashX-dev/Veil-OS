@@ -10,7 +10,7 @@ xfce4-panel
 xfce4-whiskermenu-plugin
 xfce4-genmon-plugin
 xfce4-pulseaudio-plugin
-xfdesktop4
+swaybg
 xfconf
 xfce4-notifyd
 xfce4-terminal
@@ -28,6 +28,9 @@ slurp
 wl-clipboard
 wdisplays
 wlr-randr
+# pactl (volume keys) and dbus-update-activation-environment (session start)
+pulseaudio-utils
+dbus-bin
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 

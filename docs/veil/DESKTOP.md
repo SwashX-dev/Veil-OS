@@ -13,7 +13,7 @@ clients of the **labwc** compositor. XFCE's Wayland support is officially
 - Panel: `xfce4-panel` (`/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml`),
   which holds the Whisker menu, task list, Veil status (genmon), tray, volume,
   UTC clock and power button
-- Wallpaper: `swaybg`. Lock: `swaylock`. Polkit: `mate-polkit`. Notifications: `xfce4-notifyd`
+- Wallpaper: `swaybg` (no xfdesktop, so no desktop icons). Lock: `swaylock`. Polkit: `mate-polkit`. Notifications: `xfce4-notifyd`
 - GTK theme `Veil` (Adwaita-dark plus the Veil palette), icons
   `elementary-xfce-dark`, monospace font JetBrains Mono
 - Apps: xfce4-terminal (fallback terminal), Mousepad, Ristretto, Task
