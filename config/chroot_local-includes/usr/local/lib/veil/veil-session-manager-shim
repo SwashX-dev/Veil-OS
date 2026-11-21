@@ -1,0 +1,67 @@
+#!/usr/bin/python3 -I
+"""Minimal org.gnome.SessionManager for the Veil session.
+
+Tails applications (e.g. Persistent Storage's "Restart Now" button) call
+org.gnome.SessionManager.Reboot()/Shutdown(). GNOME Shell's session manager
+does not run in the Veil (labwc) session, so this shim provides those
+methods and maps them to logind via systemctl, i.e. the normal Tails
+shutdown path (including memory erasure). It refuses to run outside the
+Veil session so it can never shadow the real gnome-session (e.g. in GDM).
+"""
+
+import os
+import subprocess
+import sys
+
+from gi.repository import Gio, GLib
+
+XML = """
+<node>
+  <interface name="org.gnome.SessionManager">
+    <method name="Reboot"/>
+    <method name="Shutdown"/>
+    <method name="RequestReboot"/>
+    <method name="RequestShutdown"/>
+    <method name="Logout"><arg type="u" name="mode" direction="in"/></method>
+    <method name="CanShutdown"><arg type="b" name="is_available" direction="out"/></method>
+    <method name="IsSessionRunning"><arg type="b" name="running" direction="out"/></method>
+  </interface>
+</node>
+"""
+
+
+def on_call(_conn, _sender, _path, _iface, method, _params, invocation):
+    if method in ("Reboot", "RequestReboot"):
+        subprocess.Popen(["systemctl", "reboot"], start_new_session=True)
+        invocation.return_value(None)
+    elif method in ("Shutdown", "RequestShutdown"):
+        subprocess.Popen(["systemctl", "poweroff"], start_new_session=True)
+        invocation.return_value(None)
+    elif method == "Logout":
+        # Tails has no logout; the closest safe action is to shut down.
+        subprocess.Popen(["veil-shutdown"], start_new_session=True)
+        invocation.return_value(None)
+    elif method == "CanShutdown":
+        invocation.return_value(GLib.Variant("(b)", (True,)))
+    elif method == "IsSessionRunning":
+        invocation.return_value(GLib.Variant("(b)", (True,)))
+
+
+def main():
+    if "Veil" not in os.environ.get("XDG_CURRENT_DESKTOP", "").split(":"):
+        print("veil-session-manager-shim: not a Veil session, exiting", file=sys.stderr)
+        return 0
+    node = Gio.DBusNodeInfo.new_for_xml(XML)
+    loop = GLib.MainLoop()
+
+    def on_bus(conn, _name):
+        conn.register_object("/org/gnome/SessionManager", node.interfaces[0], on_call, None, None)
+
+    Gio.bus_own_name(Gio.BusType.SESSION, "org.gnome.SessionManager", Gio.BusNameOwnerFlags.DO_NOT_QUEUE,
+                     on_bus, None, lambda *_: loop.quit())
+    loop.run()
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

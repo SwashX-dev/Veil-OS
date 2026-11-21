@@ -2,7 +2,8 @@
 
 # Make the Wayland session visible to systemd --user and D-Bus activation,
 # then let Tails' session units run exactly as they do under GNOME.
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP \
+[ -n "${DISPLAY:-}" ] || export DISPLAY=:0
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY LANG XDG_CURRENT_DESKTOP \
     XDG_SESSION_TYPE XDG_SESSION_DESKTOP GDK_BACKEND QT_QPA_PLATFORM MOZ_ENABLE_WAYLAND \
     XKB_DEFAULT_LAYOUT XKB_DEFAULT_VARIANT PATH XDG_DATA_DIRS >/dev/null 2>&1
 systemctl --user start veil-session.target >/dev/null 2>&1
@@ -11,4 +12,5 @@ swaybg -m fill -i /usr/share/veil/backgrounds/veil-wallpaper.png >/dev/null 2>&1
 xfce4-panel --disable-wm-check >/dev/null 2>&1 &
 /usr/libexec/polkit-mate-authentication-agent-1 >/dev/null 2>&1 &
 nm-applet --indicator >/dev/null 2>&1 &
+/usr/local/lib/veil/veil-session-manager-shim >/dev/null 2>&1 &
 /usr/local/lib/veil/veil-autostart >/dev/null 2>&1 &

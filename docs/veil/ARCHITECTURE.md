@@ -69,5 +69,8 @@ keyboard layout from the Welcome Screen) → `labwc` → `/etc/xdg/labwc/autosta
 | `gnome-session.target` hooks | `veil-session.target` (+ `tails-spoof-mac` checks both) |
 | xdg-desktop-portal-gnome | xdg-desktop-portal-gtk / -wlr (`veil-portals.conf`) |
 | GNOME quick settings network | nm-applet (StatusNotifier in the panel tray) |
+| `org.gnome.SessionManager` (Reboot/Shutdown, used by Persistent Storage) | `veil-session-manager-shim` (session bus, Veil session only) |
+| IBus daemon started by GNOME Shell (Tor Connection requires `tails-ibus-proxy`) | `org.freedesktop.IBus.session.generic.service` via a drop-in |
+| mutter Xwayland auth file (needed by `tails-dump-user-env`) | empty `XAUTHORITY` placeholder + exported `DISPLAY` |
 | Tails upgrader | masked; `veil-update-check` notifies about new Veil releases |
 | WhisperBack (reports to Tails) | hidden; Veil bugs go to GitHub issues |
