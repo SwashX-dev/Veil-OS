@@ -96,8 +96,11 @@ class LlamaCppBackend:
         cmd = [server, "-m", str(self.model_path), "--host", str(self.sock),
                "-c", str(self.context), "-t", str(self.threads), "--jinja",
                "--no-webui", "-ngl", str(self.gpu_layers), "--log-disable"]
+        # The model may live under $XDG_RUNTIME_DIR (amnesic storage), which
+        # the sandbox hides along with every runtime socket: re-expose it RO.
         spec = sandbox.SandboxSpec(network=False, readonly_root=True,
-                                   writable=[str(self.rundir)], hide_secrets=True,
+                                   writable=[str(self.rundir)],
+                                   readonly=[str(self.model_path.resolve())], hide_secrets=True,
                                    hide_session=True, unshare_pid=True,
                                    hostname="veil-inference",
                                    devices=["/dev/dri", "/dev/nvidia*", "/dev/kfd"]

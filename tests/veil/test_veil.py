@@ -92,6 +92,25 @@ class TestSandboxIsolation(unittest.TestCase):
                 os.environ["HOME"] = old
             self.assertEqual(r.stdout.strip(), "0")
 
+    def test_readonly_bind_visible_under_masked_run(self):
+        rt = f"/run/user/{os.getuid()}"
+        if not os.path.isdir(rt) or not os.access(rt, os.W_OK):
+            self.skipTest("no /run-based runtime dir")
+        d = Path(rt) / "veil-test-ro"
+        d.mkdir(exist_ok=True)
+        f = d / "model.gguf"
+        f.write_text("GGUF-TEST\n")
+        try:
+            r = sandbox.run(sandbox.SandboxSpec(readonly=[str(f)]),
+                            ["sh", "-c", f"cat {f}; echo x > {f} 2>/dev/null && echo WRITABLE || echo RO"], timeout=20)
+            self.assertEqual(r.stdout.split(), ["GGUF-TEST", "RO"])
+            # Without the bind it must be hidden (all of /run is masked).
+            r = sandbox.run(sandbox.SandboxSpec(), ["sh", "-c", f"cat {f} 2>/dev/null || echo HIDDEN"], timeout=20)
+            self.assertEqual(r.stdout.strip(), "HIDDEN")
+        finally:
+            f.unlink()
+            d.rmdir()
+
     def test_workspace_write_only(self):
         with tempfile.TemporaryDirectory() as ws, tempfile.TemporaryDirectory() as other:
             spec = sandbox.SandboxSpec(writable=[ws])
@@ -252,10 +271,17 @@ class TestModels(unittest.TestCase):
         self.assertIn(big.name, ("qwen3-8b",))
 
     def test_pull_requires_consent(self):
+        old = os.environ.get("XDG_RUNTIME_DIR")
         with tempfile.TemporaryDirectory() as d:
             os.environ["XDG_RUNTIME_DIR"] = d
-            with self.assertRaises(models.ConsentDenied):
-                models.pull("qwen3-0.6b", consent=lambda *a: False, require_tor=False)
+            try:
+                with self.assertRaises(models.ConsentDenied):
+                    models.pull("qwen3-0.6b", consent=lambda *a: False, require_tor=False)
+            finally:
+                if old is None:
+                    os.environ.pop("XDG_RUNTIME_DIR", None)
+                else:
+                    os.environ["XDG_RUNTIME_DIR"] = old
 
 
 class TestToolCatalog(unittest.TestCase):
@@ -306,9 +332,14 @@ def _call(name, args, cid="c1"):
 class TestAgentLoop(unittest.TestCase):
     def setUp(self):
         self.rt = tempfile.TemporaryDirectory()
+        self._old_rt = os.environ.get("XDG_RUNTIME_DIR")
         os.environ["XDG_RUNTIME_DIR"] = self.rt.name
 
     def tearDown(self):
+        if self._old_rt is None:
+            os.environ.pop("XDG_RUNTIME_DIR", None)
+        else:
+            os.environ["XDG_RUNTIME_DIR"] = self._old_rt
         self.rt.cleanup()
 
     def test_shell_runs_without_network(self):

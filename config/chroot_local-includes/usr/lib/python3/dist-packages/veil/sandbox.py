@@ -152,6 +152,9 @@ class SandboxSpec:
     seccomp: bool = True
     # Device nodes to expose (e.g. /dev/dri for GPU inference). Default: none.
     devices: list[str] = field(default_factory=list)
+    # Paths re-exposed read-only after masking (e.g. a model file that lives
+    # under $XDG_RUNTIME_DIR, which is hidden when /run is masked).
+    readonly: list[str] = field(default_factory=list)
 
 
 class SandboxUnavailable(RuntimeError):
@@ -223,6 +226,11 @@ def build_argv(spec: SandboxSpec, command: list[str], seccomp_fd: int | None = N
                 a += ["--tmpfs", p]
             elif os.path.isfile(p):
                 a += ["--ro-bind", "/dev/null", p]
+
+    for raw in spec.readonly:
+        p = _expand(raw)
+        if os.path.exists(p):
+            a += ["--ro-bind", p, p]
 
     for raw in spec.writable:
         p = _expand(raw)
