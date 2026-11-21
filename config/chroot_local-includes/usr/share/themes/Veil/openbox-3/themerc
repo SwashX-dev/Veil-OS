@@ -8,10 +8,10 @@ window.active.indicator.toggled-keybind.color: #4fd1c5
 window.active.title.bg.color: #15151b
 window.inactive.title.bg.color: #0f0f13
 window.active.label.text.color: #e6e4f0
-window.inactive.label.text.color: #6c6a78
+window.inactive.label.text.color: #a7a4b7
 window.label.text.justify: center
 window.active.button.unpressed.image.color: #b9b2e6
-window.inactive.button.unpressed.image.color: #55535f
+window.inactive.button.unpressed.image.color: #9995ad
 window.active.button.hover.image.color: #4fd1c5
 window.active.button.close.hover.image.color: #f26d7d
 menu.border.width: 1

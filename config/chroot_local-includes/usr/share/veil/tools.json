@@ -42,7 +42,7 @@
   {
    "name": "wireshark",
    "category": "packet-inspection",
-   "source": "base",
+   "source": "apt:wireshark",
    "network_policy": "root-capture",
    "privacy": "caution",
    "mode": "root|user",
@@ -608,7 +608,57 @@
    "mode": "root",
    "description": "Find hidden processes and ports (rootkit hunting)",
    "notes": "rkhunter and chkrootkit are unavailable: they depend on binutils, which Tails removes."
-  }
+  },
+ {
+  "name": "bulk_extractor",
+  "category": "forensics",
+  "source": "nix:bundle:forensics",
+  "network_policy": "none",
+  "privacy": "compatible",
+  "mode": "user",
+  "description": "Extract artifacts from local disk images",
+  "notes": ""
+ },
+ {
+  "name": "exiftool",
+  "category": "forensics",
+  "source": "nix:bundle:forensics",
+  "network_policy": "none",
+  "privacy": "compatible",
+  "mode": "user",
+  "description": "Inspect and edit local file metadata",
+  "notes": ""
+ },
+ {
+  "name": "aide",
+  "category": "defensive",
+  "source": "nix:bundle:host-audit",
+  "network_policy": "none",
+  "privacy": "compatible",
+  "mode": "user",
+  "description": "Verify file integrity against a local baseline",
+  "notes": ""
+ },
+ {
+  "name": "openscap",
+  "category": "defensive",
+  "source": "nix:bundle:host-audit",
+  "network_policy": "none",
+  "privacy": "compatible",
+  "mode": "user",
+  "description": "Evaluate a host against local SCAP content",
+  "notes": ""
+ },
+ {
+  "name": "clamav",
+  "category": "defensive",
+  "source": "nix:bundle:host-audit",
+  "network_policy": "none",
+  "privacy": "compatible",
+  "mode": "user",
+  "description": "Scan local files with an existing signature database",
+  "notes": ""
+ }
  ],
  "privacy_status": {
   "compatible": "Works within the Tails/Veil privacy model.",

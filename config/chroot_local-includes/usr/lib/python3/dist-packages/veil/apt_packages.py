@@ -12,7 +12,7 @@ APT_GET = "/usr/bin/apt-get"
 SUDO = "/usr/bin/sudo"
 WRAPPER = "/usr/local/bin/apt"
 PACKAGE = re.compile(r"[a-z0-9][a-z0-9+.-]+(?::[a-z0-9][a-z0-9-]*)?")
-SAFE_OPTIONS = {"-y", "--yes", "--assume-yes", "--no-install-recommends", "--install-recommends"}
+SAFE_OPTIONS = {"-y", "--yes", "--assume-yes"}
 NATIVE_ARCH = os.uname().machine.replace("x86_64", "amd64")
 BASE_STATUS = Path("/usr/lib/live/mount/rootfs/filesystem.squashfs/var/lib/dpkg/status")
 ENV = {**os.environ, "VEIL_APT_EXPLICIT": "1"}
@@ -47,7 +47,7 @@ def apt_main():
             raise PackageError("Use -Pr with apt install or apt remove.")
         flags = [arg for arg in options if arg.startswith("-") and arg != "-Pr"]
         if set(flags) - SAFE_OPTIONS or options.count("-Pr") != 1:
-            raise PackageError("Use -Pr once, with package names and optional -y or APT recommends options.")
+            raise PackageError("Use -Pr once, with package names and optional -y.")
         return execute(verbs[0], [*verbs[1:], *operands], flags)
     except (PackageError, OSError, subprocess.CalledProcessError) as exc:
         return report_error(exc)

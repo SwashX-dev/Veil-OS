@@ -13,8 +13,9 @@ bundles, a privacy monitor, and a fully local AI agent.
 > depends on it: use [official Tails](https://tails.net/) for that. Every
 > requirement has a status (passed / failed / untested) in
 > [docs/veil/TEST-REPORT.md](docs/veil/TEST-REPORT.md).
-> 0.1.0-alpha.1 was tested only in QEMU/KVM: 20 of 24 requirements pass,
-> 3 are partial, 1 is untested, and none fail.
+> The `veil/v1.1.0` branch contains the next release candidate. See
+> [the v1.1.0 validation report](docs/veil/test-results/1.1.0/README.md)
+> for current build and test status.
 
 ## What Veil keeps from Tails (unchanged)
 
@@ -42,7 +43,7 @@ trace. See [docs/veil/THREAT-MODEL.md](docs/veil/THREAT-MODEL.md).
 | Privacy | **Veil Network Guard** (`veil privacy status`, GUI): checks the firewall, Tor circuits, DNS/IPv6/UDP leaks, connections, MAC anonymization, and the agent/Nix policy | [NETWORK-GUARD](docs/veil/NETWORK-GUARD.md) |
 | AI | **Veil Agent** (`veil agent`, GUI): llama.cpp runs locally in an empty network namespace. It is offline by default; tools run in a bubblewrap + seccomp sandbox, and network access is a separate grant. | [AGENT](docs/veil/AGENT.md) |
 | Tools | Light Debian tools in the base image; heavy tools as opt-in **Nix bundles**. Each tool has a documented network policy. | [TOOLS](docs/veil/TOOLS.md) |
-| Packages | `veil install/remove/search/update` runs single-user Nix as the live user, so its downloads always go through Tor. | [NIX](docs/veil/NIX.md) |
+| Packages | Veil Package Center manages Debian packages and signed Nix bundles. `apt install PACKAGE -Pr` keeps an APT package across reboots. | [PERSISTENCE](docs/veil/PERSISTENCE.md), [NIX](docs/veil/NIX.md) |
 | Labs | `veil lab`: offline network namespaces for tools that can't use Tor. Labs have no route to the Internet. | [TOOLS](docs/veil/TOOLS.md#offline-labs) |
 | Persistence | New Persistent Storage features: *Nix Packages* and *Veil Desktop Settings* | [PERSISTENCE](docs/veil/PERSISTENCE.md) |
 

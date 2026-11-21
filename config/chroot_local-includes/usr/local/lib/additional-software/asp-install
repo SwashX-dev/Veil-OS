@@ -10,7 +10,6 @@ import subprocess
 
 import additional_software
 from additional_software import (
-    notify_failure,
     OLD_APT_LISTS_DIR,
     get_additional_packages,
     has_additional_packages_list,
@@ -23,6 +22,12 @@ from tailslib.locale import apply_selected_locale
 apply_selected_locale()
 gettext.textdomain("tails")
 _ = gettext.gettext
+
+
+def report_failure(summary, details=""):
+    # Notifications with action buttons can wait indefinitely for input.
+    # Our caller holds the config lock during restoration.
+    notify(summary, details or _("See the Additional Software log for details."), urgent=True)
 
 
 def upgrade_additional_packages():
@@ -41,7 +46,7 @@ def upgrade_additional_packages():
     apt_get_returncode = _launch_apt_get(["update"])
     if apt_get_returncode:
         logging.warning("Warning: the update failed.")
-        notify_failure(
+        report_failure(
             _("The check for upgrades of your additional software failed"),
             _(
                 "Please check your network connection, "
@@ -53,7 +58,7 @@ def upgrade_additional_packages():
     if install_additional_packages(upgrade_mode=True):
         logging.info("The upgrade was successful.")
     else:
-        notify_failure(
+        report_failure(
             _("The upgrade of your additional software failed"),
             _(
                 "Please check your network connection, "
@@ -120,7 +125,7 @@ def install_additional_packages(upgrade_mode=False):
         packages = get_additional_packages()
     except (additional_software.ASPDataError, UnicodeError) as exc:
         logging.error("Invalid Additional Software configuration: %s", exc)
-        notify_failure(_("The installation of your additional software failed"), str(exc))
+        report_failure(_("The installation of your additional software failed"), str(exc))
         return False
     if not packages:
         logging.warning("Warning: no packages to install, exiting")
@@ -150,7 +155,7 @@ def install_additional_packages(upgrade_mode=False):
         if not upgrade_mode:
             if installing_notification_id is not None:
                 _close_notification(installing_notification_id)
-            notify_failure(_("The installation of your additional software failed"))
+            report_failure(_("The installation of your additional software failed"))
         return False
     else:
         logging.info("Installation completed successfully.")

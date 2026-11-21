@@ -10,14 +10,9 @@ clients of the **labwc** compositor. XFCE's Wayland support is officially
 
 - Compositor: `labwc` (`/etc/xdg/labwc/{rc.xml,menu.xml,autostart,environment}`)
   with the `Veil` theme (`/usr/share/themes/Veil/openbox-3/themerc`)
-- Panel: `xfce4-panel` (`/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml`).
-  Under Wayland, xfce4-panel 4.20 can only host *internal* plugins (external
-  ones such as Whisker Menu, genmon, systray and volume need X11 XEmbed), so
-  the panel has: the applications menu (Veil logo), task list, a **live
-  Tor/privacy status** item (a launcher whose `.desktop` file
-  `veil-panel-status` rewrites when the state changes; click it for Network
-  Guard), **Wi-Fi & Network** (GNOME Settings, the same panels Tails uses),
-  the UTC clock and the power button.
+- Panel: `xfce4-panel` with app launchers, task buttons, Tor status and a
+  StatusNotifier tray. The bundled tray runs in-process. XEmbed tray icons
+  and X11-only external plugins are unavailable in this Wayland session.
 - Wallpaper: `swaybg` (no xfdesktop, so no desktop icons). Lock: `swaylock`. Polkit: `mate-polkit`. Notifications: `xfce4-notifyd`
 - GTK theme `Veil` (Adwaita-dark plus the Veil palette), icons
   `elementary-xfce-dark`, monospace font JetBrains Mono
@@ -39,14 +34,27 @@ clients of the **labwc** compositor. XFCE's Wayland support is officially
 | Alt+Tab | Window switcher |
 | Print / Shift+Print | Screenshot (full / region) to ~/Pictures |
 
-## Known limitations (alpha)
+## Startup and graphics recovery
+
+GDM starts the sole user session from `veil.desktop`. Once labwc has a
+Wayland socket and has published the environment, startup registers the
+session with GDM. The Tails Welcome Screen still uses its own GNOME Shell
+process as the dedicated greeter account. No GNOME desktop session is
+selectable for the live user.
+
+Veil retries an early compositor exit once with Pixman software rendering.
+The `veil.software-rendering` kernel option forces Pixman and still requires
+a working Wayland-compatible display device. If the compositor exits after
+the session has registered, Veil requests a normal shutdown. This avoids
+starting an unlocked desktop after a compositor crash while the screen
+was locked. Applications in RAM may lose unsaved work.
+
+## Known limitations
 
 - GDM exports `XDG_DATA_DIRS` with trailing slashes, which libxfce4util
   skips; `veil-session` normalizes it (otherwise the panel finds no plugins).
 - XFCE settings dialogs that are X11-only (display settings, xfwm4
   appearance) don't apply on Wayland. Use `wdisplays` for monitors.
-- No system tray: tray icons (StatusNotifier) cannot be shown. nm-applet
-  still runs as NetworkManager's secret agent (Wi-Fi password prompts).
 - Volume: use the keyboard volume keys or Settings → Sound.
 - Desktop icons are disabled (`swaybg` instead of `xfdesktop`), which is
   discreet by design.

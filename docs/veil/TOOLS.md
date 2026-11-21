@@ -24,7 +24,8 @@ plus Tails' KeePassXC, GnuPG and mat2.
 | reverse-engineering | Ghidra, Cutter, radare2, rizin, ImHex, jadx, apktool, UPX |
 | web-appsec | OWASP ZAP, ffuf, gobuster, nuclei, mitmproxy, Semgrep, Trivy, gitleaks |
 | burp | Burp Suite Community. **Proprietary**: you must accept PortSwigger's license |
-| forensics | binwalk 3, YARA, Chainsaw, osquery |
+| forensics | binwalk 3, YARA, Chainsaw, osquery, Bulk Extractor, ExifTool |
+| host-audit | AIDE, OpenSCAP, ClamAV command-line tools |
 | volatility | Volatility 3. **Volatility Software License**: you must accept it |
 | network-ids | Zeek, Suricata (for offline PCAP analysis) |
 | wireless | Kismet, bettercap |
@@ -59,3 +60,8 @@ LAN or the Internet.
 
 **Authorization:** only test systems you own or are explicitly authorized to
 test.
+
+Wireshark can be installed from Debian APT through Package Center or
+`apt install wireshark`. Use the unprivileged GUI for saved captures.
+See [Persistent Storage](PERSISTENCE.md#debian-additional-software) to
+restore the GUI across boots.
