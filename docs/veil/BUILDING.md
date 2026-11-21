@@ -21,7 +21,7 @@ for g in kvm libvirt libvirt-qemu; do sudo adduser "$(whoami)" "$g"; done
 git clone https://github.com/SwashX-dev/Veil-OS.git && cd Veil-OS
 git submodule update --init
 git fetch https://gitlab.tails.net/tails/tails.git stable:refs/remotes/origin/stable   # see note
-TAILS_BUILD_OPTIONS="nomergebasebranch" rake build && rake vm:halt
+TAILS_BUILD_OPTIONS="nomergebasebranch memory=8192" rake build && rake vm:halt
 bin/veil-rename-artifacts   # tails-amd64-* -> veil-amd64-<veil version>.*
 ```
 
@@ -39,6 +39,8 @@ Notes from the reference build (rootless NixOS host, nested Debian VM):
   mode 700, use `chmod o+rx $HOME` (or build elsewhere).
 - Upstream hosts moved: GitLab is gitlab.tails.net, APT snapshots are
   deb.tails.net.
+- `memory=8192`: the llama.cpp hook compiles very large C++ files (Vulkan
+  backend); with the builder's default ~2 GB of RAM the compiler is OOM-killed.
 - The llama.cpp hook downloads its pinned tarball through the builder's
   apt-cacher-ng (`HTTPS///` remap) and checks its SHA-256 before using it.
 

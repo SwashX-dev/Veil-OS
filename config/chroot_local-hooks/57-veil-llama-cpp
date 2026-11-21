@@ -45,7 +45,11 @@ cmake -S "${SRC}" -B "${SRC}/build" \
     -DLLAMA_BUILD_UI=OFF -DLLAMA_USE_PREBUILT_UI=OFF \
     -DLLAMA_BUILD_TOOLS=ON -DLLAMA_BUILD_SERVER=ON \
     -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON -DCMAKE_INSTALL_RPATH='$ORIGIN'
-cmake --build "${SRC}/build" -j"$(nproc)" --target llama-server llama-cli
+# Large translation units (ggml-vulkan) need ~2 GB of RAM per compiler
+# process: size the job count from available memory, not only CPUs.
+JOBS="$(awk -v cpus="$(nproc)" '/^MemAvailable:/ { j = int($2 / 2097152); if (j < 1) j = 1; if (j > cpus) j = cpus; print j }' /proc/meminfo)"
+echo "Veil: building llama.cpp with ${JOBS} parallel job(s)"
+cmake --build "${SRC}/build" -j"${JOBS}" --target llama-server llama-cli
 
 install -d -m 755 "${PREFIX}/bin" "${PREFIX}/share/doc"
 # With GGML_BACKEND_DL, the executables and backend libraries live side by
