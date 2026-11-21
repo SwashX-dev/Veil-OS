@@ -13,6 +13,8 @@ bundles, a privacy monitor, and a fully local AI agent.
 > depends on it: use [official Tails](https://tails.net/) for that. Every
 > requirement has a status (passed / failed / untested) in
 > [docs/veil/TEST-REPORT.md](docs/veil/TEST-REPORT.md).
+> 0.1.0-alpha.1 was tested only in QEMU/KVM: 20 of 24 requirements pass,
+> 3 are partial, 1 is untested, and none fail.
 
 ## What Veil keeps from Tails (unchanged)
 
