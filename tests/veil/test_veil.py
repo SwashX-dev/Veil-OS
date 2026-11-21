@@ -385,8 +385,15 @@ class TestAutostart(unittest.TestCase):
         self.assertTrue(mod.wanted("systemd-desktop-target.desktop", {"Exec": "/usr/local/lib/start-systemd-desktop-target"}))
         self.assertFalse(mod.wanted("gnome-keyring-secrets.desktop", {"Exec": "x", "OnlyShowIn": "GNOME;Unity;"}))
         self.assertTrue(mod.wanted("xfce4-notifyd.desktop", {"Exec": "x", "OnlyShowIn": "XFCE;"}))
-        self.assertFalse(mod.wanted("hidden.desktop", {"Exec": "x", "Hidden": "true"}))
-        self.assertFalse(mod.wanted("notxfce.desktop", {"Exec": "x", "NotShowIn": "XFCE;"}))
+        self.assertFalse(mod.wanted("hidden.desktop", {"Exec": "x", "Hidden": "true", "_user": True}))
+        self.assertFalse(mod.wanted("notxfce.desktop", {"Exec": "x", "NotShowIn": "XFCE;", "_user": True}))
+        # Not allowlisted system entries never start (e.g. a second nm-applet, Orca).
+        self.assertFalse(mod.wanted("nm-applet.desktop", {"Exec": "nm-applet"}))
+        self.assertFalse(mod.wanted("orca-autostart.desktop", {"Exec": "orca"}))
+        # User entries run; unknown AutostartCondition forms are refused.
+        self.assertTrue(mod.wanted("mine.desktop", {"Exec": "true", "_user": True}))
+        self.assertFalse(mod.wanted("cond.desktop", {"Exec": "true", "_user": True,
+                                                     "AutostartCondition": "GNOME3 if-session gnome"}))
 
 
 # ------------------------------------------------------------------ repository hygiene

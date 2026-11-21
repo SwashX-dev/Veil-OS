@@ -6,6 +6,12 @@ systemd user `desktop.target` (Tor Connection, Persistent Storage prompts,
 security check, notifications...), so this runner starts every applicable
 entry, honouring Hidden, TryExec, OnlyShowIn/NotShowIn and the
 X-GNOME-Autostart-Phase ordering used by Tails' own entries.
+
+System-wide entries are ALLOWLISTED (Tails' own entries plus a few safe
+ones): other packages' autostart files assume their own desktop (GNOME,
+MATE...) and may carry conditions (e.g. Orca's screen-reader GSettings key)
+that this runner does not try to emulate. Entries the user adds in
+~/.config/autostart always run, honouring simple AutostartConditions.
 """
 
 import configparser
@@ -19,8 +25,14 @@ from pathlib import Path
 DESKTOPS = set(os.environ.get("XDG_CURRENT_DESKTOP", "Veil:XFCE").split(":")) | {"Veil", "XFCE"}
 PHASE_ORDER = {"EarlyInitialization": 0, "PreDisplayServer": 0, "Initialization": 1,
                "WindowManager": 2, "Panel": 3, "Desktop": 4, "Applications": 5}
-# GNOME Shell components that make no sense outside GNOME Shell.
-SKIP = {"org.gnome.Shell", "gnome-shell-overrides-migration", "org.gnome.SettingsDaemon"}
+# System-wide entries allowed to start in the Veil session.
+SYSTEM_ALLOWLIST = {
+    "systemd-desktop-target.desktop",                 # Tails: desktop.target
+    "systemd-gnome-early-initialization-target.desktop",  # Tails: early init target
+    "xdg-user-dirs.desktop",
+    "at-spi-dbus-bus.desktop",
+    "xfce4-notifyd.desktop",
+}
 
 
 def dirs():
@@ -31,6 +43,7 @@ def dirs():
 
 def entries():
     seen = {}
+    user_dir = dirs()[0]
     for d in dirs():
         if not d.is_dir():
             continue
@@ -44,21 +57,42 @@ def entries():
                 seen[f.name] = dict(cp["Desktop Entry"])
             except (configparser.Error, KeyError, UnicodeDecodeError):
                 seen[f.name] = {}
+            seen[f.name]["_user"] = d == user_dir
     return seen
+
+
+def condition_ok(cond):
+    """Evaluate the common AutostartCondition forms; unknown forms -> False."""
+    if not cond:
+        return True
+    parts = cond.split()
+    kind = parts[0]
+    cfg = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config"))
+    if kind in ("if-exists", "unless-exists") and len(parts) == 2:
+        exists = (cfg / parts[1]).exists()
+        return exists if kind == "if-exists" else not exists
+    if kind == "GSettings" and len(parts) == 3:
+        try:
+            out = subprocess.run(["gsettings", "get", parts[1], parts[2]], capture_output=True,
+                                 text=True, timeout=5, check=False).stdout.strip()
+        except (OSError, subprocess.TimeoutExpired):
+            return False
+        return out == "true"
+    return False
 
 
 def wanted(name, e):
     if not e or e.get("Hidden", "false").lower() == "true":
         return False
-    if any(name.startswith(s) for s in SKIP):
+    if not e.get("_user") and name not in SYSTEM_ALLOWLIST and not name.startswith("veil-"):
         return False
     only = {x for x in e.get("OnlyShowIn", "").split(";") if x}
     nots = {x for x in e.get("NotShowIn", "").split(";") if x}
-    if only and not (only & DESKTOPS) and not name.startswith("systemd-"):
+    if only and not (only & DESKTOPS):
         return False
     if nots & DESKTOPS:
         return False
-    if e.get("X-GNOME-AutoRestart") and "GNOME" in only and not (only & DESKTOPS):
+    if not condition_ok(e.get("AutostartCondition", "")):
         return False
     tryexec = e.get("TryExec")
     if tryexec and not (shutil.which(tryexec) or os.path.exists(tryexec)):
