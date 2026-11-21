@@ -251,6 +251,41 @@ def extract_boot_files(iso: str, outdir: str) -> tuple[str, str, str]:
     return str(out / "vmlinuz"), str(out / "initrd.img"), cmd
 
 
+def first_partition_offset(img: str) -> int:
+    """Byte offset of the first GPT partition (the FAT boot partition)."""
+    import struct as _st
+    with open(img, "rb") as f:
+        f.seek(512)
+        hdr = f.read(92)
+        if hdr[:8] != b"EFI PART":
+            raise RuntimeError("not a GPT disk image")
+        entries_lba = _st.unpack_from("<Q", hdr, 72)[0]
+        f.seek(entries_lba * 512)
+        entry = f.read(128)
+        first_lba = _st.unpack_from("<Q", entry, 32)[0]
+    return first_lba * 512
+
+
+def extract_boot_files_from_img(img: str, outdir: str) -> tuple[str, str, str]:
+    """Same as extract_boot_files() but for a USB .img (FAT boot partition, mtools)."""
+    out = Path(outdir)
+    out.mkdir(parents=True, exist_ok=True)
+    spec = f"{img}@@{first_partition_offset(img)}"
+    for src, name in (("::/live/vmlinuz", "vmlinuz"), ("::/live/initrd.img", "initrd.img"),
+                      ("::/EFI/debian/grub.cfg", "grub.cfg")):
+        subprocess.run(["mcopy", "-n", "-o", "-i", spec, src, str(out / name)], check=True, capture_output=True)
+    cfg = (out / "grub.cfg").read_text()
+    m = re.search(r"--id 'live' \{.*?linux /live/vmlinuz (.*?)\n", cfg, re.S)
+    cmd = m.group(1) if m else "boot=live config"
+    cmd = re.sub(r"\s*FSUUID=\$\{rootuuid\}", "", cmd)
+    cmd = cmd.replace("initrd=/live/initrd.img", "").strip()
+    return str(out / "vmlinuz"), str(out / "initrd.img"), cmd
+
+
+def boot_files(image: str, iso: str | None, outdir: str) -> tuple[str, str, str]:
+    return extract_boot_files(iso, outdir) if iso else extract_boot_files_from_img(image, outdir)
+
+
 def login_via_greeter(rs: RemoteShell, title: str = "Welcome to Veil OS", button_re: str = "Start Veil OS",
                       timeout: float = 240) -> None:
     """Click the Welcome Screen's Start button using dogtail as Debian-gdm."""

@@ -64,7 +64,7 @@ print('unlock-clicked')
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--img", required=True)
-    ap.add_argument("--iso", required=True)
+    ap.add_argument("--iso", help="ISO (optional: boot files are read from the .img otherwise)")
     ap.add_argument("--out", default="vm-persistence")
     ap.add_argument("--memory", default="4096")
     ap.add_argument("--title", default="Welcome to Veil OS")
@@ -75,7 +75,7 @@ def main():
     work = out / "usb-work.img"
     shutil.copyfile(a.img, work)
     subprocess.run(["truncate", "-s", "8G", str(work)], check=True)  # an 8 GB "USB stick"
-    kernel, initrd, cmd = veilvm.extract_boot_files(a.iso, str(out / "boot"))
+    kernel, initrd, cmd = veilvm.boot_files(a.img, a.iso, str(out / "boot"))
 
     # ---- Boot 1: create
     vm = boot(str(work), out, "boot1", kernel, initrd, cmd, a.memory)

@@ -83,7 +83,7 @@ def connect_tor(vm, timeout=420):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--img", required=True)
-    ap.add_argument("--iso", required=True)
+    ap.add_argument("--iso", help="ISO (optional: boot files are read from the .img otherwise)")
     ap.add_argument("--out", default="vm-results")
     ap.add_argument("--flavor", choices=["veil", "tails"], default="veil")
     ap.add_argument("--memory", default="6144")
@@ -103,7 +103,7 @@ def main() -> int:
                    check=True)
     disk_sum_before = subprocess.run(["sha256sum", str(disk)], capture_output=True, text=True).stdout.split()[0]
 
-    kernel, initrd, cmdline = veilvm.extract_boot_files(a.iso, str(out / "boot"))
+    kernel, initrd, cmdline = veilvm.boot_files(a.img, a.iso, str(out / "boot"))
     vm = veilvm.VM(a.img, str(out / "vm"), mode="usb", firmware="uefi", memory=a.memory, cpus=2,
                    kernel=kernel, initrd=initrd, cmdline=cmdline + " autotest_never_use_this_option")
     # Attach the internal disk as raw (sha256 comparable after shutdown).
