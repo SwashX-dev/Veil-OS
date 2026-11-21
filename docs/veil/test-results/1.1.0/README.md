@@ -40,7 +40,9 @@ data and explicit approval for the identified device.
   opened. Forced loss of labwc ended the VM with QEMU exit status 0.
   A separate normal-rendering run clicked Package Center's Refresh list
   control, changed the virtual output scale and restored it, and
-  launched Sound Settings.
+  launched Sound Settings. An injected pre-registration exit recovered
+  with Pixman. Swaylock accepted a synthetic PAM password, and killing
+  labwc while the screen was locked shut the virtual machine down.
 - The offline APT fixture used a signed package index and a short-lived
   loopback repository on an isolated VM. Installing and removing a
   temporary package left no registration. Removing a registered package
