@@ -133,10 +133,11 @@ class VM:
     def __init__(self, image: str, workdir: str, mode: str = "usb", firmware: str = "uefi",
                  memory: str = "4096", cpus: int = 2, autotest: bool = True, extra_disk: str | None = None,
                  kernel: str | None = None, initrd: str | None = None, cmdline: str | None = None,
-                 network: bool = True, qemu: str = "qemu-system-x86_64"):
+                 network: bool = True, qemu: str = "qemu-system-x86_64", snapshot: bool = True):
         self.image, self.workdir, self.mode, self.firmware = image, Path(workdir), mode, firmware
         self.memory, self.cpus, self.autotest, self.extra_disk = memory, cpus, autotest, extra_disk
         self.kernel, self.initrd, self.cmdline, self.network, self.qemu = kernel, initrd, cmdline, network, qemu
+        self.snapshot = snapshot
         self.workdir.mkdir(parents=True, exist_ok=True)
         self.qmp_path = str(self.workdir / "qmp.sock")
         self.rs_path = str(self.workdir / "remote-shell.sock")
@@ -169,7 +170,8 @@ class VM:
             a += ["-drive", f"if=pflash,format=raw,readonly=on,file={fw[0]}",
                   "-drive", f"if=pflash,format=raw,file={vars_copy}"]
         if self.mode == "usb":
-            a += ["-drive", f"file={self.image},if=none,id=stick,format=raw,snapshot=on",
+            snap = ",snapshot=on" if self.snapshot else ""
+            a += ["-drive", f"file={self.image},if=none,id=stick,format=raw{snap}",
                   "-device", "usb-storage,bus=xhci.0,drive=stick,removable=on,bootindex=1"]
         else:
             a += ["-drive", f"file={self.image},media=cdrom,if=none,id=cd,readonly=on",
