@@ -165,9 +165,10 @@ class PrivacyCenter(Gtk.ApplicationWindow):
         frame, box = _section("Video")
         self.upscale = _combo(UPSCALE_LABELS, self.settings["video_upscaling"])
         self.upscale.connect("changed", lambda c: self.save("video_upscaling", c.get_active_id()))
-        box.pack_start(_row("Upscaling in Veil Player and Celluloid", self.upscale,
+        box.pack_start(_row("Upscaling in Veil Player", self.upscale,
                             "Enlarges videos to your screen in real time (720p → 1080p, 1080p → 4K) on this "
-                            "computer only. Enhanced needs a capable GPU."), False, False, 0)
+                            "computer only. Enhanced needs a capable GPU. Applies to Veil Player (Super+V); "
+                            "Tails' Celluloid is a separate sandboxed app and is not changed."), False, False, 0)
         if media.safe_graphics():
             box.pack_start(ui.label("Safe graphics is active (software rendering): upscaling runs on the CPU "
                                     "and may stutter.", "veil-warn", wrap=True), False, False, 0)

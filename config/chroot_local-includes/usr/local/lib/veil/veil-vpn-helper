@@ -67,11 +67,15 @@ def chain_rules(cfg: vpn.WireGuardConfig) -> list[list[str]]:
     reject = ["-j", "REJECT", "--reject-with", "icmp-admin-prohibited"]
     return [
         ["-o", "lo", "-j", "RETURN"],
+        # WireGuard's encrypted packets for Tor's traffic inherit Tor's socket
+        # owner, so this accept must come BEFORE the owner rejects below. The
+        # mark is set by the kernel on WireGuard's own packets; an
+        # unprivileged process (Tor) cannot set it.
+        ["-p", "udp", "-d", f"{cfg.endpoint_ip}/32", "--dport", str(cfg.endpoint_port),
+         "-m", "mark", "--mark", MARK, "-j", "ACCEPT"],
         ["-o", IF, "-m", "owner", "--uid-owner", "debian-tor", "-j", "RETURN"],
         ["-o", IF, *reject],
         ["-m", "owner", "--uid-owner", "debian-tor", *reject],
-        ["-p", "udp", "-d", f"{cfg.endpoint_ip}/32", "--dport", str(cfg.endpoint_port),
-         "-m", "mark", "--mark", MARK, "-j", "ACCEPT"],
         ["-j", "RETURN"],
     ]
 
@@ -136,6 +140,17 @@ def routing_down() -> None:
     run(["ip", "-4", "route", "flush", "table", TABLE], check=False)
 
 
+def wait_for_handshake(timeout: float = 20.0) -> None:
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        out = run(["wg", "show", IF, "latest-handshakes"], check=False).stdout.split()
+        if len(out) >= 2 and int(out[1]) > 0:
+            return
+        time.sleep(0.5)
+    raise HelperError("no handshake with the VPN server (wrong endpoint, wrong key, or UDP blocked); "
+                      "the VPN was not enabled")
+
+
 def up() -> dict:
     text = sys.stdin.read(vpn.MAX_CONFIG_BYTES + 1)
     cfg = vpn.parse_config(text)
@@ -143,13 +158,20 @@ def up() -> dict:
         down()
     try:
         run(["ip", "link", "add", IF, "type", "wireguard"])
-        run(["wg", "setconf", IF, "/dev/stdin"], input=cfg.setconf())
+        # No persistent keepalive yet: it would send the first handshake the
+        # moment the interface comes up, before the firewall rules exist.
+        run(["wg", "setconf", IF, "/dev/stdin"], input=cfg.setconf(keepalive=False))
         run(["ip", "-4", "address", "add", cfg.address, "dev", IF])
         run(["ip", "link", "set", "dev", IF, "mtu", str(cfg.mtu), "up"])
         # Firewall first, then routing: Tor can never reach a direct route
         # in between, because its rule is added last.
         firewall_up(cfg)
         routing_up(cfg)
+        # Enabling the keepalive sends a handshake immediately; require it so
+        # that a wrong endpoint or blocked UDP is reported instead of leaving
+        # Tor without any way to connect.
+        run(["wg", "set", IF, "peer", cfg.public_key, "persistent-keepalive", str(cfg.keepalive)])
+        wait_for_handshake()
     except Exception:
         down()
         raise

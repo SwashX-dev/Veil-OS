@@ -1,0 +1,4 @@
+#!/bin/sh
+# Ask for a video file, then play it in Veil Player.
+file="$(zenity --file-selection --title='Veil Player: choose a video' --file-filter='Videos | *.mp4 *.mkv *.webm *.avi *.mov *.mpg *.mpeg *.ogv *.m4v' 2>/dev/null)" || exit 0
+[ -n "$file" ] && exec veil-player "$file"

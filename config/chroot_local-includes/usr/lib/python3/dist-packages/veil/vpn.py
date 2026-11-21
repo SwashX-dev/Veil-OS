@@ -55,15 +55,16 @@ class WireGuardConfig:
     keepalive: int = 25
     ignored: tuple[str, ...] = ()
 
-    def setconf(self) -> str:
+    def setconf(self, keepalive: bool = True) -> str:
         """Text for `wg setconf` (secrets: pass on stdin, never on argv)."""
         lines = ["[Interface]", f"PrivateKey = {self.private_key}", f"FwMark = {hex(FWMARK)}", "",
                  "[Peer]", f"PublicKey = {self.public_key}"]
         if self.preshared_key:
             lines.append(f"PresharedKey = {self.preshared_key}")
-        lines += ["AllowedIPs = 0.0.0.0/0", f"Endpoint = {self.endpoint_ip}:{self.endpoint_port}",
-                  f"PersistentKeepalive = {self.keepalive}", ""]
-        return "\n".join(lines)
+        lines += ["AllowedIPs = 0.0.0.0/0", f"Endpoint = {self.endpoint_ip}:{self.endpoint_port}"]
+        if keepalive:
+            lines.append(f"PersistentKeepalive = {self.keepalive}")
+        return "\n".join(lines + [""])
 
     def summary(self) -> dict:
         return {"endpoint": f"{self.endpoint_ip}:{self.endpoint_port}", "address": self.address,

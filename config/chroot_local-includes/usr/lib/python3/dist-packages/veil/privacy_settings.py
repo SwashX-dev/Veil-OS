@@ -43,7 +43,7 @@ DESCRIPTIONS = {
     "emergency_shutdown_hotkey": "Ctrl+Alt+Shift+Delete shuts down immediately and erases memory",
     "camera_blocked": "Block every camera for new applications",
     "microphone_blocked": "Block every microphone (audio capture) for new applications",
-    "video_upscaling": "Video upscaling in Veil Player and Celluloid: off, quality or enhanced",
+    "video_upscaling": "Video upscaling in Veil Player: off, quality or enhanced",
 }
 
 

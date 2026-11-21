@@ -9,7 +9,6 @@ Started by veil-desktop-start. SIGHUP re-reads ~/.config/veil/privacy.json
     copy the clipboard and primary selection are cleared.
   * Camera/microphone: blocked devices are blocked again at login (blocking
     needs no password; unblocking does and is done by the Privacy Center).
-  * Video upscaling: Celluloid gets the same mpv options as Veil Player.
 """
 
 import os
@@ -20,7 +19,7 @@ import threading
 import time
 from pathlib import Path
 
-from veil import media, privacy_settings
+from veil import privacy_settings
 
 AUTOLOCK = "/usr/local/lib/veil/veil-autolock"
 DEVICE_GUARD = "/usr/local/lib/veil/veil-device-guard"
@@ -117,8 +116,6 @@ class Daemon:
             if new[key] and (first or not old.get(key)):
                 subprocess.run(["sudo", "-n", DEVICE_GUARD, "block", name], check=False,
                                stdout=subprocess.DEVNULL, timeout=60)
-        if first or new["video_upscaling"] != old.get("video_upscaling"):
-            media.sync_celluloid(new["video_upscaling"])
 
     def run(self) -> int:
         runtime = os.environ.get("XDG_RUNTIME_DIR") or f"/run/user/{os.getuid()}"

@@ -1,4 +1,4 @@
-"""Veil Player: video playback with optional real-time upscaling.
+"""Veil Player: sandboxed video playback with optional real-time upscaling.
 
 Upscaling happens on your computer only, after decoding, so it changes
 nothing that a website or a network observer can see.
@@ -24,14 +24,11 @@ from __future__ import annotations
 
 import json
 import os
-import shutil
-import subprocess
 from pathlib import Path
 
 from veil import privacy_settings, sandbox
 
 SHADER = "/usr/share/veil/mpv/shaders/FSRCNNX_x2_8-0-4-1.glsl"
-CELLULOID_SCHEMA = "io.github.celluloid_player.Celluloid"
 TARGET_HEIGHTS = {"1080": 1080, "1080p": 1080, "1440": 1440, "1440p": 1440, "2160": 2160, "2160p": 2160,
                   "4k": 2160}
 
@@ -51,22 +48,9 @@ def mpv_options(mode: str, env: dict | None = None) -> list[str]:
         opts.append(f"--glsl-shaders={SHADER}")
     if safe_graphics(env):
         # Software OpenGL (llvmpipe): never touch the unstable GPU driver.
-        opts.append("--gpu-api=opengl")
+        # mpv refuses a software renderer unless told that it is intended.
+        opts += ["--gpu-api=opengl", "--gpu-sw"]
     return opts
-
-
-def celluloid_options(mode: str) -> str:
-    # Celluloid embeds mpv itself: same presets, without the GPU API choice.
-    return " ".join(o for o in mpv_options(mode, env={}))
-
-
-def sync_celluloid(mode: str) -> bool:
-    """Make Celluloid (the default video player) use the same preset."""
-    if not shutil.which("gsettings"):
-        return False
-    r = subprocess.run(["gsettings", "set", CELLULOID_SCHEMA, "mpv-options", celluloid_options(mode)],
-                       capture_output=True, text=True, check=False)
-    return r.returncode == 0
 
 
 def _session_sockets(env: dict) -> tuple[list[str], dict[str, str]]:
@@ -89,7 +73,8 @@ def player_spec(files: list[Path], env: dict | None = None) -> sandbox.SandboxSp
         network=False, readonly_root=True, writable=sockets,
         readonly=[str(f.resolve()) for f in files], hide_secrets=True, hide_session=True,
         unshare_pid=True, hostname="veil-player", extra_env=extra,
-        devices=[] if safe_graphics(env) else ["/dev/dri"])
+        # Only the render node: never the display (card*) device.
+        devices=[] if safe_graphics(env) else ["/dev/dri/renderD*"])
 
 
 def play_argv(files: list[Path], mode: str, extra: list[str] | None = None, env: dict | None = None) -> list[str]:
@@ -147,7 +132,7 @@ def upscale(src: Path, target: str, dest: Path | None = None, enhanced: bool = F
     if dest.exists():
         raise FileExistsError(f"{dest} already exists")
     out_dir = dest.resolve().parent
-    devices = [] if (safe_graphics() or not enhanced) else ["/dev/dri"]
+    devices = [] if (safe_graphics() or not enhanced) else ["/dev/dri/renderD*"]
     extra = {}
     if enhanced and safe_graphics():
         # Software Vulkan (lavapipe): slow, but never uses the GPU driver.

@@ -9,7 +9,7 @@ Upstream Tails changes are in `Changelog` / `debian/changelog`.
   on screen, `veil diagnostics`.
 - Privacy Center: Tor Browser security level, idle lock, clipboard clearing,
   emergency hotkey, camera/microphone kill switches, VPN before Tor (WireGuard,
-  Proton VPN), video upscaling (Veil Player, Celluloid, `veil media upscale`).
+  Proton VPN), video upscaling (Veil Player, `veil media upscale`).
 - TCP timestamps disabled.
 - See `docs/veil/release-notes/v1.2.0.md`.
 

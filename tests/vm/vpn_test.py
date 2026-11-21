@@ -46,7 +46,11 @@ def tcp_on_uplink(vm, seconds: int, during: str = "") -> int:
         user(vm, during, timeout=seconds + 30)
     time.sleep(seconds)
     rc, out = sh(vm, "tcpdump -nr /tmp/up.pcap 2>/dev/null | wc -l")
-    return int(out.strip() or 0)
+    count = int(out.strip() or 0)
+    if count:
+        rc, dump = sh(vm, "tcpdump -nr /tmp/up.pcap 2>/dev/null | head -20")
+        print(f"[evidence] {count} TCP packets on the uplink:\n{dump}", flush=True)
+    return count
 
 
 def main() -> int:
@@ -111,12 +115,17 @@ def main() -> int:
         record("vpn.up", "VPN interface, Tor-only routing rule, firewall and blackhole fallback",
                rc == 0 and state.get("active") and state.get("tor_routed_through_vpn") and state.get("firewall")
                and state.get("blackhole_fallback"), up)
+        rc, http = sh(vm, "runuser -u debian-tor -- env -u ALL_PROXY -u all_proxy curl -s --noproxy '*' --max-time 25 "
+                          "-o /dev/null -w '%{http_code}' http://1.1.1.1/")
+        record("vpn.tunnel_carries_tor_user_traffic", "Handshake done and TCP flows through the tunnel for Tor's user",
+               rc == 0 and http.strip() in ("301", "200", "302"), f"http={http.strip()} rc={rc}")
         t0 = time.time()
         ok, _ = connect_tor(vm)
         record("vpn.tor_bootstrap", "Tor bootstraps through the VPN", ok, f"{time.time() - t0:.0f}s")
         ok, tor = is_tor(vm)
         record("vpn.tor_works", "Web traffic still exits through Tor", ok, tor)
-        rc, socks = sh(vm, "ss -tnpH state established | grep '\"tor\"' | awk '{print $3}' | sort -u")
+        rc, socks = sh(vm, "ss -tnpH state established | grep '\"tor\"' | "
+                           "awk '$3 !~ /^127\\./ && $4 !~ /^127\\./ {print $3}' | sort -u")
         local = [s for s in socks.split() if not s.startswith("127.")]
         record("vpn.tor_sockets_in_tunnel", "Tor's connections originate from the VPN address",
                bool(local) and all(s.startswith("10.66.66.2:") for s in local), socks)
@@ -154,10 +163,10 @@ def main() -> int:
 
         # Kill switch 2: the WireGuard interface disappears
         sh(vm, "ip link del wg-veil")
-        rc, route = sh(vm, "ip route get 1.1.1.1 uid $(id -u debian-tor) 2>&1")
+        rc, route = sh(vm, "ip -4 route show table 51820; ip -4 rule show priority 5300")
         tcp = tcp_on_uplink(vm, 25, during="curl -s --max-time 20 https://www.torproject.org/ >/dev/null")
         record("vpn.killswitch_interface_gone", "WireGuard interface removed: Tor's route is a blackhole",
-               ("blackhole" in route or "unreachable" in route.lower()) and tcp == 0, f"{route.strip()} tcp={tcp}")
+               "blackhole default" in route and "uidrange" in route and tcp == 0, f"{route.strip()} tcp={tcp}")
         rc, up = sh(vm, f"{HELPER} up < /home/amnesia/.config/veil/vpn/test-vpn.conf")
         ok, _ = wait_for(vm, SESSION_ENV + CHECK + " | grep -q 'IsTor\":true'", 240, user="amnesia", interval=10)
         record("vpn.reconnect", "Reconnecting restores Tor through the VPN", rc == 0 and ok, "")

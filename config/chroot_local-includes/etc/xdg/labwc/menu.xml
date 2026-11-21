@@ -7,7 +7,7 @@
     <item label="Privacy Center"><action name="Execute" command="veil-privacy-center" /></item>
     <item label="Tor Browser"><action name="Execute" command="tor-browser" /></item>
     <item label="Files"><action name="Execute" command="nautilus --new-window" /></item>
-    <item label="Videos (Celluloid)"><action name="Execute" command="celluloid" /></item>
+    <item label="Veil Player"><action name="Execute" command="veil-player-open" /></item>
     <separator />
     <item label="Package Center"><action name="Execute" command="veil-package-center" /></item>
     <item label="Notifications"><action name="Execute" command="xfce4-notifyd-config" /></item>

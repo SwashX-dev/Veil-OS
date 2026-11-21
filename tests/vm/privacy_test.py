@@ -220,11 +220,6 @@ def main() -> int:
                                    "s=media.player_spec([Path('/home/amnesia/v720.mp4')]); print(s.network, s.devices)\"")
         record("media.player_sandbox", "Player sandbox has no network", "False" in sandbox_net.splitlines()[-1],
                sandbox_net.strip()[-200:])
-        user(vm, f"{VEIL} media preset --upscale quality")
-        ok, cel = wait_for(vm, SESSION_ENV + "gsettings get io.github.celluloid_player.Celluloid mpv-options | "
-                                             "grep -q high-quality", 30, user="amnesia", interval=2)
-        record("media.celluloid_sync", "Celluloid uses the same upscaling preset", ok, cel or "not synced")
-
         # Network Guard with the new VPN check (VPN off)
         if not a.no_network:
             connect_tor(vm)

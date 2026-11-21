@@ -13,7 +13,7 @@ Open **Privacy Center** from the menu (or press Super+P), or use
 | Emergency shutdown hotkey | On | **Ctrl+Alt+Shift+Delete** runs Tails' emergency shutdown, the same as pulling the USB stick: everything is killed, memory is erased and the computer powers off |
 | Block cameras / microphones | Off | Makes camera and audio-capture device nodes inaccessible (mode 0000, no logind ACL) for every application that opens them afterwards. Blocking needs no password; unblocking asks for the administration password |
 | VPN before Tor | Off | See below |
-| Video upscaling | Off | Real-time upscaling in Veil Player and Celluloid; see below |
+| Video upscaling | Off | Real-time upscaling in Veil Player (Super+V); see below |
 
 ## Tor Browser
 
@@ -98,8 +98,9 @@ copy of a file instead (not real time):
 Veil Player (`veil-player FILE`) and the converter run in Veil's sandbox,
 which has no network, a read-only system and hidden secrets. Video files are
 a common attack surface. Upscaling happens only on your computer and changes
-nothing that a website can observe. Celluloid uses the same mpv options, but
-it is not sandboxed.
+nothing that a website can observe. Tails' own Celluloid is a separate
+Flatpak app with its own settings and is not changed: use Veil Player for
+upscaling.
 
 With safe graphics active (see [DESKTOP](DESKTOP.md)), rendering happens on
 the CPU, and Enhanced upscaling will stutter.

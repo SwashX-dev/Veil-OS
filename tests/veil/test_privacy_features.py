@@ -182,12 +182,20 @@ class TestVpnHelperRules(unittest.TestCase):
         cfg = vpn.parse_config(PROTON_SAMPLE)
         rules = [" ".join(r) for r in helper.chain_rules(cfg)]
         accepts = [r for r in rules if r.endswith("-j ACCEPT")]
-        self.assertEqual(accepts, ["-p udp -d 185.107.56.10/32 --dport 51820 -m mark --mark 0x5e11 -j ACCEPT"])
+        marked = "-p udp -d 185.107.56.10/32 --dport 51820 -m mark --mark 0x5e11 -j ACCEPT"
+        self.assertEqual(accepts, [marked])
         tor_reject = rules.index("-m owner --uid-owner debian-tor -j REJECT --reject-with icmp-admin-prohibited")
+        # WireGuard's outer packets inherit Tor's socket owner: the marked accept must precede the owner reject.
+        self.assertLess(rules.index(marked), tor_reject)
         self.assertLess(rules.index("-o wg-veil -m owner --uid-owner debian-tor -j RETURN"), tor_reject)
         lines = helper.session_lines(cfg)
         self.assertEqual(lines[0], "-N VEIL_VPN")
         self.assertEqual(lines[-1], "-I OUTPUT 1 -j VEIL_VPN")
+
+    def test_setconf_without_keepalive(self):
+        cfg = vpn.parse_config(PROTON_SAMPLE)
+        self.assertNotIn("PersistentKeepalive", cfg.setconf(keepalive=False))
+        self.assertIn("PersistentKeepalive = 25", cfg.setconf())
 
     def test_session_rules_keep_other_lines(self):
         helper = load_script("veil-vpn-helper")
@@ -253,8 +261,8 @@ class TestMedia(unittest.TestCase):
         self.assertEqual(media.mpv_options("off", env={}), [])
         self.assertEqual(media.mpv_options("quality", env={}), ["--profile=high-quality"])
         self.assertIn(f"--glsl-shaders={media.SHADER}", media.mpv_options("enhanced", env={}))
-        self.assertIn("--gpu-api=opengl", media.mpv_options("off", env={"VEIL_SAFE_GRAPHICS": "nouveau"}))
-        self.assertNotIn("--gpu-api", media.celluloid_options("enhanced"))
+        safe = media.mpv_options("off", env={"VEIL_SAFE_GRAPHICS": "nouveau"})
+        self.assertEqual(safe, ["--gpu-api=opengl", "--gpu-sw"])  # mpv rejects llvmpipe without --gpu-sw
         with self.assertRaises(ValueError):
             media.mpv_options("ultra", env={})
 
@@ -274,7 +282,8 @@ class TestMedia(unittest.TestCase):
             self.assertEqual(spec.devices, [])
             self.assertEqual(spec.extra_env["LIBGL_ALWAYS_SOFTWARE"], "1")
             self.assertIn(str(video.resolve()), spec.readonly)
-            self.assertEqual(media.player_spec([video], env={"XDG_RUNTIME_DIR": tmp}).devices, ["/dev/dri"])
+            # Only the render node, never the display (card*) device.
+            self.assertEqual(media.player_spec([video], env={"XDG_RUNTIME_DIR": tmp}).devices, ["/dev/dri/renderD*"])
             argv = media.play_argv([video], "quality", env={})
             self.assertIn("--ytdl=no", argv)
             self.assertEqual(argv[-1], str(video.resolve()))
