@@ -1,0 +1,10 @@
+[Unit]
+Description=Check for a newer Veil OS release (through Tor, notify only)
+After=tails-wait-until-tor-has-bootstrapped.service
+Wants=tails-wait-until-tor-has-bootstrapped.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sh -c 'until test -e /run/tor-has-bootstrapped/done; do sleep 5; done'
+ExecStart=/usr/local/lib/veil/veil-update-notify
+TimeoutStartSec=infinity

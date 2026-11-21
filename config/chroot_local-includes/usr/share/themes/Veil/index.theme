@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Veil
+Comment=Veil OS: near-black, graphite, muted violet, cyan accents
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Veil
+MetacityTheme=Veil
+IconTheme=elementary-xfce-dark
+CursorTheme=Adwaita
+ButtonLayout=:minimize,maximize,close

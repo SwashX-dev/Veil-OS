@@ -1,0 +1,5 @@
+Command=/usr/local/lib/veil/veil-panel-status
+UseLabel=0
+Text=
+UpdatePeriod=4000
+Font=JetBrains Mono Bold 9

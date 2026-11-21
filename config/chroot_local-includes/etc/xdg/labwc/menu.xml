@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu>
+  <menu id="root-menu" label="Veil">
+    <item label="Veil Console"><action name="Execute" command="veil-console" /></item>
+    <item label="Veil Agent"><action name="Execute" command="veil-agent-gui" /></item>
+    <item label="Network Guard"><action name="Execute" command="veil-network-guard" /></item>
+    <item label="Tor Browser"><action name="Execute" command="tor-browser" /></item>
+    <item label="Files"><action name="Execute" command="nautilus --new-window" /></item>
+    <separator />
+    <item label="Persistent Storage"><action name="Execute" command="tails-persistent-storage" /></item>
+    <item label="Lock Screen"><action name="Execute" command="tails-screen-locker" /></item>
+    <item label="Restart / Shut Down"><action name="Execute" command="veil-shutdown" /></item>
+  </menu>
+</openbox_menu>

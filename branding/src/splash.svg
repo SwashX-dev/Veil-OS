@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480">
+  <rect width="640" height="480" fill="#08080b"/>
+  <g transform="translate(272 150) scale(0.375)">
+    <path d="M34 58 C 70 62 106 124 128 214 C 150 124 186 62 222 58" fill="none" stroke="#7c6bb0" stroke-width="20" stroke-linecap="round"/>
+    <path d="M78 56 C 98 76 116 122 128 166 C 140 122 158 76 178 56" fill="none" stroke="#7c6bb0" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="128" cy="44" r="11" fill="#4fd1c5"/>
+  </g>
+  <text x="320" y="268" text-anchor="middle" font-family="DejaVu Sans" font-size="22" letter-spacing="9" fill="#cfcbe6">VEIL OS</text>
+  <text x="320" y="292" text-anchor="middle" font-family="DejaVu Sans" font-size="10" letter-spacing="2" fill="#55536a">BASED ON TAILS</text>
+</svg>

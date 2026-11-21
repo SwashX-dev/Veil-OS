@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Veil Agent
+GenericName=Local AI Agent
+Comment=Fully local AI agent with sandboxed tools (offline by default)
+Exec=veil-agent-gui
+Icon=veil-agent
+Categories=Utility;Development;
+Keywords=ai;llm;assistant;agent;

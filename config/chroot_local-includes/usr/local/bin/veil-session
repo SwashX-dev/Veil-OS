@@ -1,0 +1,34 @@
+#!/bin/sh
+# Veil OS user session: XFCE components on the labwc Wayland compositor.
+# Started by GDM after the Tails Welcome Screen (see veil.desktop).
+# X.Org is not installed: every app runs as a Wayland client, so apps cannot
+# read each other's keystrokes or screen contents.
+set -u
+
+export XDG_CURRENT_DESKTOP="Veil:XFCE"
+export XDG_SESSION_DESKTOP="veil"
+export XDG_SESSION_TYPE="wayland"
+export GDK_BACKEND="wayland"
+export QT_QPA_PLATFORM="wayland"
+export MOZ_ENABLE_WAYLAND=1
+export ELECTRON_OZONE_PLATFORM_HINT="wayland"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XCURSOR_THEME="Adwaita"
+export XCURSOR_SIZE=24
+
+# Keyboard layout chosen in the Welcome Screen.
+if [ -r /var/lib/tails-user-session/keyboard ]; then
+    # shellcheck disable=SC1091
+    . /var/lib/tails-user-session/keyboard
+    export XKB_DEFAULT_LAYOUT="${XKBLAYOUT:-us}"
+    export XKB_DEFAULT_VARIANT="${XKBVARIANT:-}"
+    export XKB_DEFAULT_MODEL="${XKBMODEL:-}"
+    export XKB_DEFAULT_OPTIONS="${XKBOPTIONS:-}"
+fi
+
+# User-installed Nix packages (veil install ...).
+NIX_PROFILE="$HOME/.local/state/nix/profile"
+export PATH="$NIX_PROFILE/bin:$PATH"
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:$NIX_PROFILE/share"
+
+exec /usr/bin/labwc

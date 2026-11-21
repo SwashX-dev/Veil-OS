@@ -95,7 +95,7 @@
               <object class="GtkLabel" id="label_header_title">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Welcome to Tails!</property>
+                <property name="label" translatable="yes">Welcome to Veil OS</property>
                 <attributes>
                   <attribute name="weight" value="semibold"/>
                   <attribute name="scale" value="1.5"/>
@@ -809,7 +809,7 @@ Try reinstalling Tails. If the error persists, reinstall on a new USB stick.</pr
     </child>
     <child>
       <object class="GtkButton" id="button_start">
-        <property name="label" translatable="yes">_Start Tails</property>
+        <property name="label" translatable="yes">_Start Veil OS</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
         <property name="receives-default">False</property>

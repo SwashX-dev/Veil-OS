@@ -1,0 +1,6 @@
+#XfceNotifyWindow { background-color: #121217; border: 1px solid #2c2a38; border-left: 3px solid #7c6bb0; border-radius: 6px; }
+#XfceNotifyWindow:hover { border-color: #4b3f86; }
+#XfceNotifyWindow label#summary { color: #e6e4f0; font-weight: bold; }
+#XfceNotifyWindow label#body { color: #a9a6b8; }
+#XfceNotifyWindow button { background: #1d1d25; color: #d6d0ff; border: 1px solid #2c2a38; }
+#XfceNotifyWindow progressbar progress { background-color: #4fd1c5; }

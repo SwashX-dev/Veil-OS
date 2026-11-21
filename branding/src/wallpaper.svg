@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440">
+  <defs>
+    <radialGradient id="bg" cx="0.62" cy="0.38" r="0.95">
+      <stop offset="0" stop-color="#16141f"/>
+      <stop offset="0.55" stop-color="#0d0c12"/>
+      <stop offset="1" stop-color="#060608"/>
+    </radialGradient>
+    <linearGradient id="fold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c6bb0" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#7c6bb0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#7c6bb0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fold2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#4fd1c5" stop-opacity="0"/>
+      <stop offset="0.6" stop-color="#4fd1c5" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#4fd1c5" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="2560" height="1440" fill="url(#bg)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M-100 260 C 600 300 1100 900 1600 1520" stroke="url(#fold)" stroke-width="2.5"/>
+    <path d="M-100 340 C 640 380 1140 940 1680 1520" stroke="url(#fold)" stroke-width="1.5"/>
+    <path d="M-100 420 C 680 460 1180 980 1760 1520" stroke="url(#fold)" stroke-width="1"/>
+    <path d="M2660 200 C 2000 260 1700 860 1600 1520" stroke="url(#fold)" stroke-width="2.5"/>
+    <path d="M2660 280 C 2060 340 1760 900 1680 1520" stroke="url(#fold)" stroke-width="1.5"/>
+    <path d="M300 1520 C 900 1100 1700 700 2660 620" stroke="url(#fold2)" stroke-width="1.5"/>
+  </g>
+  <g transform="translate(2280 1180) scale(0.62)" opacity="0.55">
+    <path d="M34 58 C 70 62 106 124 128 214 C 150 124 186 62 222 58" fill="none" stroke="#6a5ca8" stroke-width="20" stroke-linecap="round"/>
+    <path d="M78 56 C 98 76 116 122 128 166 C 140 122 158 76 178 56" fill="none" stroke="#6a5ca8" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="128" cy="44" r="11" fill="#4fd1c5" opacity="0.8"/>
+  </g>
+</svg>

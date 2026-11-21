@@ -22,6 +22,6 @@
 __appname__ = "tails-greeter"
 __version__ = "1.0.11"
 
-APPLICATION_TITLE = "Welcome to Tails!"
+APPLICATION_TITLE = "Welcome to Veil OS"  # Veil OS
 APPLICATION_ICON_NAME = "gdm-setup"
 TRANSLATION_DOMAIN = "tails"

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Network Guard
+GenericName=Privacy Monitor
+Comment=Audit Tor, firewall, DNS/IPv6 leaks and connections
+Exec=veil-network-guard
+Icon=veil-network-guard
+Categories=System;Security;Network;
+Keywords=privacy;tor;firewall;leak;audit;

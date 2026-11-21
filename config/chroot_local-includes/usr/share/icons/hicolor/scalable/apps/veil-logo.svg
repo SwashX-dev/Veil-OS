@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>Veil OS</title>
+  <defs>
+    <linearGradient id="v" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a497f7"/>
+      <stop offset="1" stop-color="#5a4bb0"/>
+    </linearGradient>
+  </defs>
+  <!-- outer veil fold -->
+  <path d="M34 58 C 70 62 106 124 128 214 C 150 124 186 62 222 58" fill="none" stroke="url(#v)" stroke-width="20" stroke-linecap="round"/>
+  <!-- inner veil fold -->
+  <path d="M78 56 C 98 76 116 122 128 166 C 140 122 158 76 178 56" fill="none" stroke="url(#v)" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
+  <!-- the point of light -->
+  <circle cx="128" cy="44" r="11" fill="#4fd1c5"/>
+</svg>

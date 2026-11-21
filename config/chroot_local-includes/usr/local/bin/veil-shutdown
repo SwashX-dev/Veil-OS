@@ -1,0 +1,60 @@
+#!/usr/bin/python3 -I
+"""Veil power dialog: lock, restart or shut down.
+
+Shutting down runs Tails' unchanged shutdown path, including its memory
+erasure step. Removing the USB stick also triggers Tails' emergency shutdown.
+"""
+import subprocess
+import sys
+
+import gi
+
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk  # noqa: E402
+
+CSS = b"""
+window { background: #0f0f13; }
+label.title { font-size: 15px; font-weight: bold; color: #e6e4f0; }
+label.sub { color: #8a8798; }
+button { padding: 10px 18px; border-radius: 6px; }
+button.danger { background: #2a1520; color: #f8a3ae; border: 1px solid #5a2534; }
+button.accent { background: #221d38; color: #d6d0ff; border: 1px solid #4b3f86; }
+"""
+
+
+def act(cmd):
+    subprocess.Popen(cmd, start_new_session=True)
+    Gtk.main_quit()
+
+
+def main():
+    prov = Gtk.CssProvider()
+    prov.load_from_data(CSS)
+    Gtk.StyleContext.add_provider_for_screen(__import__("gi.repository.Gdk", fromlist=["Screen"]).Screen.get_default(),
+                                             prov, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+    w = Gtk.Window(title="Veil OS", resizable=False)
+    w.set_position(Gtk.WindowPosition.CENTER)
+    w.connect("destroy", Gtk.main_quit)
+    w.connect("key-press-event", lambda _w, e: e.keyval == 0xff1b and Gtk.main_quit())
+    box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10, margin=22)
+    t = Gtk.Label(label="End this session?")
+    t.get_style_context().add_class("title")
+    s = Gtk.Label(label="Everything not saved in Persistent Storage will be erased.")
+    s.get_style_context().add_class("sub")
+    row = Gtk.Box(spacing=8, homogeneous=True)
+    for label, cmd, cls in (("Lock", ["tails-screen-locker"], "accent"),
+                            ("Restart", ["systemctl", "reboot"], "accent"),
+                            ("Shut Down", ["systemctl", "poweroff"], "danger")):
+        b = Gtk.Button(label=label)
+        b.get_style_context().add_class(cls)
+        b.connect("clicked", lambda _b, c=cmd: act(c))
+        row.pack_start(b, True, True, 0)
+    for wdg in (t, s, row):
+        box.pack_start(wdg, False, False, 0)
+    w.add(box)
+    w.show_all()
+    Gtk.main()
+    return 0
+
+
+sys.exit(main())

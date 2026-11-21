@@ -1,0 +1,10 @@
+#!/bin/sh
+# Lock the Veil (labwc) session with swaylock (ext-session-lock protocol).
+# tails-screen-locker calls this after making sure a password is set.
+exec swaylock --daemonize --ignore-empty-password --show-failed-attempts \
+    --color 0b0b0f --indicator-radius 70 --indicator-thickness 6 \
+    --inside-color 15151bff --inside-clear-color 15151bff --inside-ver-color 2a2540ff --inside-wrong-color 3a1a22ff \
+    --ring-color 7c6bb0ff --ring-ver-color 4fd1c5ff --ring-wrong-color f26d7dff --ring-clear-color 7c6bb0ff \
+    --key-hl-color 4fd1c5ff --bs-hl-color f26d7dff --line-color 00000000 --separator-color 00000000 \
+    --text-color e6e4f0ff --text-ver-color e6e4f0ff --text-wrong-color f26d7dff \
+    --font Cantarell "$@"

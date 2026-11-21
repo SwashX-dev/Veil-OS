@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Veil Console
+GenericName=Terminal
+Comment=Immersive terminal with system, network and privacy panels
+Exec=veil-console
+Icon=veil-console
+Categories=System;TerminalEmulator;
+Keywords=terminal;shell;edex;console;
+StartupNotify=true

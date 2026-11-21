@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Restart or Shut Down
+Comment=Lock, restart or shut down Veil OS
+Exec=veil-shutdown
+Icon=system-shutdown-symbolic

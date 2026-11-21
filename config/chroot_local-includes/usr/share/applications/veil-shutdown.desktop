@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Restart or Shut Down
+Exec=veil-shutdown
+Icon=system-shutdown-symbolic
+Categories=System;
+NoDisplay=false

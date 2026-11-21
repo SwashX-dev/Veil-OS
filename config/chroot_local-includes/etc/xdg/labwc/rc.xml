@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!-- Veil OS compositor configuration (labwc). -->
+<labwc_config>
+  <core>
+    <decoration>server</decoration>
+    <gap>6</gap>
+    <adaptiveSync>no</adaptiveSync>
+    <reuseOutputMode>no</reuseOutputMode>
+  </core>
+  <placement><policy>cascade</policy></placement>
+  <theme>
+    <name>Veil</name>
+    <cornerRadius>6</cornerRadius>
+    <dropShadows>no</dropShadows>
+    <font place="ActiveWindow"><name>Cantarell</name><size>10</size><weight>bold</weight></font>
+    <font place="InactiveWindow"><name>Cantarell</name><size>10</size></font>
+    <font place="MenuItem"><name>Cantarell</name><size>10</size></font>
+    <font place="OnScreenDisplay"><name>Cantarell</name><size>10</size></font>
+  </theme>
+  <windowSwitcher show="yes" preview="yes" outlines="yes">
+    <fields>
+      <field content="icon" width="5%" />
+      <field content="title" width="95%" />
+    </fields>
+  </windowSwitcher>
+  <focus><followMouse>no</followMouse><raiseOnFocus>no</raiseOnFocus></focus>
+  <snapping><range>10</range><topMaximize>yes</topMaximize></snapping>
+  <desktops number="2"><popupTime>600</popupTime></desktops>
+  <keyboard>
+    <default />
+    <keybind key="W-Return"><action name="Execute" command="veil-console" /></keybind>
+    <keybind key="W-t"><action name="Execute" command="xfce4-terminal" /></keybind>
+    <keybind key="W-a"><action name="Execute" command="veil-agent-gui" /></keybind>
+    <keybind key="W-g"><action name="Execute" command="veil-network-guard" /></keybind>
+    <keybind key="W-e"><action name="Execute" command="nautilus --new-window" /></keybind>
+    <keybind key="W-l"><action name="Execute" command="tails-screen-locker" /></keybind>
+    <keybind key="W-space"><action name="Execute" command="xfce4-popup-whiskermenu" /></keybind>
+    <keybind key="Super_L" onRelease="yes"><action name="Execute" command="xfce4-popup-whiskermenu" /></keybind>
+    <keybind key="W-Up"><action name="ToggleMaximize" /></keybind>
+    <keybind key="W-Down"><action name="Iconify" /></keybind>
+    <keybind key="W-Left"><action name="SnapToEdge" direction="left" /></keybind>
+    <keybind key="W-Right"><action name="SnapToEdge" direction="right" /></keybind>
+    <keybind key="W-q"><action name="Close" /></keybind>
+    <keybind key="W-1"><action name="GoToDesktop" to="1" /></keybind>
+    <keybind key="W-2"><action name="GoToDesktop" to="2" /></keybind>
+    <keybind key="Print"><action name="Execute" command="sh -c 'mkdir -p ~/Pictures &amp;&amp; grim ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png'" /></keybind>
+    <keybind key="S-Print"><action name="Execute" command="sh -c 'mkdir -p ~/Pictures &amp;&amp; grim -g &quot;$(slurp)&quot; ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png'" /></keybind>
+    <keybind key="XF86AudioRaiseVolume"><action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ +5%" /></keybind>
+    <keybind key="XF86AudioLowerVolume"><action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ -5%" /></keybind>
+    <keybind key="XF86AudioMute"><action name="Execute" command="pactl set-sink-mute @DEFAULT_SINK@ toggle" /></keybind>
+  </keyboard>
+  <mouse><default /></mouse>
+  <libinput><device category="default"><naturalScroll>no</naturalScroll><tap>yes</tap></device></libinput>
+  <windowRules>
+    <windowRule identifier="veil-console" serverDecoration="yes" />
+  </windowRules>
+</labwc_config>

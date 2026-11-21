@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Veil Package Center
+GenericName=Security Tool Bundles
+Comment=Install optional security tool bundles with Nix (through Tor)
+Exec=veil-package-center
+Icon=veil-packages
+Categories=System;Settings;PackageManager;

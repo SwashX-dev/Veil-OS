@@ -1,0 +1,13 @@
+# Veil OS appearance defaults (read by GTK3/GTK4/libadwaita apps on Wayland,
+# and by xdg-desktop-portal for Flatpak apps such as Tor Browser).
+[org/gnome/desktop/interface]
+gtk-theme='Veil'
+icon-theme='elementary-xfce-dark'
+cursor-theme='Adwaita'
+color-scheme='prefer-dark'
+accent-color='purple'
+monospace-font-name='JetBrains Mono 10'
+enable-animations=false
+
+[org/gnome/desktop/wm/preferences]
+button-layout=':minimize,maximize,close'

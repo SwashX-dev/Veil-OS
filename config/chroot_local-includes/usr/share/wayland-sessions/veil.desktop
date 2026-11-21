@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Veil OS
+Comment=XFCE components on the labwc Wayland compositor
+Exec=/usr/local/bin/veil-session
+TryExec=/usr/bin/labwc
+Type=Application
+DesktopNames=Veil;XFCE
