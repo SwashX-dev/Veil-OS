@@ -1,44 +1,83 @@
-## About Tails
+# Veil OS
 
-[**Tails**](https://tails.net/) is a portable operating system that protects your privacy and helps you avoid censorship.
+**Veil OS is an amnesic, Tor-enforcing live operating system for security work.
+It is derived from [Tails](https://tails.net/).** It adds an XFCE desktop on
+Wayland, a native eDEX-style terminal, a library of security tools, Nix package
+bundles, a privacy monitor, and a fully local AI agent.
 
-[![Drawing of a Tails stick that is marked to be plugged into a labtop](https://tails.net/index/laptop.svg)](https://tails.net/)
-- Tails uses the Tor network to protect your privacy online and help you avoid censorship. Enjoy the Internet like it should be.
-- Shut down the computer and start on your Tails USB stick instead of starting on Windows, macOS, or Linux. Tails leaves no trace on the computer when shut down.
-- Tails includes a selection of applications to work on sensitive documents and communicate securely. Everything in Tails is ready-to-use and has safe defaults.
-- You can download Tails for free and independent security researchers can verify our work. Tails is based on Debian GNU/Linux.
+> [!WARNING]
+> **Status: alpha.** This is an unofficial derivative. It is **not** made,
+> reviewed or endorsed by the Tails project. Don't rely on it where your safety
+> depends on it: use [official Tails](https://tails.net/) for that. Every
+> requirement has a status (passed / failed / untested) in
+> [docs/veil/TEST-REPORT.md](docs/veil/TEST-REPORT.md).
 
-[Learn learn how Tails works](https://tails.net/about)
+## What Veil keeps from Tails (unchanged)
 
+- Live USB boot with a read-only system image and a RAM-backed writable layer
+  (amnesia). Nothing is written to the computer's disks.
+- The Tails Welcome Screen, Tor Connection, Tor Browser (Flatpak + AppArmor),
+  the Tails firewall (ferm, default deny), DNS through Tor, IPv6 disabled, and
+  MAC address anonymization.
+- Encrypted Persistent Storage (LUKS2), which you can unlock or skip at every
+  boot.
+- Memory erasure at shutdown, and emergency shutdown when the USB stick is
+  removed.
+- Kernel hardening sysctls, AppArmor, and Tails security advisories
+  (`tails-security-check`).
 
-### How to contribute to Tails
+Veil does **not** guarantee anonymity, and no system removes every forensic
+trace. See [docs/veil/THREAT-MODEL.md](docs/veil/THREAT-MODEL.md).
 
-There are many ways [you can contribute to Tails](https://tails.net/contribute/). No effort is too small and whatever you bring to this community will be appreciated.
+## What Veil adds
 
-Find out how you can make a difference in Tails: https://tails.net/contribute/.
+| Area | What | Docs |
+|---|---|---|
+| Desktop | XFCE 4.20 components on the **labwc Wayland** compositor (Tails ships no X.Org, and neither does Veil), plus a dark Veil theme | [DESKTOP](docs/veil/DESKTOP.md) |
+| Terminal | **Veil Console**: an eDEX-style terminal written natively in GTK3 + VTE, with no Electron and no network access. xfce4-terminal stays installed as the fallback. | [CONSOLE](docs/veil/CONSOLE.md) |
+| Privacy | **Veil Network Guard** (`veil privacy status`, GUI): checks the firewall, Tor circuits, DNS/IPv6/UDP leaks, connections, MAC anonymization, and the agent/Nix policy | [NETWORK-GUARD](docs/veil/NETWORK-GUARD.md) |
+| AI | **Veil Agent** (`veil agent`, GUI): llama.cpp runs locally in an empty network namespace. It is offline by default; tools run in a bubblewrap + seccomp sandbox, and network access is a separate grant. | [AGENT](docs/veil/AGENT.md) |
+| Tools | Light Debian tools in the base image; heavy tools as opt-in **Nix bundles**. Each tool has a documented network policy. | [TOOLS](docs/veil/TOOLS.md) |
+| Packages | `veil install/remove/search/update` runs single-user Nix as the live user, so its downloads always go through Tor. | [NIX](docs/veil/NIX.md) |
+| Labs | `veil lab`: offline network namespaces for tools that can't use Tor. Labs have no route to the Internet. | [TOOLS](docs/veil/TOOLS.md#offline-labs) |
+| Persistence | New Persistent Storage features: *Nix Packages* and *Veil Desktop Settings* | [PERSISTENCE](docs/veil/PERSISTENCE.md) |
 
-### How to get started with GitLab
+## Quick start
 
-https://tails.net/contribute/working_together/GitLab/
+1. Download `veil-amd64-<version>.img` from [Releases](https://github.com/SwashX-dev/Veil-OS/releases).
+   Verify it against `SHA256SUMS` and the OpenPGP signature
+   ([docs/veil/VERIFY.md](docs/veil/VERIFY.md)).
+2. Write it to a USB stick of 8 GB or more: `sudo dd if=veil-amd64-<version>.img of=/dev/sdX bs=16M oflag=direct status=progress conv=fsync`.
+   **Double-check `/dev/sdX`: everything on that device is erased.**
+3. Boot from the stick. In the Welcome Screen, optionally unlock Persistent
+   Storage, then click **Start Veil OS** and connect to Tor.
+4. Open a terminal and run `veil privacy status`, `veil tools`, `veil agent models list`.
 
-### How to transition to GitLab
+## Building
 
-https://tails.net/contribute/working_together/GitLab/transition/
+Veil uses the **official, unmodified Tails build system** (`rake build`:
+Vagrant + libvirt + live-build). See [docs/veil/BUILDING.md](docs/veil/BUILDING.md).
 
-###  License and source code distribution
-**Tails** is [Free Software](https://www.gnu.org/philosophy/free-sw.html): you can download, use, and share it with no restrictions.
+```sh
+git clone https://github.com/SwashX-dev/Veil-OS.git && cd Veil-OS
+git submodule update --init
+rake build
+```
 
- <a href="https://tails.net/doc/about/license/"><img alt="Tails is Free Software" src="https://tails.net/index/gift.svg" width="560"/>
+## Repository layout
 
-The Tails source code is released under the GNU/GPL (version 3 or above) and is Copyright (C) Tails developers foundations@tails.net.
-Any exception to this rule is documented either [here](https://tails.net/doc/about/license/) or in the affected source file.
-However, Tails includes non-free firmware in order to work on as much hardware as possible.
+- Upstream Tails source, full history. The fork point is the signed tag
+  `7.17.1`. The `upstream` remote is https://gitlab.tails.net/tails/tails.
+- Veil additions live mostly in `config/chroot_local-includes/usr/lib/python3/dist-packages/veil/`,
+  `config/chroot_local-hooks/5[7-9]-veil-*`, `config/chroot_local-packageslists/veil.list`
+  and `branding/`.
+- Every change to an upstream file is listed and justified in
+  [docs/veil/MODIFICATIONS.md](docs/veil/MODIFICATIONS.md).
 
+## License and attribution
 
-### Contact
-
-email and mailing lists: https://tails.net/doc/about/contact
-
-https://matrix.to/#/#tails-dev:matrix.org
-
-[![Tails](https://tails.net/contribute/how/promote/logo/tails-logo-flat.svg)](https://tails.net)
+Veil OS is free software under the **GNU GPL v3 or later**, like Tails. Tails is
+Copyright © Tails developers. Veil OS additions are Copyright © the Veil OS
+contributors. Third-party components keep their own licenses: see
+[NOTICE.md](NOTICE.md) and [README.tails.md](README.tails.md). "Tails" is used
+only to describe where Veil comes from.

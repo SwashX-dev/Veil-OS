@@ -1,0 +1,59 @@
+name: Veil CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    name: Unit tests (sandbox, agent, network guard)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install bubblewrap and util-linux
+        run: sudo apt-get update -q && sudo apt-get install -y -q bubblewrap util-linux iproute2 python3
+      - name: Allow unprivileged user namespaces (Ubuntu restricts them via AppArmor)
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
+      - name: Run tests
+        run: python3 -m unittest discover -s tests/veil -v
+
+  static-checks:
+    name: Static checks
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install linters
+        run: sudo apt-get update -q && sudo apt-get install -y -q shellcheck python3 libxml2-utils
+      - name: Python syntax
+        run: python3 -m compileall -q config/chroot_local-includes/usr/lib/python3/dist-packages/veil
+      - name: Shellcheck Veil hooks and scripts
+        run: |
+          shellcheck -S warning config/chroot_local-hooks/5[7-9]-veil-* \
+            config/chroot_local-includes/usr/local/bin/veil-session \
+            config/chroot_local-includes/usr/local/bin/veil-lock \
+            config/chroot_local-includes/etc/profile.d/veil-nix.sh \
+            bin/veil-rename-artifacts bin/veil-release
+      - name: JSON and XML validity
+        run: |
+          for f in config/chroot_local-includes/usr/share/veil/tools.json \
+                   config/chroot_local-includes/usr/share/veil/nix/bundles.json \
+                   config/chroot_local-includes/usr/share/veil/nix/flake.lock \
+                   config/chroot_local-includes/etc/nix/registry.json; do
+            python3 -m json.tool "$f" > /dev/null
+          done
+          xmllint --noout config/chroot_local-includes/etc/xdg/labwc/rc.xml \
+            config/chroot_local-includes/etc/xdg/labwc/menu.xml \
+            config/chroot_local-includes/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/*.xml \
+            config/chroot_local-includes/usr/share/tails/persistent-storage/features_view.ui.in
+      - name: Secret scan (no keys or tokens committed)
+        run: |
+          ! git grep -nE '(ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (OPENSSH|RSA|EC|PGP) PRIVATE KEY-----)' -- . ':!tests/veil/test_veil.py'
