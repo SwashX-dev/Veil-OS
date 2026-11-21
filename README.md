@@ -13,8 +13,8 @@ bundles, a privacy monitor, and a fully local AI agent.
 > depends on it: use [official Tails](https://tails.net/) for that. Every
 > requirement has a status (passed / failed / untested) in
 > [docs/veil/TEST-REPORT.md](docs/veil/TEST-REPORT.md).
-> Latest prerelease: **1.1.1**, tested only in QEMU/KVM and not yet on physical
-> hardware. See [the v1.1.1 validation report](docs/veil/test-results/1.1.1/README.md)
+> Latest prerelease: **1.2.0**, tested only in QEMU/KVM and not yet on physical
+> hardware. See [the v1.2.0 test report](docs/veil/test-results/1.2.0/README.md)
 > for what was and was not tested.
 
 ## What Veil keeps from Tails (unchanged)
@@ -45,6 +45,7 @@ trace. See [docs/veil/THREAT-MODEL.md](docs/veil/THREAT-MODEL.md).
 | Tools | Light Debian tools in the base image; heavy tools as opt-in **Nix bundles**. Each tool has a documented network policy. | [TOOLS](docs/veil/TOOLS.md) |
 | Packages | Veil Package Center manages Debian packages and signed Nix bundles. `apt install PACKAGE -Pr` keeps an APT package across reboots. | [PERSISTENCE](docs/veil/PERSISTENCE.md), [NIX](docs/veil/NIX.md) |
 | Labs | `veil lab`: offline network namespaces for tools that can't use Tor. Labs have no route to the Internet. | [TOOLS](docs/veil/TOOLS.md#offline-labs) |
+| Privacy Center | Tor Browser security level, idle lock, clipboard clearing, emergency hotkey, camera/microphone kill switches, **VPN before Tor** (Proton VPN / WireGuard, fail-closed), video upscaling | [PRIVACY-CENTER](docs/veil/PRIVACY-CENTER.md) |
 | Persistence | New Persistent Storage features: *Nix Packages* and *Veil Desktop Settings* | [PERSISTENCE](docs/veil/PERSISTENCE.md) |
 
 ## Quick start

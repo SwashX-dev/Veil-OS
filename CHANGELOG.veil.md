@@ -2,7 +2,18 @@
 
 Upstream Tails changes are in `Changelog` / `debian/changelog`.
 
-## 1.1.1 (2026-11-21)
+## 1.2.0 (2026-11-21)
+
+- Includes the 1.1.1 compositor fix (1.1.1 was never released on its own).
+- Safe graphics on nouveau (NVIDIA), Safe Graphics boot entry, shutdown reasons
+  on screen, `veil diagnostics`.
+- Privacy Center: Tor Browser security level, idle lock, clipboard clearing,
+  emergency hotkey, camera/microphone kill switches, VPN before Tor (WireGuard,
+  Proton VPN), video upscaling (Veil Player, Celluloid, `veil media upscale`).
+- TCP timestamps disabled.
+- See `docs/veil/release-notes/v1.2.0.md`.
+
+## 1.1.1 (2026-11-21, not released separately)
 
 - Fix: the compositor is restarted (software rendering, lock restored, notification)
   instead of shutting the machine down when it stops after startup. See

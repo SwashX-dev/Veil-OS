@@ -29,3 +29,14 @@ hypervisor, cold-boot attacks before memory erasure, user mistakes).
 - **Tails' review and audit history** for the replaced desktop components.
 - **Translations** of the rebranded Welcome Screen strings (title and Start
   button), which now show in English.
+
+## VPN before Tor (optional, 1.2.0)
+
+When enabled, the VPN provider learns your real IP address, when you use Tor
+and how much data you transfer. Your local network and ISP no longer see Tor
+traffic. Tor's protection against both is unchanged: neither sees what you
+do or which sites you visit. A compromised application cannot enable a VPN to
+an attacker's server to learn your IP address, because connecting requires
+the administration password (polkit `auth_self`). The VPN is fail-closed
+(routing blackhole, firewall and session rules) and verified by Network
+Guard's `vpn.before_tor` check. See [PRIVACY-CENTER](PRIVACY-CENTER.md).

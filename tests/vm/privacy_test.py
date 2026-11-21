@@ -106,7 +106,11 @@ def main() -> int:
         # Clipboard clearing
         setting(vm, "clipboard_clear_seconds", 5)
         time.sleep(3)
-        user(vm, "printf veil-secret-123 | wl-copy")
+        # wl-copy serves the selection from a background process: run it as a
+        # user unit, because the test shell's login session is closed (and its
+        # processes killed) when each command returns.
+        user(vm, "systemd-run --user --collect --quiet wl-copy --foreground veil-secret-123")
+        time.sleep(1)
         rc, first = user(vm, "wl-paste --no-newline")
         ok, _ = wait_for(vm, SESSION_ENV + "! wl-paste --no-newline 2>/dev/null | grep -q veil-secret-123", 20,
                          user="amnesia", interval=1)

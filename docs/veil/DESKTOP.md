@@ -63,6 +63,33 @@ Version 1.1.0 instead shut the machine down on every such loss, which looked
 like a random black screen followed by power-off. The underlying reason that
 the compositor stops on some hardware is not yet known.
 
+## Safe graphics (NVIDIA and broken GPU drivers)
+
+Tails drives NVIDIA GPUs with **nouveau** (there is no proprietary driver).
+Nouveau support for recent generations that need GSP firmware, such as
+RTX 30/40-series laptops, is young, and a GPU fault can kill the compositor.
+When `veil-session` finds a nouveau GPU, it renders in software by default:
+
+- the compositor with Pixman
+- OpenGL applications with llvmpipe (`LIBGL_ALWAYS_SOFTWARE=1`)
+- Vulkan applications with lavapipe (`VK_LOADER_DRIVERS_SELECT=*lvp*`)
+- GTK 4 with its GL renderer
+
+Only display scanout still uses the GPU. The boot option
+`veil.gpu-rendering` turns this off. The UEFI boot entry
+**Veil OS (Safe Graphics)** adds `nomodeset`: no GPU driver is loaded, and the
+desktop uses the firmware framebuffer (simpledrm). It is the most compatible
+choice, but brightness keys and external monitors may not work.
+
+## Why did my computer turn off?
+
+| You see | Cause | What to do |
+|---|---|---|
+| A notification: "The display server was restarted" | The compositor crashed and was restarted | Run `veil diagnostics --save`. Try the Safe Graphics entry |
+| A text message: "the boot USB stick was disconnected" | Tails' emergency shutdown: the stick was removed or lost power briefly | Use another USB port or stick |
+| A text message: "the desktop stopped six times in five minutes" | Repeated compositor crashes | Boot **Veil OS (Safe Graphics)** |
+| A text message: "emergency shutdown (Ctrl+Alt+Shift+Delete)" | The emergency hotkey | Disable it in the Privacy Center if you press it by accident |
+
 ## Known limitations
 
 - GDM exports `XDG_DATA_DIRS` with trailing slashes, which libxfce4util
