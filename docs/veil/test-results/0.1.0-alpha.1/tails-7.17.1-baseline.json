@@ -1,0 +1,117 @@
+{
+ "flavor": "tails",
+ "image": "tails-official/tails-amd64-7.17.1.img",
+ "results": [
+  {
+   "id": "boot.remote_shell",
+   "name": "Image boots (UEFI, USB) and the system reaches early userspace",
+   "status": "PASS",
+   "evidence": "remote shell up after 35.1s"
+  },
+  {
+   "id": "20.boot_to_greeter",
+   "name": "Boot performance: power-on to Welcome Screen",
+   "status": "PASS",
+   "evidence": "48.0s",
+   "seconds": 48.0
+  },
+  {
+   "id": "20.greeter_to_desktop",
+   "name": "Boot performance: Start \u2192 desktop ready",
+   "status": "PASS",
+   "evidence": "16.9s",
+   "seconds": 16.9
+  },
+  {
+   "id": "3.ram_overlay",
+   "name": "Root filesystem is an overlay whose writable layer is tmpfs (RAM)",
+   "status": "PASS",
+   "evidence": "overlay overlay rw,noatime,lowerdir=//filesystem.squashfs/,upperdir=/live/overlay//rw,workdir=/live/overlay//work,uuid=on\n---\ntmpfs /usr/lib/live/mount/overlay\n---\nFilename\t\t\t\tType\t\tSize\t\tUsed\t\tPriority\n/dev/zram0                              partition\t6068852\t\t0\t\t100\n---\n/dev/sdb1              /usr/lib/live/mount/medium\n---\nloop0        0  1.7G\nsda   sata   0    2G\nsdb   usb    1  1.8G\nzram0        0  5.8G"
+  },
+  {
+   "id": "3.no_swap",
+   "name": "No swap on disk (zram, i.e. compressed RAM, only)",
+   "status": "PASS",
+   "evidence": "Filename\t\t\t\tType\t\tSize\t\tUsed\t\tPriority\n/dev/zram0                              partition\t6068852\t\t0\t\t100"
+  },
+  {
+   "id": "4.internal_disk_not_mounted",
+   "name": "Internal disk is not mounted automatically",
+   "status": "PASS",
+   "evidence": "/dev/sdb1              /usr/lib/live/mount/medium\n\nloop0        0  1.7G\nsda   sata   0    2G\nsdb   usb    1  1.8G\nzram0        0  5.8G"
+  },
+  {
+   "id": "3.volatile_logs",
+   "name": "Journal lives in RAM (/run, or /var/log on the tmpfs-backed overlay)",
+   "status": "PASS",
+   "evidence": "File path: /var/log/journal/97752fb6a843491a84e74b3d113838f4/user-1000.journal\noverlay"
+  },
+  {
+   "id": "7.firewall_loaded",
+   "name": "Default-deny firewall loaded (IPv4+IPv6), resolver 127.0.0.1, IPv6 disabled",
+   "status": "PASS",
+   "evidence": "-P OUTPUT DROP\n-A OUTPUT -m state --state ESTABLISHED -j ACCEPT\n-A OUTPUT -o lo -p icmp -m state --state RELATED -j ACCEPT\n-P OUTPUT DROP\n-A OUTPUT -s ::1/128 -d ::1/128 -o lo -p tcp -m tcp --dport 4101 -m owner --uid-owner 1000 -j ACCEPT\nnameserver 127.0.0.1\nnet.ipv6.conf.all.disable_ipv6 = 1"
+  },
+  {
+   "id": "8.kill_switch_before_tor",
+   "name": "Before Tor connects, the live user cannot reach the Internet",
+   "status": "PASS",
+   "evidence": "rc=7\n\ncurl: (7) Failed to connect to 127.0.0.1 port 9050 after 0 ms: Could not connect to server"
+  },
+  {
+   "id": "5.tor_bootstrap",
+   "name": "Tor connects and bootstraps to 100%",
+   "status": "PASS",
+   "evidence": "bootstrap flag present"
+  },
+  {
+   "id": "5.tor_routing",
+   "name": "Live user's web traffic exits through Tor (check.torproject.org)",
+   "status": "PASS",
+   "evidence": "{\"IsTor\":true,\"IP\":\"185.220.100.244\"}"
+  },
+  {
+   "id": "6.dns_leak",
+   "name": "DNS resolves through Tor; direct UDP/53 to 8.8.8.8 is rejected",
+   "status": "PASS",
+   "evidence": "2606:4700:10::ac42:93f3 example.com\nrc=0\nPermissionError: [Errno 1] Operation not permitted"
+  },
+  {
+   "id": "6.ipv6_leak",
+   "name": "No IPv6 connectivity (IPv6 leak path closed)",
+   "status": "PASS",
+   "evidence": "rc=7\n\ncurl: (7) Could not connect to server"
+  },
+  {
+   "id": "8.kill_switch",
+   "name": "With Tor stopped, traffic is blocked (no clearnet fallback)",
+   "status": "PASS",
+   "evidence": "rc=7\n\ncurl: (7) Failed to connect to 127.0.0.1 port 9050 after 0 ms: Could not connect to server\n\nlog_reject packets: 1"
+  },
+  {
+   "id": "11.app.tor-browser",
+   "name": "tor-browser starts in the session",
+   "status": "PASS",
+   "evidence": "screenshot 10-tor-browser.png"
+  },
+  {
+   "id": "11.app.tails-persistent-storage",
+   "name": "tails-persistent-storage starts in the session",
+   "status": "PASS",
+   "evidence": "screenshot 11-tails-persistent-storage.png"
+  },
+  {
+   "id": "23.shutdown",
+   "name": "Shutdown completes",
+   "status": "PASS",
+   "evidence": "powered off in 180.1s (rc=-9)",
+   "seconds": 180.1
+  },
+  {
+   "id": "4.no_internal_disk_writes",
+   "name": "No writes to the computer's internal disk",
+   "status": "PASS",
+   "evidence": "sha256 before=0f4e8bd150e16aea after=0f4e8bd150e16aea"
+  }
+ ]
+}

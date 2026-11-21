@@ -166,7 +166,9 @@ def main() -> int:
     finally:
         t_sd = time.time()
         vm.stop(timeout=180)
-        record("23.shutdown", "Shutdown completes", vm.proc.returncode is not None,
+        # ACPI power button: Veil powers off; GNOME (upstream Tails) shows a
+        # confirmation dialog instead, so the VM gets killed (rc=-9) there.
+        record("23.shutdown", "Shutdown completes cleanly on the power button", vm.proc.returncode == 0,
                f"powered off in {time.time() - t_sd:.1f}s (rc={vm.proc.returncode})", seconds=round(time.time() - t_sd, 1))
         disk_sum_after = subprocess.run(["sha256sum", str(disk)], capture_output=True, text=True).stdout.split()[0]
         record("4.no_internal_disk_writes", "No writes to the computer's internal disk",

@@ -5,6 +5,8 @@ It is derived from [Tails](https://tails.net/).** It adds an XFCE desktop on
 Wayland, a native eDEX-style terminal, a library of security tools, Nix package
 bundles, a privacy monitor, and a fully local AI agent.
 
+![Veil OS desktop with Tor Connection](docs/veil/screenshots/02-desktop-tor-connection.png)
+
 > [!WARNING]
 > **Status: alpha.** This is an unofficial derivative. It is **not** made,
 > reviewed or endorsed by the Tails project. Don't rely on it where your safety

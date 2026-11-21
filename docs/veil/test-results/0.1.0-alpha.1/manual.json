@@ -1,0 +1,8 @@
+{
+  "17": {"note": "plus unit tests (destructive/credential commands denied without the human; read-only cannot write) and, in the image, a write outside the workspace was DENIED by policy"},
+  "19": {"status": "PARTIAL", "note": "UEFI (OVMF) automated; legacy BIOS (SeaBIOS) boot to the Welcome Screen verified manually with screenshots; NO physical hardware tested"},
+  "20": {"note": "no regression measured"},
+  "21": {"status": "PARTIAL", "note": "release artifacts signed (OpenPGP) + SHA256SUMS; Nix accepts only signed cache.nixos.org binaries (nix.policy PASS, installs verified); models SHA-256 verified on download (15.model_pull); Tails IUK upgrades disabled, Veil update check is notify-only; no end-to-end upgrade tested (no newer release exists)"},
+  "22": {"status": "UNTESTED", "note": "each commit was built once; bit-for-bit reproducibility of Veil images not verified (Veil adds a compiled llama.cpp to Tails' reproducible build)"},
+  "24": {"status": "PARTIAL", "note": "Troubleshooting Mode entry (noapic/nolapic/nosmp/nomce) boots to the Veil desktop in QEMU; recovery by re-flashing documented; Tails' disk-error recovery flows not exercised"}
+}

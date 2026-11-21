@@ -251,7 +251,7 @@ class VM:
                 self.proc.wait()
 
 
-def extract_boot_files(iso: str, outdir: str) -> tuple[str, str, str]:
+def extract_boot_files(iso: str, outdir: str, entry: str = "live") -> tuple[str, str, str]:
     """Extract vmlinuz, initrd.img and the default kernel command line."""
     out = Path(outdir)
     out.mkdir(parents=True, exist_ok=True)
@@ -262,7 +262,7 @@ def extract_boot_files(iso: str, outdir: str) -> tuple[str, str, str]:
     subprocess.run(["xorriso", "-osirrox", "on", "-indev", iso, "-extract", "/EFI/debian/grub.cfg",
                     str(out / "grub.cfg")], check=True, capture_output=True)
     cfg = (out / "grub.cfg").read_text()
-    m = re.search(r"--id 'live' \{.*?linux /live/vmlinuz (.*?)\n", cfg, re.S)
+    m = re.search(r"--id '" + re.escape(entry) + r"' \{.*?linux /live/vmlinuz (.*?)\n", cfg, re.S)
     cmd = m.group(1) if m else "boot=live config"
     cmd = re.sub(r"\s*FSUUID=\$\{rootuuid\}", "", cmd)
     # Keep initrd=/live/initrd.img: Tails' initramfs-restore (memory erasure
@@ -286,7 +286,7 @@ def first_partition_offset(img: str) -> int:
     return first_lba * 512
 
 
-def extract_boot_files_from_img(img: str, outdir: str) -> tuple[str, str, str]:
+def extract_boot_files_from_img(img: str, outdir: str, entry: str = "live") -> tuple[str, str, str]:
     """Same as extract_boot_files() but for a USB .img (FAT boot partition, mtools)."""
     out = Path(outdir)
     out.mkdir(parents=True, exist_ok=True)
@@ -295,7 +295,7 @@ def extract_boot_files_from_img(img: str, outdir: str) -> tuple[str, str, str]:
                       ("::/EFI/debian/grub.cfg", "grub.cfg")):
         subprocess.run(["mcopy", "-n", "-o", "-i", spec, src, str(out / name)], check=True, capture_output=True)
     cfg = (out / "grub.cfg").read_text()
-    m = re.search(r"--id 'live' \{.*?linux /live/vmlinuz (.*?)\n", cfg, re.S)
+    m = re.search(r"--id '" + re.escape(entry) + r"' \{.*?linux /live/vmlinuz (.*?)\n", cfg, re.S)
     cmd = m.group(1) if m else "boot=live config"
     cmd = re.sub(r"\s*FSUUID=\$\{rootuuid\}", "", cmd)
     # Keep initrd=/live/initrd.img: Tails' initramfs-restore (memory erasure
@@ -304,8 +304,8 @@ def extract_boot_files_from_img(img: str, outdir: str) -> tuple[str, str, str]:
     return str(out / "vmlinuz"), str(out / "initrd.img"), cmd
 
 
-def boot_files(image: str, iso: str | None, outdir: str) -> tuple[str, str, str]:
-    return extract_boot_files(iso, outdir) if iso else extract_boot_files_from_img(image, outdir)
+def boot_files(image: str, iso: str | None, outdir: str, entry: str = "live") -> tuple[str, str, str]:
+    return extract_boot_files(iso, outdir, entry) if iso else extract_boot_files_from_img(image, outdir, entry)
 
 
 ATSPI_LIB = r"""

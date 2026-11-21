@@ -2,7 +2,7 @@
 
 Upstream Tails changes are in `Changelog` / `debian/changelog`.
 
-## 0.1.0-alpha.1 (unreleased)
+## 0.1.0-alpha.1 (2026-11-21)
 
 Based on Tails 7.17.1 (signed tag, commit a95f1e8).
 
@@ -27,3 +27,8 @@ Based on Tails 7.17.1 (signed tag, commit a95f1e8).
 - Persistent Storage: new *Nix Packages* and *Veil Desktop Settings* features.
 - Tails upgrader masked (IUKs can't apply to a derivative), replaced by a
   notify-only Veil release check. WhisperBack hidden (it reports to Tails).
+
+Testing (QEMU/KVM, see docs/veil/TEST-REPORT.md): 39/39 automated image
+checks, 7/7 persistence checks, 41 unit tests; 20 of 24 requirements PASS,
+3 PARTIAL, 1 UNTESTED (reproducibility), 0 FAIL. Not tested on physical
+hardware.

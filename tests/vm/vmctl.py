@@ -32,6 +32,7 @@ def main():
     b.add_argument("--no-network", action="store_true")
     b.add_argument("--no-autotest", action="store_true")
     b.add_argument("--bios", action="store_true")
+    b.add_argument("--entry", default="live", help="GRUB entry id: live, livefailsafe, livenonremovable")
     for name in ("sh", "py"):
         s = sub.add_parser(name)
         s.add_argument("workdir")
@@ -48,7 +49,8 @@ def main():
     if a.cmd == "boot":
         kernel = initrd = cmd = None
         if not a.no_autotest:
-            kernel, initrd, cmd = veilvm.boot_files(a.img, a.iso, os.path.join(a.workdir, "boot"))
+            kernel, initrd, cmd = veilvm.boot_files(a.img, a.iso, os.path.join(a.workdir, "boot"), a.entry)
+            print("cmdline:", cmd, file=sys.stderr)
             cmd += " autotest_never_use_this_option"
         vm = veilvm.VM(a.img, a.workdir, mode="usb", firmware="bios" if a.bios else "uefi",
                        memory=a.memory, kernel=kernel, initrd=initrd, cmdline=cmd, network=not a.no_network)

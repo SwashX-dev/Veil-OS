@@ -1,0 +1,46 @@
+{
+ "results": [
+  {
+   "id": "9.create",
+   "name": "Persistent Storage can be created (LUKS2)",
+   "status": "PASS",
+   "evidence": "rc=0 ()\n \n({'State': <'UNLOCKED'>, 'Error': <uint32 0>, 'IsCreated': <true>, 'IsUnlocked': <true>, 'IsUpgraded': <true>, 'CanDelete': <false>, 'CanUnlock': <false>, 'BootDeviceIsSupported': <true>, 'Device': <'/dev/sda2'>, 'Job': <objectpath '/'>},)"
+  },
+  {
+   "id": "9.veil_nix_feature",
+   "name": "Veil 'Nix Packages' feature activates (bind mount of /nix)",
+   "status": "PASS",
+   "evidence": "rc=0 ()\n \n/dev/mapper/TailsData_unlocked[/veil-nix/store] /nix\n/dev/mapper/TailsData_unlocked is active and is in use.\n  type:    LUKS2\n  cipher:  aes-xts-plain64\n/home/amnesia/.local/state/nix\tsource=veil-nix/state\n/home/amnesia/Persistent\tsource=Persistent\n/nix\tsource=veil-nix/store\n/var/cache/apt/archives\tsource=apt/cache\n/var/lib/apt/lists\tsource=apt/lists"
+  },
+  {
+   "id": "9.write",
+   "name": "Write test files",
+   "status": "PASS",
+   "evidence": "/home/amnesia/Persistent/:\ntotal 8\ndrwx------  2 amnesia amnesia 4096 Nov 21 11:30 .\ndrwx------ 23 amnesia amnesia  580 Nov 21 11:30 ..\n-rw-r--r--  1 amnesia amnesia   18 Nov 21 11:30 marker.txt\n\n/nix/:\ntotal 16\ndrwxr-xr-x 4 amnesia amnesia 4096 Nov 21 11:30 .\ndrwxr-xr-x 1 root    root     180 Nov 21 11:29 ..\n-rw-r--r-- 1 amnesia amnesia   11 Nov 21 11:30 marker.txt\ndrwxr-xr-x 2 amnesia amnesia 4096 Nov 17 09:38 store\ndrwxr-xr-x 3 amnesia amnesia 4096 Nov 17 09:38 var"
+  },
+  {
+   "id": "9.unlock",
+   "name": "Persistent Storage unlocks from the Welcome Screen",
+   "status": "PASS",
+   "evidence": "None unlock-clicked"
+  },
+  {
+   "id": "9.persisted",
+   "name": "Persistent files survive reboot (Persistent folder + /nix)",
+   "status": "PASS",
+   "evidence": "PERSISTENT-MARKER\nNIX-MARKER\nAMNESIC-GONE"
+  },
+  {
+   "id": "2.amnesia_reboot",
+   "name": "Files outside Persistent Storage are gone after reboot",
+   "status": "PASS",
+   "evidence": "PERSISTENT-MARKER\nNIX-MARKER\nAMNESIC-GONE"
+  },
+  {
+   "id": "9.boot_without_unlock",
+   "name": "Booting without unlocking works and keeps persistent data hidden",
+   "status": "PASS",
+   "evidence": "ls: cannot access '/home/amnesia/Persistent': No such file or directory\nNOT-UNLOCKED\nNIX-HIDDEN"
+  }
+ ]
+}

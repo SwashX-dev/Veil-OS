@@ -9,8 +9,10 @@ and booting from USB.
 
 | Area | Status |
 |---|---|
-| UEFI boot (QEMU/OVMF) | see TEST-REPORT.md |
-| Legacy BIOS boot (QEMU/SeaBIOS) | see TEST-REPORT.md |
+| UEFI boot (QEMU/OVMF) | **PASS** (0.1.0-alpha.1, automated) |
+| Legacy BIOS boot (QEMU/SeaBIOS) | **PASS** to the Welcome Screen (0.1.0-alpha.1, manual) |
+| Troubleshooting Mode (noapic/nolapic/nosmp) | **PASS** in QEMU |
+| USB stick size | Tails' check requires **≥ 8 GB** (a 1.9 GB stick is refused at boot) |
 | Physical laptops/desktops (Intel/AMD/NVIDIA GPUs, Wi-Fi chipsets, USB 2/3, SATA/NVMe hosts) | **untested by the Veil project**; inherited from Tails |
 | Secure Boot | Tails' signed shim, GRUB and kernel are unchanged, so expected to work; **untested** |
 | Vulkan GPU inference (Mesa: AMD/Intel) | built in; **untested on real GPUs** |
