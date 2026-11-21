@@ -1,0 +1,19 @@
+# Veil Network Guard: read-only inspection of firewall rules, sockets and
+# Tor circuit counts. The helper accepts only these exact argument lists,
+# modifies nothing, and never reveals relay identities or destinations.
+# Exposing firewall rules and socket owners to the live user is an
+# information disclosure the live user could largely infer anyway.
+[[commands]]
+executable = "/usr/local/lib/veil/netguard-helper"
+args = ["firewall"]
+allowed_user = "amnesia"
+
+[[commands]]
+executable = "/usr/local/lib/veil/netguard-helper"
+args = ["sockets"]
+allowed_user = "amnesia"
+
+[[commands]]
+executable = "/usr/local/lib/veil/netguard-helper"
+args = ["tor"]
+allowed_user = "amnesia"

@@ -1,0 +1,8 @@
+# Veil Agent defaults. These cannot enable networking or credential access:
+# both are per-session grants that only the person at the keyboard can give.
+[agent]
+level = "read-only"     # read-only | workspace   (full-control is never a default)
+mode = "agent"          # direct | agent | research | terminal
+max_steps = 24
+temperature = 0.3
+context = 8192

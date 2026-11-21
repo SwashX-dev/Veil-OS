@@ -1,0 +1,49 @@
+#!/bin/sh
+# Create SHA256SUMS (+ OpenPGP signature) for Veil artifacts and upload them
+# to a GitHub release with `gh`.
+#
+#   bin/veil-release DIR [--key FPR] [--publish]
+#
+# Assets larger than GitHub's 2 GiB per-file limit are split into
+# 1.9 GiB parts (FILE.partNN) and SHA256SUMS lists the reassembled file too.
+set -eu
+DIR="$1"; shift
+KEY=""; PUBLISH=0
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --key) KEY="$2"; shift 2 ;;
+        --publish) PUBLISH=1; shift ;;
+        *) echo "unknown option $1" >&2; exit 2 ;;
+    esac
+done
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+VERSION="$(cat "${ROOT}/config/VEIL_VERSION")"
+TAG="v${VERSION}"
+cd "${DIR}"
+ls veil-amd64-"${VERSION}".* >/dev/null
+sha256sum veil-amd64-"${VERSION}".iso veil-amd64-"${VERSION}".img > SHA256SUMS
+LIMIT=$((2000 * 1024 * 1024))
+ASSETS="SHA256SUMS"
+for f in veil-amd64-"${VERSION}".iso veil-amd64-"${VERSION}".img; do
+    size=$(stat -c %s "${f}")
+    if [ "${size}" -gt "${LIMIT}" ]; then
+        split -b 1900M -d -a 2 "${f}" "${f}.part"
+        sha256sum "${f}".part* >> SHA256SUMS
+        ASSETS="${ASSETS} $(ls "${f}".part* | tr '\n' ' ')"
+    else
+        ASSETS="${ASSETS} ${f}"
+    fi
+done
+for f in veil-amd64-"${VERSION}".packages veil-amd64-"${VERSION}".build-manifest; do
+    [ -e "${f}" ] && { sha256sum "${f}" >> SHA256SUMS; ASSETS="${ASSETS} ${f}"; }
+done
+if [ -n "${KEY}" ]; then
+    gpg --batch --yes --local-user "${KEY}" --armor --detach-sign --output SHA256SUMS.asc SHA256SUMS
+    gpg --verify SHA256SUMS.asc SHA256SUMS
+    ASSETS="${ASSETS} SHA256SUMS.asc"
+fi
+NOTES="${ROOT}/docs/veil/release-notes/${TAG}.md"
+DRAFT="--draft"; [ "${PUBLISH}" = 1 ] && DRAFT=""
+# shellcheck disable=SC2086
+gh release create "${TAG}" ${DRAFT} --prerelease --title "Veil OS ${VERSION}" \
+    --notes-file "${NOTES}" --repo SwashX-dev/Veil-OS ${ASSETS}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "flakes": [
+    {
+      "from": { "type": "indirect", "id": "nixpkgs" },
+      "to": { "type": "github", "owner": "NixOS", "repo": "nixpkgs", "rev": "f7e804372523bedd74d273b173de45c8e02c6d9a" }
+    },
+    {
+      "from": { "type": "indirect", "id": "veil" },
+      "to": { "type": "path", "path": "/usr/share/veil/nix" }
+    }
+  ]
+}

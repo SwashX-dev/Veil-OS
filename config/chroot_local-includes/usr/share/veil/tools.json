@@ -1,0 +1,619 @@
+{
+ "schema": 1,
+ "network_policies": {
+  "none": "No network use.",
+  "tor-tcp": "TCP only; transparently routed through Tor as the live user. UDP/ICMP/raw packets are blocked.",
+  "lan-direct": "Talks to the local network directly (allowed by Tails for LAN addresses; not anonymous).",
+  "offline-lab": "Needs raw sockets/UDP: run it inside `veil lab` against local targets (no Internet route).",
+  "root-capture": "Packet capture needs root (set an administration password in the Welcome Screen).",
+  "radio": "Uses Wi-Fi/radio hardware directly (monitor mode): exposes nothing over IP but is visible over the air."
+ },
+ "tools": [
+  {
+   "name": "nmap",
+   "category": "network-analysis",
+   "source": "base",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user|lab",
+   "description": "Network scanner",
+   "notes": "Over Tor only TCP connect scans work (-sT -Pn); use `veil lab` for SYN/UDP/OS scans against lab targets."
+  },
+  {
+   "name": "tcpdump",
+   "category": "packet-inspection",
+   "source": "base",
+   "network_policy": "root-capture",
+   "privacy": "caution",
+   "mode": "root",
+   "description": "Packet capture",
+   "notes": "Needs root (administration password). Captures can contain identifying data; store them only in Persistent Storage you trust."
+  },
+  {
+   "name": "tshark",
+   "category": "packet-inspection",
+   "source": "base",
+   "network_policy": "root-capture",
+   "privacy": "caution",
+   "mode": "root",
+   "description": "Wireshark CLI",
+   "notes": "Offline PCAP analysis needs no privileges."
+  },
+  {
+   "name": "wireshark",
+   "category": "packet-inspection",
+   "source": "base",
+   "network_policy": "root-capture",
+   "privacy": "caution",
+   "mode": "root|user",
+   "description": "Packet analyzer GUI",
+   "notes": "Live capture needs root; analyzing saved PCAPs works as the live user with no network."
+  },
+  {
+   "name": "ngrep",
+   "category": "packet-inspection",
+   "source": "base",
+   "network_policy": "root-capture",
+   "privacy": "caution",
+   "mode": "root",
+   "description": "grep for network traffic",
+   "notes": ""
+  },
+  {
+   "name": "socat",
+   "category": "network-analysis",
+   "source": "base",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user",
+   "description": "Socket relay",
+   "notes": "TCP via Tor only; UDP is blocked."
+  },
+  {
+   "name": "gdb",
+   "category": "reverse-engineering",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Debugger",
+   "notes": "ptrace of other users' processes is blocked by Tails (ptrace_scope=2)."
+  },
+  {
+   "name": "strace",
+   "category": "reverse-engineering",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Syscall tracer",
+   "notes": ""
+  },
+  {
+   "name": "ltrace",
+   "category": "reverse-engineering",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Library call tracer",
+   "notes": ""
+  },
+  {
+   "name": "checksec",
+   "category": "vulnerability-assessment",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Binary hardening checker",
+   "notes": ""
+  },
+  {
+   "name": "yara",
+   "category": "malware-analysis",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Pattern matching for malware research",
+   "notes": ""
+  },
+  {
+   "name": "lynis",
+   "category": "defensive-security",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "root",
+   "description": "System hardening audit",
+   "notes": ""
+  },
+  {
+   "name": "chkrootkit",
+   "category": "incident-response",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "root",
+   "description": "Rootkit scanner",
+   "notes": ""
+  },
+  {
+   "name": "rkhunter",
+   "category": "incident-response",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "root",
+   "description": "Rootkit hunter",
+   "notes": "Do not run --update/--propupd online without reason; database updates go through Tor."
+  },
+  {
+   "name": "aircrack-ng",
+   "category": "wireless-security",
+   "source": "base",
+   "network_policy": "radio",
+   "privacy": "caution",
+   "mode": "root",
+   "description": "Wi-Fi auditing suite",
+   "notes": "Monitor mode uses your Wi-Fi card directly; its (spoofed) MAC is visible over the air. Only test networks you are authorized to test."
+  },
+  {
+   "name": "age",
+   "category": "cryptography",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Simple file encryption",
+   "notes": ""
+  },
+  {
+   "name": "gnupg",
+   "category": "cryptography",
+   "source": "tails",
+   "network_policy": "tor-tcp",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "OpenPGP (Tails default)",
+   "notes": ""
+  },
+  {
+   "name": "keepassxc",
+   "category": "cryptography",
+   "source": "tails",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Password manager (Tails default)",
+   "notes": ""
+  },
+  {
+   "name": "binwalk",
+   "category": "forensics",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Firmware analysis",
+   "notes": ""
+  },
+  {
+   "name": "sleuthkit",
+   "category": "forensics",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Disk image forensics",
+   "notes": "Analyze images, not live internal disks: Veil never mounts them automatically."
+  },
+  {
+   "name": "foremost",
+   "category": "forensics",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "File carving",
+   "notes": ""
+  },
+  {
+   "name": "testdisk",
+   "category": "forensics",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "root",
+   "description": "Partition/data recovery",
+   "notes": ""
+  },
+  {
+   "name": "hashdeep",
+   "category": "forensics",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Recursive hashing",
+   "notes": ""
+  },
+  {
+   "name": "ssdeep",
+   "category": "malware-analysis",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Fuzzy hashing",
+   "notes": ""
+  },
+  {
+   "name": "john",
+   "category": "cryptography",
+   "source": "base",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Password auditing (offline)",
+   "notes": ""
+  },
+  {
+   "name": "sqlmap",
+   "category": "web-application",
+   "source": "base",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user",
+   "description": "SQL injection testing",
+   "notes": "Use --tor is unnecessary: traffic is already Torified. Only test authorized targets."
+  },
+  {
+   "name": "mat2",
+   "category": "metadata",
+   "source": "tails",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Metadata removal (Tails default)",
+   "notes": ""
+  },
+  {
+   "name": "ghidra",
+   "category": "reverse-engineering",
+   "source": "nix:bundle:reverse-engineering",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "ghidra (reverse engineering)",
+   "notes": "Ghidra's update checks and extension downloads, if used, go through Tor."
+  },
+  {
+   "name": "cutter",
+   "category": "reverse-engineering",
+   "source": "nix:bundle:reverse-engineering",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "cutter (reverse engineering)",
+   "notes": ""
+  },
+  {
+   "name": "radare2",
+   "category": "reverse-engineering",
+   "source": "nix:bundle:reverse-engineering",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "radare2 (reverse engineering)",
+   "notes": ""
+  },
+  {
+   "name": "rizin",
+   "category": "reverse-engineering",
+   "source": "nix:bundle:reverse-engineering",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "rizin (reverse engineering)",
+   "notes": ""
+  },
+  {
+   "name": "imhex",
+   "category": "reverse-engineering",
+   "source": "nix:bundle:reverse-engineering",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "imhex (reverse engineering)",
+   "notes": ""
+  },
+  {
+   "name": "jadx",
+   "category": "reverse-engineering",
+   "source": "nix:bundle:reverse-engineering",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "jadx (reverse engineering)",
+   "notes": ""
+  },
+  {
+   "name": "apktool",
+   "category": "reverse-engineering",
+   "source": "nix:bundle:reverse-engineering",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "apktool (reverse engineering)",
+   "notes": ""
+  },
+  {
+   "name": "upx",
+   "category": "reverse-engineering",
+   "source": "nix:bundle:reverse-engineering",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "upx (reverse engineering)",
+   "notes": ""
+  },
+  {
+   "name": "zap",
+   "category": "web-application",
+   "source": "nix:bundle:web-appsec",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user",
+   "description": "OWASP ZAP proxy/scanner",
+   "notes": "Add-on updates go through Tor; active scans are slow over Tor. Only scan authorized targets."
+  },
+  {
+   "name": "ffuf",
+   "category": "web-application",
+   "source": "nix:bundle:web-appsec",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user",
+   "description": "ffuf (web fuzzing/scanning)",
+   "notes": "Heavy request volume over Tor is slow and burdens the network; prefer lab targets."
+  },
+  {
+   "name": "gobuster",
+   "category": "web-application",
+   "source": "nix:bundle:web-appsec",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user",
+   "description": "gobuster (web fuzzing/scanning)",
+   "notes": "Heavy request volume over Tor is slow and burdens the network; prefer lab targets."
+  },
+  {
+   "name": "nuclei",
+   "category": "web-application",
+   "source": "nix:bundle:web-appsec",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user",
+   "description": "nuclei (web fuzzing/scanning)",
+   "notes": "Heavy request volume over Tor is slow and burdens the network; prefer lab targets."
+  },
+  {
+   "name": "mitmproxy",
+   "category": "web-application",
+   "source": "nix:bundle:web-appsec",
+   "network_policy": "tor-tcp",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Intercepting proxy",
+   "notes": ""
+  },
+  {
+   "name": "semgrep",
+   "category": "vulnerability-assessment",
+   "source": "nix:bundle:web-appsec",
+   "network_policy": "tor-tcp",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Static analysis",
+   "notes": "Use --metrics=off and local rules (--config path) to avoid contacting semgrep.dev."
+  },
+  {
+   "name": "trivy",
+   "category": "vulnerability-assessment",
+   "source": "nix:bundle:web-appsec",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user",
+   "description": "Vulnerability/SBOM scanner",
+   "notes": "Downloads its vulnerability DB through Tor on first run; use --offline-scan afterwards."
+  },
+  {
+   "name": "gitleaks",
+   "category": "defensive-security",
+   "source": "nix:bundle:web-appsec",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Secret scanner",
+   "notes": ""
+  },
+  {
+   "name": "burpsuite",
+   "category": "web-application",
+   "source": "nix:bundle:burp",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user",
+   "description": "Burp Suite Community (proprietary)",
+   "notes": "Never pre-installed; `veil install bundle:burp` asks you to accept PortSwigger's license."
+  },
+  {
+   "name": "volatility3",
+   "category": "forensics",
+   "source": "nix:bundle:volatility",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Memory forensics",
+   "notes": "Symbol tables may be downloaded on demand through Tor; Volatility Software License."
+  },
+  {
+   "name": "chainsaw",
+   "category": "threat-hunting",
+   "source": "nix:bundle:forensics",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Windows event log hunting",
+   "notes": ""
+  },
+  {
+   "name": "osquery",
+   "category": "threat-hunting",
+   "source": "nix:bundle:forensics",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user|root",
+   "description": "SQL-based OS inspection",
+   "notes": ""
+  },
+  {
+   "name": "zeek",
+   "category": "network-analysis",
+   "source": "nix:bundle:network-ids",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Network security monitor",
+   "notes": "Use on PCAP files (zeek -r). Live capture needs root."
+  },
+  {
+   "name": "suricata",
+   "category": "defensive-security",
+   "source": "nix:bundle:network-ids",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "IDS/IPS engine",
+   "notes": "Use on PCAP files (suricata -r). Rule updates go through Tor."
+  },
+  {
+   "name": "kismet",
+   "category": "wireless-security",
+   "source": "nix:bundle:wireless",
+   "network_policy": "radio",
+   "privacy": "caution",
+   "mode": "root",
+   "description": "Wireless detector/sniffer",
+   "notes": "Passive radio monitoring; do not enable its network/GPS integrations."
+  },
+  {
+   "name": "bettercap",
+   "category": "wireless-security",
+   "source": "nix:bundle:wireless",
+   "network_policy": "offline-lab",
+   "privacy": "lab-only",
+   "mode": "root|lab",
+   "description": "Network attack/monitoring framework",
+   "notes": "ARP/DNS spoofing modules are LAN attacks: use only in labs or networks you are authorized to test."
+  },
+  {
+   "name": "masscan",
+   "category": "penetration-testing",
+   "source": "nix:bundle:offensive-lab",
+   "network_policy": "offline-lab",
+   "privacy": "lab-only",
+   "mode": "user|lab",
+   "description": "masscan",
+   "notes": "Raw-socket/UDP tool: Veil confines it to `veil lab`."
+  },
+  {
+   "name": "thc-hydra",
+   "category": "penetration-testing",
+   "source": "nix:bundle:offensive-lab",
+   "network_policy": "offline-lab",
+   "privacy": "lab-only",
+   "mode": "user|lab",
+   "description": "thc-hydra",
+   "notes": "Raw-socket/UDP tool: Veil confines it to `veil lab`."
+  },
+  {
+   "name": "netexec",
+   "category": "penetration-testing",
+   "source": "nix:bundle:offensive-lab",
+   "network_policy": "offline-lab",
+   "privacy": "lab-only",
+   "mode": "user|lab",
+   "description": "netexec",
+   "notes": "Raw-socket/UDP tool: Veil confines it to `veil lab`."
+  },
+  {
+   "name": "responder",
+   "category": "penetration-testing",
+   "source": "nix:bundle:offensive-lab",
+   "network_policy": "offline-lab",
+   "privacy": "lab-only",
+   "mode": "user|lab",
+   "description": "responder",
+   "notes": "Raw-socket/UDP tool: Veil confines it to `veil lab`."
+  },
+  {
+   "name": "hashcat",
+   "category": "penetration-testing",
+   "source": "nix:bundle:offensive-lab",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user|lab",
+   "description": "hashcat",
+   "notes": ""
+  },
+  {
+   "name": "amass",
+   "category": "penetration-testing",
+   "source": "nix:bundle:offensive-lab",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user|lab",
+   "description": "amass",
+   "notes": ""
+  },
+  {
+   "name": "subfinder",
+   "category": "penetration-testing",
+   "source": "nix:bundle:offensive-lab",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user|lab",
+   "description": "subfinder",
+   "notes": ""
+  },
+  {
+   "name": "dnsrecon",
+   "category": "penetration-testing",
+   "source": "nix:bundle:offensive-lab",
+   "network_policy": "tor-tcp",
+   "privacy": "tor-limited",
+   "mode": "user|lab",
+   "description": "dnsrecon",
+   "notes": ""
+  },
+  {
+   "name": "ollama",
+   "category": "ai",
+   "source": "nix:bundle:ai",
+   "network_policy": "none",
+   "privacy": "compatible",
+   "mode": "user",
+   "description": "Local LLM server",
+   "notes": "Veil Agent runs it in a no-network sandbox; `ollama pull` itself needs network and Tor."
+  }
+ ],
+ "privacy_status": {
+  "compatible": "Works within the Tails/Veil privacy model.",
+  "tor-limited": "Works over Tor with reduced functionality (TCP connect only, slower).",
+  "lab-only": "Incompatible with Tor; Veil confines it to offline labs.",
+  "caution": "Can reveal identifying information (hardware, radio, or LAN presence). Read the notes."
+ }
+}

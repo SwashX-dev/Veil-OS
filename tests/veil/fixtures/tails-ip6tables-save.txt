@@ -1,0 +1,7 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT DROP [0:0]
+[0:0] -A OUTPUT -j LOG --log-prefix "Dropped outbound packet: " --log-level 7 --log-uid
+[0:0] -A OUTPUT -j REJECT --reject-with icmp6-port-unreachable
+COMMIT

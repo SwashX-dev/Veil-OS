@@ -1,0 +1,16 @@
+#!/usr/bin/python3 -I
+"""Notify the user when a newer Veil OS release exists (never installs anything)."""
+
+import subprocess
+
+from veil import update
+
+try:
+    rel = update.latest()
+except OSError:
+    rel = None
+if rel and update._parse(rel["tag"]) > update._parse(update.current()):
+    subprocess.run(["notify-send", "--app-name=Veil OS", "--icon=veil-logo",
+                    f"Veil OS {rel['tag']} is available",
+                    "Download it, verify it, and install it to your USB stick. "
+                    f"Release notes: {rel['url']}"], check=False)

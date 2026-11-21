@@ -1,0 +1,20 @@
+#!/bin/sh
+# Rename Tails build artifacts (tails-amd64-<tails version>.*) to
+# veil-amd64-<veil version>.* in the given directory (default: .).
+set -eu
+DIR="${1:-.}"
+VEIL_VERSION="$(cat "$(dirname "$0")/../config/VEIL_VERSION")"
+found=0
+for f in "${DIR}"/tails-amd64-*; do
+    [ -e "${f}" ] || continue
+    base="$(basename "${f}")"
+    ext="${base#tails-amd64-*[0-9]}"          # .iso, .img, .build-manifest, .packages, ...
+    case "${base}" in
+        *.iso) ext=".iso" ;; *.img) ext=".img" ;; *.build-manifest) ext=".build-manifest" ;;
+        *.packages) ext=".packages" ;; *.buildlog) ext=".buildlog" ;; *.apt-sources) ext=".apt-sources" ;;
+    esac
+    new="${DIR}/veil-amd64-${VEIL_VERSION}${ext}"
+    mv -v "${f}" "${new}"
+    found=1
+done
+[ "${found}" = 1 ] || { echo "no tails-amd64-* artifacts in ${DIR}" >&2; exit 1; }

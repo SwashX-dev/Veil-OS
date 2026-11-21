@@ -1,0 +1,100 @@
+{
+  "reverse-engineering": {
+    "description": "Disassemblers, decompilers and binary analysis",
+    "packages": [
+      "ghidra",
+      "cutter",
+      "radare2",
+      "rizin",
+      "imhex",
+      "jadx",
+      "apktool",
+      "upx"
+    ]
+  },
+  "web-appsec": {
+    "description": "Web application and code security (ZAP, fuzzers, SAST, SCA)",
+    "packages": [
+      "zap",
+      "ffuf",
+      "gobuster",
+      "nuclei",
+      "mitmproxy",
+      "semgrep",
+      "trivy",
+      "gitleaks"
+    ]
+  },
+  "burp": {
+    "description": "Burp Suite Community (PROPRIETARY license, never pre-installed)",
+    "packages": [
+      "burpsuite"
+    ],
+    "unfree": true,
+    "license_url": "https://portswigger.net/burp/eula/community"
+  },
+  "forensics": {
+    "description": "Disk forensics and threat hunting (Volatility is a separate bundle)",
+    "packages": [
+      "binwalk",
+      "yara",
+      "chainsaw",
+      "osquery"
+    ]
+  },
+  "network-ids": {
+    "description": "Network security monitoring (Zeek, Suricata) for offline PCAP analysis",
+    "packages": [
+      "zeek",
+      "suricata"
+    ]
+  },
+  "wireless": {
+    "description": "Wireless monitoring (Kismet, bettercap)",
+    "packages": [
+      "kismet",
+      "bettercap"
+    ]
+  },
+  "offensive-lab": {
+    "description": "Authorized testing tools for offline labs (most cannot work over Tor)",
+    "packages": [
+      "masscan",
+      "thc-hydra",
+      "netexec",
+      "responder",
+      "hashcat",
+      "amass",
+      "subfinder",
+      "dnsrecon"
+    ]
+  },
+  "ai": {
+    "description": "Extra local inference engines (Ollama, llama.cpp with Vulkan GPU support)",
+    "packages": [
+      "ollama",
+      "llama-cpp-vulkan"
+    ]
+  },
+  "dev": {
+    "description": "Development environment (Python, C, Go, Rust, Node.js, QEMU for disposable VMs)",
+    "packages": [
+      "python3",
+      "gcc",
+      "gnumake",
+      "go",
+      "rustc",
+      "cargo",
+      "nodejs-slim",
+      "qemu"
+    ]
+  },
+  "volatility": {
+    "description": "Volatility 3 memory forensics (Volatility Software License; nixpkgs treats it as unfree)",
+    "packages": [
+      "volatility3"
+    ],
+    "unfree": true,
+    "license_url": "https://www.volatilityfoundation.org/license/vsl-v1.0"
+  }
+}

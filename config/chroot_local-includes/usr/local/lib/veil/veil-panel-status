@@ -1,0 +1,67 @@
+#!/usr/bin/python3 -I
+"""Panel indicator (xfce4-genmon-plugin): Tor and privacy status at a glance.
+
+Cheap, unprivileged checks only; click opens Veil Network Guard for the
+full audit. Shows no IP address, MAC address or circuit information.
+"""
+
+import html
+import os
+import subprocess
+from pathlib import Path
+
+TOR_DONE = Path("/run/tor-has-bootstrapped/done")
+
+
+def tor_state():
+    if TOR_DONE.exists():
+        return "on"
+    try:
+        r = subprocess.run(["systemctl", "is-active", "--quiet", "tails-tor-has-bootstrapped.target"],
+                           timeout=2, check=False)
+        if r.returncode == 0:
+            return "on"
+    except (OSError, subprocess.TimeoutExpired):
+        pass
+    try:
+        out = subprocess.run(["nmcli", "-t", "-f", "STATE", "general"], capture_output=True, text=True,
+                             timeout=2, check=False).stdout.strip()
+    except (OSError, subprocess.TimeoutExpired):
+        out = ""
+    return "connecting" if out.startswith("connected") else "offline"
+
+
+def agent_net_grants():
+    d = Path(os.environ.get("XDG_RUNTIME_DIR", f"/run/user/{os.getuid()}")) / "veil" / "agent" / "network-grants"
+    return len(list(d.iterdir())) if d.is_dir() else 0
+
+
+def persistence():
+    return os.path.ismount("/live/persistence/TailsData_unlocked")
+
+
+def main():
+    t = tor_state()
+    color = {"on": "#4fd1c5", "connecting": "#e0b45c", "offline": "#6c6a78"}[t]
+    label = {"on": "TOR", "connecting": "TOR…", "offline": "OFFLINE"}[t]
+    parts = [f"<span foreground='{color}'>◆ {label}</span>"]
+    grants = agent_net_grants()
+    if grants:
+        parts.append("<span foreground='#e0b45c'>AGENT⇅</span>")
+    if persistence():
+        parts.append("<span foreground='#8b7cf6'>◼ PERSIST</span>")
+    tip = [
+        {"on": "Tor is connected: Internet traffic goes through Tor.",
+         "connecting": "Network up, Tor not ready: nothing leaves this computer except Tor itself.",
+         "offline": "No network connection."}[t],
+        "Veil Agent: network granted to a session." if grants else "Veil Agent: offline.",
+        "Persistent Storage unlocked." if persistence() else "Amnesic session: nothing is kept after shutdown.",
+        "Click for a full privacy audit (Network Guard).",
+    ]
+    print(f"<txt> {'  '.join(parts)} </txt>")
+    print("<tool>" + html.escape("\n".join(tip)) + "</tool>")
+    print("<txtclick>veil-network-guard</txtclick>")
+
+
+if __name__ == "__main__":
+    main()

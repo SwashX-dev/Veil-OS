@@ -1,0 +1,116 @@
+#!/usr/bin/python3 -I
+"""Veil Network Guard privileged helper (READ-ONLY).
+
+Run as root through sudo by the amnesia user; see
+/etc/generate-sudoers.d/veil-netguard.toml. It accepts exactly one
+subcommand from a fixed list, takes no other input, never modifies system
+state, and prints JSON.
+
+  firewall  -> iptables/ip6tables rules (iptables-save format) + counters
+  sockets   -> current inet sockets with owning user and process name
+  tor       -> Tor bootstrap phase and circuit/stream COUNTS only
+               (never relay fingerprints, addresses or destinations)
+"""
+
+import json
+import pwd
+import subprocess
+import sys
+
+ALLOWED = ("firewall", "sockets", "tor")
+
+
+def sh(argv):
+    try:
+        p = subprocess.run(argv, capture_output=True, text=True, timeout=20, check=False)
+        return {"rc": p.returncode, "out": p.stdout, "err": p.stderr[-2000:]}
+    except (FileNotFoundError, subprocess.TimeoutExpired) as e:
+        return {"rc": 127, "out": "", "err": str(e)}
+
+
+def firewall():
+    return {
+        "ipv4": sh(["iptables-save", "-c"]),
+        "ipv6": sh(["ip6tables-save", "-c"]),
+    }
+
+
+def sockets():
+    # -H no header, -n numeric, -p processes, -e extended (uid), -t/-u tcp/udp, -a all
+    r = sh(["ss", "-Htunaep"])
+    rows = []
+    for line in r["out"].splitlines():
+        parts = line.split()
+        if len(parts) < 6:
+            continue
+        netid, state, _rq, _sq, local, peer = parts[:6]
+        rest = " ".join(parts[6:])
+        uid = None
+        if "uid:" in rest:
+            try:
+                uid = int(rest.split("uid:", 1)[1].split()[0].rstrip(","))
+            except ValueError:
+                uid = None
+        user = None
+        if uid is not None:
+            try:
+                user = pwd.getpwuid(uid).pw_name
+            except KeyError:
+                user = str(uid)
+        procs = []
+        if 'users:((' in rest:
+            for chunk in rest.split('users:((', 1)[1].split("),("):
+                name = chunk.split(",", 1)[0].strip('"')
+                if name:
+                    procs.append(name)
+        rows.append({"proto": netid, "state": state, "local": local, "peer": peer,
+                     "user": user, "uid": uid, "processes": sorted(set(procs))})
+    return {"rc": r["rc"], "sockets": rows, "err": r["err"]}
+
+
+def tor():
+    try:
+        from stem.control import Controller  # python3-stem ships with Tails
+    except ImportError:
+        return {"available": False, "error": "python3-stem missing"}
+    try:
+        with Controller.from_port(address="127.0.0.1", port=9052) as c:
+            c.authenticate()
+            phase = c.get_info("status/bootstrap-phase", "")
+            liveness = c.get_info("network-liveness", "unknown")
+            enough_dir = c.get_info("status/enough-dir-info", "0") == "1"
+            circuits = c.get_circuits()
+            built = [x for x in circuits if x.status == "BUILT"]
+            general = [x for x in built if x.purpose == "GENERAL"]
+            streams = c.get_streams()
+            progress = 0
+            for tok in phase.split():
+                if tok.startswith("PROGRESS="):
+                    progress = int(tok.split("=", 1)[1])
+            disabled = c.get_conf("DisableNetwork", "1") == "1"
+            return {
+                "available": True,
+                "version": str(c.get_version()).split()[0],
+                "bootstrap_progress": progress,
+                "network_liveness": liveness,
+                "enough_dir_info": enough_dir,
+                "disable_network": disabled,
+                "circuits_built": len(built),
+                "circuits_general": len(general),
+                "circuits_total": len(circuits),
+                "streams_open": len(streams),
+            }
+    except Exception as e:  # noqa: BLE001 - report, never crash
+        return {"available": False, "error": f"{type(e).__name__}: {e}"}
+
+
+def main():
+    if len(sys.argv) != 2 or sys.argv[1] not in ALLOWED:
+        print(json.dumps({"error": f"usage: netguard-helper {{{'|'.join(ALLOWED)}}}"}))
+        sys.exit(2)
+    out = {"firewall": firewall, "sockets": sockets, "tor": tor}[sys.argv[1]]()
+    print(json.dumps(out))
+
+
+if __name__ == "__main__":
+    main()

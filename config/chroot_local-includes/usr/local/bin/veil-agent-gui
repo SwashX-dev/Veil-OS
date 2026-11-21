@@ -1,0 +1,4 @@
+#!/usr/bin/python3 -I
+import sys
+from veil.agent.gui import main
+sys.exit(main())
