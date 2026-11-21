@@ -51,4 +51,42 @@ XAUTHORITY="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/veil-xauthority"
 : >"$XAUTHORITY"
 export XAUTHORITY
 
-exec /usr/bin/labwc
+# Keep GDM's session alive while retrying a failed renderer initialization.
+# After the desktop is ready, losing the compositor also loses any Wayland
+# screen lock. End the live session through the normal shutdown path.
+VEIL_SESSION_STATE="$(mktemp -d "${XDG_RUNTIME_DIR:?}/veil-session.XXXXXX")" || exit 1
+export VEIL_SESSION_STATE
+trap 'rmdir "$VEIL_SESSION_STATE" 2>/dev/null || true' EXIT
+
+run_compositor() {
+    /usr/bin/labwc --startup /usr/local/lib/veil/veil-desktop-start &
+    compositor=$!
+    trap 'kill "$compositor" 2>/dev/null; wait "$compositor"; exit 0' HUP INT TERM
+    wait "$compositor"
+}
+
+case " $(cat /proc/cmdline) " in
+    *" veil.software-rendering "*) export WLR_RENDERER=pixman ;;
+esac
+run_compositor
+status=$?
+if [ ! -e "$VEIL_SESSION_STATE/ready" ] && [ "${WLR_RENDERER:-}" != pixman ]; then
+    echo "Veil: compositor exited during startup ($status), retrying with Pixman" >&2
+    export WLR_RENDERER=pixman
+    run_compositor
+    status=$?
+fi
+
+if [ -e "$VEIL_SESSION_STATE/ready" ]; then
+    rm -f "$VEIL_SESSION_STATE/ready"
+    echo "Veil: compositor exited after session registration ($status), shutting down" >&2
+    systemctl --no-block poweroff || exit 1
+    # Retain the GDM session until logind terminates it so that a VT switch
+    # does not expose the greeter in the middle of teardown.
+    sleep infinity &
+    compositor=$!
+    wait "$compositor"
+else
+    echo "Veil: compositor startup failed ($status); see the GDM journal" >&2
+    exit 1
+fi

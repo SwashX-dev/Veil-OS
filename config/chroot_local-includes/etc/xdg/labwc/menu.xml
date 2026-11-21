@@ -7,6 +7,10 @@
     <item label="Tor Browser"><action name="Execute" command="tor-browser" /></item>
     <item label="Files"><action name="Execute" command="nautilus --new-window" /></item>
     <separator />
+    <item label="Package Center"><action name="Execute" command="veil-package-center" /></item>
+    <item label="Notifications"><action name="Execute" command="xfce4-notifyd-config" /></item>
+    <item label="Display Settings"><action name="Execute" command="wdisplays" /></item>
+    <item label="Sound Settings"><action name="Execute" command="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center sound" /></item>
     <item label="Persistent Storage"><action name="Execute" command="tails-persistent-storage" /></item>
     <item label="Lock Screen"><action name="Execute" command="tails-screen-locker" /></item>
     <item label="Restart / Shut Down"><action name="Execute" command="veil-shutdown" /></item>

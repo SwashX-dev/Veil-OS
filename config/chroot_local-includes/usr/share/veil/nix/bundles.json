@@ -42,7 +42,9 @@
       "yara",
       "chainsaw",
       "osquery",
-      "unhide"
+      "unhide",
+      "bulk_extractor",
+      "exiftool"
     ]
   },
   "network-ids": {
@@ -99,5 +101,13 @@
     ],
     "unfree": true,
     "license_url": "https://www.volatilityfoundation.org/license/vsl-v1.0"
+  },
+  "host-audit": {
+    "description": "On-demand host auditing and integrity checks without system services",
+    "packages": [
+      "aide",
+      "openscap",
+      "clamav"
+    ]
   }
 }

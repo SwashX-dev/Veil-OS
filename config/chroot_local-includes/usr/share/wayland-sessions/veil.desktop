@@ -5,3 +5,4 @@ Exec=/usr/local/bin/veil-session
 TryExec=/usr/bin/labwc
 Type=Application
 DesktopNames=Veil;XFCE
+X-GDM-SessionRegisters=true

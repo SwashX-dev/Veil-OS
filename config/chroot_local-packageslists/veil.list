@@ -51,7 +51,6 @@ nix-bin
 nmap
 tcpdump
 tshark
-wireshark
 ngrep
 socat
 gdb

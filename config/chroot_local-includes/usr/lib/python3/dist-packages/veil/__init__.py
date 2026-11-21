@@ -9,7 +9,7 @@ stated otherwise, and never weakens the Tails firewall or Tor enforcement.
 
 import os
 
-__version__ = "0.1.0a1"
+__version__ = "1.1.0"
 
 SHARE_DIR = os.environ.get("VEIL_SHARE_DIR", "/usr/share/veil")
 LIB_DIR = os.environ.get("VEIL_LIB_DIR", "/usr/local/lib/veil")

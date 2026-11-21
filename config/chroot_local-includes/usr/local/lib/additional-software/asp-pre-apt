@@ -1,5 +1,6 @@
 #!/usr/bin/python3 -I
 
+import json
 import logging
 import os
 from pathlib import Path
@@ -12,10 +13,31 @@ import additional_software
 """Command to handle Dpkg::Pre-Install-Pkgs."""
 
 
+def check_explicit_removal(names):
+    # Recheck under APT's transaction lock. A different frontend may have
+    # changed the live package graph since Veil simulated the removal.
+    from veil.apt_packages import matches
+
+    if not sys.stdin.readline().startswith("VERSION 3"):
+        raise additional_software.ASPDataError("Expected APT hook data version 3")
+    for line in sys.stdin:
+        if line == "\n":
+            break
+    for line in sys.stdin:
+        pkg, _, arch, _, _, _, _, _, action = line.split()
+        if action != "**REMOVE**" or not any(matches(f"{pkg}:{arch}", name) for name in names):
+            raise additional_software.ASPDataError(f"Removal would also change {pkg}")
+
+
 def main():
     # Exit with success if running inside live-build.
     if "SOURCE_DATE_EPOCH" in os.environ:
-        sys.exit(0)
+        return
+
+    if os.environ.get("VEIL_APT_EXPLICIT") == "1":
+        if removal := os.environ.get("VEIL_APT_REMOVE_ONLY"):
+            check_explicit_removal(json.loads(removal))
+        return
 
     additional_software.set_up_logging(log_to_journal=True)
     logging.info("Saving package changes")

@@ -116,7 +116,12 @@ def install_additional_packages(upgrade_mode=False):
         # as well.
         delete_old_apt_lists()
 
-    packages = get_additional_packages()
+    try:
+        packages = get_additional_packages()
+    except (additional_software.ASPDataError, UnicodeError) as exc:
+        logging.error("Invalid Additional Software configuration: %s", exc)
+        notify_failure(_("The installation of your additional software failed"), str(exc))
+        return False
     if not packages:
         logging.warning("Warning: no packages to install, exiting")
         return True
@@ -128,10 +133,12 @@ def install_additional_packages(upgrade_mode=False):
             _("This can take several minutes."),
             return_id=True,
         )
-    logging.info("Will install the following packages: %s" % " ".join(packages))
+    source = "repositories or cached archives" if upgrade_mode else "cached archives only"
+    logging.info("Installing from %s: %s", source, " ".join(sorted(packages)))
     apt_get_returncode = _launch_apt_get(
         [
             "--no-remove",
+            *([] if upgrade_mode else ["--no-download"]),
             "--option",
             "DPkg::Options::=--force-confold",
             "install",
@@ -174,6 +181,7 @@ def _launch_apt_get(specific_args: list[str]):
     # We will log the output and want it in English when included in bug
     # reports
     apt_get_env["LANG"] = "C"
+    apt_get_env["VEIL_APT_EXPLICIT"] = "1"
     apt_get_env["DEBIAN_PRIORITY"] = "critical"
     args = ["apt-get", "--quiet", "--yes"]
     args.extend(specific_args)
@@ -260,11 +268,10 @@ def main():
 
     additional_software.set_up_logging()
 
-    if args.upgrade:
-        upgrade_additional_packages()
-    else:
-        install_additional_packages()
+    with additional_software.lock_config():
+        operation = upgrade_additional_packages if args.upgrade else install_additional_packages
+        return 0 if operation() else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

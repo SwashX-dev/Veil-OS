@@ -1,5 +1,7 @@
 """Tails Additional Software configuration file management."""
 
+from contextlib import contextmanager
+import fcntl
 import gettext
 import grp
 import logging
@@ -27,6 +29,9 @@ OLD_APT_LISTS_DIR = os.path.join(PERSISTENCE_DIR, "apt", "lists.old")
 APT_ARCHIVES_DIR = "/var/cache/apt/archives"
 APT_LISTS_DIR = "/var/lib/apt/lists"
 PACKAGES_LIST_FILE = "live-additional-software.conf"
+CONFIG_LOCK_FILE = "/run/live-additional-software/config.lock"
+PACKAGE_SPEC = re.compile(r"[a-z0-9][a-z0-9+.-]+(?::[a-z0-9][a-z0-9-]*)?"
+                          r"(?:=[0-9][a-zA-Z0-9:.+~^-]*|/[a-zA-Z0-9][a-zA-Z0-9.+-]*)?")
 
 
 gettext.textdomain("tails")
@@ -71,24 +76,40 @@ def has_additional_packages_list():
         return False
 
 
+@contextmanager
+def lock_config():
+    """Serialize Veil commands with Tails' registration writers and restorer."""
+    with open(CONFIG_LOCK_FILE, "a") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        yield
+
+
 def write_config(packages):
     config_file_owner_uid = pwd.getpwnam(PERSISTENT_STORAGE_USERNAME).pw_uid
     config_file_owner_gid = grp.getgrnam(PERSISTENT_STORAGE_USERNAME).gr_gid
+    path = Path(get_packages_list_path(return_nonexistent=True))
 
-    packages_list_path = get_packages_list_path()
+    fd, tmpfile = tempfile.mkstemp(dir=path.parent, text=True)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as config:
+            os.fchown(config.fileno(), uid=config_file_owner_uid, gid=config_file_owner_gid)
+            os.fchmod(config.fileno(), 0o0644)
+            config.writelines(f"{pkg}\n" for pkg in sorted(packages))
+            config.flush()
+            os.fsync(config.fileno())
+        os.replace(tmpfile, path)
+        dir_fd = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY)
+        try:
+            os.fsync(dir_fd)
+        finally:
+            os.close(dir_fd)
+    finally:
+        Path(tmpfile).unlink(missing_ok=True)
 
-    # Create a temporary file in the same directory which we
-    # will write to and then rename to make saving the config
-    # file an atomic operation (so we can't end up with a
-    # partially written config file if e.g. the user unplugs the
-    # Tails device in the wrong moment).
-    dir_ = Path(packages_list_path).parent
-    fd, tmpfile = tempfile.mkstemp(dir=dir_, text=True)
-    os.fchown(fd, uid=config_file_owner_uid, gid=config_file_owner_gid)
-    os.fchmod(fd, 0o0644)
-    path = Path(tmpfile)
-    path.write_text("\n".join(sorted(packages)))
-    path.rename(packages_list_path)
+
+def package_identity(pkg):
+    """Keep the architecture qualifier and drop any version or release pin."""
+    return re.split("[/=]", pkg, maxsplit=1)[0]
 
 
 def filter_package_details(pkg):
@@ -110,9 +131,11 @@ def get_additional_packages() -> set[str]:
     packages = set()
     try:
         with open(get_packages_list_path()) as f:
-            for line in f:
+            for number, line in enumerate(f, 1):
                 pkg = line.strip()
                 if pkg:
+                    if not PACKAGE_SPEC.fullmatch(pkg):
+                        raise ASPDataError(f"Invalid package selector on line {number}")
                     packages.add(pkg)
     except FileNotFoundError:
         # Just return an empty set.
@@ -128,12 +151,8 @@ def add_additional_packages(new_packages: set[str]) -> None:
     The new_packages argument should be a set of packages names.
     """
     logging.info("Adding to additional packages list: %s", ",".join(new_packages))
-    packages = get_additional_packages()
-    # The list of packages was initially provided by apt after installing them,
-    # so we don't check the names.
-    packages |= new_packages
-
-    write_config(packages)
+    with lock_config():
+        write_config(get_additional_packages() | new_packages)
 
 
 def remove_additional_packages(old_packages: set[str]) -> None:
@@ -144,12 +163,8 @@ def remove_additional_packages(old_packages: set[str]) -> None:
     The old_packages argument should be a list of packages names.
     """
     logging.info("Removing from additional packages list: %s", ",".join(old_packages))
-    packages = get_additional_packages()
-    # The list of packages was initially provided by apt after removing them,
-    # so we don't check the names.
-    packages -= old_packages
-
-    write_config(packages)
+    with lock_config():
+        write_config(get_additional_packages() - old_packages)
 
 
 def notify(

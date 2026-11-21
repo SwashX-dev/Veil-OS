@@ -1,0 +1,4 @@
+#!/usr/bin/python3 -I
+from veil.apt_packages import apt_main
+
+raise SystemExit(apt_main())

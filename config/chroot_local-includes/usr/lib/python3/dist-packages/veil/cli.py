@@ -191,6 +191,18 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("list", help="list installed Nix packages")
     p.set_defaults(fn=cmd_list)
 
+    from veil.apt_packages import persistent_cli
+
+    p = sub.add_parser("packages", help="manage Debian Additional Software")
+    packages = p.add_subparsers(dest="packages_cmd", required=True)
+    p = packages.add_parser("persistent", help="manage packages restored from Persistent Storage")
+    actions = p.add_subparsers(dest="action", required=True)
+    for action in ("list", "add", "remove", "repair", "status", "verify"):
+        command = actions.add_parser(action)
+        if action in ("add", "remove"):
+            command.add_argument("names", nargs="+", metavar="PACKAGE")
+        command.set_defaults(fn=persistent_cli)
+
     p = sub.add_parser("privacy", help="privacy status (Veil Network Guard)")
     p.add_argument("what", nargs="?", default="status", choices=["status"])
     p.add_argument("--json", action="store_true")

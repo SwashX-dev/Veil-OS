@@ -1,0 +1,42 @@
+#!/bin/sh
+# Veil OS session startup (run by labwc once the compositor is up).
+# Core startup does not depend on the user's labwc configuration.
+set -eu
+: "${VEIL_SESSION_STATE:?}" "${LABWC_PID:?}" "${WAYLAND_DISPLAY:?}"
+abort_startup() {
+    echo "Veil: desktop initialization failed" >&2
+    kill -TERM "$LABWC_PID"
+}
+trap abort_startup EXIT
+
+# Make the Wayland session visible to systemd --user and D-Bus activation,
+# then let Tails' session units run exactly as they do under GNOME.
+[ -n "${DISPLAY:-}" ] || export DISPLAY=:0
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY LANG XDG_CURRENT_DESKTOP \
+    XDG_SESSION_TYPE XDG_SESSION_DESKTOP GDK_BACKEND QT_QPA_PLATFORM MOZ_ENABLE_WAYLAND \
+    XKB_DEFAULT_LAYOUT XKB_DEFAULT_VARIANT PATH XDG_DATA_DIRS
+
+# Register the working Wayland session from its own logind session.
+# GDM uses this to mark the display managed and finish greeter handoff.
+busctl --system --timeout=5 call org.gnome.DisplayManager \
+    /org/gnome/DisplayManager/Manager org.gnome.DisplayManager.Manager RegisterSession 'a{sv}' 0
+touch "$VEIL_SESSION_STATE/ready"
+trap - EXIT
+
+# Tails' Tor Connection requires the user IBus instance.
+ibus-daemon --daemonize --replace --panel disable || echo "Veil: IBus startup failed" >&2
+
+systemctl --user --no-block start veil-session.target
+
+# Panel status item must exist before the panel reads its launcher items.
+/usr/local/lib/veil/veil-panel-status --write || echo "Veil: panel status initialization failed" >&2
+/usr/local/lib/veil/veil-panel-status &
+
+swaybg -m fill -i /usr/share/veil/backgrounds/veil-wallpaper.png &
+xfce4-panel --disable-wm-check &
+/usr/libexec/polkit-mate-authentication-agent-1 &
+# nm-applet acts as NetworkManager's secret agent (Wi-Fi passwords) even
+# without a tray to show its icon.
+nm-applet --indicator &
+/usr/local/lib/veil/veil-session-manager-shim &
+/usr/local/lib/veil/veil-autostart &

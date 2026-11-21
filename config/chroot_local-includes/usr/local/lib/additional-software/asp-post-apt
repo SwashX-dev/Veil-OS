@@ -3,7 +3,7 @@
 set -eu
 
 # Exit with success if running inside live-build.
-if [ -n "${SOURCE_DATE_EPOCH:-}" ]; then
+if [ -n "${SOURCE_DATE_EPOCH:-}" ] || [ "${VEIL_APT_EXPLICIT:-}" = 1 ]; then
   exit 0
 fi
 

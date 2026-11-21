@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Veil OS default panel.
      xfce4-panel 4.20 can only host *internal* (in-process) plugins under
-     Wayland; external plugins (whiskermenu, genmon, systray, pulseaudio)
+     Wayland; external plugins (whiskermenu, genmon, pulseaudio)
      need X11 XEmbed. So this layout uses internal plugins only:
        - applicationsmenu  : application menu (Veil logo)
        - tasklist          : open windows
        - launcher 5        : live Tor/privacy status (veil-panel-status rewrites it)
        - launcher 6        : Wi-Fi & network settings
+       - systray (StatusNotifier)
        - clock (UTC)       : Tails always uses UTC
        - launcher 9        : lock / restart / shut down -->
 <channel name="xfce4-panel" version="1.0">
@@ -34,6 +35,7 @@
         <value type="int" value="4"/>
         <value type="int" value="5"/>
         <value type="int" value="6"/>
+        <value type="int" value="7"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
       </property>
@@ -70,6 +72,7 @@
         <value type="string" value="veil-network.desktop"/>
       </property>
     </property>
+    <property name="plugin-7" type="string" value="systray"/>
     <property name="plugin-8" type="string" value="clock">
       <property name="mode" type="uint" value="2"/>
       <property name="timezone" type="string" value="UTC"/>

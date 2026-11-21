@@ -10,6 +10,9 @@ echo "Veil: configuring the Veil desktop session"
 
 # No X11 sessions: X.Org is not installed (same as Tails).
 rm -f /usr/share/xsessions/*.desktop
+# GDM still needs GNOME Shell and gnome-session for the Tails greeter.
+# Select Veil explicitly for regular logins.
+sed -i '/^\[daemon\]$/a DefaultSession=veil.desktop' /etc/gdm3/daemon.conf
 
 # The Tails automatic upgrader downloads Tails incremental upgrades, which
 # cannot be applied to a derivative: Veil checks its own releases instead
@@ -34,10 +37,16 @@ if command -v gtk-update-icon-cache >/dev/null; then
     gtk-update-icon-cache -f -t /usr/share/icons/hicolor || true
 fi
 
+# Run XFCE's own tray in-process so its Wayland StatusNotifier code works
+# without the external XEmbed wrapper. Legacy X11 tray icons stay unavailable.
+TRAY=/usr/share/xfce4/panel/plugins/systray.desktop
+sed -i 's/^X-XFCE-Internal=false$/X-XFCE-Internal=true/' "$TRAY"
+grep -qx 'X-XFCE-Internal=true' "$TRAY"
+
 # Sanity checks: the pieces the session needs must be present.
 for f in /usr/bin/labwc /usr/bin/xfce4-panel /usr/bin/swaybg /usr/bin/swaylock /usr/bin/ibus-daemon \
          /usr/libexec/polkit-mate-authentication-agent-1 \
-         /usr/share/wayland-sessions/veil.desktop; do
+         /usr/local/lib/veil/veil-desktop-start /usr/share/wayland-sessions/veil.desktop; do
     [ -e "${f}" ] || { echo "Veil session: missing ${f}" >&2; exit 1; }
 done
 if [ -e /usr/share/wayland-sessions/gnome.desktop ]; then
