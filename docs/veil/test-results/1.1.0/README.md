@@ -83,7 +83,38 @@ blocked the live user's Internet access. Network Guard reported zero
 failing checks and a warning about the Tails LAN policy, which allows
 local-network traffic outside Tor.
 
-These tests need to be repeated against the clean image. Physical GPU
-and display behavior, idle locking, desktop icons, complete settings
-coverage, Agent inference and the full toolkit matrix remain separate
-validation items.
+## Clean-image verification (release artifacts)
+
+Image `veil-amd64-1.1.0.img` (2,017,460,224 bytes, SHA-256
+`54581e655c65233f1a4dc5941b61ebbe02358e89d558b60b9405d9784a4cff96`) was built with the
+official Tails build system from commit `68928b0773c`. Later commits change only tests,
+documentation and `bin/veil-release`, not image contents. All results below are from
+QEMU/KVM (UEFI) with the image attached as a USB stick.
+
+- Full suite (`tests/vm/run_tests.py`, [`veil-vm-tests.json`](veil-vm-tests.json)): 39 of 39
+  checks passed. This covers the XFCE session, amnesia, the internal-disk canary, Tor
+  routing, DNS and IPv6 leak checks, the kill switch, Network Guard (0 failing checks, 1
+  warning for the Tails LAN policy), the security audit (0 failing checks), the agent
+  sandbox, a model download over Tor, local inference, offline labs, Nix over Tor, all
+  application launches, and a clean shutdown. The Welcome Screen appeared after 39.1 s and
+  the desktop 9.8 s after Start. The alpha took 45.1 s and 15.9 s on the same host, but runs
+  differ in load, so this is no evidence of a speed-up.
+- Encrypted-persistence APT suite (`tests/vm/apt_persistence_test.py`,
+  [`apt-persistence.json`](apt-persistence.json)): 56 of 56 checks passed on four boots of
+  the clean image. It covers signed index and package-hash enforcement, interrupted
+  install and removal with repair, temporary versus persistent installs, upgrade, offline
+  restore from the encrypted cache, persistent removal, rejection of a corrupted
+  registration, and the locked-storage refusal.
+
+## Not tested
+
+- **No physical hardware.** The original desktop failure came from real hardware. Its
+  trigger is unknown. The handoff and recovery fixes are verified only in virtual machines.
+- GPU, Wi-Fi and Secure Boot behaviour; Vulkan offload for the agent.
+- An in-place upgrade from 0.1.0-alpha.1 to 1.1.0 (the upgrade check could not be completed).
+  Update integrity rests on the signed checksums. Reinstalling by re-flashing is the
+  supported path.
+- Idle locking and desktop icons, complete settings coverage, input methods, screen reader.
+- Bit-for-bit reproducibility, and the upstream Tails Cucumber suite.
+
+This is a **prerelease**: do not rely on it where your safety depends on it.
