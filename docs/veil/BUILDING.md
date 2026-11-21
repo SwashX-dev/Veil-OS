@@ -29,6 +29,12 @@ Notes from the reference build (rootless NixOS host, nested Debian VM):
 
 - The Rakefile needs an `origin/<base_branch>` ref (`origin/stable`) to
   exist, even with `nomergebasebranch`.
+- Building from a branch based on `stable` requires the last *two* Tails
+  versions in `debian/changelog` to exist as git tags (`7.17.1` and `7.17`).
+  This repository carries those upstream tags; if you mirror it, fetch them
+  too (`git fetch upstream 'refs/tags/7.17*:refs/tags/7.17*'`).
+- Run long builds as a system service (e.g. `systemd-run`) so that
+  session or watchdog restarts on a loaded host cannot kill them.
 - libvirt's QEMU user must be able to read the source tree. If your home is
   mode 700, use `chmod o+rx $HOME` (or build elsewhere).
 - Upstream hosts moved: GitLab is gitlab.tails.net, APT snapshots are
