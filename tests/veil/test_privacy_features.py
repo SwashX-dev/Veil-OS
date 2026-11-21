@@ -329,6 +329,43 @@ class TestDiagnostics(unittest.TestCase):
         self.assertIn("0000:01:00.0", line)
 
 
+class TestSafeGraphicsDetection(unittest.TestCase):
+    """Run veil-session's real detection code against fake /sys/class/drm trees."""
+
+    SESSION = INC / "usr/local/bin/veil-session"
+
+    def decide(self, driver: str | None, cmdline: str) -> str:
+        import re
+        import shutil
+        import subprocess
+        if not shutil.which("unshare"):
+            self.skipTest("unshare not available")
+        text = self.SESSION.read_text()
+        fn = re.search(r"^nouveau_in_use\(\) \{.*?^\}", text, re.S | re.M).group(0)
+        block = re.search(r'^cmdline=" \$\(cat /proc/cmdline\) "\n.*?^esac$', text, re.S | re.M).group(0)
+        block = block.replace("$(cat /proc/cmdline)", "$CMD")
+        with tempfile.TemporaryDirectory() as tmp:
+            drm = Path(tmp, "drm")
+            (drm / "card1/device").mkdir(parents=True)
+            if driver:
+                (Path(tmp, "drivers") / driver).mkdir(parents=True)
+                os.symlink(Path(tmp, "drivers") / driver, drm / "card1/device/driver")
+            script = f"mount --bind {drm} /sys/class/drm && CMD='{cmdline}' && {fn}\n{block}\necho \"${{VEIL_SAFE_GRAPHICS:-}}\""
+            r = subprocess.run(["unshare", "-rm", "sh", "-c", script], capture_output=True, text=True, check=False)
+        if r.returncode != 0:
+            self.skipTest(f"cannot create a mount namespace here: {r.stderr.strip()[:100]}")
+        return r.stdout.strip()
+
+    def test_decisions(self):
+        self.assertEqual(self.decide("nouveau", "quiet"), "nouveau")
+        self.assertEqual(self.decide("amdgpu", "quiet"), "")
+        self.assertEqual(self.decide("nvidia", "quiet"), "")
+        self.assertEqual(self.decide(None, "quiet"), "")
+        self.assertEqual(self.decide("nouveau", "quiet veil.gpu-rendering"), "")
+        self.assertEqual(self.decide("amdgpu", "quiet nomodeset"), "nomodeset")
+        self.assertEqual(self.decide("nouveau", "nomodeset"), "nomodeset")
+
+
 class TestDeviceGuard(unittest.TestCase):
     def test_rules(self):
         guard = load_script("veil-device-guard")
