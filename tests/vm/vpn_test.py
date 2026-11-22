@@ -133,6 +133,12 @@ def main() -> int:
         server_stats = on_server("sudo -n wg show wg0 transfer")
         record("vpn.no_direct_tcp", "Only encrypted WireGuard UDP on the physical interface (no TCP)",
                tcp == 0, f"TCP packets on uplink: {tcp}; server transfer: {server_stats.strip()}")
+        # Soak: three minutes of repeated Tor traffic; the physical interface may carry only WireGuard UDP.
+        loop = "for i in 1 2 3 4 5 6 7 8; do curl -s --max-time 20 https://check.torproject.org/api/ip >/dev/null; sleep 8; done"
+        tcp = tcp_on_uplink(vm, 190, during=loop)
+        rc, nontcp = sh(vm, "tcpdump -nr /tmp/up.pcap 2>/dev/null | wc -l")
+        record("vpn.soak_no_direct_tcp", "3-minute soak: zero TCP packets on the physical interface", tcp == 0,
+               f"TCP packets on uplink: {tcp}")
         rc, ng = user(vm, "veil privacy status --json --no-probes", timeout=180)
         try:
             data = json.loads(ng[ng.index("{"):])
