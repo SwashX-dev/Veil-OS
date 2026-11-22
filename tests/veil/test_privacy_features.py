@@ -320,9 +320,9 @@ class TestDiagnostics(unittest.TestCase):
 
     def test_helper_redacts_identifiers(self):
         helper = load_script("veil-diag-helper")
-        line = helper.redact("usb 1-2: SerialNumber: 070A894DB74B6306 eth0 aa:bb:cc:dd:ee:ff 192.168.1.20 "
+        line = helper.redact("usb 1-2: SerialNumber: 0123456789ABCDEF eth0 aa:bb:cc:dd:ee:ff 192.168.1.20 "
                              "127.0.0.1 nouveau 0000:01:00.0: gsp: rc engn:00000001")
-        self.assertNotIn("070A894DB74B6306", line)
+        self.assertNotIn("0123456789ABCDEF", line)
         self.assertNotIn("aa:bb:cc:dd:ee:ff", line)
         self.assertNotIn("192.168.1.20", line)
         self.assertIn("127.0.0.1", line)
