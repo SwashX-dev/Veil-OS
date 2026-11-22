@@ -52,7 +52,7 @@ def main() -> int:
     ap.add_argument("--overlay-base")
     ap.add_argument("--debs", nargs="*", default=[])
     ap.add_argument("--sudoers", nargs="*", default=[])
-    ap.add_argument("--safe-graphics", action="store_true", help="boot like the Safe Graphics entry")
+    ap.add_argument("--safe-graphics", action="store_true", help="boot with the Safe Graphics entry's options")
     ap.add_argument("--no-network", action="store_true")
     a = ap.parse_args()
     out = Path(a.out)
@@ -61,7 +61,7 @@ def main() -> int:
 
     kernel, initrd, cmdline = veilvm.boot_files(a.img, None, str(out / "boot"))
     if a.safe_graphics:
-        cmdline += " nomodeset veil.software-rendering"
+        cmdline += " veil.safe-graphics nouveau.noaccel=1 nouveau.runpm=0"
     vm = veilvm.VM(a.img, str(out / "vm"), memory="6144", network=not a.no_network,
                    kernel=kernel, initrd=initrd, cmdline=cmdline + " autotest_never_use_this_option")
     base_argv = vm.argv
@@ -83,11 +83,9 @@ def main() -> int:
         rc, env = sh(vm, "tr '\\0' '\\n' < /proc/$(pgrep -u amnesia -x labwc)/environ | "
                          "grep -E '^(VEIL_SAFE_GRAPHICS|WLR_RENDERER|LIBGL_ALWAYS_SOFTWARE|GSK_RENDERER|VK_LOADER)' | sort")
         if a.safe_graphics:
-            rc2, drv = sh(vm, "for d in /sys/class/drm/card[0-9]*/device/driver; do basename $(readlink -f $d); done")
-            ok = "VEIL_SAFE_GRAPHICS=nomodeset" in env and "WLR_RENDERER=pixman" in env and \
-                "LIBGL_ALWAYS_SOFTWARE=1" in env and "virtio" not in drv
-            record("graphics.safe_mode", "Safe Graphics (nomodeset): firmware framebuffer + software rendering", ok,
-                   f"{env.strip()} | drivers: {drv.strip()}")
+            ok = "VEIL_SAFE_GRAPHICS=boot-option" in env and "WLR_RENDERER=pixman" in env and \
+                "LIBGL_ALWAYS_SOFTWARE=1" in env
+            record("graphics.safe_mode", "Safe Graphics boot entry: desktop and apps render in software", ok, env.strip())
             session_screenshot(vm, "safe-graphics-desktop")
         else:
             record("graphics.default_mode", "Non-NVIDIA GPU keeps GPU rendering (no safe-graphics variables)",
@@ -204,16 +202,24 @@ def main() -> int:
                               "~/v720-1440p-enhanced.mkv")
         record("media.upscale_enhanced", "Offline neural upscale (FSRCNNX via libplacebo, software Vulkan)",
                rc == 0 and dims.strip() == "2560,1440", f"{up.strip()[-400:]} dims={dims.strip()}")
+        # Real-time upscaling as on an NVIDIA/nouveau laptop: safe graphics = software OpenGL (llvmpipe).
+        gl = "export VEIL_SAFE_GRAPHICS=nouveau LIBGL_ALWAYS_SOFTWARE=1; "
+        user(vm, "ffmpeg -nostdin -loglevel error -y -f lavfi -i testsrc2=size=640x360:rate=30 -t 2 "
+                 "-pix_fmt yuv420p -c:v libx264 ~/v360.mp4")
         results = {}
         for mode in ("off", "quality", "enhanced"):
-            rc, log = user(vm, f"timeout 180 veil-player --upscale {mode} ~/v720.mp4 --frames=45 "
-                               "--msg-level=all=v --really-quiet=no 2>&1 | tail -400", timeout=240)
-            results[mode] = (rc, log)
-        enh = results["enhanced"][1]
-        ok = all(r[0] == 0 for r in results.values()) and "FSRCNNX" in enh
-        record("media.player_presets", "Veil Player plays with off/quality/enhanced presets in the no-network sandbox",
-               ok, " | ".join(f"{m}: rc={r[0]}" for m, r in results.items()) + "\n" +
-               "\n".join(line for line in enh.splitlines() if "shader" in line.lower() or "scale" in line.lower())[:1500])
+            rc, log = user(vm, gl + f"timeout 200 veil-player --upscale {mode} ~/v360.mp4 --fs --frames=40 "
+                               "--msg-level=all=trace 2>&1 | grep -v 'Registered interface' | "
+                               "grep -ciE 'feature map|FSRCNN|SAVE FEATURE|FEATURE1'; "
+                               f"timeout 200 veil-player --upscale {mode} ~/v360.mp4 --fs --frames=40 "
+                               "--msg-level=vo=v 2>&1 | grep -E '^VO:'", timeout=500)
+            lines = [ln for ln in log.splitlines() if ln.strip() and not ln.startswith("[rc")]
+            results[mode] = (rc, int(lines[0]) if lines and lines[0].isdigit() else -1, " ".join(lines[1:]))
+        ok = (all(r[0] == 0 for r in results.values())
+              and all("VO: [gpu]" in r[2] for r in results.values())
+              and results["enhanced"][1] > results["off"][1] + 50)
+        record("media.player_presets", "Veil Player: GPU video output in safe graphics; the FSRCNNX shader runs only in 'enhanced'",
+               ok, " | ".join(f"{m}: rc={r[0]} shader-lines={r[1]} {r[2]}" for m, r in results.items()))
         rc, sandbox_net = user(vm, "timeout 60 veil-player --upscale off ~/v720.mp4 --frames=1 "
                                    "--script-opts=x=1 --msg-level=all=error 2>&1; "
                                    "python3 -c \"from veil import media; from pathlib import Path; "

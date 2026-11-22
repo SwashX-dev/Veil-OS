@@ -76,10 +76,21 @@ When `veil-session` finds a nouveau GPU, it renders in software by default:
 - GTK 4 with its GL renderer
 
 Only display scanout still uses the GPU. The boot option
-`veil.gpu-rendering` turns this off. The UEFI boot entry
-**Veil OS (Safe Graphics)** adds `nomodeset`: no GPU driver is loaded, and the
-desktop uses the firmware framebuffer (simpledrm). It is the most compatible
-choice, but brightness keys and external monitors may not work.
+`veil.gpu-rendering` turns this off. Independently of any vendor, Veil
+loads nouveau with `runpm=0` (no runtime power management of the GPU), because
+suspending and resuming the GPU while the screen is on is a common cause of
+hangs and black screens on laptops.
+
+The UEFI boot entry **Veil OS (Safe Graphics)** goes further: it forces
+software rendering on any hardware (`veil.safe-graphics`) and makes nouveau
+display-only (`nouveau.noaccel=1`, `nouveau.runpm=0`), so the GPU's
+acceleration engines are never used. It still needs a working display
+driver: there is no boot without any GPU driver, because Tails' kernel has no
+firmware-framebuffer DRM driver (`simpledrm`) and GNOME Shell, which runs the
+Welcome Screen, requires DRM. A `nomodeset` boot reaches no Welcome Screen at
+all (tested: GDM fails with "no session desktop files installed" and no
+`/dev/dri`). On a GPU whose display driver itself is the problem, no Tails
+boot option helps; try another display output or a different computer.
 
 ## Why did my computer turn off?
 

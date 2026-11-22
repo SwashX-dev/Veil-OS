@@ -362,8 +362,9 @@ class TestSafeGraphicsDetection(unittest.TestCase):
         self.assertEqual(self.decide("nvidia", "quiet"), "")
         self.assertEqual(self.decide(None, "quiet"), "")
         self.assertEqual(self.decide("nouveau", "quiet veil.gpu-rendering"), "")
-        self.assertEqual(self.decide("amdgpu", "quiet nomodeset"), "nomodeset")
-        self.assertEqual(self.decide("nouveau", "nomodeset"), "nomodeset")
+        self.assertEqual(self.decide("amdgpu", "quiet veil.safe-graphics nouveau.noaccel=1"), "boot-option")
+        self.assertEqual(self.decide(None, "veil.safe-graphics"), "boot-option")
+        self.assertEqual(self.decide("nouveau", "veil.safe-graphics veil.gpu-rendering"), "boot-option")
 
 
 class TestDeviceGuard(unittest.TestCase):

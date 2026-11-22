@@ -128,8 +128,11 @@ give_up() {
 # generations that depend on GSP firmware. A GPU fault there kills the
 # compositor (a black screen). Render the desktop (Pixman) and applications
 # (llvmpipe/lavapipe) in software instead, unless the user chose the
-# "veil.gpu-rendering" boot option. With "nomodeset" (the Safe Graphics boot
-# entry) there is no GPU driver at all.
+# "veil.gpu-rendering" boot option. The "Veil OS (Safe Graphics)" boot entry
+# (veil.safe-graphics) forces this on any hardware and also makes nouveau
+# display-only (nouveau.noaccel=1) without runtime power management. A boot
+# without any GPU driver (nomodeset) is not possible: Tails' kernel has no
+# firmware-framebuffer DRM driver and GNOME Shell (Welcome Screen) needs DRM.
 nouveau_in_use() {
     for driver in /sys/class/drm/card[0-9]*/device/driver; do
         [ -e "$driver" ] || continue
@@ -139,8 +142,8 @@ nouveau_in_use() {
 }
 cmdline=" $(cat /proc/cmdline) "
 case "$cmdline" in
+    *" veil.safe-graphics "*) export VEIL_SAFE_GRAPHICS=boot-option ;;
     *" veil.gpu-rendering "*) ;;
-    *" nomodeset "*) export VEIL_SAFE_GRAPHICS=nomodeset ;;
     *) nouveau_in_use && export VEIL_SAFE_GRAPHICS=nouveau ;;
 esac
 if [ -n "${VEIL_SAFE_GRAPHICS:-}" ]; then
