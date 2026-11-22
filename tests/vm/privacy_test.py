@@ -202,24 +202,31 @@ def main() -> int:
                               "~/v720-1440p-enhanced.mkv")
         record("media.upscale_enhanced", "Offline neural upscale (FSRCNNX via libplacebo, software Vulkan)",
                rc == 0 and dims.strip() == "2560,1440", f"{up.strip()[-400:]} dims={dims.strip()}")
-        # Real-time upscaling as on an NVIDIA/nouveau laptop: safe graphics = software OpenGL (llvmpipe).
-        gl = "export VEIL_SAFE_GRAPHICS=nouveau LIBGL_ALWAYS_SOFTWARE=1; "
-        user(vm, "ffmpeg -nostdin -loglevel error -y -f lavfi -i testsrc2=size=640x360:rate=30 -t 2 "
-                 "-pix_fmt yuv420p -c:v libx264 ~/v360.mp4")
-        results = {}
-        for mode in ("off", "quality", "enhanced"):
-            rc, log = user(vm, gl + f"timeout 200 veil-player --upscale {mode} ~/v360.mp4 --fs --frames=40 "
-                               "--msg-level=all=trace 2>&1 | grep -v 'Registered interface' | "
-                               "grep -ciE 'feature map|FSRCNN|SAVE FEATURE|FEATURE1'; "
-                               f"timeout 200 veil-player --upscale {mode} ~/v360.mp4 --fs --frames=40 "
-                               "--msg-level=vo=v 2>&1 | grep -E '^VO:'", timeout=500)
-            lines = [ln for ln in log.splitlines() if ln.strip() and not ln.startswith("[rc")]
-            results[mode] = (rc, int(lines[0]) if lines and lines[0].isdigit() else -1, " ".join(lines[1:]))
-        ok = (all(r[0] == 0 for r in results.values())
-              and all("VO: [gpu]" in r[2] for r in results.values())
-              and results["enhanced"][1] > results["off"][1] + 50)
-        record("media.player_presets", "Veil Player: GPU video output in safe graphics; the FSRCNNX shader runs only in 'enhanced'",
-               ok, " | ".join(f"{m}: rc={r[0]} shader-lines={r[1]} {r[2]}" for m, r in results.items()))
+        if a.safe_graphics:
+            # Real-time upscaling as on an NVIDIA/nouveau laptop: safe graphics = software OpenGL (llvmpipe).
+            gl = "export VEIL_SAFE_GRAPHICS=nouveau LIBGL_ALWAYS_SOFTWARE=1; "
+            user(vm, "ffmpeg -nostdin -loglevel error -y -f lavfi -i testsrc2=size=640x360:rate=30 -t 8 "
+                     "-pix_fmt yuv420p -c:v libx264 ~/v360.mp4")
+            results = {}
+            for mode in ("off", "quality", "enhanced"):
+                # One run per mode: the trace log shows the video output and every shader pass. 120 frames
+                # fullscreen (640x360 -> the screen, over 1.3x) so that the run survives a loaded host.
+                rc, log = user(vm, gl + f"timeout 280 veil-player --upscale {mode} ~/v360.mp4 --fs --frames=120 "
+                                   "--no-audio --msg-level=all=trace 2>&1 | grep -v 'Registered interface' > /tmp/pl-%s.log; "
+                                   "grep -ciE 'feature map|FSRCNN|SAVE FEATURE|FEATURE1' /tmp/pl-%s.log; "
+                                   "grep -E '^VO:' /tmp/pl-%s.log | head -1" % (mode, mode, mode), timeout=400)
+                lines = [ln for ln in log.splitlines() if ln.strip() and not ln.startswith("[rc")]
+                results[mode] = (rc, int(lines[0]) if lines and lines[0].isdigit() else -1, " ".join(lines[1:]))
+            ok = (all(r[0] == 0 for r in results.values())
+                  and all("VO: [gpu]" in r[2] for r in results.values())
+                  and results["enhanced"][1] > results["off"][1] + 20 and results["quality"][1] <= results["off"][1] + 5)
+            record("media.player_presets", "Veil Player: GPU video output in safe graphics; the FSRCNNX shader runs only in 'enhanced'",
+                   ok, " | ".join(f"{m}: rc={r[0]} shader-lines={r[1]} {r[2]}" for m, r in results.items()))
+        else:
+            record("media.player_presets", "Veil Player real-time presets (GPU output, shader only in 'enhanced')", None,
+                   "UNTESTED in normal boot mode: the VM has no GPU, and a software OpenGL player under a GL "
+                   "compositor cannot reach buffer sharing from inside the sandbox. Covered by the --safe-graphics "
+                   "run (the mode NVIDIA/nouveau machines use). Real GPUs (render node) are not tested.")
         rc, sandbox_net = user(vm, "timeout 60 veil-player --upscale off ~/v720.mp4 --frames=1 "
                                    "--script-opts=x=1 --msg-level=all=error 2>&1; "
                                    "python3 -c \"from veil import media; from pathlib import Path; "
