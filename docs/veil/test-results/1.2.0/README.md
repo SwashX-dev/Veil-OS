@@ -52,7 +52,7 @@ to come after the marked-UDP accept; and the first handshake was sent before
 the firewall rule existed and arrived up to 25 s late.
 
 An earlier test run (before those fixes) saw 2 TCP packets on the physical
-interface once, in a 25 s window. It did not recur in four later runs, including
+interface once, in a 25 s window. It did not recur in the three later runs, including
 the soak, and the capture was not kept, so its cause is **unexplained**.
 
 **Safe Graphics.** The first design (`nomodeset`) was tested and found
