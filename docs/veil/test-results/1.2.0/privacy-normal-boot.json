@@ -1,0 +1,110 @@
+[
+  {
+    "id": "privacy.session",
+    "name": "Desktop session ready",
+    "status": "PASS",
+    "evidence": "xfce4-panel running"
+  },
+  {
+    "id": "graphics.default_mode",
+    "name": "Non-NVIDIA GPU keeps GPU rendering (no safe-graphics variables)",
+    "status": "PASS",
+    "evidence": "(none set)"
+  },
+  {
+    "id": "privacy.daemon",
+    "name": "Privacy daemon running; settings readable",
+    "status": "PASS",
+    "evidence": "{\n  \"auto_lock_minutes\": 10,\n  \"camera_blocked\": false,\n  \"clipboard_clear_seconds\": 0,\n  \"emergency_shutdown_hotkey\": true,\n  \"microphone_blocked\": false,\n  \"tor_browser_security_level\": \"standard\",\n  \"video_upscaling\": \"off\"\n}"
+  },
+  {
+    "id": "privacy.tcp_timestamps",
+    "name": "TCP timestamps disabled (no clock-skew fingerprint)",
+    "status": "PASS",
+    "evidence": "0"
+  },
+  {
+    "id": "privacy.clipboard_clear",
+    "name": "Clipboard is cleared 5 s after a copy",
+    "status": "PASS",
+    "evidence": "before='veil-secret-123' cleared=True"
+  },
+  {
+    "id": "privacy.autolock_no_password",
+    "name": "Idle lock never locks a session without a password",
+    "status": "PASS",
+    "evidence": "swaylock running=False notice flag=True"
+  },
+  {
+    "id": "privacy.autolock",
+    "name": "Idle lock after 1 minute when a password is set; unlock works",
+    "status": "PASS",
+    "evidence": "locked=True supervisor marker=True unlocked=True"
+  },
+  {
+    "id": "privacy.camera_block",
+    "name": "Camera kill switch: block without password, unblock needs authorization",
+    "status": "PASS",
+    "evidence": "readable before=True block rc=0 after=False passwordless allow refused=True after root allow=True {\"camera\": {\"blocked\": true, \"devices\": [{\"mode\": \"0o0\", \"node\": \"/dev/video0\"}]}, \"microphone\": {\"blocked\": false, \"devices\": [{\"mode\": \"0o660\", \"node\": \"/dev/snd/pcmC0D0c\"}]}}"
+  },
+  {
+    "id": "privacy.microphone_block",
+    "name": "Microphone kill switch blocks capture devices only",
+    "status": "PASS",
+    "evidence": "/dev/snd/pcmC0D0c: before=True after=False restored=True\nc---------  1 root audio 116,  3 Nov 22 03:07 pcmC0D0c\ncrw-rw----+ 1 root audio 116,  2 Nov 22 03:07 pcmC0D0p"
+  },
+  {
+    "id": "privacy.polkit",
+    "name": "VPN and device unblocking require authentication (auth_self/auth_admin)",
+    "status": "PASS",
+    "evidence": "org.veil.vpn.manage:\n  description:       Connect or disconnect the VPN before Tor\n  message:           Authentication is required to change how Tor connects to the Internet\n  vendor:            Veil OS\n  vendor_url:        \n  icon:              network-vpn\n  implicit any:      auth_admin\n  implicit inactive: auth_admin\n  implicit active:   auth_self\n  annotation:        org.freedesktop.policykit.exec.path -> /usr/local/lib/veil/veil-vpn-helper\n\norg.veil.device-guard:\n  description:       Allow or block cameras and microphones\n  message:           Authentication is required to allow access to cameras or microphones\n  vendor:            Veil OS\n  vendor_url:        \n  icon:              camera-web\n  implicit any:      auth_admin\n  implicit inactive: auth_admin\n  implicit active:   auth_self\n  annotation:        org.freedesktop.policykit.exec.path -> /usr/local/lib/veil/veil-device-guard"
+  },
+  {
+    "id": "diagnostics.report",
+    "name": "veil diagnostics: graphics, session and kernel sections; saved to a file",
+    "status": "PASS",
+    "evidence": "Veil OS diagnostics report (2026-11-22 03:07:09 UTC)\n\nVeil version: 1.2.0\nKernel: 6.12.117+deb13-amd64\nBoot options: initrd=initrd initrd=/live/initrd.img boot=live config live-media=removable nopersistence noprompt timezone=Etc/UTC splash noautologin module=Tails slab_nomerge slub_debug=FZ mce=0 vsyscall=none init_on_free=1 mds=full,nosmt page_alloc.shuffle=1 randomize_kstack_offset=on efi_pstore.pstore_disable=1 erst_disable spec_store_bypass_disable=on systemd.condition_needs_update=no proc_mem.force_override=ptrace quiet autotest_never_use_this_option\nDesktop rendering: GPU rendering\nCompositor restarts this session: 0\n\n== Graphics devices ==\ncard0: vendor 0x1af4 device 0x1050 driver virtio-pci boot_vga 1 connectors Virtual-1=connected\n\n== Privacy settings ==\ntor_browser_security_level: standard\nauto_lock_minutes: 0\nclipboard_clear_seconds: 0\nemergency_shutdown_hotkey: True\ncamera_blocked: False\nmicrophone_blocked: False\nvideo_upscaling: off\n\n== Kernel: graphics, crashes, memory, USB ==\n[   12.473954] amnesia kernel: efifb: probing for efifb\n[   12.473965] amnesia kernel: efifb: framebuffer at 0x80000000, using 4000k, total 4000k\n[   12.473983] amnesia kernel: efifb: mode is 1280x800x32, linelength=5120, pages=1\n[   12.473994] amnesia kernel: efifb: scrolling: redraw\n[   12.474006] amnesia kernel: efifb: Truecolor: size=8:8:8:8, shift=24:16:8:0\n[   12.475103] amnesia kernel: xhci_hcd 0000:00:04.0: xHCI Host Controller\n[   12.480550] amnesia kernel: xhci_hcd 0000:00:04.0: \nSaved /home/amnesia/veil-diagnostics-20261122T030709Z.txt"
+  },
+  {
+    "id": "media.upscale_offline",
+    "name": "Offline upscale 720p \u2192 1080p (sandboxed ffmpeg, Lanczos)",
+    "status": "PASS",
+    "evidence": "Saved /home/amnesia/v720-1080p.mkv dims=1920,1080"
+  },
+  {
+    "id": "media.upscale_enhanced",
+    "name": "Offline neural upscale (FSRCNNX via libplacebo, software Vulkan)",
+    "status": "PASS",
+    "evidence": "Saved /home/amnesia/v720-1440p-enhanced.mkv dims=2560,1440"
+  },
+  {
+    "id": "media.player_presets",
+    "name": "Veil Player real-time presets (GPU output, shader only in 'enhanced')",
+    "status": "UNTESTED",
+    "evidence": "UNTESTED in normal boot mode: the VM has no GPU, and a software OpenGL player under a GL compositor cannot reach buffer sharing from inside the sandbox. Covered by the --safe-graphics run (the mode NVIDIA/nouveau machines use). Real GPUs (render node) are not tested."
+  },
+  {
+    "id": "media.player_sandbox",
+    "name": "Player sandbox has no network",
+    "status": "PASS",
+    "evidence": "an't open TTY for VT control: No such device or address\n[vo/gpu-next/drm] No primary DRM device could be picked!\n[vo/gpu-next/drm] Failed to find a usable DRM primary node!\nFalse ['/dev/dri/renderD*']"
+  },
+  {
+    "id": "netguard.vpn_off",
+    "name": "Network Guard: no failures; VPN check reports 'off'",
+    "status": "PASS",
+    "evidence": "failing=[] vpn=Off: Tor connects directly (or through bridges)"
+  },
+  {
+    "id": "torbrowser.security_level",
+    "name": "Tor Browser starts at the chosen security level (Safest)",
+    "status": "PASS",
+    "evidence": "user.js:\n// Written by Veil OS (Privacy Center: Tor Browser security level).\nuser_pref(\"browser.security_level.security_slider\", 1);\nuser_pref(\"browser.security_level.security_custom\", false);\n\nprefs.js:\nuser_pref(\"browser.security_level.noscript_inited\", true);\nuser_pref(\"browser.security_level.security_custom\", true);\nuser_pref(\"browser.security_level.security_slider\", 1);\nuser_pref(\"javascript.options.ion\", false);\nuser_pref(\"svg.disabled\", true);"
+  },
+  {
+    "id": "privacy.emergency_hotkey",
+    "name": "Ctrl+Alt+Shift+Delete shuts the computer down",
+    "status": "PASS",
+    "evidence": "powered off after 2.8s (rc=0); screenshots 4"
+  }
+]

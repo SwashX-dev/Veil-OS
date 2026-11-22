@@ -3,6 +3,13 @@
 Status legend: **PASS** (verified, with evidence) · **PARTIAL** (some aspects verified, gaps listed) ·
 **FAIL** · **UNTESTED** (not verified: never assume it works).
 
+## 1.2.0
+
+See [test-results/1.2.0/README.md](test-results/1.2.0/README.md). Highlights: 39/39 full suite, 16/16 VPN
+before Tor (real WireGuard server), 56/56 persistent APT, compositor restart and lock restoration
+verified. Still untested: real hardware (including the NVIDIA laptop that exposed the black-screen bug).
+The table below is for 0.1.0-alpha.1.
+
 ## 0.1.0-alpha.1
 
 | | |

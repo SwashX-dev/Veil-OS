@@ -1,0 +1,98 @@
+[
+  {
+    "id": "vpn.import",
+    "name": "Proton-style WireGuard file imported (DNS/IPv6 ignored, stored 0600)",
+    "status": "PASS",
+    "evidence": "Imported test-vpn: endpoint 198.18.0.2:51820, address 10.66.66.2/32\n  ignored: IPv6 address 2a07:b944::2:2/128 (IPv6 is disabled)\n  ignored: DNS (names are resolved through Tor)\n600"
+  },
+  {
+    "id": "vpn.requires_auth",
+    "name": "Connecting asks for authentication; nothing changes without it",
+    "status": "PASS",
+    "evidence": "Error creating textual authentication agent: Error opening current controlling terminal for the process (`/dev/tty'): No such device or address"
+  },
+  {
+    "id": "vpn.up",
+    "name": "VPN interface, Tor-only routing rule, firewall and blackhole fallback",
+    "status": "PASS",
+    "evidence": "{\"active\": true, \"interface\": \"wg-veil\", \"endpoint\": \"198.18.0.2:51820\", \"address\": \"10.66.66.2/32\", \"since\": 1795314181, \"latest_handshake_seconds_ago\": 0, \"rx_bytes\": 92, \"tx_bytes\": 180, \"tor_routed_through_vpn\": true, \"firewall\": true, \"blackhole_fallback\": true}"
+  },
+  {
+    "id": "vpn.tunnel_carries_tor_user_traffic",
+    "name": "Handshake done and TCP flows through the tunnel for Tor's user",
+    "status": "PASS",
+    "evidence": "http=301 rc=0"
+  },
+  {
+    "id": "vpn.tor_bootstrap",
+    "name": "Tor bootstraps through the VPN",
+    "status": "PASS",
+    "evidence": "12s"
+  },
+  {
+    "id": "vpn.tor_works",
+    "name": "Web traffic still exits through Tor",
+    "status": "PASS",
+    "evidence": "{\"IsTor\":true,\"IP\":\"192.42.116.112\"}"
+  },
+  {
+    "id": "vpn.tor_sockets_in_tunnel",
+    "name": "Tor's connections originate from the VPN address",
+    "status": "PASS",
+    "evidence": "10.66.66.2:40226\n10.66.66.2:53340\n10.66.66.2:53346\n10.66.66.2:53666\n10.66.66.2:55776"
+  },
+  {
+    "id": "vpn.no_direct_tcp",
+    "name": "Only encrypted WireGuard UDP on the physical interface (no TCP)",
+    "status": "PASS",
+    "evidence": "TCP packets on uplink: 0; server transfer: NSvvsDM3VT8idqeNzkmtNz4h3Xnda5CnFLsePxZYqyI=\t748024\t2383392"
+  },
+  {
+    "id": "vpn.soak_no_direct_tcp",
+    "name": "3-minute soak: zero TCP packets on the physical interface",
+    "status": "PASS",
+    "evidence": "TCP packets on uplink: 0"
+  },
+  {
+    "id": "vpn.netguard",
+    "name": "Network Guard verifies the fail-closed VPN rules",
+    "status": "PASS",
+    "evidence": "On: Tor connects only through the VPN (198.18.0.2:51820) failing=[]"
+  },
+  {
+    "id": "vpn.survives_firewall_reload",
+    "name": "VPN rules come back after Tails reloads its firewall",
+    "status": "PASS",
+    "evidence": "first rule: -A OUTPUT -j VEIL_VPN tor=True"
+  },
+  {
+    "id": "vpn.killswitch_server_down",
+    "name": "VPN server down: Tor cannot connect and nothing goes direct",
+    "status": "PASS",
+    "evidence": "TCP packets on uplink while retrying: 0"
+  },
+  {
+    "id": "vpn.recovers",
+    "name": "Tor recovers when the VPN server is back",
+    "status": "PASS",
+    "evidence": ""
+  },
+  {
+    "id": "vpn.killswitch_interface_gone",
+    "name": "WireGuard interface removed: Tor's route is a blackhole",
+    "status": "PASS",
+    "evidence": "blackhole default metric 4096 \n5300:\tfrom all uidrange 106-106 lookup 51820 tcp=0"
+  },
+  {
+    "id": "vpn.reconnect",
+    "name": "Reconnecting restores Tor through the VPN",
+    "status": "PASS",
+    "evidence": ""
+  },
+  {
+    "id": "vpn.down",
+    "name": "Disconnect removes every rule; Tor connects directly again",
+    "status": "PASS",
+    "evidence": "chain removed=True rule='' session-rules lines=0 tor=True direct TCP packets=159"
+  }
+]

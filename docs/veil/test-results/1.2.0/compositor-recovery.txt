@@ -1,0 +1,8 @@
+Startup failed on the first try and recovered with Pixman.
+Swaylock accepted the test password.
+/dev/shm/veil-v120/clean/comp-out/vm/after-compositor-restart.png
+Compositor crash while unlocked: desktop restarted with Pixman, no greeter.
+Compositor crash while locked: lock restored on the new desktop.
+Unlocking clears the lock state.
+Repeated compositor loss powered off the VM.
+EXIT=0

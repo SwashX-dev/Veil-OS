@@ -1,0 +1,394 @@
+[
+  {
+    "test": "1.fixture-source",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.xfce-ready",
+    "pass": true,
+    "code": 0,
+    "stdout": "10391\n10232\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.no-persistence",
+    "pass": true,
+    "code": 1,
+    "stdout": "",
+    "stderr": "Veil packages: Create encrypted Persistent Storage using the Persistent Storage app.\n"
+  },
+  {
+    "test": "1.create-luks",
+    "pass": true,
+    "code": 0,
+    "stdout": "()\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.active-feature",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.transfer-fixture",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.fixture",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.fixture-server",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": "Running as unit: veil-vm-apt-fixture.service; invocation ID: 6f20c89c7ae2431a9c7bdcdf7e6d0cd6\n"
+  },
+  {
+    "test": "1.fixture-loopback",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.signed-apt-index",
+    "pass": true,
+    "code": 0,
+    "stdout": "Get:1 http://127.0.0.1:18765 ./ InRelease [1,481 B]\nGet:2 http://127.0.0.1:18765 ./ Packages [932 B]\nFetched 2,413 B in 0s (29.1 kB/s)\nReading package lists...\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.tamper-fixture",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.package-hash-enforced",
+    "pass": true,
+    "code": 100,
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following NEW packages will be installed:\n  veil-vm-test-extra\n0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.\nNeed to get 792 B of archives.\nAfter this operation, 0 B of additional disk space will be used.\nGet:1 http://127.0.0.1:18765 ./ veil-vm-test-extra 1.0 [792 B]\nErr:1 http://127.0.0.1:18765 ./ veil-vm-test-extra 1.0\n  Hash Sum mismatch\n  Hashes of expected file:\n   - SHA512:2bf12e055de225edc8d1cc8d0e1ab36e76fc2b07ce0a24a8eb46fb3d1f36e68b8498b4a6618c5d24c5683294cacde69b89ebd3e8624e5d5ce2423b081a5a2e97\n   - SHA256:4c934255b7ffa38c0b93a8fa9119f35ed9d172e349b96e1d02925457a053be68\n   - SHA1:d4710e0122c8fd3413d7296911a6ad54df702ccb [weak]\n   - MD5Sum:d4294d54df5b313c5f16dc21cbecb730 [weak]\n   - Filesize:792 [weak]\n  Hashes of received file:\n   - SHA512:f0b9f5956ce2e338d26c7a460499e9e6bb2cf7db1f0917ba4ecbd8288137e19c9be7ac5ccf235a2ecd04310613f0798dd77cfc95ea33feb613a396342172f436\n   - SHA256:6156b5900159cf1ac757af92a81d6ce4f5f258a166cf39b016f7a9e99edc6f26\n   - SHA1:9de91343e10ce2573461cd0350d81adc992125d6 [weak]\n   - MD5Sum:14705921c164362e802f9d81d5de7da8 [weak]\n   - Filesize:792 [weak]\n  Last modification reported: Sun, 22 Nov 2026 02:53:51 +0000\nFetched 792 B in 0s (28.3 kB/s)\n",
+    "stderr": "E: Failed to fetch http://127.0.0.1:18765/./veil-vm-test-extra.deb  Hash Sum mismatch\n   Hashes of expected file:\n    - SHA512:2bf12e055de225edc8d1cc8d0e1ab36e76fc2b07ce0a24a8eb46fb3d1f36e68b8498b4a6618c5d24c5683294cacde69b89ebd3e8624e5d5ce2423b081a5a2e97\n    - SHA256:4c934255b7ffa38c0b93a8fa9119f35ed9d172e349b96e1d02925457a053be68\n    - SHA1:d4710e0122c8fd3413d7296911a6ad54df702ccb [weak]\n    - MD5Sum:d4294d54df5b313c5f16dc21cbecb730 [weak]\n    - Filesize:792 [weak]\n   Hashes of received file:\n    - SHA512:f0b9f5956ce2e338d26c7a460499e9e6bb2cf7db1f0917ba4ecbd8288137e19c9be7ac5ccf235a2ecd04310613f0798dd77cfc95ea33feb613a396342172f436\n    - SHA256:6156b5900159cf1ac757af92a81d6ce4f5f258a166cf39b016f7a9e99edc6f26\n    - SHA1:9de91343e10ce2573461cd0350d81adc992125d6 [weak]\n    - MD5Sum:14705921c164362e802f9d81d5de7da8 [weak]\n    - Filesize:792 [weak]\n   Last modification reported: Sun, 22 Nov 2026 02:53:51 +0000\nE: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?\nVeil packages: Command '['/usr/bin/apt-get', '--no-remove', '-y', 'install', '--', 'veil-vm-test-extra']' returned non-zero exit status 100.\nCheck the APT output for live package changes. Retry the command after resolving the error.\n"
+  },
+  {
+    "test": "1.invalid-package-not-registered",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.restore-fixture",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.start-interrupted-install",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": "Running as unit: veil-apt-interrupted-install.service; invocation ID: c0b6e8d6b8d2482c83554daf4b595e2a\n"
+  },
+  {
+    "test": "1.interrupt-install",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.registration-after-interrupted-install",
+    "pass": true,
+    "code": 0,
+    "stdout": "\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.repair-after-interrupted-install",
+    "pass": true,
+    "code": 0,
+    "stdout": "Setting up veil-vm-test-interrupted (1.0) ...\nReading package lists...\nBuilding dependency tree...\nReading state information...\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\nAdditional Software is active. 0 registered, 0 absent in this session.\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.retry-install",
+    "pass": true,
+    "code": 0,
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nveil-vm-test-interrupted is already the newest version (1.0).\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\nAdditional Software registrations saved and verified.\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.start-interrupted-remove",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": "Running as unit: veil-apt-interrupted-remove.service; invocation ID: 33ba01cfcad144489a5fe6e61df6fec0\n"
+  },
+  {
+    "test": "1.interrupt-remove",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.registration-after-interrupted-remove",
+    "pass": true,
+    "code": 0,
+    "stdout": "veil-vm-test-interrupted\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.repair-after-interrupted-remove",
+    "pass": true,
+    "code": 0,
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n1 not fully installed or removed.\nAfter this operation, 0 B of additional disk space will be used.\nSetting up veil-vm-test-interrupted (1.0) ...\nReading package lists...\nBuilding dependency tree...\nReading state information...\nveil-vm-test-interrupted is already the newest version (1.0).\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\nAdditional Software is active. 1 registered, 0 absent in this session.\nAPT resolved the registered packages against the immutable image.\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.retry-remove",
+    "pass": true,
+    "code": 0,
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following packages will be REMOVED:\n  veil-vm-test-interrupted\n0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.\nAfter this operation, 0 B of additional disk space will be used.\n(Reading database ... \n(Reading database ... 5%\n(Reading database ... 10%\n(Reading database ... 15%\n(Reading database ... 20%\n(Reading database ... 25%\n(Reading database ... 30%\n(Reading database ... 35%\n(Reading database ... 40%\n(Reading database ... 45%\n(Reading database ... 50%\n(Reading database ... 55%\n(Reading database ... 60%\n(Reading database ... 65%\n(Reading database ... 70%\n(Reading database ... 75%\n(Reading database ... 80%\n(Reading database ... 85%\n(Reading database ... 90%\n(Reading database ... 95%\n(Reading database ... 100%\n(Reading database ... 174497 files and directories currently installed.)\nRemoving veil-vm-test-interrupted (1.0) ...\nAdditional Software registrations saved and verified.\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.temporary-install",
+    "pass": true,
+    "code": 0,
+    "stdout": "APT is operating on this live session. Persistent registrations are preserved.\nReading package lists...\nBuilding dependency tree...\nReading state information...\nInstalling:\n  veil-vm-test-extra\n\nSummary:\n  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 0\n  Download size: 792 B\n  Space needed: 0 B / 1,965 MB available\n\nGet:1 http://127.0.0.1:18765 ./ veil-vm-test-extra 1.0 [792 B]\nFetched 792 B in 0s (44.7 kB/s)\nSelecting previously unselected package veil-vm-test-extra.\n(Reading database ... \n(Reading database ... 5%\n(Reading database ... 10%\n(Reading database ... 15%\n(Reading database ... 20%\n(Reading database ... 25%\n(Reading database ... 30%\n(Reading database ... 35%\n(Reading database ... 40%\n(Reading database ... 45%\n(Reading database ... 50%\n(Reading database ... 55%\n(Reading database ... 60%\n(Reading database ... 65%\n(Reading database ... 70%\n(Reading database ... 75%\n(Reading database ... 80%\n(Reading database ... 85%\n(Reading database ... 90%\n(Reading database ... 95%\n(Reading database ... 100%\n(Reading database ... 174495 files and directories currently installed.)\nPreparing to unpack .../veil-vm-test-extra_1.0_all.deb ...\nUnpacking veil-vm-test-extra (1.0) ...\nSetting up veil-vm-test-extra (1.0) ...\n",
+    "stderr": "\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\n\ndebconf: unable to initialize frontend: Dialog\ndebconf: (TERM is not set, so the dialog frontend is not usable.)\ndebconf: falling back to frontend: Readline\ndebconf: unable to initialize frontend: Readline\ndebconf: (This frontend requires a controlling tty.)\ndebconf: falling back to frontend: Teletype\ndebconf: unable to initialize frontend: Teletype\ndebconf: (This frontend requires a controlling tty.)\ndebconf: falling back to frontend: Noninteractive\n"
+  },
+  {
+    "test": "1.temporary-install-not-registered",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "1.temporary-remove",
+    "pass": true,
+    "code": 0,
+    "stdout": "APT is operating on this live session. Persistent registrations are preserved.\nReading package lists...\nBuilding dependency tree...\nReading state information...\nREMOVING:\n  veil-vm-test-extra\n\nSummary:\n  Upgrading: 0, Installing: 0, Removing: 1, Not Upgrading: 0\n  Space needed: 0 B / 1,965 MB available\n\n(Reading database ... \n(Reading database ... 5%\n(Reading database ... 10%\n(Reading database ... 15%\n(Reading database ... 20%\n(Reading database ... 25%\n(Reading database ... 30%\n(Reading database ... 35%\n(Reading database ... 40%\n(Reading database ... 45%\n(Reading database ... 50%\n(Reading database ... 55%\n(Reading database ... 60%\n(Reading database ... 65%\n(Reading database ... 70%\n(Reading database ... 75%\n(Reading database ... 80%\n(Reading database ... 85%\n(Reading database ... 90%\n(Reading database ... 95%\n(Reading database ... 100%\n(Reading database ... 174497 files and directories currently installed.)\nRemoving veil-vm-test-extra (1.0) ...\n",
+    "stderr": "\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\n\n"
+  },
+  {
+    "test": "1.persistent-install",
+    "pass": true,
+    "code": 0,
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following additional packages will be installed:\n  veil-vm-test-dep\nThe following NEW packages will be installed:\n  veil-vm-test-dep veil-vm-test-root\n0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.\nNeed to get 1,588 B of archives.\nAfter this operation, 0 B of additional disk space will be used.\nGet:1 http://127.0.0.1:18765 ./ veil-vm-test-dep 1.0 [788 B]\nGet:2 http://127.0.0.1:18765 ./ veil-vm-test-root 1.0 [800 B]\nFetched 1,588 B in 0s (94.4 kB/s)\nSelecting previously unselected package veil-vm-test-dep.\n(Reading database ... \n(Reading database ... 5%\n(Reading database ... 10%\n(Reading database ... 15%\n(Reading database ... 20%\n(Reading database ... 25%\n(Reading database ... 30%\n(Reading database ... 35%\n(Reading database ... 40%\n(Reading database ... 45%\n(Reading database ... 50%\n(Reading database ... 55%\n(Reading database ... 60%\n(Reading database ... 65%\n(Reading database ... 70%\n(Reading database ... 75%\n(Reading database ... 80%\n(Reading database ... 85%\n(Reading database ... 90%\n(Reading database ... 95%\n(Reading database ... 100%\n(Reading database ... 174495 files and directories currently installed.)\nPreparing to unpack .../veil-vm-test-dep_1.0_all.deb ...\nUnpacking veil-vm-test-dep (1.0) ...\nSelecting previously unselected package veil-vm-test-root.\nPreparing to unpack .../veil-vm-test-root_1.0_all.deb ...\nUnpacking veil-vm-test-root (1.0) ...\nSetting up veil-vm-test-dep (1.0) ...\nSetting up veil-vm-test-root (1.0) ...\nAdditional Software registrations saved and verified.\n",
+    "stderr": "debconf: unable to initialize frontend: Dialog\ndebconf: (TERM is not set, so the dialog frontend is not usable.)\ndebconf: falling back to frontend: Readline\ndebconf: unable to initialize frontend: Readline\ndebconf: (This frontend requires a controlling tty.)\ndebconf: falling back to frontend: Teletype\ndebconf: unable to initialize frontend: Teletype\ndebconf: (This frontend requires a controlling tty.)\ndebconf: falling back to frontend: Noninteractive\n"
+  },
+  {
+    "test": "1.registration-visible-to-user",
+    "pass": true,
+    "code": 0,
+    "stdout": "veil-vm-test-root\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.dependency-protected",
+    "pass": true,
+    "code": 1,
+    "stdout": "",
+    "stderr": "Veil packages: APT would also remove: veil-vm-test-root\n"
+  },
+  {
+    "test": "1.publish-updated-fixture",
+    "pass": true,
+    "code": 0,
+    "stdout": "Get:1 http://127.0.0.1:18765 ./ InRelease [1,481 B]\nGet:2 http://127.0.0.1:18765 ./ Packages [936 B]\nFetched 2,417 B in 0s (39.6 kB/s)\nReading package lists...\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.upgrade-persistent",
+    "pass": true,
+    "code": 0,
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following packages will be upgraded:\n  veil-vm-test-root\n1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\nNeed to get 800 B of archives.\nAfter this operation, 0 B of additional disk space will be used.\nGet:1 http://127.0.0.1:18765 ./ veil-vm-test-root 2.0 [800 B]\nFetched 800 B in 0s (56.7 kB/s)\n(Reading database ... \n(Reading database ... 5%\n(Reading database ... 10%\n(Reading database ... 15%\n(Reading database ... 20%\n(Reading database ... 25%\n(Reading database ... 30%\n(Reading database ... 35%\n(Reading database ... 40%\n(Reading database ... 45%\n(Reading database ... 50%\n(Reading database ... 55%\n(Reading database ... 60%\n(Reading database ... 65%\n(Reading database ... 70%\n(Reading database ... 75%\n(Reading database ... 80%\n(Reading database ... 85%\n(Reading database ... 90%\n(Reading database ... 95%\n(Reading database ... 100%\n(Reading database ... 174499 files and directories currently installed.)\nPreparing to unpack .../veil-vm-test-root_2.0_all.deb ...\nUnpacking veil-vm-test-root (2.0) over (1.0) ...\nSetting up veil-vm-test-root (2.0) ...\nAdditional Software registrations saved and verified.\n",
+    "stderr": "debconf: unable to initialize frontend: Dialog\ndebconf: (TERM is not set, so the dialog frontend is not usable.)\ndebconf: falling back to frontend: Readline\ndebconf: unable to initialize frontend: Readline\ndebconf: (This frontend requires a controlling tty.)\ndebconf: falling back to frontend: Teletype\ndebconf: unable to initialize frontend: Teletype\ndebconf: (This frontend requires a controlling tty.)\ndebconf: falling back to frontend: Noninteractive\n"
+  },
+  {
+    "test": "1.upgraded-version",
+    "pass": true,
+    "code": 0,
+    "stdout": "veil-vm-test-root\t2.0\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.temporary-removal-of-registered",
+    "pass": true,
+    "code": 0,
+    "stdout": "APT is operating on this live session. Persistent registrations are preserved.\nReading package lists...\nBuilding dependency tree...\nReading state information...\nThe following package was automatically installed and is no longer required:\n  veil-vm-test-dep\nUse 'apt autoremove' to remove it.\n\nREMOVING:\n  veil-vm-test-root\n\nSummary:\n  Upgrading: 0, Installing: 0, Removing: 1, Not Upgrading: 0\n  Space needed: 0 B / 1,965 MB available\n\n(Reading database ... \n(Reading database ... 5%\n(Reading database ... 10%\n(Reading database ... 15%\n(Reading database ... 20%\n(Reading database ... 25%\n(Reading database ... 30%\n(Reading database ... 35%\n(Reading database ... 40%\n(Reading database ... 45%\n(Reading database ... 50%\n(Reading database ... 55%\n(Reading database ... 60%\n(Reading database ... 65%\n(Reading database ... 70%\n(Reading database ... 75%\n(Reading database ... 80%\n(Reading database ... 85%\n(Reading database ... 90%\n(Reading database ... 95%\n(Reading database ... 100%\n(Reading database ... 174499 files and directories currently installed.)\nRemoving veil-vm-test-root (2.0) ...\n",
+    "stderr": "\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\n\n"
+  },
+  {
+    "test": "1.registration-preserved",
+    "pass": true,
+    "code": 0,
+    "stdout": "veil-vm-test-root\n",
+    "stderr": ""
+  },
+  {
+    "test": "1.archive-cached",
+    "pass": true,
+    "code": 0,
+    "stdout": "/var/cache/apt/archives/veil-vm-test-dep_1.0_all.deb\n/var/cache/apt/archives/veil-vm-test-root_1.0_all.deb\n/var/cache/apt/archives/veil-vm-test-root_2.0_all.deb\n",
+    "stderr": ""
+  },
+  {
+    "test": "2.fixture-source",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "2.unlock",
+    "pass": true,
+    "code": 0,
+    "stdout": "None unlock-clicked\n \n(process:6011): dbind-WARNING **: 02:55:22.394: AT-SPI: Unable to open bus connection: Failed to connect to socket /run/user/112/at-spi2-EOY8Y3/socket: No such file or directory\n",
+    "stderr": ""
+  },
+  {
+    "test": "2.xfce-ready",
+    "pass": true,
+    "code": 0,
+    "stdout": "10503\n10334\n",
+    "stderr": ""
+  },
+  {
+    "test": "2.cached-offline-restore",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "2.upgraded-version-restored",
+    "pass": true,
+    "code": 0,
+    "stdout": "veil-vm-test-root\t2.0\n",
+    "stderr": ""
+  },
+  {
+    "test": "2.dependency-restored",
+    "pass": true,
+    "code": 0,
+    "stdout": "install ok installed",
+    "stderr": ""
+  },
+  {
+    "test": "2.temporary-package-gone",
+    "pass": true,
+    "code": 1,
+    "stdout": "",
+    "stderr": "dpkg-query: no packages found matching veil-vm-test-extra\n"
+  },
+  {
+    "test": "2.verify-registration",
+    "pass": true,
+    "code": 0,
+    "stdout": "Additional Software is active. 1 registered, 0 absent in this session.\nAPT resolved the registered packages against the immutable image.\n",
+    "stderr": ""
+  },
+  {
+    "test": "2.persistent-remove",
+    "pass": true,
+    "code": 0,
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following package was automatically installed and is no longer required:\n  veil-vm-test-dep\nUse 'apt autoremove' to remove it.\nThe following packages will be REMOVED:\n  veil-vm-test-root\n0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.\nAfter this operation, 0 B of additional disk space will be used.\n(Reading database ... \n(Reading database ... 5%\n(Reading database ... 10%\n(Reading database ... 15%\n(Reading database ... 20%\n(Reading database ... 25%\n(Reading database ... 30%\n(Reading database ... 35%\n(Reading database ... 40%\n(Reading database ... 45%\n(Reading database ... 50%\n(Reading database ... 55%\n(Reading database ... 60%\n(Reading database ... 65%\n(Reading database ... 70%\n(Reading database ... 75%\n(Reading database ... 80%\n(Reading database ... 85%\n(Reading database ... 90%\n(Reading database ... 95%\n(Reading database ... 100%\n(Reading database ... 174499 files and directories currently installed.)\nRemoving veil-vm-test-root (2.0) ...\nAdditional Software registrations saved and verified.\n",
+    "stderr": ""
+  },
+  {
+    "test": "2.dependency-preserved",
+    "pass": true,
+    "code": 0,
+    "stdout": "install ok installed",
+    "stderr": ""
+  },
+  {
+    "test": "2.registration-removed",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "3.fixture-source",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "3.unlock",
+    "pass": true,
+    "code": 0,
+    "stdout": "None unlock-clicked\n ",
+    "stderr": ""
+  },
+  {
+    "test": "3.xfce-ready",
+    "pass": true,
+    "code": 0,
+    "stdout": "11943\n11801\n",
+    "stderr": ""
+  },
+  {
+    "test": "3.removed-package-not-restored",
+    "pass": true,
+    "code": 1,
+    "stdout": "",
+    "stderr": "dpkg-query: no packages found matching veil-vm-test-root\n"
+  },
+  {
+    "test": "3.empty-registration",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "3.corrupt-registration-rejected",
+    "pass": true,
+    "code": 1,
+    "stdout": "",
+    "stderr": "Veil packages: Invalid Additional Software configuration. Preserve a copy of /live/persistence/TailsData_unlocked/live-additional-software.conf and correct the invalid entry: Invalid package selector on line 1\n"
+  },
+  {
+    "test": "3.corrupted-file-preserved",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "4.fixture-source",
+    "pass": true,
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "test": "4.locked-storage-rejected",
+    "pass": true,
+    "code": 1,
+    "stdout": "",
+    "stderr": "Veil packages: Persistent Storage is locked. Unlock it from the Welcome Screen.\n"
+  }
+]
